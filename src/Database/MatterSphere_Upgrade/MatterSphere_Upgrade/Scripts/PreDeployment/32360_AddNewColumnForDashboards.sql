@@ -1,0 +1,1 @@
+﻿EXEC dbo.fwbsaddcolumn @tablename = 'dbo.dbOMSObjects' , @columnName = 'TileParams' , @columnDesc = 'nvarchar(max) NULL'

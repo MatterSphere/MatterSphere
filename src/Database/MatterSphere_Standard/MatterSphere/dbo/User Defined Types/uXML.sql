@@ -1,0 +1,3 @@
+﻿CREATE TYPE [dbo].[uXML]
+    FROM NVARCHAR (MAX) NULL;
+

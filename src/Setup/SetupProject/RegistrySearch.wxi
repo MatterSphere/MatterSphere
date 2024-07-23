@@ -1,0 +1,72 @@
+﻿<Include xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <Property Id="VSTORUNTIMEREDIST">
+    <RegistrySearch Id="VSTORuntimeRedist" Root="HKLM" Key="SOFTWARE\Microsoft\VSTO Runtime Setup\v4R" Name="Version" Type="raw" Bitness="always32" />
+  </Property>
+
+  <Property Id="WORD2010_ROOT" Secure="yes">
+    <RegistrySearch Id="Search_Word2010" Root="HKLM" Key="SOFTWARE\Microsoft\Office\14.0\Word\InstallRoot" Name="Path" Type="raw" />
+  </Property>
+
+  <Property Id="EXCEL2010_ROOT" Secure="yes">
+    <RegistrySearch Id="Search_Excel2010" Root="HKLM" Key="SOFTWARE\Microsoft\Office\14.0\Excel\InstallRoot" Name="Path" Type="raw" />
+  </Property>
+
+  <Property Id="WORD2013_ROOT" Secure="yes">
+    <RegistrySearch Id="Search_Word2013" Root="HKLM" Key="SOFTWARE\Microsoft\Office\15.0\Word\InstallRoot" Name="Path" Type="raw" />
+  </Property>
+
+  <Property Id="EXCEL2013_ROOT" Secure="yes">
+    <RegistrySearch Id="Search_Excel2013" Root="HKLM" Key="SOFTWARE\Microsoft\Office\15.0\Excel\InstallRoot" Name="Path" Type="raw" />
+  </Property>
+
+  <Property Id="WORD2016_ROOT" Secure="yes">
+    <RegistrySearch Id="Search_Word2016" Root="HKLM" Key="SOFTWARE\Microsoft\Office\16.0\Word\InstallRoot" Name="Path" Type="raw" />
+    <RegistrySearch Id="Search_Word2016_C2R" Root="HKLM" Key="SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\16.0\Word\InstallRoot" Name="Path" Type="raw" />
+    <?if $(var.Platform) = "x86" ?>
+    <RegistrySearch Id="Search_Word2016_C2R_WOW" Root="HKLM" Key="SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Wow6432Node\Microsoft\Office\16.0\Word\InstallRoot" Name="Path" Type="raw" Bitness="always64" />
+    <?endif?>
+  </Property>
+
+  <Property Id="EXCEL2016_ROOT" Secure="yes">
+    <RegistrySearch Id="Search_Excel2016" Root="HKLM" Key="SOFTWARE\Microsoft\Office\16.0\Excel\InstallRoot" Name="Path" Type="raw" />
+    <RegistrySearch Id="Search_Excel2016_C2R" Root="HKLM" Key="SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\16.0\Excel\InstallRoot" Name="Path" Type="raw" />
+    <?if $(var.Platform) = "x86" ?>
+    <RegistrySearch Id="Search_Excel2016_C2R_WOW" Root="HKLM" Key="SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Wow6432Node\Microsoft\Office\16.0\Excel\InstallRoot" Name="Path" Type="raw" Bitness="always64" />
+    <?endif?>
+  </Property>
+
+  <SetProperty Action="SetWordStartupFolder2010" Id="WORD_STARTUP" After="CostInitialize" Value="[WORD2010_ROOT]\Startup\" Condition="WORD2010_ROOT" />
+  <SetProperty Action="SetWordStartupFolder2013" Id="WORD_STARTUP" After="CostInitialize" Value="[WORD2013_ROOT]\Startup\" Condition="WORD2013_ROOT" />
+  <SetProperty Action="SetWordStartupFolder2016" Id="WORD_STARTUP" After="CostInitialize" Value="[WORD2016_ROOT]\Startup\" Condition="WORD2016_ROOT" />
+
+  <SetProperty Action="SetExcelStartupFolder2010" Id="EXCEL_STARTUP" After="CostInitialize" Value="[EXCEL2010_ROOT]\Xlstart\" Condition="EXCEL2010_ROOT" />
+  <SetProperty Action="SetExcelStartupFolder2013" Id="EXCEL_STARTUP" After="CostInitialize" Value="[EXCEL2013_ROOT]\Xlstart\" Condition="EXCEL2013_ROOT" />
+  <SetProperty Action="SetExcelStartupFolder2016" Id="EXCEL_STARTUP" After="CostInitialize" Value="[EXCEL2016_ROOT]\Xlstart\" Condition="EXCEL2016_ROOT" />
+
+  <Property Id="OLDPRODUCTDETECTED1">
+    <ProductSearch Minimum="1.0.0.0" IncludeMinimum="yes" Maximum="9.1.0.0" IncludeMaximum="yes" UpgradeCode="{23B57289-C922-4C06-A147-AB967F935DAC}" />
+  </Property>
+  <Property Id="OLDPRODUCTDETECTED2">
+    <ProductSearch Minimum="1.0.0.0" IncludeMinimum="yes" Maximum="9.1.0.0" IncludeMaximum="yes" UpgradeCode="{B4165B00-4E78-49F7-A8C0-D22998C19639}" />
+  </Property>
+  <Property Id="OLDPRODUCTDETECTED3">
+    <ProductSearch Minimum="1.0.0.0" IncludeMinimum="yes" Maximum="9.1.0.0" IncludeMaximum="yes" UpgradeCode="{7B378682-5B14-4F50-891C-1DD451BB4694}" />
+  </Property>
+  <Property Id="OLDPRODUCTDETECTED4">
+    <ProductSearch Minimum="1.0.0.0" IncludeMinimum="yes" Maximum="9.1.0.0" IncludeMaximum="yes" UpgradeCode="{C51144F5-1CB8-4958-BC50-16B9343FAC98}" />
+  </Property>
+  <Property Id="OLDPRODUCTDETECTED5">
+    <ProductSearch Minimum="1.0.0.0" IncludeMinimum="yes" Maximum="9.1.0.0" IncludeMaximum="yes" UpgradeCode="{DF8E008C-E5AA-4693-9F27-0F72361FC0A3}" />
+  </Property>
+  <Property Id="OLDPRODUCTDETECTED6">
+    <ProductSearch Minimum="1.0.0.0" IncludeMinimum="yes" Maximum="9.1.0.0" IncludeMaximum="yes" UpgradeCode="{EA5F5512-EF84-415D-9217-23DAF6A6106A}" />
+  </Property>
+  <Property Id="OLDPRODUCTDETECTED7">
+    <ProductSearch Minimum="1.0.0.0" IncludeMinimum="yes" Maximum="9.1.0.0" IncludeMaximum="yes" UpgradeCode="{E046A8B3-66AB-4EB0-8FC0-5002CDF605F2}" />
+  </Property>
+  <Property Id="OLDPRODUCTDETECTED8">
+    <ProductSearch Minimum="1.0.0.0" IncludeMinimum="yes" Maximum="9.1.0.0" IncludeMaximum="yes" UpgradeCode="{1F8AD65F-AE85-41DE-B45D-22B173D5C8A3}" />
+  </Property>
+
+</Include>

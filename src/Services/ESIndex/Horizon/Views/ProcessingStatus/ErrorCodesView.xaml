@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Horizon.Views.ProcessingStatus.ErrorCodesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:processingStatus="clr-namespace:Horizon.ViewModels.ProcessingStatus"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=processingStatus:ErrorCodesViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone
+            Height="40"
+            materialDesign:ThemeAssist.Theme="Light"
+            Mode="Light">
+            <StackPanel Orientation="Horizontal">
+                <Button
+                    Width="30"
+                    Height="30"
+                    Margin="5"
+                    Padding="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Command="{Binding GoBackCommand}"
+                    ToolTip="Backward">
+                    <Button.Content>
+                        <materialDesign:PackIcon
+                            Width="25"
+                            Height="25"
+                            VerticalAlignment="Center"
+                            Kind="Undo" />
+                    </Button.Content>
+                </Button>
+
+                <Button
+                    Width="30"
+                    Height="30"
+                    Margin="5"
+                    Padding="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Command="{Binding SaveReportCommand}"
+                    ToolTip="Save Report">
+                    <Button.Content>
+                        <materialDesign:PackIcon
+                            Width="25"
+                            Height="25"
+                            VerticalAlignment="Center"
+                            Kind="ContentSave" />
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </materialDesign:ColorZone>
+
+        <DataGrid
+            Grid.Row="1"
+            CellStyle="{StaticResource CustomDataGridCell}"
+            ItemsSource="{Binding ErrorCodes}"
+            SelectedItem="{Binding SelectedErrorCode}"
+            Style="{StaticResource CustomDataGridWithAlterRows}">
+            <DataGrid.InputBindings>
+                <MouseBinding Command="{Binding OpenDocumentTypesCommand}" MouseAction="LeftDoubleClick" />
+            </DataGrid.InputBindings>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding ErrorCode}"
+                    Header="Error Code" />
+                <DataGridTextColumn
+                    Binding="{Binding Count}"
+                    CellStyle="{StaticResource CustomDataGridWrapCenterCell}"
+                    Header="Number" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MatterSphereBundlerWCFService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SmtpClient" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">server</Value>
+    </Setting>
+    <Setting Name="SmtpFromAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">email@domain.com</Value>
+    </Setting>
+    <Setting Name="SmtpMailSubject" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Bundler</Value>
+    </Setting>
+    <Setting Name="SmtpMailBody" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The requested bundle has been outputted to the folder
+
+{0}
+
+MatterSphere Bundler Service
+
+</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

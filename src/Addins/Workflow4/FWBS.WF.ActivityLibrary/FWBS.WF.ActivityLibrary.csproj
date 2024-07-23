@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46A5C416-9A05-4B78-A9E3-1900C6397F0C}</ProjectGuid>
+    <ProjectTypeGuids>{32f31d43-81cc-4c15-9de6-3fc5453562b6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FWBS.WF.ActivityLibrary</RootNamespace>
+    <AssemblyName>FWBS.WF.ActivityLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fwbs.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Fwbs.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Data">
+      <HintPath>C:\omscoreassemblies\OMS.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Library">
+      <HintPath>C:\omscoreassemblies\OMS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="DelayUntilDateTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DelayUntilTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dictionary\AddToDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dictionary\ClearDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dictionary\GetFromDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dictionary\KeyExistsInDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dictionary\RemoveFromDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dictionary\ValueExistsInDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetContext.cs" />
+    <Compile Include="GetContextNamedItem.cs" />
+    <Compile Include="LoadAndRunWorkflow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoadWorkflow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Occurance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunWorkflow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SetContext.cs" />
+    <Compile Include="SetContextNamedItem.cs" />
+    <Compile Include="WriteToEventLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

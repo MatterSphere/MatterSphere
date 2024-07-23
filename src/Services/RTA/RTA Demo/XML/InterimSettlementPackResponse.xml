@@ -1,0 +1,14 @@
+﻿<InterimSettlementPackResponse>
+  <DefendantRepresentative>
+    <DefendantsInsurer ContactMiddleName ="" ContactName ="" ContactSurname ="" EmailAddress ="" ReferenceNumber =""  TelephoneNumber =""/>
+  </DefendantRepresentative>
+  <InterimPayment>
+    <DefendantResponsesToInterimPaymentRequest AdditionalComments ="" ValueOfInterimPaymentAgreed =""/>
+  </InterimPayment>
+  <DefendantReplies>
+    <DefendantResponse Comments ="" GrossValueOffered =""  IsGrossAmountAgreed ="1" LossType ="0" PercContribNegDeductions=""/>
+  </DefendantReplies>
+  <Total>
+    <LossesTotal CRUDeductions =""/>
+  </Total> 
+</InterimSettlementPackResponse>

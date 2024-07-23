@@ -1,0 +1,90 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="MCEPProfilerEWS.Service" Directory="INSTALLFOLDER">
+      <File Id="MCEPProfilerEWS.exe" Source="$(SourceDir)\MCEPProfilerEWS.exe" KeyPath="yes" />
+      <File Id="MCEPProfilerEWS.exe.config" Source="$(SourceDir)\MCEPProfilerEWS.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSphereMCEPProfilerService"
+                      DisplayName="3E MatterSphere MCEP Profiler Service"
+                      Description="The 3E MatterSphere Exchange Profiler service scans users’ mailboxes for all messages that have been moved into 3E MatterSphere Profiled Folders and profiles them."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSphereMCEPProfilerService"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="MCEPStorerEWS.Service" Directory="INSTALLFOLDER">
+      <File Id="MCEPStorerEWS.exe" Source="$(SourceDir)\MCEPStorerEWS.exe" KeyPath="yes" />
+      <File Id="MCEPStorerEWS.exe.config" Source="$(SourceDir)\MCEPStorerEWS.exe.config" />
+      <ServiceInstall Name="3EMatterSphereMCEPStorerService"
+                      Type="ownProcess"
+                      DisplayName="3E MatterSphere MCEP Storer Service"
+                      Description="The 3E MatterSphere Exchange Storer service creates the messages in 3E MatterSphere Document Management."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Name="3EMatterSphereMCEPStorerService"
+                      Stop="both"
+                      Remove="uninstall"
+                      Wait="yes"/>
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="MCEP.Dependencies" Guid="{951115D2-EA62-4585-A881-4D643597CA80}" Directory="INSTALLFOLDER">
+      <File Source="$(SourceDir)\FWBS.Common.dll" />
+      <File Source="$(SourceDir)\Fwbs.Documents.JZipPackageProperties.dll" />
+      <File Source="$(SourceDir)\Fwbs.Documents.MsgProperties.dll" />
+      <File Source="$(SourceDir)\Fwbs.Documents.OfficeXpsProperties.dll" />
+      <File Source="$(SourceDir)\Fwbs.Documents.OleProperties.dll" />
+      <File Source="$(SourceDir)\Fwbs.Documents.PackageProperties.dll" />
+      <File Source="$(SourceDir)\Fwbs.Documents.Properties.dll" />
+      <File Source="$(SourceDir)\FWBS.ExtAggClient.dll" />
+      <File Source="$(SourceDir)\Fwbs.Framework.Common.dll" />
+      <File Source="$(SourceDir)\Fwbs.Framework.Composition.dll" />
+      <File Source="$(SourceDir)\Fwbs.Framework.dll" />
+      <File Source="$(SourceDir)\Fwbs.Framework.Shared.dll" />
+      <File Source="$(SourceDir)\OMS.Data.dll" />
+      <File Source="$(SourceDir)\OMS.Infrastructure.dll" />
+      <File Source="$(SourceDir)\OMS.Library.dll" />
+      <File Source="$(SourceDir)\MCEPGlobalClasses.dll.config" />
+      <File Source="$(SourceDir)\MCEP.config" />
+      <File Source="$(SourceDir)\Aspose.Email.dll" />
+      <File Source="$(SourceDir)\Microsoft.Exchange.WebServices.Auth.dll" />
+      <File Source="$(SourceDir)\Microsoft.Exchange.WebServices.dll" />
+      <File Source="$(SourceDir)\Microsoft.Identity.Client.dll" />
+      <File Source="$(SourceDir)\Interop.Dsofile.dll" />
+      <File Source="$(SourceDir)\Interop.Redemption.dll" />
+      <File Source="$(SourceDir)\Redemption.dll" />
+      <File Source="$(SourceDir)\Redemption64.dll" />
+      <File Source="$(SourceDir)\dsofile.dll" />
+      <File Source="$(SourceDir)\dsofile64.dll" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ManufacturerMenuFolder">
+      <Component Id="MCEPAdminShortcut" Guid="*">
+        <Shortcut Id="MECPAdminMenuShortcut"
+                  Name="MCEP Admin"
+                  Description="Starts MCEP Admin"
+                  Target="[INSTALLFOLDER]MCEPControlForm.exe"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="MCEPAdmin.ico" SourceFile="MCEPControlForm.exe" />
+        </Shortcut>
+        <RegistryValue Root="HKCU"
+                       Key="Software\$(PublisherName)\$(ProductName)"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+        <RemoveFolder Id="RemoveManufacturerMenuFolder" Directory="ManufacturerMenuFolder" On="uninstall" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

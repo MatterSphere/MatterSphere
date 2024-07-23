@@ -1,0 +1,404 @@
+﻿<oms>
+  <rules>
+    <controls>
+      <control id="Menu_Manual_Open" resource="MANUALOPEN"/>
+      <control id="mailcontext_Authorise" resource="AUTHORISE" filter="AUTHORISE" package="CLMCONTLEGAL" license="DM"/>
+      <control id="mailcontext_ConfAuthorise" resource="CONFAUTHORISE" filter="AUTHORISE+OUT" package="CLMCONTLEGAL" license="DM"/>
+      <control id="mailcontext_RefAuthorise" resource="REFAUTHORISE" filter="AUTHORISE+OUT" package="CLMCONTLEGAL" license="DM"/>
+      <control id="mailcontext_Save" resource="SAVE" filter="DOC+CANSAVE" package="DMS" license="DM"/>
+      <control id="mailcontext_Save_As" resource="SAVEAS" filter="DOC+CANSAVE" package="DMS" license="DM"/>
+      <control id="mailcontext_MySeparator_Sep1"   filter="DOC+SAVED"  package="CLMCONTLEGAL" />        
+      <control id="mailcontext_View_File" resource="FILEINFO"  filter="DOC+SAVED"  package="CLMCONTLEGAL" />
+      <control id="mailcontext_MySeparator_Sep2"   filter="DOC+SAVED"  package="CLMCONTLEGAL" />            
+      <control id="mailcontext_View_Client" resource="CLIENTINFO" filter="DOC+SAVED"   package="CLMCONTLEGAL" />     
+      <control id="mailcontext_Detach" resource="DETACH" filter="DOC+SAVED" package="DMS" license="DM"/>
+      <control id="mailcontext_OMS_FileIt" resource="FILEIT" filter="DOC+SAVED"   package="CLMCONTLEGAL" />
+      <control id="mailcontext_MySeparator_Sep3"   filter="DOC+SAVED"  package="CLMCONTLEGAL" />    
+      <control id="mailcontext_Reply" resource="REPLY" filter="ASSOCIATE" package="DMS" license="DP"/>          
+      <control id="mailcontext_Reply_Letters" resource="LETTERS" filter="ASSOCIATE" package="DMS" license="DP"/>    
+      <control id="mailcontext_Reply_ToClient" resource="TOCLIENT" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="mailcontext_Reply_ToAssociate" resource="TOASSOC" filter="ASSOCIATE" package="DMS" license="DP"/>      
+      <control id="mailcontext_MySeparator_Sep4"   filter="ASSOCIATE"  package="DMS" />
+      <control id="mailcontext_Reply_Notes"   resource="NOTES" filter="ASSOCIATE"  package="DMS" />      
+      <control id="mailcontext_Reply_Notes_AttendanceNote" resource="ATTNOTE" filter="ASSOCIATE" package="DMS" license="DP"/>     
+      <control id="mailcontext_Reply_Notes_Meeting" resource="MEETING" filter="ASSOCIATE" package="DMS" license="DP"/>              
+      <control id="mailcontext_MySeparator_Sep5"   filter="DOC+SAVED"  package="CLMCONTLEGAL" />
+      <control id="mailcontext_Reply_Notes_File" resource="FILE" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="mailcontext_MySeparator_Sep6" filter="ASSOCIATE" package="DMS" license="DP"/>      
+      <control id="mailcontext_Reply_Notes_TelIn" resource="TELIN" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="mailcontext_Reply_Notes_TelOut" resource="TELOUT" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="mailcontext_Reply_New_Fax" resource="NEWFAX" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="mailcontext_Reply_NewEntry_Mail" resource="NEWENTRYMAIL" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="mailcontext_View_DocVars" resource="SHOWDOCVARS" package="DMS" filter="DOC+SAVED" license="DM"/>
+
+      <control id="calendarcontext_Save" resource="SAVE" filter="DOC+CANSAVE" package="DMS" license="DM"/>
+      <control id="calendarcontext_Save_As" resource="SAVEAS" filter="DOC+CANSAVE" package="DMS" license="DM"/>
+      <control id="calendarcontext_MySeparator_Sep1"   filter="DOC+SAVED"  package="CLMCONTLEGAL" />
+      <control id="calendarcontext_View_File" resource="FILEINFO"  filter="FILE"  package="CLMCONTLEGAL" />
+      <control id="calendarcontext_MySeparator_Sep2"   filter="FILE"  package="CLMCONTLEGAL" />
+      <control id="calendarcontext_View_Client" resource="CLIENTINFO" filter="CLIENT"   package="CLMCONTLEGAL" />
+      <control id="calendarcontext_Detach" resource="DETACH" filter="FILE" package="DMS" license="DM"/>
+      <control id="calendarcontext_OMS_FileIt" resource="FILEIT" filter="FILE"   package="CLMCONTLEGAL" />
+      <control id="calendarcontext_MySeparator_Sep3"   filter="FILE"  package="CLMCONTLEGAL" />
+      <control id="calendarcontext_Reply" resource="REPLY" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_Reply_Letters" resource="LETTERS" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_Reply_ToClient" resource="TOCLIENT" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_Reply_ToAssociate" resource="TOASSOC" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_MySeparator_Sep4"   filter="ASSOCIATE"  package="DMS" />
+      <control id="calendarcontext_Reply_Notes"   resource="NOTES" filter="ASSOCIATE"  package="DMS" />
+      <control id="calendarcontext_Reply_Notes_AttendanceNote" resource="ATTNOTE" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_Reply_Notes_Meeting" resource="MEETING" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_MySeparator_Sep5"   filter="DOC+SAVED"  package="CLMCONTLEGAL" />
+      <control id="calendarcontext_Reply_Notes_File" resource="FILE" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_MySeparator_Sep6" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_Reply_Notes_TelIn" resource="TELIN" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_Reply_Notes_TelOut" resource="TELOUT" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_Reply_New_Fax" resource="NEWFAX" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_Reply_NewEntry_Mail" resource="NEWENTRYMAIL" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="calendarcontext_View_DocVars" resource="SHOWDOCVARS" package="DMS" filter="DOC+SAVED" license="DM"/>
+
+      <control id="taskcontext_Save" resource="SAVE" filter="DOC+CANSAVE" package="DMS" license="DM"/>
+      <control id="taskcontext_Save_As" resource="SAVEAS" filter="DOC+CANSAVE" package="DMS" license="DM"/>
+      <control id="taskcontext_MySeparator_Sep1"   filter="DOC+SAVED"  package="CLMCONTLEGAL" />
+      <control id="taskcontext_View_File" resource="FILEINFO"  filter="FILE"  package="CLMCONTLEGAL" />
+      <control id="taskcontext_MySeparator_Sep2"   filter="FILE"  package="CLMCONTLEGAL" />
+      <control id="taskcontext_View_Client" resource="CLIENTINFO" filter="CLIENT"   package="CLMCONTLEGAL" />
+      <control id="taskcontext_Detach" resource="DETACH" filter="FILE" package="DMS" license="DM"/>
+      <control id="taskcontext_OMS_FileIt" resource="FILEIT" filter="FILE"   package="CLMCONTLEGAL" />
+      <control id="taskcontext_MySeparator_Sep3"   filter="FILE"  package="CLMCONTLEGAL" />
+      <control id="taskcontext_Reply" resource="REPLY" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_Reply_Letters" resource="LETTERS" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_Reply_ToClient" resource="TOCLIENT" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_Reply_ToAssociate" resource="TOASSOC" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_MySeparator_Sep4"   filter="ASSOCIATE"  package="DMS" />
+      <control id="taskcontext_Reply_Notes"   resource="NOTES" filter="ASSOCIATE"  package="DMS" />
+      <control id="taskcontext_Reply_Notes_AttendanceNote" resource="ATTNOTE" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_Reply_Notes_Meeting" resource="MEETING" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_MySeparator_Sep5"   filter="DOC+SAVED"  package="CLMCONTLEGAL" />
+      <control id="taskcontext_Reply_Notes_File" resource="FILE" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_MySeparator_Sep6" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_Reply_Notes_TelIn" resource="TELIN" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_Reply_Notes_TelOut" resource="TELOUT" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_Reply_New_Fax" resource="NEWFAX" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_Reply_NewEntry_Mail" resource="NEWENTRYMAIL" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="taskcontext_View_DocVars" resource="SHOWDOCVARS" package="DMS" filter="DOC+SAVED" license="DM"/>
+
+      <control id="Foldercontext_View_Client" resource="CLIENTINFO" filter="PROFILEDFOLDER" package="CLMCONTLEGAL" />
+      <control id="Foldercontext_View_File" resource="FILEINFO" filter="PROFILEDFOLDER" package="CLMCONTLEGAL" />
+      <control id="Foldercontext_View_Associates" resource="ASSOCIATE" filter="PROFILEDFOLDER" package="CLMCONTLEGAL" />
+      <control id="Foldercontext_Set_as_Folder" resource="SETPROFILEDFLDR" filter="PROFILEDFOLDER" package="CLMCONTLEGAL" />
+      <!--  <control id="Foldercontext_View_Folder" resource="WEBVIEW"  package="CLMCONTLEGAL" />-->
+
+      <control id="TabMail_Connect" hide="false"/>
+      <control id="TabMail_Connect_Connect"/>
+      <control id="TabMail_Connect_CreateMenu" resource="CREATE"/>
+      <control id="TabMail_Connect_Create_AssocLetter" resource="LETTERTOASSOC" package="DMS" />
+      <control id="TabMail_Connect_Create_ClientLetter" resource="LETTERTOCLIENT" package="DMS" />
+      <control id="TabMail_Connect_Create_Matter" resource="NEWFILE" package="CLMCONTLEGAL" />
+      <control id="TabMail_Connect_Create_Time" resource="NEWTIME" license="TIMEREC" package="TIMERECORDING"/>
+      <control id="TabMail_Connect_ViewMenu" resource="VIEW" />
+      <control id="TabMail_Connect_View_Client" resource="CLIENTINFO" package="CLMCONTLEGAL"/>
+      <control id="TabMail_Connect_View_Matter" resource="FILEINFO" package="CLMCONTLEGAL" />
+      <control id="TabMail_Connect_View_Command" resource="COMMANDCENTRE" package="COMMANDCENTRE"/>      
+      <control id="TabMail_Connect_View_PrecedentLibrary" resource="PRECEDENTS" package="DMS" license="DP"/>
+      <control id="TabMail_Connect_View_ContactManager" resource="CONTMANAGER" package="CLMCONTLEGAL" />
+      <control id="TabMail_Connect_View_OpenDocument" resource="OPENDOC" package="DMS" license="DM"/>
+      <control id="TabMail_Connect_SaveButtonsMenu_Save" resource="SAVE" package="DMS" license="DM"/>
+      <control id="TabMail_Connect_SaveButtonsMenu_SaveAndContinue" resource="DOCSAVE;CONT" package="DMS" license="DM"/>
+      <control id="TabMail_Connect_SaveButtonsMenu_SaveAsPrec" resource="SAVEASPREC" role="PRECEDIT" package="DMS"  license="DP"/>
+      <control id="TabMail_Connect_SaveButtonsMenu_Precedent"  resource="INSPRECEDENT"  package="DMS" license="DP"/>
+      <control id="TabMail_Connect_SaveButtonMenu_ManualSave" resource="MANUALSAVE" package="DMS"/>
+      <control id="TabMail_Connect_SaveButtonsMenu_FileIt"  resource="FILEIT"  package="DMS"  license="DM"/>
+      <control id="TabMail_Connect_SaveButtonsMenu_SaveAll" resource="SAVEALL" package="DMS" license="DM"/>      
+      <control id="TabMail_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabMail_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabMail_Connect_Create_AssocEmail" resource="EMAILTOASSOC" package="DMS"  license="DM"/>
+      <control id="TabMail_Connect_Create_ClientEmail" resource="EMAILTOCLIENT" package="DMS"  license="DM"/>
+
+      
+      <control id="TabCalendar_Connect" hide="false"/>
+      <control id="TabCalendar_Connect_Connect"/>
+      <control id="TabCalendar_Connect_CreateMenu" resource="CREATE"/>
+      <control id="TabCalendar_Connect_Create_AssocLetter" resource="TOASSOC" package="DMS" license="DP"/>
+      <control id="TabCalendar_Connect_Create_ClientLetter" resource="TOCLIENT" package="DMS" license="DP"/>
+      <control id="TabCalendar_Connect_Create_Matter" resource="NEWFILE" package="CLMCONTLEGAL" />
+      <control id="TabCalendar_Connect_Create_Time" resource="NEWTIME" license="TIMEREC" package="TIMERECORDING"/>
+      <control id="TabCalendar_Connect_ViewMenu" resource="VIEW" />
+      <control id="TabCalendar_Connect_View_Client" resource="CLIENTINFO" package="CLMCONTLEGAL"/>
+      <control id="TabCalendar_Connect_View_Matter" resource="FILEINFO" package="CLMCONTLEGAL" />
+      <control id="TabCalendar_Connect_View_Command" resource="COMMANDCENTRE" package="COMMANDCENTRE"/>
+      <control id="TabCalendar_Connect_View_PrecedentLibrary" resource="PRECEDENTS" package="DMS" filter="*!Outlook" />
+      <control id="TabCalendar_Connect_View_ContactManager" resource="CONTMANAGER" package="CLMCONTLEGAL" />
+      <control id="TabCalendar_Connect_View_OpenDocument" resource="OPENDOC" package="DMS" license="DM"/>
+      <control id="TabCalendar_Connect_SaveButtonsMenu_Save" resource="SAVE" package="DMS" license="DM"/>
+      <control id="TabCalendar_Connect_SaveButtonsMenu_SaveAndContinue" resource="DOCSAVE;CONT" package="DMS" license="DM"/>
+      <control id="TabCalendar_Connect_SaveButtonsMenu_SaveAsPrec" resource="SAVEASPREC" role="PRECEDIT" package="DMS" license="DP"/>
+      <control id="TabCalendar_Connect_SaveButtonsMenu_Precedent"  resource="INSPRECEDENT"  package="DMS" license="DP"/>
+      <control id="TabCalendar_Connect_SaveButtonMenu_ManualSave" resource="MANUALSAVE" package="DMS" license="DM"/>
+      <control id="TabCalendar_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabCalendar_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabCalendar_Connect_SaveButtonsMenu_FileIt"  resource="FILEIT"  package="DMS" license="DM"/>
+      <control id="TabCalendar_Connect_SaveButtonsMenu_SaveAll" resource="SAVEALL" package="DMS" license="DM"/>
+      <control id="TabCalendar_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabCalendar_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabCalendar_Connect_Create_AssocEmail" resource="EMAILTOASSOC" package="DMS" license="DM"/>
+      <control id="TabCalendar_Connect_Create_ClientEmail" resource="EMAILTOCLIENT" package="DMS" license="DM"/>
+      
+      <control id="TabCalendarTableView_Connect" hide="false"/>
+      <control id="TabCalendarTableView_Connect_Connect"/>
+      <control id="TabCalendarTableView_Connect_CreateMenu" resource="CREATE"/>
+      <control id="TabCalendarTableView_Connect_Create_AssocLetter" resource="TOASSOC" package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_Create_ClientLetter" resource="TOCLIENT" package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_Create_Matter" resource="NEWFILE" package="CLMCONTLEGAL" />
+      <control id="TabCalendarTableView_Connect_Create_Time" resource="NEWTIME" license="TIMEREC" package="TIMERECORDING"/>
+      <control id="TabCalendarTableView_Connect_ViewMenu" resource="VIEW" />
+      <control id="TabCalendarTableView_Connect_View_Client" resource="CLIENTINFO" package="CLMCONTLEGAL"/>
+      <control id="TabCalendarTableView_Connect_View_Matter" resource="FILEINFO" package="CLMCONTLEGAL" />
+      <control id="TabCalendarTableView_Connect_View_Command" resource="COMMANDCENTRE" package="COMMANDCENTRE"/>
+      <control id="TabCalendarTableView_Connect_View_PrecedentLibrary" resource="PRECEDENTS" package="DMS" filter="*!Outlook" />      
+      <control id="TabCalendarTableView_Connect_View_ContactManager" resource="CONTMANAGER" package="CLMCONTLEGAL" />
+      <control id="TabCalendarTableView_Connect_View_OpenDocument" resource="OPENDOC" package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_SaveButtonsMenu_Save" resource="SAVE" package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_SaveButtonsMenu_SaveAndContinue" resource="DOCSAVE;CONT" package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_SaveButtonsMenu_SaveAsPrec" resource="SAVEASPREC" role="PRECEDIT" package="DMS" license="DP"/>
+      <control id="TabCalendarTableView_Connect_SaveButtonsMenu_Precedent"  resource="INSPRECEDENT"  package="DMS" license="DP"/>
+      <control id="TabCalendarTableView_Connect_SaveButtonMenu_ManualSave" resource="MANUALSAVE" package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabCalendarTableView_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabCalendarTableView_Connect_SaveButtonsMenu_FileIt"  resource="FILEIT"  package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_SaveButtonsMenu_SaveAll" resource="SAVEALL" package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabCalendarTableView_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabCalendarTableView_Connect_Create_AssocEmail" resource="EMAILTOASSOC" package="DMS" license="DM"/>
+      <control id="TabCalendarTableView_Connect_Create_ClientEmail" resource="EMAILTOCLIENT" package="DMS" license="DM"/>
+      
+      <control id="TabTasks_Connect" hide="false"/>
+      <control id="TabTasks_Connect_Connect"/>
+      <control id="TabTasks_Connect_CreateMenu" resource="CREATE"/>
+      <control id="TabTasks_Connect_Create_AssocLetter" resource="TOASSOC" package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_Create_ClientLetter" resource="TOCLIENT" package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_Create_Matter" resource="NEWFILE" package="CLMCONTLEGAL" />
+      <control id="TabTasks_Connect_Create_Time" resource="NEWTIME" license="TIMEREC" package="TIMERECORDING"/>
+      <control id="TabTasks_Connect_ViewMenu" resource="VIEW" />
+      <control id="TabTasks_Connect_View_Client" resource="CLIENTINFO" package="CLMCONTLEGAL"/>
+      <control id="TabTasks_Connect_View_Matter" resource="FILEINFO" package="CLMCONTLEGAL" />
+      <control id="TabTasks_Connect_View_Command" resource="COMMANDCENTRE" package="COMMANDCENTRE"/>
+      <control id="TabTasks_Connect_View_PrecedentLibrary" resource="PRECEDENTS" package="DMS" filter="*!Outlook" />
+      <control id="TabTasks_Connect_View_ContactManager" resource="CONTMANAGER" package="CLMCONTLEGAL" />
+      <control id="TabTasks_Connect_View_OpenDocument" resource="OPENDOC" package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_SaveButtonsMenu_Save" resource="SAVE" package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_SaveButtonsMenu_SaveAndContinue" resource="DOCSAVE;CONT" package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_SaveButtonsMenu_SaveAsPrec" resource="SAVEASPREC" role="PRECEDIT" package="DMS" license="DP"/>
+      <control id="TabTasks_Connect_SaveButtonsMenu_Precedent"  resource="INSPRECEDENT" package="DMS" license="DP"/>
+      <control id="TabTasks_Connect_SaveButtonMenu_ManualSave" resource="MANUALSAVE" package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabTasks_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabTasks_Connect_SaveButtonsMenu_FileIt"  resource="FILEIT"  package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_SaveButtonsMenu_SaveAll" resource="SAVEALL" package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabTasks_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabTasks_Connect_Create_AssocEmail" resource="EMAILTOASSOC" package="DMS" license="DM"/>
+      <control id="TabTasks_Connect_Create_ClientEmail" resource="EMAILTOCLIENT" package="DMS" license="DM"/>
+
+
+      <control id="TabContacts_Connect" hide="false"/>
+      <control id="TabContacts_Connect_Connect"/>
+      <control id="TabContacts_Connect_CreateMenu" resource="CREATE"/>
+      <control id="TabContacts_Connect_Create_AssocLetter" resource="TOASSOC" package="DMS" />
+      <control id="TabContacts_Connect_Create_ClientLetter" resource="TOCLIENT" package="DMS" />
+      <control id="TabContacts_Connect_Create_Matter" resource="NEWFILE" package="CLMCONTLEGAL" />
+      <control id="TabContacts_Connect_Create_Time" resource="NEWTIME" license="TIMEREC" package="TIMERECORDING"/>
+      <control id="TabContacts_Connect_ViewMenu" resource="VIEW" />
+      <control id="TabContacts_Connect_View_Client" resource="CLIENTINFO" package="CLMCONTLEGAL"/>
+      <control id="TabContacts_Connect_View_Matter" resource="FILEINFO" package="CLMCONTLEGAL" />
+      <control id="TabContacts_Connect_View_Command" resource="COMMANDCENTRE" package="COMMANDCENTRE"/>
+      <control id="TabContacts_Connect_View_PrecedentLibrary" resource="PRECEDENTS" package="DMS" filter="*!Outlook" />
+      <control id="TabContacts_Connect_View_ContactManager" resource="CONTMANAGER" package="CLMCONTLEGAL" />
+      <control id="TabContacts_Connect_View_OpenDocument" resource="OPENDOC" package="DMS" license="DM" />
+      <control id="TabContacts_Connect_SaveButtonsMenu_Save" resource="SAVE" package="DMS" license="DM"/>
+      <control id="TabContacts_Connect_SaveButtonsMenu_SaveAndContinue" resource="DOCSAVE;CONT" package="DMS" license="DM" />
+      <control id="TabContacts_Connect_SaveButtonsMenu_SaveAsPrec" resource="SAVEASPREC" role="PRECEDIT" package="DMS" />
+      <control id="TabContacts_Connect_SaveButtonsMenu_Precedent"  resource="INSPRECEDENT"  package="DMS" license="DP"/>
+      <control id="TabContacts_Connect_SaveButtonMenu_ManualSave" resource="MANUALSAVE" package="DMS" license="DM"/>
+      <control id="TabContacts_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabContacts_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabContacts_Connect_SaveButtonsMenu_FileIt"  resource="FILEIT"  package="DMS"  license="DM"/>
+      <control id="TabContacts_Connect_SaveButtonsMenu_SaveAll" resource="SAVEALL" package="DMS" license="DM"/>
+      <control id="TabContacts_Connect_Create_AddTask" resource="ADDTASK" size="normal" package="TASKS" />
+      <control id="TabContacts_Connect_Create_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabContacts_Connect_Create_AssocEmail" resource="EMAILTOASSOC" package="DMS" license="DM" />
+      <control id="TabContacts_Connect_Create_ClientEmail" resource="EMAILTOCLIENT" package="DMS" license="DM" />
+
+
+      <control id="TabOMS" resource="OMS"/>
+      <control id="TabOMS_View" resource="OMSVIEW" />
+      <control id="TabOMS_View_CommandCentre" resource="COMMANDCENTRE" package="COMMANDCENTRE" />
+      <control id="TabOMS_View_Sep1" />
+      <control id="TabOMS_View_ContactManager" resource="CONTMANAGER" package="CLMCONTLEGAL" />
+      <control id="TabOMS_View_Sep2" />
+      <control id="TabOMS_View_ShowClient" resource="CLIENTINFO" package="CLMCONTLEGAL" />
+      <control id="TabOMS_View_ShowFile" resource="FILEINFO" package="CLMCONTLEGAL" />
+      <control id="TabOMS_View_Sep3" />
+      <control id="TabOMS_View_PrecedentLibrary_Split" resource="PRECHD" package="DMS" license="DP"/>
+      <control id="TabOMS_View_PrecedentLibrary_Menu" resource="PRECHD" package="DMS" license="DP"/>
+      <control id="TabOMS_View_PrecedentLibrary" resource="PRECEDENTS" package="DMS" license="DP"/>
+      <control id="TabOMS_View_PrecedentLibrary_Quick" resource="PRECEDENTSQ" package="DMS" license="DP"/>
+      <control id="TabOMS_View_JobList" resource="JOBLIST" package="DMS" license="DP" />
+      <control id="TabOMS_View_MilestoneInfo" resource="MILESTONE" package="MILESTONES"/>
+      <control id="TabOMS_View_UFNInformation" resource="UFNINFO" package="LEGALAIDCRIM"/>
+      <control id="TabOMS_Create" resource="CREATE" />
+      <control id="TabOMS_Create_New_Client" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_ClientMenu" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Client_Standard" resource="NEWCLIENT" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Client_PreClient" resource="NEWPRECLIDOC" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Client_PreClientCorporate" resource="NEWPRECORPCLI" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_File" resource="NEWFILE" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Contact" resource="NEWCONTACT" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Associate" resource="NEWASSOC" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_Sep1" />
+      <control id="TabOMS_Create_New_Time" resource="NEWTIME" license="TIMEREC" package="TIMERECORDING" />
+      <control id="TabOMS_Create_Sep2" />
+      <control id="TabOMS_Create_Letters" resource="LETTERS" package="DMS" />
+      <control id="TabOMS_Create_LettersMenu" resource="MEMOS" package="DMS" />
+      <control id="TabOMS_Create_Letters_ToClient" resource="TOCLIENT" package="DMS" />
+      <control id="TabOMS_Create_Letters_ToAssociate" resource="TOASSOC" package="DMS" />
+      <control id="TabOMS_Create_Letters_Sep1" package="DMS" />
+      <control id="TabOMS_Create_Letters_Picker" resource="ANOLETTHEAD" role="LETTHEADPICKER" package="LETTHEADPICK" />
+      <control id="TabOMS_Create_New_Fax" resource="NEWFAX" size="normal" package="FAX" />
+      <control id="TabOMS_Create_New_Memo" resource="NEWMEMO" size="normal" package="DMS" />
+      <control id="TabOMS_Create_New_Compliment" resource="NEWCOMPSLIP" size="normal" package="DMS" />
+      <control id="TabOMS_Create_Notes" resource="NOTES" size="normal" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_Notes_AttendanceNote" resource="ATTNOTE" package="BASEPREC"/>
+      <control id="TabOMS_Create_Notes_Meeting" resource="MEETING" package="DMS" />
+      <control id="TabOMS_Create_Notes_Sep1" package="DMS" />
+      <control id="TabOMS_Create_Notes_File" resource="FILE" package="DMS" />
+      <control id="TabOMS_Create_Notes_Sep2" package="DMS" />
+      <control id="TabOMS_Create_Notes_TelIn" resource="TELIN" package="DMS" />
+      <control id="TabOMS_Create_Notes_TelOut" resource="TELOUT" package="DMS" />
+      <control id="TabOMS_Create_FinancialDocs" resource="BILLGUIDE" package="DMS" size="normal" />
+      <control id="TabOMS_Create_FinancialDocs_Invoice" resource="INVOICING" package="BILLING" />
+      <control id="TabOMS_Create_Documents" resource="DOCUMENTS" size="normal" package="DMS" />
+      <control id="TabOMS_Create_Documents_Blank" resource="BLANKDOC" package="DMS" />
+      <control id="TabOMS_Create_Documents_Court" resource="COURTDOC" package="COURTDOC" />
+      <control id="TabOMS_Create_NewMenu" resource="NEWENTRY"/>
+      <control id="TabOMS_Create_NewEntry_Appointment" resource="APPOINTMENT" package="APPOINTMENTS" />
+      <control id="TabOMS_Create_NewEntry_Archive" resource="ARCHIVE" package="ARCHIVEDDOC" />
+      <control id="TabOMS_Create_NewEntry_Associate" resource="ASSOCIATE" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_NewEntry_Complaint" resource="COMPLAINT" package="COMPLAINTS" />
+      <control id="TabOMS_Create_NewEntry_DocReceipt" resource="DOCRECEIPT" package="DMS" />
+      <control id="TabOMS_Create_NewEntry_KeyDate" resource="DATEWIZARD" package="KEYDATES" />
+      <control id="TabOMS_Create_NewEntry_Note" resource="NOTE" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_NewEntry_SMS" resource="SMS" license="SMS" package="SMS" />
+      <control id="TabOMS_Create_NewEntry_Task" resource="TASK" package="TASKS" />
+      <control id="TabOMS_Create_NewEntry_Time" resource="TIMEENTRY" license="TIMEREC" package="TIMERECORDING" />
+      <control id="TabOMS_Create_NewEntry_Mail" resource="NEWENTRYMAIL" package="DMS" />
+
+      <control id="TabOMS_Tools" resource="TOOLS" />
+      <control id="TabOMS_Tools_UserSettings" resource="USERSETTINGS" />
+      <control id="TabOMS_Tools_ConflictSearch" resource="CONFLICTSEARCH" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Tools_SearchTools" resource="SEARCHTOOLS" role="ADMIN;ACCOUNTS" package="ADMINSEARCHES" />
+      
+      <control id="TabOMS_Tools_Reports" resource="REPORTS" role="REPORTS" package="RPTCLMCONTLEGAL" />
+      <control id="TabOMS_Tools_Reports_CoreReports" resource="COREREPORTS" package="RPTCLMCONTLEGAL" />
+      <control id="TabOMS_Tools_Reports_Time" resource="TIMEREPORT" package="RPTTIMERECORDIN" />
+      <control id="TabOMS_Tools_ExternalApps" resource="EXTERNALAPPS" />
+      <control id="TabOMSDocument" resource="OMSDOC" filter="NEW;SAVED" package="DMS" />
+      <control id="TabOMSDocument_Tools" resource="TOOLS" />
+      <control id="TabOMSDocument_Tools_SaveAsPrec" resource="SAVEASPREC" role="PRECEDIT" package="DMS" />
+      <control id="TabOMSDocument_Tools_SaveAndContinue" resource="DOCSAVE;CONT" package="DMS" />
+      <control id="TabOMSDocument_Tools_Sep1" />
+      <control id="TabOMSDocument_Tools_TemplateProps" resource="TEMPLATEPROP" package="DMS" />
+      <control id="TabOMSDocument_Tools_Sep2" />
+      <control id="TabOMSDocument_Tools_Email" resource="EMAILDOC" package="DMS" enabledFilter="DOC+SAVED"/>
+      <control id="TabOMSDocument_View" resource="VIEW" enabledFilter="ASSOCIATE" />
+      <control id="TabOMSDocument_View_Client" resource="CURCLINFO" size="normal" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_File" resource="CURFILEINFO" size="normal" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_Associate" resource="CURASSOCINFO" size="normal" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_Sep1" />
+      <control id="TabOMSDocument_View_DocProps" resource="DOCPROPS" package="DMS" />
+      <control id="TabOMSDocument_View_DocVars" resource="SHOWDOCVARS" package="DMS" />
+      <control id="TabOMSDocument_View_DocPropToggle" resource="" package="DMS" />
+      <control id="TabOMSDocument_Versioning" resource="VERSIONING"  package="DMS" enabledFilter="DOC+SAVED" />
+      <control id="TabOMSDocument_Versioning_CheckIn" resource="CHECKIN" package="DMS" />
+      <control id="TabOMSDocument_Versioning_CheckOut" resource="CHECKOUT" package="DMS" />
+      <control id="TabOMSDocument_Versioning_Undo" resource="UNDODOC" package="DMS" />
+      <control id="TabOMSDocument_Sep1" />
+      <control id="TabOMSDocument_Versioning_GetLatest" resource="DOCGETLATEST" package="DMS" />
+      <control id="TabOMSDocument_Versioning_Versions" resource="DOCVERSIONS" package="DMS" />
+      <control id="TabOMSDocument_Sep2" />
+      <control id="TabOMSDocument_Versioning_Compare" resource="COMPARE" package="DMS" filter="*Word" />
+      <control id="TabOMSDocument_Versioning_CompareMenu" resource="COMPARE" package="DMS" />
+      <control id="TabOMSDocument_Versioning_Compare_Latest" resource="COMPARELATEST" package="DMS" />
+      <control id="TabOMSDocument_Versioning_Compare_Version" resource="COMPAREVER" package="DMS" />
+      <control id="TabOMSDocument_Versioning_Compare_File" resource="COMPAREWITH" package="DMS" />
+      <control id="TabOMSDocument_Versioning_Compare_Client" resource="COMPAREWITHCL" package="DMS" />
+      <control id="TabOMSDocument_Versioning_Compare_Sep1" />
+      <control id="TabOMSDocument_Versioning_Compare_Recent" resource="COMPARERECENT" package="DMS" />
+      <control id="TabOMSDocument_Versioning_Compare_Any" resource="COMPAREANY" package="DMS" />
+      <control id="TabOMSDocument_Insert" resource="INSERT"/>
+      <control id="TabOMSDocument_Insert_Fields" resource="FIELDLOGO" package="DMS" />
+      <control id="TabOMSDocument_Insert_AddField" resource="ADDFIELD" package="DMS" />
+      <control id="TabOMSDocument_Insert_RemoveField" resource="DELETEFIELD" package="DMS" />
+      <control id="TabOMSDocument_Insert_RefreshFields" resource="REFRESHFIELDS" package="DMS" />
+      <control id="TabOMSDocument_Insert_RelinkFields" resource="RELINKFIELDS" package="DMS" />
+      <control id="TabOMSDocument_Insert_Sep1" />
+      <control id="TabOMSDocument_Insert_Precedent" resource="INSPRECEDENT"  package="DMS" />
+      <control id="TabOMSDocument_Insert_Sep2" />
+      <control id="TabOMSDocument_Insert_Sig" resource="SIGLOGO" package="DMS" filter="*Word" />
+      <control id="TabOMSDocument_Insert_SigMenu" resource="SIGLOGO" package="DMS" />
+      <control id="TabOMSDocument_Insert_AddSignature" resource="SIGNDOC" package="DMS" />
+      <control id="TabOMSDocument_Insert_AddFeeSig" resource="ADDFEESIGNATURE" package="DMS" />
+      <control id="TabOMSDocument_Insert_AddCompanySig" resource="ADDCOMSIGNATURE" package="DMS" />
+      <control id="TabOMSDocument_Insert_RemoveSignature" resource="REMOVESIG" package="DMS" />
+      <control id="TabOMSDocument_Insert_Sig_Sep1" />
+      <control id="TabOMSDocument_Insert_AddDraft" resource="DRAFTDOC" package="DMS" />
+      <control id="TabOMSDocument_Insert_RemoveDraft" resource="REMOVEDRAFT" package="DMS" />
+      <control id="TabOMSDocument_Insert_Sig_Sep2" />
+      <control id="TabOMSDocument_Insert_AddFileCopy" resource="FILECOPY" package="DMS" />
+      <control id="TabOMSDocument_Insert_RemoveFileCopy" resource="REMOVEFILECOPY" package="DMS" />
+      <control id="TabOMSDocument_Insert_Sig_Sep3" />
+      <control id="TabOMSDocument_Insert_AddSlogan" resource="ADDSLOGAN" package="DMS" />
+      <control id="TabOMSDocument_Insert_Styles" resource="STYLES" package="DMS" role="PRECEDIT"/>
+      <control id="TabOMSDocument_Insert_AddStop" resource="INSERTSTOP" package="DMS" role="PRECEDIT"/>
+      <control id="TabOMSDocument_Insert_AddParaStop" resource="INSERTPARASTOP" package="DMS" role="PRECEDIT"/>
+      <control id="TabOMSDocument_Insert_StripFormatting" resource="STRIPFORMATTING" package="DMS" role="PRECEDIT"/>
+
+      <control id="TabOMS_Tools_ExternalApps" resource="EXTERNALAPPS"/>
+      <control id="TabOMS_Tools_ExternalApps_Accounts" resource="ACCOUNTS" package="PARAGONACC"/>
+      <control id="TabOMS_Tools_ExternalApps_Intranet" resource="INTRANET"/>
+      <control id="TabOMS_Tools_ExternalApps_Microsoft" resource="MSWEBSITE"/>
+      <control id="TabOMS_Tools_ExternalApps_ExternalApp1" resource="EXTERNAL1"/>
+      <control id="TabOMS_Tools_ExternalApps_ExternalApp2" resource="EXTERNAL2"/>
+
+      <control id="TabOMS_AboutGroup" resource="ABOUT" />
+      <control id="TabOMS_SearchGroup" resource="SEARCH" condition="issearchconfigured"  />
+      <control id="TabOMS_AboutGroup_About" resource="ABOUT" />
+      <control id="TabOMS_SearchGroup_Search" resource="SEARCH" />
+    </controls>
+
+    <commands>
+      <command id="OMS;VIEWCURRENTCLIENT" enabledFilter="CLIENT" />
+      <command id="OMS;VIEWCURRENTFILE" enabledFilter="FILE" />
+      <command id="OMS;VIEWCURRENTASSOCIATE" enabledFilter="ASSOCIATE" />
+      <command id="ADDIN;INSERTPRECEDENT" enabledFilter="ASSOCIATE" />
+      <command id="ADDIN;ASSOCDOCSPANE" enabledFilter="ASSOCIATE" />
+      <command id="OMS;DOCPROPS" enabledFilter="DOC+SAVED" />
+      <command id="ADDIN;DOCPROPSPANE" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;IN" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;OUT" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;UNDO" enabledFilter="DOC+SAVED" />
+      <command id="OMS;GETLATESTVERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;OPEN;VERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;LATEST" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;VERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;CLIENT" enabledFilter="CLIENT" />
+      <command id="OMS;COMPARE;FILE" enabledFilter="FILE" />
+      <command id="OMS;STYLES" enabledFilter="*Word+PREC" />
+      <command id="OMS;STRIPFORMATTING" enabledFilter="*Word+PREC" />
+      <command id="OMS;INSERTSTOP" enabledFilter="*Word+PREC" />
+      <command id="OMS;INSERTPARASTOP" enabledFilter="*Word+PREC" />
+
+
+    </commands>
+  </rules>
+</oms>

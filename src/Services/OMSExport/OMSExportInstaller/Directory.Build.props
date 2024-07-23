@@ -1,0 +1,13 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ProductName>3E MatterSphere OMS Export Service</ProductName>
+    <ProductFamily>3E MatterSphere</ProductFamily>
+    <ShortProductName>OMS Export</ShortProductName>
+    <PublisherName>ELITE</PublisherName>
+    <ProductVersion>10.1.0</ProductVersion>
+    <UpgradeCode>536323B6-386B-4C82-8AD2-EE17A5A0ACCB</UpgradeCode>
+    <SourceDir></SourceDir>
+    <OutputName>3EMatterSphereOMSExportInstaller</OutputName>
+  </PropertyGroup>
+</Project>

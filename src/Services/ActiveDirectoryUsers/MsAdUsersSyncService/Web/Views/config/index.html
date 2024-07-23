@@ -1,0 +1,166 @@
+﻿@Master['MasterPage']
+
+@Section['Content']
+<div class="content__wrapper">
+    <h1>Edit Configuration</h1>
+
+    <form action="/config/update" method="POST">
+        <div class="form__group">
+            <div class="form__label"> ServiceTimerLength: </div>
+
+            <input class="textfield"
+                   type="number"
+                   name="ServiceTimerLength"
+                   value="@Model.Config.ServiceTimerLength"
+                   maxlength="9"
+                   min="0"
+                   max="864000000"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> LogToFileEnabled: </div>
+
+            <input class="textfield"
+                   type="text"
+                   name="LogToFileEnabled"
+                   value="@Model.Config.LogToFileEnabled"
+                   maxlength="5"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> LogAllToEventLog: </div>
+
+            <input class="textfield"
+                   type="text"
+                   name="LogAllToEventLog"
+                   value="@Model.Config.LogAllToEventLog"
+                   maxlength="5"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> MatterSphereServer: </div>
+
+            <input class="textfield"
+                   type="text"
+                   name="MatterSphereServer"
+                   value="@Model.Config.MatterSphereServer"
+                   maxlength="128"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> MatterSphereDatabase: </div>
+
+            <input class="textfield"
+                   type="text"
+                   name="MatterSphereDatabase"
+                   value="@Model.Config.MatterSphereDatabase"
+                   maxlength="128"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> MatterSphereLoginType: </div>
+
+            <input class="textfield"
+                   type="text"
+                   name="MatterSphereLoginType"
+                   value="@Model.Config.MatterSphereLoginType"
+                   maxlength="3"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> DoNotProcessStart1: </div>
+
+            <input class="textfield"
+                   type="time"
+                   name="DoNotProcessStart1"
+                   value="@Model.Config.DoNotProcessStart1"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> DoNotProcessEnd1: </div>
+
+            <input class="textfield"
+                   type="time"
+                   name="DoNotProcessEnd1"
+                   value="@Model.Config.DoNotProcessEnd1"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> DoNotProcessStart2: </div>
+
+            <input class="textfield"
+                   type="time"
+                   name="DoNotProcessStart2"
+                   value="@Model.Config.DoNotProcessStart2"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> DoNotProcessEnd2: </div>
+
+            <input class="textfield"
+                   type="time"
+                   name="DoNotProcessEnd2"
+                   value="@Model.Config.DoNotProcessEnd2"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> DoNotProcessEnabled: </div>
+
+            <input class="textfield"
+                   type="text"
+                   name="DoNotProcessEnabled"
+                   value="@Model.Config.DoNotProcessEnabled"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> NetbiosSourceUserName: </div>
+
+            <input class="textfield"
+                   type="text"
+                   name="NetbiosSourceUserName"
+                   value="@Model.Config.NetbiosSourceUserName"
+                   maxlength="48"
+                   required>
+        </div>
+
+        <div class="form__group">
+            <div class="form__label"> NetbiosTargetUserName: </div>
+
+            <input class="textfield"
+                   type="text"
+                   name="NetbiosTargetUserName"
+                   value="@Model.Config.NetbiosTargetUserName"
+                   maxlength="48"
+                   required>
+        </div>
+
+        <div>&nbsp;</div>
+        <input class="button button--elite" type="submit" value="Save" />
+
+        <div>&nbsp;</div>
+        @If.HasMessage;
+        <div class="alert alert--radius alert--green"> @Model.Message </div>
+        @EndIf;
+
+        @If.HasError;
+        <div class="alert alert--radius alert--red"> @Model.Error </div>
+        @EndIf;
+    </form>
+</div>
+
+@EndSection
+
+@Section['Other']
+
+@EndSection

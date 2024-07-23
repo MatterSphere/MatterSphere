@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SuperTip_TabOMSDocument_Insert_AttachBCC" xml:space="preserve">
+    <value>Attaches a chosen recipient to the blind carbon copy list of recipients.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AttachCC" xml:space="preserve">
+    <value>Attaches a chosen recipient to the carbon copy list of recipients.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AttachDoc" xml:space="preserve">
+    <value>Attaches another document within the system as an attachment to the current mail item.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_PrecedentLibrary" xml:space="preserve">
+    <value>Displays the %PRECEDENT% library.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Reply_Mail" xml:space="preserve">
+    <value>Replies to the current %ASSOCIATE% in the form of an email using the default mail %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Reply_ToAssociate" xml:space="preserve">
+    <value>Replies to the %ASSOCIATE% in the form of a letter using the default configured letterhead.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Reply_ToClient" xml:space="preserve">
+    <value>Replies to the %CLIENT% in the form of a letter using the default configured letterhead.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_Authorise" xml:space="preserve">
+    <value>Allows checking and authorisation of the attached document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_DetachVars" xml:space="preserve">
+    <value>Detaches the document variables from the current item.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_FileIt" xml:space="preserve">
+    <value>Files the current mail item under the correct local folder.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_Save" xml:space="preserve">
+    <value>Saves or resaves the current item under the attached %CLIENT% / %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_SaveAndSend" xml:space="preserve">
+    <value>Saves the current mail item and then sends it straight away afterwards.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_SaveAs" xml:space="preserve">
+    <value>Saves the current item against a different %CLIENT% / %FILE%.</value>
+  </data>
+  <data name="TabHome_Connect_Create_AddAppointment" xml:space="preserve">
+    <value>Appointment</value>
+  </data>
+  <data name="TabHome_Connect_Create_AddTask" xml:space="preserve">
+    <value>Task</value>
+  </data>
+  <data name="TabHome_Connect_Create_AssocEmail" xml:space="preserve">
+    <value>Email To %ASSOCIATE%</value>
+  </data>
+  <data name="TabHome_Connect_Create_AssocLetter" xml:space="preserve">
+    <value>Letter to %ASSOCIATE%</value>
+  </data>
+  <data name="TabHome_Connect_Create_ClientEmail" xml:space="preserve">
+    <value>Email To %CLIENT%</value>
+  </data>
+  <data name="TabHome_Connect_Create_ClientLetter" xml:space="preserve">
+    <value>Letter to %CLIENT%</value>
+  </data>
+  <data name="TabHome_Connect_SaveButtonMenu_ManualSave" xml:space="preserve">
+    <value>Manual Save</value>
+  </data>
+  <data name="TabHome_Connect_SaveButtonsMenu_FileIt" xml:space="preserve">
+    <value>File Email</value>
+  </data>
+  <data name="TabMail_Connect_View_OpenDocuments" xml:space="preserve">
+    <value>Open Document</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AttachBCC" xml:space="preserve">
+    <value>Add BCC Recipient</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AttachCC" xml:space="preserve">
+    <value>Add CC Recipient</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AttachDoc" xml:space="preserve">
+    <value>Attach Document</value>
+  </data>
+  <data name="TabOMSDocument_Insert_PrecedentLibrary" xml:space="preserve">
+    <value>%PRECEDENT% Library</value>
+  </data>
+  <data name="TabOMSDocument_Reply" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="TabOMSDocument_Reply_Mail" xml:space="preserve">
+    <value>Email to %ASSOCIATE%</value>
+  </data>
+  <data name="TabOMSDocument_Reply_ToAssociate" xml:space="preserve">
+    <value>Letter to %ASSOCIATE%</value>
+  </data>
+  <data name="TabOMSDocument_Reply_ToClient" xml:space="preserve">
+    <value>Letter to %CLIENT%</value>
+  </data>
+  <data name="TabOMSDocument_Tools_Authorise" xml:space="preserve">
+    <value>Check Document</value>
+  </data>
+  <data name="TabOMSDocument_Tools_ConfAuthorise" xml:space="preserve">
+    <value>Authorise</value>
+  </data>
+  <data name="TabOMSDocument_Tools_DetachVars" xml:space="preserve">
+    <value>Detach</value>
+  </data>
+  <data name="TabOMSDocument_Tools_FileIt" xml:space="preserve">
+    <value>File Email</value>
+  </data>
+  <data name="TabOMSDocument_Tools_RefAuthorise" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="TabOMSDocument_Tools_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TabOMSDocument_Tools_SaveAndSend" xml:space="preserve">
+    <value>Save and Send</value>
+  </data>
+  <data name="TabOMSDocument_Tools_SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="TabReadMessage_OMS_FileIt" xml:space="preserve">
+    <value>File Email</value>
+  </data>
+  <data name="WebViewHtmFileContent" xml:space="preserve">
+    <value>&lt;html&gt;
+  &lt;head&gt;
+    &lt;style type="text/css"&gt;body{overflow: hidden}&lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body rightmargin = '0' leftmargin ='0' topmargin ='0' bottommargin = '0'&gt;
+     &lt;object classid='clsid:B9C8117E-C13B-4ff5-BF75-03BE75EB7FE5' ID='FolderHomepageCtl' VIEWASTEXT width='100%' height='100%'/&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+</root>

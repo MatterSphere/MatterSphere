@@ -1,0 +1,191 @@
+﻿
+
+CREATE PROCEDURE [dbo].[srepClientTime]
+(
+	@UI uUICultureInfo = '{default}'
+	, @FILETYPE nvarchar(15) = NULL
+	, @DEPARTMENT nvarchar(15) = NULL
+	, @FUNDINGTYPE nvarchar(15) = NULL
+	, @FEEEARNER int = NULL
+	, @SOURCE nvarchar(15) = NULL
+	, @CLTYPE nvarchar(15) = NULL
+	, @WIP money = NULL
+	, @STARTDATE datetime = NULL
+	, @ENDDATE datetime = NULL
+)
+
+AS 
+
+DECLARE @SELECT nvarchar(1900)
+DECLARE @WHERE nvarchar(2000)
+DECLARE @ORDERBY nvarchar(100)
+
+--- SET THE SELECT STATEMENT
+SET @SELECT = N'
+SET NOCOUNT ON
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED 
+SELECT     
+	CL.clNo
+	, CL.clName
+	, F.fileNo 
+	, T.timeCharge 
+	, T.timeDesc
+FROM         
+	dbo.dbClient CL 
+INNER JOIN
+	dbo.dbFile F ON CL.clID = F.clID 
+INNER JOIN
+	dbo.dbTimeLedger T ON F.fileID = T.fileID '
+
+--- SET THE WHERE STATEMENT
+SET @WHERE = ''
+
+--- FILE TYPE CLAUSE
+IF(@FILETYPE IS NOT NULL)
+BEGIN
+	SET @WHERE = @WHERE + ' F.fileType = @FILETYPE '
+END
+
+--- DEPARTMENT CLAUSE
+IF(@DEPARTMENT IS NOT NULL)
+BEGIN
+	IF(@WHERE <> '')
+	BEGIN
+		SET @WHERE = @WHERE + ' AND F.fileDepartment = @DEPARTMENT '
+	END
+	ELSE
+	BEGIN
+		SET @WHERE = @WHERE + ' F.fileDepartment = @DEPARTMENT '
+	END
+END
+
+--- FUNDING TYPE CLAUSE
+IF(@FUNDINGTYPE IS NOT NULL)
+BEGIN
+	IF(@WHERE <> '')
+	BEGIN
+		SET @WHERE = @WHERE + ' AND F.fileFundCode = @FUNDINGTYPE '
+	END
+	ELSE
+	BEGIN
+		SET @WHERE = @WHERE + ' F.fileFundCode = @FUNDINGTYPE '
+	END
+END
+
+--- FEE EARNER CLAUSE
+IF(@FEEEARNER IS NOT NULL)
+BEGIN
+	IF(@WHERE <> '')
+	BEGIN
+		SET @WHERE = @WHERE + ' AND F.filePrincipleID = @FEEEARNER '
+	END
+	ELSE
+	BEGIN
+		SET @WHERE = @WHERE + ' F.filePrincipleID = @FEEEARNER '
+	END
+END
+
+--- CLIENT SOURCE CLAUSE
+IF(@SOURCE IS NOT NULL)
+BEGIN
+	IF(@WHERE <> '')
+	BEGIN
+		SET @WHERE = @WHERE + ' AND CL.clSource = @SOURCE '
+	END
+	ELSE
+	BEGIN
+		SET @WHERE = @WHERE + ' CL.clSource = @SOURCE '
+	END
+END
+
+--- CLIENT TYPE CLAUSE
+IF(@CLTYPE IS NOT NULL)
+BEGIN
+	IF(@WHERE <> '')
+	BEGIN
+		SET @WHERE = @WHERE + ' AND CL.clTypeCode = @CLTYPE '
+	END
+	ELSE
+	BEGIN
+		SET @WHERE = @WHERE + ' CL.clTypeCode = @CLTYPE '
+	END
+END
+
+--- WIP CLAUSE
+IF(@WIP IS NOT NULL)
+BEGIN
+	IF(@WHERE <> '')
+	BEGIN
+		SET @WHERE = @WHERE + ' AND T.timeCharge >= @WIP '
+	END
+	ELSE
+	BEGIN
+		SET @WHERE = @WHERE + ' T.timeCharge >= @WIP '
+	END
+END
+
+--- TIME CREATED START DATE AND END DATE
+IF(@STARTDATE IS NOT NULL)
+BEGIN
+	IF(@WHERE <> '')
+	BEGIN
+		SET @WHERE = @WHERE + ' AND (t.Created >= @STARTDATE AND t.Created < @ENDDATE) '
+	END
+	ELSE
+	BEGIN
+		SET @WHERE = @WHERE + ' (t.Created >= @STARTDATE AND t.Created < @ENDDATE) '
+	END
+END
+
+--- BUILD THE WHERE CLAUSE
+IF @WHERE <> ''
+BEGIN
+	SET @WHERE = N' WHERE ' + @WHERE
+END
+
+--- SET THE ORDER BY STATEMENT
+SET @ORDERBY = '
+ORDER BY
+	CL.clNo '
+
+DECLARE @SQL nvarchar(4000)
+--- ADD THE CLAUSES TOGETHER
+SET @SQL = Rtrim(@SELECT) + Rtrim(@WHERE) + Rtrim(@ORDERBY)
+
+-- DEBUG PRINT
+-- PRINT @SQL
+
+EXEC sp_executesql @SQL, 
+N'
+	@UI nvarchar(10)
+	, @FILETYPE nvarchar(15)
+	, @DEPARTMENT nvarchar(15)
+	, @FUNDINGTYPE nvarchar(15)
+	, @FEEEARNER int 
+	, @SOURCE nvarchar(15)
+	, @CLTYPE nvarchar(15)
+	, @WIP money
+	, @STARTDATE datetime
+	, @ENDDATE datetime '
+	, @UI
+	, @FILETYPE 
+	, @DEPARTMENT 
+	, @FUNDINGTYPE 
+	, @FEEEARNER 
+	, @SOURCE
+	, @CLTYPE 
+	, @WIP 
+	, @STARTDATE 
+	, @ENDDATE 
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[srepClientTime] TO [OMSRole]
+    AS [dbo];
+
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[srepClientTime] TO [OMSAdminRole]
+    AS [dbo];
+

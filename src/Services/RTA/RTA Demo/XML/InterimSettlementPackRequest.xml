@@ -1,0 +1,24 @@
+﻿<!--<InterimSettlementPackRequest>
+  <ClaimantRepresentative LitigantInPerson ="1" PaymentMoreRequested ="1">
+    <CompanyDetails CompanyName ="" ContactMiddleName ="" ContactName ="" ContactSurname ="" EmailAddress ="" PolicyNumber ="" ProviderAddress ="" ReferenceNumber ="" TelephoneNumber ="">
+      <Address AddressType ="P" City ="" Country ="" County ="" District ="" HouseName ="" HouseNumber ="" PostCode ="" Street1 ="" Street2 =""/>
+    </CompanyDetails>
+  </ClaimantRepresentative>
+  <MedicalReport NumberOfMedicalReport ="0"/>
+  <ClaimantLossesToDate Comments ="" EvidenceAttached ="1" GrossValueClaimed ="" LossType ="0" PercContribNegDeductions ="" PercInterestRate ="" ValueClaimedAfterContrib =""/>
+  <ClaimantRequestForInterimPayment DateOfRequest ="" PaymentDecision ="AC" ReasonsForInterimPaymentRequest ="" ValueOfInterimRequest =""/>
+</InterimSettlementPackRequest>-->
+
+<InterimSettlementPackRequest xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  <ClaimantRepresentative PaymentMoreRequested='1'>
+    <CompanyDetails ContactMiddleName='M' ContactName='Alan' ContactSurname='Greaves' EmailAddress='' ReferenceNumber='12345678' TelephoneNumber='01604 372828' />
+  </ClaimantRepresentative>
+  <MedicalReport  MedicalReportStage2_1='1' />
+  <InterimPayment>
+    <ClaimantRequestForInterimPayment ValueOfInterimRequest='1800' ReasonsForInterimPaymentRequest='Car Hire needed' />
+  </InterimPayment>
+  <ClaimantLosses>
+    <ClaimantLossesToDate LossType='2' EvidenceAttached='0' Comments='Test' GrossValueClaimed='2000' PercContribNegDeductions='100' />
+  </ClaimantLosses>
+  <StatementOfTruth RetainedSignedCopy='1' SignatoryType='S' />
+</InterimSettlementPackRequest>

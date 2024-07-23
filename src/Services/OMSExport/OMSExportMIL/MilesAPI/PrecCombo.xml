@@ -1,0 +1,540 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrecCombo
+</name>
+</assembly>
+<members>
+<member name="P:Miles33.Precedent.ComboBL.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Miles33.Precedent.ComboBL.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Miles33.Precedent.ComboBL.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboFESR">
+	<summary>
+ Fee earner solicitor responsible, Fe ID and then the reverse fee earner name
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboFEEA">
+	<summary>
+ Fee earner executive acting, Fe ID and then the reverse fee earner name
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboOrgUnit">
+	<summary>
+ Organisation units that have a work type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboCurrency">
+	<summary>
+ Currency code
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboNomOffice">
+	<summary>
+ Nominal accounts office
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboNomClient">
+	<summary>
+ Nominal accounts client
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboInterest">
+	<summary>
+ Client interest scheme.  Which bank account interest are they applying?
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboSOI">
+	<summary>
+ Source of introduction
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboMatterType">
+	<summary>
+ Matter types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboWorkType">
+	<summary>
+ Work types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboLAChgStructure">
+	<summary>
+ Legal aid charge structure
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboOrgType">
+	<summary>
+ Organisation Type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboAddressType">
+	<summary>
+ Address types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboCommunicationType">
+	<summary>
+ Communication types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboRespOrgUnit">
+	<summary>
+ Organisation units that are attached to work types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboFEClientPartner">
+	<summary>
+ Fee earner client partner
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboPropertyOwnerShipStatus">
+	<summary>
+ Property ownership status
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboMaritalStatus">
+	<summary>
+ Marital status (not held in the database)
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboFeeEarner">
+	<summary>
+ Fee earner.  Returns the fe_ID and the reverse fee earner name
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboIdentificationType">
+	<summary>
+ Identification type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboRate">
+	<summary>
+ Rate types (this selects only rates which are non contract rates)
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboFeeEarnerNum">
+	<summary>
+ Fee earner.  Returns the fe_num and the reverse fee earner name
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboSubjectAssociation">
+	<summary>
+ Subject association types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboMatterAssociation">
+	<summary>
+ Matter association types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboUserCustom">
+	<summary>
+ The entries are specified externally
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboIndustryClassification">
+	<summary>
+ Industry classification
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboWorkTypeRestricted">
+	<summary>
+ Work types restricted to a particular organisation unit.  Use Parameter1 to specifiy the organisation unit
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboSecurityUserName">
+	<summary>
+ Security user names
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboUserCustomSQL">
+	<summary>
+ The SQL to use is specified externally using the UserSQL property
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboSubjectGroup">
+	<summary>
+ Subject groups
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboBillEvent">
+	<summary>
+ Billable events (Time-recording)
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboExpenseType">
+	<summary>
+ Expense types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboDocumentFormat">
+	<summary>
+ Document formats
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboCountry">
+	<summary>
+ Country codes
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboVatType">
+	<summary>
+ VAT types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboAddressIDs">
+	<summary>
+ Address IDs
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboBillingStatusCode">
+	<summary>
+ Auditors rule set (ARS) billing status code
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboOrganisationUnit">
+	<summary>
+ Organisation units (no restrictions)
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboNominalAccountType">
+	<summary>
+ Nominal account types
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboNominalAccountPurpose">
+	<summary>
+ Nominal account purposes
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboNominalCategory">
+	<summary>
+ Nominal categories
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboGrade">
+	<summary>
+ Grade
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboResponsibilityType">
+	<summary>
+ Responsibility Type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboFeeEarnerTimeRecording">
+	<summary>
+ Fee earners who are setup for time recording
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboNominalAccount">
+	<summary>
+ Nominal account combo box
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.ComboBL.PrecCombo.ComboType.PFW2ComboNominalBudgetType">
+	<summary>
+ Nominal budget type 
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.ComboBL.PrecCombo.ComboType">
+	<summary>
+ The available combo types.  Each of these represents an underlying
+ Precedent data type.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.ComboBL.PrecCombo.Parameter1">
+	<summary>
+ Certain combo types can have an additional parameter for their lookup.
+ See ComboType for further information.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.ComboBL.PrecCombo.UserSQL">
+	<summary>
+ Combo Type PFW2ComboUserCustomSQL can specify it's own SQL.
+ The SQL it uses is specified by this property.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Use this option with care</remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.GetDescription(System.String,Miles33.Precedent.ComboBL.PrecCombo.ComboType)">
+	<summary>
+ Returns the description associated with a key.
+ This method does not require a combo box (data store) to be populated.
+ </summary>
+	<param name="valueKey">The look up data key</param>
+	<param name="cComboType">The type of data we are looking up</param>
+	<returns>The description</returns>
+	<remarks>An exception is raised if the key cannot be found</remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.QuickStartCombo(System.Object@,Miles33.Precedent.ComboBL.PrecCombo.ComboType)">
+	<summary>
+ Populates a combo box based upon the ComboType.  This method
+ is designed to be the quickest route to populating the data.
+ </summary>
+	<param name="cbo">The combobox object we want to populate</param>
+	<param name="cComboType">The type of data we are looking up</param>
+	<returns></returns>
+	<remarks></remarks>
+	<example></example>
+</member><member name="P:Miles33.Precedent.ComboBL.PrecCombo.DataType">
+	<summary>
+ The underlying data type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.GetSQL(System.Boolean,System.String)">
+	<summary>
+ Get the SQL associated with a particular combo type.
+ </summary>
+	<param name="bGetDescription"></param>
+	<param name="sValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.InitiateCombo">
+	<summary>
+ Populate the combo box based upon the combo type.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.PopulateDataOnly">
+	<summary>
+ Just populate the internal store of data.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.GetKey">
+	<summary>
+ Get the key based upon the setting in a combo box
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<example>Given a PrecCombo object named mcAddressType
+ Use the following to look up the underlying code:
+ mcAddressType.GetKey()</example>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.SetCombo(System.String)">
+	<summary>
+ Set a combo based upon a particular key.
+ </summary>
+	<param name="comboKey">The data key used to look up the data</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.Reset">
+	<summary>
+ Reset the data store and a combo box.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.ResetData">
+	<summary>
+ Just reset the internal data and NOT the combo box.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.PrecCombo.Clone(Miles33.Precedent.ComboBL.PrecCombo@)">
+	<summary>
+ Clone the current PrecCombo object
+ </summary>
+	<param name="Combo">The object that will contain the clone</param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.ComboBL.PrecCombo">
+	<summary>
+ A class to help facilitate Precedent data-based combo boxes.  
+ </summary>
+	<remarks>A class to help facilitate Precedent data-based combo boxes.  
+ It can also be used for any ad-hoc combo box.  This object
+ will support the following behaviour: (as long as the underlying 
+ control supports the behaviour)
+ Automatically populating a combo box based on a data type
+ Allowing the user to enter just a short-code
+ Looking up a value based upon the first few chars entered
+ Returning the underlying data code
+ Setting the initial value of a combo box</remarks>
+	<example><code>''Create an object to populate a combo box
+Private mcAddressType As PrecExtInt.clsCombo
+InitCombo (mcAddressType,cboAddressType,PrecExtInt.clsCombo.ComboType.PFW2ComboAddressType) 
+ ''Get a 'key' from the combo box
+mcAddressType.GetKey()
+ '' Set a combo box using a 'key'
+mcAddressType.SetCombo("HOME")
+ '' Validate a combo box (this populates the combo box if the user
+ '' has just entered the text or the first few chars of the description
+mcAccount.ValidateComboBox(cboAccount)
+ </code>
+	</example>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.Add(System.String@,System.String@,System.String@)">
+	<summary>
+ Add a new entry to the internal store
+ </summary>
+	<param name="DataType"></param>
+	<param name="DataDescription"></param>
+	<param name="sKey"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.ItemKey(System.Int32)">
+	<summary>
+ Returns a data type associated with an index
+ </summary>
+	<param name="Index"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.ComboBL.clsCombo.Item(System.Object)">
+	<summary>
+ Returns a clsData object associated with an index/key
+ </summary>
+	<param name="vntIndexKey"></param>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.ComboBL.clsCombo.Count">
+	<summary>
+ Returns a count of the number of items in the data store.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.ValidItem(System.String)">
+	<summary>
+ Validates a key.  See if a key already exists in our data store
+ </summary>
+	<param name="keyCode">key to validate</param>
+	<returns>TRUE - if the key exists in the data store.</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.ReturnDescription(System.Object@)">
+	<summary>
+ Returns the data description associated with a key/index
+ </summary>
+	<param name="vntIndexKey">The key/index to validate against</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.Remove(System.Int32@)">
+	<summary>
+ Removes a data object from the data store based upon it's index.
+ </summary>
+	<param name="Index"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.Remove(System.String@)">
+	<summary>
+ Removes a data object from the data store based upon it's key.
+ </summary>
+	<param name="Key"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.RemoveViaType(System.String)">
+	<summary>
+ Removes every entry in the data store where the entry is of a particular
+ data type.
+ </summary>
+	<param name="DataType"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.GetData(System.String)">
+	<summary>
+ Populate the data store based upon a SQL query.
+ </summary>
+	<param name="SQL"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.AddManualData(System.String,System.String)">
+	<summary>
+ Add data to the data store manually 
+ </summary>
+	<param name="sCode">The key and data code</param>
+	<param name="sValue">The description of the data.</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.PopulateComboBox(System.Object@)">
+	<summary>
+ Populates a combo box with data based upon the data store.
+ </summary>
+	<param name="cbo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.SetComboBox(System.Object@,System.String)">
+	<summary>
+ Set a combo box based upon the variable 'sKey'
+ </summary>
+	<param name="cbo"></param>
+	<param name="sKey"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.GetDataAndPopulateComboBox(System.String,System.Object@)">
+	<summary>
+ Given a SQL string, run it and populate a combo box with the data items.
+ </summary>
+	<param name="SQL"></param>
+	<param name="cbo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.ValidateComboBox(System.Object@)">
+	<summary>
+ Validate a combo box based upon it's cbo.text setting.
+ </summary>
+	<param name="cbo">The combobox</param>
+	<returns>TRUE - if a match was found, otherwise FALSE</returns>
+	<remarks>If an item has not been selected in the list try to match
+ the combobox text against the Precedent short codes, and then against
+ the first few letters of the description.
+</remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.GetCode(System.Object@,System.String@)">
+	<summary>
+ Get the code from the selected item in the combo box.
+ </summary>
+	<param name="cbo">The combo box used to look up the code</param>
+	<param name="sType">The code (returned string)</param>
+	<returns>TRUE if successful</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.Clone(Miles33.Precedent.ComboBL.clsCombo@)">
+	<summary>
+ Copy a data store
+ </summary>
+	<param name="Combo"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.GetDirectCode(System.Object@)">
+	<summary>
+ Get the data key based upon a combo box, if no item
+ is selected an empty string is returned.
+ </summary>
+	<param name="cbo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.clsCombo.GeneralComboCheck(System.Object@)">
+	<summary>
+ This check uses the initial letters entered into the combo box
+ </summary>
+	<param name="cboGeneral"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.ComboBL.clsCombo">
+	<summary>
+ A class to store clsData objects
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.ComboBL.clsData">
+	<summary>
+ A data item which is put inside PrecCombo
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.ComboBL.FESQL.FE_FULL_NAME_REVERSE">
+	<summary>
+ Return the system's fee earner reverse name SQL code.
+ This is based upon system configuration.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.ComboBL.FESQL">
+	<summary>
+ An object to control the order in which a fee earner reverse name is returned.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

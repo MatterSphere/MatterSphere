@@ -1,0 +1,47 @@
+﻿<Project Sdk="WixToolset.Sdk/4.0.5">
+  <PropertyGroup>
+    <OutputName>3E MatterSphere Framework %28$(Platform)%29</OutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>$(SolutionDir)bin\$(Configuration)\</OutputPath>
+    <Cultures>en-US</Cultures>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <DefineConstants>Debug;SourceDir=C:\OMSCoreAssemblies;bannerBmp=Bitmaps\bannrbmp.bmp;dialogBmp=Bitmaps\dlgbmp.bmp;exclamationIco=Bitmaps\exclamic.ico;infoIco=Bitmaps\info.ico;newIco=Bitmaps\new.ico;upIco=Bitmaps\up.ico;</DefineConstants>
+    <SuppressIces>ICE61;ICE80</SuppressIces>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>$(SolutionDir)bin\$(Configuration)\</OutputPath>
+    <Cultures>en-US</Cultures>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <DefineConstants>SourceDir=C:\OMSCoreAssemblies;bannerBmp=Bitmaps\bannrbmp.bmp;dialogBmp=Bitmaps\dlgbmp.bmp;exclamationIco=Bitmaps\exclamic.ico;infoIco=Bitmaps\info.ico;newIco=Bitmaps\new.ico;upIco=Bitmaps\up.ico;</DefineConstants>
+    <SuppressIces>ICE61;ICE80</SuppressIces>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <OutputPath>$(SolutionDir)bin\$(Configuration)\</OutputPath>
+    <Cultures>en-US</Cultures>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <DefineConstants>Debug;SourceDir=C:\OMSCoreAssemblies;bannerBmp=Bitmaps\bannrbmp.bmp;dialogBmp=Bitmaps\dlgbmp.bmp;exclamationIco=Bitmaps\exclamic.ico;infoIco=Bitmaps\info.ico;newIco=Bitmaps\new.ico;upIco=Bitmaps\up.ico;</DefineConstants>
+    <SuppressIces>ICE61</SuppressIces>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>$(SolutionDir)bin\$(Configuration)\</OutputPath>
+    <Cultures>en-US</Cultures>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <DefineConstants>SourceDir=C:\OMSCoreAssemblies;bannerBmp=Bitmaps\bannrbmp.bmp;dialogBmp=Bitmaps\dlgbmp.bmp;exclamationIco=Bitmaps\exclamic.ico;infoIco=Bitmaps\info.ico;newIco=Bitmaps\new.ico;upIco=Bitmaps\up.ico;</DefineConstants>
+    <SuppressIces>ICE61</SuppressIces>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="WiX_UI\" />
+    <Folder Include="WiX_UI\Dialogs" />
+    <Folder Include="WiX_UI\Text" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Util.wixext" Version="4.0.5" />
+    <PackageReference Include="WixToolset.NetFx.wixext" Version="4.0.5" />
+    <PackageReference Include="WixToolset.Iis.wixext" Version="4.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RegistrySearch.wxi" />
+    <None Include="VBScriptCA.vbs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,30 @@
+﻿<Application x:Class="Horizon.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Horizon"
+             StartupUri="MainWindow.xaml" Exit="Application_Exit"
+             DispatcherUnhandledException="Application_DispatcherUnhandledException">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Overrides.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="EliteBrightPurple" Color="#5F01C6" />
+            <SolidColorBrush x:Key="EliteLightLavender" Color="#FAF7FF" />
+            <SolidColorBrush x:Key="EliteDarkPurple" Color="#25114C" />
+            
+            <SolidColorBrush x:Key="EliteDarkGray" Color="#1D2939" />
+            <SolidColorBrush x:Key="EliteMediumGray" Color="#98A2B3" />
+            <SolidColorBrush x:Key="EliteLightGray" Color="#EAECF0" />
+            <SolidColorBrush x:Key="EliteMutedGray" Color="#F2F4F7" />
+            
+            <SolidColorBrush x:Key="EliteLightRed" Color="#F04438" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

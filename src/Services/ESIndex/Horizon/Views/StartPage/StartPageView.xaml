@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Horizon.Views.StartPage.StartPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Horizon.Views.StartPage"
+             xmlns:startPage="clr-namespace:Horizon.ViewModels.StartPage"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=startPage:StartPageViewModel}"
+             d:DesignHeight="300"
+             d:DesignWidth="450">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <WrapPanel
+            Margin="10"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+                <local:DetailsItemView DataContext="{Binding DocumentDetails}" />
+                <local:DetailsItemView DataContext="{Binding PrecedentDetails}" />
+                <local:DetailsItemView DataContext="{Binding BlacklistDetails}" />
+                <local:DetailsItemView DataContext="{Binding IndexingDetails}" />
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{753E3A04-17F0-4EF5-B834-58E1B9E05564}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FWBS.OMS.Workflow</RootNamespace>
+    <AssemblyName>FWBS.OMS.Workflow</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.290.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.290.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL" />
+    <Reference Include="Elite.Workflow.Framework.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Elite.Workflow.Framework.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Elite.Workflow.Framework.Client.Administrator">
+      <HintPath>..\..\..\References\Elite.Workflow.Framework.Client.Administrator.dll</HintPath>
+    </Reference>
+    <Reference Include="Elite.Workflow.Framework.Client.ExecutionEngine">
+      <HintPath>..\..\..\References\Elite.Workflow.Framework.Client.ExecutionEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Elite.Workflow.Framework.Client.WorkflowToken">
+      <HintPath>..\..\..\References\Elite.Workflow.Framework.Client.WorkflowToken.dll</HintPath>
+    </Reference>
+    <Reference Include="FWBS.Common">
+      <HintPath>C:\OMSCoreAssemblies\FWBS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="FWBS.Common.UI">
+      <HintPath>C:\OMSCoreAssemblies\FWBS.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Fwbs.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Fwbs.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="FWBS.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <HintPath>C:\OMSCoreAssemblies\FWBS.Logging.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Fwbs.Oms.ResourceLookup">
+      <HintPath>C:\OMSCoreAssemblies\Fwbs.Oms.ResourceLookup.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Data">
+      <HintPath>C:\OMSCoreAssemblies\OMS.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Library">
+      <HintPath>C:\OMSCoreAssemblies\OMS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.UI">
+      <HintPath>C:\OMSCoreAssemblies\OMS.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Core.Presentation" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Windows.Controls, Version=2018.2.515.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2018.2.515.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2018.2.515.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2018.2.515.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2018.2.515.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2018.2.515.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2018.2.515.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Workflow\FWBS.WF.OMS.ActivityLibrary\MCImageListConverter.cs">
+      <Link>MCImageListConverter.cs</Link>
+    </Compile>
+    <Compile Include="Addins\Addin.cs" />
+    <Compile Include="Admin\ContextItemWorkflow.cs" />
+    <Compile Include="Admin\DistributedAssembliesWindow.xaml.cs">
+      <DependentUpon>DistributedAssembliesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PropertyGridUserControl.xaml.cs">
+      <DependentUpon>PropertyGridUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpressionEditor\ExpressionEditorInstance.cs" />
+    <Compile Include="ExpressionEditor\ExpressionEditorInstanceControl.xaml.cs">
+      <DependentUpon>ExpressionEditorInstanceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpressionEditor\ExpressionEditorService.cs" />
+    <Compile Include="Admin\LoadVSIcons.cs" />
+    <Compile Include="Admin\CodeDescriptionWindow.xaml.cs">
+      <DependentUpon>CodeDescriptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Observable.cs" />
+    <Compile Include="Admin\PropertyGridData.cs" />
+    <Compile Include="Admin\ReferencesWindow.xaml.cs">
+      <DependentUpon>ReferencesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ScriptsWindow.xaml.cs">
+      <DependentUpon>ScriptsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ToolboxItemConverter.cs" />
+    <Compile Include="Admin\ToolTipConverter.cs" />
+    <Compile Include="Admin\TrackingParticipant.cs" />
+    <Compile Include="Admin\WFControl.xaml.cs">
+      <DependentUpon>WFControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WindowsFormsWFControl.cs" />
+    <Compile Include="Admin\WorkflowDesignActivity.cs" />
+    <Compile Include="Admin\WorkflowDesignActivityDesigner.xaml.cs">
+      <DependentUpon>WorkflowDesignActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WorkflowEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\WorkflowEditControl.Designer.cs">
+      <DependentUpon>WorkflowEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WorkflowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\WorkflowForm.Designer.cs">
+      <DependentUpon>WorkflowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\CoreAssemblyInfo</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RuntimeEngine\TrackingExtension.cs" />
+    <Compile Include="RuntimeEngine\WFRuntime.cs" />
+    <Compile Include="SortedObservableCollection.cs" />
+    <Compile Include="SplashWindow.xaml.cs">
+      <DependentUpon>SplashWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Admin\SynchonisationWindow.xaml.cs">
+      <DependentUpon>SynchonisationWindow.xaml</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin\WorkflowEditControl.resx">
+      <DependentUpon>WorkflowEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\WorkflowForm.resx">
+      <DependentUpon>WorkflowForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Admin\CodeDescriptionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Admin\DistributedAssembliesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Admin\PropertyGridUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\ReferencesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Admin\ScriptsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Admin\WFControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Admin\WorkflowDesignActivityDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpressionEditor\ExpressionEditorInstanceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplashWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\SynchonisationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Save.png" />
+    <Resource Include="Images\Play.png" />
+    <Resource Include="Images\Stop.png" />
+    <Resource Include="Images\Clear.png" />
+    <Resource Include="Images\Import.png" />
+    <Resource Include="Images\Export.png" />
+    <Resource Include="Images\Print.png" />
+    <Resource Include="Images\Find.png" />
+    <Resource Include="Images\Redo.png" />
+    <Resource Include="Images\Undo.png" />
+    <Resource Include="Images\Decrease_Indent.png" />
+    <Resource Include="Images\Increase_Indent.png" />
+    <Resource Include="Images\Print_Preview.png" />
+    <Resource Include="Images\Copy.png" />
+    <Resource Include="Images\Cut.png" />
+    <Resource Include="Images\Paste.png" />
+    <EmbeddedResource Include="Images\PasteSmartTag.png" />
+    <Resource Include="Images\UserConfigure.png" />
+    <Resource Include="Images\Delete.png" />
+    <Resource Include="Images\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FWBS.OMS.WFRuntime.Context\FWBS.OMS.WFRuntime.Context.csproj">
+      <Project>{FE78AA75-4CE6-44AE-A337-F886E060A077}</Project>
+      <Name>FWBS.OMS.WFRuntime.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FWBS.WF.ActivityLibrary\FWBS.WF.ActivityLibrary.csproj">
+      <Project>{46a5c416-9a05-4b78-a9e3-1900c6397f0c}</Project>
+      <Name>FWBS.WF.ActivityLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"
+copy /y "$(TargetDir)Telerik.Windows*" "C:\OMSCoreAssemblies\"
+copy /y "$(TargetDir)Elite.Workflow.Framework.Client*" "C:\OMSCoreAssemblies\"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

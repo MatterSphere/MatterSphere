@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B68F0EC0-0556-498A-A064-9C385B73D0BA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Horizon</RootNamespace>
+    <AssemblyName>Horizon</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.3.2\lib\net47\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.15.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.15.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="..\..\ServicesAssemblyInfo.cs">
+      <Link>Properties\ServicesAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\MSProductInfo.cs">
+      <Link>Properties\MSProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="Common\BindingProxy.cs" />
+    <Compile Include="Common\EnumBooleanConverter.cs" />
+    <Compile Include="Common\ExceptionConverter.cs" />
+    <Compile Include="Common\IMarkerControl.cs" />
+    <Compile Include="Common\LongToStringConverter.cs" />
+    <Compile Include="Common\InverseBooleanConverter.cs" />
+    <Compile Include="Common\LongExtensions.cs" />
+    <Compile Include="Common\NotVisibilityConverter.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\Settings.cs" />
+    <Compile Include="Common\TimeSpanExtensions.cs" />
+    <Compile Include="Common\VisibilityConverter.cs" />
+    <Compile Include="Models\IndexProcess\ExtensionItem.cs" />
+    <Compile Include="Models\IndexReports\DocumentError.cs" />
+    <Compile Include="Models\IndexReports\DocumentErrorBucket.cs" />
+    <Compile Include="Models\ReportProvider\ReportItem.cs" />
+    <Compile Include="Providers\ElasticsearchProvider.cs" />
+    <Compile Include="Providers\ErrorMessageProvider.cs" />
+    <Compile Include="Providers\ReportProvider.cs" />
+    <Compile Include="ViewModels\Common\ErrorViewModel.cs" />
+    <Compile Include="ViewModels\ProcessingStatus\DocumentsViewModel.cs" />
+    <Compile Include="ViewModels\ProcessingStatus\DocumentTypesViewModel.cs" />
+    <Compile Include="Models\ProcessingStatus\DocumentTypeModel.cs" />
+    <Compile Include="Models\ProcessingStatus\DocumentModel.cs" />
+    <Compile Include="Models\ProcessingStatus\ErrorCodeModel.cs" />
+    <Compile Include="ViewModels\ProcessingStatus\ErrorCodesViewModel.cs" />
+    <Compile Include="ViewModels\IndexReports\EntityProcessItemViewModel.cs" />
+    <Compile Include="Models\IndexReports\IFilterInfo.cs" />
+    <Compile Include="ViewModels\Settings\FacetableFieldViewModel.cs" />
+    <Compile Include="ViewModels\Settings\FacetOrderViewModel.cs" />
+    <Compile Include="ViewModels\Settings\IndexEntityEditViewModel.cs" />
+    <Compile Include="ViewModels\Settings\IndexEntityViewModel.cs" />
+    <Compile Include="Models\Settings\IndexField.cs" />
+    <Compile Include="Models\StartPage\StartPageInfoItem.cs" />
+    <Compile Include="Models\StartPage\StartPageInfoTypeEnum.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Providers\BREData.cs" />
+    <Compile Include="Providers\BusinessRulesEngineProvider.cs" />
+    <Compile Include="Providers\CustomTestProvider.cs" />
+    <Compile Include="ViewModels\Common\BaseFormViewModel.cs" />
+    <Compile Include="ViewModels\Common\PageControlViewModel.cs" />
+    <Compile Include="ViewModels\Common\PageViewModel.cs" />
+    <Compile Include="ViewModels\Common\StatusBarViewModel.cs" />
+    <Compile Include="ViewModels\IFilters\DocumentItemViewModel.cs" />
+    <Compile Include="ViewModels\IFilters\IFilterListItemViewModel.cs" />
+    <Compile Include="ViewModels\IFilters\IFilterListViewModel.cs" />
+    <Compile Include="ViewModels\IFilters\PredefinedTestResultItemViewModel.cs" />
+    <Compile Include="ViewModels\IFilters\PredefinedTestViewModel.cs" />
+    <Compile Include="ViewModels\IFilters\UserDocumentTestResultItemViewModel.cs" />
+    <Compile Include="ViewModels\IFilters\UserDocumentTestViewModel.cs" />
+    <Compile Include="ViewModels\IndexProcess\BlacklistItemFromViewModel.cs" />
+    <Compile Include="ViewModels\IndexProcess\BlacklistItemViewModel.cs" />
+    <Compile Include="ViewModels\IndexProcess\BlacklistViewModel.cs" />
+    <Compile Include="ViewModels\IndexProcess\ReindexDocumentsViewModel.cs" />
+    <Compile Include="ViewModels\IndexReports\DocumentBucketViewModel.cs" />
+    <Compile Include="ViewModels\IndexReports\DocumentErrorBucketsViewModel.cs" />
+    <Compile Include="ViewModels\IndexReports\DocumentErrorsViewModel.cs" />
+    <Compile Include="ViewModels\IndexReports\DocumentsDataViewModel.cs" />
+    <Compile Include="ViewModels\IndexReports\IndexStatusViewModel.cs" />
+    <Compile Include="ViewModels\ProcessingStatus\ProcessHistoryItemViewModel.cs" />
+    <Compile Include="ViewModels\ProcessingStatus\ProcessHistoryViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\Settings\AboutViewModel.cs" />
+    <Compile Include="ViewModels\Settings\IndexFieldFormEditViewModel.cs" />
+    <Compile Include="ViewModels\Settings\IndexFieldFormViewModel.cs" />
+    <Compile Include="ViewModels\Settings\IndexSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\IndexStructureViewModel.cs" />
+    <Compile Include="ViewModels\StartPage\DocumentDetailsViewModel.cs" />
+    <Compile Include="ViewModels\StartPage\StartPageItemViewModel.cs" />
+    <Compile Include="ViewModels\StartPage\StartPageViewModel.cs" />
+    <Compile Include="Views\Common\PageControl.xaml.cs">
+      <DependentUpon>PageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IFilters\IFilterListView.xaml.cs">
+      <DependentUpon>IFilterListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IFilters\PredefinedTestView.xaml.cs">
+      <DependentUpon>PredefinedTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IFilters\UserDocumentTestView.xaml.cs">
+      <DependentUpon>UserDocumentTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexProcess\BlacklistView.xaml.cs">
+      <DependentUpon>BlacklistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexProcess\ReindexDocumentsView.xaml.cs">
+      <DependentUpon>ReindexDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexReports\DocumentErrorBucketsView.xaml.cs">
+      <DependentUpon>DocumentErrorBucketsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessingStatus\DocumentsView.xaml.cs">
+      <DependentUpon>DocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessingStatus\ErrorCodesView.xaml.cs">
+      <DependentUpon>ErrorCodesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexReports\DocumentErrorsView.xaml.cs">
+      <DependentUpon>DocumentErrorsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexReports\DocumentsDataView.xaml.cs">
+      <DependentUpon>DocumentsDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessingStatus\DocumentTypesView.xaml.cs">
+      <DependentUpon>DocumentTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexReports\IndexStatusView.xaml.cs">
+      <DependentUpon>IndexStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessingStatus\ProcessingStatusView.xaml.cs">
+      <DependentUpon>ProcessingStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\ErrorView.xaml.cs">
+      <DependentUpon>ErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\FacetOrderView.xaml.cs">
+      <DependentUpon>FacetOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\IndexEntityFormEditView.xaml.cs">
+      <DependentUpon>IndexEntityFormEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\IndexFieldFormEditView.xaml.cs">
+      <DependentUpon>IndexFieldFormEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\IndexFieldFormView.xaml.cs">
+      <DependentUpon>IndexFieldFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\IndexSettingsView.xaml.cs">
+      <DependentUpon>IndexSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\IndexStructureView.xaml.cs">
+      <DependentUpon>IndexStructureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartPage\DetailsItemView.xaml.cs">
+      <DependentUpon>DetailsItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartPage\StartPageView.xaml.cs">
+      <DependentUpon>StartPageView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\Common\PageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IFilters\IFilterListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IFilters\PredefinedTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IFilters\UserDocumentTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IndexProcess\BlacklistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IndexProcess\ReindexDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IndexReports\DocumentErrorBucketsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessingStatus\DocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessingStatus\ErrorCodesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IndexReports\DocumentErrorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IndexReports\DocumentsDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessingStatus\DocumentTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IndexReports\IndexStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessingStatus\ProcessingStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\ErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\FacetOrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\IndexEntityFormEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\IndexFieldFormEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Settings\IndexFieldFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\IndexSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\IndexStructureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartPage\DetailsItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartPage\StartPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Page Include="MaterialDesignThemes.Overrides.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Horizon.Common\Horizon.Common.csproj">
+      <Project>{721C2A4C-785A-4A2F-8974-19E02C59053F}</Project>
+      <Name>Horizon.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Horizon.DAL\Horizon.DAL.csproj">
+      <Project>{926b62df-c391-4aaa-98f3-b0ded869f39e}</Project>
+      <Name>Horizon.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Horizon.TestiFilter\Horizon.TestiFilter.csproj">
+      <Project>{4619c086-692c-47a8-a735-8ae8bb323531}</Project>
+      <Name>Horizon.TestiFilter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,4 @@
+﻿CREATE TYPE search.ESUGPD AS TABLE
+(
+	InsertedID BIGINT PRIMARY KEY
+)

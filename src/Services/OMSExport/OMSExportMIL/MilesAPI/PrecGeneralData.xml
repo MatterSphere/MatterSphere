@@ -1,0 +1,90 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrecGeneralData
+</name>
+</assembly>
+<members>
+<member name="T:Miles33.Precedent.DataValidation.BillingCache">
+	<summary>
+ Object to cache additional data for the lifetime of a single bill
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.DataValidation.NominalAccountParameterCache">
+	<summary>
+ Data cache for nominal account parameters
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.PFW2Options">
+	<summary>
+ PFW2 Options.  Various Precedent settings as controlled via a column
+ in the leo_user_parameters table.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Miles33.Precedent.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Miles33.Precedent.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:Miles33.Precedent.DatabaseFormatting.ConvertBooleanToYN(System.Boolean)">
+	<summary>
+ Given a boolean value return either "Y" or "N"
+ </summary>
+	<param name="inBoolean"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.PrecedentConstraints">
+	<summary>
+ Precedent related constants
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.SubjectValidate.ValidateNonDeletedSubject(System.Int32)">
+	<summary>
+ Validate whether a sub num is a non-deleted subject
+ </summary>
+	<param name="testingSubNum"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.FeeEarnerUsers.FeNumInFEUs(System.Int32)">
+	<summary>
+ Given a fe num to test, see if it is the fee earner user list for
+ our currently logged in person.
+ </summary>
+	<param name="testFeNum"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.DataState.DataCanChange">
+	<summary>
+ Can we flag the date as having been changed?
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.DataState.DataChanged">
+	<summary>
+ Flag the data as having been changed
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.DataState.HasDataChanged">
+	<summary>
+ Has the charge been altered?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.DataState.NewRow">
+	<summary>
+ Is the DataState referring to a new row?
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

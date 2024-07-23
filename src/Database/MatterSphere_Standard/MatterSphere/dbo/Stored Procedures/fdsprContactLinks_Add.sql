@@ -1,0 +1,76 @@
+﻿
+
+CREATE PROCEDURE [dbo].[fdsprContactLinks_Add]
+(	@PARENTCONTID AS bigint,
+	@SECCONTID AS bigint,
+	@CONTLINKCODE AS NVarChar(15),
+	@CONTLINKCODE2 AS NVarChar(15),
+	@CREATED AS DateTime,
+	@CREATEDBY AS int
+)	
+AS
+
+BEGIN
+
+	DECLARE @X AS bigint
+	SET @X = (SELECT COUNT(*) FROM dbContactLinks WHERE CONTID = @SECCONTID AND CONTLINKID = @PARENTCONTID)
+	PRINT @X
+
+	-- Only run if both Contact IDs have values
+	IF (@PARENTCONTID IS NOT NULL AND @SECCONTID IS NOT NULL)
+	BEGIN
+		IF @X = 0
+		BEGIN
+			-- First Link (i.e A is related to B as subsidiary)
+			INSERT INTO dbContactLinks (CONTID, CONTLINKCODE, CONTLINKID, CREATED, CREATEDBY)
+			VALUES (@PARENTCONTID, @CONTLINKCODE, @SECCONTID, @CREATED, @CREATEDBY)
+			-- If this is a Master Link, we would stop here (i.e A = B)	
+			IF (@PARENTCONTID != @SECCONTID)
+			BEGIN
+				-- Second Link (i.e B is related to A as parent)
+				INSERT INTO dbContactLinks (CONTID, CONTLINKCODE, CONTLINKID, CREATED, CREATEDBY)
+				VALUES (@SECCONTID, @CONTLINKCODE2, @PARENTCONTID, @CREATED, @CREATEDBY)
+			END
+			PRINT 'ADD'
+		END
+		ELSE
+		BEGIN
+			UPDATE dbContactLinks 
+			SET 
+				CONTLINKCODE = @CONTLINKCODE
+				,CREATED = @CREATED
+				,CREATEDBY = @CREATEDBY
+			WHERE
+				CONTID = @PARENTCONTID
+				AND CONTLINKID = @SECCONTID 
+			UPDATE dbContactLinks 
+			SET 
+				CONTLINKCODE = @CONTLINKCODE2
+				,CREATED = @CREATED
+				,CREATEDBY = @CREATEDBY
+			WHERE
+				CONTID = @SECCONTID
+				AND CONTLINKID = @PARENTCONTID 
+			PRINT 'EDIT'
+		END
+	END
+
+	-- Required for Datalist
+	SELECT 0,0
+END
+
+
+
+SET ANSI_NULLS ON
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[fdsprContactLinks_Add] TO [OMSRole]
+    AS [dbo];
+
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[fdsprContactLinks_Add] TO [OMSAdminRole]
+    AS [dbo];
+

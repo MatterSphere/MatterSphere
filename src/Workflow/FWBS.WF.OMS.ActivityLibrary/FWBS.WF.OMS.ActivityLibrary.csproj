@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{249951D1-728F-4D05-9028-3AD705244643}</ProjectGuid>
+    <ProjectTypeGuids>{32f31d43-81cc-4c15-9de6-3fc5453562b6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FWBS.WF.OMS.ActivityLibrary</RootNamespace>
+    <AssemblyName>FWBS.WF.OMS.ActivityLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FWBS.Common">
+      <HintPath>C:\OMSCoreAssemblies\FWBS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="FWBS.WF.ActivityLibrary, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\FWBS.WF.ActivityLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Data">
+      <HintPath>C:\OMSCoreAssemblies\OMS.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Library">
+      <HintPath>C:\OMSCoreAssemblies\OMS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.UI">
+      <HintPath>C:\OMSCoreAssemblies\OMS.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\ExpressionStringConverter.cs" />
+    <Compile Include="CreateCorporatePreClient\CreateCorporatePreClient.cs" />
+    <Compile Include="CreateCorporatePreClient\CreateCorporatePreClientDesigner.xaml.cs">
+      <DependentUpon>CreateCorporatePreClientDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateDefaultPrecedentJob\CreateDefaultPrecedentJob.cs" />
+    <Compile Include="CreateDefaultPrecedentJob\CreateDefaultPrecedentJobDesigner.xaml.cs">
+      <DependentUpon>CreateDefaultPrecedentJobDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateKeyDate\CreateKeyDate.cs" />
+    <Compile Include="CreateKeyDate\CreateKeyDateDesigner.xaml.cs">
+      <DependentUpon>CreateKeyDateDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePreClient\CreatePreClient.cs" />
+    <Compile Include="CreatePreClient\CreatePreClientDesigner.xaml.cs">
+      <DependentUpon>CreatePreClientDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTask\CreateTask.cs" />
+    <Compile Include="CreateTask\CreateTaskDesigner.xaml.cs">
+      <DependentUpon>CreateTaskDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTimeRecord\CreateTimeRecord.cs" />
+    <Compile Include="CreateTimeRecord\CreateTimeRecordDesigner.xaml.cs">
+      <DependentUpon>CreateTimeRecordDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser\CreateUser.cs" />
+    <Compile Include="CreateUser\CreateUserDesigner.xaml.cs">
+      <DependentUpon>CreateUserDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="FileReview\FileReview.cs" />
+    <Compile Include="FileReview\FileReviewDesigner.xaml.cs">
+      <DependentUpon>FileReviewDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindAddress\FindAddress.cs" />
+    <Compile Include="FindAddress\FindAddressDesigner.xaml.cs">
+      <DependentUpon>FindAddressDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindClient\FindClient.cs" />
+    <Compile Include="FindClient\FindClientDesigner.xaml.cs">
+      <DependentUpon>FindClientDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindContact\FindContact.cs" />
+    <Compile Include="FindContact\FindContactDesigner.xaml.cs">
+      <DependentUpon>FindContactDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindFile\FindFile.cs" />
+    <Compile Include="FindFile\FindFileDesigner.xaml.cs">
+      <DependentUpon>FindFileDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindPrecedent\FindPrecedent.cs" />
+    <Compile Include="FindPrecedent\FindPrecedentDesigner.xaml.cs">
+      <DependentUpon>FindPrecedentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ExpandStateConverter.cs" />
+    <Compile Include="CreateAppointment\CreateAppointment.cs" />
+    <Compile Include="CreateAppointment\CreateAppointmentDesigner.xaml.cs">
+      <DependentUpon>CreateAppointmentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAssociate\CreateAssociate.cs" />
+    <Compile Include="CreateAssociate\CreateAssociateDesigner.xaml.cs">
+      <DependentUpon>CreateAssociateDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateClient\CreateClient.cs" />
+    <Compile Include="CreateClient\CreateClientDesigner.xaml.cs">
+      <DependentUpon>CreateClientDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateContact\CreateContact.cs" />
+    <Compile Include="CreateContact\CreateContactDesigner.xaml.cs">
+      <DependentUpon>CreateContactDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateFeeEarner\CreateFeeEarner.cs" />
+    <Compile Include="CreateFeeEarner\CreateFeeEarnerDesigner.xaml.cs">
+      <DependentUpon>CreateFeeEarnerDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateFile\CreateFile.cs" />
+    <Compile Include="CreateFile\CreateFileDesigner.xaml.cs">
+      <DependentUpon>CreateFileDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="FileActivities\AddFileEvent\AddFileEvent.cs" />
+    <Compile Include="FileActivities\AddFileEvent\AddFileEventDesigner.xaml.cs">
+      <DependentUpon>AddFileEventDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileActivities\AddFileNote\AddFileNote.cs" />
+    <Compile Include="FileActivities\AddFileNote\AddFileNoteDesigner.xaml.cs">
+      <DependentUpon>AddFileNoteDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindDocument\FindDocument.cs" />
+    <Compile Include="FindDocument\FindDocumentDesigner.xaml.cs">
+      <DependentUpon>FindDocumentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindUser\FindUser.cs" />
+    <Compile Include="FindUser\FindUserDesigner.xaml.cs">
+      <DependentUpon>FindUserDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetPrecedent\GetPrecedent.cs" />
+    <Compile Include="GetPrecedent\GetPrecedentDesigner.xaml.cs">
+      <DependentUpon>GetPrecedentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KeyParameters.cs" />
+    <Compile Include="MCImageListConverter.cs" />
+    <Compile Include="ParametersEditor.xaml.cs">
+      <DependentUpon>ParametersEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParametersPropertyValueEditor.cs" />
+    <Compile Include="TypeToArgumentTypeConverter.cs" />
+    <Compile Include="Wrappers\GetContext\GetContext.cs" />
+    <Compile Include="Wrappers\GetContext\GetContextDesigner.xaml.cs">
+      <DependentUpon>GetContextDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrappers\GetContext\GetContextNamedItem.cs" />
+    <Compile Include="Wrappers\GetContext\GetContextNamedItemDesigner.xaml.cs">
+      <DependentUpon>GetContextNamedItemDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetWizard\GetWizard.cs" />
+    <Compile Include="GetWizard\GetWizardDesigner.xaml.cs">
+      <DependentUpon>GetWizardDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBox\MessageBox.cs" />
+    <Compile Include="MessageBox\MessageBoxDesigner.xaml.cs">
+      <DependentUpon>MessageBoxDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OpenDocument\OpenDocument.cs" />
+    <Compile Include="OpenDocument\OpenDocumentDesigner.xaml.cs">
+      <DependentUpon>OpenDocumentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OpenReport\OpenReport.cs" />
+    <Compile Include="OpenReport\OpenReportDesigner.xaml.cs">
+      <DependentUpon>OpenReportDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PickAppointment\PickAppointment.cs" />
+    <Compile Include="PickAppointment\PickAppointmentDesigner.xaml.cs">
+      <DependentUpon>PickAppointmentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PickAssociate\PickAssociate.cs" />
+    <Compile Include="PickAssociate\PickAssociateDesigner.xaml.cs">
+      <DependentUpon>PickAssociateDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessJob\ProcessJob.cs" />
+    <Compile Include="ProcessJob\ProcessJobDesigner.xaml.cs">
+      <DependentUpon>ProcessJobDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessStart\ProcessStart.cs" />
+    <Compile Include="ProcessStart\ProcessStartDesigner.xaml.cs">
+      <DependentUpon>ProcessStartDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceFinder.cs" />
+    <Compile Include="RunEnquiryCommand\RunEnquiryCommand.cs" />
+    <Compile Include="RunEnquiryCommand\RunEnquiryCommandDesigner.xaml.cs">
+      <DependentUpon>RunEnquiryCommandDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RunMenuScript\RunMenuScript.cs" />
+    <Compile Include="RunMenuScript\RunMenuScriptDesigner.xaml.cs">
+      <DependentUpon>RunMenuScriptDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RunWizard\RunWizardDesigner.xaml.cs">
+      <DependentUpon>RunWizardDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RunWizard\RunWizard.cs" />
+    <Compile Include="SaveAppointment\SaveAppointment.cs" />
+    <Compile Include="SaveAppointment\SaveAppointmentDesigner.xaml.cs">
+      <DependentUpon>SaveAppointmentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAssociate\SelectAssociate.cs" />
+    <Compile Include="SelectAssociate\SelectAssociateDesigner.xaml.cs">
+      <DependentUpon>SelectAssociateDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectClientReturnClientNo\SelectClientReturnClientNo.cs" />
+    <Compile Include="SelectClientReturnClientNo\SelectClientReturnClientNoDesigner.xaml.cs">
+      <DependentUpon>SelectClientReturnClientNoDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectClient\SelectClient.cs" />
+    <Compile Include="SelectClient\SelectClientDesigner.xaml.cs">
+      <DependentUpon>SelectClientDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectContact\SelectContact.cs" />
+    <Compile Include="SelectContact\SelectContactDesigner.xaml.cs">
+      <DependentUpon>SelectContactDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectDefaultAssociate\SelectDefaultAssociate.cs" />
+    <Compile Include="SelectDefaultAssociate\SelectDefaultAssociateDesigner.xaml.cs">
+      <DependentUpon>SelectDefaultAssociateDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectFile\SelectFile.cs" />
+    <Compile Include="SelectFile\SelectFileDesigner.xaml.cs">
+      <DependentUpon>SelectFileDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendEMail\SendEMail.cs" />
+    <Compile Include="SendEMail\SendEMailDesigner.xaml.cs">
+      <DependentUpon>SendEMailDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrappers\SetContext\SetContext.cs" />
+    <Compile Include="Wrappers\SetContext\SetContextDesigner.xaml.cs">
+      <DependentUpon>SetContextDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrappers\SetContext\SetContextNamedItem.cs" />
+    <Compile Include="Wrappers\SetContext\SetContextNamedItemDesigner.xaml.cs">
+      <DependentUpon>SetContextNamedItemDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAssociate\ShowAssociate.cs" />
+    <Compile Include="ShowAssociate\ShowAssociateDesigner.xaml.cs">
+      <DependentUpon>ShowAssociateDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowClient\ShowClient.cs" />
+    <Compile Include="ShowClient\ShowClientDesigner.xaml.cs">
+      <DependentUpon>ShowClientDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowContact\ShowContact.cs" />
+    <Compile Include="ShowContact\ShowContactDesigner.xaml.cs">
+      <DependentUpon>ShowContactDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowCurrentJobs\ShowCurrentJobs.cs" />
+    <Compile Include="ShowCurrentJobs\ShowCurrentJobsDesigner.xaml.cs">
+      <DependentUpon>ShowCurrentJobsDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowDocument\ShowDocument.cs" />
+    <Compile Include="ShowDocument\ShowDocumentDesigner.xaml.cs">
+      <DependentUpon>ShowDocumentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowFileConflict\ShowFileConflict.cs" />
+    <Compile Include="ShowFileConflict\ShowFileConflictDesigner.xaml.cs">
+      <DependentUpon>ShowFileConflictDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowFile\ShowFile.cs" />
+    <Compile Include="ShowFile\ShowFileDesigner.xaml.cs">
+      <DependentUpon>ShowFileDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowOMSItem\ShowOMSItem.cs" />
+    <Compile Include="ShowOMSItem\ShowOMSItemDesigner.xaml.cs">
+      <DependentUpon>ShowOMSItemDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowOMSType\ShowOMSTypeDesigner.xaml.cs">
+      <DependentUpon>ShowOMSTypeDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowOMSType\ShowOMSType.cs" />
+    <Compile Include="ShowSearch\ShowSearch.cs" />
+    <Compile Include="ShowSearch\ShowSearchDesigner.xaml.cs">
+      <DependentUpon>ShowSearchDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RunPrecedent\RunPrecedent.cs" />
+    <Compile Include="RunPrecedent\RunPrecedentDesigner.xaml.cs">
+      <DependentUpon>RunPrecedentDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrappers\LoadAndRunWorkflow\LoadAndRunWorkflow.cs" />
+    <Compile Include="Wrappers\LoadAndRunWorkflow\LoadAndRunWorkflowDesigner.xaml.cs">
+      <DependentUpon>LoadAndRunWorkflowDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrappers\LoadWorkflow\LoadWorkflow.cs" />
+    <Compile Include="Wrappers\LoadWorkflow\LoadWorkflowDesigner.xaml.cs">
+      <DependentUpon>LoadWorkflowDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrappers\RunWorkflow\RunWorkflow.cs" />
+    <Compile Include="Wrappers\RunWorkflow\RunWorkflowDesigner.xaml.cs">
+      <DependentUpon>RunWorkflowDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wrappers\WriteToEventLog\WriteToEventLog.cs" />
+    <Compile Include="Wrappers\WriteToEventLog\WriteToEventLogDesigner.xaml.cs">
+      <DependentUpon>WriteToEventLogDesigner.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CreateCorporatePreClient\CreateCorporatePreClientDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CreateDefaultPrecedentJob\CreateDefaultPrecedentJobDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateKeyDate\CreateKeyDateDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CreatePreClient\CreatePreClientDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateTask\CreateTaskDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateTimeRecord\CreateTimeRecordDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateUser\CreateUserDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileReview\FileReviewDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindAddress\FindAddressDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindClient\FindClientDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindContact\FindContactDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindFile\FindFileDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindPrecedent\FindPrecedentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateAppointment\CreateAppointmentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateAssociate\CreateAssociateDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateClient\CreateClientDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CreateContact\CreateContactDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CreateFeeEarner\CreateFeeEarnerDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateFile\CreateFileDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FileActivities\AddFileEvent\AddFileEventDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FileActivities\AddFileNote\AddFileNoteDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FindDocument\FindDocumentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindUser\FindUserDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GetPrecedent\GetPrecedentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParametersEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Wrappers\GetContext\GetContextDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Wrappers\GetContext\GetContextNamedItemDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GetWizard\GetWizardDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageBox\MessageBoxDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OpenDocument\OpenDocumentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OpenReport\OpenReportDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PickAppointment\PickAppointmentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PickAssociate\PickAssociateDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcessJob\ProcessJobDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcessStart\ProcessStartDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RunEnquiryCommand\RunEnquiryCommandDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RunMenuScript\RunMenuScriptDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RunWizard\RunWizardDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SaveAppointment\SaveAppointmentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectAssociate\SelectAssociateDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SelectClientReturnClientNo\SelectClientReturnClientNoDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectClient\SelectClientDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SelectContact\SelectContactDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SelectDefaultAssociate\SelectDefaultAssociateDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SelectFile\SelectFileDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SendEMail\SendEMailDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wrappers\SetContext\SetContextDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wrappers\SetContext\SetContextNamedItemDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ShowAssociate\ShowAssociateDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowClient\ShowClientDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowContact\ShowContactDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowCurrentJobs\ShowCurrentJobsDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowDocument\ShowDocumentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowFileConflict\ShowFileConflictDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowFile\ShowFileDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowOMSItem\ShowOMSItemDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowOMSType\ShowOMSTypeDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ShowSearch\ShowSearchDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RunPrecedent\RunPrecedentDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Wrappers\LoadAndRunWorkflow\LoadAndRunWorkflowDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wrappers\LoadWorkflow\LoadWorkflowDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wrappers\RunWorkflow\RunWorkflowDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wrappers\WriteToEventLog\WriteToEventLogDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SelectAssociate\SelectAssociateDesignerIcon.bmp" />
+    <EmbeddedResource Include="SelectAssociate\SelectAssociateToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CreateClient\CreateClientDesignerIcon.bmp" />
+    <EmbeddedResource Include="CreateClient\CreateClientToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CreateContact\CreateContactDesignerIcon.bmp" />
+    <EmbeddedResource Include="CreateContact\CreateContactToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CreateFile\CreateFileDesignerIcon.bmp" />
+    <EmbeddedResource Include="CreateFile\CreateFileToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SelectClient\SelectClientDesignerIcon.bmp" />
+    <EmbeddedResource Include="SelectClient\SelectClientToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SendEMail\SendEMailDesignerIcon.bmp" />
+    <EmbeddedResource Include="SendEMail\SendEMailToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SelectContact\SelectContactDesignerIcon.bmp" />
+    <EmbeddedResource Include="SelectContact\SelectContactToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SelectFile\SelectFileDesignerIcon.bmp" />
+    <EmbeddedResource Include="SelectFile\SelectFileToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MessageBox\MessageBoxDesignerIcon.bmp" />
+    <EmbeddedResource Include="MessageBox\MessageBoxToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CreateAssociate\CreateAssociateDesignerIcon.bmp" />
+    <EmbeddedResource Include="CreateAssociate\CreateAssociateToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+    <None Include="Documents\Workflow Activities.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SelectDefaultAssociate\SelectDefaultAssociateDesignerIcon.bmp" />
+    <EmbeddedResource Include="SelectDefaultAssociate\SelectDefaultAssociateToolboxIcon.bmp" />
+    <Resource Include="ShowAssociate\ShowAssociateDesignerIcon.bmp" />
+    <EmbeddedResource Include="ShowAssociate\ShowAssociateToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ShowFile\ShowFileDesignerIcon.bmp" />
+    <EmbeddedResource Include="ShowFile\ShowFileToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FindDocument\FindDocumentDesignerIcon.bmp" />
+    <EmbeddedResource Include="FindDocument\FindDocumentToolboxIcon.bmp" />
+    <Resource Include="ShowDocument\ShowDocumentDesignerIcon.bmp" />
+    <EmbeddedResource Include="ShowDocument\ShowDocumentToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ShowContact\ShowContactDesignerIcon.bmp" />
+    <EmbeddedResource Include="ShowContact\ShowContactToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ShowClient\ShowClientDesignerIcon.bmp" />
+    <EmbeddedResource Include="ShowClient\ShowClientToolboxIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Wrappers\SetContext\SetContextDesignerIcon.png" />
+    <EmbeddedResource Include="Wrappers\SetContext\SetContextToolboxIcon.png" />
+    <EmbeddedResource Include="ShowSearch\ShowSearchToolboxIcon.png" />
+    <Resource Include="ShowSearch\ShowSearchDesignerIcon.png" />
+    <EmbeddedResource Include="Wrappers\LoadWorkflow\LoadWorkflowToolboxIcon.png" />
+    <Resource Include="Wrappers\LoadWorkflow\LoadWorkflowDesignerIcon.png" />
+    <Resource Include="Wrappers\LoadAndRunWorkflow\LoadAndRunWorkflowDesignerIcon.png" />
+    <EmbeddedResource Include="Wrappers\LoadAndRunWorkflow\LoadAndRunWorkflowToolboxIcon.png" />
+    <EmbeddedResource Include="ShowOMSType\ShowOMSTypeToolboxIcon.png" />
+    <Resource Include="ShowOMSType\ShowOMSTypeDesignerIcon.png" />
+    <Resource Include="ShowOMSItem\ShowOMSItemDesignerIcon.png" />
+    <EmbeddedResource Include="ShowOMSItem\ShowOMSItemToolboxIcon.png" />
+    <Resource Include="Wrappers\WriteToEventLog\WriteToEventLogDesignerIcon.png" />
+    <EmbeddedResource Include="Wrappers\WriteToEventLog\WriteToEventLogToolboxIcon.png" />
+    <EmbeddedResource Include="Wrappers\RunWorkflow\RunWorkflowToolboxIcon.png" />
+    <Resource Include="Wrappers\RunWorkflow\RunWorkflowDesignerIcon.png" />
+    <EmbeddedResource Include="RunWizard\RunWizardToolboxIcon.png" />
+    <Resource Include="RunWizard\RunWizardDesignerIcon.png" />
+    <EmbeddedResource Include="RunMenuScript\RunMenuScriptToolboxIcon.png" />
+    <Resource Include="RunMenuScript\RunMenuScriptDesignerIcon.png" />
+    <Resource Include="RunEnquiryCommand\RunEnquiryCommandDesignerIcon.png" />
+    <EmbeddedResource Include="RunEnquiryCommand\RunEnquiryCommandToolboxIcon.png" />
+    <Resource Include="RunPrecedent\RunPrecedentDesignerIcon.png" />
+    <EmbeddedResource Include="RunPrecedent\RunPrecedentToolboxIcon.png" />
+    <EmbeddedResource Include="SaveAppointment\SaveAppointmentToolboxIcon.png" />
+    <Resource Include="SaveAppointment\SaveAppointmentDesignerIcon.png" />
+    <Resource Include="SelectClientReturnClientNo\SelectClientReturnClientNoDesignerIcon.bmp" />
+    <EmbeddedResource Include="SelectClientReturnClientNo\SelectClientReturnClientNoToolboxIcon.bmp" />
+    <EmbeddedResource Include="ShowFileConflict\ShowFileConflictToolboxIcon.bmp" />
+    <Resource Include="ShowFileConflict\ShowFileConflictDesignerIcon.bmp" />
+    <Resource Include="ShowCurrentJobs\ShowCurrentJobsDesignerIcon.bmp" />
+    <EmbeddedResource Include="ShowCurrentJobs\ShowCurrentJobsToolboxIcon.bmp" />
+    <Resource Include="CreateTask\CreateTaskDesignerIcon.bmp" />
+    <EmbeddedResource Include="CreateTask\CreateTaskToolboxIcon.bmp" />
+    <Resource Include="CreatePreClient\CreatePreClientDesignerIcon.bmp" />
+    <EmbeddedResource Include="CreatePreClient\CreatePreClientToolboxIcon.bmp" />
+    <Resource Include="OpenDocument\OpenDocumentDesignerIcon.bmp" />
+    <EmbeddedResource Include="OpenDocument\OpenDocumentToolboxIcon.bmp" />
+    <Resource Include="FindClient\FindClientDesignerIcon.bmp" />
+    <EmbeddedResource Include="FindClient\FindClientToolboxIcon.bmp" />
+    <Resource Include="FindContact\FindContactDesignerIcon.bmp" />
+    <EmbeddedResource Include="FindContact\FindContactToolboxIcon.bmp" />
+    <Resource Include="FindFile\FindFileDesignerIcon.bmp" />
+    <EmbeddedResource Include="FindFile\FindFileToolboxIcon.bmp" />
+    <Resource Include="PickAssociate\PickAssociateDesignerIcon.bmp" />
+    <EmbeddedResource Include="PickAssociate\PickAssociateToolboxIcon.bmp" />
+    <Resource Include="FileReview\FileReviewDesignerIcon.bmp" />
+    <EmbeddedResource Include="FileReview\FileReviewToolboxIcon.bmp" />
+    <Resource Include="FindAddress\FindAddressDesignerIcon.png" />
+    <EmbeddedResource Include="FindAddress\FindAddressToolboxIcon.png" />
+    <Resource Include="CreateAppointment\CreateAppointmentDesignerIcon.png" />
+    <EmbeddedResource Include="CreateAppointment\CreateAppointmentToolboxIcon.png" />
+    <Resource Include="PickAppointment\PickAppointmentDesignerIcon.png" />
+    <EmbeddedResource Include="PickAppointment\PickAppointmentToolboxIcon.png" />
+    <Resource Include="CreateUser\CreateUserDesignerIcon.png" />
+    <EmbeddedResource Include="CreateUser\CreateUserToolboxIcon.png" />
+    <Resource Include="FindUser\FindUserDesignerIcon.png" />
+    <EmbeddedResource Include="FindUser\FindUserToolboxIcon.png" />
+    <Resource Include="OpenReport\OpenReportDesignerIcon.png" />
+    <EmbeddedResource Include="OpenReport\OpenReportToolboxIcon.png" />
+    <Resource Include="ProcessStart\ProcessStartDesignerIcon.png" />
+    <EmbeddedResource Include="ProcessStart\ProcessStartToolboxIcon.png" />
+    <Resource Include="ProcessJob\ProcessJobDesignerIcon.png" />
+    <EmbeddedResource Include="ProcessJob\ProcessJobToolboxIcon.png" />
+    <Resource Include="FindPrecedent\FindPrecedentDesignerIcon.png" />
+    <EmbeddedResource Include="FindPrecedent\FindPrecedentToolboxIcon.png" />
+    <Resource Include="CreateFeeEarner\CreateFeeEarnerDesignerIcon.png" />
+    <EmbeddedResource Include="CreateFeeEarner\CreateFeeEarnerToolboxIcon.png" />
+    <Resource Include="CreateKeyDate\CreateKeyDateDesignerIcon.png" />
+    <EmbeddedResource Include="CreateKeyDate\CreateKeyDateToolboxIcon.png" />
+    <Resource Include="FileActivities\AddFileEvent\AddFileEventDesignerIcon.png" />
+    <EmbeddedResource Include="FileActivities\AddFileEvent\AddFileEventToolboxIcon.png" />
+    <Resource Include="FileActivities\AddFileNote\AddFileNoteDesignerIcon.png" />
+    <EmbeddedResource Include="FileActivities\AddFileNote\AddFileNoteToolboxIcon.png" />
+    <Resource Include="GetWizard\GetWizardDesignerIcon.png" />
+    <EmbeddedResource Include="GetWizard\GetWizardToolboxIcon.png" />
+    <Resource Include="Wrappers\GetContext\GetContextDesignerIcon.png" />
+    <EmbeddedResource Include="Wrappers\GetContext\GetContextToolboxIcon.png" />
+    <Resource Include="GetPrecedent\GetPrecedentDesignerIcon.png" />
+    <EmbeddedResource Include="GetPrecedent\GetPrecedentToolboxIcon.png" />
+    <Resource Include="CreateTimeRecord\CreateTimeRecordDesignerIcon.png" />
+    <EmbeddedResource Include="CreateTimeRecord\CreateTimeRecordToolboxIcon.png" />
+    <Resource Include="CreateDefaultPrecedentJob\CreateDefaultPrecedentJobDesignerIcon.png" />
+    <EmbeddedResource Include="CreateDefaultPrecedentJob\CreateDefaultPrecedentJobToolboxIcon.png" />
+    <Resource Include="CreateCorporatePreClient\CreateCorporatePreClientDesignerIcon.bmp" />
+    <EmbeddedResource Include="CreateCorporatePreClient\CreateCorporatePreClientToolboxIcon.bmp" />
+    <Content Include="ReadMe.1st.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CreateAddress\" />
+    <Folder Include="OpenPrecedent\" />
+    <Folder Include="ProcessJobList\" />
+    <Folder Include="SaveDocument\" />
+    <Folder Include="SaveTask\" />
+    <Folder Include="Wrappers\DelayUntilDateTime\" />
+    <Folder Include="Wrappers\DelayUntilTime\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

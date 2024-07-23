@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.fwbs.net/services/formsonline" xmlns:s1="http://www.fwbs.net/public/schemas/entities/v1.0" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.fwbs.net/services/formsonline" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.fwbs.net/services/formsonline">
+      <s:import namespace="http://www.fwbs.net/public/schemas/entities/v1.0" />
+      <s:element name="AddFormRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:OnlineFormRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFormRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:ServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:OnlineFormResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnlineForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="formID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnlineFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:OnlineFormResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelFormRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendEmail" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailInstructions" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelFormRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:OnlineFormResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmailReminder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmailReminderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:OnlineFormResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRequestStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRequestToCampaign">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:OnlineFormRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRequestToCampaignResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:OnlineFormResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.fwbs.net/public/schemas/entities/v1.0">
+      <s:element name="OnlineFormRequest" nillable="true" type="s1:OnlineFormRequest" />
+      <s:complexType name="OnlineFormRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FormID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormData" type="s1:OnLineForm" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestAccount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocumentType" type="s1:DownloadType" />
+          <s:element minOccurs="0" maxOccurs="1" name="OurReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TheirReference" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceID" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="CampaignID" nillable="true" type="s:int" />
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OnLineForm">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="s1:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fields" type="s1:ArrayOfField" />
+          <s:element minOccurs="1" maxOccurs="1" name="Final" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lists" type="s1:ArrayOfList" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pages" type="s1:ArrayOfPage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:complexType name="ArrayOfField">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Field" nillable="true" type="s1:Field" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Field">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="s1:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="List" nillable="true" type="s1:List" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="List">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="s1:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="s1:ArrayOfItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="s1:Item" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Item">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="s1:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Default" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Index" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Page" nillable="true" type="s1:Page" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Page">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="s1:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Controls" type="s1:ArrayOfControl" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupAction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupTarget" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfControl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Control" nillable="true" type="s1:Control" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Control">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="s1:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Default" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupAction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupTarget" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Length" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListControlAppearance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Readonly" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Required" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToolTip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Visible" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DownloadType">
+        <s:restriction base="s:string">
+          <s:enumeration value="XML" />
+          <s:enumeration value="PDF" />
+          <s:enumeration value="DOC" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ServiceResponse" nillable="true" type="s1:ServiceResponse" />
+      <s:complexType name="ServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCollection" type="s1:ArrayOfServiceError" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseToken" type="s:string" />
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceError" nillable="true" type="s1:ServiceError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceError">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Description" nillable="true" type="s:string" />
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthenticationHeader" type="s1:AuthenticationHeader" />
+      <s:complexType name="AuthenticationHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Password" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserName" nillable="true" type="s:string" />
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="OnlineFormResponse" nillable="true" type="s1:OnlineFormResponse" />
+      <s:complexType name="OnlineFormResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FormData" type="s1:OnLineForm" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCollection" type="s1:ArrayOfServiceError" />
+          <s:element minOccurs="1" maxOccurs="1" name="Completed" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Aborted" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Updated" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Requested" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddFormRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFormRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddFormRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFormRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFormRequestAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="s1:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetFormRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetFormRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormRequestAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="s1:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOnlineFormSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOnlineForm" />
+  </wsdl:message>
+  <wsdl:message name="GetOnlineFormSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOnlineFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOnlineFormAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="s1:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="CancelFormRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelFormRequest" />
+  </wsdl:message>
+  <wsdl:message name="CancelFormRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelFormRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelFormRequestAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="s1:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="EmailReminderSoapIn">
+    <wsdl:part name="parameters" element="tns:EmailReminder" />
+  </wsdl:message>
+  <wsdl:message name="EmailReminderSoapOut">
+    <wsdl:part name="parameters" element="tns:EmailReminderResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmailReminderAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="s1:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestStatusAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="s1:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddRequestToCampaignSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRequestToCampaign" />
+  </wsdl:message>
+  <wsdl:message name="AddRequestToCampaignSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRequestToCampaignResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRequestToCampaignAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="s1:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:portType name="FormsPortalServiceSoap">
+    <wsdl:operation name="AddFormRequest">
+      <wsdl:input message="tns:AddFormRequestSoapIn" />
+      <wsdl:output message="tns:AddFormRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequest">
+      <wsdl:input message="tns:GetFormRequestSoapIn" />
+      <wsdl:output message="tns:GetFormRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineForm">
+      <wsdl:input message="tns:GetOnlineFormSoapIn" />
+      <wsdl:output message="tns:GetOnlineFormSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelFormRequest">
+      <wsdl:input message="tns:CancelFormRequestSoapIn" />
+      <wsdl:output message="tns:CancelFormRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmailReminder">
+      <wsdl:input message="tns:EmailReminderSoapIn" />
+      <wsdl:output message="tns:EmailReminderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestStatus">
+      <wsdl:input message="tns:GetRequestStatusSoapIn" />
+      <wsdl:output message="tns:GetRequestStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRequestToCampaign">
+      <wsdl:input message="tns:AddRequestToCampaignSoapIn" />
+      <wsdl:output message="tns:AddRequestToCampaignSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FormsPortalServiceSoap" type="tns:FormsPortalServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddFormRequest">
+      <soap:operation soapAction="http://www.fwbs.net/services/formsonline/AddFormRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddFormRequestAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequest">
+      <soap:operation soapAction="http://www.fwbs.net/services/formsonline/GetFormRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFormRequestAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineForm">
+      <soap:operation soapAction="http://www.fwbs.net/services/formsonline/GetOnlineForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOnlineFormAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelFormRequest">
+      <soap:operation soapAction="http://www.fwbs.net/services/formsonline/CancelFormRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CancelFormRequestAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmailReminder">
+      <soap:operation soapAction="http://www.fwbs.net/services/formsonline/EmailReminder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EmailReminderAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestStatus">
+      <soap:operation soapAction="http://www.fwbs.net/services/formsonline/GetRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRequestStatusAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRequestToCampaign">
+      <soap:operation soapAction="http://www.fwbs.net/services/formsonline/AddRequestToCampaign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddRequestToCampaignAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FormsPortalServiceSoap12" type="tns:FormsPortalServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddFormRequest">
+      <soap12:operation soapAction="http://www.fwbs.net/services/formsonline/AddFormRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddFormRequestAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequest">
+      <soap12:operation soapAction="http://www.fwbs.net/services/formsonline/GetFormRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFormRequestAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineForm">
+      <soap12:operation soapAction="http://www.fwbs.net/services/formsonline/GetOnlineForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOnlineFormAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelFormRequest">
+      <soap12:operation soapAction="http://www.fwbs.net/services/formsonline/CancelFormRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CancelFormRequestAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmailReminder">
+      <soap12:operation soapAction="http://www.fwbs.net/services/formsonline/EmailReminder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EmailReminderAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestStatus">
+      <soap12:operation soapAction="http://www.fwbs.net/services/formsonline/GetRequestStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRequestStatusAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRequestToCampaign">
+      <soap12:operation soapAction="http://www.fwbs.net/services/formsonline/AddRequestToCampaign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddRequestToCampaignAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FormsPortalService">
+    <wsdl:port name="FormsPortalServiceSoap" binding="tns:FormsPortalServiceSoap">
+      <soap:address location="http://fwbsws93/FormsPortalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FormsPortalServiceSoap12" binding="tns:FormsPortalServiceSoap12">
+      <soap12:address location="http://fwbsws93/FormsPortalService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

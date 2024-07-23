@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://dapent39/services/clientservice.asmx?wsdl" docRef="http://dapent39/services/clientservice.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://dapent39/services/clientservice.asmx" xmlns:q1="http://www.elite.com/openapi" binding="q1:ClientServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://dapent39/services/clientservice.asmx" xmlns:q2="http://www.elite.com/openapi" binding="q2:ClientServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

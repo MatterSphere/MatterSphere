@@ -1,0 +1,15 @@
+DI:13.10.16
+============
+
+As you can probably see, there are only six files in this V5 folder of xsds. 
+
+It may seem like there are some missing but with regards to ELPL for Release 5, the changes made were predominately at the WSDL level (new methods for steps in the process etc.) and therefore the xsds used for the original ELPL Release (release 3 - marked as "R0" in the MatterSpher enquiry forms) were still legitimate for use with Release 5 as no further field changes had been made on the CR side of the process.
+
+In the MatterSphere forms, you'll note case statements which will now look something like this:
+
+switch(versionStamp)
+{
+	case "R0":
+	case "R5":
+		// perfom some action
+}

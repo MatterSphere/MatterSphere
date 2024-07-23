@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="Horizon.Views.IFilters.PredefinedTestView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Horizon.Views.IFilters"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <materialDesign:ColorZone
+            Height="40"
+            materialDesign:ThemeAssist.Theme="Light"
+            Mode="Light">
+            <Button
+                Width="30"
+                Height="30"
+                Margin="5"
+                Padding="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Command="{Binding RunTestCommand}"
+                ToolTip="Start Test">
+                <Button.Content>
+                    <materialDesign:PackIcon
+                        Width="25"
+                        Height="25"
+                        VerticalAlignment="Center"
+                        Kind="ArrowRightDropCircleOutline" />
+                </Button.Content>
+            </Button>
+        </materialDesign:ColorZone>
+
+        <DataGrid
+            Grid.Row="1"
+            CanUserReorderColumns="False" CanUserResizeColumns="False"
+            CellStyle="{StaticResource CustomDataGridCell}"
+            HorizontalScrollBarVisibility="Auto"
+            ItemsSource="{Binding PredefinedTestResultItems}"
+            Style="{StaticResource CustomDataGrid}"
+            Visibility="{Binding ResultTableVisibility}">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding TestResult}" Value="False">
+                            <Setter Property="Background" Value="#FF3333" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    MinWidth="120" Width="120"
+                    Binding="{Binding DocumentType}"
+                    Header="Document Type" />
+                <DataGridTemplateColumn
+                    Width="70"
+                    MinWidth="70"
+                    CanUserSort="True"
+                    Header="Result"
+                    SortMemberPath="TestResult">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Label
+                                    Style="{StaticResource CustomDataGridCellLabel}"
+                                    Visibility="{Binding ErrorLogoVisibility}">
+                                    <Label.Content>
+                                        <materialDesign:PackIcon VerticalAlignment="Center" Kind="CloseOutline" />
+                                    </Label.Content>
+                                </Label>
+                                <Label
+                                    Style="{StaticResource CustomDataGridCellLabel}"
+                                    Visibility="{Binding SuccessLogoVisibility}">
+                                    <Label.Content>
+                                        <materialDesign:PackIcon VerticalAlignment="Center" Kind="CheckOutline" />
+                                    </Label.Content>
+                                </Label>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn
+                    Width="*"
+                    MinWidth="400"
+                    CanUserSort="False"
+                    Header="Error Details">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ErrorDetails}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

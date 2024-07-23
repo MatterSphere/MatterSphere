@@ -1,0 +1,96 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrecNarrative
+</name>
+</assembly>
+<members>
+<member name="P:Miles33.Precedent.NarrativeBL.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Miles33.Precedent.NarrativeBL.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Miles33.Precedent.NarrativeBL.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="E:Miles33.Precedent.NarrativeBL.Narrative.NarrativeSaved">
+	<summary>
+ The narrative has been saved.
+ </summary>
+	<remarks>The principle idea behind this event is so the client can now update their doc_ref_num</remarks>
+</member><member name="P:Miles33.Precedent.NarrativeBL.Narrative.Text">
+	<summary>
+ Text of the narrative
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.NarrativeBL.Narrative.DocRefNumber">
+	<summary>
+ The document reference number
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Used internally within Precedent to identify the instance of the narrative</remarks>
+</member><member name="M:Miles33.Precedent.NarrativeBL.Narrative.GetRowIDs">
+	<summary>
+ Get the Row IDs associated with the narrative.
+ </summary>
+	<returns></returns>
+	<remarks>This method is necessary because if we perform an insert we
+ do not know the underlying RowIDs</remarks>
+</member><member name="M:Miles33.Precedent.NarrativeBL.Narrative.Clone">
+	<summary>
+ Clones a narrative 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.NarrativeBL.Narrative.SeparateDatabaseTransaction">
+	<summary>
+ Does the database work occur in it's own database transaction?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>setting this value to TRUE means the narrative will be isolated from the
+ main database transaction</remarks>
+</member><member name="M:Miles33.Precedent.NarrativeBL.Narrative.Save">
+	<summary>
+ Saves the narrative to the database.
+ </summary>
+	<returns>returns TRUE if successful</returns>
+	<remarks>Use the property SeparateDatabaseTransaction to alter the 
+ behaviour of this method.</remarks>
+</member><member name="M:Miles33.Precedent.NarrativeBL.Narrative.Load(System.Int32)">
+	<summary>
+ Loads the narrative object with the narrative
+ </summary>
+	<param name="documentReferenceNumber">The document reference number of the narrative</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.NarrativeBL.Narrative.Load">
+	<summary>
+ Loads the narrative object with the narrative
+ </summary>
+	<returns></returns>
+	<remarks>Ensure that the document reference number property has been set.</remarks>
+</member><member name="M:Miles33.Precedent.NarrativeBL.Narrative.ToString">
+	<summary>
+ Returns a string representation of the narrative text
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.NarrativeBL.Narrative">
+	<summary>
+ This class represents a Precedent narrative.
+ </summary>
+	<remarks>It manages both the document_profile and document_text portions of the narrative
+ in one convienent object</remarks>
+</member>
+</members>
+</doc>

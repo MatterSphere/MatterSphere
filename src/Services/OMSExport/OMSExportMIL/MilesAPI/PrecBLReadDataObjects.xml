@@ -1,0 +1,1684 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrecBLReadDataObjects
+</name>
+</assembly>
+<members>
+<member name="P:Miles33.Precedent.BLData.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Miles33.Precedent.BLData.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Miles33.Precedent.BLData.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:Miles33.Precedent.BLData.BillingCache">
+	<summary>
+ Object to cache additional data for the lifetime of a single bill
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountParameterCache">
+	<summary>
+ Data cache for nominal account parameters
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.TimeRecordingRateParameterCache">
+	<summary>
+ Data cache for time recording parameters
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.FeeTargetCache">
+	<summary>
+ Data cache for fee targets
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnerName.#ctor(Miles33.Precedent.BLData.FeeEarner)">
+	<summary>
+ Constructor which requires a fee earner object
+ </summary>
+	<param name="feObject"></param>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.FeeEarnerName.FullName">
+	<summary>
+ The first name and the first letter of the middle name and
+ then the surname
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.FeeEarnerName.FullNameReverse">
+	<summary>
+ The surname, the first letter of the middle name and
+ then the first name.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.FeeEarnerName">
+	<summary>
+ Class to format the name of a fee earner
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.SearchMatter.NoOfItemsReturned">
+	<summary>
+ The number of rows this search will return
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.SearchFeeEarner.NoOfItemsReturned">
+	<summary>
+ The number of rows this search will return
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.PFW2Options">
+	<summary>
+ PFW2 Options.  Various Precedent settings as controlled via a column
+ in the leo_user_parameters table.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.BLLogin.Provider">
+	<summary>
+ The OLE DB provider to use
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.BLLogin.Test">
+	<summary>
+ Test the connection is valid.
+ </summary>
+	<remarks>An exception will be raised if the user is not connected</remarks>
+</member><member name="P:Miles33.Precedent.BLData.BLLogin.UserName">
+	<summary>
+ Username
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.BLLogin.Password">
+	<summary>
+ Password
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.BLLogin.Server">
+	<summary>
+ SQL Net server
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.BLLogin">
+	<summary>
+ Login to the Precedent database via the business layer
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.AccountingPeriod">
+	<summary>
+ Read version of the object: AccountingPeriod
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingPeriodsAbstract`1.Validate(System.Int32,System.Int32)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AccountingPeriodsAbstract`1.PreValidate(System.Int32,System.Int32)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AccountingPeriodsAbstract`1.ReturnData(System.Int32,System.Int32)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AccountingPeriodsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AccountingPeriodsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AccountingPeriodsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_ACCOUNTING_PERIOD_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.AccountingPeriodsAbstract`1">
+	<summary>
+ Abstract class of AccountingPeriod representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.AccountingPeriods">
+	<summary>
+ Represents multiple rows of AccountingPeriod for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ActivityType">
+	<summary>
+ Read version of the object: ActivityType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.ActivityTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ActivityTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ActivityTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ActivityTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ActivityTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ActivityTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_ACTIVITY_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.ActivityTypesAbstract`1">
+	<summary>
+ Abstract class of ActivityType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ActivityTypes">
+	<summary>
+ Represents multiple rows of ActivityType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Address">
+	<summary>
+ Read version of the object: Address
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.AddressesAbstract`1.Validate(System.Int32)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressesAbstract`1.PreValidate(System.Int32)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressesAbstract`1.ReturnData(System.Int32)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_ADDRESS_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.AddressesAbstract`1">
+	<summary>
+ Abstract class of Address representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Addresses">
+	<summary>
+ Represents multiple rows of Address for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.AddressType">
+	<summary>
+ Read version of the object: AddressType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.AddressTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AddressTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_ADDRESS_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.AddressTypesAbstract`1">
+	<summary>
+ Abstract class of AddressType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.AddressTypes">
+	<summary>
+ Represents multiple rows of AddressType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ClientMatter">
+	<summary>
+ Read version of the object: ClientMatter
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.Validate(System.Int32,System.Int32)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.PreValidate(System.Int32,System.Int32)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.ReturnData(System.Int32,System.Int32)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ClientMattersAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_CLIENT_MATTER_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.ClientMattersAbstract`1">
+	<summary>
+ Abstract class of ClientMatter representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ClientMatters">
+	<summary>
+ Represents multiple rows of ClientMatter for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ContractRate">
+	<summary>
+ Read version of the object: ContractRate
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.ContractRatesAbstract`1.Validate(System.Int32)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ContractRatesAbstract`1.PreValidate(System.Int32)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ContractRatesAbstract`1.ReturnData(System.Int32)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ContractRatesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ContractRatesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ContractRatesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_CONTRACT_RATE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.ContractRatesAbstract`1">
+	<summary>
+ Abstract class of ContractRate representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ContractRates">
+	<summary>
+ Represents multiple rows of ContractRate for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Country">
+	<summary>
+ Read version of the object: Country
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.CountriesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CountriesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CountriesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CountriesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CountriesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CountriesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_COUNTRY_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.CountriesAbstract`1">
+	<summary>
+ Abstract class of Country representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Countries">
+	<summary>
+ Represents multiple rows of Country for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Currency">
+	<summary>
+ Read version of the object: Currency
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.CurrenciesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CurrenciesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CurrenciesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CurrenciesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CurrenciesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.CurrenciesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_CURRENCY_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.CurrenciesAbstract`1">
+	<summary>
+ Abstract class of Currency representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Currencies">
+	<summary>
+ Represents multiple rows of Currency for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.DisbursementType">
+	<summary>
+ Read version of the object: DisbursementType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.DisbursementTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DisbursementTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DisbursementTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DisbursementTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DisbursementTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DisbursementTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_DISBURSEMENT_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.DisbursementTypesAbstract`1">
+	<summary>
+ Abstract class of DisbursementType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.DisbursementTypes">
+	<summary>
+ Represents multiple rows of DisbursementType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.DocumentFormat">
+	<summary>
+ Read version of the object: DocumentFormat
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.DocumentFormatsAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DocumentFormatsAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DocumentFormatsAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DocumentFormatsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DocumentFormatsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.DocumentFormatsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_DOCUMENT_FORMAT_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.DocumentFormatsAbstract`1">
+	<summary>
+ Abstract class of DocumentFormat representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.DocumentFormats">
+	<summary>
+ Represents multiple rows of DocumentFormat for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ExpenseType">
+	<summary>
+ Read version of the object: ExpenseType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.ExpenseTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ExpenseTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ExpenseTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ExpenseTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ExpenseTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ExpenseTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_EXPENSE_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.ExpenseTypesAbstract`1">
+	<summary>
+ Abstract class of ExpenseType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ExpenseTypes">
+	<summary>
+ Represents multiple rows of ExpenseType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.FeeEarner">
+	<summary>
+ Read version of the object: FeeEarner
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.Validate(System.Int32)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.PreValidate(System.Int32)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.ReturnData(System.Int32)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnersAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_FEE_EARNER_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.FeeEarnersAbstract`1">
+	<summary>
+ Abstract class of FeeEarner representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.FeeEarners">
+	<summary>
+ Represents multiple rows of FeeEarner for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Grade">
+	<summary>
+ Read version of the object: Grade
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.GradesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.GradesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.GradesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.GradesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.GradesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.GradesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_GRADE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.GradesAbstract`1">
+	<summary>
+ Abstract class of Grade representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Grades">
+	<summary>
+ Represents multiple rows of Grade for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.LitigationStage">
+	<summary>
+ Read version of the object: LitigationStage
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.LitigationStagesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.LitigationStagesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.LitigationStagesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.LitigationStagesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.LitigationStagesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.LitigationStagesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_LITIGATION_STAGE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.LitigationStagesAbstract`1">
+	<summary>
+ Abstract class of LitigationStage representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.LitigationStages">
+	<summary>
+ Represents multiple rows of LitigationStage for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccount">
+	<summary>
+ Read version of the object: NominalAccount
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountsAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountsAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountsAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_NOMINAL_ACCOUNT_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountsAbstract`1">
+	<summary>
+ Abstract class of NominalAccount representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccounts">
+	<summary>
+ Represents multiple rows of NominalAccount for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountPurpose">
+	<summary>
+ Read version of the object: NominalAccountPurpose
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountPurposesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountPurposesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountPurposesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountPurposesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountPurposesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountPurposesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_NOMINAL_ACCOUNT_PURPOSE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountPurposesAbstract`1">
+	<summary>
+ Abstract class of NominalAccountPurpose representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountPurposes">
+	<summary>
+ Represents multiple rows of NominalAccountPurpose for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountType">
+	<summary>
+ Read version of the object: NominalAccountType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_NOMINAL_ACCOUNT_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountTypesAbstract`1">
+	<summary>
+ Abstract class of NominalAccountType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountTypes">
+	<summary>
+ Represents multiple rows of NominalAccountType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalCategory">
+	<summary>
+ Read version of the object: NominalCategory
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.NominalCategoriesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalCategoriesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalCategoriesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalCategoriesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalCategoriesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalCategoriesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_NOMINAL_CATEGORY_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.NominalCategoriesAbstract`1">
+	<summary>
+ Abstract class of NominalCategory representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalCategories">
+	<summary>
+ Represents multiple rows of NominalCategory for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.OrganisationUnit">
+	<summary>
+ Read version of the object: OrganisationUnit
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.OrganisationUnitsAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.OrganisationUnitsAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.OrganisationUnitsAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.OrganisationUnitsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.OrganisationUnitsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.OrganisationUnitsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_ORGANISATION_UNIT_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.OrganisationUnitsAbstract`1">
+	<summary>
+ Abstract class of OrganisationUnit representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.OrganisationUnits">
+	<summary>
+ Represents multiple rows of OrganisationUnit for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.PaymentMethod">
+	<summary>
+ Read version of the object: PaymentMethod
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.PaymentMethodsAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.PaymentMethodsAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.PaymentMethodsAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.PaymentMethodsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.PaymentMethodsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.PaymentMethodsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_PAYMENT_METHOD_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.PaymentMethodsAbstract`1">
+	<summary>
+ Abstract class of PaymentMethod representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.PaymentMethods">
+	<summary>
+ Represents multiple rows of PaymentMethod for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ProhibitedNominalAccount">
+	<summary>
+ Read version of the object: ProhibitedNominalAccount
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.ProhibitedNominalAccountsAbstract`1.Validate(System.String,System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ProhibitedNominalAccountsAbstract`1.PreValidate(System.String,System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ProhibitedNominalAccountsAbstract`1.ReturnData(System.String,System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ProhibitedNominalAccountsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ProhibitedNominalAccountsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ProhibitedNominalAccountsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_PROHIBITED_NOMINAL_ACCOUNT_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.ProhibitedNominalAccountsAbstract`1">
+	<summary>
+ Abstract class of ProhibitedNominalAccount representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ProhibitedNominalAccounts">
+	<summary>
+ Represents multiple rows of ProhibitedNominalAccount for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.RateType">
+	<summary>
+ Read version of the object: RateType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.RateTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.RateTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.RateTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.RateTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.RateTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.RateTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_RATE_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.RateTypesAbstract`1">
+	<summary>
+ Abstract class of RateType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.RateTypes">
+	<summary>
+ Represents multiple rows of RateType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Schedule">
+	<summary>
+ Read version of the object: Schedule
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.SchedulesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SchedulesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SchedulesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SchedulesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SchedulesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SchedulesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_SCHEDULE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.SchedulesAbstract`1">
+	<summary>
+ Abstract class of Schedule representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Schedules">
+	<summary>
+ Represents multiple rows of Schedule for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Subject">
+	<summary>
+ Read version of the object: Subject
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.Validate(System.Int32)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.PreValidate(System.Int32)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.ReturnData(System.Int32)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.SubjectsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_SUBJECT_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.SubjectsAbstract`1">
+	<summary>
+ Abstract class of Subject representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.Subjects">
+	<summary>
+ Represents multiple rows of Subject for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.VatType">
+	<summary>
+ Read version of the object: VatType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.VatTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.VatTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.VatTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.VatTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.VatTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.VatTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_VAT_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.VatTypesAbstract`1">
+	<summary>
+ Abstract class of VatType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.VatTypes">
+	<summary>
+ Represents multiple rows of VatType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.GradeRate">
+	<summary>
+ Read version of the object: GradeRate
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.GradeRatesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.GradeRatesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.GradeRatesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_GRADE_RATE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.GradeRatesAbstract`1">
+	<summary>
+ Abstract class of GradeRate representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.GradeRates">
+	<summary>
+ Represents multiple rows of GradeRate for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.FeeEarnerRate">
+	<summary>
+ Read version of the object: FeeEarnerRate
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnerRatesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnerRatesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnerRatesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_FEE_EARNER_RATE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.FeeEarnerRatesAbstract`1">
+	<summary>
+ Abstract class of FeeEarnerRate representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.FeeEarnerRates">
+	<summary>
+ Represents multiple rows of FeeEarnerRate for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.AssignmentHistory">
+	<summary>
+ Read version of the object: AssignmentHistory
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.AssignmentHistorysAbstract`1.Validate(System.Int32,System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AssignmentHistorysAbstract`1.PreValidate(System.Int32,System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AssignmentHistorysAbstract`1.ReturnData(System.Int32,System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AssignmentHistorysAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AssignmentHistorysAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.AssignmentHistorysAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_ASSIGNMENT_HISTORY_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.AssignmentHistorysAbstract`1">
+	<summary>
+ Abstract class of AssignmentHistory representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.AssignmentHistorys">
+	<summary>
+ Represents multiple rows of AssignmentHistory for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.WorkType">
+	<summary>
+ Read version of the object: WorkType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.WorkTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.WorkTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.WorkTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.WorkTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.WorkTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.WorkTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_WORK_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.WorkTypesAbstract`1">
+	<summary>
+ Abstract class of WorkType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.WorkTypes">
+	<summary>
+ Represents multiple rows of WorkType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ResponsibilityType">
+	<summary>
+ Read version of the object: ResponsibilityType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.ResponsibilityTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ResponsibilityTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ResponsibilityTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ResponsibilityTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ResponsibilityTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.ResponsibilityTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_RESPONSIBILITY_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.ResponsibilityTypesAbstract`1">
+	<summary>
+ Abstract class of ResponsibilityType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.ResponsibilityTypes">
+	<summary>
+ Represents multiple rows of ResponsibilityType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountBudget">
+	<summary>
+ Read version of the object: NominalAccountBudget
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetsAbstract`1.Validate(System.Int32,System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetsAbstract`1.PreValidate(System.Int32,System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetsAbstract`1.ReturnData(System.Int32,System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_NOMINAL_ACCOUNT_BUDGET_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountBudgetsAbstract`1">
+	<summary>
+ Abstract class of NominalAccountBudget representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountBudgets">
+	<summary>
+ Represents multiple rows of NominalAccountBudget for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountBudgetYear">
+	<summary>
+ Read version of the object: NominalAccountBudgetYear
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetYearsAbstract`1.Validate(System.Int32,System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetYearsAbstract`1.PreValidate(System.Int32,System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetYearsAbstract`1.ReturnData(System.Int32,System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetYearsAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetYearsAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalAccountBudgetYearsAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_NOMINAL_ACCOUNT_BUDGET_YEAR_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountBudgetYearsAbstract`1">
+	<summary>
+ Abstract class of NominalAccountBudgetYear representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalAccountBudgetYears">
+	<summary>
+ Represents multiple rows of NominalAccountBudgetYear for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalBudgetType">
+	<summary>
+ Read version of the object: NominalBudgetType
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="M:Miles33.Precedent.BLData.NominalBudgetTypesAbstract`1.Validate(System.String)">
+	<summary>
+ Test whether a value exists - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalBudgetTypesAbstract`1.PreValidate(System.String)">
+	<summary>
+ Test whether a value has already been looked up - returns TRUE if it does
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalBudgetTypesAbstract`1.ReturnData(System.String)">
+	<summary>
+ Return the object represented by the variables
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalBudgetTypesAbstract`1.LoadAll">
+	<summary>
+ Load all of the data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalBudgetTypesAbstract`1.LoadData(System.String)">
+	<summary>
+ Load specific data associated with this table
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.NominalBudgetTypesAbstract`1.StoreItem(Miles33.Precedent.PrecDAL.DAL_NOMINAL_BUDGET_TYPE_Collection@)">
+	<summary>
+ Store the data to the object
+ </summary>
+</member><member name="T:Miles33.Precedent.BLData.NominalBudgetTypesAbstract`1">
+	<summary>
+ Abstract class of NominalBudgetType representing multiple rows
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.NominalBudgetTypes">
+	<summary>
+ Represents multiple rows of NominalBudgetType for read only
+ </summary>
+	<remarks>Automatically Generated Code - do NOT manually edit</remarks>
+</member><member name="T:Miles33.Precedent.BLData.OriginalValueStore">
+	<summary>
+ Stores the previous values of each column
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.BLDataRow.RowID">
+	<summary>
+ The Oracle Row ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.BLDataRow.Parent">
+	<summary>
+ The parent owning object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.BLDataRow.NewRow">
+	<summary>
+ Does this row exist in the database
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.BLDataRow.InternalGUID">
+	<summary>
+ Internal GUID for BL reference
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.BLDataRow.InternalGUIDNew">
+	<summary>
+ Create a new GUID
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.BLDataRowComparer.OriginalDataValues">
+	<summary>
+ An object controlling the original values of each column
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.BLDataRowComparer.StoreOriginalValue">
+	<summary>
+ Store the original value of the data?
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.BLDataRowComparer.Datachanged">
+	<summary>
+ Has the data been changed? Detects a new row or a change to an existing one, does NOT detect deletions
+ </summary>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.AssignmentHistory(System.DateTime,System.DateTime,System.Int32,System.String)">
+	<summary>
+ Verify whether a particular fee earner has been assigned to a particular
+ organisation unit between the date range.
+ </summary>
+	<param name="minimumDate">min date of the range</param>
+	<param name="maximumDate">max date of the range</param>
+	<param name="feNum">Identifies the fee earner</param>
+	<param name="ouID">Identifies the organisation unit</param>
+	<returns>TRUE - if the assignmetn is allowed otherwise FALSE</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.ReturnCurrentAssignment(System.Int32)">
+	<summary>
+ Return the current organisation unit assignment
+ </summary>
+	<param name="feNum">the feNum of the fee earner</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.ReturnCurrentAssignment(System.String)">
+	<summary>
+ Return the current organisation unit assignment
+ </summary>
+	<param name="feID ">the feID of the fee earner</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.OrgUnitWorkTypeVerification(System.String,System.String)">
+	<summary>
+ Verify whether an organisation unit and work type combination is allowed
+ </summary>
+	<param name="OuID"></param>
+	<param name="workType"></param>
+	<returns>TRUE - it is allowed</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.ResponsibilityAllowedVerification(System.String,System.Int32,System.DateTime)">
+	<summary>
+ Verify whether a fee earner has a particular responsibility at 
+ a point in time
+ </summary>
+	<param name="respType"></param>
+	<param name="feNum"></param>
+	<param name="testDate"></param>
+	<returns>TRUE - the FE has the responsibility</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.ValidateAccountingPeriod(System.String)">
+	<summary>
+ Validate that the accounting period for the transaction is in an open
+ period
+ </summary>
+	<param name="transactionDate"></param>
+	<returns>TRUE if the period is in an open period</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.ValidateProhibitedNominalAccount(System.String,System.String)">
+	<summary>
+ Validate that the organisation unit and nom acc combination is not prohibited
+ </summary>
+	<param name="ouID"></param>
+	<param name="nomAccNumber"></param>
+	<returns>TRUE - they are not prohibited, FALSE - they ARE prohibited</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.CostCentreVerification(System.String)">
+	<summary>
+ Verify that the organistaion unit is a valid cost centre
+ </summary>
+	<param name="ouID"></param>
+	<returns>TRUE - the ouid is a valid cost centre</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.NominalAccountVerification(System.String)">
+	<summary>
+ Verify that a particular nominal account exists
+ </summary>
+	<param name="nominalAccountNumber"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.NominalAccountBudgetsAllowed(System.String)">
+	<summary>
+ Are budgets allowed for a particular nominal account?
+ </summary>
+	<param name="nominalAccountNumber"></param>
+	<returns>TRUE if budgets are allowed otherwise FALSE</returns>
+	<remarks>An exception will be raised if the nominal account does not exist.</remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.SubjectAddressCount(System.Int32)">
+	<summary>
+ Return the number of addresses a subject has
+ </summary>
+	<param name="subNum"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.PrecedentDataVerfication.SubjectHasAddress(System.Int32)">
+	<summary>
+ Does the subject have any addresses?
+ </summary>
+	<param name="subNum"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.PrecedentDataVerfication">
+	<summary>
+ Class to perform basic data verification
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.BLData.PrecedentConstraints">
+	<summary>
+ Precedent related constants
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.SubjectValidate.ValidateNonDeletedSubject(System.Int32)">
+	<summary>
+ Validate whether a sub num is a non-deleted subject
+ </summary>
+	<param name="testingSubNum"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.FeeEarnerUsers.FeNumInFEUs(System.Int32)">
+	<summary>
+ Given a fe num to test, see if it is the fee earner user list for
+ our currently logged in person.
+ </summary>
+	<param name="testFeNum"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.DataState.DataCanChange">
+	<summary>
+ Can we flag the date as having been changed?
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.DataState.DataChanged">
+	<summary>
+ Flag the data as having been changed
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.BLData.DataState.HasDataChanged">
+	<summary>
+ Has the charge been altered?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.DataState.NewRow">
+	<summary>
+ Is the DataState referring to a new row?
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYears.GetData">
+	<summary>
+ Populate the object with all of the accounting years in Precedent.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYears.MinYear">
+	<summary>
+ Return the lowest accounting year in Precedent, return 0
+ if no data has been configured.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYears.MaxYear">
+	<summary>
+ Return the highest accounting year in Precedent, returning 0
+ if no data has been configured.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYears.ReturnYear(System.Int32)">
+	<summary>
+ Return the accounting year object represented by the year
+ </summary>
+	<param name="accYear"></param>
+	<returns></returns>
+	<remarks>Returns nothing if the year has not bee defined</remarks>
+</member><member name="T:Miles33.Precedent.BLData.AccountingYears">
+	<summary>
+ An object exposing the Precedent accounting periods
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYear.MinimumPeriod">
+	<summary>
+ The lowest accounting period for this year
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYear.MaximumPeriod">
+	<summary>
+ The highest accounting period for this year
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYear.GetData">
+	<summary>
+ Populate the object with all of the accounting years in Precedent.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYear.MaxPeriodIsLastPeriod">
+	<summary>
+ Is the maximum period the last period (as defined in leo install parameters)
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYear.ConsecutivePeriods">
+	<summary>
+ Are there any periods missing between the minimum and maximum
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.BLData.AccountingYear.PeriodExist(System.Int32)">
+	<summary>
+ Does a specific period exist in this accounting year?
+ </summary>
+	<param name="accPeriod"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

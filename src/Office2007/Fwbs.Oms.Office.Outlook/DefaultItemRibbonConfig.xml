@@ -1,0 +1,89 @@
+﻿<oms>
+  <rules>
+    <controls>
+      <control id="TabAppointment_OMS" resource="OMS"/>
+      <control id="TabAppointment_OMS_SaveAs" resource="SAVEAS" filter="IN" package="DMS" />
+      <control id="TabAppointment_OMS_Save" resource="SAVE" filter="IN;DOC+IN;DOC+SAVED;PREC+SAVED" package="DMS" />
+      
+      <control id="TabTask_OMS" resource="OMS" />
+      <control id="TabTask_OMS_SaveAs" resource="SAVEAS" filter="IN" package="DMS"/>
+      <control id="TabTask_OMS_Save" resource="SAVE" filter="IN;DOC+IN;DOC+SAVED;PREC+SAVED" package="DMS"/>
+      
+      <control id="TabNewMailMessage_OMS" resource="OMS" license="DM OR DP"/>
+      <control id="TabNewMailMessage_OMS_SaveAsPrec" resource="SAVEASPREC" package="DMS" role="PRECEDIT" filter="NEW;DOC+NEW;PREC" license="DM"/>
+      <control id="TabNewMailMessage_OMS_SaveAndSend" resource="SAVEANDSEND" filter="NEW" package="DMS" license="DM"/>
+
+      <control id="TabReadMessage_OMS" resource="OMS" license="DM"/>
+      <control id="TabReadMessage_OMS_SaveAs" resource="SAVEAS" filter="IN" package="DMS" license="DM"/>
+      <control id="TabReadMessage_OMS_Save" resource="SAVE" filter="HIDEWHENSAVED;IN;DOC+IN;DOC+SAVED;PREC+SAVED" package="DMS" license="DM"/>
+      <control id="TabReadMessage_OMS_FileIt" resource="FILEIT" filter="DOC+SAVED" package="DMS" license="DM"/>
+
+      <control id="TabOMSDocument" />
+      <control id="TabOMSDocument_Tools" resource="TOOLS" package="DMS" />
+      <control id="TabOMSDocument_Tools_SaveAsPrec" resource="SAVEASPREC" package="DMS" role="PRECEDIT" filter="NEW;PREC" license="DP"/>
+      <control id="TabOMSDocument_Tools_SaveAs" resource="SAVEAS" filter="IN" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Tools_Save" resource="SAVE" filter="IN;DOC+IN;DOC+SAVED;PREC+SAVED" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Tools_SaveAndSend" resource="SAVEANDSEND" filter="NEW" package="DMS" license="DM"/>
+
+     
+      
+      
+      
+      
+      <control id="TabOMSDocument_Tools_Sep1" package="DMS" filter="DOC+SAVED" />
+      <control id="TabOMSDocument_Tools_DetachVars" resource="DETACH" filter="FILE" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Tools_FileIt" resource="FILEIT" filter="DOC+SAVED" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Tools_Authorise" resource="AUTHORISE" filter="AUTHORISE" package="CLMCONTLEGAL" license="DM"/>
+      <control id="TabOMSDocument_Tools_ConfAuthorise" resource="CONFAUTHORISE" filter="AUTHORISE+OUT" package="CLMCONTLEGAL" license="DM"/>
+      <control id="TabOMSDocument_Tools_RefAuthorise" resource="REFAUTHORISE" filter="AUTHORISE+OUT" package="CLMCONTLEGAL" license="DM"/>
+      <control id="TabOMSDocument_View" resource="VIEW" package="DMS" filter="CLIENT" />
+      <control id="TabOMSDocument_View_FileInfo" resource="VFILEINFO" filter="FILE" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_Client" resource="CLIENTINFO" filter="CLIENT" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_File" resource="FILEINFO" filter="FILE" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_Associate" resource="CURASSOCINFO" filter="ASSOCIATE" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_Sep1" package="DMS" filter="DOC+SAVED" />
+      <control id="TabOMSDocument_View_DocProps" resource="DOCPROPS" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_View_AssociatedDocs" resource="ASSOCDOCS" package="CLMCONTLEGAL" license="DM"/>
+      <control id="TabOMSDocument_View_DocVars" resource="SHOWDOCVARS" package="DMS" filter="DOC+SAVED" license="DM"/>
+      <control id="TabOMSDocument_View_DocPropToggle" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Insert" resource="INSERT" package="DMS" filter="NEW;SAVED" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddField" resource="ADDFIELD" filter="NEW;DOC;PREC" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_RemoveField" resource="DELETEFIELD" filter="NEW;DOC;PREC" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_RelinkFields" resource="RELINKFIELDS" package="DMS" filter="DOC+NEW;DOC+SAVED" license="DP"/>
+      <control id="TabOMSDocument_Insert_Sep1" package="DMS" filter="DOC" license="DP"/>
+      <control id="TabOMSDocument_Insert_Precedent" resource="INSPRECEDENT" filter="DOC+NEW;DOC+SAVED" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_PrecedentLibrary" resource="PRECEDENTS" filter="NEW;DOC+NEW;DOC+SAVED" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_Sep2" package="DMS" filter="NEW;DOC+NEW" license="DP"/>
+      <control id="TabOMSDocument_Insert_AttachCC" resource="ATTACTCC" filter="DOC+NEW" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_AttachBCC" resource="ATTACTBCC" filter="DOC+NEW" package="DMS" hidden="false" condition="" license="DP"/>
+      <control id="TabOMSDocument_Insert_AttachDoc" resource="ATTACTDOC" filter="NEW;DOC+NEW" package="DMS" license="DP"/>      
+      <control id="TabOMSDocument_Insert_AttachPDFDoc" resource="ATTACTPDFDOC" filter="NEW;DOC+NEW" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_ConvertToPDF" resource="CONVERTATTPDF" filter="NEW;DOC+NEW" package="DMS" license="DP"/>
+            
+      
+      <control id="TabOMSDocument_Reply" resource="REPLY" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Reply_ToClient" resource="TOCLIENT" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Reply_ToAssociate" resource="TOASSOC" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Reply_Sep1" filter="ASSOCIATE" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Reply_Mail" resource="EMAILASSOC" filter="ASSOCIATE" package="DMS" license="DP"/>
+    </controls>
+    <commands>
+      <command id="OMS;VIEWCURRENTCLIENT" enabledFilter="CLIENT" />
+      <command id="OMS;VIEWCURRENTFILE" enabledFilter="FILE" />
+      <command id="OMS;VIEWCURRENTASSOCIATE" enabledFilter="ASSOCIATE" />
+      <command id="ADDIN;INSERTPRECEDENT" enabledFilter="ASSOCIATE" />
+      <command id="ADDIN;ASSOCDOCSPANE" enabledFilter="ASSOCIATE" />
+      <command id="OMS;DOCPROPS" enabledFilter="DOC+SAVED" />
+      <command id="ADDIN;DOCPROPSPANE" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;IN" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;OUT" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;UNDO" enabledFilter="DOC+SAVED" />
+      <command id="OMS;GETLATESTVERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;OPEN;VERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;LATEST" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;VERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;CLIENT" enabledFilter="CLIENT" />
+      <command id="OMS;COMPARE;FILE" enabledFilter="FILE" />
+    </commands>
+  </rules>
+</oms>

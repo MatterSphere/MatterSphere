@@ -1,0 +1,59 @@
+﻿ADSync.Config
+
+
+SETTINGS EXAMPLE:
+
+
+This is an example of ADSync.Config file:
+<?xml version="1.0" encoding="utf-8" ?>
+<appSettings>
+  <add key="ServiceTimerLength" value="120000" />
+  <add key="LogToFileEnabled" value ="True"/>
+  <add key="LogAllToEventLog" value="False"/>
+  <add key="MatterSphereServer" value ="TEST-SQL"/>
+  <add key="MatterSphereDatabase" value="V6Testing_ADV"/>
+  <add key="MatterSphereLoginType" value="NT" />
+  <add key="DoNotProcessStart1" value="20:00:00"/>
+  <add key="DoNotProcessEnd1" value="23:59:59"/>
+  <add key="DoNotProcessStart2" value="00:00:00"/>
+  <add key="DoNotProcessEnd2" value="06:00:00"/>
+  <add key="DoNotProcessEnabled" value ="False"/>
+</appSettings>
+
+
+SETTING DETAILS:
+
+
+<add key="ServiceTimerLength" value="120000" /> - Data Type: Double
+This is the definition of how often the service will execute, in milliseconds.
+In the example this timer setting is 120,000 milliseconds (or 120 seconds, or 2 minutes).
+
+
+<add key="LogToFileEnabled" value ="True"/> - Data Type: Boolean
+This setting defines whether or not verbose logging to a text file is turned on.
+
+
+<add key="LogAllToEventLog" value="False"/> - Data Type: Boolean
+This setting defines whether or not verbose logging to the Event Viewer is turned on.
+(If this is set to false, errors will still be logged to the Event Viewer.)
+
+
+<add key="MatterSphereServer" value ="ServerName"/> - Data Type: String
+This is the SQL Server Name to be used to construct the Connection String.
+
+
+<add key="MatterSphereDatabase" value="DatabaseName"/> - Data Type: String
+This is the SQL Database Name to be used to construct the Connection String.
+
+
+<add key="MatterSphereLoginType" value="NT"/> - Data Type: String
+This is the SQL Login Type to be used to construct the Connection String (NT or AAD).
+
+
+<add key="DoNotProcessStart1" value="20:00:00"/> - Data Type: TimeSpan
+<add key="DoNotProcessEnd1" value="23:59:59"/> - Data Type: TimeSpan
+<add key="DoNotProcessStart2" value="00:00:00"/> - Data Type: TimeSpan
+<add key="DoNotProcessEnd2" value="06:00:00"/> - Data Type: TimeSpan
+<add key="DoNotProcessEnabled" value ="False"/> - Data Type: Boolean
+These settings are used together, and provide an option to set two time blocks when the service
+will not actually run through a process, when the DoNotProcessEnabled value is set to True.

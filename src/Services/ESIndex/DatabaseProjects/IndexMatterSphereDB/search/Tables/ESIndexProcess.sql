@@ -1,0 +1,11 @@
+﻿CREATE TABLE search.ESIndexProcess
+(
+	Id INT NOT NULL IDENTITY(1, 1) NOT FOR REPLICATION
+	, StartDate DATETIME NOT NULL CONSTRAINT DF_ESIndexProcess_StartDate DEFAULT(GETDATE())
+	, FinishDate DATETIME NULL
+	, CONSTRAINT PK_ESIndexProcess PRIMARY KEY CLUSTERED (Id)
+)
+GO
+
+CREATE INDEX IX_ESIndexProcess_StartDate ON search.ESIndexProcess (StartDate)
+GO

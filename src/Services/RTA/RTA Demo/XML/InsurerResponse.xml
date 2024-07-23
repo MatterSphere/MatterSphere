@@ -1,0 +1,10 @@
+﻿<InsurerResponseA2A Capacity ="0" OtherCapacity ="">
+  <LiabilityCausation LiabilityDecision ="A" NoAuthority ="1" UnadmittedLiabilityReasons ="">
+    <DefendantAdmits AccidentOccurred ="1"  CausedByDefendant ="1" CausedSomeLossToTheClaimant="1"/>
+  </LiabilityCausation>
+  <ProvidedServices AltVchlProvided ="1" AltVhclDetails ="" PreparedToProvideReabilitation ="1"  ReabilitationDetails ="" ReabilitationProvided ="1" RepairsDetails ="" RepairsProvided ="1">
+    <DefendantsInsurer ContactMiddleName ="" ContactName ="" ContactSurname ="" EmailAddress ="" ReferenceNumber ="" TelephoneNumber ="">
+      <Address AddressType ="P" City ="" Country ="" County ="" District ="" HouseName ="" HouseNumber ="" PostCode ="" Street1 ="" Street2 =""/>
+    </DefendantsInsurer>
+  </ProvidedServices>
+</InsurerResponseA2A>

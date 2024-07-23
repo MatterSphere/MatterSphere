@@ -1,0 +1,77 @@
+﻿<!-- Example from Howard of CNF -->
+<DocumentInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Untitled3.xsd">
+  <ApplicationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ClaimDetails RetainedCopy="1" Signatory="S"/>
+  </ApplicationData>
+  <ClaimAndClaimantDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ClaimantRepresentative>
+      <CompanyDetails CompanyName="a" ContactName="a" ContactSurname="a" ReferenceNumber="aaa1" TelephoneNumber="a">
+        <Address AddressType="P" City="a" Country="a" Street1="a"/>
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantDetails DefedantAge="1" DefendandDescription="a" DefendantDetailsObtained="a" DefendantStatus="P" PolicyNumberReference="a">
+      <PersonalDetails Sex="M" Surname="a">
+        <Address AddressType="A" Street1="aaa" City="bbb" Country="ccc"/>
+      </PersonalDetails>
+      <Vehicle VRN="a"/>
+      <InsurerInformation InsurerName="a" InsurerType="I"/>
+      <CompanyDetails CompanyName="a">
+        <Address AddressType="A" Street1="aaa" City="bbb" Country="ccc"/>
+      </CompanyDetails>
+    </DefendantDetails>
+    <ClaimantDetails ChildClaim="1" Occupation="a">
+      <PersonalDetails DateOfBirth="1967-08-13" Name="a" Surname="a" TitleType="1">
+        <Address AddressType="A" Street1="aaa" City="bbb" Country="ccc"/>
+      </PersonalDetails>
+      <Vehicle/>
+    </ClaimantDetails>
+  </ClaimAndClaimantDetails>
+  <MedicalDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Injury HospitalAttendance="1" InjurySustainedDescription="a" MedicalAttentionSeeking="1" TimeOffRequired="1"/>
+    <Rehabilitation RehabilitationUndertaken="0"/>
+  </MedicalDetails>
+  <RepairsAndAlternativeVehicleProvision xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Repairs ClaiimingDamageOwnVehicle="1" DetailsOfTheInsurance="0" ThroughClaimantInsurer="1" TotalLoss="0">
+      <AlternativeCompany/>
+    </Repairs>
+    <AlternativeVehicleProvision AVProvided="1" AVRequiredByCL="1" AVRequiredByCR="1" ClaimantEntitled="1">
+      <Provider ProviderName="aaa" ReferenceNumber="111" StartDate="2010-01-01" EndDate="2010-02-01">
+        <Vehicle/>
+      </Provider>
+    </AlternativeVehicleProvision>
+  </RepairsAndAlternativeVehicleProvision>
+  <AccidentData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <AccidentDetails AccidentDate="1967-08-13" AccidentDescription="a" AccidentLocation="a" AccidentTime="20:00" ClaimantType="0" PoliceReported="1" OccupantsNumber="1" Seatbelt="0">
+      <Driver Surname="sss">
+        <Address AddressType="A" Street1="aaa" City="bbb" Country="ccc"/>
+      </Driver>
+      <Owner>
+        <Address AddressType="A" Street1="aaa" City="bbb" Country="ccc"/>
+      </Owner>
+      <Vehicle/>
+      <InsuranceCompanyInformatiion>
+        <Address AddressType="A" Street1="aaa" City="bbb" Country="ccc"/>
+      </InsuranceCompanyInformatiion>
+      <WeatherConditions/>
+      <RoadConditions/>
+      <AccidentCircumstances/>
+      <PoliceDetails/>
+    </AccidentDetails>
+    <BusCoach BussOrCoach="1" Evidence="1" VehicleDescription="a"/>
+  </AccidentData>
+  <OtherPartyDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <OtherParty OPType="W">
+      <PersonalDetails Surname="a">
+        <Address AddressType="A" Street1="aaa" City="bbb" Country="ccc"/>
+      </PersonalDetails>
+      <VihicleInformation/>
+      <InsuranceCompanyInformatiion>
+        <Address AddressType="A" Street1="aaa" City="bbb" Country="ccc"/>
+      </InsuranceCompanyInformatiion>
+    </OtherParty>
+  </OtherPartyDetails>
+  <LiabilityFunding xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Liability DefendantResponsability="a"/>
+    <Funding ConsideredFreeLegalExpIns="1" FundingUndertaken="1"/>
+  </LiabilityFunding>
+</DocumentInput>

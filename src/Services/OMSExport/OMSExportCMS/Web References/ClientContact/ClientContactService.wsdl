@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://cmsopen.com/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://cmsopen.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cmsopen.com/">
+      <s:element name="Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ClientContactDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClientContactDataCreate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ClientContactDataBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ClientUno" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ClientContactDataBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClientContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Conflict" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cont1EmplUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cont2EmplUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContRankCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContTypeCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DefAddressUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Director" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirectPhone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FaxNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inactive" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MatterLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiscText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NameUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Officer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Shareholder" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UseClientAddr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WkTypeContact" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CioSoapHeader" type="tns:CioSoapHeader" />
+      <s:complexType name="CioSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="locale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="formsTicket" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="session" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="useOfficeXtension" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="satelliteDbTarget" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="satelliteDbOnly" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contactUno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ClientContactDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClientContactDataUpdate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ClientContactDataBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contactUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Initialize">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeResult" type="tns:ClientContactData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClientContactData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ClientContactDataBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ContactUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModified" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="ClientUno" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InitializeDataCreate">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeDataCreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeDataCreateResult" type="tns:ClientContactDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataCreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ClientContactData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataCreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataCreateResult" type="tns:ClientContactDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ClientContactData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataUpdateResult" type="tns:ClientContactDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contactUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSingleResult" type="tns:ClientContactData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Read">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadResult" type="tns:ArrayOfClientContactData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClientContactData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClientContactData" nillable="true" type="tns:ClientContactData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ClientContactData" nillable="true" type="tns:ClientContactData" />
+      <s:element name="ClientContactDataCreate" nillable="true" type="tns:ClientContactDataCreate" />
+      <s:element name="ArrayOfClientContactData" nillable="true" type="tns:ArrayOfClientContactData" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Create" />
+  </wsdl:message>
+  <wsdl:message name="CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapIn">
+    <wsdl:part name="parameters" element="tns:Initialize" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateSoapIn">
+    <wsdl:part name="parameters" element="tns:InitializeDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeDataCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSingle" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapIn">
+    <wsdl:part name="parameters" element="tns:Read" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetIn">
+    <wsdl:part name="contactUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetOut" />
+  <wsdl:message name="InitializeHttpGetIn" />
+  <wsdl:message name="InitializeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ClientContactData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateHttpGetIn" />
+  <wsdl:message name="InitializeDataCreateHttpGetOut">
+    <wsdl:part name="Body" element="tns:ClientContactDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetIn">
+    <wsdl:part name="contactUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetOut">
+    <wsdl:part name="Body" element="tns:ClientContactData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClientContactData" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostIn">
+    <wsdl:part name="contactUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostOut" />
+  <wsdl:message name="InitializeHttpPostIn" />
+  <wsdl:message name="InitializeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ClientContactData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateHttpPostIn" />
+  <wsdl:message name="InitializeDataCreateHttpPostOut">
+    <wsdl:part name="Body" element="tns:ClientContactDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostIn">
+    <wsdl:part name="contactUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostOut">
+    <wsdl:part name="Body" element="tns:ClientContactData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClientContactData" />
+  </wsdl:message>
+  <wsdl:portType name="ClientContactServiceSoap">
+    <wsdl:operation name="Create">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Create</documentation>
+      <wsdl:input message="tns:CreateSoapIn" />
+      <wsdl:output message="tns:CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Update</documentation>
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Delete</documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Initialize</documentation>
+      <wsdl:input message="tns:InitializeSoapIn" />
+      <wsdl:output message="tns:InitializeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateSoapIn" />
+      <wsdl:output message="tns:InitializeDataCreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">GetDataCreate</documentation>
+      <wsdl:input message="tns:GetDataCreateSoapIn" />
+      <wsdl:output message="tns:GetDataCreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">GetDataUpdate</documentation>
+      <wsdl:input message="tns:GetDataUpdateSoapIn" />
+      <wsdl:output message="tns:GetDataUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleSoapIn" />
+      <wsdl:output message="tns:ReadSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadSoapIn" />
+      <wsdl:output message="tns:ReadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClientContactServiceHttpGet">
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Delete</documentation>
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Initialize</documentation>
+      <wsdl:input message="tns:InitializeHttpGetIn" />
+      <wsdl:output message="tns:InitializeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateHttpGetIn" />
+      <wsdl:output message="tns:InitializeDataCreateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleHttpGetIn" />
+      <wsdl:output message="tns:ReadSingleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadHttpGetIn" />
+      <wsdl:output message="tns:ReadHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClientContactServiceHttpPost">
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Delete</documentation>
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Initialize</documentation>
+      <wsdl:input message="tns:InitializeHttpPostIn" />
+      <wsdl:output message="tns:InitializeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateHttpPostIn" />
+      <wsdl:output message="tns:InitializeDataCreateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleHttpPostIn" />
+      <wsdl:output message="tns:ReadSingleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadHttpPostIn" />
+      <wsdl:output message="tns:ReadHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientContactServiceSoap" type="tns:ClientContactServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://cmsopen.com/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://cmsopen.com/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://cmsopen.com/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap:operation soapAction="http://cmsopen.com/Initialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InitializeCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <soap:operation soapAction="http://cmsopen.com/InitializeDataCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InitializeDataCreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <soap:operation soapAction="http://cmsopen.com/GetDataCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDataCreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <soap:operation soapAction="http://cmsopen.com/GetDataUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDataUpdateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <soap:operation soapAction="http://cmsopen.com/ReadSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadSingleCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <soap:operation soapAction="http://cmsopen.com/Read" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientContactServiceHttpGet" type="tns:ClientContactServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <http:operation location="/Initialize" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <http:operation location="/InitializeDataCreate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientContactServiceHttpPost" type="tns:ClientContactServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <http:operation location="/Initialize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <http:operation location="/InitializeDataCreate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientContactService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ClientContactService</documentation>
+    <wsdl:port name="ClientContactServiceSoap" binding="tns:ClientContactServiceSoap">
+      <soap:address location="http://localhost/CMSNet502/FileOpening/FileOpeningWS/ClientContactService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientContactServiceHttpGet" binding="tns:ClientContactServiceHttpGet">
+      <http:address location="http://localhost/CMSNet502/FileOpening/FileOpeningWS/ClientContactService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientContactServiceHttpPost" binding="tns:ClientContactServiceHttpPost">
+      <http:address location="http://localhost/CMSNet502/FileOpening/FileOpeningWS/ClientContactService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

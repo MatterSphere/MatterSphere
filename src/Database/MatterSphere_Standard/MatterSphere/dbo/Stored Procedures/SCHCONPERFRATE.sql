@@ -1,0 +1,40 @@
+﻿CREATE PROCEDURE dbo.SCHCONPERFRATE
+(
+	@CONTID BIGINT
+	, @ORDERBY NVARCHAR(MAX) = NULL
+)  
+AS
+SET TRAN ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
+
+DECLARE @Select NVARCHAR(MAX)
+
+SET @Select = N'
+WITH Res AS (
+SELECT *
+FROM  dbo.dbPerformance 
+WHERE CONTID = @CONTID
+)
+SELECT *
+FROM Res
+'
+IF @ORDERBY IS NULL
+	SET  @Select =  @Select + N'ORDER BY perfID'
+ELSE 
+	IF @ORDERBY NOT LIKE '%perfID%'
+		SET  @Select =  @Select + N'ORDER BY ' + @ORDERBY  + N', perfID'
+	ELSE 
+		SET  @Select =  @Select + N'ORDER BY ' + @ORDERBY
+--PRINT @Select
+EXEC sp_executesql @Select,  N'@CONTID BIGINT', @CONTID 
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[SCHCONPERFRATE] TO [OMSRole]
+    AS [dbo];
+
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[SCHCONPERFRATE] TO [OMSAdminRole]
+    AS [dbo];

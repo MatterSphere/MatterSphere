@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://cmsopen.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://cmsopen.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BillGroupService</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cmsopen.com/">
+      <s:element name="Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:BillGroupDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BillGroupDataCreate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BillGroupDataBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BillGrpCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ClientUno" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BillGroupDataBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AddressUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillGrpDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlEmplUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlFormatUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CollectionsOk" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ColAddressUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ColContactUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ColEmplUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ColTkEmplUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Copies" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GracePeriod" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inactive" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InterestBase" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InterestRate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="InterestSource" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntDueAdj" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsDefault" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsRfpBill" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JurisdicCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxDisbBill" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxFeeBill" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxTotalBill" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinDisbBill" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinFeeBill" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinTotalBill" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Offc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PbFormatUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrintCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReminderDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RsFormatUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltimateResp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UseBillRate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="billGrpUno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:BillGroupDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BillGroupDataUpdate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BillGroupDataBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="billGrpUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Initialize">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeResult" type="tns:BillGroupData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BillGroupData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BillGroupDataBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="BillGrpCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="BillGrpUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ClientUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModified" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InitializeDataCreate">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeDataCreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeDataCreateResult" type="tns:BillGroupDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataCreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:BillGroupData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataCreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataCreateResult" type="tns:BillGroupDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:BillGroupData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataUpdateResult" type="tns:BillGroupDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="billGrpUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSingleResult" type="tns:BillGroupData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Read">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadResult" type="tns:ArrayOfBillGroupData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBillGroupData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BillGroupData" nillable="true" type="tns:BillGroupData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BillGroupData" nillable="true" type="tns:BillGroupData" />
+      <s:element name="BillGroupDataCreate" nillable="true" type="tns:BillGroupDataCreate" />
+      <s:element name="ArrayOfBillGroupData" nillable="true" type="tns:ArrayOfBillGroupData" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Create" />
+  </wsdl:message>
+  <wsdl:message name="CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapIn">
+    <wsdl:part name="parameters" element="tns:Initialize" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateSoapIn">
+    <wsdl:part name="parameters" element="tns:InitializeDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeDataCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSingle" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapIn">
+    <wsdl:part name="parameters" element="tns:Read" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetIn">
+    <wsdl:part name="billGrpUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetOut" />
+  <wsdl:message name="InitializeHttpGetIn" />
+  <wsdl:message name="InitializeHttpGetOut">
+    <wsdl:part name="Body" element="tns:BillGroupData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateHttpGetIn" />
+  <wsdl:message name="InitializeDataCreateHttpGetOut">
+    <wsdl:part name="Body" element="tns:BillGroupDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetIn">
+    <wsdl:part name="billGrpUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetOut">
+    <wsdl:part name="Body" element="tns:BillGroupData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfBillGroupData" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostIn">
+    <wsdl:part name="billGrpUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostOut" />
+  <wsdl:message name="InitializeHttpPostIn" />
+  <wsdl:message name="InitializeHttpPostOut">
+    <wsdl:part name="Body" element="tns:BillGroupData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateHttpPostIn" />
+  <wsdl:message name="InitializeDataCreateHttpPostOut">
+    <wsdl:part name="Body" element="tns:BillGroupDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostIn">
+    <wsdl:part name="billGrpUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostOut">
+    <wsdl:part name="Body" element="tns:BillGroupData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfBillGroupData" />
+  </wsdl:message>
+  <wsdl:portType name="BillGroupServiceSoap">
+    <wsdl:operation name="Create">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create</wsdl:documentation>
+      <wsdl:input message="tns:CreateSoapIn" />
+      <wsdl:output message="tns:CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update</wsdl:documentation>
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete</wsdl:documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Initialize</wsdl:documentation>
+      <wsdl:input message="tns:InitializeSoapIn" />
+      <wsdl:output message="tns:InitializeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</wsdl:documentation>
+      <wsdl:input message="tns:InitializeDataCreateSoapIn" />
+      <wsdl:output message="tns:InitializeDataCreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetDataCreate</wsdl:documentation>
+      <wsdl:input message="tns:GetDataCreateSoapIn" />
+      <wsdl:output message="tns:GetDataCreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetDataUpdate</wsdl:documentation>
+      <wsdl:input message="tns:GetDataUpdateSoapIn" />
+      <wsdl:output message="tns:GetDataUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ReadSingle</wsdl:documentation>
+      <wsdl:input message="tns:ReadSingleSoapIn" />
+      <wsdl:output message="tns:ReadSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Read</wsdl:documentation>
+      <wsdl:input message="tns:ReadSoapIn" />
+      <wsdl:output message="tns:ReadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BillGroupServiceHttpGet">
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Initialize</wsdl:documentation>
+      <wsdl:input message="tns:InitializeHttpGetIn" />
+      <wsdl:output message="tns:InitializeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</wsdl:documentation>
+      <wsdl:input message="tns:InitializeDataCreateHttpGetIn" />
+      <wsdl:output message="tns:InitializeDataCreateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ReadSingle</wsdl:documentation>
+      <wsdl:input message="tns:ReadSingleHttpGetIn" />
+      <wsdl:output message="tns:ReadSingleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Read</wsdl:documentation>
+      <wsdl:input message="tns:ReadHttpGetIn" />
+      <wsdl:output message="tns:ReadHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BillGroupServiceHttpPost">
+    <wsdl:operation name="Delete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Initialize</wsdl:documentation>
+      <wsdl:input message="tns:InitializeHttpPostIn" />
+      <wsdl:output message="tns:InitializeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</wsdl:documentation>
+      <wsdl:input message="tns:InitializeDataCreateHttpPostIn" />
+      <wsdl:output message="tns:InitializeDataCreateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ReadSingle</wsdl:documentation>
+      <wsdl:input message="tns:ReadSingleHttpPostIn" />
+      <wsdl:output message="tns:ReadSingleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Read</wsdl:documentation>
+      <wsdl:input message="tns:ReadHttpPostIn" />
+      <wsdl:output message="tns:ReadHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BillGroupServiceSoap" type="tns:BillGroupServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://cmsopen.com/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://cmsopen.com/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://cmsopen.com/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap:operation soapAction="http://cmsopen.com/Initialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <soap:operation soapAction="http://cmsopen.com/InitializeDataCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <soap:operation soapAction="http://cmsopen.com/GetDataCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <soap:operation soapAction="http://cmsopen.com/GetDataUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <soap:operation soapAction="http://cmsopen.com/ReadSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <soap:operation soapAction="http://cmsopen.com/Read" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BillGroupServiceSoap12" type="tns:BillGroupServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create">
+      <soap12:operation soapAction="http://cmsopen.com/Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://cmsopen.com/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://cmsopen.com/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap12:operation soapAction="http://cmsopen.com/Initialize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <soap12:operation soapAction="http://cmsopen.com/InitializeDataCreate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <soap12:operation soapAction="http://cmsopen.com/GetDataCreate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <soap12:operation soapAction="http://cmsopen.com/GetDataUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <soap12:operation soapAction="http://cmsopen.com/ReadSingle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <soap12:operation soapAction="http://cmsopen.com/Read" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BillGroupServiceHttpGet" type="tns:BillGroupServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <http:operation location="/Initialize" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <http:operation location="/InitializeDataCreate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BillGroupServiceHttpPost" type="tns:BillGroupServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <http:operation location="/Initialize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <http:operation location="/InitializeDataCreate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillGroupService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BillGroupService</wsdl:documentation>
+    <wsdl:port name="BillGroupServiceSoap" binding="tns:BillGroupServiceSoap">
+      <soap:address location="http://75sp1hf-expert-public.rm.na.aderant.com/cmsnet/FileOpening/FileOpeningWS/BillGroupService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BillGroupServiceSoap12" binding="tns:BillGroupServiceSoap12">
+      <soap12:address location="http://75sp1hf-expert-public.rm.na.aderant.com/cmsnet/FileOpening/FileOpeningWS/BillGroupService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BillGroupServiceHttpGet" binding="tns:BillGroupServiceHttpGet">
+      <http:address location="http://75sp1hf-expert-public.rm.na.aderant.com/CMSNet/FileOpening/FileOpeningWS/BillGroupService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BillGroupServiceHttpPost" binding="tns:BillGroupServiceHttpPost">
+      <http:address location="http://75sp1hf-expert-public.rm.na.aderant.com/CMSNet/FileOpening/FileOpeningWS/BillGroupService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

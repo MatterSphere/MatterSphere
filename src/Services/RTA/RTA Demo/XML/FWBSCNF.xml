@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ErrorData>
+  <ErrorList>
+    <Error Code="UNDEFINED" ErrorMessageCode="MustBeProvided" FieldName="Was the claimant wearing a seatbelt?" FieldsetName="Accident details" Severity="Fatal" Type="Business"/>
+  </ErrorList>
+</ErrorData>

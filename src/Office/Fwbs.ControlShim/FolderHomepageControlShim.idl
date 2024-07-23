@@ -1,0 +1,69 @@
+// FolderHomepageControlShim.idl : IDL source for FolderHomepageControlShim
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (FolderHomepageControlShim.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(52147600-33E8-46ad-9666-A3E13BB46DC8),
+	dual,
+	nonextensible,
+	helpstring("IFolderHomepageCtl Interface"),
+	pointer_default(unique)
+]
+interface IFolderHomepageCtl : IDispatch{
+};
+
+[
+	uuid(648EC993-5231-480d-BBFB-3B277C26EF31),
+	version(1.0),
+	helpstring("FWBSSecondary Shim 1.0 Type Library")
+]
+library FolderHomepageControlShimLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(B9C8117E-C13B-4ff5-BF75-03BE75EB7FE5),
+		control,
+		helpstring("FWBS ControlShim Class")
+	]
+	coclass FolderHomepageCtl
+	{
+		[default] interface IFolderHomepageCtl;
+	};
+};
+
+//[
+//	object,
+//	uuid(A65288F4-2C06-4815-89B5-2A4612CD7FBC),
+//	dual,
+//	nonextensible,
+//	helpstring("IFolderHomepageCtl Interface"),
+//	pointer_default(unique)
+//]
+//interface IFolderHomepageCtl : IDispatch{
+//};
+//
+//[
+//	uuid(6D5056FF-1252-4684-AAE6-F21F53C7EAF4),
+//	version(1.0),
+//	helpstring("FWBSSecondary Shim 1.0 Type Library")
+//]
+//library FolderHomepageControlShimLib
+//{
+//	importlib("stdole2.tlb");
+//	[
+//		uuid(8948818E-10C7-4F07-91B8-D928D413DEA9),
+//		control,
+//		helpstring("FWBS ControlShim Class")
+//	]
+//	coclass FolderHomepageCtl
+//	{
+//		[default] interface IFolderHomepageCtl;
+//	};
+//};

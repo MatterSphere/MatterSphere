@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="SystemAggregator" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ServiceAggregatorEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NtlmAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:10845/ServiceAggregator?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:10845/ServiceAggregator?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:10845/ServiceAggregator?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FWBS.Requests" />
+      <xsd:import schemaLocation="http://localhost:10845/ServiceAggregator?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:10845/ServiceAggregator?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISystemAggregator_CreateClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateClient" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_CreateClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_CreateFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFile" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_CreateFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_SetSecurity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSecurity" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_SetSecurity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ApplyTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ApplyTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ArchiveFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveFile" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ArchiveFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ArchiveDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveDocument" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ArchiveDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ArchiveFileForceRelease_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveFileForceRelease" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ArchiveFileForceRelease_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveFileForceReleaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ArchiveDocumentForceRelease_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveDocumentForceRelease" />
+  </wsdl:message>
+  <wsdl:message name="ISystemAggregator_ArchiveDocumentForceRelease_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveDocumentForceReleaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISystemAggregator">
+    <wsdl:operation name="CreateClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAggregator/CreateClient" message="tns:ISystemAggregator_CreateClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAggregator/CreateClientResponse" message="tns:ISystemAggregator_CreateClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAggregator/CreateFile" message="tns:ISystemAggregator_CreateFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAggregator/CreateFileResponse" message="tns:ISystemAggregator_CreateFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSecurity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAggregator/SetSecurity" message="tns:ISystemAggregator_SetSecurity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAggregator/SetSecurityResponse" message="tns:ISystemAggregator_SetSecurity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAggregator/ApplyTemplate" message="tns:ISystemAggregator_ApplyTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAggregator/ApplyTemplateResponse" message="tns:ISystemAggregator_ApplyTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAggregator/ArchiveFile" message="tns:ISystemAggregator_ArchiveFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAggregator/ArchiveFileResponse" message="tns:ISystemAggregator_ArchiveFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAggregator/ArchiveDocument" message="tns:ISystemAggregator_ArchiveDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAggregator/ArchiveDocumentResponse" message="tns:ISystemAggregator_ArchiveDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveFileForceRelease">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAggregator/ArchiveFileForceRelease" message="tns:ISystemAggregator_ArchiveFileForceRelease_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAggregator/ArchiveFileForceReleaseResponse" message="tns:ISystemAggregator_ArchiveFileForceRelease_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveDocumentForceRelease">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISystemAggregator/ArchiveDocumentForceRelease" message="tns:ISystemAggregator_ArchiveDocumentForceRelease_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISystemAggregator/ArchiveDocumentForceReleaseResponse" message="tns:ISystemAggregator_ArchiveDocumentForceRelease_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceAggregatorEndpoint" type="tns:ISystemAggregator">
+    <wsp:PolicyReference URI="#ServiceAggregatorEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateClient">
+      <soap:operation soapAction="http://tempuri.org/ISystemAggregator/CreateClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFile">
+      <soap:operation soapAction="http://tempuri.org/ISystemAggregator/CreateFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSecurity">
+      <soap:operation soapAction="http://tempuri.org/ISystemAggregator/SetSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyTemplate">
+      <soap:operation soapAction="http://tempuri.org/ISystemAggregator/ApplyTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveFile">
+      <soap:operation soapAction="http://tempuri.org/ISystemAggregator/ArchiveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveDocument">
+      <soap:operation soapAction="http://tempuri.org/ISystemAggregator/ArchiveDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveFileForceRelease">
+      <soap:operation soapAction="http://tempuri.org/ISystemAggregator/ArchiveFileForceRelease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveDocumentForceRelease">
+      <soap:operation soapAction="http://tempuri.org/ISystemAggregator/ArchiveDocumentForceRelease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SystemAggregator">
+    <wsdl:port name="ServiceAggregatorEndpoint" binding="tns:ServiceAggregatorEndpoint">
+      <soap:address location="http://localhost:10845/ServiceAggregator" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

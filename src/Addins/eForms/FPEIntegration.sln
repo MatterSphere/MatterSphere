@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPEIntegration", "eForms.Integration\FPEIntegration.csproj", "{4B69E5AA-542E-4AAF-B50B-169A7BFA7C66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPETest", "eForms.Integration.Test\FPETest.csproj", "{2EFFEE95-C2E3-498E-9A8A-2228B485E797}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B69E5AA-542E-4AAF-B50B-169A7BFA7C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B69E5AA-542E-4AAF-B50B-169A7BFA7C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B69E5AA-542E-4AAF-B50B-169A7BFA7C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B69E5AA-542E-4AAF-B50B-169A7BFA7C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFFEE95-C2E3-498E-9A8A-2228B485E797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFFEE95-C2E3-498E-9A8A-2228B485E797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFFEE95-C2E3-498E-9A8A-2228B485E797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFFEE95-C2E3-498E-9A8A-2228B485E797}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0370C2B1-8220-41EC-A4B5-2F7F12F8ED80}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,58 @@
+﻿<DocumentInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationData>
+    <ClaimDetails Signatory="S" RetainedCopy="1" />
+  </ApplicationData>
+  <ClaimAndClaimantDetails>
+    <ClaimantRepresentative>
+      <CompanyDetails CompanyName="Product Team" EmailAddress="Daniel.i@fwbs.net" ContactName="Will" ContactSurname="MacKenzie" TelephoneNumber="01604 857857" ReferenceNumber="F93/1">
+        <Address Country="England" PostCode="PS11 3DE" District="Line 3" County="County" City="Town" Street1="Default Address" Street2="Line 2" HouseName="FWBS" HouseNumber="" AddressType="A" />
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantDetails DefendantStatus="P" DefDriverName="" PolicyNumberReference="KET001" ReferralSource="" Comments="">
+      <PersonalDetails Name="" Surname="Jones" TitleType="1">
+        <Address Country="England" PostCode="KE1 1ER" County="Northants" City="Kettering" Street1="High Street" HouseName="The Old Post Office" AddressType="A" />
+      </PersonalDetails>
+      <Vehicle VRN="YU10 LLK" />
+      <InsurerInformation InsurerType="I" InsurerName="FWBS COMP" Selected="1" InsurerOrganizationID="COMP009" InsurerOrganizationPath="/COMP009" />
+    </DefendantDetails>
+    <ClaimantDetails Occupation="Writer" ChildClaim="0" NINComment="To follow.">
+      <PersonalDetails Name="George" Surname="Shaw" DateOfBirth="1950-10-19" TitleType="1">
+        <Address Country="England" PostCode="NN9 9NN" City="Northampton" Street1="Storytellers Lane" HouseNumber="1" AddressType="A" />
+      </PersonalDetails>
+      <Vehicle VRN="" />
+    </ClaimantDetails>
+  </ClaimAndClaimantDetails>
+  <MedicalDetails>
+    <Injury SoftTissue="1" BoneInjury="1" Whiplash="1" Other="1" InjurySustainedDescription="All of the above and a heavily bruised right leg." TimeOffRequired="0" TimeOffPeriod="0" MedicalAttentionSeeking="1" MedicalAttentionFirstDate="2010-06-25" HospitalAttendance="1" OvernightDetention="0" />
+    <Hospital HospitalType="0" HospitalName="Northampton General Hospital" PostCode="NN1 1NN">
+      <HospitalAddress AddressLine1="1 Billing Road" AddressLine4="Northampton" />
+    </Hospital>
+    <Rehabilitation RehabilitationUndertaken="0" RehabilitationTreatment="2 Weeks - four visits." RehabilitationNeeds="1" />
+  </MedicalDetails>
+  <RepairsAndAlternativeVehicleProvision>
+    <Repairs ClaiimingDamageOwnVehicle="0" />
+    <AlternativeVehicleProvision ClaimantEntitled="1" />
+  </RepairsAndAlternativeVehicleProvision>
+  <AccidentData>
+    <AccidentDetails ClaimantType="0" OccupantsNumber="1" Seatbelt="1" DriverIsDefendant="0" AccidentDate="2010-06-24" AccidentTime="15:00" AccidentLocation="Heading to a T-Junction" AccidentDescription="Defendant's car swung around the corner at speed and crashed into the Claimant." PoliceReported="1">
+      <InsuranceCompanyInformatiion />
+      <WeatherConditions Sun="1" Rain="0" Snow="0" Ice="0" Fog="0" Other="0" />
+      <RoadConditions Dry="1" Wet="0" Snow="0" Ice="0" Mud="0" Oil="0" Other="0" />
+      <AccidentCircumstances VhclHitSideRoad="0" VhclHitInRear="0" VhclHitWhilstParked="0" AccidCarPark="0" AccidRoundabout="0" AccidChangingLanes="0" ConcertinaCollision="1" Other="0" />
+      <PoliceDetails StationName="Northamptonshire Police Service" StationAddress="1 Station Road Northampton Northamptonshire NN1 2NN" ReportingOfficerName="Officer Dobbins" ReferenceNumber="POL001" />
+    </AccidentDetails>
+    <BusCoach BussOrCoach="0" />
+  </AccidentData>
+  <OtherPartyDetails>
+    <OtherParty OPType="W">
+      <PersonalDetails TitleType="1" Name="" Surname="Complaint">
+        <Address Country="England" PostCode="LV1 1LV" City="Liverpool" Street1="Dutch Hill" HouseNumber="1" AddressType="A" />
+      </PersonalDetails>
+      <VihicleInformation VRN="" Make="" Model="" Color="" />
+    </OtherParty>
+  </OtherPartyDetails>
+  <LiabilityFunding>
+    <Liability DefendantResponsability="The Claimant believes the accident was entirely the Defendant's fault." OP1Responsability="0" />
+    <Funding FundingUndertaken="0" ConsideredFreeLegalExpIns="0" Comments="" />
+  </LiabilityFunding>
+</DocumentInput>

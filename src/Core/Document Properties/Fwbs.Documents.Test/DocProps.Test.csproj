@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props" Condition="Exists('..\..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB5A801F-7857-4492-B9AE-F8FEA6B2245A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Documents.Test</RootNamespace>
+    <AssemblyName>DocProps.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fwbs.Framework">
+      <HintPath>..\..\..\References\Fwbs.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Common, Version=0.9.6.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Fwbs.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Composition">
+      <HintPath>..\..\..\References\Fwbs.Framework.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Shared">
+      <HintPath>..\..\..\References\Fwbs.Framework.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDocumentTest.cs" />
+    <Compile Include="DocumentTypeTest.cs" />
+    <Compile Include="DSODocumentTest.cs" />
+    <Compile Include="JZipDocumentTest.cs" />
+    <Compile Include="MsgDocumentTest.cs" />
+    <Compile Include="OfficeXmlDocumentTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DocumentInfoTest.cs" />
+    <Compile Include="..\..\CoreAssemblyInfo.cs">
+      <Link>Properties\CoreAssemblyInfo</Link>
+    </Compile>
+    <Compile Include="PropertyTypeTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+    <EmbeddedResource Include="Resources\test-type.txt" />
+    <EmbeddedResource Include="Resources\test-noprops.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\test-ascii-noprops.msg" />
+    <EmbeddedResource Include="Resources\test-ascii-props.msg" />
+    <EmbeddedResource Include="Resources\test-noprops.doc" />
+    <EmbeddedResource Include="Resources\test-noprops.docx" />
+    <EmbeddedResource Include="Resources\test-noprops.oft" />
+    <EmbeddedResource Include="Resources\test-noprops.xls" />
+    <EmbeddedResource Include="Resources\test-noprops.xlsx" />
+    <EmbeddedResource Include="Resources\test-props.doc" />
+    <EmbeddedResource Include="Resources\test-props.docx" />
+    <EmbeddedResource Include="Resources\test-props.oft" />
+    <EmbeddedResource Include="Resources\test-props.xls" />
+    <EmbeddedResource Include="Resources\test-props.xlsx" />
+    <EmbeddedResource Include="Resources\test-unicode-noprops.msg" />
+    <EmbeddedResource Include="Resources\test-unicode-props.msg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fwbs.Common.DocumentProperties\DocProps.csproj">
+      <Project>{1E179E43-3B81-47A2-974D-A0DE8733E057}</Project>
+      <Name>DocProps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Common.JZipPackageProperties\JZipPackageProperties.csproj">
+      <Project>{8A721804-5E30-458D-8568-D77C6EC7F9C0}</Project>
+      <Name>JZipPackageProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Common.MsgProperties\MsgProperties.csproj">
+      <Project>{235CCE83-2946-4D4B-9985-2B53FCFC1970}</Project>
+      <Name>MsgProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Common.OfficeXpsProperties\OfficeXpsProperties.csproj">
+      <Project>{4A5A6861-46A6-4CBA-82EE-5207D1C2E9D2}</Project>
+      <Name>OfficeXpsProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Common.OleProperties\OleProperties.csproj">
+      <Project>{E23D2D56-4E1E-44A7-94BC-493CE96B2A73}</Project>
+      <Name>OleProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Common.PackageProperties\PackageProperties.csproj">
+      <Project>{900A63BD-B627-4AAA-BB38-74A9315D2DD4}</Project>
+      <Name>PackageProperties</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\test-type.msg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\test-type.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\test-type.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\test-type.oft" />
+    <EmbeddedResource Include="Resources\test-type.xls" />
+    <EmbeddedResource Include="Resources\test-type.xlsx" />
+    <EmbeddedResource Include="Resources\test-type-docasdocx.docx" />
+    <EmbeddedResource Include="Resources\test-type-docxasdoc.doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\test-linkprops.xls" />
+    <EmbeddedResource Include="Resources\test-linkprops.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets" Condition="Exists('..\..\packages\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

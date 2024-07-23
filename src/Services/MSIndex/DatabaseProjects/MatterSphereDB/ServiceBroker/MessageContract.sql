@@ -1,0 +1,1 @@
+﻿CREATE CONTRACT [//msindex/MessageContract] AUTHORIZATION [dbo] ( [//msindex/Message] SENT BY INITIATOR )

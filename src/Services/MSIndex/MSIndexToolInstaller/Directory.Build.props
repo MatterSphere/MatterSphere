@@ -1,0 +1,13 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ProductName>3E MatterSphere MSIndex Tool</ProductName>
+    <ProductFamily>3E MatterSphere</ProductFamily>
+    <ShortProductName>MSIndex Tool</ShortProductName>
+    <PublisherName>ELITE</PublisherName>
+    <ProductVersion>10.1.0</ProductVersion>
+    <UpgradeCode>B9E950D2-92FA-49D3-95AB-9AAE2BBBF2FA</UpgradeCode>
+    <SourceDir></SourceDir>
+    <OutputName>3EMatterSphereMSIndexToolInstaller</OutputName>
+  </PropertyGroup>
+</Project>

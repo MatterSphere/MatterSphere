@@ -1,0 +1,63 @@
+﻿<DocumentInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationData>
+    <ClaimDetails Signatory="S" RetainedCopy="1" />
+  </ApplicationData>
+  <ClaimAndClaimantDetails>
+    <ClaimantRepresentative>
+      <CompanyDetails CompanyName="FWBS" EmailAddress="alan.g@fwbs.net" ContactName="Alan" ContactSurname="Greaves" TelephoneNumber="01604 372828" ReferenceNumber="12345678">
+        <Address Country="England" PostCode="NN1 6AF" City="Northampton" Street1="12 Gold Street" HouseName="A House" />
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantDetails DefendantStatus="P" PolicyNumberReference="12345678" DefedantAge="22" DefendandDescription="Six feet male" DefendantDetailsObtained="From Defendant">
+      <PersonalDetails Surname="Thomas" Sex="M">
+        <Address Country="England" City="Northampton" Street1="11 High Street" HouseName="The Times" />
+      </PersonalDetails>
+      <Vehicle VRN="KP05 FAB" />
+      <InsurerInformation InsurerType="I" InsurerName="FWBS COMP" InsurerOrganizationID="COMP009" InsurerOrganizationPath="/C00009" />
+      <CompanyDetails CompanyName="White's Deliverys">
+        <Address Country="England" City="Northampton" Street1="76 Pine Lane" />
+      </CompanyDetails>
+    </DefendantDetails>
+    <ClaimantDetails Occupation="Builder" ChildClaim="0" NationalInsuranceNumber="HT001112A">
+      <PersonalDetails Name="Tom" Surname="Watts" DateOfBirth="1985-02-22" TitleType="1">
+        <Address Country="England" City="Northampton" Street1="5 Kingsthore Road" HouseName="Home" />
+      </PersonalDetails>
+      <Vehicle />
+    </ClaimantDetails>
+  </ClaimAndClaimantDetails>
+  <MedicalDetails>
+    <Injury SoftTissue="1" BoneInjury="1" Whiplash="1" Other="1" InjurySustainedDescription="Wiplash" TimeOffRequired="0" TimeOffPeriod="3" StillOffWork="0" MedicalAttentionSeeking="0" MedicalAttentionFirstDate="2010-12-08" HospitalAttendance="0" OvernightDetention="1" DaysNumber="3" />
+    <Hospital HospitalType="0" HospitalName="Hospital name" PostCode="DG3 5VN">
+      <HospitalAddress AddressLine1="Hospital address1" AddressLine2="Hospital address2" AddressLine3="Hospital address3" AddressLine4="Hospital address4" />
+    </Hospital>
+    <Rehabilitation RehabilitationUndertaken="0" RehabilitationTreatment="tails of the rehabilitation treatment recommended and any treatment provided including name of provider" RehabilitationNeeds="1" RehabilitationDetails="Full details on rahabilitaion needs claimant has arising out of the accident" />
+  </MedicalDetails>
+  <RepairsAndAlternativeVehicleProvision>
+    <Repairs ClaiimingDamageOwnVehicle="0" OtherDetails="other details of the insurance" Location="Location for  the defendants insurer" ContactDetails="Contact for  the defendants insurer">
+      <AlternativeCompany CompanyName="Alternative company" Address="Alternative company address" TelephoneNumber="12345678" ReferenceNumber="123" />
+    </Repairs>
+    <AlternativeVehicleProvision ClaimantEntitled="0">
+      <Provider ProviderName="A Provider" ReferenceNumber="123456789" ProviderAddress="Provider Address" StartDate="2009-12-11" EndDate="11/12/2009">
+        <Vehicle VRN="12341234" Make="MakeProvided" Model="ModelBestProvided" EngineSize="12" Color="BlackProvided" />
+      </Provider>
+    </AlternativeVehicleProvision>
+  </RepairsAndAlternativeVehicleProvision>
+  <AccidentData>
+    <AccidentDetails ClaimantType="0" OccupantsNumber="1" DriverIsDefendant="1" AccidentDate="2009-12-12" AccidentTime="12:02" AccidentLocation="Bridge Street, Northampton" AccidentDescription="Two car shunt" PoliceReported="1">
+      <Driver Name="William" MiddleName="A" Surname="John">
+        <Address Country="UK" District="Abington" City="Northampton" Street1="10 Silver Street" HouseName="The Trees" HouseNumber="10" />
+      </Driver>
+      <Owner />
+      <InsuranceCompanyInformatiion />
+      <WeatherConditions />
+      <RoadConditions />
+      <AccidentCircumstances />
+      <PoliceDetails StationName="Police Station Name" StationAddress="Police Station Address" ReportingOfficerName="Reporting Officer Name" ReferenceNumber="123" />
+    </AccidentDetails>
+    <BusCoach BussOrCoach="0" DriverName="Driver Name" DriverID="123" DriverDescription="Description of the driver =drunk" VehicleDescription="A Big Bus" NumberOfPassengers="2" Comments="Some Comments" />
+  </AccidentData>
+  <LiabilityFunding>
+    <Liability DefendantResponsability="Defendant Responsability" />
+    <Funding FundingUndertaken="0" ICName="Insurance Company Name" ICAddress="Address of Insurance Company" PolicyNumber="123" LevelOfCover="Level of cover" IncreasingPoint="At which point is an increased premium payable?" OrganizationName="Organisation Name" OtherDetails="Other details" Comments="Section M - Other relevant information" />
+  </LiabilityFunding>
+</DocumentInput>

@@ -1,0 +1,10 @@
+ActiproSoftware.SyntaxEditor.SyntaxEditor, ActiproSoftware.SyntaxEditor.Net20, Version=4.0.290.0, Culture=neutral, PublicKeyToken=21a821480e210563
+Infragistics.Win.UltraWinProgressBar.UltraProgressBar, Infragistics.Win, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.Misc.UltraExpandableGroupBox, Infragistics.Win.Misc, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.Misc.UltraGroupBox, Infragistics.Win.Misc, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.Misc.UltraLabel, Infragistics.Win.Misc, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.UltraWinDock.UltraDockManager, Infragistics.Win.UltraWinDock, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Win.UltraWinTabControl.UltraTabControl, Infragistics.Win.UltraWinTabControl, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Telerik.WinControls.UI.RadTextBoxControl, Telerik.WinControls.UI, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadTreeView, Telerik.WinControls.UI, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.Themes.Windows8Theme, Telerik.WinControls.Themes.Windows8, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e

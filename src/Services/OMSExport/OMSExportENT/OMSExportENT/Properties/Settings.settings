@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FWBS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="OMSExportENT_enterpriseClientService_ClientService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test/services/clientservice.asmx</Value>
+    </Setting>
+    <Setting Name="OMSExportENT_enterpriseClientLoadService_ClientLoadService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test/services/clientloadservice.asmx</Value>
+    </Setting>
+    <Setting Name="OMSExportENT_enterpriseMatterService_MatterService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test/services/matterservice.asmx</Value>
+    </Setting>
+    <Setting Name="OMSExportENT_enterpriseMatterLoadService_MatterLoadService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test/services/matterloadservice.asmx</Value>
+    </Setting>
+    <Setting Name="OMSExportENT_enterpriseTestWebService_TestWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test/services/testwebservice.asmx</Value>
+    </Setting>
+    <Setting Name="OMSExportENT_enterpriseTimeCard_TimeCard" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://test/services/timecard.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

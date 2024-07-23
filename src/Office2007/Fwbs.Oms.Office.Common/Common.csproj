@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3382A167-1E13-4EEE-8E84-A060E2869EC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fwbs.Oms.Office.Common</RootNamespace>
+    <AssemblyName>Fwbs.Oms.Office.Common</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="FWBS.Common, Version=2.2.2500.875, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\FWBS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Oms.ResourceLookup">
+      <HintPath>c:\OMSCoreAssemblies\Fwbs.Oms.ResourceLookup.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Outlook.12.0.4518.1014\lib\net20\Microsoft.Office.Interop.Outlook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\MicrosoftOfficeCore12.12.0.4518.1014\lib\Office.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OMS.Data, Version=2.2.2500.875, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\OMS.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Infrastructure">
+      <HintPath>C:\OMSCoreAssemblies\OMS.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Library, Version=2.2.2500.875, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\OMS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.UI, Version=2.2.2500.875, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\OMS.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillInfo.cs" />
+    <Compile Include="ExternalOfficeOMSAddin.cs" />
+    <Compile Include="IExternalOfficeOMSAddin.cs" />
+    <Compile Include="OfficeOMSAddin.cs" />
+    <Compile Include="Panes\BasePane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panes\DocumentPropertyPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panes\AssociatedDocuments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panes\AssociatedDocuments.designer.cs">
+      <DependentUpon>AssociatedDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\GlobalSearchPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panes\GlobalSearchPane.Designer.cs">
+      <DependentUpon>GlobalSearchPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panes\WizardPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PictureDispMaker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlCallbackDelegate.cs" />
+    <Compile Include="RibbonControlConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mattercentrelogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DefaultMainRibbon.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DefaultMainRibbonConfig.xml" />
+    <EmbeddedResource Include="Panes\AssociatedDocuments.resx">
+      <DependentUpon>AssociatedDocuments.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\DocumentPropertyPane.resx">
+      <DependentUpon>DocumentPropertyPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panes\WizardPane.resx">
+      <DependentUpon>WizardPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Office\Fwbs.Oms.Office\Office12.vbproj">
+      <Project>{E9E42EEA-D556-4A0C-A31C-098DBC077BC0}</Project>
+      <Name>Office12</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Oms.Office.Core\Core12.csproj">
+      <Project>{8B4CA9D3-9646-44EB-914B-802D02DF53DC}</Project>
+      <Name>Core12</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Panes\Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\AccessTableContacts.png" />
+    <EmbeddedResource Include="Images\AddressBook.png" />
+    <EmbeddedResource Include="Images\AdpPrimaryKey.png" />
+    <EmbeddedResource Include="Images\AttachItem.png" />
+    <EmbeddedResource Include="Images\AutoDial.png" />
+    <EmbeddedResource Include="Images\AutoDial+.png" />
+    <EmbeddedResource Include="Images\BlogHomePage.png" />
+    <EmbeddedResource Include="Images\BusinessCardInsertMenu.png" />
+    <EmbeddedResource Include="Images\Chart3DPieChart.png" />
+    <EmbeddedResource Include="Images\CheckNames.png" />
+    <EmbeddedResource Include="Images\ControlLayoutTabular.png" />
+    <EmbeddedResource Include="Images\CreateReportBlankReport.png" />
+    <EmbeddedResource Include="Images\DelayDeliveryOutlook.png" />
+    <EmbeddedResource Include="Images\DirectRepliesTo.png" />
+    <EmbeddedResource Include="Images\DistributionListAddNewMember.png" />
+    <EmbeddedResource Include="Images\DistributionListAddNewMember+.png" />
+    <EmbeddedResource Include="Images\FilePrepareMenu.png" />
+    <EmbeddedResource Include="Images\FindText.png" />
+    <EmbeddedResource Include="Images\FormatNumberDefault.png" />
+    <EmbeddedResource Include="Images\FormulaMoreFunctionsMenu.png" />
+    <EmbeddedResource Include="Images\FormulaMoreFunctionsMenu+.png" />
+    <EmbeddedResource Include="Images\Help.png" />
+    <EmbeddedResource Include="Images\HighImportance.png" />
+    <EmbeddedResource Include="Images\IconDropdownArrow.png" />
+    <EmbeddedResource Include="Images\IconRibbon3e.png" />
+    <EmbeddedResource Include="Images\LookUp.png" />
+    <EmbeddedResource Include="Images\MailMergeAddressBlockInsert#.png" />
+    <EmbeddedResource Include="Images\MailMergeAddressBlockInsert.png" />
+    <EmbeddedResource Include="Images\MailMergeAddressBlockInsert+.png" />
+    <EmbeddedResource Include="Images\MasterNotesPageOrientation.png" />
+    <EmbeddedResource Include="Images\MeetingsWorkspace.png" />
+    <EmbeddedResource Include="Images\MoveToFolder.png" />
+    <EmbeddedResource Include="Images\MoveToFolder+.png" />
+    <EmbeddedResource Include="Images\PivotChartType.png" />
+    <EmbeddedResource Include="Images\PivotTableFormulasMenu.png" />
+    <EmbeddedResource Include="Images\ProtectDocument.png" />
+    <EmbeddedResource Include="Images\QueryShowTable.png" />
+    <EmbeddedResource Include="Images\ReadingViewShowPrintedPage.png" />
+    <EmbeddedResource Include="Images\RecordsAddFromOutlook.png" />
+    <EmbeddedResource Include="Images\RecordsAddFromOutlook+.png" />
+    <EmbeddedResource Include="Images\RecurrenceEdit.png" />
+    <EmbeddedResource Include="Images\ReflectionGallery.png" />
+    <EmbeddedResource Include="Images\ReturnToTaskList#.png" />
+    <EmbeddedResource Include="Images\ReturnToTaskList.png" />
+    <EmbeddedResource Include="Images\ReturnToTaskList+.png" />
+    <EmbeddedResource Include="Images\ReviewEditComment.png" />
+    <EmbeddedResource Include="Images\Risks.png" />
+    <EmbeddedResource Include="Images\SignatureShow.png" />
+    <EmbeddedResource Include="Images\SlideMasterInsertLayout.png" />
+    <EmbeddedResource Include="Images\SlideShowRehearseTimings.png" />
+    <EmbeddedResource Include="Images\TableSelectCell.png" />
+    <EmbeddedResource Include="Images\ViewAllProposals#.png" />
+    <EmbeddedResource Include="Images\ViewAllProposals.png" />
+    <EmbeddedResource Include="Images\ViewAllProposals+.png" />
+    <EmbeddedResource Include="Images\ViewAppointmentInCalendar#.png" />
+    <EmbeddedResource Include="Images\ViewAppointmentInCalendar.png" />
+    <EmbeddedResource Include="Images\ViewAppointmentInCalendar+.png" />
+    <EmbeddedResource Include="Images\WindowsArrangeAll.png" />
+    <EmbeddedResource Include="Images\WindowsArrangeAll+.png" />
+    <EmbeddedResource Include="Images\ZoomCurrent100+.png" />
+    <EmbeddedResource Include="Images\FilePrepareMenu+.png" />
+    <EmbeddedResource Include="Images\ViewAppointmentInCalendar-.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

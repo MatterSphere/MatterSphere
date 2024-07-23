@@ -1,0 +1,1 @@
+﻿CREATE CONTRACT [//esindex/MessageContract] AUTHORIZATION [dbo] ( [//esindex/Message] SENT BY INITIATOR )

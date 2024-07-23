@@ -1,0 +1,3698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s1="PostcodeAnywhere2/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="PostcodeAnywhere2" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="PostcodeAnywhere2" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="PostcodeAnywhere2">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="ByPostcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByPostcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByPostcodeResult" type="s0:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InterimResults">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsError" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="s0:ArrayOfInterimResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInterimResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InterimResult" type="s0:InterimResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InterimResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ByPostcode_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByPostcode_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByPostcode_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByPostcode_Combined">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="enLanguage">
+        <s:restriction base="s:string">
+          <s:enumeration value="enLanguageEnglish" />
+          <s:enumeration value="enLanguageWelsh" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="enContentType">
+        <s:restriction base="s:string">
+          <s:enumeration value="enContentStandardAddress" />
+          <s:enumeration value="enContentExpandedAddress" />
+          <s:enumeration value="enContentGeographicAddress" />
+          <s:enumeration value="enContentGeographicOnly" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ByPostcode_CombinedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByPostcode_CombinedResult" type="s0:CombinedResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CombinedResults">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsError" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultType" type="s0:enResultType" />
+          <s:element minOccurs="1" maxOccurs="1" name="InterimResults" type="s0:InterimResults" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddressResults" type="s0:AddressResults" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="enResultType">
+        <s:restriction base="s:string">
+          <s:enumeration value="enResultTypeError" />
+          <s:enumeration value="enResultTypeStreetList" />
+          <s:enumeration value="enResultTypePropertyList" />
+          <s:enumeration value="enResultTypeAddresses" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="AddressResults">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsError" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="s0:ArrayOfAddress" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Address" type="s0:Address" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrganisationName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Line1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Line2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Line3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Line4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Line5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostTown" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mailsort" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Barcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsResidential" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSmallOrganisation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLargeOrganisation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RawData" type="s0:AddressRawData" />
+          <s:element minOccurs="1" maxOccurs="1" name="GeographicData" type="s0:AddressGeographicData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddressRawData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryPointSuffix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checksum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameOrNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubBuildingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThoroughfareName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThoroughfareDescriptor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DependentThoroughfareName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DependentThoroughfareDescriptor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoubleDependentLocality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DependentLocality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POBoxNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumberOfHouseholds" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConcatenationOperator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingNameOrNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingFlat" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddressGeographicData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GridEastM" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GridNorthM" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistrictCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WardCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NHSCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NHSRegionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WardStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WardName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistrictName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Objective2" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Objective2Region" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Transitional" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="OSReference" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WGS84Longitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="WGS84Latitude" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ByOutcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Outcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOutcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByOutcodeResult" type="s0:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOutcode_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Outcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOutcode_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByOutcode_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOrganisation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Organisation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fuzzy" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOrganisationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByOrganisationResult" type="s0:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOrganisation_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Organisation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fuzzy" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOrganisation_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByOrganisation_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOrganisation_Combined">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Organisation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fuzzy" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByOrganisation_CombinedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByOrganisation_CombinedResult" type="s0:CombinedResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fuzzy" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByStreetResult" type="s0:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreet_Dataset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fuzzy" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreet_DatasetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByStreet_DatasetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreet_Combined">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fuzzy" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreet_CombinedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByStreet_CombinedResult" type="s0:CombinedResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByBuilding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="JustBuildings" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByBuildingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByBuildingResult" type="s0:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByBuilding_Dataset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="JustBuildings" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByBuilding_DatasetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByBuilding_DatasetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByBuilding_Combined">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="JustBuildings" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByBuilding_CombinedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByBuilding_CombinedResult" type="s0:CombinedResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreetKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StreetKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreetKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByStreetKeyResult" type="s0:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreetKey_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StreetKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreetKey_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByStreetKey_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreetKey_Combined">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StreetKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByStreetKey_CombinedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByStreetKey_CombinedResult" type="s0:CombinedResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByLocalityKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LocalityKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByLocalityKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ByLocalityKeyResult" type="s0:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByLocalityKey_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LocalityKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByLocalityKey_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByLocalityKey_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAddress_Simple">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAddress_SimpleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FetchAddress_SimpleResult" type="s0:AddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FetchAddressResult" type="s0:AddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FastAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FastAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FastAddressResult" type="s0:AddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAddress_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAddress_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchAddress_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FastAddress_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Language" type="s0:enLanguage" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContentType" type="s0:enContentType" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FastAddress_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FastAddress_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Distance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DistanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DistanceResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Nearest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destinations" type="s0:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Units" type="s0:enUnitType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Items" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="enUnitType">
+        <s:restriction base="s:string">
+          <s:enumeration value="enUnitTypeMiles" />
+          <s:enumeration value="enUnitTypeMeters" />
+          <s:enumeration value="enUnitTypeKilometers" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="NearestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NearestResult" type="s0:NearestResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NearestResults">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsError" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="s0:ArrayOfNearestResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNearestResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NearestResult" type="s0:NearestResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NearestResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OriginPostcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationPostcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Distance" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="GridEastM" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GridNorthM" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Nearest_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destinations" type="s0:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Units" type="s0:enUnitType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Items" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Nearest_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nearest_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoredNearest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Units" type="s0:enUnitType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Items" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoredNearestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StoredNearestResult" type="s0:NearestResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoredNearest_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Units" type="s0:enUnitType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Items" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoredNearest_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StoredNearest_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NearestRadial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destinations" type="s0:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Units" type="s0:enUnitType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Radius" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Items" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NearestRadialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NearestRadialResult" type="s0:NearestResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NearestRadial_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destinations" type="s0:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Units" type="s0:enUnitType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Radius" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Items" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NearestRadial_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NearestRadial_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoredNearestRadial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Units" type="s0:enUnitType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Radius" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Items" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoredNearestRadialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StoredNearestRadialResult" type="s0:NearestResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoredNearestRadial_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Units" type="s0:enUnitType" />
+            <s:element minOccurs="1" maxOccurs="1" name="Radius" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Items" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoredNearestRadial_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StoredNearestRadial_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Changes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangesResult" type="s0:ChangesResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ChangesResults">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsError" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="s0:ArrayOfChangesResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfChangesResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ChangesResult" type="s0:ChangesResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ChangesResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChangeDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChangeType" type="s0:enChangeType" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChangeReason" type="s0:enChangeReason" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="enChangeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="enChangeTypeAddition" />
+          <s:enumeration value="enChangeTypeDeletion" />
+          <s:enumeration value="enChangeTypeChange" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="enChangeReason">
+        <s:restriction base="s:string">
+          <s:enumeration value="enChangeReasonNewProperty" />
+          <s:enumeration value="enChangeReasonErrorCorrection" />
+          <s:enumeration value="enChangeReasonDemolition" />
+          <s:enumeration value="enChangeReasonCodingRevision" />
+          <s:enumeration value="enChangeReasonOrganisationChange" />
+          <s:enumeration value="enChangeReasonStatusChange" />
+          <s:enumeration value="enChangeReasonLargeUserClosedDown" />
+          <s:enumeration value="enChangeReasonBuildingDetailsChanged" />
+          <s:enumeration value="enChangeReasonLargeUserAddressChanged" />
+          <s:enumeration value="enChangeReasonUnknown" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Changes_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Changes_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Changes_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cleanse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Organisation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CleanseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CleanseResult" type="s0:CleanseResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CleanseResults">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsError" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="s0:ArrayOfCleanseResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCleanseResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CleanseResult" type="s0:CleanseResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CleanseResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Confidence" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Cleanse_DataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Organisation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cleanse_DataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cleanse_DataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InterimResults" type="s0:InterimResults" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CombinedResults" type="s0:CombinedResults" />
+      <s:element name="AddressResults" type="s0:AddressResults" />
+      <s:element name="double" type="s:double" />
+      <s:element name="NearestResults" type="s0:NearestResults" />
+      <s:element name="ChangesResults" type="s0:ChangesResults" />
+      <s:element name="CleanseResults" type="s0:CleanseResults" />
+    </s:schema>
+    <s:schema targetNamespace="PostcodeAnywhere2/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="ByPostcodeSoapIn">
+    <part name="parameters" element="s0:ByPostcode" />
+  </message>
+  <message name="ByPostcodeSoapOut">
+    <part name="parameters" element="s0:ByPostcodeResponse" />
+  </message>
+  <message name="ByPostcode_DataSetSoapIn">
+    <part name="parameters" element="s0:ByPostcode_DataSet" />
+  </message>
+  <message name="ByPostcode_DataSetSoapOut">
+    <part name="parameters" element="s0:ByPostcode_DataSetResponse" />
+  </message>
+  <message name="ByPostcode_CombinedSoapIn">
+    <part name="parameters" element="s0:ByPostcode_Combined" />
+  </message>
+  <message name="ByPostcode_CombinedSoapOut">
+    <part name="parameters" element="s0:ByPostcode_CombinedResponse" />
+  </message>
+  <message name="ByOutcodeSoapIn">
+    <part name="parameters" element="s0:ByOutcode" />
+  </message>
+  <message name="ByOutcodeSoapOut">
+    <part name="parameters" element="s0:ByOutcodeResponse" />
+  </message>
+  <message name="ByOutcode_DataSetSoapIn">
+    <part name="parameters" element="s0:ByOutcode_DataSet" />
+  </message>
+  <message name="ByOutcode_DataSetSoapOut">
+    <part name="parameters" element="s0:ByOutcode_DataSetResponse" />
+  </message>
+  <message name="ByOrganisationSoapIn">
+    <part name="parameters" element="s0:ByOrganisation" />
+  </message>
+  <message name="ByOrganisationSoapOut">
+    <part name="parameters" element="s0:ByOrganisationResponse" />
+  </message>
+  <message name="ByOrganisation_DataSetSoapIn">
+    <part name="parameters" element="s0:ByOrganisation_DataSet" />
+  </message>
+  <message name="ByOrganisation_DataSetSoapOut">
+    <part name="parameters" element="s0:ByOrganisation_DataSetResponse" />
+  </message>
+  <message name="ByOrganisation_CombinedSoapIn">
+    <part name="parameters" element="s0:ByOrganisation_Combined" />
+  </message>
+  <message name="ByOrganisation_CombinedSoapOut">
+    <part name="parameters" element="s0:ByOrganisation_CombinedResponse" />
+  </message>
+  <message name="ByStreetSoapIn">
+    <part name="parameters" element="s0:ByStreet" />
+  </message>
+  <message name="ByStreetSoapOut">
+    <part name="parameters" element="s0:ByStreetResponse" />
+  </message>
+  <message name="ByStreet_DatasetSoapIn">
+    <part name="parameters" element="s0:ByStreet_Dataset" />
+  </message>
+  <message name="ByStreet_DatasetSoapOut">
+    <part name="parameters" element="s0:ByStreet_DatasetResponse" />
+  </message>
+  <message name="ByStreet_CombinedSoapIn">
+    <part name="parameters" element="s0:ByStreet_Combined" />
+  </message>
+  <message name="ByStreet_CombinedSoapOut">
+    <part name="parameters" element="s0:ByStreet_CombinedResponse" />
+  </message>
+  <message name="ByBuildingSoapIn">
+    <part name="parameters" element="s0:ByBuilding" />
+  </message>
+  <message name="ByBuildingSoapOut">
+    <part name="parameters" element="s0:ByBuildingResponse" />
+  </message>
+  <message name="ByBuilding_DatasetSoapIn">
+    <part name="parameters" element="s0:ByBuilding_Dataset" />
+  </message>
+  <message name="ByBuilding_DatasetSoapOut">
+    <part name="parameters" element="s0:ByBuilding_DatasetResponse" />
+  </message>
+  <message name="ByBuilding_CombinedSoapIn">
+    <part name="parameters" element="s0:ByBuilding_Combined" />
+  </message>
+  <message name="ByBuilding_CombinedSoapOut">
+    <part name="parameters" element="s0:ByBuilding_CombinedResponse" />
+  </message>
+  <message name="ByStreetKeySoapIn">
+    <part name="parameters" element="s0:ByStreetKey" />
+  </message>
+  <message name="ByStreetKeySoapOut">
+    <part name="parameters" element="s0:ByStreetKeyResponse" />
+  </message>
+  <message name="ByStreetKey_DataSetSoapIn">
+    <part name="parameters" element="s0:ByStreetKey_DataSet" />
+  </message>
+  <message name="ByStreetKey_DataSetSoapOut">
+    <part name="parameters" element="s0:ByStreetKey_DataSetResponse" />
+  </message>
+  <message name="ByStreetKey_CombinedSoapIn">
+    <part name="parameters" element="s0:ByStreetKey_Combined" />
+  </message>
+  <message name="ByStreetKey_CombinedSoapOut">
+    <part name="parameters" element="s0:ByStreetKey_CombinedResponse" />
+  </message>
+  <message name="ByLocalityKeySoapIn">
+    <part name="parameters" element="s0:ByLocalityKey" />
+  </message>
+  <message name="ByLocalityKeySoapOut">
+    <part name="parameters" element="s0:ByLocalityKeyResponse" />
+  </message>
+  <message name="ByLocalityKey_DataSetSoapIn">
+    <part name="parameters" element="s0:ByLocalityKey_DataSet" />
+  </message>
+  <message name="ByLocalityKey_DataSetSoapOut">
+    <part name="parameters" element="s0:ByLocalityKey_DataSetResponse" />
+  </message>
+  <message name="FetchAddress_SimpleSoapIn">
+    <part name="parameters" element="s0:FetchAddress_Simple" />
+  </message>
+  <message name="FetchAddress_SimpleSoapOut">
+    <part name="parameters" element="s0:FetchAddress_SimpleResponse" />
+  </message>
+  <message name="FetchAddressSoapIn">
+    <part name="parameters" element="s0:FetchAddress" />
+  </message>
+  <message name="FetchAddressSoapOut">
+    <part name="parameters" element="s0:FetchAddressResponse" />
+  </message>
+  <message name="FastAddressSoapIn">
+    <part name="parameters" element="s0:FastAddress" />
+  </message>
+  <message name="FastAddressSoapOut">
+    <part name="parameters" element="s0:FastAddressResponse" />
+  </message>
+  <message name="FetchAddress_DataSetSoapIn">
+    <part name="parameters" element="s0:FetchAddress_DataSet" />
+  </message>
+  <message name="FetchAddress_DataSetSoapOut">
+    <part name="parameters" element="s0:FetchAddress_DataSetResponse" />
+  </message>
+  <message name="FastAddress_DataSetSoapIn">
+    <part name="parameters" element="s0:FastAddress_DataSet" />
+  </message>
+  <message name="FastAddress_DataSetSoapOut">
+    <part name="parameters" element="s0:FastAddress_DataSetResponse" />
+  </message>
+  <message name="DistanceSoapIn">
+    <part name="parameters" element="s0:Distance" />
+  </message>
+  <message name="DistanceSoapOut">
+    <part name="parameters" element="s0:DistanceResponse" />
+  </message>
+  <message name="NearestSoapIn">
+    <part name="parameters" element="s0:Nearest" />
+  </message>
+  <message name="NearestSoapOut">
+    <part name="parameters" element="s0:NearestResponse" />
+  </message>
+  <message name="Nearest_DataSetSoapIn">
+    <part name="parameters" element="s0:Nearest_DataSet" />
+  </message>
+  <message name="Nearest_DataSetSoapOut">
+    <part name="parameters" element="s0:Nearest_DataSetResponse" />
+  </message>
+  <message name="StoredNearestSoapIn">
+    <part name="parameters" element="s0:StoredNearest" />
+  </message>
+  <message name="StoredNearestSoapOut">
+    <part name="parameters" element="s0:StoredNearestResponse" />
+  </message>
+  <message name="StoredNearest_DataSetSoapIn">
+    <part name="parameters" element="s0:StoredNearest_DataSet" />
+  </message>
+  <message name="StoredNearest_DataSetSoapOut">
+    <part name="parameters" element="s0:StoredNearest_DataSetResponse" />
+  </message>
+  <message name="NearestRadialSoapIn">
+    <part name="parameters" element="s0:NearestRadial" />
+  </message>
+  <message name="NearestRadialSoapOut">
+    <part name="parameters" element="s0:NearestRadialResponse" />
+  </message>
+  <message name="NearestRadial_DataSetSoapIn">
+    <part name="parameters" element="s0:NearestRadial_DataSet" />
+  </message>
+  <message name="NearestRadial_DataSetSoapOut">
+    <part name="parameters" element="s0:NearestRadial_DataSetResponse" />
+  </message>
+  <message name="StoredNearestRadialSoapIn">
+    <part name="parameters" element="s0:StoredNearestRadial" />
+  </message>
+  <message name="StoredNearestRadialSoapOut">
+    <part name="parameters" element="s0:StoredNearestRadialResponse" />
+  </message>
+  <message name="StoredNearestRadial_DataSetSoapIn">
+    <part name="parameters" element="s0:StoredNearestRadial_DataSet" />
+  </message>
+  <message name="StoredNearestRadial_DataSetSoapOut">
+    <part name="parameters" element="s0:StoredNearestRadial_DataSetResponse" />
+  </message>
+  <message name="ChangesSoapIn">
+    <part name="parameters" element="s0:Changes" />
+  </message>
+  <message name="ChangesSoapOut">
+    <part name="parameters" element="s0:ChangesResponse" />
+  </message>
+  <message name="Changes_DataSetSoapIn">
+    <part name="parameters" element="s0:Changes_DataSet" />
+  </message>
+  <message name="Changes_DataSetSoapOut">
+    <part name="parameters" element="s0:Changes_DataSetResponse" />
+  </message>
+  <message name="CleanseSoapIn">
+    <part name="parameters" element="s0:Cleanse" />
+  </message>
+  <message name="CleanseSoapOut">
+    <part name="parameters" element="s0:CleanseResponse" />
+  </message>
+  <message name="Cleanse_DataSetSoapIn">
+    <part name="parameters" element="s0:Cleanse_DataSet" />
+  </message>
+  <message name="Cleanse_DataSetSoapOut">
+    <part name="parameters" element="s0:Cleanse_DataSetResponse" />
+  </message>
+  <message name="ByPostcodeHttpGetIn">
+    <part name="Postcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByPostcodeHttpGetOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByPostcode_DataSetHttpGetIn">
+    <part name="Postcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByPostcode_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByPostcode_CombinedHttpGetIn">
+    <part name="Postcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByPostcode_CombinedHttpGetOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByOutcodeHttpGetIn">
+    <part name="Outcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByOutcodeHttpGetOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByOutcode_DataSetHttpGetIn">
+    <part name="Outcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByOutcode_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByOrganisationHttpGetIn">
+    <part name="Organisation" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByOrganisationHttpGetOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByOrganisation_DataSetHttpGetIn">
+    <part name="Organisation" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByOrganisation_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByOrganisation_CombinedHttpGetIn">
+    <part name="Organisation" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByOrganisation_CombinedHttpGetOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByStreetHttpGetIn">
+    <part name="Street" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByStreetHttpGetOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByStreet_DatasetHttpGetIn">
+    <part name="Street" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByStreet_DatasetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByStreet_CombinedHttpGetIn">
+    <part name="Street" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByStreet_CombinedHttpGetOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByBuildingHttpGetIn">
+    <part name="Building" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="JustBuildings" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByBuildingHttpGetOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByBuilding_DatasetHttpGetIn">
+    <part name="Building" type="s:string" />
+    <part name="JustBuildings" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByBuilding_DatasetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByBuilding_CombinedHttpGetIn">
+    <part name="Building" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="JustBuildings" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByBuilding_CombinedHttpGetOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByStreetKeyHttpGetIn">
+    <part name="StreetKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByStreetKeyHttpGetOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByStreetKey_DataSetHttpGetIn">
+    <part name="StreetKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByStreetKey_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByStreetKey_CombinedHttpGetIn">
+    <part name="StreetKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByStreetKey_CombinedHttpGetOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByLocalityKeyHttpGetIn">
+    <part name="LocalityKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByLocalityKeyHttpGetOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByLocalityKey_DataSetHttpGetIn">
+    <part name="LocalityKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByLocalityKey_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="FetchAddress_SimpleHttpGetIn">
+    <part name="Id" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FetchAddress_SimpleHttpGetOut">
+    <part name="Body" element="s0:AddressResults" />
+  </message>
+  <message name="FetchAddressHttpGetIn">
+    <part name="Id" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FetchAddressHttpGetOut">
+    <part name="Body" element="s0:AddressResults" />
+  </message>
+  <message name="FastAddressHttpGetIn">
+    <part name="Postcode" type="s:string" />
+    <part name="Building" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FastAddressHttpGetOut">
+    <part name="Body" element="s0:AddressResults" />
+  </message>
+  <message name="FetchAddress_DataSetHttpGetIn">
+    <part name="Id" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FetchAddress_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="FastAddress_DataSetHttpGetIn">
+    <part name="Postcode" type="s:string" />
+    <part name="Building" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FastAddress_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="DistanceHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destination" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="DistanceHttpGetOut">
+    <part name="Body" element="s0:double" />
+  </message>
+  <message name="NearestHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destinations" type="s1:StringArray" />
+    <part name="Units" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="NearestHttpGetOut">
+    <part name="Body" element="s0:NearestResults" />
+  </message>
+  <message name="Nearest_DataSetHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destinations" type="s1:StringArray" />
+    <part name="Units" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="Nearest_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="StoredNearestHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Units" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="StoredNearestHttpGetOut">
+    <part name="Body" element="s0:NearestResults" />
+  </message>
+  <message name="StoredNearest_DataSetHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Units" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="StoredNearest_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="NearestRadialHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destinations" type="s1:StringArray" />
+    <part name="Units" type="s:string" />
+    <part name="Radius" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="NearestRadialHttpGetOut">
+    <part name="Body" element="s0:NearestResults" />
+  </message>
+  <message name="NearestRadial_DataSetHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destinations" type="s1:StringArray" />
+    <part name="Units" type="s:string" />
+    <part name="Radius" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="NearestRadial_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="StoredNearestRadialHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Units" type="s:string" />
+    <part name="Radius" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="StoredNearestRadialHttpGetOut">
+    <part name="Body" element="s0:NearestResults" />
+  </message>
+  <message name="StoredNearestRadial_DataSetHttpGetIn">
+    <part name="Origin" type="s:string" />
+    <part name="Units" type="s:string" />
+    <part name="Radius" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="StoredNearestRadial_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ChangesHttpGetIn">
+    <part name="StartDate" type="s:string" />
+    <part name="EndDate" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ChangesHttpGetOut">
+    <part name="Body" element="s0:ChangesResults" />
+  </message>
+  <message name="Changes_DataSetHttpGetIn">
+    <part name="StartDate" type="s:string" />
+    <part name="EndDate" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="Changes_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="CleanseHttpGetIn">
+    <part name="Postcode" type="s:string" />
+    <part name="Street" type="s:string" />
+    <part name="Organisation" type="s:string" />
+    <part name="Building" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Address" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="CleanseHttpGetOut">
+    <part name="Body" element="s0:CleanseResults" />
+  </message>
+  <message name="Cleanse_DataSetHttpGetIn">
+    <part name="Postcode" type="s:string" />
+    <part name="Street" type="s:string" />
+    <part name="Organisation" type="s:string" />
+    <part name="Building" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Address" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="Cleanse_DataSetHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByPostcodeHttpPostIn">
+    <part name="Postcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByPostcodeHttpPostOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByPostcode_DataSetHttpPostIn">
+    <part name="Postcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByPostcode_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByPostcode_CombinedHttpPostIn">
+    <part name="Postcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByPostcode_CombinedHttpPostOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByOutcodeHttpPostIn">
+    <part name="Outcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByOutcodeHttpPostOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByOutcode_DataSetHttpPostIn">
+    <part name="Outcode" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByOutcode_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByOrganisationHttpPostIn">
+    <part name="Organisation" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByOrganisationHttpPostOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByOrganisation_DataSetHttpPostIn">
+    <part name="Organisation" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByOrganisation_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByOrganisation_CombinedHttpPostIn">
+    <part name="Organisation" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByOrganisation_CombinedHttpPostOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByStreetHttpPostIn">
+    <part name="Street" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByStreetHttpPostOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByStreet_DatasetHttpPostIn">
+    <part name="Street" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByStreet_DatasetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByStreet_CombinedHttpPostIn">
+    <part name="Street" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Fuzzy" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByStreet_CombinedHttpPostOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByBuildingHttpPostIn">
+    <part name="Building" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="JustBuildings" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByBuildingHttpPostOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByBuilding_DatasetHttpPostIn">
+    <part name="Building" type="s:string" />
+    <part name="JustBuildings" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByBuilding_DatasetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByBuilding_CombinedHttpPostIn">
+    <part name="Building" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="JustBuildings" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByBuilding_CombinedHttpPostOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByStreetKeyHttpPostIn">
+    <part name="StreetKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByStreetKeyHttpPostOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByStreetKey_DataSetHttpPostIn">
+    <part name="StreetKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByStreetKey_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ByStreetKey_CombinedHttpPostIn">
+    <part name="StreetKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+  </message>
+  <message name="ByStreetKey_CombinedHttpPostOut">
+    <part name="Body" element="s0:CombinedResults" />
+  </message>
+  <message name="ByLocalityKeyHttpPostIn">
+    <part name="LocalityKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByLocalityKeyHttpPostOut">
+    <part name="Body" element="s0:InterimResults" />
+  </message>
+  <message name="ByLocalityKey_DataSetHttpPostIn">
+    <part name="LocalityKey" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ByLocalityKey_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="FetchAddress_SimpleHttpPostIn">
+    <part name="Id" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FetchAddress_SimpleHttpPostOut">
+    <part name="Body" element="s0:AddressResults" />
+  </message>
+  <message name="FetchAddressHttpPostIn">
+    <part name="Id" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FetchAddressHttpPostOut">
+    <part name="Body" element="s0:AddressResults" />
+  </message>
+  <message name="FastAddressHttpPostIn">
+    <part name="Postcode" type="s:string" />
+    <part name="Building" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FastAddressHttpPostOut">
+    <part name="Body" element="s0:AddressResults" />
+  </message>
+  <message name="FetchAddress_DataSetHttpPostIn">
+    <part name="Id" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FetchAddress_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="FastAddress_DataSetHttpPostIn">
+    <part name="Postcode" type="s:string" />
+    <part name="Building" type="s:string" />
+    <part name="Language" type="s:string" />
+    <part name="ContentType" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="FastAddress_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="DistanceHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destination" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="DistanceHttpPostOut">
+    <part name="Body" element="s0:double" />
+  </message>
+  <message name="NearestHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destinations" type="s1:StringArray" />
+    <part name="Units" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="NearestHttpPostOut">
+    <part name="Body" element="s0:NearestResults" />
+  </message>
+  <message name="Nearest_DataSetHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destinations" type="s1:StringArray" />
+    <part name="Units" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="Nearest_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="StoredNearestHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Units" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="StoredNearestHttpPostOut">
+    <part name="Body" element="s0:NearestResults" />
+  </message>
+  <message name="StoredNearest_DataSetHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Units" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="StoredNearest_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="NearestRadialHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destinations" type="s1:StringArray" />
+    <part name="Units" type="s:string" />
+    <part name="Radius" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="NearestRadialHttpPostOut">
+    <part name="Body" element="s0:NearestResults" />
+  </message>
+  <message name="NearestRadial_DataSetHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Destinations" type="s1:StringArray" />
+    <part name="Units" type="s:string" />
+    <part name="Radius" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="NearestRadial_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="StoredNearestRadialHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Units" type="s:string" />
+    <part name="Radius" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="StoredNearestRadialHttpPostOut">
+    <part name="Body" element="s0:NearestResults" />
+  </message>
+  <message name="StoredNearestRadial_DataSetHttpPostIn">
+    <part name="Origin" type="s:string" />
+    <part name="Units" type="s:string" />
+    <part name="Radius" type="s:string" />
+    <part name="Items" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="StoredNearestRadial_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="ChangesHttpPostIn">
+    <part name="StartDate" type="s:string" />
+    <part name="EndDate" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="ChangesHttpPostOut">
+    <part name="Body" element="s0:ChangesResults" />
+  </message>
+  <message name="Changes_DataSetHttpPostIn">
+    <part name="StartDate" type="s:string" />
+    <part name="EndDate" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="Changes_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="CleanseHttpPostIn">
+    <part name="Postcode" type="s:string" />
+    <part name="Street" type="s:string" />
+    <part name="Organisation" type="s:string" />
+    <part name="Building" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Address" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="CleanseHttpPostOut">
+    <part name="Body" element="s0:CleanseResults" />
+  </message>
+  <message name="Cleanse_DataSetHttpPostIn">
+    <part name="Postcode" type="s:string" />
+    <part name="Street" type="s:string" />
+    <part name="Organisation" type="s:string" />
+    <part name="Building" type="s:string" />
+    <part name="Town" type="s:string" />
+    <part name="Address" type="s:string" />
+    <part name="AccountCode" type="s:string" />
+    <part name="LicenseKey" type="s:string" />
+    <part name="MachineId" type="s:string" />
+  </message>
+  <message name="Cleanse_DataSetHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <portType name="LookupUKSoap">
+    <operation name="ByPostcode">
+      <documentation>Queries the database, returning all the properties in the given postcode. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByPostcodeSoapIn" />
+      <output message="s0:ByPostcodeSoapOut" />
+    </operation>
+    <operation name="ByPostcode_DataSet">
+      <documentation>As ByPostcode but the data is returned in a dataset.</documentation>
+      <input message="s0:ByPostcode_DataSetSoapIn" />
+      <output message="s0:ByPostcode_DataSetSoapOut" />
+    </operation>
+    <operation name="ByPostcode_Combined">
+      <documentation>As ByPostcode but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByPostcode_CombinedSoapIn" />
+      <output message="s0:ByPostcode_CombinedSoapOut" />
+    </operation>
+    <operation name="ByOutcode">
+      <documentation>Queries the database, returning a list of the localities in the the given postcode outcode. Use the ID with the ByLocalityKey method to get a list of the streets in that locality.</documentation>
+      <input message="s0:ByOutcodeSoapIn" />
+      <output message="s0:ByOutcodeSoapOut" />
+    </operation>
+    <operation name="ByOutcode_DataSet">
+      <documentation>As ByOutcode but the data is returned in a dataset.</documentation>
+      <input message="s0:ByOutcode_DataSetSoapIn" />
+      <output message="s0:ByOutcode_DataSetSoapOut" />
+    </operation>
+    <operation name="ByOrganisation">
+      <documentation>Queries the database, returning all the matching organisations. The town parameter can be blank and the organisation name is automatically wildcarded (e.g. "Boot" matches "Boots" and "Boots the chemists"). Use the fuzzy search to search phonetically. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByOrganisationSoapIn" />
+      <output message="s0:ByOrganisationSoapOut" />
+    </operation>
+    <operation name="ByOrganisation_DataSet">
+      <documentation>As ByOrganisation but the data is returned in a dataset.</documentation>
+      <input message="s0:ByOrganisation_DataSetSoapIn" />
+      <output message="s0:ByOrganisation_DataSetSoapOut" />
+    </operation>
+    <operation name="ByOrganisation_Combined">
+      <documentation>As ByOrganisation but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByOrganisation_CombinedSoapIn" />
+      <output message="s0:ByOrganisation_CombinedSoapOut" />
+    </operation>
+    <operation name="ByStreet">
+      <documentation>Queries the database, returning all the matching streets. The town parameter can be the name of the town or the first part of the postcode (e.g. "LS", "LS2", "Leeds"). The street name is automatically wildcarded (e.g. "High" matches "High Street" and "High Way"). Use the fuzzy search to search phonetically. Use the ID with the ByStreetKey method to get a list of the properties in this street.</documentation>
+      <input message="s0:ByStreetSoapIn" />
+      <output message="s0:ByStreetSoapOut" />
+    </operation>
+    <operation name="ByStreet_Dataset">
+      <documentation>As ByStreet but the data is returned in a dataset.</documentation>
+      <input message="s0:ByStreet_DatasetSoapIn" />
+      <output message="s0:ByStreet_DatasetSoapOut" />
+    </operation>
+    <operation name="ByStreet_Combined">
+      <documentation>As ByStreet but the data is returned in the CombinedResults structure. If only one street is found the method will return the list of properties. However, if only one property is listed, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByStreet_CombinedSoapIn" />
+      <output message="s0:ByStreet_CombinedSoapOut" />
+    </operation>
+    <operation name="ByBuilding">
+      <documentation>Queries the database, returning all the matching properties. The town parameter should be the name of the town (e.g. "Leeds"). The building name is automatically wildcarded (e.g. "Hill" matches "Hilltop" and "Hill View").</documentation>
+      <input message="s0:ByBuildingSoapIn" />
+      <output message="s0:ByBuildingSoapOut" />
+    </operation>
+    <operation name="ByBuilding_Dataset">
+      <documentation>As ByBuilding but the data is returned in a dataset.</documentation>
+      <input message="s0:ByBuilding_DatasetSoapIn" />
+      <output message="s0:ByBuilding_DatasetSoapOut" />
+    </operation>
+    <operation name="ByBuilding_Combined">
+      <documentation>As ByBuilding but the data is returned in the CombinedResults structure. If only one street is found the method will return the list of properties. However, if only one property is listed, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByBuilding_CombinedSoapIn" />
+      <output message="s0:ByBuilding_CombinedSoapOut" />
+    </operation>
+    <operation name="ByStreetKey">
+      <documentation>Returns all the properties in the street. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByStreetKeySoapIn" />
+      <output message="s0:ByStreetKeySoapOut" />
+    </operation>
+    <operation name="ByStreetKey_DataSet">
+      <documentation>As ByStreetKey but the data is returned in a dataset.</documentation>
+      <input message="s0:ByStreetKey_DataSetSoapIn" />
+      <output message="s0:ByStreetKey_DataSetSoapOut" />
+    </operation>
+    <operation name="ByStreetKey_Combined">
+      <documentation>As ByStreetKey but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByStreetKey_CombinedSoapIn" />
+      <output message="s0:ByStreetKey_CombinedSoapOut" />
+    </operation>
+    <operation name="ByLocalityKey">
+      <documentation>Returns all the streets in the given locality. Use the ID with the ByStreetKey method to get a list of all the properties in the street.</documentation>
+      <input message="s0:ByLocalityKeySoapIn" />
+      <output message="s0:ByLocalityKeySoapOut" />
+    </operation>
+    <operation name="ByLocalityKey_DataSet">
+      <documentation>As ByLocalityKey but the data is returned in a dataset.</documentation>
+      <input message="s0:ByLocalityKey_DataSetSoapIn" />
+      <output message="s0:ByLocalityKey_DataSetSoapOut" />
+    </operation>
+    <operation name="FetchAddress_Simple">
+      <documentation>As FetchAddress but does not use enumerated type for input parameters, use strings instead</documentation>
+      <input message="s0:FetchAddress_SimpleSoapIn" />
+      <output message="s0:FetchAddress_SimpleSoapOut" />
+    </operation>
+    <operation name="FetchAddress">
+      <documentation>Queries the database, returning the address corresponding to the ID parameter. Use the ContentType paramater to select which fields to return. Use the Language parameter to select which language to return the address in.</documentation>
+      <input message="s0:FetchAddressSoapIn" />
+      <output message="s0:FetchAddressSoapOut" />
+    </operation>
+    <operation name="FastAddress">
+      <documentation>Queries the database, returning an address matching the Postcode and Building. The Building parameter represents the building name or number and is automatically wildcarded (e.g. "Eni" matches "Enigma House") and can be blank and if the postcode contains more than one property, the first will be returned. Use the ContentType paramater to select which fields to return. Use the Language parameter to select which language to return the address in.</documentation>
+      <input message="s0:FastAddressSoapIn" />
+      <output message="s0:FastAddressSoapOut" />
+    </operation>
+    <operation name="FetchAddress_DataSet">
+      <documentation>As FetchAddress but the data is returned in a dataset.</documentation>
+      <input message="s0:FetchAddress_DataSetSoapIn" />
+      <output message="s0:FetchAddress_DataSetSoapOut" />
+    </operation>
+    <operation name="FastAddress_DataSet">
+      <documentation>As FastAddress but the data is returned in a dataset.</documentation>
+      <input message="s0:FastAddress_DataSetSoapIn" />
+      <output message="s0:FastAddress_DataSetSoapOut" />
+    </operation>
+    <operation name="Distance">
+      <documentation>Calculates the distance in metres between the origin and destination postcodes. Any errors will be raised as a SOAP exception.</documentation>
+      <input message="s0:DistanceSoapIn" />
+      <output message="s0:DistanceSoapOut" />
+    </operation>
+    <operation name="Nearest">
+      <documentation>Queries the database, working out the coordinates of the Origin postcode and the array of Destination postcodes. The distance between the Origin and each Destination is calculated and the nearest Items (e.g. 2 returns the nearest 2 Destinations) are returned along with the distance in the specified Units.</documentation>
+      <input message="s0:NearestSoapIn" />
+      <output message="s0:NearestSoapOut" />
+    </operation>
+    <operation name="Nearest_DataSet">
+      <documentation>As Nearest but the data is returned in a dataset.</documentation>
+      <input message="s0:Nearest_DataSetSoapIn" />
+      <output message="s0:Nearest_DataSetSoapOut" />
+    </operation>
+    <operation name="StoredNearest">
+      <documentation>Queries the database, working out the coordinates of the Origin postcode against a set of postcodes that have already been uploaded against the License Key. The distance between the Origin and each uploaded destination is calculated and the nearest Items (e.g. 2 returns the nearest 2 destinations) are returned along with the distance in the specified Units.</documentation>
+      <input message="s0:StoredNearestSoapIn" />
+      <output message="s0:StoredNearestSoapOut" />
+    </operation>
+    <operation name="StoredNearest_DataSet">
+      <documentation>As StoredNearest but the data is returned in a dataset.</documentation>
+      <input message="s0:StoredNearest_DataSetSoapIn" />
+      <output message="s0:StoredNearest_DataSetSoapOut" />
+    </operation>
+    <operation name="NearestRadial">
+      <documentation>Extends the Nearest method with support for radial restrictions (i.e. returns only the items within X of the origin.</documentation>
+      <input message="s0:NearestRadialSoapIn" />
+      <output message="s0:NearestRadialSoapOut" />
+    </operation>
+    <operation name="NearestRadial_DataSet">
+      <documentation>As NearestRadial but the data is returned in a dataset.</documentation>
+      <input message="s0:NearestRadial_DataSetSoapIn" />
+      <output message="s0:NearestRadial_DataSetSoapOut" />
+    </operation>
+    <operation name="StoredNearestRadial">
+      <documentation>Extends the StoredNearest method with support for radial restrictions (i.e. returns only the items within X of the origin.</documentation>
+      <input message="s0:StoredNearestRadialSoapIn" />
+      <output message="s0:StoredNearestRadialSoapOut" />
+    </operation>
+    <operation name="StoredNearestRadial_DataSet">
+      <documentation>As StoredNearestRadial but the data is returned in a dataset.</documentation>
+      <input message="s0:StoredNearestRadial_DataSetSoapIn" />
+      <output message="s0:StoredNearestRadial_DataSetSoapOut" />
+    </operation>
+    <operation name="Changes">
+      <documentation>Queries the database, checking all the properties that have been fetched against the account between the StartDate and EndDate and returns information about which properties have been changed.</documentation>
+      <input message="s0:ChangesSoapIn" />
+      <output message="s0:ChangesSoapOut" />
+    </operation>
+    <operation name="Changes_DataSet">
+      <documentation>As Changes but the data is returned in a dataset.</documentation>
+      <input message="s0:Changes_DataSetSoapIn" />
+      <output message="s0:Changes_DataSetSoapOut" />
+    </operation>
+    <operation name="Cleanse">
+      <documentation>Queries the database, returning all the properties matching the given address elements. As many of the address elements should be provided along with the formatted Address parameter which is used to assess the confidence of the match. The confience property reflects the confidence of the result (the results are ranked in descending order of confidence). Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:CleanseSoapIn" />
+      <output message="s0:CleanseSoapOut" />
+    </operation>
+    <operation name="Cleanse_DataSet">
+      <documentation>As ByPostcode but the data is returned in a dataset.</documentation>
+      <input message="s0:Cleanse_DataSetSoapIn" />
+      <output message="s0:Cleanse_DataSetSoapOut" />
+    </operation>
+  </portType>
+  <portType name="LookupUKHttpGet">
+    <operation name="ByPostcode">
+      <documentation>Queries the database, returning all the properties in the given postcode. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByPostcodeHttpGetIn" />
+      <output message="s0:ByPostcodeHttpGetOut" />
+    </operation>
+    <operation name="ByPostcode_DataSet">
+      <documentation>As ByPostcode but the data is returned in a dataset.</documentation>
+      <input message="s0:ByPostcode_DataSetHttpGetIn" />
+      <output message="s0:ByPostcode_DataSetHttpGetOut" />
+    </operation>
+    <operation name="ByPostcode_Combined">
+      <documentation>As ByPostcode but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByPostcode_CombinedHttpGetIn" />
+      <output message="s0:ByPostcode_CombinedHttpGetOut" />
+    </operation>
+    <operation name="ByOutcode">
+      <documentation>Queries the database, returning a list of the localities in the the given postcode outcode. Use the ID with the ByLocalityKey method to get a list of the streets in that locality.</documentation>
+      <input message="s0:ByOutcodeHttpGetIn" />
+      <output message="s0:ByOutcodeHttpGetOut" />
+    </operation>
+    <operation name="ByOutcode_DataSet">
+      <documentation>As ByOutcode but the data is returned in a dataset.</documentation>
+      <input message="s0:ByOutcode_DataSetHttpGetIn" />
+      <output message="s0:ByOutcode_DataSetHttpGetOut" />
+    </operation>
+    <operation name="ByOrganisation">
+      <documentation>Queries the database, returning all the matching organisations. The town parameter can be blank and the organisation name is automatically wildcarded (e.g. "Boot" matches "Boots" and "Boots the chemists"). Use the fuzzy search to search phonetically. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByOrganisationHttpGetIn" />
+      <output message="s0:ByOrganisationHttpGetOut" />
+    </operation>
+    <operation name="ByOrganisation_DataSet">
+      <documentation>As ByOrganisation but the data is returned in a dataset.</documentation>
+      <input message="s0:ByOrganisation_DataSetHttpGetIn" />
+      <output message="s0:ByOrganisation_DataSetHttpGetOut" />
+    </operation>
+    <operation name="ByOrganisation_Combined">
+      <documentation>As ByOrganisation but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByOrganisation_CombinedHttpGetIn" />
+      <output message="s0:ByOrganisation_CombinedHttpGetOut" />
+    </operation>
+    <operation name="ByStreet">
+      <documentation>Queries the database, returning all the matching streets. The town parameter can be the name of the town or the first part of the postcode (e.g. "LS", "LS2", "Leeds"). The street name is automatically wildcarded (e.g. "High" matches "High Street" and "High Way"). Use the fuzzy search to search phonetically. Use the ID with the ByStreetKey method to get a list of the properties in this street.</documentation>
+      <input message="s0:ByStreetHttpGetIn" />
+      <output message="s0:ByStreetHttpGetOut" />
+    </operation>
+    <operation name="ByStreet_Dataset">
+      <documentation>As ByStreet but the data is returned in a dataset.</documentation>
+      <input message="s0:ByStreet_DatasetHttpGetIn" />
+      <output message="s0:ByStreet_DatasetHttpGetOut" />
+    </operation>
+    <operation name="ByStreet_Combined">
+      <documentation>As ByStreet but the data is returned in the CombinedResults structure. If only one street is found the method will return the list of properties. However, if only one property is listed, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByStreet_CombinedHttpGetIn" />
+      <output message="s0:ByStreet_CombinedHttpGetOut" />
+    </operation>
+    <operation name="ByBuilding">
+      <documentation>Queries the database, returning all the matching properties. The town parameter should be the name of the town (e.g. "Leeds"). The building name is automatically wildcarded (e.g. "Hill" matches "Hilltop" and "Hill View").</documentation>
+      <input message="s0:ByBuildingHttpGetIn" />
+      <output message="s0:ByBuildingHttpGetOut" />
+    </operation>
+    <operation name="ByBuilding_Dataset">
+      <documentation>As ByBuilding but the data is returned in a dataset.</documentation>
+      <input message="s0:ByBuilding_DatasetHttpGetIn" />
+      <output message="s0:ByBuilding_DatasetHttpGetOut" />
+    </operation>
+    <operation name="ByBuilding_Combined">
+      <documentation>As ByBuilding but the data is returned in the CombinedResults structure. If only one street is found the method will return the list of properties. However, if only one property is listed, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByBuilding_CombinedHttpGetIn" />
+      <output message="s0:ByBuilding_CombinedHttpGetOut" />
+    </operation>
+    <operation name="ByStreetKey">
+      <documentation>Returns all the properties in the street. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByStreetKeyHttpGetIn" />
+      <output message="s0:ByStreetKeyHttpGetOut" />
+    </operation>
+    <operation name="ByStreetKey_DataSet">
+      <documentation>As ByStreetKey but the data is returned in a dataset.</documentation>
+      <input message="s0:ByStreetKey_DataSetHttpGetIn" />
+      <output message="s0:ByStreetKey_DataSetHttpGetOut" />
+    </operation>
+    <operation name="ByStreetKey_Combined">
+      <documentation>As ByStreetKey but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByStreetKey_CombinedHttpGetIn" />
+      <output message="s0:ByStreetKey_CombinedHttpGetOut" />
+    </operation>
+    <operation name="ByLocalityKey">
+      <documentation>Returns all the streets in the given locality. Use the ID with the ByStreetKey method to get a list of all the properties in the street.</documentation>
+      <input message="s0:ByLocalityKeyHttpGetIn" />
+      <output message="s0:ByLocalityKeyHttpGetOut" />
+    </operation>
+    <operation name="ByLocalityKey_DataSet">
+      <documentation>As ByLocalityKey but the data is returned in a dataset.</documentation>
+      <input message="s0:ByLocalityKey_DataSetHttpGetIn" />
+      <output message="s0:ByLocalityKey_DataSetHttpGetOut" />
+    </operation>
+    <operation name="FetchAddress_Simple">
+      <documentation>As FetchAddress but does not use enumerated type for input parameters, use strings instead</documentation>
+      <input message="s0:FetchAddress_SimpleHttpGetIn" />
+      <output message="s0:FetchAddress_SimpleHttpGetOut" />
+    </operation>
+    <operation name="FetchAddress">
+      <documentation>Queries the database, returning the address corresponding to the ID parameter. Use the ContentType paramater to select which fields to return. Use the Language parameter to select which language to return the address in.</documentation>
+      <input message="s0:FetchAddressHttpGetIn" />
+      <output message="s0:FetchAddressHttpGetOut" />
+    </operation>
+    <operation name="FastAddress">
+      <documentation>Queries the database, returning an address matching the Postcode and Building. The Building parameter represents the building name or number and is automatically wildcarded (e.g. "Eni" matches "Enigma House") and can be blank and if the postcode contains more than one property, the first will be returned. Use the ContentType paramater to select which fields to return. Use the Language parameter to select which language to return the address in.</documentation>
+      <input message="s0:FastAddressHttpGetIn" />
+      <output message="s0:FastAddressHttpGetOut" />
+    </operation>
+    <operation name="FetchAddress_DataSet">
+      <documentation>As FetchAddress but the data is returned in a dataset.</documentation>
+      <input message="s0:FetchAddress_DataSetHttpGetIn" />
+      <output message="s0:FetchAddress_DataSetHttpGetOut" />
+    </operation>
+    <operation name="FastAddress_DataSet">
+      <documentation>As FastAddress but the data is returned in a dataset.</documentation>
+      <input message="s0:FastAddress_DataSetHttpGetIn" />
+      <output message="s0:FastAddress_DataSetHttpGetOut" />
+    </operation>
+    <operation name="Distance">
+      <documentation>Calculates the distance in metres between the origin and destination postcodes. Any errors will be raised as a SOAP exception.</documentation>
+      <input message="s0:DistanceHttpGetIn" />
+      <output message="s0:DistanceHttpGetOut" />
+    </operation>
+    <operation name="Nearest">
+      <documentation>Queries the database, working out the coordinates of the Origin postcode and the array of Destination postcodes. The distance between the Origin and each Destination is calculated and the nearest Items (e.g. 2 returns the nearest 2 Destinations) are returned along with the distance in the specified Units.</documentation>
+      <input message="s0:NearestHttpGetIn" />
+      <output message="s0:NearestHttpGetOut" />
+    </operation>
+    <operation name="Nearest_DataSet">
+      <documentation>As Nearest but the data is returned in a dataset.</documentation>
+      <input message="s0:Nearest_DataSetHttpGetIn" />
+      <output message="s0:Nearest_DataSetHttpGetOut" />
+    </operation>
+    <operation name="StoredNearest">
+      <documentation>Queries the database, working out the coordinates of the Origin postcode against a set of postcodes that have already been uploaded against the License Key. The distance between the Origin and each uploaded destination is calculated and the nearest Items (e.g. 2 returns the nearest 2 destinations) are returned along with the distance in the specified Units.</documentation>
+      <input message="s0:StoredNearestHttpGetIn" />
+      <output message="s0:StoredNearestHttpGetOut" />
+    </operation>
+    <operation name="StoredNearest_DataSet">
+      <documentation>As StoredNearest but the data is returned in a dataset.</documentation>
+      <input message="s0:StoredNearest_DataSetHttpGetIn" />
+      <output message="s0:StoredNearest_DataSetHttpGetOut" />
+    </operation>
+    <operation name="NearestRadial">
+      <documentation>Extends the Nearest method with support for radial restrictions (i.e. returns only the items within X of the origin.</documentation>
+      <input message="s0:NearestRadialHttpGetIn" />
+      <output message="s0:NearestRadialHttpGetOut" />
+    </operation>
+    <operation name="NearestRadial_DataSet">
+      <documentation>As NearestRadial but the data is returned in a dataset.</documentation>
+      <input message="s0:NearestRadial_DataSetHttpGetIn" />
+      <output message="s0:NearestRadial_DataSetHttpGetOut" />
+    </operation>
+    <operation name="StoredNearestRadial">
+      <documentation>Extends the StoredNearest method with support for radial restrictions (i.e. returns only the items within X of the origin.</documentation>
+      <input message="s0:StoredNearestRadialHttpGetIn" />
+      <output message="s0:StoredNearestRadialHttpGetOut" />
+    </operation>
+    <operation name="StoredNearestRadial_DataSet">
+      <documentation>As StoredNearestRadial but the data is returned in a dataset.</documentation>
+      <input message="s0:StoredNearestRadial_DataSetHttpGetIn" />
+      <output message="s0:StoredNearestRadial_DataSetHttpGetOut" />
+    </operation>
+    <operation name="Changes">
+      <documentation>Queries the database, checking all the properties that have been fetched against the account between the StartDate and EndDate and returns information about which properties have been changed.</documentation>
+      <input message="s0:ChangesHttpGetIn" />
+      <output message="s0:ChangesHttpGetOut" />
+    </operation>
+    <operation name="Changes_DataSet">
+      <documentation>As Changes but the data is returned in a dataset.</documentation>
+      <input message="s0:Changes_DataSetHttpGetIn" />
+      <output message="s0:Changes_DataSetHttpGetOut" />
+    </operation>
+    <operation name="Cleanse">
+      <documentation>Queries the database, returning all the properties matching the given address elements. As many of the address elements should be provided along with the formatted Address parameter which is used to assess the confidence of the match. The confience property reflects the confidence of the result (the results are ranked in descending order of confidence). Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:CleanseHttpGetIn" />
+      <output message="s0:CleanseHttpGetOut" />
+    </operation>
+    <operation name="Cleanse_DataSet">
+      <documentation>As ByPostcode but the data is returned in a dataset.</documentation>
+      <input message="s0:Cleanse_DataSetHttpGetIn" />
+      <output message="s0:Cleanse_DataSetHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="LookupUKHttpPost">
+    <operation name="ByPostcode">
+      <documentation>Queries the database, returning all the properties in the given postcode. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByPostcodeHttpPostIn" />
+      <output message="s0:ByPostcodeHttpPostOut" />
+    </operation>
+    <operation name="ByPostcode_DataSet">
+      <documentation>As ByPostcode but the data is returned in a dataset.</documentation>
+      <input message="s0:ByPostcode_DataSetHttpPostIn" />
+      <output message="s0:ByPostcode_DataSetHttpPostOut" />
+    </operation>
+    <operation name="ByPostcode_Combined">
+      <documentation>As ByPostcode but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByPostcode_CombinedHttpPostIn" />
+      <output message="s0:ByPostcode_CombinedHttpPostOut" />
+    </operation>
+    <operation name="ByOutcode">
+      <documentation>Queries the database, returning a list of the localities in the the given postcode outcode. Use the ID with the ByLocalityKey method to get a list of the streets in that locality.</documentation>
+      <input message="s0:ByOutcodeHttpPostIn" />
+      <output message="s0:ByOutcodeHttpPostOut" />
+    </operation>
+    <operation name="ByOutcode_DataSet">
+      <documentation>As ByOutcode but the data is returned in a dataset.</documentation>
+      <input message="s0:ByOutcode_DataSetHttpPostIn" />
+      <output message="s0:ByOutcode_DataSetHttpPostOut" />
+    </operation>
+    <operation name="ByOrganisation">
+      <documentation>Queries the database, returning all the matching organisations. The town parameter can be blank and the organisation name is automatically wildcarded (e.g. "Boot" matches "Boots" and "Boots the chemists"). Use the fuzzy search to search phonetically. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByOrganisationHttpPostIn" />
+      <output message="s0:ByOrganisationHttpPostOut" />
+    </operation>
+    <operation name="ByOrganisation_DataSet">
+      <documentation>As ByOrganisation but the data is returned in a dataset.</documentation>
+      <input message="s0:ByOrganisation_DataSetHttpPostIn" />
+      <output message="s0:ByOrganisation_DataSetHttpPostOut" />
+    </operation>
+    <operation name="ByOrganisation_Combined">
+      <documentation>As ByOrganisation but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByOrganisation_CombinedHttpPostIn" />
+      <output message="s0:ByOrganisation_CombinedHttpPostOut" />
+    </operation>
+    <operation name="ByStreet">
+      <documentation>Queries the database, returning all the matching streets. The town parameter can be the name of the town or the first part of the postcode (e.g. "LS", "LS2", "Leeds"). The street name is automatically wildcarded (e.g. "High" matches "High Street" and "High Way"). Use the fuzzy search to search phonetically. Use the ID with the ByStreetKey method to get a list of the properties in this street.</documentation>
+      <input message="s0:ByStreetHttpPostIn" />
+      <output message="s0:ByStreetHttpPostOut" />
+    </operation>
+    <operation name="ByStreet_Dataset">
+      <documentation>As ByStreet but the data is returned in a dataset.</documentation>
+      <input message="s0:ByStreet_DatasetHttpPostIn" />
+      <output message="s0:ByStreet_DatasetHttpPostOut" />
+    </operation>
+    <operation name="ByStreet_Combined">
+      <documentation>As ByStreet but the data is returned in the CombinedResults structure. If only one street is found the method will return the list of properties. However, if only one property is listed, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByStreet_CombinedHttpPostIn" />
+      <output message="s0:ByStreet_CombinedHttpPostOut" />
+    </operation>
+    <operation name="ByBuilding">
+      <documentation>Queries the database, returning all the matching properties. The town parameter should be the name of the town (e.g. "Leeds"). The building name is automatically wildcarded (e.g. "Hill" matches "Hilltop" and "Hill View").</documentation>
+      <input message="s0:ByBuildingHttpPostIn" />
+      <output message="s0:ByBuildingHttpPostOut" />
+    </operation>
+    <operation name="ByBuilding_Dataset">
+      <documentation>As ByBuilding but the data is returned in a dataset.</documentation>
+      <input message="s0:ByBuilding_DatasetHttpPostIn" />
+      <output message="s0:ByBuilding_DatasetHttpPostOut" />
+    </operation>
+    <operation name="ByBuilding_Combined">
+      <documentation>As ByBuilding but the data is returned in the CombinedResults structure. If only one street is found the method will return the list of properties. However, if only one property is listed, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByBuilding_CombinedHttpPostIn" />
+      <output message="s0:ByBuilding_CombinedHttpPostOut" />
+    </operation>
+    <operation name="ByStreetKey">
+      <documentation>Returns all the properties in the street. Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:ByStreetKeyHttpPostIn" />
+      <output message="s0:ByStreetKeyHttpPostOut" />
+    </operation>
+    <operation name="ByStreetKey_DataSet">
+      <documentation>As ByStreetKey but the data is returned in a dataset.</documentation>
+      <input message="s0:ByStreetKey_DataSetHttpPostIn" />
+      <output message="s0:ByStreetKey_DataSetHttpPostOut" />
+    </operation>
+    <operation name="ByStreetKey_Combined">
+      <documentation>As ByStreetKey but the data is returned in the CombinedResults structure. If only one property would be returned by the method, the address is automatically selected and returned instead of the interim results.</documentation>
+      <input message="s0:ByStreetKey_CombinedHttpPostIn" />
+      <output message="s0:ByStreetKey_CombinedHttpPostOut" />
+    </operation>
+    <operation name="ByLocalityKey">
+      <documentation>Returns all the streets in the given locality. Use the ID with the ByStreetKey method to get a list of all the properties in the street.</documentation>
+      <input message="s0:ByLocalityKeyHttpPostIn" />
+      <output message="s0:ByLocalityKeyHttpPostOut" />
+    </operation>
+    <operation name="ByLocalityKey_DataSet">
+      <documentation>As ByLocalityKey but the data is returned in a dataset.</documentation>
+      <input message="s0:ByLocalityKey_DataSetHttpPostIn" />
+      <output message="s0:ByLocalityKey_DataSetHttpPostOut" />
+    </operation>
+    <operation name="FetchAddress_Simple">
+      <documentation>As FetchAddress but does not use enumerated type for input parameters, use strings instead</documentation>
+      <input message="s0:FetchAddress_SimpleHttpPostIn" />
+      <output message="s0:FetchAddress_SimpleHttpPostOut" />
+    </operation>
+    <operation name="FetchAddress">
+      <documentation>Queries the database, returning the address corresponding to the ID parameter. Use the ContentType paramater to select which fields to return. Use the Language parameter to select which language to return the address in.</documentation>
+      <input message="s0:FetchAddressHttpPostIn" />
+      <output message="s0:FetchAddressHttpPostOut" />
+    </operation>
+    <operation name="FastAddress">
+      <documentation>Queries the database, returning an address matching the Postcode and Building. The Building parameter represents the building name or number and is automatically wildcarded (e.g. "Eni" matches "Enigma House") and can be blank and if the postcode contains more than one property, the first will be returned. Use the ContentType paramater to select which fields to return. Use the Language parameter to select which language to return the address in.</documentation>
+      <input message="s0:FastAddressHttpPostIn" />
+      <output message="s0:FastAddressHttpPostOut" />
+    </operation>
+    <operation name="FetchAddress_DataSet">
+      <documentation>As FetchAddress but the data is returned in a dataset.</documentation>
+      <input message="s0:FetchAddress_DataSetHttpPostIn" />
+      <output message="s0:FetchAddress_DataSetHttpPostOut" />
+    </operation>
+    <operation name="FastAddress_DataSet">
+      <documentation>As FastAddress but the data is returned in a dataset.</documentation>
+      <input message="s0:FastAddress_DataSetHttpPostIn" />
+      <output message="s0:FastAddress_DataSetHttpPostOut" />
+    </operation>
+    <operation name="Distance">
+      <documentation>Calculates the distance in metres between the origin and destination postcodes. Any errors will be raised as a SOAP exception.</documentation>
+      <input message="s0:DistanceHttpPostIn" />
+      <output message="s0:DistanceHttpPostOut" />
+    </operation>
+    <operation name="Nearest">
+      <documentation>Queries the database, working out the coordinates of the Origin postcode and the array of Destination postcodes. The distance between the Origin and each Destination is calculated and the nearest Items (e.g. 2 returns the nearest 2 Destinations) are returned along with the distance in the specified Units.</documentation>
+      <input message="s0:NearestHttpPostIn" />
+      <output message="s0:NearestHttpPostOut" />
+    </operation>
+    <operation name="Nearest_DataSet">
+      <documentation>As Nearest but the data is returned in a dataset.</documentation>
+      <input message="s0:Nearest_DataSetHttpPostIn" />
+      <output message="s0:Nearest_DataSetHttpPostOut" />
+    </operation>
+    <operation name="StoredNearest">
+      <documentation>Queries the database, working out the coordinates of the Origin postcode against a set of postcodes that have already been uploaded against the License Key. The distance between the Origin and each uploaded destination is calculated and the nearest Items (e.g. 2 returns the nearest 2 destinations) are returned along with the distance in the specified Units.</documentation>
+      <input message="s0:StoredNearestHttpPostIn" />
+      <output message="s0:StoredNearestHttpPostOut" />
+    </operation>
+    <operation name="StoredNearest_DataSet">
+      <documentation>As StoredNearest but the data is returned in a dataset.</documentation>
+      <input message="s0:StoredNearest_DataSetHttpPostIn" />
+      <output message="s0:StoredNearest_DataSetHttpPostOut" />
+    </operation>
+    <operation name="NearestRadial">
+      <documentation>Extends the Nearest method with support for radial restrictions (i.e. returns only the items within X of the origin.</documentation>
+      <input message="s0:NearestRadialHttpPostIn" />
+      <output message="s0:NearestRadialHttpPostOut" />
+    </operation>
+    <operation name="NearestRadial_DataSet">
+      <documentation>As NearestRadial but the data is returned in a dataset.</documentation>
+      <input message="s0:NearestRadial_DataSetHttpPostIn" />
+      <output message="s0:NearestRadial_DataSetHttpPostOut" />
+    </operation>
+    <operation name="StoredNearestRadial">
+      <documentation>Extends the StoredNearest method with support for radial restrictions (i.e. returns only the items within X of the origin.</documentation>
+      <input message="s0:StoredNearestRadialHttpPostIn" />
+      <output message="s0:StoredNearestRadialHttpPostOut" />
+    </operation>
+    <operation name="StoredNearestRadial_DataSet">
+      <documentation>As StoredNearestRadial but the data is returned in a dataset.</documentation>
+      <input message="s0:StoredNearestRadial_DataSetHttpPostIn" />
+      <output message="s0:StoredNearestRadial_DataSetHttpPostOut" />
+    </operation>
+    <operation name="Changes">
+      <documentation>Queries the database, checking all the properties that have been fetched against the account between the StartDate and EndDate and returns information about which properties have been changed.</documentation>
+      <input message="s0:ChangesHttpPostIn" />
+      <output message="s0:ChangesHttpPostOut" />
+    </operation>
+    <operation name="Changes_DataSet">
+      <documentation>As Changes but the data is returned in a dataset.</documentation>
+      <input message="s0:Changes_DataSetHttpPostIn" />
+      <output message="s0:Changes_DataSetHttpPostOut" />
+    </operation>
+    <operation name="Cleanse">
+      <documentation>Queries the database, returning all the properties matching the given address elements. As many of the address elements should be provided along with the formatted Address parameter which is used to assess the confidence of the match. The confience property reflects the confidence of the result (the results are ranked in descending order of confidence). Use the ID with the FetchAddress method to get a complete formatted address.</documentation>
+      <input message="s0:CleanseHttpPostIn" />
+      <output message="s0:CleanseHttpPostOut" />
+    </operation>
+    <operation name="Cleanse_DataSet">
+      <documentation>As ByPostcode but the data is returned in a dataset.</documentation>
+      <input message="s0:Cleanse_DataSetHttpPostIn" />
+      <output message="s0:Cleanse_DataSetHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="LookupUKSoap" type="s0:LookupUKSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="ByPostcode">
+      <soap:operation soapAction="PostcodeAnywhere2/ByPostcode" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByPostcode_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/ByPostcode_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByPostcode_Combined">
+      <soap:operation soapAction="PostcodeAnywhere2/ByPostcode_Combined" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByOutcode">
+      <soap:operation soapAction="PostcodeAnywhere2/ByOutcode" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByOutcode_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/ByOutcode_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation">
+      <soap:operation soapAction="PostcodeAnywhere2/ByOrganisation" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/ByOrganisation_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation_Combined">
+      <soap:operation soapAction="PostcodeAnywhere2/ByOrganisation_Combined" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByStreet">
+      <soap:operation soapAction="PostcodeAnywhere2/ByStreet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByStreet_Dataset">
+      <soap:operation soapAction="PostcodeAnywhere2/ByStreet_Dataset" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByStreet_Combined">
+      <soap:operation soapAction="PostcodeAnywhere2/ByStreet_Combined" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByBuilding">
+      <soap:operation soapAction="PostcodeAnywhere2/ByBuilding" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByBuilding_Dataset">
+      <soap:operation soapAction="PostcodeAnywhere2/ByBuilding_Dataset" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByBuilding_Combined">
+      <soap:operation soapAction="PostcodeAnywhere2/ByBuilding_Combined" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey">
+      <soap:operation soapAction="PostcodeAnywhere2/ByStreetKey" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/ByStreetKey_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey_Combined">
+      <soap:operation soapAction="PostcodeAnywhere2/ByStreetKey_Combined" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByLocalityKey">
+      <soap:operation soapAction="PostcodeAnywhere2/ByLocalityKey" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ByLocalityKey_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/ByLocalityKey_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FetchAddress_Simple">
+      <soap:operation soapAction="PostcodeAnywhere2/FetchAddress_Simple" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FetchAddress">
+      <soap:operation soapAction="PostcodeAnywhere2/FetchAddress" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FastAddress">
+      <soap:operation soapAction="PostcodeAnywhere2/FastAddress" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FetchAddress_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/FetchAddress_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="FastAddress_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/FastAddress_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Distance">
+      <soap:operation soapAction="PostcodeAnywhere2/Distance" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Nearest">
+      <soap:operation soapAction="PostcodeAnywhere2/Nearest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Nearest_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/Nearest_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StoredNearest">
+      <soap:operation soapAction="PostcodeAnywhere2/StoredNearest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StoredNearest_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/StoredNearest_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="NearestRadial">
+      <soap:operation soapAction="PostcodeAnywhere2/NearestRadial" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="NearestRadial_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/NearestRadial_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StoredNearestRadial">
+      <soap:operation soapAction="PostcodeAnywhere2/StoredNearestRadial" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StoredNearestRadial_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/StoredNearestRadial_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Changes">
+      <soap:operation soapAction="PostcodeAnywhere2/Changes" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Changes_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/Changes_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Cleanse">
+      <soap:operation soapAction="PostcodeAnywhere2/Cleanse" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Cleanse_DataSet">
+      <soap:operation soapAction="PostcodeAnywhere2/Cleanse_DataSet" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="LookupUKHttpGet" type="s0:LookupUKHttpGet">
+    <http:binding verb="GET" />
+    <operation name="ByPostcode">
+      <http:operation location="/ByPostcode" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByPostcode_DataSet">
+      <http:operation location="/ByPostcode_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByPostcode_Combined">
+      <http:operation location="/ByPostcode_Combined" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOutcode">
+      <http:operation location="/ByOutcode" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOutcode_DataSet">
+      <http:operation location="/ByOutcode_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation">
+      <http:operation location="/ByOrganisation" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation_DataSet">
+      <http:operation location="/ByOrganisation_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation_Combined">
+      <http:operation location="/ByOrganisation_Combined" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreet">
+      <http:operation location="/ByStreet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreet_Dataset">
+      <http:operation location="/ByStreet_Dataset" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreet_Combined">
+      <http:operation location="/ByStreet_Combined" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByBuilding">
+      <http:operation location="/ByBuilding" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByBuilding_Dataset">
+      <http:operation location="/ByBuilding_Dataset" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByBuilding_Combined">
+      <http:operation location="/ByBuilding_Combined" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey">
+      <http:operation location="/ByStreetKey" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey_DataSet">
+      <http:operation location="/ByStreetKey_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey_Combined">
+      <http:operation location="/ByStreetKey_Combined" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByLocalityKey">
+      <http:operation location="/ByLocalityKey" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByLocalityKey_DataSet">
+      <http:operation location="/ByLocalityKey_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FetchAddress_Simple">
+      <http:operation location="/FetchAddress_Simple" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FetchAddress">
+      <http:operation location="/FetchAddress" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FastAddress">
+      <http:operation location="/FastAddress" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FetchAddress_DataSet">
+      <http:operation location="/FetchAddress_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FastAddress_DataSet">
+      <http:operation location="/FastAddress_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Distance">
+      <http:operation location="/Distance" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Nearest">
+      <http:operation location="/Nearest" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Nearest_DataSet">
+      <http:operation location="/Nearest_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StoredNearest">
+      <http:operation location="/StoredNearest" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StoredNearest_DataSet">
+      <http:operation location="/StoredNearest_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="NearestRadial">
+      <http:operation location="/NearestRadial" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="NearestRadial_DataSet">
+      <http:operation location="/NearestRadial_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StoredNearestRadial">
+      <http:operation location="/StoredNearestRadial" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StoredNearestRadial_DataSet">
+      <http:operation location="/StoredNearestRadial_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Changes">
+      <http:operation location="/Changes" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Changes_DataSet">
+      <http:operation location="/Changes_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Cleanse">
+      <http:operation location="/Cleanse" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Cleanse_DataSet">
+      <http:operation location="/Cleanse_DataSet" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="LookupUKHttpPost" type="s0:LookupUKHttpPost">
+    <http:binding verb="POST" />
+    <operation name="ByPostcode">
+      <http:operation location="/ByPostcode" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByPostcode_DataSet">
+      <http:operation location="/ByPostcode_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByPostcode_Combined">
+      <http:operation location="/ByPostcode_Combined" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOutcode">
+      <http:operation location="/ByOutcode" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOutcode_DataSet">
+      <http:operation location="/ByOutcode_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation">
+      <http:operation location="/ByOrganisation" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation_DataSet">
+      <http:operation location="/ByOrganisation_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByOrganisation_Combined">
+      <http:operation location="/ByOrganisation_Combined" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreet">
+      <http:operation location="/ByStreet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreet_Dataset">
+      <http:operation location="/ByStreet_Dataset" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreet_Combined">
+      <http:operation location="/ByStreet_Combined" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByBuilding">
+      <http:operation location="/ByBuilding" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByBuilding_Dataset">
+      <http:operation location="/ByBuilding_Dataset" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByBuilding_Combined">
+      <http:operation location="/ByBuilding_Combined" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey">
+      <http:operation location="/ByStreetKey" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey_DataSet">
+      <http:operation location="/ByStreetKey_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByStreetKey_Combined">
+      <http:operation location="/ByStreetKey_Combined" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByLocalityKey">
+      <http:operation location="/ByLocalityKey" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ByLocalityKey_DataSet">
+      <http:operation location="/ByLocalityKey_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FetchAddress_Simple">
+      <http:operation location="/FetchAddress_Simple" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FetchAddress">
+      <http:operation location="/FetchAddress" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FastAddress">
+      <http:operation location="/FastAddress" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FetchAddress_DataSet">
+      <http:operation location="/FetchAddress_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="FastAddress_DataSet">
+      <http:operation location="/FastAddress_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Distance">
+      <http:operation location="/Distance" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Nearest">
+      <http:operation location="/Nearest" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Nearest_DataSet">
+      <http:operation location="/Nearest_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StoredNearest">
+      <http:operation location="/StoredNearest" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StoredNearest_DataSet">
+      <http:operation location="/StoredNearest_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="NearestRadial">
+      <http:operation location="/NearestRadial" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="NearestRadial_DataSet">
+      <http:operation location="/NearestRadial_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StoredNearestRadial">
+      <http:operation location="/StoredNearestRadial" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StoredNearestRadial_DataSet">
+      <http:operation location="/StoredNearestRadial_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Changes">
+      <http:operation location="/Changes" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Changes_DataSet">
+      <http:operation location="/Changes_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Cleanse">
+      <http:operation location="/Cleanse" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Cleanse_DataSet">
+      <http:operation location="/Cleanse_DataSet" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="LookupUK">
+    <documentation>This web service provides access to all 26 million UK addresses (check out services.postcodeanywhere.co.uk/us/lookup.asmx for US addresses). Before using this service, you should register at www.postcodeanywhere.co.uk for an account code and license key. The MachineId parameter should be blank unless you are using the web service with a user license key (rather than a click license key). If you have any queries, call us on +44 (0) 870 241 3310 or email on developers@postcodeanywhere.co.uk</documentation>
+    <port name="LookupUKSoap" binding="s0:LookupUKSoap">
+      <soap:address location="http://services.postcodeanywhere.co.uk/uk/lookup.asmx" />
+    </port>
+    <port name="LookupUKHttpGet" binding="s0:LookupUKHttpGet">
+      <http:address location="http://services.postcodeanywhere.co.uk/uk/lookup.asmx" />
+    </port>
+    <port name="LookupUKHttpPost" binding="s0:LookupUKHttpPost">
+      <http:address location="http://services.postcodeanywhere.co.uk/uk/lookup.asmx" />
+    </port>
+  </service>
+</definitions>

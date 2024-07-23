@@ -1,0 +1,29 @@
+﻿<Window x:Class="FWBS.OMS.Workflow.Admin.SynchonisationWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:ClassModifier="internal"
+		Title="Select Items" Height="550" Width="700" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+
+    <DockPanel>
+		<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" >
+			<Button Content="OK"  Name="buttonOK" IsDefault="True" Click="buttonOK_Click" Width="75" Height="23" Margin="5, 2, 0, 2" />
+			<Button Content="Cancel" Name="buttonCancel" IsCancel="True" Width="75" Height="23" Margin="5, 2, 0, 2" />
+		</StackPanel>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" >
+                <Button Content="&gt;&gt;&gt;" Name="buttonAdd" Margin="2, 5, 2, 0" Width="50" Click="buttonAdd_Click"/>
+                <Button Content="&lt;&lt;&lt;" Name="buttonRemove" Margin="2, 5, 2, 0" Width="50" Click="buttonRemove_Click"/>
+			</StackPanel>
+            <ListBox Name="listBoxAll" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,5,5,5" VerticalAlignment="Stretch"
+                     SelectionMode="Multiple" />
+            <ListBox Name="listBoxSelected" Grid.Column="2" HorizontalAlignment="Stretch" Margin="5,5,5,5" VerticalAlignment="Stretch"
+                     SelectionMode="Multiple" />
+        </Grid>
+	</DockPanel>
+</Window>

@@ -1,0 +1,3 @@
+﻿CREATE ROLE [OMSAdminRole]
+    AUTHORIZATION [dbo];
+

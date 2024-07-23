@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE6653C8-BDCA-482A-9A6D-E1357E270857}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FWBS</RootNamespace>
+    <AssemblyName>OMSExportENT</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OMSExportENT.cs" />
+    <Compile Include="..\..\..\ServicesAssemblyInfo.cs">
+        <Link>Properties\ServicesAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MSProductInfo.cs">
+        <Link>Properties\MSProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\enterpriseClientLoadService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\enterpriseClientService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\enterpriseMatterLoadService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\enterpriseMatterService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\enterpriseTestWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\enterpriseTimeCard\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\OMSExportBase\OMSExportBase.csproj">
+      <Project>{B4176477-4DBB-4831-B218-12EDAEBE3DFD}</Project>
+      <Name>OMSExportBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://dapent39/services/clientloadservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\enterpriseClientLoadService\</RelPath>
+      <UpdateFromURL>http://dapent39/services/clientloadservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMSExportENT_enterpriseClientLoadService_ClientLoadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://dapent39/services/clientservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\enterpriseClientService\</RelPath>
+      <UpdateFromURL>http://dapent39/services/clientservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMSExportENT_enterpriseClientService_ClientService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://dapent39/services/matterloadservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\enterpriseMatterLoadService\</RelPath>
+      <UpdateFromURL>http://dapent39/services/matterloadservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMSExportENT_enterpriseMatterLoadService_MatterLoadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://dapent39/services/matterservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\enterpriseMatterService\</RelPath>
+      <UpdateFromURL>http://dapent39/services/matterservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMSExportENT_enterpriseMatterService_MatterService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://dapent39/services/testwebservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\enterpriseTestWebService\</RelPath>
+      <UpdateFromURL>http://dapent39/services/testwebservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMSExportENT_enterpriseTestWebService_TestWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://dapent39/services/timecard.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\enterpriseTimeCard\</RelPath>
+      <UpdateFromURL>http://dapent39/services/timecard.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMSExportENT_enterpriseTimeCard_TimeCard</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\enterpriseClientLoadService\clientloadservice.wsdl" />
+    <None Include="Web References\enterpriseClientLoadService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\enterpriseClientService\Client.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\enterpriseClientService\Client1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\enterpriseClientService\clientservice.wsdl" />
+    <None Include="Web References\enterpriseClientService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\enterpriseMatterLoadService\matterloadservice.wsdl" />
+    <None Include="Web References\enterpriseMatterLoadService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\enterpriseMatterService\Matter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\enterpriseMatterService\matterservice.wsdl" />
+    <None Include="Web References\enterpriseMatterService\MatterShort.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\enterpriseMatterService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\enterpriseTestWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\enterpriseTestWebService\testwebservice.wsdl" />
+    <None Include="Web References\enterpriseTimeCard\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\enterpriseTimeCard\timecard.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\enterpriseClientService\clientservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\enterpriseClientLoadService\clientloadservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\enterpriseMatterService\matterservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\enterpriseMatterLoadService\matterloadservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\enterpriseTestWebService\testwebservice.disco" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Scripts\Columns\dbTimeLedger.sql" />
+    <Content Include="Scripts\Functions\fdGetExternalID.sql" />
+    <Content Include="Scripts\Helper Scripts\CreateActivitiesFromEnterprise.sql" />
+    <Content Include="Scripts\Helper Scripts\CreateDepartmentsFromEnterprise.sql" />
+    <Content Include="Scripts\Helper Scripts\_readme.txt" />
+    <Content Include="Scripts\Old\_readme.txt" />
+    <Content Include="Scripts\Other\AdminKitIcons.sql" />
+    <Content Include="Scripts\Other\CodeLookups.sql" />
+    <Content Include="Scripts\Stored Procedures\InsertIntegrationMapping.sql" />
+    <Content Include="Scripts\Old\MigrateFromENTERPRISE_CLNUM to fddbIntegrationMapping.sql" />
+    <Content Include="Scripts\Old\MigrateFromENTERPRISE_MMATTER to fddbIntegrationMapping.sql" />
+    <Content Include="Scripts\Other\SetupIntegrationMapping.sql" />
+    <Content Include="Scripts\Stored Procedures\Import\udSprENTIntegrationMapperFiles.sql" />
+    <Content Include="Scripts\Stored Procedures\Import\udSprENTIntegrationMapperFeeEarners.sql" />
+    <Content Include="Scripts\Stored Procedures\Import\udSprENTImportFeeEarners.sql" />
+    <Content Include="Scripts\Stored Procedures\Enterprise\MatterSphereAccess.sql" />
+    <Content Include="Scripts\Stored Procedures\Import\udSprENTIntegrationMapperClients.sql" />
+    <Content Include="Scripts\Stored Procedures\sprENTExportClients.sql" />
+    <Content Include="Scripts\Stored Procedures\sprENTExportMatters.sql" />
+    <Content Include="Scripts\Stored Procedures\sprENTExportTime.sql" />
+    <Content Include="Scripts\Stored Procedures\sprENTUpdateClients.sql" />
+    <Content Include="Scripts\Stored Procedures\sprENTUpdateMatters.sql" />
+    <Content Include="Scripts\Stored Procedures\Import\udSprENTImportClients.sql" />
+    <Content Include="Scripts\Stored Procedures\Import\udSprENTImportFiles.sql" />
+    <None Include="Web References\enterpriseTimeCard\timecard.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).*" "$(SolutionDir)OMSExportService\bin\$(ConfigurationName)\" /c /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

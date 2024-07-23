@@ -1,0 +1,50 @@
+﻿CREATE PROCEDURE dbo.SCHFEETASKALL
+(
+	@UI uUICultureInfo = '{default}'
+	, @FEEUSRID INT
+	, @ORDERBY NVARCHAR(MAX) = NULL
+)
+
+AS
+SET NOCOUNT ON;
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+
+DECLARE @SELECT NVARCHAR(MAX)
+
+--- SET THE SELECT CLAUSE
+SET @SELECT = N' WITH Res AS
+(
+SELECT     
+	T.*
+	, COALESCE(CL4.cdDesc, ''~'' + NULLIF(T.tskType, '''') + ''~'') AS tsktypedesc
+	, C.clNo
+	, F.fileNo
+FROM dbo.dbClient C
+	INNER JOIN dbo.dbFile F ON F.clID = C.clID 
+	INNER JOIN dbo.dbTasks T ON T.fileID = F.fileID
+	LEFT JOIN dbo.GetCodeLookupDescription (''TASKTYPE'', @UI) CL4 ON CL4.cdCode = T.tskType 
+WHERE T.feeusrid = @FEEUSRID
+)
+SELECT *
+FROM Res
+'
+IF @ORDERBY IS NULL
+	SET  @SELECT =  @SELECT + N'ORDER BY tskId'
+ELSE 
+	IF @ORDERBY NOT LIKE '%tskId%'
+		SET  @SELECT =  @SELECT + N'ORDER BY ' + @ORDERBY  + N', tskId'
+	ELSE 
+		SET  @SELECT =  @SELECT + N'ORDER BY ' + @ORDERBY
+
+EXEC sp_executesql @SELECT, N'@UI uUICultureInfo, @FEEUSRID BIGINT', @UI, @FEEUSRID
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[SCHFEETASKALL] TO [OMSRole]
+    AS [dbo];
+
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[SCHFEETASKALL] TO [OMSAdminRole]
+    AS [dbo];

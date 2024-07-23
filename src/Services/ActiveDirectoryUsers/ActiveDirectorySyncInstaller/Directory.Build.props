@@ -1,0 +1,13 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ProductFamily>3E MatterSphere</ProductFamily>
+    <ProductName>Active Directory Synchronization Service</ProductName>
+    <ShortProductName>ADSync</ShortProductName>
+    <PublisherName>ELITE</PublisherName>
+    <ProductVersion>10.1.0</ProductVersion>
+    <UpgradeCode>66004A28-6A8F-46B8-8A66-8F0B9FD1543C</UpgradeCode>
+    <SourceDir></SourceDir>
+    <OutputName>3EMatterSphereADSyncInstaller</OutputName>
+  </PropertyGroup>
+</Project>

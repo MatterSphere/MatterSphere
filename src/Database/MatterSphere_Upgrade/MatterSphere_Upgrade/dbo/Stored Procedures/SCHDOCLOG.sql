@@ -1,0 +1,82 @@
+﻿CREATE PROCEDURE dbo.SCHDOCLOG
+(
+	@UI uUICultureInfo = '{default}'
+	, @ID BIGINT
+	, @VERSION UNIQUEIDENTIFIER = NULL
+	, @ORDERBY NVARCHAR(MAX) = NULL
+)
+
+AS
+SET NOCOUNT ON;
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+
+DECLARE @SELECT NVARCHAR(MAX)
+
+--- SET THE SELECT CLAUSE
+SET @SELECT = N' WITH Res AS
+(
+SELECT
+	CASE L.logtype 
+		WHEN ''SAVED'' THEN 2
+		WHEN ''DELETED'' THEN 6
+		WHEN ''OPENED'' THEN 36
+		WHEN ''CHECKEDOUT'' THEN 35
+		WHEN ''CHECKEDIN'' THEN 1
+		WHEN ''EMAILED'' THEN 34
+		WHEN ''MOVED'' THEN 8
+		WHEN ''COPIED'' THEN 4
+		WHEN ''AUTHORISE'' THEN 54
+		WHEN ''CONVERTPDF'' THEN 96
+		WHEN ''DMSDELETED'' THEN 21
+		WHEN ''DMSARCHIVED'' THEN 18
+		WHEN ''SCANNED'' THEN 10
+		ELSE NULL 
+	END AS Icon
+	, L.logid
+	, V.verlabel
+	, L.logtype
+	, COALESCE(CL1.cdDesc, ''~'' + NULLIF(L.logtype, '''') + ''~'') AS Action
+	, COALESCE(CL2.cdDesc, ''~'' + NULLIF(L.logcode, '''') + ''~'') AS SubAction
+	, L.logcode
+	, L.usrid
+	, L.logtime
+	, L.logdata
+FROM dbo.dbdocumentlog L
+	LEFT OUTER JOIN dbo.dbdocumentversion V on V.verid = L.verid
+	LEFT OUTER JOIN dbo.GetCodeLookupDescription(''DOCACTION'', @UI) CL1 ON CL1.cdCode = L.logtype
+	LEFT OUTER JOIN dbo.GetCodeLookupDescription(''DOCSUBACTION'', @UI) CL2 ON CL2.cdCode = L.logcode
+
+WHERE L.docid = @ID 
+'
+IF @VERSION IS NOT NULL
+	SET @SELECT = @SELECT + N'
+	AND L.verID = @VERSION
+'
+
+SET @SELECT = @SELECT + N'
+)
+SELECT *
+FROM Res
+'
+
+IF @ORDERBY IS NULL
+	SET  @SELECT =  @SELECT + N'ORDER BY logtime DESC'
+ELSE 
+	IF @ORDERBY NOT LIKE '%logtime%'
+		SET  @SELECT =  @SELECT + N'ORDER BY ' + @ORDERBY  + N', logtime DESC'
+	ELSE 
+		SET  @SELECT =  @SELECT + N'ORDER BY ' + @ORDERBY
+
+EXEC sp_executesql @SELECT, N'@UI uUICultureInfo, @ID BIGINT, @VERSION UNIQUEIDENTIFIER', @UI, @ID, @VERSION
+
+GO
+
+GRANT EXECUTE
+    ON OBJECT::[dbo].[SCHDOCLOG] TO [OMSRole]
+    AS [dbo];
+
+
+GO
+GRANT EXECUTE
+    ON OBJECT::[dbo].[SCHDOCLOG] TO [OMSAdminRole]
+    AS [dbo];

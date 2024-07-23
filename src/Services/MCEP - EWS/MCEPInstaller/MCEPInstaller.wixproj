@@ -1,0 +1,30 @@
+﻿<Project Sdk="WixToolset.Sdk/4.0.5">
+  <PropertyGroup>
+    <EnableProjectHarvesting>true</EnableProjectHarvesting>
+    <HarvestProjectsSuppressUniqueIds>true</HarvestProjectsSuppressUniqueIds>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <DefineConstants>ProductName=$(ProductName);ShortProductName=$(ShortProductName);ProductFamily=$(ProductFamily);PublisherName=$(PublisherName);ProductVersion=$(ProductVersion);UpgradeCode=$(UpgradeCode);SourceDir=$(SourceDir);</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Heat" Version="4.0.5" />
+    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <HarvestProject Include="..\MCEPControlForm\MCEPControlForm.csproj" ProjectOutputGroups="Binaries;Content;" HarvestProjectsVerboseOutput="true" />
+    <HarvestProject Include="..\MCEPGlobalClasses\MCEPGlobalClasses.csproj" ProjectOutputGroups="Binaries;Content;" HarvestProjectsVerboseOutput="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Directory.Build.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MCEPMerge\MCEPMerge.csproj" />
+    <ProjectReference Include="..\MCEPProfilerEWS\MCEPProfilerEWS.csproj" />
+    <ProjectReference Include="..\MCEPStorerEWS\MCEPStorerEWS.csproj" />
+    <ProjectReference Include="..\MCEPControlForm\MCEPControlForm.csproj" DoNotHarvest="true" />
+    <ProjectReference Include="..\MCEPGlobalClasses\MCEPGlobalClasses.csproj" DoNotHarvest="true" />
+  </ItemGroup>
+  <PropertyGroup>
+    <OutputName>$(OutputName)</OutputName>
+  </PropertyGroup>
+</Project>

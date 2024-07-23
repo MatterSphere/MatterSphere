@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Horizon.Views.StartPage.DetailsItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Horizon.Views.StartPage"
+             xmlns:startPage="clr-namespace:Horizon.ViewModels.StartPage"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=startPage:StartPageItemViewModel}"
+             d:DesignHeight="180"
+             d:DesignWidth="450">
+    <materialDesign:Card
+        Width="450"
+        Height="180"
+        Margin="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="{StaticResource EliteBrightPurple}" />
+            <Canvas
+                Grid.Column="1"
+                Width="80"
+                Height="80"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                ZIndex="1">
+                <Ellipse
+                    Width="80"
+                    Height="80"
+                    Fill="{StaticResource EliteBrightPurple}" />
+            </Canvas>
+            <Canvas
+                Grid.Column="1"
+                Width="45"
+                Height="45"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                ZIndex="2">
+                <materialDesign:PackIcon
+                    Width="45"
+                    Height="45"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Kind="{Binding Icon}" />
+            </Canvas>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Margin="10,25,0,10"
+                    FontSize="30"
+                    Foreground="Gray"
+                    Text="{Binding Title}" />
+                <StackPanel
+                    Grid.Row="2"
+                    Margin="10,0"
+                    Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="36"
+                        Text="{Binding Total}" />
+                    <TextBlock
+                        Margin="15,0"
+                        VerticalAlignment="Top"
+                        FontSize="25"
+                        Foreground="{StaticResource EliteBrightPurple}"
+                        Text="{Binding SubNumber}" />
+                </StackPanel>
+                <Separator Grid.Row="3" Margin="10" />
+                <TextBlock
+                    Grid.Row="4"
+                    Margin="0,0,20,15"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Cursor="Hand"
+                    Text="View Details">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding OpenDetailsCommand}" MouseAction="LeftClick" />
+                    </TextBlock.InputBindings>
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="Gray" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="{StaticResource EliteBrightPurple}" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </materialDesign:Card>
+</UserControl>

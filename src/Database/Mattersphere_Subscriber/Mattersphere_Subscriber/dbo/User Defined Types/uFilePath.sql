@@ -1,0 +1,3 @@
+﻿CREATE TYPE [dbo].[uFilePath]
+    FROM NVARCHAR (255) NOT NULL;
+

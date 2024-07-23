@@ -1,0 +1,14 @@
+
+<InterimSettlementPackRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClaimantRepresentative>
+    <CompanyDetails ContactName="Brian" ContactSurname="O'Halloran" EmailAddress="Daniel.i@fwbs.net" ReferenceNumber="F8/7" TelephoneNumber="01604 857857" />
+  </ClaimantRepresentative>
+  <MedicalReport MedicalReportStage2_1="1" />
+  <InterimPayment>
+    <ClaimantRequestForInterimPayment ReasonsForInterimPaymentRequest="Test" />
+  </InterimPayment>
+  <ClaimantLosses>
+    <ClaimantLossesToDate LossType="6" EvidenceAttached="0" Comments="" GrossValueClaimed="1001.0000" ItemBeingPursued="0" />
+  </ClaimantLosses>
+  <StatementOfTruth RetainedSignedCopy="0" SignatoryType="C" />
+</InterimSettlementPackRequest>

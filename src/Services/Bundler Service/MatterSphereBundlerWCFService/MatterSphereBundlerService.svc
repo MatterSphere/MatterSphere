@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MatterSphereBundlerWCFService.MatterSphereBundlerService" CodeBehind="MatterSphereBundlerService.svc.cs" %>

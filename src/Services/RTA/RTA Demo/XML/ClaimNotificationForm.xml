@@ -1,0 +1,66 @@
+﻿<DocumentInput>
+  <ApplicationData>
+    <ClaimDetails RetainedCopy="1" Signatory="S"/>
+  </ApplicationData>
+  <ClaimAndClaimantDetails>
+    <ClaimantRepresentative>
+      <CompanyDetails CompanyName ="" ContactMiddleName ="" ContactName ="" ContactSurname ="" EmailAddress ="" PolicyNumber ="" ProviderAddress ="" ReferenceNumber ="" TelephoneNumber ="" >
+        <Address AddressType ="P" City ="" Country ="" County ="" District ="" HouseName ="" HouseNumber ="" PostCode ="" Street1 ="" Street2 =""/>
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantDetails Comments ="" DefDriverName ="" DefedantAge ="" DefendandDescription ="" DefendantDetailsObtained ="" DefendantStatus ="P" PolicyNumberReference ="" ReferralSource ="" SearchName ="">
+      <PersonalDetails DateOfBirth ="" MiddleName ="" Name ="" OtherTitle ="" Sex ="M" Surname ="" TitleType="1">
+        <Address AddressType ="P" City ="" Country ="" County ="" District ="" HouseName ="" HouseNumber ="" PostCode ="" Street1 ="" Street2 =""/>
+      </PersonalDetails>
+      <Vehicle Color ="" EngineSize ="" Make ="" Model ="" VRN =""/>
+      <InsurerInformation InsurerName ="" InsurerOrganizationID ="" InsurerOrganizationPath ="" InsurerType ="M" Selected ="1"/>
+      <CompanyDetails CompanyName ="" ContactMiddleName ="" ContactName ="" ContactSurname ="" EmailAddress ="" PolicyNumber ="" ProviderAddress ="" ReferenceNumber ="" TelephoneNumber ="">
+        <Address  AddressType="P" City ="" Country ="" County ="" District ="" HouseName ="" HouseNumber ="" PostCode ="" Street1 ="" Street2 =""/>       
+      </CompanyDetails>      
+    </DefendantDetails>
+    <ClaimantDetails ChildClaim ="1" NationalInsuranceNumber ="" NINComment ="" Occupation ="">
+      <PersonalDetails DateOfBirth ="" MiddleName ="" Name ="" OtherTitle ="" Sex ="M" Surname ="" TitleType ="1">
+        <Address AddressType ="P" City ="" Country ="" County ="" District ="" HouseName ="" HouseNumber ="" PostCode ="" Street1 ="" Street2 =""/>
+      </PersonalDetails>
+      <Vehicle Color ="" EngineSize ="" Make ="" Model ="" VRN ="" />
+    </ClaimantDetails>
+  </ClaimAndClaimantDetails>
+  <MedicalDetails>
+    <Injury BoneInjury ="1" DaysNumber ="" HospitalAttendance="1" InjurySustainedDescription ="" MedicalAttentionFirstDate ="" MedicalAttentionSeeking ="1" Other ="1" OvernightDetention="1" SoftTissue="1" StillOffWork="1" TimeOffPeriod ="" TimeOffRequired ="1" Whiplash="1 "/>
+    <!-- Interation of Hospitals -->
+    <Hospital HospitalName ="" HospitalType ="0" PostCode ="">
+      <HospitalAddress AddressLine1 ="" AddressLine2 ="" AddressLine3 ="" AddressLine4 =""/>
+    </Hospital>
+    <!-- Interation of Rehabilitation -->
+    <Rehabilitation RehabilitationDetails =""  RehabilitationNeeds ="1" RehabilitationTreatment ="" RehabilitationUndertaken ="0"/>
+  </MedicalDetails>
+  <RepairsAndAlternativeVehicleProvision>
+    <Repairs ClaiimingDamageOwnVehicle ="1" ContactDetails ="" DefendantInsInspection ="1" DetailsOfTheInsurance ="0" Location="" OtherDetails="" RepairsPosition="0" ThroughAlternatieCompany="1" ThroughClaimantInsurer="1" TotalLoss="0">
+      <AlternativeCompany Address ="" CompanyName =""  ReferenceNumber ="" TelephoneNumber =""/>
+    </Repairs>
+    <AlternativeVehicleProvision AVProvided ="1" AVRequiredByCL="1" AVRequiredByCR="1" ClaimantEntitled="1"  ContactName ="" HireNeed ="1" TelephoneNumber="" VehicleType="">
+      <Provider EndDate ="" ProviderAddress ="" ProviderName ="" ReferenceNumber ="" StartDate ="">
+        <Vehicle Color ="" EngineSize ="" Make ="" Model ="" VRN ="" />
+      </Provider>      
+    </AlternativeVehicleProvision>
+  </RepairsAndAlternativeVehicleProvision>
+  <AccidentData>
+    <AccidentDetails AccidentDate ="" AccidentDescription ="" AccidentLocation ="" AccidentTime ="" ClaimantType ="0"  DriverIsDefendant ="1" OccupantsNumber="" OtherType="" PoliceReported="1" Seatbelt="0">
+      <Driver MiddleName ="" Name ="" Surname ="">
+        <Address AddressType ="P" City ="" Country ="" County ="" District ="" HouseName ="" HouseNumber ="" PostCode ="" Street1 ="" Street2 =""/>
+      </Driver>
+      <InsuranceCompanyInformatiion CompanyName ="" PolicyNumber ="">
+        <Address AddressType ="P" City ="" Country ="" County ="" District ="" HouseName ="" HouseNumber ="" PostCode ="" Street1 ="" Street2 =""/>
+      </InsuranceCompanyInformatiion>
+      <WeatherConditions Fog ="1" Ice ="1" Other="1" OtherDetails ="" Rain ="1" Snow ="1" Sun ="1"/>
+      <RoadConditions Dry ="1" Ice="1" Mud="1" Oil="1" Other="1" OtherDetails="" Snow="1" Wet="1"/>
+      <AccidentCircumstances AccidCarPark ="1" AccidChangingLanes ="1" AccidRoundabout ="1" ConcertinaCollision ="1" Other="1" VhclHitInRear="1" VhclHitSideRoad="1" VhclHitWhilstParked="1"/>
+      <PoliceDetails ReferenceNumber ="" ReportingOfficerName ="" StationAddress ="" StationName =""/>
+    </AccidentDetails>
+    <BusCoach BussOrCoach ="1" Comments ="" DriverDescription ="" DriverID ="" DriverName ="" Evidence ="1" NumberOfPassengers="" VehicleDescription=""/>
+  </AccidentData>
+  <LiabilityFunding>
+    <Liability DefendantResponsability ="" OP1Responsability ="1" OP2Responsability ="1" OP3Responsability ="1" OP4Responsability="1" OP5Responsability ="1" OP6Responsability="1"/>
+    <Funding AgreementDate ="" Comments ="" ConditionalFeeDate ="" ConsideredFreeLegalExpIns ="1" FundingUndertaken ="1" ICAddress="" ICName="" IncreasingPoint ="" LevelOfCover ="" MembershipOrganisation ="1" Ohter="1" OrganizationName="" OtherDetails=""  PolicyDate="" PolicyNumber=""  PremiumsStaged="1" Section29="1" Section58="1"/>
+  </LiabilityFunding>
+</DocumentInput>

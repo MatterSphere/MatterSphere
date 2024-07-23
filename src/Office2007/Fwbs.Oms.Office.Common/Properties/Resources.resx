@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="DynamicOMS_Insert_Precedent_Zero" xml:space="preserve">
+    <value>[No %PRECEDENTS% Available]</value>
+  </data>
+  <data name="DynamicOMS_Tools_ExternalApps_Zero" xml:space="preserve">
+    <value>[No External Application Configured]</value>
+  </data>
+  <data name="Missing" xml:space="preserve">
+    <value>#Missing#</value>
+  </data>
+  <data name="SuperTip_Connect" xml:space="preserve">
+    <value>Connects or logs into a 3E MatterSphere session.</value>
+  </data>
+  <data name="SuperTip_Disconnect" xml:space="preserve">
+    <value>Disconnects or logs off a current %APPNAME% session.</value>
+  </data>
+  <data name="SuperTip_DynamicOMS_Insert_Precedent_Zero" xml:space="preserve">
+    <value>No %PRECEDENTS% associated to the currently opened document.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Documents" xml:space="preserve">
+    <value>A miscellaneous collection of other kind of documents that can be created.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Documents_Blank" xml:space="preserve">
+    <value>Creates a blank document based on a default blank %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Documents_Court" xml:space="preserve">
+    <value>Creates a court document based on its default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_FinancialDocs" xml:space="preserve">
+    <value>Creates financial based documents using a collection of base %PRECEDENTS%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_FinancialDocs_Invoice" xml:space="preserve">
+    <value>Creates an invoice using the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_FinancialDocs_Slip" xml:space="preserve">
+    <value>Creates an accounts slip using the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_FinancialDocs_Statement" xml:space="preserve">
+    <value>Creates a financial statement based on the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_LettersMenu" xml:space="preserve">
+    <value>Creates letters to the %CLIENT% or %ASSOCIATE% based on a default letterhead %PRECEDENT%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Letters_Picker" xml:space="preserve">
+    <value>Choose another letterhead to use a list of %PRECEDENTS%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Letters_ToAssociate" xml:space="preserve">
+    <value>Creates a letter to a selected %ASSOCIATE% of a %FILE% using the default letterhead %PRECEDENT%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Letters_ToClient" xml:space="preserve">
+    <value>Creates a letter to the default %ASSOCIATE% of the %FILE% using the default letterhead %PRECEDENT%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Associate" xml:space="preserve">
+    <value>Creates a new %ASSOCIATE% under a selected %FILE%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Client" xml:space="preserve">
+    <value>Creates a new %CLIENT% within the system.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Client_PreClient" xml:space="preserve">
+    <value>Creates a standard Pre-%CLIENT%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Client_PreClientCorporate" xml:space="preserve">
+    <value>Creates a corporate Pre-%CLIENT%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Client_Standard" xml:space="preserve">
+    <value>Creates a standard %CLIENT%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Compliment" xml:space="preserve">
+    <value>Creates a compliment slip using a default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Contact" xml:space="preserve">
+    <value>Creates a new contact to the global contact list.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Fax" xml:space="preserve">
+    <value>Creates a new fax using the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_File" xml:space="preserve">
+    <value>Creates a new %FILE% under a selected %CLIENT%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Memo" xml:space="preserve">
+    <value>Creates a new memo based on a default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_New_Time" xml:space="preserve">
+    <value>Creates time entry records and stores them in the time ledger log for a selected %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry" xml:space="preserve">
+    <value>Creates various new %APPNAME% related objects.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Appointment" xml:space="preserve">
+    <value>Creates a new appointment to a %FILE%. Exchange Connector will synchronise this with Microsoft Exchange.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Archive" xml:space="preserve">
+    <value>Creates a new archive entry.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Associate" xml:space="preserve">
+    <value>Creates a new %ASSOCIATE% under a selected %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Complaint" xml:space="preserve">
+    <value>Creates a new complaint against a %CLIENT% or %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_DocReceipt" xml:space="preserve">
+    <value>Creates a new document receipt to be store against a %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_KeyDate" xml:space="preserve">
+    <value>Creates a new key dates by executing one of the installed Key Date wizards</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Mail" xml:space="preserve">
+    <value>Creates a new mail message using the default mail %PRECEDENT%</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Note" xml:space="preserve">
+    <value>Create a new note.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Risk" xml:space="preserve">
+    <value>Create a risk assessment to be logged under a selected %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_SMS" xml:space="preserve">
+    <value>Creates a new SMS document based on the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Task" xml:space="preserve">
+    <value>Creates a new task to %APPNAME%.  This will appear in the relevant users Command Centre.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Time" xml:space="preserve">
+    <value>Creates a new time entry under a chosen %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewEntry_Undertaking" xml:space="preserve">
+    <value>Creates an undertaking under a specific %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Notes" xml:space="preserve">
+    <value>Creates different kind of note items based on selected %PRECEDENT% types.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Notes_AttendanceNote" xml:space="preserve">
+    <value>Creates an attendance note based on the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Notes_File" xml:space="preserve">
+    <value>Creates a %FILE% note based on the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Notes_Meeting" xml:space="preserve">
+    <value>Creates a meeting note based on the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Notes_TelIn" xml:space="preserve">
+    <value>Creates a Telephone In note based on the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_Notes_TelOut" xml:space="preserve">
+    <value>Creates a Telephone Out note based on the default %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_AddAppointment" xml:space="preserve">
+    <value>Creates a new appointment.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_TasksMenu" xml:space="preserve">
+    <value>Task management.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_AddTask" xml:space="preserve">
+    <value>Creates a new task.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_NewMail" xml:space="preserve">
+    <value>Creates a new mail message using the default email %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewCalendar_FeeEarner" xml:space="preserve">
+    <value>View the current %FEEEARNERS% calendar.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewCalendar_Other" xml:space="preserve">
+    <value>Views another person's calendar.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewCalendar_Own" xml:space="preserve">
+    <value>Views the currently logged in calendar.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewCalendarMenu" xml:space="preserve">
+    <value>Views a calendar within Outlook.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewInbox" xml:space="preserve">
+    <value>Views the current user's inbox.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewTasks_FeeEarner" xml:space="preserve">
+    <value>Views the current %FEEEARNERS% task list.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewTasks_OMS" xml:space="preserve">
+    <value>Views %APPNAME% related tasks.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewTasks_Other" xml:space="preserve">
+    <value>Views another person's task list.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewTasks_Own" xml:space="preserve">
+    <value>Views the currently logged in user's tasks list.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Outlook_ViewTasksMenu" xml:space="preserve">
+    <value>Views a task list within Outlook.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Tools_ConflictSearch" xml:space="preserve">
+    <value>Searches for conflicting %FILES% before creating a %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Tools_EmailSupport" xml:space="preserve">
+    <value>Emails the %APPNAME% support team any queries that you may have.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Tools_ExternalApps" xml:space="preserve">
+    <value>A selection of external application to execute.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Tools_Reports" xml:space="preserve">
+    <value>A list of client-side reports for the current user to run.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Tools_Reports_CoreReports" xml:space="preserve">
+    <value>Executes the core %APPNAME% reports system.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Tools_Reports_Time" xml:space="preserve">
+    <value>Displays the time sheet report for the current User / %FEEEARNER%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Tools_SearchTools" xml:space="preserve">
+    <value>Displays the admin search tools.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Tools_UserSettings" xml:space="preserve">
+    <value>Changes the currently logged in users settings.</value>
+  </data>
+  <data name="SuperTip_TabOMS_AboutGroup_About" xml:space="preserve">
+    <value>Session and database information for the currently logged in session.</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_Client" xml:space="preserve">
+    <value>Views %CLIENT% information based on a selected %CLIENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_CommandCentre" xml:space="preserve">
+    <value>Opens the command centre for the currently logged in user.</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_ContactManager" xml:space="preserve">
+    <value>Views the global contact manager from %APPNAME%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_JobList" xml:space="preserve">
+    <value>Views the current users active %PRECEDENT% job list.</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_MilestoneInfo" xml:space="preserve">
+    <value>Display Milestone Information</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_PrecedentLibrary" xml:space="preserve">
+    <value>Displays the global list of %PRECEDENTS% within %APPNAME% .</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_ShowFile" xml:space="preserve">
+    <value>Views %FILE% information based on the selected %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_UFNInformation" xml:space="preserve">
+    <value>Display UFN Information</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AddCompanySig" xml:space="preserve">
+    <value>Embeds a company signature marker into the current Document / %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AddDraft" xml:space="preserve">
+    <value>Adds a draft logo as a watermark to the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AddFeeSig" xml:space="preserve">
+    <value>Embeds a %FEEEARNER% signature marker into the current document / %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AddField" xml:space="preserve">
+    <value>Adds a field to the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AddFileCopy" xml:space="preserve">
+    <value>Add a file copy logo as a watermark on the current document</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AddSignature" xml:space="preserve">
+    <value>Signs the document with fee earner and company signatures at the embedded markers.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_AddSlogan" xml:space="preserve">
+    <value>Adds pre-configured slogan to the end of the document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_Precedent" xml:space="preserve">
+    <value>Displays available %PRECEDENTS% based on the current document's %ASSOCIATE% and %PRECEDENT% type.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_RefreshFields" xml:space="preserve">
+    <value>Refreshes the fields on the current document with the data from the database.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_RelinkFields" xml:space="preserve">
+    <value>Refreshes the fields on the current document with the data within the document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_RemoveDraft" xml:space="preserve">
+    <value>Removes the draft watermark.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_RemoveField" xml:space="preserve">
+    <value>Removes an existing field from the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_RemoveFileCopy" xml:space="preserve">
+    <value>Removes the file copy watermark.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_RemoveSignature" xml:space="preserve">
+    <value>Removes all signatures on the document at their embedded markers.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_Sig" xml:space="preserve">
+    <value>Signs the document with logos and configured signatures.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Insert_SigMenu" xml:space="preserve">
+    <value>Signs the document with logos and configured signatures.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_SaveAndContinue" xml:space="preserve">
+    <value>Saves the document but keeps it open after the wizard has been run.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_SaveAsPrec" xml:space="preserve">
+    <value>Saves the current document as a new %PRECEDENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_TemplateProps" xml:space="preserve">
+    <value>Views and edits the current templates properties.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_CheckIn" xml:space="preserve">
+    <value>Checks in the current document if it has already been checked out.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_CheckOut" xml:space="preserve">
+    <value>Checks out the current document if it is currently checked in.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Compare" xml:space="preserve">
+    <value>Compares the current document with another.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Compare_Any" xml:space="preserve">
+    <value>Compares the currently opened document with any other accessible document within the system.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Compare_Client" xml:space="preserve">
+    <value>Compares the current document with another document on the same %CLIENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Compare_File" xml:space="preserve">
+    <value>Compares the document with another document from the same %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Compare_Latest" xml:space="preserve">
+    <value>Compares the currently opened document with the latest version.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Compare_Recent" xml:space="preserve">
+    <value>Compares the document with a chose of recenlty accessed documents.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Compare_Version" xml:space="preserve">
+    <value>Compares the current document with another version of the same document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_GetLatest" xml:space="preserve">
+    <value>Gets the latest version of the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_GetVersion" xml:space="preserve">
+    <value>Gets a specific version of the document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Undo" xml:space="preserve">
+    <value>Rolls back the changes of the current document to the latest version within the system.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Versioning_Versions" xml:space="preserve">
+    <value>Displays a dialog that shows the list of versions for the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_View_Associate" xml:space="preserve">
+    <value>Views the %ASSOCIATE% information screen for the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_View_AssociatedDocs" xml:space="preserve">
+    <value>Displays a list of recently created documents for the %ASSOCIATE% of the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_View_Client" xml:space="preserve">
+    <value>Views the %CLIENT% information screen for the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_View_DocProps" xml:space="preserve">
+    <value>Views the document properties for the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_View_DocPropToggle" xml:space="preserve">
+    <value>Toggles the basic document properties of the current document on and off.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_View_DocVars" xml:space="preserve">
+    <value>Displays the document fields values within the current document.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_View_File" xml:space="preserve">
+    <value>Views the %FILE% information screen for the current document.</value>
+  </data>
+  <data name="Tab_Home_Connect_CreateMenu" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Tab_Home_Connect_ViewMenu" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="TabHome_Connect" xml:space="preserve">
+    <value>3E MatterSphere</value>
+  </data>
+  <data name="TabHome_Connect_Create_AssocLetter" xml:space="preserve">
+    <value>Letter to %ASSOCIATE%</value>
+  </data>
+  <data name="TabHome_Connect_Create_ClientLetter" xml:space="preserve">
+    <value>Letter to %CLIENT%</value>
+  </data>
+  <data name="TabHome_Connect_Create_Matter" xml:space="preserve">
+    <value>%FILE%</value>
+  </data>
+  <data name="TabHome_Connect_Create_Time" xml:space="preserve">
+    <value>New Time Entry</value>
+  </data>
+  <data name="TabHome_Connect_View_Client" xml:space="preserve">
+    <value>%CLIENT%</value>
+  </data>
+  <data name="TabHome_Connect_View_Command" xml:space="preserve">
+    <value>Command Centre</value>
+  </data>
+  <data name="TabHome_Connect_View_Matter" xml:space="preserve">
+    <value>%FILE%</value>
+  </data>
+  <data name="TabOMS" xml:space="preserve">
+    <value>3E MatterSphere</value>
+  </data>
+  <data name="TabOMS_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="TabOMS_Create_Documents" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="TabOMS_Create_Documents_Blank" xml:space="preserve">
+    <value>Blank Document</value>
+  </data>
+  <data name="TabOMS_Create_Documents_Court" xml:space="preserve">
+    <value>Court Document</value>
+  </data>
+  <data name="TabOMS_Create_FinancialDocs" xml:space="preserve">
+    <value>Financial Documents</value>
+  </data>
+  <data name="TabOMS_Create_FinancialDocs_Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="TabOMS_Create_Letters_Picker" xml:space="preserve">
+    <value>Pick Letterhead...</value>
+  </data>
+  <data name="TabOMS_Create_Letters_ToAssociate" xml:space="preserve">
+    <value>Letter To %ASSOCIATE%</value>
+  </data>
+  <data name="TabOMS_Create_Letters_ToClient" xml:space="preserve">
+    <value>Letter To %CLIENT%</value>
+  </data>
+  <data name="TabOMS_Create_LettersMenu" xml:space="preserve">
+    <value>Memos</value>
+  </data>
+  <data name="TabOMS_Create_New_Associate" xml:space="preserve">
+    <value>New %ASSOCIATE%</value>
+  </data>
+  <data name="TabOMS_Create_New_Client" xml:space="preserve">
+    <value>New %CLIENT%</value>
+  </data>
+  <data name="TabOMS_Create_New_Client_PreClient" xml:space="preserve">
+    <value>Create Pre-%CLIENT%</value>
+  </data>
+  <data name="TabOMS_Create_New_Client_PreClientCorporate" xml:space="preserve">
+    <value>Create Corporate Pre-%CLIENT%</value>
+  </data>
+  <data name="TabOMS_Create_New_Client_Standard" xml:space="preserve">
+    <value>Create %CLIENT%</value>
+  </data>
+  <data name="TabOMS_Create_New_Compliment" xml:space="preserve">
+    <value>New Compliment Slip</value>
+  </data>
+  <data name="TabOMS_Create_New_Contact" xml:space="preserve">
+    <value>New Contact</value>
+  </data>
+  <data name="TabOMS_Create_New_Fax" xml:space="preserve">
+    <value>New Fax</value>
+  </data>
+  <data name="TabOMS_Create_New_File" xml:space="preserve">
+    <value>New %FILE%</value>
+  </data>
+  <data name="TabOMS_Create_New_Memo" xml:space="preserve">
+    <value>New Memo</value>
+  </data>
+  <data name="TabOMS_Create_New_Time" xml:space="preserve">
+    <value>Log Time</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry" xml:space="preserve">
+    <value>New Entry</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_Appointment" xml:space="preserve">
+    <value>Appointment</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_Archive" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_Associate" xml:space="preserve">
+    <value>%ASSOCIATE%</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_Complaint" xml:space="preserve">
+    <value>Complaint</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_DocReceipt" xml:space="preserve">
+    <value>Document Receipt</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_KeyDate" xml:space="preserve">
+    <value>Key Date</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_Mail" xml:space="preserve">
+    <value>Mail Message</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_SMS" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_Task" xml:space="preserve">
+    <value>Task</value>
+  </data>
+  <data name="TabOMS_Create_NewEntry_Time" xml:space="preserve">
+    <value>Time Entry</value>
+  </data>
+  <data name="TabOMS_Create_NewMenu" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="TabOMS_Create_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="TabOMS_Create_Notes_AttendanceNote" xml:space="preserve">
+    <value>Attendance Note</value>
+  </data>
+  <data name="TabOMS_Create_Notes_File" xml:space="preserve">
+    <value>%FILE% Note</value>
+  </data>
+  <data name="TabOMS_Create_Notes_Meeting" xml:space="preserve">
+    <value>Meeting</value>
+  </data>
+  <data name="TabOMS_Create_Notes_TelIn" xml:space="preserve">
+    <value>Telephone In</value>
+  </data>
+  <data name="TabOMS_Create_Notes_TelOut" xml:space="preserve">
+    <value>Telephone Out</value>
+  </data>
+  <data name="TabOMS_Outlook" xml:space="preserve">
+    <value>Outlook</value>
+  </data>
+  <data name="TabOMS_Outlook_AddAppointment" xml:space="preserve">
+    <value>Make an Appointment</value>
+  </data>
+  <data name="TabOMS_Outlook_TasksMenu" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="TabOMS_Outlook_AddTask" xml:space="preserve">
+    <value>Add New Task</value>
+  </data>
+  <data name="TabOMS_Outlook_NewMail" xml:space="preserve">
+    <value>Mail Message</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewCalendar_FeeEarner" xml:space="preserve">
+    <value>%FEEEARNERS% Calendar</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewCalendar_Other" xml:space="preserve">
+    <value>Other Calendar</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewCalendar_Own" xml:space="preserve">
+    <value>My Calendar</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewCalendarMenu" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewInbox" xml:space="preserve">
+    <value>View Inbox</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewTasks_FeeEarner" xml:space="preserve">
+    <value>%FEEEARNERS% Tasks</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewTasks_OMS" xml:space="preserve">
+    <value>%APPNAME% Tasks</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewTasks_Other" xml:space="preserve">
+    <value>Other Tasks</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewTasks_Own" xml:space="preserve">
+    <value>My Tasks</value>
+  </data>
+  <data name="TabOMS_Outlook_ViewTasksMenu" xml:space="preserve">
+    <value>View Tasks</value>
+  </data>
+  <data name="TabOMS_Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="TabOMS_Tools_ConflictSearch" xml:space="preserve">
+    <value>Conflict Search</value>
+  </data>
+  <data name="TabOMS_Tools_EmailSupport" xml:space="preserve">
+    <value>Email Support</value>
+  </data>
+  <data name="TabOMS_Tools_ExternalApps" xml:space="preserve">
+    <value>External Applications</value>
+  </data>
+  <data name="TabOMS_Tools_Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="TabOMS_Tools_Reports_CoreReports" xml:space="preserve">
+    <value>Core Report System</value>
+  </data>
+  <data name="TabOMS_Tools_Reports_Time" xml:space="preserve">
+    <value>Time Sheet</value>
+  </data>
+  <data name="TabOMS_Tools_SearchTools" xml:space="preserve">
+    <value>Admin Search Tools</value>
+  </data>
+  <data name="TabOMS_Tools_UserSettings" xml:space="preserve">
+    <value>Change User Settings</value>
+  </data>
+  <data name="TabOMS_View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="TabOMS_AboutBtn" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="TabOMS_View_CommandCentre" xml:space="preserve">
+    <value>Command Centre</value>
+  </data>
+  <data name="TabOMS_View_ContactManager" xml:space="preserve">
+    <value>Contact Manager</value>
+  </data>
+  <data name="TabOMS_View_JobList" xml:space="preserve">
+    <value>View Job List</value>
+  </data>
+  <data name="TabOMS_View_MilestoneInfo" xml:space="preserve">
+    <value>Milestone Information</value>
+  </data>
+  <data name="TabOMS_View_PrecedentLibrary" xml:space="preserve">
+    <value>%PRECEDENT% Library</value>
+  </data>
+  <data name="TabOMS_View_ShowClient" xml:space="preserve">
+    <value>View %CLIENT%</value>
+  </data>
+  <data name="TabOMS_View_ShowFile" xml:space="preserve">
+    <value>View %FILE%</value>
+  </data>
+  <data name="TabOMS_View_UFNInformation" xml:space="preserve">
+    <value>UFN Information</value>
+  </data>
+  <data name="TabOMSDocument" xml:space="preserve">
+    <value>Current Document</value>
+  </data>
+  <data name="TabOMSDocument_Insert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddCompanySig" xml:space="preserve">
+    <value>Add Company Signature</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddDraft" xml:space="preserve">
+    <value>Draft Document/Letter</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddFeeSig" xml:space="preserve">
+    <value>Add %FEEEARNER% Signature</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddField" xml:space="preserve">
+    <value>Add Field</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddFileCopy" xml:space="preserve">
+    <value>File Copy Document/Letter</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddParaStop" xml:space="preserve">
+    <value>Add Para Stop Code</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddSignature" xml:space="preserve">
+    <value>Sign Document</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddSlogan" xml:space="preserve">
+    <value>Add Slogan</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AddStop" xml:space="preserve">
+    <value>Add Stop Code</value>
+  </data>
+  <data name="TabOMSDocument_Insert_Precedent" xml:space="preserve">
+    <value>Quick %PRECEDENT%</value>
+  </data>
+  <data name="TabOMSDocument_Insert_RefreshFields" xml:space="preserve">
+    <value>Refresh Fields</value>
+  </data>
+  <data name="TabOMSDocument_Insert_RelinkFields" xml:space="preserve">
+    <value>Relink Fields</value>
+  </data>
+  <data name="TabOMSDocument_Insert_RemoveDraft" xml:space="preserve">
+    <value>Remove Draft</value>
+  </data>
+  <data name="TabOMSDocument_Insert_RemoveField" xml:space="preserve">
+    <value>Remove Field</value>
+  </data>
+  <data name="TabOMSDocument_Insert_RemoveFileCopy" xml:space="preserve">
+    <value>Remove File Copy</value>
+  </data>
+  <data name="TabOMSDocument_Insert_RemoveSignature" xml:space="preserve">
+    <value>Remove Signatures</value>
+  </data>
+  <data name="TabOMSDocument_Insert_StripFormatting" xml:space="preserve">
+    <value>Strip Formatting</value>
+  </data>
+  <data name="TabOMSDocument_Insert_Styles" xml:space="preserve">
+    <value>Styles</value>
+  </data>
+  <data name="TabOMSDocument_Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="TabOMSDocument_Tools_SaveAndContinue" xml:space="preserve">
+    <value>Save &amp;&amp; Continue</value>
+  </data>
+  <data name="TabOMSDocument_Tools_SaveAsPrec" xml:space="preserve">
+    <value>Save As %PRECEDENT%</value>
+  </data>
+  <data name="TabOMSDocument_Tools_TemplateProps" xml:space="preserve">
+    <value>Template Properties</value>
+  </data>
+  <data name="TabOMSDocument_Versioning" xml:space="preserve">
+    <value>Versioning</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_CheckIn" xml:space="preserve">
+    <value>Check In</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_CheckOut" xml:space="preserve">
+    <value>Check Out</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Compare" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Compare_Any" xml:space="preserve">
+    <value>Compare with Another Document ...</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Compare_Client" xml:space="preserve">
+    <value>Compare with a %CLIENT% Document ...</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Compare_File" xml:space="preserve">
+    <value>Compare with a %FILE% Document ...</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Compare_Latest" xml:space="preserve">
+    <value>Compare with Latest</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Compare_Recent" xml:space="preserve">
+    <value>Compare with a Recently Opened Document ...</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Compare_Version" xml:space="preserve">
+    <value>Compare with Version ...</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_GetLatest" xml:space="preserve">
+    <value>Get Latest Version</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_GetVersion" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Undo" xml:space="preserve">
+    <value>Undo Changes</value>
+  </data>
+  <data name="TabOMSDocument_Versioning_Versions" xml:space="preserve">
+    <value>Versions...</value>
+  </data>
+  <data name="TabOMSDocument_View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="TabOMSDocument_View_Associate" xml:space="preserve">
+    <value>View %ASSOCIATE%</value>
+  </data>
+  <data name="TabOMSDocument_View_AssociatedDocs" xml:space="preserve">
+    <value>Associated Documents</value>
+  </data>
+  <data name="TabOMSDocument_View_Client" xml:space="preserve">
+    <value>View %CLIENT%</value>
+  </data>
+  <data name="TabOMSDocument_View_DocProps" xml:space="preserve">
+    <value>Document Properties</value>
+  </data>
+  <data name="TabOMSDocument_View_DocPropToggle" xml:space="preserve">
+    <value>Toggles Document Properties</value>
+  </data>
+  <data name="TabOMSDocument_View_DocVars" xml:space="preserve">
+    <value>Field Values</value>
+  </data>
+  <data name="TabOMSDocument_View_File" xml:space="preserve">
+    <value>View %FILE%</value>
+  </data>
+  <data name="Tip_Connect" xml:space="preserve">
+    <value>Connects to 3E MatterSphere</value>
+  </data>
+  <data name="Tip_Disconnect" xml:space="preserve">
+    <value>Disconnects from %APPNAME%</value>
+  </data>
+  <data name="Tip_TabOMS_AboutGroup_About" xml:space="preserve">
+    <value>About %APPNAME%</value>
+  </data>
+  <data name="TabHome_Connect_SaveButtonsMenu_SaveAndContinue" xml:space="preserve">
+    <value>Save and Continue</value>
+  </data>
+  <data name="TabHome_Connect_SaveButtonsMenu_Precedent" xml:space="preserve">
+    <value>Quick %PRECEDENT%</value>
+  </data>
+  <data name="TabHome_Connect_SaveButtonsMenu_SaveAsPrec" xml:space="preserve">
+    <value>Save As %PRECEDENT%</value>
+  </data>
+  <data name="TabHome_Connect_SaveButtonsMenu_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TabHome_Connect_CreateMenu" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="TabHome_Connect_ViewMenu" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="TabOMSDocument_Insert_Fields" xml:space="preserve">
+    <value>Insert Fields</value>
+  </data>
+  <data name="TabOMSDocument_Insert_Sig" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="TabOMSDocument_Insert_SigMenu" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="TabOMS_Create_Letters" xml:space="preserve">
+    <value>Letters</value>
+  </data>
+  <data name="TabOMS_Tools_ExternalApps_Accounts" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="TabOMS_Tools_ExternalApps_Intranet" xml:space="preserve">
+    <value>Intranet</value>
+  </data>
+  <data name="TabOMSDocument_Tools_Authorise" xml:space="preserve">
+    <value>Check Document</value>
+  </data>
+  <data name="TabOMSDocument_Tools_DetachVars" xml:space="preserve">
+    <value>Detach</value>
+  </data>
+  <data name="TabOMSDocument_Tools_FileIt" xml:space="preserve">
+    <value>File Email</value>
+  </data>
+  <data name="TabOMSDocument_Tools_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TabOMSDocument_Tools_SaveAndSend" xml:space="preserve">
+    <value>Save and Send</value>
+  </data>
+  <data name="TabOMSDocument_Tools_SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="TabOMSDocument_Reply" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="TabOMSDocument_Reply_Mail" xml:space="preserve">
+    <value>Email to %ASSOCIATE%</value>
+  </data>
+  <data name="TabOMSDocument_Reply_ToAssociate" xml:space="preserve">
+    <value>Letter to %ASSOCIATE%</value>
+  </data>
+  <data name="TabOMSDocument_Reply_ToClient" xml:space="preserve">
+    <value>Letter to %CLIENT%</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AttachBCC" xml:space="preserve">
+    <value>Add BCC Recipient</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AttachCC" xml:space="preserve">
+    <value>Add CC Recipient</value>
+  </data>
+  <data name="TabOMSDocument_Insert_AttachDoc" xml:space="preserve">
+    <value>Attach Document</value>
+  </data>
+  <data name="TabOMSDocument_Insert_PrecedentLibrary" xml:space="preserve">
+    <value>%PRECEDENT% Library</value>
+  </data>
+  <data name="TabOMS_Tools_ExternalApps_ExternalApp1" xml:space="preserve">
+    <value>External App 1</value>
+  </data>
+  <data name="TabOMS_Tools_ExternalApps_ExternalApp2" xml:space="preserve">
+    <value>External App 2</value>
+  </data>
+  <data name="TabOMS_Tools_ExternalApps_Microsoft" xml:space="preserve">
+    <value>Microsoft Website</value>
+  </data>
+  <data name="TabOMSDocument_Tools_Email" xml:space="preserve">
+    <value>Send Via Email</value>
+  </data>
+  <data name="Menu_Manual_Open" xml:space="preserve">
+    <value>Manual Open</value>
+  </data>
+  <data name="TabHome_Connect_SaveButtonMenu_ManualSave" xml:space="preserve">
+    <value>Manual Save</value>
+  </data>
+  <data name="TabOMSDocument_Tools_ConfAuthorise" xml:space="preserve">
+    <value>Authorise</value>
+  </data>
+  <data name="TabOMSDocument_Tools_RefAuthorise" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="TabOMS_View_PrecedentLibrary_Quick" xml:space="preserve">
+    <value>Quick %PRECEDENT%</value>
+  </data>
+  <data name="TabCalendarTableView_Connect" xml:space="preserve">
+    <value>3E MatterSphere</value>
+  </data>
+  <data name="TabCalendar_Connect" xml:space="preserve">
+    <value>3E MatterSphere</value>
+  </data>
+  <data name="TabContacts_Connect" xml:space="preserve">
+    <value>3E MatterSphere</value>
+  </data>
+  <data name="TabMail_Connect" xml:space="preserve">
+    <value>3E MatterSphere</value>
+  </data>
+  <data name="TabTasks_Connect" xml:space="preserve">
+    <value>3E MatterSphere</value>
+  </data>
+  <data name="TabOMS_SearchGroup" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="TabOMS_AboutGroup_About" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="TabOMS_SearchGroup_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="TabSendReceive_Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="TabSendReceive_Send_Outbox" xml:space="preserve">
+    <value>Send Outbox</value>
+  </data>
+  <data name="SuperTip_TabSendReceive_Send_Outbox" xml:space="preserve">
+    <value>Send all items in Outbox folder.</value>
+  </data>
+</root>

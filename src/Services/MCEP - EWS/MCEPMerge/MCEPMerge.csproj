@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7100D9FA-5741-4FED-A7E9-0614A9F0B5A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCEPMerge</RootNamespace>
+    <AssemblyName>MCEPMerge</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\ServicesAssemblyInfo.cs">
+        <Link>Properties\ServicesAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\MSProductInfo.cs">
+        <Link>Properties\MSProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Document Properties\Fwbs.Common.DocumentProperties\DocProps.csproj">
+      <Project>{1e179e43-3b81-47a2-974d-a0de8733e057}</Project>
+      <Name>DocProps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Document Properties\Fwbs.Common.JZipPackageProperties\JZipPackageProperties.csproj">
+      <Project>{8a721804-5e30-458d-8568-d77c6ec7f9c0}</Project>
+      <Name>JZipPackageProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Document Properties\Fwbs.Common.MsgProperties\MsgProperties.csproj">
+      <Project>{235cce83-2946-4d4b-9985-2b53fcfc1970}</Project>
+      <Name>MsgProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Document Properties\Fwbs.Common.OfficeXpsProperties\OfficeXpsProperties.csproj">
+      <Project>{4a5a6861-46a6-4cba-82ee-5207d1c2e9d2}</Project>
+      <Name>OfficeXpsProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Document Properties\Fwbs.Common.OleProperties\OleProperties.csproj">
+      <Project>{e23d2d56-4e1e-44a7-94bc-493ce96b2a73}</Project>
+      <Name>OleProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Document Properties\Fwbs.Common.PackageProperties\PackageProperties.csproj">
+      <Project>{900a63bd-b627-4aaa-bb38-74a9315d2dd4}</Project>
+      <Name>PackageProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\ExternalAggregatorClient\ExternalAggregatorClient.csproj">
+      <Project>{a5df5eb2-97fd-4531-8571-935a9d1e3f0d}</Project>
+      <Name>ExternalAggregatorClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCEPControlForm\MCEPControlForm.csproj">
+      <Project>{20f2d4b1-287c-4c30-93ff-26fdda45db7e}</Project>
+      <Name>MCEPControlForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCEPGlobalClasses\MCEPGlobalClasses.csproj">
+      <Project>{a806f39f-5e3c-436b-b99d-4efad779efa7}</Project>
+      <Name>MCEPGlobalClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCEPProfilerEWS\MCEPProfilerEWS.csproj">
+      <Project>{c0edaa5b-0667-420d-9801-a2b4237271df}</Project>
+      <Name>MCEPProfilerEWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MCEPStorerEWS\MCEPStorerEWS.csproj">
+      <Project>{ace4bddb-46c8-42a2-919f-21cd79d7b8ec}</Project>
+      <Name>MCEPStorerEWS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)" "C:\MCEPOutput\" /y</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignFilesScript>$(ProjectDir)..\..\..\Scripts\AzureSignFiles.ps1</SignFilesScript>
+  </PropertyGroup>
+  <Target Name="SignFiles" AfterTargets="PostBuildEvent">
+    <Exec Command="powershell &quot;&amp; '$(SignFilesScript)'&quot; -FileList 'C:\MCEPOutput\*.dll','C:\MCEPOutput\*.exe'" Condition="Exists('$(SignFilesScript)')" />
+    <Exec Command="powershell &quot;&amp; '$(SignFilesScript)'&quot; -FileList 'C:\OMSCoreAssemblies\*.dll'" Condition="Exists('$(SignFilesScript)')" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

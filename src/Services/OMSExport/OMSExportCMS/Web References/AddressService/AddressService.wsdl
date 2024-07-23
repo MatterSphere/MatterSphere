@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://cmsopen.com/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://cmsopen.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cmsopen.com/">
+      <s:element name="Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:AddressDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddressDataCreate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AddressDataBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="NameUno" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AddressCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DefaultAddress" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AddressDataBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddrTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirectNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FaxNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inactive" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModemNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OverrideName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneExtNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CioSoapHeader" type="tns:CioSoapHeader" />
+      <s:complexType name="CioSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="locale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="formsTicket" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="session" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="useOfficeXtension" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="satelliteDbTarget" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="satelliteDbOnly" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addressUno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:AddressDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddressDataUpdate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AddressDataBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DefaultAddress" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addressUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Initialize">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeResult" type="tns:AddressData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddressData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AddressDataBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AddressUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModified" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="NameUno" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AddressCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InitializeDataCreate">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeDataCreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeDataCreateResult" type="tns:AddressDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataCreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:AddressData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataCreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataCreateResult" type="tns:AddressDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:AddressData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataUpdateResult" type="tns:AddressDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addressUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSingleResult" type="tns:AddressData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Read">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadResult" type="tns:ArrayOfAddressData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAddressData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AddressData" nillable="true" type="tns:AddressData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddressData" nillable="true" type="tns:AddressData" />
+      <s:element name="AddressDataCreate" nillable="true" type="tns:AddressDataCreate" />
+      <s:element name="ArrayOfAddressData" nillable="true" type="tns:ArrayOfAddressData" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Create" />
+  </wsdl:message>
+  <wsdl:message name="CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapIn">
+    <wsdl:part name="parameters" element="tns:Initialize" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateSoapIn">
+    <wsdl:part name="parameters" element="tns:InitializeDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeDataCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSingle" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapIn">
+    <wsdl:part name="parameters" element="tns:Read" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetIn">
+    <wsdl:part name="addressUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetOut" />
+  <wsdl:message name="InitializeHttpGetIn" />
+  <wsdl:message name="InitializeHttpGetOut">
+    <wsdl:part name="Body" element="tns:AddressData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateHttpGetIn" />
+  <wsdl:message name="InitializeDataCreateHttpGetOut">
+    <wsdl:part name="Body" element="tns:AddressDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetIn">
+    <wsdl:part name="addressUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetOut">
+    <wsdl:part name="Body" element="tns:AddressData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAddressData" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostIn">
+    <wsdl:part name="addressUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostOut" />
+  <wsdl:message name="InitializeHttpPostIn" />
+  <wsdl:message name="InitializeHttpPostOut">
+    <wsdl:part name="Body" element="tns:AddressData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateHttpPostIn" />
+  <wsdl:message name="InitializeDataCreateHttpPostOut">
+    <wsdl:part name="Body" element="tns:AddressDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostIn">
+    <wsdl:part name="addressUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostOut">
+    <wsdl:part name="Body" element="tns:AddressData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAddressData" />
+  </wsdl:message>
+  <wsdl:portType name="AddressServiceSoap">
+    <wsdl:operation name="Create">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Create</documentation>
+      <wsdl:input message="tns:CreateSoapIn" />
+      <wsdl:output message="tns:CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Update</documentation>
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Delete</documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Initialize</documentation>
+      <wsdl:input message="tns:InitializeSoapIn" />
+      <wsdl:output message="tns:InitializeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateSoapIn" />
+      <wsdl:output message="tns:InitializeDataCreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">GetDataCreate</documentation>
+      <wsdl:input message="tns:GetDataCreateSoapIn" />
+      <wsdl:output message="tns:GetDataCreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">GetDataUpdate</documentation>
+      <wsdl:input message="tns:GetDataUpdateSoapIn" />
+      <wsdl:output message="tns:GetDataUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleSoapIn" />
+      <wsdl:output message="tns:ReadSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadSoapIn" />
+      <wsdl:output message="tns:ReadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AddressServiceHttpGet">
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Delete</documentation>
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Initialize</documentation>
+      <wsdl:input message="tns:InitializeHttpGetIn" />
+      <wsdl:output message="tns:InitializeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateHttpGetIn" />
+      <wsdl:output message="tns:InitializeDataCreateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleHttpGetIn" />
+      <wsdl:output message="tns:ReadSingleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadHttpGetIn" />
+      <wsdl:output message="tns:ReadHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AddressServiceHttpPost">
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Delete</documentation>
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Initialize</documentation>
+      <wsdl:input message="tns:InitializeHttpPostIn" />
+      <wsdl:output message="tns:InitializeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">InitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateHttpPostIn" />
+      <wsdl:output message="tns:InitializeDataCreateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleHttpPostIn" />
+      <wsdl:output message="tns:ReadSingleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadHttpPostIn" />
+      <wsdl:output message="tns:ReadHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AddressServiceSoap" type="tns:AddressServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://cmsopen.com/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://cmsopen.com/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://cmsopen.com/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap:operation soapAction="http://cmsopen.com/Initialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InitializeCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <soap:operation soapAction="http://cmsopen.com/InitializeDataCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InitializeDataCreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <soap:operation soapAction="http://cmsopen.com/GetDataCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDataCreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <soap:operation soapAction="http://cmsopen.com/GetDataUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDataUpdateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <soap:operation soapAction="http://cmsopen.com/ReadSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadSingleCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <soap:operation soapAction="http://cmsopen.com/Read" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AddressServiceHttpGet" type="tns:AddressServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <http:operation location="/Initialize" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <http:operation location="/InitializeDataCreate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AddressServiceHttpPost" type="tns:AddressServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <http:operation location="/Initialize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <http:operation location="/InitializeDataCreate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AddressService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">AddressService</documentation>
+    <wsdl:port name="AddressServiceSoap" binding="tns:AddressServiceSoap">
+      <soap:address location="http://vpc-aderant/CMSNet/FileOpening/FileOpeningWS/AddressService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AddressServiceHttpGet" binding="tns:AddressServiceHttpGet">
+      <http:address location="http://vpc-aderant/CMSNet/FileOpening/FileOpeningWS/AddressService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AddressServiceHttpPost" binding="tns:AddressServiceHttpPost">
+      <http:address location="http://vpc-aderant/CMSNet/FileOpening/FileOpeningWS/AddressService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

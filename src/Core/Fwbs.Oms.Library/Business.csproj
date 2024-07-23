@@ -1,0 +1,1001 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{249BC08D-5364-40CF-983A-8580DDA5B00B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>OMS.Library</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FWBS.OMS</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE;BL</DefineConstants>
+    <DocumentationFile>bin\Debug\OMS.Library.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;BL</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Document Properties\Fwbs.Common.DocumentProperties\DocProps.csproj">
+      <Project>{1E179E43-3B81-47A2-974D-A0DE8733E057}</Project>
+      <Name>DocProps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FWBS.OMS.Infrastructure\~Infrastructure.csproj">
+      <Project>{D7C427FF-A85A-4965-A595-8B9FB3051CBC}</Project>
+      <Name>~Infrastructure</Name>
+    </ProjectReference>
+    <Reference Include="Fwbs.Framework">
+      <HintPath>..\..\References\Fwbs.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Common">
+      <HintPath>..\..\References\Fwbs.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Composition">
+      <HintPath>..\..\References\Fwbs.Framework.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Shared">
+      <HintPath>..\..\References\Fwbs.Framework.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Redemption, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d75bdcab582de90d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Redemption\Interop.Redemption.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\ExternalAggregatorClient\ExternalAggregatorClient.csproj">
+      <Project>{A5DF5EB2-97FD-4531-8571-935A9D1E3F0D}</Project>
+      <Name>ExternalAggregatorClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Common\Common.csproj">
+      <Project>{4998E285-9BBB-4589-BC2D-56649563C765}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Oms.Data\Data.csproj">
+      <Name>Data</Name>
+      <Project>{A6F114EF-E02E-41F6-B8B5-0FADDB0FE98E}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CoreAssemblyInfo.cs">
+      <Link>Properties\CoreAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Caching\Old\SchemaQueryCache.cs" />
+    <Compile Include="Caching\Queries\CodeLookupLocalQueryCache.cs" />
+    <Compile Include="Caching\Queries\AssemblyQueryCache.cs" />
+    <Compile Include="Caching\DataSetLocalQueryCache.cs" />
+    <Compile Include="Caching\DataTableLocalQueryCache.cs" />
+    <Compile Include="Caching\BaseLocalDataCache.cs" />
+    <Compile Include="Caching\DataSetLocalCache.cs" />
+    <Compile Include="Caching\Queries\ApplicationQueryCache.cs" />
+    <Compile Include="Caching\Queries\StorageProviderQueryCache.cs" />
+    <Compile Include="Caching\Queries\ExtensibilityQueryCache.cs" />
+    <Compile Include="Caching\Queries\OMSObjectsQueryCache.cs" />
+    <Compile Include="Caching\Queries\PackagesQueryCache.cs" />
+    <Compile Include="Caching\Queries\FieldsQueryCache.cs" />
+    <Compile Include="Caching\DataTableLocalCache.cs" />
+    <Compile Include="Caching\Queries\ParametersQueryCache.cs" />
+    <Compile Include="Caching\Queries\StoredProcedureQueryCache.cs" />
+    <Compile Include="Caching\Queries\TablesQueryCache.cs" />
+    <Compile Include="Dashboard\AppointmentRow.cs" />
+    <Compile Include="Dashboard\DashboardConfigProvider.cs" />
+    <Compile Include="Dashboard\DashboardTileDataProvider.cs" />
+    <Compile Include="Dashboard\KeyDateRow.cs" />
+    <Compile Include="Dashboard\DashboardConfigProviderMC.cs" />
+    <Compile Include="Dashboard\MatterRow.cs" />
+    <Compile Include="Dashboard\FavoriteRow.cs" />
+    <Compile Include="Dashboard\TaskRow.cs" />
+    <Compile Include="DocumentManagement\Commands\HighQDocumentUploadCommand.cs" />
+    <Compile Include="HighQ\HighQAdapter.cs" />
+    <Compile Include="HighQ\IHighQ.cs" />
+    <Compile Include="DocumentManagement\PrecedentVersion.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\BaseStorageItemProvider.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\DocumentProvider.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\DocumentVersionProvider.cs" />
+    <Compile Include="DocumentManagement\Storage\IStorageItemProvider.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\PrecedentProvider.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\PrecedentVersionProvider.cs" />
+    <Compile Include="Extensibility\ExtensibilityExtensions.cs" />
+    <Compile Include="Models\Client\ClientDetails.cs" />
+    <Compile Include="Packages\Export\ILinkedObjects.cs" />
+    <Compile Include="Packages\ImportLockStateChecker.cs" />
+    <Compile Include="Search\CommonRow.cs" />
+    <Compile Include="Search\DbProvider.cs" />
+    <Compile Include="Search\EntityConverter.cs" />
+    <Compile Include="Search\Hightlighter.cs" />
+    <Compile Include="Search\MSQueryBuilder.cs" />
+    <Compile Include="Search\MSSearchBuilder.cs" />
+    <Compile Include="Search\MSSearchProvider.cs" />
+    <Compile Include="Search\StubDbProvider.cs" />
+    <Compile Include="Status Management\ActivityManager.cs" />
+    <Compile Include="Status Management\ClientStatusList.cs" />
+    <Compile Include="Status Management\ClientStatusManager.cs" />
+    <Compile Include="Status Management\ActivityTypes.cs" />
+    <Compile Include="Status Management\FileStatusList.cs" />
+    <Compile Include="Status Management\FileStatusManager.cs" />
+    <Compile Include="Data\ConnectionWrapper.cs" />
+    <Compile Include="DocumentManagement\Archiving\DocumentArchiving.cs" />
+    <Compile Include="DocumentManagement\Commands\SetDocumentExternalVisibilityCommand.cs" />
+    <Compile Include="Engines\DistributedAssemblies\DistributedAssemblyResolver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\Script\MenuScriptAggregator.cs" />
+    <Compile Include="Engines\Script\References\BaseReferenceLibrary.cs" />
+    <Compile Include="Engines\Script\References\SystemReferenceLibrary.cs" />
+    <Compile Include="Engines\Script\References\DistributedAssemblyReferenceLibrary.cs" />
+    <Compile Include="Engines\Script\References\GAC.cs" />
+    <Compile Include="Engines\Script\References\GACReferenceLibrary.cs" />
+    <Compile Include="Engines\Script\References\LocalReferenceLibrary.cs" />
+    <Compile Include="Engines\Script\References\ScriptReferenceLibrary.cs" />
+    <Compile Include="Engines\Script\ScriptAssemblyResolver.cs" />
+    <Compile Include="Engines\Script\ScriptFileName.cs" />
+    <Compile Include="Engines\Script\ScriptGen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\Script\Basic\BasicScriptBuilder.cs" />
+    <Compile Include="Engines\Script\Advanced\AdvancedScriptBuilder.cs" />
+    <Compile Include="Engines\Script\Basic\BasicScriptDefinition.cs" />
+    <Compile Include="Engines\Script\Advanced\AdvancedScriptDefinition.cs" />
+    <Compile Include="Engines\Script\CodeDomScriptDefinition.cs" />
+    <Compile Include="Engines\Script\ScriptCompiler.cs" />
+    <Compile Include="Engines\Script\ScriptBuilder.cs" />
+    <Compile Include="Engines\Script\ScriptDefinition.cs" />
+    <Compile Include="Engines\Script\ScriptFactory.cs" />
+    <Compile Include="Engines\Script\ScriptManager.cs" />
+    <Compile Include="Engines\Script\ScriptTuple.cs" />
+    <Compile Include="Engines\Script\ScriptUtils.cs" />
+    <Compile Include="Engines\Script\ScriptLoader.cs" />
+    <Compile Include="Engines\Script\ScriptTypeInterceptor.cs" />
+    <Compile Include="Engines\Script\ScriptTypes.cs" />
+    <Compile Include="Engines\Script\Types\EnquiryScriptType.cs" />
+    <Compile Include="Engines\Script\Types\MenuScriptType.cs" />
+    <Compile Include="Engines\Script\Types\PrecedentScriptType.cs" />
+    <Compile Include="Engines\Script\Types\ReportScriptType.cs" />
+    <Compile Include="Engines\Script\Types\SearchListScriptType.cs" />
+    <Compile Include="Engines\Script\Types\SessionScriptType.cs" />
+    <Compile Include="Engines\Script\Types\SystemScriptType.cs" />
+    <Compile Include="Engines\Script\Types\WorkflowScriptType.cs" />
+    <Compile Include="Forwarders.cs" />
+    <Compile Include="Licensing\APILicensingManager.cs" />
+    <Compile Include="Licensing\APILicensingProvider.cs" />
+    <Compile Include="Branding.cs" />
+    <Compile Include="Caching\Old\BaseQueryCache.cs" />
+    <Compile Include="Caching\CachedItemList.cs" />
+    <Compile Include="Caching\Old\CodeLookupQueryCache.cs" />
+    <Compile Include="Caching\Old\AddressFormatQueryCache.cs" />
+    <Compile Include="Caching\DictionaryCache.cs" />
+    <Compile Include="Caching\QueryCacheCollection.cs" />
+    <Compile Include="Caching\Old\DatabaseObjectCache.cs" />
+    <Compile Include="Caching\ICacheable.cs" />
+    <Compile Include="Caching\Queries\SchemaQueryCache.cs" />
+    <Compile Include="Caching\Old\DataTableCache.cs" />
+    <Compile Include="Caching\IQueryCache.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\CommandStatus.cs" />
+    <Compile Include="Commands\DisplayWhen.cs" />
+    <Compile Include="Commands\ExecuteResult.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Connectivity\ConnectableService.cs" />
+    <Compile Include="Connectivity\ConnectivityEvent.cs" />
+    <Compile Include="Connectivity\ConnectivityException.cs" />
+    <Compile Include="Connectivity\ConnectivityManager.cs" />
+    <Compile Include="Connectivity\OMSService.cs" />
+    <Compile Include="Connectivity\DatabaseService.cs" />
+    <Compile Include="Connectivity\IConnectableService.cs" />
+    <Compile Include="Connectivity\NetworkService.cs" />
+    <Compile Include="DocumentManagement\Commands\CheckInDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\CheckOutDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\ExportDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\ImportDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\ReplyToAuthoriseCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\SendDocumentViaEmailCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\CopyDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\SendToAuthoriseCommand.cs" />
+    <Compile Include="DocumentManagement\DocumentManagementMode.cs" />
+    <Compile Include="DocumentManagement\DocumentManager.cs" />
+    <Compile Include="DocumentManagement\EmailDocument.cs" />
+    <Compile Include="DocumentManagement\Commands\MoveDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\CancelStorageException.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\SubDocumentAlreadyOwnedException.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\StorageItemNotCheckedOutException.cs" />
+    <Compile Include="DocumentManagement\Storage\ILocalDocumentCache.cs" />
+    <Compile Include="DocumentManagement\Storage\RegisterResults.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\IllegalStorageItemException.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\Connectivity\BlobStorageProviderService.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\Connectivity\FileSystemStorageProviderService.cs" />
+    <Compile Include="DocumentManagement\Storage\StorageProviderService.cs" />
+    <Compile Include="Connectivity\TestConnectivityDelegate.cs" />
+    <Compile Include="Design\DataListAttribute.cs" />
+    <Compile Include="Design\DataListConverter.cs" />
+    <Compile Include="DocumentManagement\DocumentVersion.cs" />
+    <Compile Include="DocumentManagement\PrecType.cs" />
+    <Compile Include="DocumentManagement\RetentionPolicy.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\StorageItemCheckedOutException.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\StorageItemDuplicatedException.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\StorageLocationCannotChangeException.cs" />
+    <Compile Include="DocumentManagement\Storage\IStorageItemDuplication.cs" />
+    <Compile Include="DocumentManagement\Storage\LocalDocumentCache.cs" />
+    <Compile Include="DocumentManagement\Storage\Settings\LockableFetchSettings.cs" />
+    <Compile Include="DocumentManagement\Storage\Settings\LockableStoreSettings.cs" />
+    <Compile Include="DocumentManagement\Storage\Settings\SettingsType.cs" />
+    <Compile Include="DocumentManagement\Storage\Settings\StorageSettingsEditorAttribute.cs" />
+    <Compile Include="DocumentManagement\Storage\StoreResults.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\StorageLocationProviderItemNotInstalledException.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\StoreItemNotInStorageLocationException.cs" />
+    <Compile Include="DocumentManagement\Storage\IStorageItemLockable.cs" />
+    <Compile Include="DocumentManagement\Storage\Settings\VersionFetchSettings.cs" />
+    <Compile Include="DocumentManagement\Storage\Settings\VersionStoreSettings.cs" />
+    <Compile Include="DocumentManagement\Storage\IStorageItemType.cs" />
+    <Compile Include="DocumentManagement\Storage\IStorageItemVersion.cs" />
+    <Compile Include="DocumentManagement\Storage\IStorageItemVersionable.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\BlobStorageProvider.cs" />
+    <Compile Include="DocumentManagement\Storage\Providers\FileSystemStorageProvider.cs" />
+    <Compile Include="DocumentManagement\Storage\IStorageItem.cs" />
+    <Compile Include="DocumentManagement\Storage\Exceptions\StorageException.cs" />
+    <Compile Include="DocumentManagement\Storage\StorageFeatures.cs" />
+    <Compile Include="DocumentManagement\Storage\StorageManager.cs" />
+    <Compile Include="DocumentManagement\Storage\StorageProvider.cs" />
+    <Compile Include="DocumentManagement\Storage\Settings\StorageSettings.cs" />
+    <Compile Include="DocumentManagement\Storage\Settings\StorageSettingsCollection.cs" />
+    <Compile Include="DocumentManagement\Storage\FetchResults.cs" />
+    <Compile Include="DocumentManagement\Storage\SupportedStorageFeatures.cs" />
+    <Compile Include="DocumentManagement\SubDocument.cs" />
+    <Compile Include="Engines\Enquiry\Enquiry.cs" />
+    <Compile Include="Engines\Enquiry\EnquiryProperty.cs" />
+    <Compile Include="Engines\Enquiry\EnquiryPropertyCollection.cs" />
+    <Compile Include="Engines\Enquiry\IAssociatedEnquiryPage.cs" />
+    <Compile Include="Entity Objects\BulkDocumentImport.cs" />
+    <Compile Include="Entity Objects\Department.cs" />
+    <Compile Include="Interfaces.cs" />
+    <Compile Include="Mappers\EntityMapper.cs" />
+    <Compile Include="Mappers\MappingManager.cs" />
+    <Compile Include="Mappers\SystemMapper.cs" />
+    <Compile Include="OMS Applications\IOMSAppAddin.cs" />
+    <Compile Include="OMS Applications\RegisteredApplication.cs" />
+    <Compile Include="OMS Applications\RegisteredApplicationException.cs" />
+    <Compile Include="OMS Applications\RegisteredApplicationOld.cs" />
+    <Compile Include="Entity Objects\Team.cs" />
+    <Compile Include="OMS Applications\ApplicationManager.cs" />
+    <Compile Include="OMS Applications\ISecondStageMergeOMSApp.cs" />
+    <Compile Include="OMS Applications\OMSAppBase.cs" />
+    <Compile Include="OMS Applications\OMSAppSavedEventHandler.cs" />
+    <Compile Include="Packages\Export\Workflows.cs" />
+    <Compile Include="Packages\ImportBase.cs" />
+    <Compile Include="Packages\ExportBase.cs" />
+    <Compile Include="Packages\Export\CodeLookupType.cs" />
+    <Compile Include="Packages\Export\DataLists.cs" />
+    <Compile Include="Packages\Export\DataPackage.cs" />
+    <Compile Include="Packages\Export\EnquiryForm.cs" />
+    <Compile Include="Packages\Export\ExtendedData.cs" />
+    <Compile Include="Packages\Export\Milestones.cs" />
+    <Compile Include="Packages\Export\FileManagement.cs" />
+    <Compile Include="Packages\Export\OMSObjects.cs" />
+    <Compile Include="Packages\Export\Precedent.cs" />
+    <Compile Include="Packages\Export\Report.cs" />
+    <Compile Include="Packages\Export\Scripts.cs" />
+    <Compile Include="Packages\Export\SearchList.cs" />
+    <Compile Include="Packages\Export\SQLScripts.cs" />
+    <Compile Include="Packages\FieldReplacer.cs" />
+    <Compile Include="Packages\Global.cs" />
+    <Compile Include="Packages\ImportTable.cs" />
+    <Compile Include="Packages\Import\CodeLookups.cs" />
+    <Compile Include="Packages\Import\CodeLookupType.cs" />
+    <Compile Include="Packages\Import\DataLists.cs" />
+    <Compile Include="Packages\Import\DataPackage.cs" />
+    <Compile Include="Packages\Import\EnquiryForm.cs" />
+    <Compile Include="Packages\Import\ExtendedData.cs" />
+    <Compile Include="Packages\Import\FileManagement.cs" />
+    <Compile Include="Packages\Import\Milestones.cs" />
+    <Compile Include="Packages\Import\OMSObjects.cs" />
+    <Compile Include="Packages\Import\Precedent.cs" />
+    <Compile Include="Packages\Import\Report.cs" />
+    <Compile Include="Packages\Import\Scripts.cs" />
+    <Compile Include="Packages\Import\SearchList.cs" />
+    <Compile Include="Packages\Import\SQLScripts.cs" />
+    <Compile Include="Packages\Import\Workflows.cs" />
+    <Compile Include="Packages\PackageTypeEnum.cs" />
+    <Compile Include="Packages\ProgressEventArgs.cs" />
+    <Compile Include="Packages\TreeView.cs" />
+    <Compile Include="Packages\TreeViewItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\AutoCreate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\ExtendedData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\Report.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\Search.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\Source2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Address.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Appointments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Associate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\BillInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Branch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Client.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Complaints.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Contact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\DateWizard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\DocType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\FeeEarner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\FinanceLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Omsfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Precedent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Tasks.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Time.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\TimeRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enumerations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\AddinManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\Enums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\ObjectEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\OMSAddin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\OMSExtensibility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LookupDescriptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\DynamicProxy.cs" />
+    <Compile Include="Proxy\IInvocationHandler.cs" />
+    <Compile Include="ReportingServices\Connect2005.cs" />
+    <Compile Include="ReportingServices\Connect2008.cs" />
+    <Compile Include="ReportingServices\Interface.cs" />
+    <Compile Include="ReportingServices\SSRSConnect.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\AdvancedSecurity.cs" />
+    <Compile Include="Security\BasicSecurity.cs" />
+    <Compile Include="Security\HybridSecurity.cs" />
+    <Compile Include="Security\Exceptions\AccessCriticalDataException.cs" />
+    <Compile Include="Security\Exceptions\ConfirmationPasswordDiffersException.cs" />
+    <Compile Include="Security\Exceptions\InactiveOMSUserException.cs" />
+    <Compile Include="Security\Exceptions\InvalidOMSPasswordException.cs" />
+    <Compile Include="Security\Exceptions\InvalidOMSUserException.cs" />
+    <Compile Include="Security\Exceptions\LoginException.cs" />
+    <Compile Include="Security\Exceptions\NotLoggedInException.cs" />
+    <Compile Include="Security\Exceptions\OldPasswordDiffersException.cs" />
+    <Compile Include="Security\Exceptions\ServiceUserException.cs" />
+    <Compile Include="Security\ISecurable.cs" />
+    <Compile Include="Security\ISecurityType.cs" />
+    <Compile Include="Security\PermissionComparison.cs" />
+    <Compile Include="Security\Permissions\AssociatePermission.cs" />
+    <Compile Include="Security\Permissions\ClientPermission.cs" />
+    <Compile Include="Security\Permissions\ContactPermission.cs" />
+    <Compile Include="Security\Permissions\DocumentPermission.cs" />
+    <Compile Include="Security\Permissions\FilePermission.cs" />
+    <Compile Include="Security\Permissions\Permission.cs" />
+    <Compile Include="Security\Exceptions\PermissionException.cs" />
+    <Compile Include="Security\Permissions\PrecedentPermission.cs" />
+    <Compile Include="Security\Permissions\StandardPermissionType.cs" />
+    <Compile Include="Security\Permissions\SystemPermission.cs" />
+    <Compile Include="Security\Policy.cs" />
+    <Compile Include="Security\PolicyType.cs" />
+    <Compile Include="Security\Exceptions\SecurityException.cs" />
+    <Compile Include="Security\SecurableTypeAttribute.cs" />
+    <Compile Include="Security\SecurityManager.cs" />
+    <Compile Include="Security\SecurityType.cs" />
+    <Compile Include="Security\TemplateSecurity.cs" />
+    <Compile Include="SimpleExpression.cs" />
+    <Compile Include="Status Management\Checks.cs" />
+    <Compile Include="System Objects\Activities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\AssemblyManager.cs" />
+    <Compile Include="System Objects\CaptainsLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\CodeLookup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\CodeLookupDisplay.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\CommandBarItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\CommonObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\CommonObject2.cs" />
+    <Compile Include="System Objects\CommonObjectException.cs" />
+    <Compile Include="System Objects\Context.cs" />
+    <Compile Include="System Objects\ContextFactory.cs" />
+    <Compile Include="System Objects\Currency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\CurrentUIVersion.cs" />
+    <Compile Include="System Objects\DashboardSysObject.cs" />
+    <Compile Include="System Objects\DefaultPowerProfile.cs" />
+    <Compile Include="System Objects\Dictation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engines\DistributedAssemblies\DistributedAssemblies.cs" />
+    <Compile Include="Engines\DistributedAssemblies\DistributedAssemblyListItem.cs" />
+    <Compile Include="Engines\DistributedAssemblies\DistributedAssemblyManager.cs" />
+    <Compile Include="System Objects\Export.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\Favourites.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\IContext.cs" />
+    <Compile Include="System Objects\Parsers\ContextFactory.cs" />
+    <Compile Include="System Objects\Parsers\FieldParser.cs" />
+    <Compile Include="System Objects\Parsers\IParserContext.cs" />
+    <Compile Include="System Objects\Parsers\ParserContext.cs" />
+    <Compile Include="System Objects\Parsers\FieldValue.cs" />
+    <Compile Include="System Objects\Parsers\IFieldParser.cs" />
+    <Compile Include="System Objects\Parsers\ScriptedFieldParser.cs" />
+    <Compile Include="System Objects\FundType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\Images.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\InteractiveFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\MenuBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity Objects\Milestones_OMS2K.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\MilestoneConfig.cs" />
+    <Compile Include="System Objects\OMSObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\OMSType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Packages\Packages.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\PasswordProtectedBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\Power.cs" />
+    <Compile Include="System Objects\PowerProfile.cs" />
+    <Compile Include="System Objects\Printer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\ReportingServer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\Res.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\Session.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\SessionSingleton.cs" />
+    <Compile Include="System Objects\Signature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\SimpleDoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\SMS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\State.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\Terminal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\Terminology.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\UFN.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System Objects\User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Teams\PrecedentsTeamsAccessCollection.cs" />
+    <Compile Include="Teams\PrecedentsTeamsAccessItem.cs" />
+    <Compile Include="VersionConditionalAttribute.cs" />
+    <Compile Include="Web References\PostcodeAnywhere\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Web References\ReportingServices.v2005\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ReportingServices.v2008\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Tickford.SearchService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\WorkflowCommonObject.cs" />
+    <Compile Include="Workflow\WorkflowStartupAssemblies.cs" />
+    <Compile Include="Workflow\WorkflowXaml.cs" />
+    <Compile Include="XmlProperties.cs" />
+    <EmbeddedResource Include="omsbl.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="omsbl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="omsbl.zh.resx" />
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PostcodeAnywhere\AddressResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PostcodeAnywhere\ChangesResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PostcodeAnywhere\CleanseResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PostcodeAnywhere\CombinedResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PostcodeAnywhere\InterimResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PostcodeAnywhere\lookup.disco" />
+    <None Include="Web References\PostcodeAnywhere\lookup.wsdl" />
+    <None Include="Web References\PostcodeAnywhere\NearestResults.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PostcodeAnywhere\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <WebReferenceUrl Include="http://test/reportserver/reportservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportingServices.v2005\</RelPath>
+      <UpdateFromURL>http://test/reportserver/reportservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMS_Library_ReportingService2005_ReportingService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://test/_vti_bin/search.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Tickford.SearchService\</RelPath>
+      <UpdateFromURL>http://test/_vti_bin/search.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMS_Library_SearchQueryService_QueryService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://test/ReportServer_SQL2008/reportservice2005.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportingServices.v2008\</RelPath>
+      <UpdateFromURL>http://test/ReportServer_SQL2008/reportservice2005.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>OMS_Library_ReportingService2006_ReportingService2006</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://services.postcodeanywhere.co.uk/uk/lookup.asmx">
+      <RelPath>Web References\PostcodeAnywhere\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Users.ico" />
+    <None Include="Web References\ReportingServices.v2005\ActiveState1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\CatalogItem1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\DataRetrievalPlan1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\DataSetDefinition1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\DataSource1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\DataSourceDefinition1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\DataSourcePrompt1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Event1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ExecutionSettingEnum1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ExpirationDefinition1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Extension1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ExtensionParameter1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ExtensionSettings1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ItemTypeEnum1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Job1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ParameterValue1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ParameterValueOrFieldReference1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Policy1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Property1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ReportHistorySnapshot1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ReportParameter1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\reportservice.wsdl" />
+    <None Include="Web References\ReportingServices.v2005\Role1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Schedule1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\ScheduleDefinitionOrReference1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Subscription1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Task1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2005\Warning1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ActiveState.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\CatalogItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\DataRetrievalPlan.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\DataSetDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\DataSource.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\DataSourceDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\DataSourcePrompt.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Event.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ExecutionSettingEnum.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ExpirationDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Extension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ExtensionParameter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ExtensionSettings.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ItemTypeEnum.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Job.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ModelCatalogItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ModelDrillthroughReport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ModelItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ParameterValue.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ParameterValueOrFieldReference.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Policy.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Property.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ReportHistorySnapshot.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ReportParameter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\reportservice2005.wsdl" />
+    <None Include="Web References\ReportingServices.v2008\Role.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Schedule.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\ScheduleDefinitionOrReference.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Subscription.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Task.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingServices.v2008\Warning.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Tickford.SearchService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Tickford.SearchService\search.disco" />
+    <None Include="Web References\Tickford.SearchService\search.wsdl" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>copy /y "$(TargetDir)Fwbs.Framework*.dll" "C:\OMSCoreAssemblies\"
+copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"
+if not exist "C:\OMSCoreAssemblies\zh" mkdir "C:\OMSCoreAssemblies\zh"
+copy /y "$(TargetDir)zh" "C:\OMSCoreAssemblies\zh"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

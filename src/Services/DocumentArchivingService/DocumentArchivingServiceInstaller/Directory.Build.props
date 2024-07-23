@@ -1,0 +1,13 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ProductName>3E MatterSphere Document Archiver</ProductName>
+    <ProductFamily>3E MatterSphere</ProductFamily>
+    <ShortProductName>Document Archiver</ShortProductName>
+    <PublisherName>ELITE</PublisherName>
+    <ProductVersion>10.1.0</ProductVersion>
+    <UpgradeCode>2264C989-B57A-4CC5-94D1-11C4CA3099C5</UpgradeCode>
+    <SourceDir>C:\DocArchiveOutput</SourceDir>
+    <OutputName>3EMatterSphereDocumentArchiverInstaller</OutputName>
+  </PropertyGroup>
+</Project>

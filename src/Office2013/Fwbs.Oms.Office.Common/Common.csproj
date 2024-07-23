@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3382A167-1E13-4EEE-8E84-A060E2869EC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fwbs.Oms.Office.Common</RootNamespace>
+    <AssemblyName>Fwbs.Oms.Office.Common</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="FWBS.Common, Version=2.2.2500.875, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\FWBS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Oms.ResourceLookup">
+      <HintPath>c:\OMSCoreAssemblies\Fwbs.Oms.ResourceLookup.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="OFFICE, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="OMS.Data, Version=2.2.2500.875, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\OMS.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Infrastructure">
+      <HintPath>C:\OMSCoreAssemblies\OMS.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Library, Version=2.2.2500.875, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\OMS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.UI, Version=2.2.2500.875, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\OMSCoreAssemblies\OMS.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\BillInfo.cs">
+      <Link>BillInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\ControlCallbackDelegate.cs">
+      <Link>ControlCallbackDelegate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\ExternalOfficeOMSAddin.cs">
+      <Link>ExternalOfficeOMSAddin.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\IExternalOfficeOMSAddin.cs">
+      <Link>IExternalOfficeOMSAddin.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\OfficeOMSAddin.cs">
+      <Link>OfficeOMSAddin.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\AssociatedDocuments.cs">
+      <Link>Panes\AssociatedDocuments.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\AssociatedDocuments.designer.cs">
+      <Link>Panes\AssociatedDocuments.designer.cs</Link>
+      <DependentUpon>AssociatedDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\BasePane.cs">
+      <Link>Panes\BasePane.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\DocumentPropertyPane.cs">
+      <Link>Panes\DocumentPropertyPane.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\GlobalSearchPane.cs">
+      <Link>Panes\GlobalSearchPane.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\GlobalSearchPane.designer.cs">
+      <Link>Panes\GlobalSearchPane.designer.cs</Link>
+      <DependentUpon>GlobalSearchPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\WizardPane.cs">
+      <Link>Panes\WizardPane.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\PictureDispMaker.cs">
+      <Link>PictureDispMaker.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Office2007\Fwbs.Oms.Office.Common\RibbonControlConfig.cs">
+      <Link>RibbonControlConfig.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\AssociatedDocuments.resx">
+      <Link>Panes\AssociatedDocuments.resx</Link>
+      <DependentUpon>AssociatedDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\DocumentPropertyPane.resx">
+      <Link>Panes\DocumentPropertyPane.resx</Link>
+      <DependentUpon>DocumentPropertyPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Panes\WizardPane.resx">
+      <Link>Panes\WizardPane.resx</Link>
+      <DependentUpon>WizardPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Office\Fwbs.Oms.Office\Office15.vbproj">
+      <Project>{E9E42EEA-D556-4A0C-A31C-098DBC077BC0}</Project>
+      <Name>Office15</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Oms.Office.Core\Core15.csproj">
+      <Project>{8B4CA9D3-9646-44EB-914B-802D02DF53DC}</Project>
+      <Name>Core15</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\DefaultMainRibbon.xml">
+      <Link>DefaultMainRibbon.xml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\DefaultMainRibbonConfig.xml">
+      <Link>DefaultMainRibbonConfig.xml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\mattercentrelogo.jpg">
+      <Link>mattercentrelogo.jpg</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Panes\Controls\" />
+    <Folder Include="UserControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TR-Kinesis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\AccessTableContacts.png">
+      <Link>Images\AccessTableContacts.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\AddressBook.png">
+      <Link>Images\AddressBook.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\AttachItem.png">
+      <Link>Images\AttachItem.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\BlogHomePage.png">
+      <Link>Images\BlogHomePage.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\Chart3DPieChart.png">
+      <Link>Images\Chart3DPieChart.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\DelayDeliveryOutlook.png">
+      <Link>Images\DelayDeliveryOutlook.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\DirectRepliesTo.png">
+      <Link>Images\DirectRepliesTo.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\FilePrepareMenu.png">
+      <Link>Images\FilePrepareMenu.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\FormatNumberDefault.png">
+      <Link>Images\FormatNumberDefault.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\FormulaMoreFunctionsMenu.png">
+      <Link>Images\FormulaMoreFunctionsMenu.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\Help.png">
+      <Link>Images\Help.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\IconDropdownArrow.png">
+      <Link>Images\IconDropdownArrow.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\IconRibbon3e.png">
+      <Link>Images\IconRibbon3e.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\FindText.png">
+      <Link>Images\FindText.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\LookUp.png">
+      <Link>Images\LookUp.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\MailMergeAddressBlockInsert.png">
+      <Link>Images\MailMergeAddressBlockInsert.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\QueryShowTable.png">
+      <Link>Images\QueryShowTable.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ReadingViewShowPrintedPage.png">
+      <Link>Images\ReadingViewShowPrintedPage.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\RecurrenceEdit.png">
+      <Link>Images\RecurrenceEdit.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ReviewEditComment.png">
+      <Link>Images\ReviewEditComment.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\TableSelectCell.png">
+      <Link>Images\TableSelectCell.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ViewAppointmentInCalendar.png">
+      <Link>Images\ViewAppointmentInCalendar.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\WindowsArrangeAll.png">
+      <Link>Images\WindowsArrangeAll.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\AdpPrimaryKey.png">
+      <Link>Images\AdpPrimaryKey.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\AutoDial+.png">
+      <Link>Images\AutoDial+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\AutoDial.png">
+      <Link>Images\AutoDial.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\BusinessCardInsertMenu.png">
+      <Link>Images\BusinessCardInsertMenu.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\CheckNames.png">
+      <Link>Images\CheckNames.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ControlLayoutTabular.png">
+      <Link>Images\ControlLayoutTabular.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\CreateReportBlankReport.png">
+      <Link>Images\CreateReportBlankReport.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\DistributionListAddNewMember+.png">
+      <Link>Images\DistributionListAddNewMember+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\DistributionListAddNewMember.png">
+      <Link>Images\DistributionListAddNewMember.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\FormulaMoreFunctionsMenu+.png">
+      <Link>Images\FormulaMoreFunctionsMenu+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\HighImportance.png">
+      <Link>Images\HighImportance.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\MailMergeAddressBlockInsert#.png">
+      <Link>Images\MailMergeAddressBlockInsert#.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\MailMergeAddressBlockInsert+.png">
+      <Link>Images\MailMergeAddressBlockInsert+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\MasterNotesPageOrientation.png">
+      <Link>Images\MasterNotesPageOrientation.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\MeetingsWorkspace.png">
+      <Link>Images\MeetingsWorkspace.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\MoveToFolder+.png">
+      <Link>Images\MoveToFolder+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\MoveToFolder.png">
+      <Link>Images\MoveToFolder.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\PivotChartType.png">
+      <Link>Images\PivotChartType.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\PivotTableFormulasMenu.png">
+      <Link>Images\PivotTableFormulasMenu.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ProtectDocument.png">
+      <Link>Images\ProtectDocument.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\RecordsAddFromOutlook+.png">
+      <Link>Images\RecordsAddFromOutlook+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ReflectionGallery.png">
+      <Link>Images\ReflectionGallery.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ReturnToTaskList#.png">
+      <Link>Images\ReturnToTaskList#.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ReturnToTaskList+.png">
+      <Link>Images\ReturnToTaskList+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ReturnToTaskList.png">
+      <Link>Images\ReturnToTaskList.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\Risks.png">
+      <Link>Images\Risks.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\SignatureShow.png">
+      <Link>Images\SignatureShow.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\SlideMasterInsertLayout.png">
+      <Link>Images\SlideMasterInsertLayout.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\SlideShowRehearseTimings.png">
+      <Link>Images\SlideShowRehearseTimings.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ViewAllProposals#.png">
+      <Link>Images\ViewAllProposals#.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ViewAllProposals+.png">
+      <Link>Images\ViewAllProposals+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ViewAllProposals.png">
+      <Link>Images\ViewAllProposals.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ViewAppointmentInCalendar#.png">
+      <Link>Images\ViewAppointmentInCalendar#.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ViewAppointmentInCalendar+.png">
+      <Link>Images\ViewAppointmentInCalendar+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\WindowsArrangeAll+.png">
+      <Link>Images\WindowsArrangeAll+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ZoomCurrent100+.png">
+      <Link>Images\ZoomCurrent100+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\FilePrepareMenu+.png">
+      <Link>Images\FilePrepareMenu+.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Office2007\Fwbs.Oms.Office.Common\Images\ViewAppointmentInCalendar-.png">
+      <Link>Images\ViewAppointmentInCalendar-.png</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

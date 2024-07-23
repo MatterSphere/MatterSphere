@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.elite.com/openapi" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.elite.com/openapi" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Some business level methods to operate on the timecards entity</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.elite.com/openapi">
+      <s:element name="Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timeKeeperInitials" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matterNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ledgerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryActivityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invocationType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="user" type="tns:user" />
+      <s:complexType name="user" mixed="true">
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="EraseByWhere">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="where" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EraseByWhereResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EraseByWhereResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="tns:ArrayOfTimeLoadFormat" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batchNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="batchPeriod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTimeLoadFormat">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimeLoadFormat" nillable="true" type="tns:TimeLoadFormat" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimeLoadFormat">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="timeKeeperInitials" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clientName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matterNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="billStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ledgerCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="primaryActivityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Create2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="tns:ArrayOfTimeLoadFormat" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="tns:TimeLoadFormat1" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invalidTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeLoadFormat1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="timeKeeperInitials" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clientName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matterNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="billStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hour" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ledgerCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="primaryActivityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="udf5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Create1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create1Result" type="tns:TimeLoadResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeLoadResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="timecard_tindex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="wv_timecard_tindex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="warning" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="report" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Create4">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timeKeeperInitials" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matterNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hour" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ledgerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryActivityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="udf5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invalidTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create4Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Create" />
+  </wsdl:message>
+  <wsdl:message name="CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Createuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="EraseByWhereSoapIn">
+    <wsdl:part name="parameters" element="tns:EraseByWhere" />
+  </wsdl:message>
+  <wsdl:message name="EraseByWhereSoapOut">
+    <wsdl:part name="parameters" element="tns:EraseByWhereResponse" />
+  </wsdl:message>
+  <wsdl:message name="EraseByWhereuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="Create2SoapIn">
+    <wsdl:part name="parameters" element="tns:Create2" />
+  </wsdl:message>
+  <wsdl:message name="Create2SoapOut">
+    <wsdl:part name="parameters" element="tns:Create2Response" />
+  </wsdl:message>
+  <wsdl:message name="Create2user">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="Create3SoapIn">
+    <wsdl:part name="parameters" element="tns:Create3" />
+  </wsdl:message>
+  <wsdl:message name="Create3SoapOut">
+    <wsdl:part name="parameters" element="tns:Create3Response" />
+  </wsdl:message>
+  <wsdl:message name="Create3user">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="Create1SoapIn">
+    <wsdl:part name="parameters" element="tns:Create1" />
+  </wsdl:message>
+  <wsdl:message name="Create1SoapOut">
+    <wsdl:part name="parameters" element="tns:Create1Response" />
+  </wsdl:message>
+  <wsdl:message name="Create1user">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="Create4SoapIn">
+    <wsdl:part name="parameters" element="tns:Create4" />
+  </wsdl:message>
+  <wsdl:message name="Create4SoapOut">
+    <wsdl:part name="parameters" element="tns:Create4Response" />
+  </wsdl:message>
+  <wsdl:message name="Create4user">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:portType name="TimeCardSoap">
+    <wsdl:operation name="Create">
+      <wsdl:input message="tns:CreateSoapIn" />
+      <wsdl:output message="tns:CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EraseByWhere">
+      <wsdl:input message="tns:EraseByWhereSoapIn" />
+      <wsdl:output message="tns:EraseByWhereSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create2">
+      <wsdl:input message="tns:Create2SoapIn" />
+      <wsdl:output message="tns:Create2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create3">
+      <wsdl:input message="tns:Create3SoapIn" />
+      <wsdl:output message="tns:Create3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create1">
+      <wsdl:input message="tns:Create1SoapIn" />
+      <wsdl:output message="tns:Create1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create4">
+      <wsdl:input message="tns:Create4SoapIn" />
+      <wsdl:output message="tns:Create4SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimeCardSoap" type="tns:TimeCardSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://www.elite.com/openapi/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Createuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseByWhere">
+      <soap:operation soapAction="http://www.elite.com/openapi/EraseByWhere" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EraseByWhereuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create2">
+      <soap:operation soapAction="http://www.elite.com/openapi/Create2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Create2user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create3">
+      <soap:operation soapAction="http://www.elite.com/openapi/Create3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Create3user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create1">
+      <soap:operation soapAction="http://www.elite.com/openapi/Create1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Create1user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create4">
+      <soap:operation soapAction="http://www.elite.com/openapi/Create4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Create4user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimeCardSoap12" type="tns:TimeCardSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create">
+      <soap12:operation soapAction="http://www.elite.com/openapi/Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Createuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseByWhere">
+      <soap12:operation soapAction="http://www.elite.com/openapi/EraseByWhere" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EraseByWhereuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create2">
+      <soap12:operation soapAction="http://www.elite.com/openapi/Create2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Create2user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create3">
+      <soap12:operation soapAction="http://www.elite.com/openapi/Create3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Create3user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create1">
+      <soap12:operation soapAction="http://www.elite.com/openapi/Create1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Create1user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create4">
+      <soap12:operation soapAction="http://www.elite.com/openapi/Create4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Create4user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimeCard">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Some business level methods to operate on the timecards entity</wsdl:documentation>
+    <wsdl:port name="TimeCardSoap" binding="tns:TimeCardSoap">
+      <soap:address location="http://dapent39/services/timecard.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimeCardSoap12" binding="tns:TimeCardSoap12">
+      <soap12:address location="http://dapent39/services/timecard.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

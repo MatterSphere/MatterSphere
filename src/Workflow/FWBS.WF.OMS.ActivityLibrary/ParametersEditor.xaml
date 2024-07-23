@@ -1,0 +1,86 @@
+﻿<Window x:Class="FWBS.WF.OMS.ActivityLibrary.ParametersEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mcc="clr-namespace:FWBS.MatterCentre.Controls"
+             xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+             xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+             xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" 
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="515" d:DesignWidth="595" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid x:Name="Root" Width="571" Height="477">
+        <Grid.Resources>
+            <mcc:MCImageListConverter x:Key="MCImageConverter" />
+            <sapc:ArgumentToExpressionConverter x:Key="ArgToExpression" />
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="50,20,0,0" Background="{DynamicResource {x:Static SystemColors.ControlBrush}}">
+            <MenuItem Name="menuitemAdd" Click="menuitemAdd_Click" ToolTip="Add a Parameter line">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="16"  Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="20"/>
+                        <TextBlock Text="Add" VerticalAlignment="Center" />
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="menuitemDelete" Margin="10,0,0,0" Click="menuitemDelete_Click" ToolTip="Delete a Parameter line">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="16"  Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="6"/>
+                        <TextBlock Text="Delete" VerticalAlignment="Center" />
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+        </Menu>
+        <Menu Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="0,20,50,0" Background="{DynamicResource {x:Static SystemColors.ControlBrush}}">
+            <MenuItem Name="menuitemSave" Margin="0,0,10,0" Click="menuitemSave_Click" ToolTip="Save Parameter Editor">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="16"  Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="2"/>
+                        <TextBlock Text="Save" VerticalAlignment="Center" />
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <Separator />
+            <MenuItem Name="menuitemCancel" HorizontalAlignment="Right" Click="menuitemCancel_Click" ToolTip="Cancel Parameter Editor">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="16"  Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="21"/>
+                        <TextBlock Text="Cancel" VerticalAlignment="Center" />
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+        </Menu>
+        <ListBox x:Name="lbParameters" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,0" SelectionMode="Single" ToolTip="Parameters List Box"
+                 ItemsSource="{Binding  Path=DataContext.Parameters, ElementName=Root}" HorizontalContentAlignment="Stretch" Width="450" Height="350">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Stretch" Margin="5,2,5,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox Text="{Binding Key}" />
+                        <sapv:ExpressionTextBox IsReadOnly="False" IsEnabled="True" HintText="Parameter Value" Grid.Column="1"
+                                                 Expression="{Binding Path=Value, Mode=TwoWay, Converter={StaticResource ArgToExpression}, ConverterParameter=In}"  
+                                                 OwnerActivity="{Binding Path=DataContext, ElementName=Root}" 
+                                                 ExpressionType="s:Object" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,3223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78D7F7DC-33C4-4CF6-9976-9B3B227D993D}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>13.ICO</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>OMS.UI</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FWBS.OMS.UI</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.290.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.290.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL" />
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL" />
+    <Reference Include="Fwbs.Framework, Version=0.9.6.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Fwbs.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Common, Version=0.9.6.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Fwbs.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Shared, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics.Win, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics.Win.Misc, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics.Win.UltraWinDock, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics.Win.UltraWinTabControl, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1150.38, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1150.38\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1150.38, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1150.38\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Fwbs.Oms.ResourceLookup\ResourceLookup.csproj">
+      <Project>{8a964108-b109-4578-a47a-046ba430e62e}</Project>
+      <Name>ResourceLookup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Document Previewer\DocumentPreviewer\DocumentPreviewer.csproj">
+      <Project>{C08BFC43-9B17-4899-8DA5-A21B49F269BE}</Project>
+      <Name>DocumentPreviewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Document Previewer\FWBS.DocumentPreviewer.Infrastrucutre\FWBS.DocumentPreviewer.Infrastructure.csproj">
+      <Project>{A4C73A9D-AC1A-41E3-8508-1BDB5E0BCEAE}</Project>
+      <Name>FWBS.DocumentPreviewer.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elasticsearch\Elasticsearch.csproj">
+      <Project>{8c11afba-5937-4b2b-a686-c1bfed362c4a}</Project>
+      <Name>Elasticsearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Common.Windows.Controls\Common.Windows.csproj">
+      <Name>Common.Windows</Name>
+      <Project>{B719E424-AD9C-4F95-A929-FC90EEF825A2}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Common\Common.csproj">
+      <Name>Common</Name>
+      <Project>{4998E285-9BBB-4589-BC2D-56649563C765}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Oms.Data\Data.csproj">
+      <Name>Data</Name>
+      <Project>{A6F114EF-E02E-41F6-B8B5-0FADDB0FE98E}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\FWBS.OMS.Infrastructure\~Infrastructure.csproj">
+      <Project>{D7C427FF-A85A-4965-A595-8B9FB3051CBC}</Project>
+      <Name>~Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fwbs.Oms.Library\Business.csproj">
+      <Name>Business</Name>
+      <Project>{249BC08D-5364-40CF-983A-8580DDA5B00B}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.WinControls, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CoreAssemblyInfo.cs">
+      <Link>Properties\CoreAssemblyInfo.cs</Link>
+    </Compile>
+    <Content Include="13.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\14.ICO" />
+    <None Include="packages.config" />
+    <None Include="Resources\ELITE 3E MatterSphere Splash.png" />
+    <None Include="Resources\elite_sym_rgb_wht_rev.png" />
+    <EmbeddedResource Include="Resources\DialogIcons\00.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\01.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\02.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\03.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\04.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\05.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\06.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\07.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\08.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\09.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\10.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\11.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\12.ICO" />
+    <EmbeddedResource Include="Resources\DialogIcons\13.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\39.ICO" />
+    <EmbeddedResource Include="Resources\NewEntities\new-appointment-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\new-associate-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\new-client-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\new-contact-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\new-keydate-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\new-matter-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\new-preclient-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\new-task-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\new-undertaking-success.emf" />
+    <EmbeddedResource Include="Resources\NewEntities\no-results-found.emf" />
+    <EmbeddedResource Include="Resources\Common\add.ICO" />
+    <EmbeddedResource Include="Resources\Common\delete.ICO" />
+    <EmbeddedResource Include="Resources\Common\delete_selected.ICO" />
+    <EmbeddedResource Include="Resources\Common\delete_disabled.ICO" />
+    <EmbeddedResource Include="Resources\Common\edit.ICO" />
+    <EmbeddedResource Include="Resources\Common\calendar.ICO" />
+    <EmbeddedResource Include="Resources\Common\filter_black.ICO" />
+    <EmbeddedResource Include="Resources\Common\upload.ICO" />
+    <EmbeddedResource Include="Resources\Common\upload_selected.ICO" />
+    <EmbeddedResource Include="Resources\Common\upload_disabled.ICO" />
+    <EmbeddedResource Include="Resources\Common\pop_over.ICO" />
+    <EmbeddedResource Include="Resources\Common\calculator.ICO" />
+    <EmbeddedResource Include="Resources\Common\close.ICO" />
+    <EmbeddedResource Include="Resources\Common\grey_magnifier.ICO" />
+    <EmbeddedResource Include="Resources\Common\full_screen.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\38.ICO" />
+    <EmbeddedResource Include="Resources\Common\grey_plus.ICO" />
+    <EmbeddedResource Include="Elasticsearch\GlobalSearch\ucEmptyResult.resx">
+      <DependentUpon>ucEmptyResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elasticsearch\GlobalSearch\ucNewEntityPanel.resx">
+      <DependentUpon>ucNewEntityPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Common\associate.ICO" />
+    <EmbeddedResource Include="Resources\Common\filter_white.ICO" />
+    <EmbeddedResource Include="Resources\Common\close_white.ICO" />
+    <EmbeddedResource Include="Resources\Common\columnsettings.ICO" />
+    <None Include="Resources\loading_25.gif" />
+    <None Include="Resources\loading_30.gif" />
+    <None Include="Resources\loading_35.gif" />
+    <None Include="Resources\loading_40.gif" />
+    <None Include="Resources\loading_20.gif" />
+    <EmbeddedResource Include="Elasticsearch\GlobalSearch\ucGlobalSearch.resx">
+      <DependentUpon>ucGlobalSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Common\address.ICO" />
+    <EmbeddedResource Include="Resources\Common\appointment.ICO" />
+    <EmbeddedResource Include="Resources\Common\client.ICO" />
+    <EmbeddedResource Include="Resources\Common\contact.ICO" />
+    <EmbeddedResource Include="Resources\Common\filter.ICO" />
+    <EmbeddedResource Include="Resources\Common\file.ICO" />
+    <EmbeddedResource Include="Resources\Common\note.ICO" />
+    <EmbeddedResource Include="Resources\Common\preview.ICO" />
+    <EmbeddedResource Include="Resources\Common\task.ICO" />
+    <EmbeddedResource Include="Elasticsearch\ucClearButton.resx">
+      <DependentUpon>ucClearButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elasticsearch\ElasticsearchControl.resx">
+      <DependentUpon>ElasticsearchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elasticsearch\FilterTypesPopup.resx">
+      <DependentUpon>FilterTypesPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elasticsearch\ucFacetGroup.resx">
+      <DependentUpon>ucFacetGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Elasticsearch\ucFilterLabel.resx">
+      <DependentUpon>ucFilterLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Common\refresh.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\27.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\28.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\29.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\30.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\31.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\32.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\33.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\34.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\35.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\36.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\37.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\26.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\25.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\24.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\00.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\01.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\02.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\03.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\04.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\05.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\06.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\07.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\08.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\09.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\10.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\11.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\12.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\13.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\14.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\15.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\16.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\17.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\18.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\19.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\20.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\21.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\22.ICO" />
+    <EmbeddedResource Include="Resources\NavigationIcons\23.ICO" />
+    <EmbeddedResource Include="Resources\TreeNavigationIcons\ico_navmenu.ico" />
+    <EmbeddedResource Include="Resources\TreeNavigationIcons\ico_groupitem.ico" />
+    <None Include="Resources\TitleBar\Knowledge-Bold.ttf" />
+    <None Include="Resources\TitleBar\Knowledge-Regular.ttf" />
+    <None Include="Resources\TitleBar\titlebar_search%40120x.png" />
+    <None Include="Resources\TitleBar\titlebar_search%40144x.png" />
+    <None Include="Resources\TitleBar\titlebar_search%40168x.png" />
+    <None Include="Resources\TitleBar\titlebar_search%40192x.png" />
+    <None Include="Resources\TitleBar\titlebar_search%4096x.png" />
+    <None Include="Resources\TitleBar\titlebar_search_close%40120x.png" />
+    <None Include="Resources\TitleBar\titlebar_search_close%40144x.png" />
+    <None Include="Resources\TitleBar\titlebar_search_close%40168x.png" />
+    <None Include="Resources\TitleBar\titlebar_search_close%40192x.png" />
+    <None Include="Resources\TitleBar\titlebar_search_close%4096x.png" />
+    <EmbeddedResource Include="Dialogs\Common\frmQuestion.resx" />
+    <EmbeddedResource Include="EnquiryControls\eDataSelector\eDataSelector.resx">
+      <DependentUpon>eDataSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eDataSelector\searchDataList.resx">
+      <DependentUpon>searchDataList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\Refresh1.ico" />
+    <None Include="Resources\Custom-Icon-Design-Mono-General-4-Refresh1.ico" />
+    <None Include="Resources\Custom-Icon-Design-Mono-General-4-Refresh.ico" />
+    <EmbeddedResource Include="Dialogs\frmMultiLineText.resx">
+      <DependentUpon>frmMultiLineText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\frmDMTVTemplateCreator.resx">
+      <DependentUpon>frmDMTVTemplateCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\frmFolderWalletMappingEditor.resx">
+      <DependentUpon>frmFolderWalletMappingEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\ucDMTVTemplateCreator.resx">
+      <DependentUpon>ucDMTVTemplateCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\ucTreeView.resx">
+      <DependentUpon>ucTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Refresh.ico" />
+    <EmbeddedResource Include="Resources\TreeNavigationIcons\ico_burgermenu.ico" />
+    <EmbeddedResource Include="Resources\TreeNavigationIcons\ico_information.ico" />
+    <EmbeddedResource Include="Resources\TreeNavigationIcons\ico_information_right.ico" />
+    <EmbeddedResource Include="Resources\PlusMinus.bmp" />
+    <EmbeddedResource Include="Resources\BlackIcons\Close.ico" />
+    <EmbeddedResource Include="Resources\BlackIcons\Expand.ico" />
+    <EmbeddedResource Include="Resources\BlackIcons\Shrink.ico" />
+    <None Include="Resources\WhiteHeaderShade.png" />
+    <None Include="Resources\WhiteFormBack.png" />
+    <None Include="Resources\WhiteToolbarShade.png" />
+    <None Include="Resources\V2Wizard_WelcomePageImage.jpg" />
+    <None Include="Resources\MS.ico" />
+    <None Include="Resources\expandedArrow.PNG" />
+    <None Include="Resources\collapsedArrow.PNG" />
+    <None Include="Resources\collapsedArrow.bmp" />
+    <None Include="Resources\exapndedArrow.bmp" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Resources\SplashV1_Fine_Print_Missing_447x376.png" />
+    <EmbeddedResource Include="Dialogs\V2\frmDialogV2.resx">
+      <DependentUpon>frmDialogV2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\V2\frmOMSItemV2.resx">
+      <DependentUpon>frmOMSItemV2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\V2\frmOMSTypeV2.resx">
+      <DependentUpon>frmOMSTypeV2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eXPComboBoxStatesLookup.resx">
+      <DependentUpon>eXPComboBoxStatesLookup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CoolButtons\V2\117.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\52.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\116.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\115.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\113.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\114.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\112.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\41.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\42.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\43.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\44.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\45.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\46.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\47.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\48.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\49.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\50.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\100.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\101.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\102.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\103.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\104.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\105.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\106.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\107.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\108.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\109.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\110.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\111.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\78.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\79.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\80.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\81.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\82.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\83.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\84.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\85.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\86.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\87.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\88.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\89.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\90.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\91.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\92.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\93.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\94.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\95.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\96.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\97.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\98.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\99.ICO" />
+    <EmbeddedResource Include="Resources\Entities\V2\13.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\14.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\15.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\16.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\17.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\18.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\19.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\20.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\21.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\22.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\23.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\24.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\25.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\26.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\27.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\28.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\29.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\30.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\31.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\32.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\33.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\34.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\35.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\36.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\37.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\38.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\39.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\40.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\41.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\42.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\43.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\44.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\45.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\46.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\47.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\48.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\49.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\50.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\51.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\52.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\53.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\54.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\55.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\56.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\57.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\58.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\59.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\60.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\61.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\62.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\63.ico" />
+    <EmbeddedResource Include="Resources\FolderForms\00.ICO" />
+    <EmbeddedResource Include="Resources\FolderForms\01.ICO" />
+    <EmbeddedResource Include="Resources\FolderForms\02.ICO" />
+    <EmbeddedResource Include="Resources\RichText\00.ICO" />
+    <EmbeddedResource Include="Resources\RichText\01.ICO" />
+    <EmbeddedResource Include="Resources\RichText\02.ICO" />
+    <EmbeddedResource Include="Resources\RichText\03.ICO" />
+    <EmbeddedResource Include="Resources\RichText\04.ICO" />
+    <EmbeddedResource Include="Resources\RichText\05.ICO" />
+    <EmbeddedResource Include="Resources\RichText\06.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\00.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\01.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\02.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\03.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\04.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\05.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\06.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\07.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\08.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\09.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\10.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\11.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\12.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\13.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\14.ICO" />
+    <EmbeddedResource Include="Resources\Developments\V2\15.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\00.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\01.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\02.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\03.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\04.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\05.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\06.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\07.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\08.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\09.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\10.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\11.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\12.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\13.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\14.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\15.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\16.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\17.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\18.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\19.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\20.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\21.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\22.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\23.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\24.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\25.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\26.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\27.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\28.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\29.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\30.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\31.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\32.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\33.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\34.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\35.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\36.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\37.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\38.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\39.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\40.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\41.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\42.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\43.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\44.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\45.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\46.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\47.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\48.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\49.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\50.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\51.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\52.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\53.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\54.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\55.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\56.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\57.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\58.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\59.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\60.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\61.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\62.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\63.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\64.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\65.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\66.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\67.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\68.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\69.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\70.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\71.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\72.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\73.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\74.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\75.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\76.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\V2\77.ICO" />
+    <EmbeddedResource Include="Resources\Entities\V2\0.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\1.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\10.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\11.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\2.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\3.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\4.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\5.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\6.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\7.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\8.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\9.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\FindClient.ico" />
+    <EmbeddedResource Include="Resources\Entities\V2\Users.ico" />
+    <EmbeddedResource Include="CodeBuilder\CacheSplashForm.resx">
+      <DependentUpon>CacheSplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\CodeSurfaceLanguage.resx">
+      <DependentUpon>CodeSurfaceLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\CodeWindow.resx">
+      <DependentUpon>CodeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\NewWFActivityForm.resx">
+      <DependentUpon>NewWFActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CoolButtons\77.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\76.ICO" />
+    <EmbeddedResource Include="CodeBuilder\CodeSurface.resx">
+      <DependentUpon>CodeSurface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\CodeSurfaceV1.resx">
+      <DependentUpon>CodeSurfaceV1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\CodeSurfaceV2.resx">
+      <DependentUpon>CodeSurfaceV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\DocumentVersionPickerForm.resx">
+      <DependentUpon>DocumentVersionPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Storage\LockableFetchSettingsEditor.resx">
+      <DependentUpon>LockableFetchSettingsEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Storage\LockableStoreSettingsEditor.resx">
+      <DependentUpon>LockableStoreSettingsEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Storage\StorageSettingsContainer.resx">
+      <DependentUpon>StorageSettingsContainer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Storage\StorageSettingsForm.resx">
+      <DependentUpon>StorageSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Storage\VersionFetchSettingsEditor.resx">
+      <DependentUpon>VersionFetchSettingsEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Storage\VersionStoreSettingsEditor.resx">
+      <DependentUpon>VersionStoreSettingsEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Addins\ucBuiltInDocuments.resx">
+      <DependentUpon>ucBuiltInDocuments.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Addins\DocumentPreviewAddin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DocumentPreviewAddin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\Addins\DocumentVersionsAddin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DocumentVersionsAddin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\DocumentVersions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DocumentVersions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\OfflineDocumentPicker.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OfflineDocumentPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\ucDocumentGrouping.resx">
+      <DependentUpon>ucDocumentGrouping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\VersionOptionsPicker.resx">
+      <DependentUpon>VersionOptionsPicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eADUserSelector.resx">
+      <DependentUpon>eADUserSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eEmbedFile.resx">
+      <DependentUpon>eEmbedFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eLastEmailsForAssociates.resx">
+      <DependentUpon>eLastEmailsForAssociates.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AdminMenu\39.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\40.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\00.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\01.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\02.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\03.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\04.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\05.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\06.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\07.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\08.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\09.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\10.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\11.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\12.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\13.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\14.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\15.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\16.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\17.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\18.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\19.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\20.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\21.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\22.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\23.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\24.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\25.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\26.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\27.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\28.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\29.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\30.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\31.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\32.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\33.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\34.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\35.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\36.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\37.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\38.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\39.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\40.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\51.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\V2\53.ICO" />
+    <None Include="Resources\Alert_Amber.png" />
+    <None Include="Resources\Alert_Green.png" />
+    <None Include="Resources\Alert_Red.png" />
+    <Content Include="Resources\App.ico" />
+    <None Include="..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+    <None Include="Resources\ViewPrecedent.ico" />
+    <None Include="Resources\Precedent.ico" />
+    <None Include="Resources\Remove2.ico" />
+    <None Include="Resources\ConnectionManager.ico" />
+    <None Include="Resources\Remove.ico" />
+    <None Include="Resources\Search More.ico" />
+    <None Include="Resources\DropDownArrow.ico" />
+    <EmbeddedResource Include="Resources\Entities\Users.ico" />
+    <None Include="Resources\Error.ico" />
+    <None Include="Resources\GrayFormBack.png" />
+    <None Include="Resources\BlueFormBack.png" />
+    <None Include="Resources\BlackColapse.png" />
+    <None Include="Resources\BlackFormBack.png" />
+    <None Include="Resources\BlackToolbarShade.png" />
+    <None Include="Resources\BlackHeaderShade.png" />
+    <None Include="Resources\BlueColapse.png" />
+    <None Include="Resources\BlueHeaderShade.png" />
+    <None Include="Resources\BlueToolbarShade.png" />
+    <EmbeddedResource Include="Resources\CoolButtons\75.ICO" />
+    <Compile Include="Addins\ucAssociates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\ucBaseAddin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\ucContacts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\ucDocuments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\ucFileList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\ucFundTypes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\ucMilestones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\ucTimeRecording.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlertFormatting.cs" />
+    <Compile Include="AlertIconSelector.cs" />
+    <Compile Include="CodeBuilder\CacheSplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\CacheSplashForm.Designer.cs">
+      <DependentUpon>CacheSplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeSurfaceLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeSurfaceLanguage.Designer.cs">
+      <DependentUpon>CodeSurfaceLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeSurfaceV1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeSurfaceV1.Designer.cs">
+      <DependentUpon>CodeSurfaceV1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeSurfaceV2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeSurfaceV2.Designer.cs">
+      <DependentUpon>CodeSurfaceV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeWindow.Designer.cs">
+      <DependentUpon>CodeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeSurface.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\CodeSurface.Designer.cs">
+      <DependentUpon>CodeSurface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeBuilder\ICodeSurface.cs" />
+    <Compile Include="CodeBuilder\ListViewEx.cs" />
+    <Compile Include="CodeBuilder\NewWFActivityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\NewWFActivityForm.Designer.cs">
+      <DependentUpon>NewWFActivityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridControls\DataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridControls\DataGridLabelColumnColourConfig\ColumnColours.cs" />
+    <Compile Include="DataGridControls\DataGridLabelColumnColourConfig\MultiSelectedRowColours.cs" />
+    <Compile Include="DataGridControls\DataGridLabelColumnColourConfig\SingleSelectedRowColours.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewColumnExtensions.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewColumnHeaderImageCell.cs" />
+    <Compile Include="DataGridViewControls\IBeforeCellDisplayable.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViewControls\DataGridViewLabelColumn.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewLabelCell.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewExColumnHeaderCell.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewExRow.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewExRowHeaderCell.cs" />
+    <Compile Include="Dialogs\Common\cbtHook.cs" />
+    <Compile Include="Dialogs\Common\CheckedMessageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmMultiLineText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmMultiLineText.Designer.cs">
+      <DependentUpon>frmMultiLineText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\V2\DisplayCollection.cs" />
+    <Compile Include="Dialogs\V2\frmNewBrandIdent.cs" />
+    <EmbeddedResource Include="Dialogs\V2\frmNewBrandIdent.resx">
+      <DependentUpon>frmNewBrandIdent.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Dialogs\V2\frmNewBrandIdent.Styles.cs">
+      <DependentUpon>frmNewBrandIdent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\V2\PageManager.cs" />
+    <Compile Include="Dialogs\V2\TitleBarButtonsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Dialogs\V2\TitleBarButtonsControl.resx">
+      <DependentUpon>TitleBarButtonsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Dialogs\V2\ucSearchTextControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Dialogs\V2\ucSearchTextControl.resx">
+      <DependentUpon>ucSearchTextControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="DialogWrappers\DPIContext.cs" />
+    <Compile Include="DialogWrappers\FormShowDialogExtension.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DMTreeNodeTagData.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DMTreeViewXMLManager.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DMTreeViewManager.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderBuilders\ClientDocumentFolderBuilderXML.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderBuilders\MatterDocumentFolderBuilderXML.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\frmDMTVTemplateCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\frmDMTVTemplateCreator.Designer.cs">
+      <DependentUpon>frmDMTVTemplateCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\frmFolderWalletMappingEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\frmFolderWalletMappingEditor.Designer.cs">
+      <DependentUpon>frmFolderWalletMappingEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\ucDMTVTemplateCreator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\ucDMTVTemplateCreator.Designer.cs">
+      <DependentUpon>ucDMTVTemplateCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\ucTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\ucTreeView.Designer.cs">
+      <DependentUpon>ucTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderControls\ucTreeViewArgs.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderFactory.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderInterfaces.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderInterfaces\IFolderMapper.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderRepositories\DocumentFolderRepository.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderSavers\ClientDocumentFolderSaverXML.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderSavers\MatterDocumentFolderSaverXML.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderSavers\MatterTemplateSaverXML.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\DocumentFolderBuilders\MatterTemplateBuilderXML.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\FolderMappers\DefaultTreeMapper.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\FolderMappers\TemplateFolderMapper.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\FolderMappers\WalletDrivenMapper.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\MigrationWorkerForm.cs" />
+    <Compile Include="DocumentManagement\DocumentFolderManagement\WalletMapping.cs" />
+    <Compile Include="DocumentManagement\Helper Tools\BulkDocumentImportTools.cs" />
+    <Compile Include="Elasticsearch\ActionButtonsBuilder.cs" />
+    <Compile Include="Elasticsearch\ActionProvider.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewActionsCell.cs" />
+    <Compile Include="DataGridViewControls\DataGridViewActionsColumn.cs" />
+    <Compile Include="Elasticsearch\DataGridViewHighlightsCell.cs" />
+    <Compile Include="Elasticsearch\DataGridViewHighlightsColumn.cs" />
+    <Compile Include="Elasticsearch\DbProviderFactory.cs" />
+    <Compile Include="Elasticsearch\ElasticsearchHelper.cs" />
+    <Compile Include="Elasticsearch\FacetLabel.cs" />
+    <Compile Include="Elasticsearch\FacetsBuilder.cs" />
+    <Compile Include="Elasticsearch\FilterTypeFactory.cs" />
+    <Compile Include="Elasticsearch\GlobalSearch\ucEmptyResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\GlobalSearch\ucGlobalSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\GlobalSearch\ucGlobalSearch.Designer.cs">
+      <DependentUpon>ucGlobalSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elasticsearch\GlobalSearch\ucNewEntityPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\GlobalSearch\ucNewEntityPanel.Designer.cs">
+      <DependentUpon>ucNewEntityPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elasticsearch\HighlightsReader.cs" />
+    <Compile Include="Elasticsearch\ISearchAdapter.cs" />
+    <Compile Include="Elasticsearch\NullSearchAdapter.cs" />
+    <Compile Include="Elasticsearch\SearchBuilderFactory.cs" />
+    <Compile Include="Elasticsearch\ucClearButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\ucClearButton.Designer.cs">
+      <DependentUpon>ucClearButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elasticsearch\ucFilterLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\ucFilterLabel.Designer.cs">
+      <DependentUpon>ucFilterLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elasticsearch\FilterTypesPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\FilterTypesPopup.Designer.cs">
+      <DependentUpon>FilterTypesPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elasticsearch\SearchAdapter.cs" />
+    <Compile Include="Elasticsearch\ElasticsearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\ElasticsearchControl.Designer.cs">
+      <DependentUpon>ElasticsearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elasticsearch\ISearchProducer.cs" />
+    <Compile Include="Elasticsearch\ISearchConsumer.cs" />
+    <Compile Include="Elasticsearch\ucFacetGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\ucFacetGroup.Designer.cs">
+      <DependentUpon>ucFacetGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elasticsearch\ucFacetItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\BeforeeCLCollectionChangeEventArgs.cs" />
+    <Compile Include="EnquiryControls\Direction.cs" />
+    <Compile Include="EnquiryControls\eDataSelector\eDataSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eDataSelector\searchDataList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eDataSelector\searchDataList.Designer.cs">
+      <DependentUpon>searchDataList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnquiryControls\eDataSelector\SearchListUITypeEditor.cs" />
+    <Compile Include="EnquiryControls\SelectionType.cs" />
+    <Compile Include="InputValidation.cs" />
+    <Compile Include="Methods.cs" />
+    <Compile Include="DataGridControls\CellDisplayEventArgs.cs" />
+    <Compile Include="Design\DataListEditor.cs" />
+    <Compile Include="Dialogs\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\V2\frmDialogV2.cs" />
+    <Compile Include="Dialogs\V2\frmOMSItemV2.cs" />
+    <Compile Include="Dialogs\V2\frmOMSTypeV2.cs" />
+    <Compile Include="DialogWrappers\ConnectionStringBuilder.cs" />
+    <Compile Include="DialogWrappers\ErrorBox.cs" />
+    <Compile Include="DialogWrappers\ExtendedDataScreen.cs" />
+    <Compile Include="DialogWrappers\InputBox.cs" />
+    <Compile Include="DialogWrappers\MessageBox.cs" />
+    <Compile Include="DialogWrappers\RPCHandShake.cs" />
+    <Compile Include="DialogWrappers\RPCHelper.cs" />
+    <Compile Include="DocumentManagement\Addins\DocumentHighlightOptions.cs" />
+    <Compile Include="DocumentManagement\Commands\SetDocumentExternalVisibilityCommand.cs" />
+    <Compile Include="EnquiryControls\eXPComboBoxStatesLookup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectLinkRetriever.cs" />
+    <Compile Include="OMS Applications\BulkDocumentProcessCompletedArgs.cs" />
+    <Compile Include="OMS Applications\PDF.cs" />
+    <Compile Include="OMS Object Factory\AssociateFactoryResolver.cs" />
+    <Compile Include="OMS Object Factory\ClientFactoryResolver.cs" />
+    <Compile Include="OMS Object Factory\ContactFactoryResolver.cs" />
+    <Compile Include="OMS Object Factory\DocumentFactoryResolver.cs" />
+    <Compile Include="OMS Object Factory\FeeEarnerFactoryResolver.cs" />
+    <Compile Include="OMS Object Factory\OMSFileFactoryResolver.cs" />
+    <Compile Include="OMS Object Factory\OMSObjectFactory.cs" />
+    <Compile Include="DialogWrappers\OMSTypeScreen.cs" />
+    <Compile Include="DialogWrappers\Report.cs" />
+    <Compile Include="DialogWrappers\ReportStartupCommand.cs" />
+    <Compile Include="DialogWrappers\ReportStartupParams.cs" />
+    <Compile Include="DialogWrappers\Screen.cs" />
+    <Compile Include="DialogWrappers\Search.cs" />
+    <Compile Include="DialogWrappers\SelectAssociate.cs" />
+    <Compile Include="DialogWrappers\SelectClient.cs" />
+    <Compile Include="DialogWrappers\SelectFile.cs" />
+    <Compile Include="DialogWrappers\Wizard.cs" />
+    <Compile Include="DialogWrappers\ZoomBox.cs" />
+    <Compile Include="DocumentManagement\Addins\DocumentAddinHost.cs" />
+    <Compile Include="DocumentManagement\Addins\IDocumentsAddin.cs" />
+    <Compile Include="DocumentManagement\Addins\IAdvancedPreviewHandler.cs" />
+    <Compile Include="DocumentManagement\Addins\IFindDocument.cs" />
+    <Compile Include="DocumentManagement\Commands\CheckInDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\ExportDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\ImportDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\ReplyToAuthoriseCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\SendDocumentViaEmailCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\SendToAuthoriseCommand.cs" />
+    <Compile Include="DocumentManagement\Wrappers\DocumentVersionPicker.cs" />
+    <Compile Include="DocumentManagement\DocumentVersionPickerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentVersionPickerForm.Designer.cs">
+      <DependentUpon>DocumentVersionPickerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\LockableFetchSettingsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\LockableFetchSettingsEditor.designer.cs">
+      <DependentUpon>LockableFetchSettingsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\LockableStoreSettingsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\LockableStoreSettingsEditor.designer.cs">
+      <DependentUpon>LockableStoreSettingsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\StorageSettingsContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\StorageSettingsContainer.designer.cs">
+      <DependentUpon>StorageSettingsContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\StorageSettingsEditorBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\StorageSettingsEditorBase.designer.cs">
+      <DependentUpon>StorageSettingsEditorBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\StorageSettingsForm.cs" />
+    <Compile Include="DocumentManagement\Storage\StorageSettingsForm.designer.cs">
+      <DependentUpon>StorageSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\VersionFetchSettingsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\VersionFetchSettingsEditor.designer.cs">
+      <DependentUpon>VersionFetchSettingsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\VersionStoreSettingsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Storage\VersionStoreSettingsEditor.designer.cs">
+      <DependentUpon>VersionStoreSettingsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Addins\ucBuiltInDocuments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Addins\DocumentPreviewAddin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Addins\DocumentPreviewAddin.Designer.cs">
+      <DependentUpon>DocumentPreviewAddin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Addins\DocumentVersionsAddin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\Addins\DocumentVersionsAddin.Designer.cs">
+      <DependentUpon>DocumentVersionsAddin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Wrappers\DocumentPicker.cs" />
+    <Compile Include="DocumentManagement\DocumentPickerForm.cs" />
+    <Compile Include="DocumentManagement\DocumentPickerForm.Designer.cs">
+      <DependentUpon>DocumentPickerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\Wrappers\DocumentPickerType.cs" />
+    <Compile Include="DocumentManagement\DocumentVersions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\DocumentVersions.Designer.cs">
+      <DependentUpon>DocumentVersions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\OfflineDocumentPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\OfflineDocumentPicker.Designer.cs">
+      <DependentUpon>OfflineDocumentPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\ucDocumentGrouping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\ucDocumentGrouping.Designer.cs">
+      <DependentUpon>ucDocumentGrouping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagement\ucDocumentPreviewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\VersionOptionsPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentManagement\VersionOptionsPicker.Designer.cs">
+      <DependentUpon>VersionOptionsPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnquiryControls\eADUserSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eADUserSelector.Designer.cs">
+      <DependentUpon>eADUserSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnquiryControls\eEmbedFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eLastEmailsForAssociates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmFullScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OMS Applications\BulkDocumentProcessArgs.cs" />
+    <Compile Include="OMS Applications\DocSaveStatus.cs" />
+    <Compile Include="OMS Applications\OpenSettings.cs" />
+    <Compile Include="OMS Applications\PrintSettings.cs" />
+    <Compile Include="OMS Applications\SaveSettings.cs" />
+    <Compile Include="OMS Applications\Shell.cs" />
+    <Compile Include="OMS Applications\ShellFile.cs" />
+    <Compile Include="OMS Applications\Simple.cs" />
+    <Compile Include="DocumentManagement\Commands\CopyDocumentCommand.cs" />
+    <Compile Include="DocumentManagement\Commands\MoveDocumentCommand.cs" />
+    <Compile Include="OMS Object Factory\UserFactoryResolver.cs" />
+    <Compile Include="PanelDataFormatting.cs" />
+    <Compile Include="PrecedentBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Accelerators.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FormStorage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\OpenSaveEnquiry.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ResourceLookup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridControls\DataGridComboBox2Column.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridControls\DataGridComboBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridControls\DataGridImageColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridControls\DataGridLabelColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridControls\DataGridMemoBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridControls\DataGridTextBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Delegates.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\ErrorBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\frmConnections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\frmGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\frmHourGlass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\frmInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\frmPasswordRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\frmSetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Common\ZoomBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmAbout.cs" />
+    <Compile Include="Dialogs\frmAdditionalText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmConflictSearch.cs" />
+    <Compile Include="Dialogs\frmDeleteField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmExtDataScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmFax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmFields.cs" />
+    <Compile Include="Dialogs\frmJobs.cs" />
+    <Compile Include="Dialogs\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmOMSDocumentDialog.cs" />
+    <Compile Include="Dialogs\frmOMSItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmOMSType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmOpenDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmPrecedent.cs" />
+    <Compile Include="Dialogs\frmSearch.cs" />
+    <Compile Include="Dialogs\frmSearchPrecedent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmSelectClient.cs" />
+    <Compile Include="Dialogs\frmSelectClientFile.cs" />
+    <Compile Include="Dialogs\frmSelectClientFileAssoc.cs" />
+    <Compile Include="OMS Applications\frmSimpleDoc.cs" />
+    <Compile Include="Dialogs\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\Design\CodeLookupDisplay.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\Design\frmCodeLookupMulti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\Design\frmCodeLookupSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\Design\frmListSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\Design\frmTextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\Design\frmToolbarButtonEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\Design\ucPanelDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\Design\ucSelectionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eAddress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eAddressPassiveSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eAddressSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eCLCollectionSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eClientAddressSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eContactPassiveSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eContactSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eControlImporter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eCurrency.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eEmailSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eFileReview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eLockIcon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eModificationData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eNewTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eNumberSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\ePictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eSelectorBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eSourceSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eToolbars.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eWizardPageChanger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\eXPComboBoxCodeLookup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\omsComboImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnquiryControls\ucDateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Enumerations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventArrayList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OMS Applications\OMSApp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Renderers\DateWizardForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderers\EnquiryForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderers\EnquiryFormSettings.cs" />
+    <Compile Include="Renderers\ExtendedDataForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderers\FormRendererBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderers\RequiredFieldRenderer.cs" />
+    <Compile Include="Resources\Images.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Saved Searches\SavedSearch.cs" />
+    <Compile Include="Script.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Elasticsearch\BlueCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Breadcrumbs\BreadCrumbsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Browsers\Api\CredentialManagerApi.cs" />
+    <Compile Include="UserControls\Browsers\Api\WindowsSecurityDialogApi.cs" />
+    <Compile Include="UserControls\Browsers\ucRichBrowserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClientDetails\ucClientDetailsInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClientDetails\ucClientDetailsInfo.Designer.cs">
+      <DependentUpon>ucClientDetailsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ColorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Common\ucViewSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConflictSearch\IConflictSearcher.cs" />
+    <Compile Include="UserControls\ContextMenu\ContextMenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ContextMenu\ContextMenuItemBuilder.cs" />
+    <Compile Include="UserControls\ContextMenu\ContextMenuPopupContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ContextMenu\SecondLevelPopupContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ContextMenu\ContextMenuPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurableColumns\ColumnSettingsBuilder.cs" />
+    <Compile Include="UserControls\ConfigurableColumns\ColumnSettingsPopUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfigurableColumns\ColumnSettingsPopUp.Designer.cs">
+      <DependentUpon>ColumnSettingsPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\IconMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\MenuBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\MenuButton.cs" />
+    <Compile Include="UserControls\Common\MenuCollection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\omsDockManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\omsDockManagerInitializeSettings.cs" />
+    <Compile Include="UserControls\Common\omsSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\RTL\TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ThreeDPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucActionsBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucActionsBlock.Designer.cs">
+      <DependentUpon>ucActionsBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucAlert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucDataListPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucDataListPreview.Designer.cs">
+      <DependentUpon>ucDataListPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucErrorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucFavorites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucGroupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucGroupPanel.Designer.cs">
+      <DependentUpon>ucGroupPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucLabelField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucLabelField.Designer.cs">
+      <DependentUpon>ucLabelField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucSearchPagination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucSearchPagination.Designer.cs">
+      <DependentUpon>ucSearchPagination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ContextMenu\ToolBarActionsConverter.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\AddinDashboardCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Common\BaseCalendarBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\AppointmentsCollection.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayAppointmentDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayAppointmentDetails.Designer.cs">
+      <DependentUpon>ucDayAppointmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\DayAppointmentsDataSource.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\DayBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Common\ICalendarView.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucAppointmentCellDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucAppointmentCellDetails.Designer.cs">
+      <DependentUpon>ucAppointmentCellDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Common\ucAppointmentDetailsItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Common\ucAppointmentDetailsItem.Designer.cs">
+      <DependentUpon>ucAppointmentDetailsItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Month\MonthBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\CalendarDashboardItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\CalendarDashboardItem.Designer.cs">
+      <DependentUpon>CalendarDashboardItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\CalendarPageProvider.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Common\CalendarView.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\KeyDates\KeyDatesDashboardItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\KeyDates\KeyDatesDashboardItem.Designer.cs">
+      <DependentUpon>KeyDatesDashboardItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\CalendarIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucCalendarMultiItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucCalendarMultiItem.Designer.cs">
+      <DependentUpon>ucCalendarMultiItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPickerBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPopupContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Month\ucMonthView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Month\ucMonthView.Designer.cs">
+      <DependentUpon>ucMonthView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Month\ucCalendarDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Month\ucCalendarDay.Designer.cs">
+      <DependentUpon>ucCalendarDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Common\ucCalendarDayHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Common\ucCalendarDayHeader.Designer.cs">
+      <DependentUpon>ucCalendarDayHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPage.Designer.cs">
+      <DependentUpon>ucCalendarPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayAppointmentItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayAppointmentItem.Designer.cs">
+      <DependentUpon>ucDayAppointmentItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayPickerPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayView.Designer.cs">
+      <DependentUpon>ucDayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucHourItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucHourItem.Designer.cs">
+      <DependentUpon>ucHourItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\KeyDates\ucKeyDateItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\KeyDates\ucKeyDateItem.Designer.cs">
+      <DependentUpon>ucKeyDateItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\KeyDates\ucKeyDatesForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucMonthPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPickerPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPickerPopup.Designer.cs">
+      <DependentUpon>ucCalendarPickerPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPickerPopupItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPickerPopupItem.Designer.cs">
+      <DependentUpon>ucCalendarPickerPopupItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\ucMonthPickerPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucTimeHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Day\ucTimeHeader.Designer.cs">
+      <DependentUpon>ucTimeHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekPickerPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekPickerPopup.Designer.cs">
+      <DependentUpon>ucWeekPickerPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekPickerPopupItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekPickerPopupItem.Designer.cs">
+      <DependentUpon>ucWeekPickerPopupItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekView.Designer.cs">
+      <DependentUpon>ucWeekView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Calendar\Week\WeekBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\CellBuilders\AddinBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\CellBuilders\CalendarBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\CellBuilders\FavoritesBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\ColumnData.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewBlueCheckBoxCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewBlueCheckBoxColumn.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewCustomImageCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewCustomTextCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewCustomTextColumn.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewFlagCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewFlagColumn.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewTaskStatusCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewTaskStatusColumn.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DateHelper.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\EditFormParameters.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\ImageListProvider.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\PageDetails.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\TaskStatus.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\TaskStatusEnum.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\IEditFormContent.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\EnquiryFormContent.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Favorites\FavoritesDashboardItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Favorites\FavoritesDashboardItem.Designer.cs">
+      <DependentUpon>FavoritesDashboardItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Favorites\FavoritesPageProvider.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\OmsItemContent.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\ucEditForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\ucEditForm.Designer.cs">
+      <DependentUpon>ucEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\ucOmsItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\ucOmsItem.Designer.cs">
+      <DependentUpon>ucOmsItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\ContainerMenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellContextMenu\DashboardContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellContextMenu\DashboardContextMenuStrip.Designer.cs">
+      <DependentUpon>DashboardContextMenuStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellContextMenu\DashboardToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellContextMenu\DashboardToolStripMenuItem.Designer.cs">
+      <DependentUpon>DashboardToolStripMenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellContextMenu\DashboardToolStripProfessionalRenderer.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\ActionItem.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\ActionMenuBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\CellBuilders\EnquiryFormBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\CellBuilders\ICellBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\CellBuilders\MatterListBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\CellBuilders\SearchListBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewFavoritesCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\DataGridViewFavoritesColumn.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\IPageProvider.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\IQuickSearch.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\BaseContainerPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Common\CellDialog.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\Common\ucDataView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Common\ucDataView.Designer.cs">
+      <DependentUpon>ucDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\DashboardCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\DashboardCellConverter.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\DashboardCellEnum.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\EnquiryFormDashboardCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\KeyDatesDashboardCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\MatterListDashboardCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\MatterList\BudgetBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\MatterList\BudgetPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\MatterList\BudgetPopup.Designer.cs">
+      <DependentUpon>BudgetPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\Common\FavoritesProvider.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\MatterList\MatterListDashboardItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\MatterList\MatterListDashboardItem.Designer.cs">
+      <DependentUpon>MatterListDashboardItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\MatterList\MatterListPageProvider.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\MatterList\ucBudgetItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\MatterList\ucBudgetItem.Designer.cs">
+      <DependentUpon>ucBudgetItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\OmsObjectDashboardCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\FavoritesDashboardCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\SearchListDashboardCell.cs" />
+    <Compile Include="UserControls\Dashboard\CellControls\TabHeaders\tabHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\TabHeaders\ucTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\TabHeaders\ucTabs.Designer.cs">
+      <DependentUpon>ucTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\ucCellContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\ucCellContainer.Designer.cs">
+      <DependentUpon>ucCellContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\ucPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellControls\ucPageControl.Designer.cs">
+      <DependentUpon>ucPageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\CellContextMenu\CellMenuBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\CellPopupContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\ContentContainer.cs" />
+    <Compile Include="UserControls\Dashboard\DashboardItemBuilder.cs" />
+    <Compile Include="UserControls\Dashboard\EmptyCellProvider.cs" />
+    <Compile Include="UserControls\Dashboard\ICellsContainer.cs" />
+    <Compile Include="UserControls\Dashboard\IDashboardItem.cs" />
+    <Compile Include="UserControls\Dashboard\TileCodes.cs" />
+    <Compile Include="UserControls\Dashboard\ucDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\ucDashboard.Designer.cs">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\ucDashboardItemSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\ucDashboardItemSearch.Designer.cs">
+      <DependentUpon>ucDashboardItemSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\ucEmptyCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\ucEmptyCell.Designer.cs">
+      <DependentUpon>ucEmptyCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConflictSearch\ConflictSelectedEventArgs.cs" />
+    <Compile Include="UserControls\Dashboard\ucMatterCentricDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dashboard\ucMatterCentricDashboard.Designer.cs">
+      <DependentUpon>ucMatterCentricDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InfoPanel\ucActionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\NavigationPopupBuilder.cs" />
+    <Compile Include="UserControls\NavigationPanel\NavigationPopupContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\NavigationPopupContainer.Designer.cs">
+      <DependentUpon>NavigationPopupContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\NavigationPopupItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\NavigationPopupItem.Designer.cs">
+      <DependentUpon>NavigationPopupItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\GroupData.cs" />
+    <Compile Include="UserControls\NavigationPanel\HorizontalMenuBuilder.cs" />
+    <Compile Include="UserControls\NavigationPanel\HorizontalNavPanelPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\HorizontalNavPanelPopup.Designer.cs">
+      <DependentUpon>HorizontalNavPanelPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\IHorizontalItem.cs" />
+    <Compile Include="UserControls\NavigationPanel\ILabelFactory.cs" />
+    <Compile Include="UserControls\NavigationPanel\NavigationBuilder.cs" />
+    <Compile Include="UserControls\NavigationPanel\NavigationPanelBuilder.cs" />
+    <Compile Include="UserControls\NavigationPanel\NavigationPanelFactory.cs" />
+    <Compile Include="UserControls\NavigationPanel\RightImageMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\RightImageMenuItem.Designer.cs">
+      <DependentUpon>RightImageMenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\TabData.cs" />
+    <Compile Include="UserControls\NavigationPanel\ucHorizontalNavigationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\ucHorizontalNavigationPanel.Designer.cs">
+      <DependentUpon>ucHorizontalNavigationPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\ucHorizontalNavigationPanelItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\ucNavigationContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\ucNavigationItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\ucNavigationItem.Designer.cs">
+      <DependentUpon>ucNavigationItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucPanel.Designer.cs">
+      <DependentUpon>ucPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucRichTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucVerticalContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucVerticalContactEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\ucVerticalContacts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\EventMethodData.cs" />
+    <Compile Include="UserControls\MDIMenu\frmPasswordRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\IMainParent.cs" />
+    <Compile Include="UserControls\MDIMenu\IMenuMerge.cs" />
+    <Compile Include="CodeBuilder\Methods.cs" />
+    <Compile Include="UserControls\MDIMenu\ucAdminKitNodeMover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\ucAdminKitNodeMover.Designer.cs">
+      <DependentUpon>ucAdminKitNodeMover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\ucOMSAdminKitConsole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\ucOMSAdminKitConsole.Designer.cs">
+      <DependentUpon>ucOMSAdminKitConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\ucScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\ucScreen.Designer.cs">
+      <DependentUpon>ucScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\V2Host\frmDockMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\V2Host\TreeView Navigation\IOBjectDirty.cs" />
+    <Compile Include="UserControls\MDIMenu\V2Host\TreeView Navigation\IObjectUnlock.cs" />
+    <Compile Include="UserControls\MDIMenu\V2Host\TreeView Navigation\IObjectUpdate.cs" />
+    <Compile Include="UserControls\MDIMenu\V2Host\TreeView Navigation\ITabControl.cs" />
+    <Compile Include="UserControls\MDIMenu\V2Host\TreeView Navigation\ITreeViewNavigationHost.cs" />
+    <Compile Include="UserControls\MDIMenu\V2Host\ucDockMainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\ucNavigationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavigationPanel\ucNavigationPanel.Designer.cs">
+      <DependentUpon>ucNavigationPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoDisplayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoDisplayControl.Designer.cs">
+      <DependentUpon>NoDisplayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Browsers\ucRichBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Browsers\ucRichBrowser.Designer.cs">
+      <DependentUpon>ucRichBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OMSItems\EntityImageProvider.cs" />
+    <Compile Include="UserControls\OMSItems\OMSItemFactory.cs" />
+    <Compile Include="UserControls\OMSItems\ucOMSItemV2Date.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OMSItems\ucOMSItemWizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OMSItems\ucOMSItemWizard.Designer.cs">
+      <DependentUpon>ucOMSItemWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TreeView\CheckBoxElementAccessibleObject.cs" />
+    <Compile Include="UserControls\TreeView\RadTreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Breadcrumbs\BreadCrumbItem.cs" />
+    <Compile Include="UserControls\Breadcrumbs\BreadCrumbsBuilder.cs" />
+    <Compile Include="UserControls\TreeView\ucMatterFoldersTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TreeView\ucMatterFoldersTree.Designer.cs">
+      <DependentUpon>ucMatterFoldersTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucAutoSuggestTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConflictSearch\ucPopupInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConflictSearch\ucPopupInfo.Designer.cs">
+      <DependentUpon>ucPopupInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConflictSearch\ucSearchConflicts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConflictSearch\ucSearchConflicts.Designer.cs">
+      <DependentUpon>ucSearchConflicts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OMSItems\ucOMSItemBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OMSItems\ucOMSItemBase.Designer.cs">
+      <DependentUpon>ucOMSItemBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OMSItems\ucOMSItemV2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OMSItems\ucOMSItemV2.Designer.cs">
+      <DependentUpon>ucOMSItemV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\V2\DockableControlConfiguration.cs" />
+    <Compile Include="UserControls\V2\ucAlertLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\V2\ucAlertLabel.Designer.cs">
+      <DependentUpon>ucAlertLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V2 Specific Classes\DockablePaneSettings.cs" />
+    <Compile Include="ImageListSelector.cs" />
+    <Compile Include="V2 Specific Classes\PanelHandler.cs" />
+    <Compile Include="V2 Specific Classes\PanelState.cs" />
+    <Compile Include="UserControls\ucOMSTypeBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucOMSTypeBrowser.Designer.cs">
+      <DependentUpon>ucOMSTypeBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucOMSTypeTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\InfoPanel\ucNavCmdButtons.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\InfoPanel\ucNavCmdDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserControls\InfoPanel\ucNavCommands.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\InfoPanel\ucNavPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\InfoPanel\ucNavRichText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\InfoPanel\ucPanelNav.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\InfoPanel\ucPanelNavTop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\DataGridEventColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\DataGridEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\frmAdminDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\frmCodeBuilder_ControlPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\frmCodeBuilder_References.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeBuilder\frmCodeBuilder_References.Designer.cs">
+      <DependentUpon>frmCodeBuilder_References.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\GoToLineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\StyleEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\ucEditBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\ucEditBase2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MDIMenu\ucHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectorRepeaters\ucAssociateRepeaterContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectorRepeaters\ucAssociateSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectorRepeaters\ucAssociateVertSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectorRepeaters\ucContactSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectorRepeaters\ucJobListRepeaterContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectorRepeaters\ucPrecJobSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectorRepeaters\ucSelectorClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelectorRepeaters\ucSelectorRepeaterContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OMSItems\ucOMSItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucOMSTypeDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucPrecedent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSearchManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSelectClientFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSubDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTimeStat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTimeStats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucValidatePageChange.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucOMSTypeEmbeded.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucOMSTypeEmbeded.Designer.cs">
+      <DependentUpon>ucOMSTypeEmbeded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\V2\ucOMSTypeDisplayV2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="V2 Specific Classes\TreeNodeColoration.cs" />
+    <Compile Include="UserControls\MDIMenu\V2Host\TreeView Navigation\TreeNavigationBuilder.cs" />
+    <Compile Include="UserControls\MDIMenu\V2Host\TreeView Navigation\TreeNavigationActions.cs" />
+    <Compile Include="UserControls\V2\TreeViewNavigation.cs" />
+    <Compile Include="VersionControl\IObjectComparison.cs" />
+    <Compile Include="VersionControl\LockState.cs" />
+    <Compile Include="VersionControl\VersionComparisonSelector\VersionComparisonSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionControl\VersionComparisonSelector\VersionComparisonSelector.Designer.cs">
+      <DependentUpon>VersionComparisonSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VersionControl\VersionDataRestoration\IVersionDataRestorer.cs" />
+    <Compile Include="VersionControl\VersionDataRestoration\ObjectVersionDataSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionControl\VersionDataRestoration\ObjectVersionDataSelector.Designer.cs">
+      <DependentUpon>ObjectVersionDataSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VersionControl\VersionDataRestoration\PrecedentVersionRestorer.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\BaseVersionDataArchiver.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\frmSaveWithVersionData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionControl\VersionDataSaving\frmSaveWithVersionData.Designer.cs">
+      <DependentUpon>frmSaveWithVersionData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VersionControl\VersionDataSaving\LinkedItem.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\LinkedItemVersionDataArchiver.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\LinkItemNodeBuilder.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\VersionControlSupport.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\VersionDataArchivers.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\VersionDataSaver.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\VersionDataXMLHeader.cs" />
+    <Compile Include="VersionControl\VersionDataSaving\VersionTables.cs" />
+    <Compile Include="WizardPageTracker.cs" />
+    <Compile Include="Wizards\frmADImportUsersWizard.cs" />
+    <Compile Include="Wizards\frmAssociateRemoteWizard.cs" />
+    <Compile Include="Wizards\frmAssociateWizard.cs" />
+    <Compile Include="Wizards\frmClientTakeonWizard.cs" />
+    <Compile Include="Wizards\frmContactWizard.cs" />
+    <Compile Include="Wizards\frmDateWizard.cs" />
+    <Compile Include="Wizards\frmFileWizard.cs" />
+    <Compile Include="Wizards\frmOMSTypeWizard.cs" />
+    <Compile Include="Wizards\frmUFNWizard.cs" />
+    <Compile Include="Wizards\frmWizard.cs" />
+    <EmbeddedResource Include="Addins\ucAssociates.resx">
+      <DependentUpon>ucAssociates.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\ucBaseAddin.resx">
+      <DependentUpon>ucBaseAddin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\ucContacts.resx">
+      <DependentUpon>ucContacts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\ucDocuments.resx">
+      <DependentUpon>ucDocuments.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\ucFileList.resx">
+      <DependentUpon>ucFileList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\ucFundTypes.resx">
+      <DependentUpon>ucFundTypes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\ucMilestones.resx">
+      <DependentUpon>ucMilestones.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\ucTimeRecording.resx">
+      <DependentUpon>ucTimeRecording.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Accelerators.resx">
+      <DependentUpon>Accelerators.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\FormStorage.resx">
+      <DependentUpon>FormStorage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\OpenSaveEnquiry.resx">
+      <DependentUpon>OpenSaveEnquiry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ResourceLookup.resx">
+      <DependentUpon>ResourceLookup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridControls\DataGridComboBox2Column.resx">
+      <DependentUpon>DataGridComboBox2Column.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridControls\DataGridComboBoxColumn.resx">
+      <DependentUpon>DataGridComboBoxColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridControls\DataGridLabelColumn.resx">
+      <DependentUpon>DataGridLabelColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridControls\DataGridMemoBoxColumn.resx">
+      <DependentUpon>DataGridMemoBoxColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridControls\DataGridTextBoxColumn.resx">
+      <DependentUpon>DataGridTextBoxColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\ErrorBox.resx">
+      <DependentUpon>ErrorBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\frmConnections.resx">
+      <DependentUpon>frmConnections.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\frmGrid.resx">
+      <DependentUpon>frmGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\frmHourGlass.resx">
+      <DependentUpon>frmHourGlass.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\frmInputBox.resx">
+      <DependentUpon>frmInputBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\frmPasswordRequest.resx">
+      <DependentUpon>frmPasswordRequest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\frmProgress.resx">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\frmSetPassword.resx">
+      <DependentUpon>frmSetPassword.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Common\ZoomBox.resx">
+      <DependentUpon>ZoomBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmAdditionalText.resx">
+      <DependentUpon>frmAdditionalText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmConflictSearch.resx">
+      <DependentUpon>frmConflictSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmDeleteField.resx">
+      <DependentUpon>frmDeleteField.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmDialog.resx">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmExtDataScreen.resx">
+      <DependentUpon>frmExtDataScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmFax.resx">
+      <DependentUpon>frmFax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmFields.resx">
+      <DependentUpon>frmFields.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmJobs.resx">
+      <DependentUpon>frmJobs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmLogin.de.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmOMSDocumentDialog.resx">
+      <DependentUpon>frmOMSDocumentDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmOMSItem.resx">
+      <DependentUpon>frmOMSItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmOMSType.resx">
+      <DependentUpon>frmOMSType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmOpenDialog.resx">
+      <DependentUpon>frmOpenDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmPrecedent.resx">
+      <DependentUpon>frmPrecedent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmSearchPrecedent.resx">
+      <DependentUpon>frmSearchPrecedent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmSelectClient.resx">
+      <DependentUpon>frmSelectClient.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmSelectClientFile.resx">
+      <DependentUpon>frmSelectClientFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmSelectClientFileAssoc.resx">
+      <DependentUpon>frmSelectClientFileAssoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OMS Applications\frmSimpleDoc.resx">
+      <DependentUpon>frmSimpleDoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentManagement\DocumentPickerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DocumentPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\Design\frmCodeLookupMulti.resx">
+      <DependentUpon>frmCodeLookupMulti.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\Design\frmCodeLookupSelector.resx">
+      <DependentUpon>frmCodeLookupSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\Design\frmListSelector.resx">
+      <DependentUpon>frmListSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\Design\frmTextEditor.resx">
+      <DependentUpon>frmTextEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\Design\frmToolbarButtonEditor.resx">
+      <DependentUpon>frmToolbarButtonEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\Design\ucSelectionItem.resx">
+      <DependentUpon>ucSelectionItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eAddress.resx">
+      <DependentUpon>eAddress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eAddressPassiveSearch.resx">
+      <DependentUpon>eAddressPassiveSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eAddressSelector.resx">
+      <DependentUpon>eAddressSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eCLCollectionSelector.resx">
+      <DependentUpon>eCLCollectionSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eClientAddressSelector.resx">
+      <DependentUpon>eClientAddressSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eContactPassiveSearch.resx">
+      <DependentUpon>eContactPassiveSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eContactSelector.resx">
+      <DependentUpon>eContactSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eControlImporter.resx">
+      <DependentUpon>eControlImporter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eCurrency.resx">
+      <DependentUpon>eCurrency.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eEmailSelector.resx">
+      <DependentUpon>eEmailSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eFileReview.resx">
+      <DependentUpon>eFileReview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eLockIcon.resx">
+      <DependentUpon>eLockIcon.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eModificationData.resx">
+      <DependentUpon>eModificationData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eNewTime.resx">
+      <DependentUpon>eNewTime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eNumberSelector.resx">
+      <DependentUpon>eNumberSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\ePictureBox.resx">
+      <DependentUpon>ePictureBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eSelectorBase.resx">
+      <DependentUpon>eSelectorBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eSourceSelector.resx">
+      <DependentUpon>eSourceSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eToolbars.resx">
+      <DependentUpon>eToolbars.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eWizardPageChanger.resx">
+      <DependentUpon>eWizardPageChanger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\eXPComboBoxCodeLookup.resx">
+      <DependentUpon>eXPComboBoxCodeLookup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\omsComboImageBox.resx">
+      <DependentUpon>omsComboImageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryControls\ucDateTimePicker.resx">
+      <DependentUpon>ucDateTimePicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderers\DateWizardForm.resx">
+      <DependentUpon>DateWizardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderers\EnquiryForm.resx">
+      <DependentUpon>EnquiryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderers\ExtendedDataForm.resx">
+      <DependentUpon>ExtendedDataForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderers\FormRendererBase.resx">
+      <DependentUpon>FormRendererBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AdminMenu\00.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\01.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\02.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\03.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\04.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\05.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\06.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\07.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\08.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\09.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\10.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\11.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\12.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\13.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\14.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\15.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\16.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\17.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\18.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\19.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\20.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\21.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\22.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\23.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\24.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\25.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\26.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\27.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\28.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\29.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\30.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\31.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\32.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\33.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\34.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\35.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\36.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\37.ICO" />
+    <EmbeddedResource Include="Resources\AdminMenu\38.ICO" />
+    <EmbeddedResource Include="Resources\Arrows.bmp" />
+    <EmbeddedResource Include="Resources\CoolButtons\00.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\01.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\02.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\03.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\04.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\05.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\06.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\07.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\08.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\09.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\10.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\11.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\12.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\13.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\14.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\15.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\16.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\17.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\18.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\19.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\20.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\21.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\22.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\23.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\24.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\25.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\26.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\27.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\28.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\29.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\30.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\31.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\32.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\33.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\34.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\35.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\36.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\37.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\38.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\39.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\40.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\41.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\42.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\43.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\44.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\45.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\46.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\47.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\48.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\49.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\50.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\51.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\52.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\53.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\54.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\55.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\56.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\57.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\58.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\59.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\60.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\61.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\62.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\63.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\64.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\65.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\66.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\67.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\68.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\69.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\70.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\71.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\72.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\73.ICO" />
+    <EmbeddedResource Include="Resources\CoolButtons\74.ICO" />
+    <EmbeddedResource Include="Resources\Developments\00.ICO" />
+    <EmbeddedResource Include="Resources\Developments\01.ICO" />
+    <EmbeddedResource Include="Resources\Developments\02.ICO" />
+    <EmbeddedResource Include="Resources\Developments\03.ICO" />
+    <EmbeddedResource Include="Resources\Developments\04.ICO" />
+    <EmbeddedResource Include="Resources\Developments\05.ICO" />
+    <EmbeddedResource Include="Resources\Developments\06.ICO" />
+    <EmbeddedResource Include="Resources\Developments\07.ICO" />
+    <EmbeddedResource Include="Resources\Developments\08.ICO" />
+    <EmbeddedResource Include="Resources\Developments\09.ICO" />
+    <EmbeddedResource Include="Resources\Developments\10.ICO" />
+    <EmbeddedResource Include="Resources\Developments\11.ICO" />
+    <EmbeddedResource Include="Resources\Developments\12.ICO" />
+    <EmbeddedResource Include="Resources\Developments\13.ICO" />
+    <EmbeddedResource Include="Resources\Developments\14.ICO" />
+    <EmbeddedResource Include="Resources\Developments\15.ICO" />
+    <EmbeddedResource Include="Resources\Entities\0.ico" />
+    <EmbeddedResource Include="Resources\Entities\1.ico" />
+    <EmbeddedResource Include="Resources\Entities\10.ico" />
+    <EmbeddedResource Include="Resources\Entities\11.ico" />
+    <EmbeddedResource Include="Resources\Entities\2.ico" />
+    <EmbeddedResource Include="Resources\Entities\3.ico" />
+    <EmbeddedResource Include="Resources\Entities\4.ico" />
+    <EmbeddedResource Include="Resources\Entities\5.ico" />
+    <EmbeddedResource Include="Resources\Entities\6.ico" />
+    <EmbeddedResource Include="Resources\Entities\7.ico" />
+    <EmbeddedResource Include="Resources\Entities\8.ico" />
+    <EmbeddedResource Include="Resources\Entities\9.ico" />
+    <EmbeddedResource Include="Resources\Entities\FindClient.ico" />
+    <EmbeddedResource Include="Resources\omswinui.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RichText.bmp" />
+    <EmbeddedResource Include="Resources\WhiteIcons\Close.ico" />
+    <EmbeddedResource Include="Resources\WhiteIcons\Expand.ico" />
+    <EmbeddedResource Include="Resources\WhiteIcons\Shrink.ico" />
+    <EmbeddedResource Include="UserControls\ClientDetails\ucClientDetailsInfo.resx">
+      <DependentUpon>ucClientDetailsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\IconMenuItem.resx">
+      <DependentUpon>IconMenuItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\MenuBar.resx">
+      <DependentUpon>MenuBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\MenuButton.resx">
+      <DependentUpon>MenuButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\MenuCollection.resx">
+      <DependentUpon>MenuCollection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\omsDockManager.resx">
+      <DependentUpon>omsDockManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\omsSplitter.resx">
+      <DependentUpon>omsSplitter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ThreeDPanel.resx">
+      <DependentUpon>ThreeDPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucActionsBlock.resx">
+      <DependentUpon>ucActionsBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucAlert.resx">
+      <DependentUpon>ucAlert.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucDataListPreview.resx">
+      <DependentUpon>ucDataListPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucErrorPanel.resx">
+      <DependentUpon>ucErrorPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucFavorites.resx">
+      <DependentUpon>ucFavorites.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucGroupPanel.resx">
+      <DependentUpon>ucGroupPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucLabelField.resx">
+      <DependentUpon>ucLabelField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucSearchPagination.resx">
+      <DependentUpon>ucSearchPagination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ConfigurableColumns\ColumnSettingsPopUp.resx">
+      <DependentUpon>ColumnSettingsPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ContextMenu\ContextMenuButton.resx">
+      <DependentUpon>ContextMenuButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Week\ucAppointmentCellDetails.resx">
+      <DependentUpon>ucAppointmentCellDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Common\ucAppointmentDetailsItem.resx">
+      <DependentUpon>ucAppointmentDetailsItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\CalendarDashboardItem.resx">
+      <DependentUpon>CalendarDashboardItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\KeyDates\KeyDatesDashboardItem.resx">
+      <DependentUpon>KeyDatesDashboardItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Month\ucMonthView.resx">
+      <DependentUpon>ucMonthView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Month\ucCalendarDay.resx">
+      <DependentUpon>ucCalendarDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Common\ucCalendarDayHeader.resx">
+      <DependentUpon>ucCalendarDayHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Week\ucCalendarMultiItem.resx">
+      <DependentUpon>ucCalendarMultiItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPage.resx">
+      <DependentUpon>ucCalendarPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayAppointmentDetails.resx">
+      <DependentUpon>ucDayAppointmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayAppointmentItem.resx">
+      <DependentUpon>ucDayAppointmentItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Day\ucDayView.resx">
+      <DependentUpon>ucDayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Week\ucHourItem.resx">
+      <DependentUpon>ucHourItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\KeyDates\ucKeyDateItem.resx">
+      <DependentUpon>ucKeyDateItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPickerPopup.resx">
+      <DependentUpon>ucCalendarPickerPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\ucCalendarPickerPopupItem.resx">
+      <DependentUpon>ucCalendarPickerPopupItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Day\ucTimeHeader.resx">
+      <DependentUpon>ucTimeHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekPickerPopup.resx">
+      <DependentUpon>ucWeekPickerPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekPickerPopupItem.resx">
+      <DependentUpon>ucWeekPickerPopupItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Calendar\Week\ucWeekView.resx">
+      <DependentUpon>ucWeekView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\Common\ucDataView.resx">
+      <DependentUpon>ucDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\MatterList\BudgetPopup.resx">
+      <DependentUpon>BudgetPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\MatterList\MatterListDashboardItem.resx">
+      <DependentUpon>MatterListDashboardItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\MatterList\ucBudgetItem.resx">
+      <DependentUpon>ucBudgetItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\TabHeaders\ucTabs.resx">
+      <DependentUpon>ucTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\ucCellContainer.resx">
+      <DependentUpon>ucCellContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\ucEditForm.resx">
+      <DependentUpon>ucEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\ucOmsItem.resx">
+      <DependentUpon>ucOmsItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellControls\ucPageControl.resx">
+      <DependentUpon>ucPageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellContextMenu\DashboardContextMenuStrip.resx">
+      <DependentUpon>DashboardContextMenuStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\CellContextMenu\DashboardToolStripMenuItem.resx">
+      <DependentUpon>DashboardToolStripMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\ucDashboard.resx">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\ucDashboardItemSearch.resx">
+      <DependentUpon>ucDashboardItemSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\ucEmptyCell.resx">
+      <DependentUpon>ucEmptyCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dashboard\ucMatterCentricDashboard.resx">
+      <DependentUpon>ucMatterCentricDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InfoPanel\ucActionPanel.resx">
+      <DependentUpon>ucActionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavigationPanel\NavigationPopupContainer.resx">
+      <DependentUpon>NavigationPopupContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavigationPanel\NavigationPopupItem.resx">
+      <DependentUpon>NavigationPopupItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavigationPanel\HorizontalNavPanelPopup.resx">
+      <DependentUpon>HorizontalNavPanelPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavigationPanel\RightImageMenuItem.resx">
+      <DependentUpon>RightImageMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavigationPanel\ucHorizontalNavigationPanel.resx">
+      <DependentUpon>ucHorizontalNavigationPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavigationPanel\ucHorizontalNavigationPanelItem.resx">
+      <DependentUpon>ucHorizontalNavigationPanelItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavigationPanel\ucNavigationItem.resx">
+      <DependentUpon>ucNavigationItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucRichTextEditor.resx">
+      <DependentUpon>ucRichTextEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucVerticalContact.resx">
+      <DependentUpon>ucVerticalContact.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucVerticalContactEx.resx">
+      <DependentUpon>ucVerticalContactEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Common\ucVerticalContacts.resx">
+      <DependentUpon>ucVerticalContacts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\frmPasswordRequest.resx">
+      <DependentUpon>frmPasswordRequest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\ucAdminKitNodeMover.resx">
+      <DependentUpon>ucAdminKitNodeMover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\ucOMSAdminKitConsole.resx">
+      <DependentUpon>ucOMSAdminKitConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\V2Host\frmDockMain.resx">
+      <DependentUpon>frmDockMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\V2Host\ucDockMainView.resx">
+      <DependentUpon>ucDockMainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavigationPanel\ucNavigationPanel.resx">
+      <DependentUpon>ucNavigationPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OMSItems\ucOMSItemWizard.resx">
+      <DependentUpon>ucOMSItemWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TreeView\ucMatterFoldersTree.resx">
+      <DependentUpon>ucMatterFoldersTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OMSItems\ucOMSItemBase.resx">
+      <DependentUpon>ucOMSItemBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OMSItems\ucOMSItemV2.resx">
+      <DependentUpon>ucOMSItemV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucOMSTypeBrowser.resx">
+      <DependentUpon>ucOMSTypeBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucOMSTypeTabs.resx">
+      <DependentUpon>ucOMSTypeTabs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InfoPanel\ucNavCmdButtons.resx">
+      <DependentUpon>ucNavCmdButtons.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InfoPanel\ucNavCommands.resx">
+      <DependentUpon>ucNavCommands.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InfoPanel\ucNavPanel.resx">
+      <DependentUpon>ucNavPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InfoPanel\ucNavRichText.resx">
+      <DependentUpon>ucNavRichText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InfoPanel\ucPanelNav.resx">
+      <DependentUpon>ucPanelNav.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\InfoPanel\ucPanelNavTop.resx">
+      <DependentUpon>ucPanelNavTop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\DataGridEventColumn.resx">
+      <DependentUpon>DataGridEventColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\DataGridEvents.resx">
+      <DependentUpon>DataGridEvents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\frmAdminDesktop.resx">
+      <DependentUpon>frmAdminDesktop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\frmCodeBuilder_ControlPicker.resx">
+      <DependentUpon>frmCodeBuilder_ControlPicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeBuilder\frmCodeBuilder_References.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCodeBuilder_References.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\GoToLineForm.resx">
+      <DependentUpon>GoToLineForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\StyleEditorForm.resx">
+      <DependentUpon>StyleEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\ucEditBase.resx">
+      <DependentUpon>ucEditBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\ucEditBase2.resx">
+      <DependentUpon>ucEditBase2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MDIMenu\ucHome.resx">
+      <DependentUpon>ucHome.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectorRepeaters\ucAssociateRepeaterContainer.resx">
+      <DependentUpon>ucAssociateRepeaterContainer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectorRepeaters\ucAssociateSelector.resx">
+      <DependentUpon>ucAssociateSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectorRepeaters\ucContactSelector.resx">
+      <DependentUpon>ucContactSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectorRepeaters\ucJobListRepeaterContainer.resx">
+      <DependentUpon>ucJobListRepeaterContainer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectorRepeaters\ucPrecJobSelector.resx">
+      <DependentUpon>ucPrecJobSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectorRepeaters\ucSelectorClass.resx">
+      <DependentUpon>ucSelectorClass.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelectorRepeaters\ucSelectorRepeaterContainer.resx">
+      <DependentUpon>ucSelectorRepeaterContainer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OMSItems\ucOMSItem.resx">
+      <DependentUpon>ucOMSItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucOMSTypeDisplay.resx">
+      <DependentUpon>ucOMSTypeDisplay.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ConflictSearch\ucPopupInfo.resx">
+      <DependentUpon>ucPopupInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucPrecedent.resx">
+      <DependentUpon>ucPrecedent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Browsers\ucRichBrowser.resx">
+      <DependentUpon>ucRichBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ConflictSearch\ucSearchConflicts.resx">
+      <DependentUpon>ucSearchConflicts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSearchControl.resx">
+      <DependentUpon>ucSearchControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSearchManager.resx">
+      <DependentUpon>ucSearchManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSelectClientFile.resx">
+      <DependentUpon>ucSelectClientFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSubDocument.resx">
+      <DependentUpon>ucSubDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTimeStat.resx">
+      <DependentUpon>ucTimeStat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTimeStats.resx">
+      <DependentUpon>ucTimeStats.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucValidatePageChange.resx">
+      <DependentUpon>ucValidatePageChange.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucOMSTypeEmbeded.resx">
+      <DependentUpon>ucOMSTypeEmbeded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\V2\ucAlertLabel.resx">
+      <DependentUpon>ucAlertLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\V2\ucOMSTypeDisplayV2.resx">
+      <DependentUpon>ucOMSTypeDisplayV2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionControl\VersionComparisonSelector\VersionComparisonSelector.resx">
+      <DependentUpon>VersionComparisonSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionControl\VersionDataRestoration\ObjectVersionDataSelector.resx">
+      <DependentUpon>ObjectVersionDataSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionControl\VersionDataSaving\frmSaveWithVersionData.resx">
+      <DependentUpon>frmSaveWithVersionData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmADImportUsersWizard.resx">
+      <DependentUpon>frmADImportUsersWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmAssociateRemoteWizard.resx">
+      <DependentUpon>frmAssociateRemoteWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmAssociateWizard.resx">
+      <DependentUpon>frmAssociateWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmClientTakeonWizard.resx">
+      <DependentUpon>frmClientTakeonWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmContactWizard.resx">
+      <DependentUpon>frmContactWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmDateWizard.resx">
+      <DependentUpon>frmDateWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmFileWizard.resx">
+      <DependentUpon>frmFileWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmOMSTypeWizard.resx">
+      <DependentUpon>frmOMSTypeWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmUFNWizard.resx">
+      <DependentUpon>frmUFNWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\frmWizard.resx">
+      <DependentUpon>frmWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\MDIMenu\AssemblyReferences\" />
+    <Folder Include="UserControls\Saved Searches\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>XCOPY "$(TargetDir)" "C:\OMSCoreAssemblies\" /i /s /y
+</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1150.38\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1150.38\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1150.38\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1150.38\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>

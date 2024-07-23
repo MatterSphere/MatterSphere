@@ -1,0 +1,13 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ProductName>3E MatterSphere Horizon</ProductName>
+    <ProductFamily>3E MatterSphere</ProductFamily>
+    <ShortProductName>Horizon</ShortProductName>
+    <PublisherName>ELITE</PublisherName>
+    <ProductVersion>10.1.0</ProductVersion>
+    <UpgradeCode>3637FA3B-3180-4026-912B-CF99A8B4E3DC</UpgradeCode>
+    <SourceDir></SourceDir>
+    <OutputName>3EMatterSphereHorizonInstaller</OutputName>
+  </PropertyGroup>
+</Project>

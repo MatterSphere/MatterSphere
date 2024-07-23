@@ -1,0 +1,339 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrecGeneral
+</name>
+</assembly>
+<members>
+<member name="M:Miles33.TimeFormatting.GetStandardMinutes(System.String)">
+	<summary>
+ Given a fee earner's standard hours return the total number of minutes.
+ E.g. 7.3 is 7hours 30mins, which equates to 450 minutes
+ </summary>
+	<param name="vStdHours"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.TimeFormatting.TimeFormatCode(System.Int32)">
+	<summary>
+ Return the time format code associated with a timesheet
+ </summary>
+	<param name="timeSheetNum">The timesheet number of the timesheet</param>
+	<returns>The time format code</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.TimeFormatting.FormatTimeQtyKeyed(System.String,System.Int32,System.Int32)">
+	<summary>
+ Return a string with the time in the storage format
+ </summary>
+	<param name="timeFormatCode">The time format code, either 'UU', 'HM' or 'HU'</param>
+	<param name="totalMinutes">The total number of minutes</param>
+	<param name="MinutesPerUnit">The number of minutes in a unit</param>
+	<returns>A string version of the total minutes in the internal format</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.TimeFormatting.ReturnHoursMinutes(System.Int32,System.Int32@,System.Int32@)">
+	<summary>
+ Return the hours and minutes associated with a total number of minutes
+ </summary>
+	<param name="totalMinutes">The total number of minutes</param>
+	<param name="timeHours">The calculated number of hours</param>
+	<param name="timeMins">The calculated number of minutes</param>
+	<returns>TRUE if successful</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.TimeFormatting.ReturnHoursColonMinutes(System.Int32)">
+	<summary>
+ Given a number of minutes return the time in a presentable format
+ </summary>
+	<returns>A string format of the time in the format H:MM</returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.TimeFormatting">
+	<summary>
+ Perform time formatting operations
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.HoursMinsUnits.Convert">
+	<summary>
+ Convert the total minutes into hours and minutes
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.HoursMinsUnits.Convert(System.Int32)">
+	<summary>
+ Convert the total minutes into hours and minutes/ hours and units
+ </summary>
+	<param name="TimeUnitsPerHour"></param>
+	<remarks></remarks>
+</member><member name="T:Miles33.HoursMinsUnits">
+	<summary>
+ Time conversion class.  Convert total minutes into hours/mins or hours/units
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.PValidation.NoErrors">
+	<summary>
+ Have any validation errors occurred?
+ </summary>
+	<returns>returns TRUE if no validation errors have occurred</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PValidation.Count">
+	<summary>
+ Returns the number of validation errors
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PValidation.Add(System.Object)">
+	<summary>
+ Adds as new validation error 
+ </summary>
+	<param name="addObject"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.PValidation.ToString">
+	<summary>
+ Outputs the validation errors in a readable format
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PValidation.ErrorOccurred(System.Object)">
+	<summary>
+ Determine whether a specific error condition has occurred
+ </summary>
+	<param name="errorCondition"></param>
+	<returns>TRUE - the error condtion has occurred</returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.PValidationItem">
+	<summary>
+ A single validation error item
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.AppRegistry.RegistryFolder">
+	<summary>
+ The folder for the registry entries, as in Software\MySoftware
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.AppRegistry.RegistryFolderType">
+	<summary>
+ Pick the base registry folder, HKEY_LOCAL_USER or HKEY_LOCAL_MACHINE etc
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.AppRegistry.SaveRegistry(System.String,System.String)">
+	<summary>
+ Save a String Value to the registry
+ </summary>
+	<param name="registryName">The key of the entry</param>
+	<param name="registryValue">The value of the entry</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.AppRegistry.ReturnRegistryKey">
+	<summary>
+ Return a Registry Key based upon the base folder
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.AppRegistry.CreateRegistryKey">
+	<summary>
+ Create a Registry key based upon the base folder
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.AppRegistry.LoadRegistry(System.String,System.String)">
+	<summary>
+ Return a registry string value
+ </summary>
+	<param name="registryName">The registry name</param>
+	<param name="defaultValue">The default value if the String entry does not exist.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.AppRegistry">
+	<summary>
+ Encapulates Windows Registry functionality
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.PString.EmptyString(System.String)">
+	<summary>
+ if a string has no value return TRUE else return FALSE.
+ If a string contains space chars, this method considers it empty.
+ </summary>
+	<param name="inString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PString.UsedString(System.String)">
+	<summary>
+ return TRUE if a string has a value
+ </summary>
+	<param name="inString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PString.CompareString(System.String,System.String)">
+	<summary>
+ Compare two strings.  String objects which are not set will be treated as an empty string
+ </summary>
+	<param name="stringOne"></param>
+	<param name="stringTwo"></param>
+	<returns>TRUE if the two strings are the same</returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.PString">
+	<summary>
+ Extra string handling functions, all declared as shared
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.RCollection`1">
+	<summary>
+ A generic collection object
+ </summary>
+	<typeparam name="ItemType"></typeparam>
+	<remarks></remarks>
+</member><member name="M:Miles33.Rounding.Read(System.Decimal)">
+	<summary>
+ Read a decimal into our rounding class
+ </summary>
+	<param name="inValue"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Rounding.Write">
+	<summary>
+ Output a decimal out of the rounding class
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Rounding.Count">
+	<summary>
+ The number of decimals stored by our class
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Rounding.RoundTo(System.Decimal)">
+	<summary>
+ Alter the decimals in our objects to the decimal specified
+ by newTotal
+ </summary>
+	<param name="newTotal"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Rounding.ApplyRounding(System.Decimal)">
+	<summary>
+ Round the decimal up/down by a penny
+ </summary>
+	<param name="dRoundingDifference">The amount to round</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Rounding.CheckAllValuesZero">
+	<summary>
+ Are all of the values zero? If so this can cause issues with rounding.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Rounding.RoundingItem">
+	<summary>
+ Private Class
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Rounding">
+	<summary>
+ Generic decimal rounding class
+ Will alter a series of decimals 
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.RCollectionKey`1">
+	<summary>
+ A generic collection object using keys
+ </summary>
+	<typeparam name="ItemType"></typeparam>
+	<remarks></remarks>
+</member><member name="T:Miles33.RCollectionKey2`1">
+	<summary>
+ A generic collection object using keys except that the add methods are protected
+ </summary>
+	<typeparam name="ItemType"></typeparam>
+	<remarks>Modelled on RCollectionKey except that external objects cannot access the add/delete</remarks>
+</member><member name="M:Miles33.PFileName.CreateDirectoryIfMissing(System.String)">
+	<summary>
+ Creates a directory 'inPath' if the directory does not exist
+ </summary>
+	<param name="inPath"></param>
+	<returns>TRUE - if the directory had to be created, otherwise FALSE - the directory already existed</returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.RString">
+	<summary>
+ Dynamic SQL formatting class.  Used in the converted
+ time recording code.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.VNull(System.Object)">
+	<summary>
+ Convert an object into a string.
+ </summary>
+	<param name="vVariant"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.VNul(System.Object)">
+	<summary>
+ Convert an object into a string
+ </summary>
+	<param name="v"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.OraDate(System.String)">
+	<summary>
+ Format a string into the Oracle function: to_date
+ </summary>
+	<param name="inDate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.FormatDate(System.String)">
+	<summary>
+ Format a date into the format 01-JAN-1997
+ </summary>
+	<param name="inDate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.FormatDate(System.DateTime)">
+	<summary>
+ Format a date into the format 01-JAN-1997
+ </summary>
+	<param name="inDate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.FormatDateTime(System.DateTime)">
+	<summary>
+ Format a date datatype into the format: 01-JAN-1997 17:24:23
+ </summary>
+	<param name="inDateTime"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.OraPrep(System.String@)">
+	<summary>
+ Removes any null characters from a string, then trims the string before
+ formatting it for database output (removing apostrophes)
+ </summary>
+	<param name="Value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.OraPrepNull(System.String@)">
+	<summary>
+ Performs an OraPrep on a string, if the string is empty then replace the
+ string with the word 'null'
+ </summary>
+	<param name="Value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.FormatMoney(System.Double)">
+	<summary>
+ Format an amount into 0.00
+ </summary>
+	<param name="dMoney"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.PFormat.FormatMoney(System.Decimal)">
+	<summary>
+ Format an amount into 0.00
+ </summary>
+	<param name="dMoney"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.PFormat">
+	<summary>
+ Formatting Class
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,10 @@
+; FolderHomepageControlShim64.def : Declares the module parameters.
+
+LIBRARY      "Fwbs.ControlShim64.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE
+	DllInstall		PRIVATE

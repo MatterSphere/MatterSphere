@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://cmsopen.com/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://cmsopen.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cmsopen.com/">
+      <s:element name="Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:TimeEntryDataCreate" />
+            <s:element minOccurs="1" maxOccurs="1" name="lockOnCreate" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeEntryDataCreate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:TimeEntryDataBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Internal" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TimeEntryDataBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ActionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseHours" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CalculateWip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MatterUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NarrativeText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PhaseTaskUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrebillText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Printed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimekeeperUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ToBillAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ToBillHours" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoldDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CioSoapHeader" type="tns:CioSoapHeader" />
+      <s:complexType name="CioSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="locale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="formsTicket" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="session" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="useOfficeXtension" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="satelliteDbTarget" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="satelliteDbOnly" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeUno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:TimeEntryDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeEntryDataUpdate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:TimeEntryDataBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Internal" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReleaseWithText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeUno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="narrText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pbText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReleaseWithTextResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Release">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReleaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Unrelease">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnreleaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetPrintedFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeUno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="printed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPrintedFlagResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSingleResult" type="tns:TimeEntryData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeEntryData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:TimeEntryDataBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ImportNumber" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AdjAuEmployeeUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AdjDeEmployeeUno" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DoeStatus" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TimeUno" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisbursementUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LatestPeriod" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="OfficeCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Period" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProfitCenter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RateMethod" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SplitNumber" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="StandardAmount" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="ActivityCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="BaseAmount" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="BillPrint" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="BillSortSequence" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="BillTranUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="BilledAmount" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="BilledEmployeeUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="BilledHours" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="BilledTaxAmount" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="BilledTaxPercent" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Druno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TransferModUno" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Transferred" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="MergeTimeUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LastModified" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="RankCode" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="OriginalTaskNumber" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AdjCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AuEmployeeUno" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="WipStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntryStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BillableFlag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EntryEmployeeUno" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="PostDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Taxable" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ToBillEmployeeUno" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="TimekeeperCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TimekeeperName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TimekeeperOffice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BilledEmployeeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BilledEmployeeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BilledEmployeeOffice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ClientName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ClientCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MatterName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntryEmployeeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntryEmployeeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LocationDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MatterCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PhaseTaskCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AdjDeEmployeeCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ClientMatterCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PhaseTaskDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ActionDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TaskPlanCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MatterTimeInc" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ActionMinimumTime" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="MatterUseUnits" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MatterLanguageCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MatterTimeClass" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MatterAllowTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ActivityDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MatterLanguageDescription" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Read">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadResult" type="tns:ArrayOfTimeEntryData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTimeEntryData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimeEntryData" nillable="true" type="tns:TimeEntryData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadKeys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadKeysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadKeysResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Initialize">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeResult" type="tns:TimeEntryData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InitializeEmplUno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timekeeperUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InitializeEmplUnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeEmplUnoResult" type="tns:TimeEntryData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InitializeDataCreate">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeDataCreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeDataCreateResult" type="tns:TimeEntryDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InitializeDataUpdate">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitializeDataUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitializeDataUpdateResult" type="tns:TimeEntryDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataCreate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:TimeEntryData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataCreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataCreateResult" type="tns:TimeEntryDataCreate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:TimeEntryData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataUpdateResult" type="tns:TimeEntryDataUpdate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimeEntryData" nillable="true" type="tns:TimeEntryData" />
+      <s:element name="ArrayOfTimeEntryData" nillable="true" type="tns:ArrayOfTimeEntryData" />
+      <s:element name="ArrayOfInt" nillable="true" type="tns:ArrayOfInt" />
+      <s:element name="TimeEntryDataCreate" nillable="true" type="tns:TimeEntryDataCreate" />
+      <s:element name="TimeEntryDataUpdate" nillable="true" type="tns:TimeEntryDataUpdate" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Create" />
+  </wsdl:message>
+  <wsdl:message name="CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWithTextSoapIn">
+    <wsdl:part name="parameters" element="tns:ReleaseWithText" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWithTextSoapOut">
+    <wsdl:part name="parameters" element="tns:ReleaseWithTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWithTextCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseSoapIn">
+    <wsdl:part name="parameters" element="tns:Release" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseSoapOut">
+    <wsdl:part name="parameters" element="tns:ReleaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UnreleaseSoapIn">
+    <wsdl:part name="parameters" element="tns:Unrelease" />
+  </wsdl:message>
+  <wsdl:message name="UnreleaseSoapOut">
+    <wsdl:part name="parameters" element="tns:UnreleaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnreleaseCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SetPrintedFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPrintedFlag" />
+  </wsdl:message>
+  <wsdl:message name="SetPrintedFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPrintedFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPrintedFlagCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSingle" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapIn">
+    <wsdl:part name="parameters" element="tns:Read" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadKeysSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadKeys" />
+  </wsdl:message>
+  <wsdl:message name="ReadKeysSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadKeysCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapIn">
+    <wsdl:part name="parameters" element="tns:Initialize" />
+  </wsdl:message>
+  <wsdl:message name="InitializeSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InitializeEmplUnoSoapIn">
+    <wsdl:part name="parameters" element="tns:InitializeEmplUno" />
+  </wsdl:message>
+  <wsdl:message name="InitializeEmplUnoSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeEmplUnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeEmplUnoCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateSoapIn">
+    <wsdl:part name="parameters" element="tns:InitializeDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeDataCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:InitializeDataUpdate" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:InitializeDataUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataUpdateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataCreateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataUpdateCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWithTextHttpGetIn">
+    <wsdl:part name="timeUno" type="s:string" />
+    <wsdl:part name="narrText" type="s:string" />
+    <wsdl:part name="pbText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWithTextHttpGetOut" />
+  <wsdl:message name="ReleaseHttpGetIn">
+    <wsdl:part name="timeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseHttpGetOut" />
+  <wsdl:message name="UnreleaseHttpGetIn">
+    <wsdl:part name="timeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UnreleaseHttpGetOut" />
+  <wsdl:message name="SetPrintedFlagHttpGetIn">
+    <wsdl:part name="timeUno" type="s:string" />
+    <wsdl:part name="printed" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPrintedFlagHttpGetOut" />
+  <wsdl:message name="DeleteHttpGetIn">
+    <wsdl:part name="timeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetOut" />
+  <wsdl:message name="ReadSingleHttpGetIn">
+    <wsdl:part name="timeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetOut">
+    <wsdl:part name="Body" element="tns:TimeEntryData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTimeEntryData" />
+  </wsdl:message>
+  <wsdl:message name="ReadKeysHttpGetIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadKeysHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="InitializeHttpGetIn" />
+  <wsdl:message name="InitializeHttpGetOut">
+    <wsdl:part name="Body" element="tns:TimeEntryData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeEmplUnoHttpGetIn">
+    <wsdl:part name="timekeeperUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InitializeEmplUnoHttpGetOut">
+    <wsdl:part name="Body" element="tns:TimeEntryData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateHttpGetIn" />
+  <wsdl:message name="InitializeDataCreateHttpGetOut">
+    <wsdl:part name="Body" element="tns:TimeEntryDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataUpdateHttpGetIn" />
+  <wsdl:message name="InitializeDataUpdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:TimeEntryDataUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWithTextHttpPostIn">
+    <wsdl:part name="timeUno" type="s:string" />
+    <wsdl:part name="narrText" type="s:string" />
+    <wsdl:part name="pbText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseWithTextHttpPostOut" />
+  <wsdl:message name="ReleaseHttpPostIn">
+    <wsdl:part name="timeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseHttpPostOut" />
+  <wsdl:message name="UnreleaseHttpPostIn">
+    <wsdl:part name="timeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UnreleaseHttpPostOut" />
+  <wsdl:message name="SetPrintedFlagHttpPostIn">
+    <wsdl:part name="timeUno" type="s:string" />
+    <wsdl:part name="printed" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPrintedFlagHttpPostOut" />
+  <wsdl:message name="DeleteHttpPostIn">
+    <wsdl:part name="timeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostOut" />
+  <wsdl:message name="ReadSingleHttpPostIn">
+    <wsdl:part name="timeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostOut">
+    <wsdl:part name="Body" element="tns:TimeEntryData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTimeEntryData" />
+  </wsdl:message>
+  <wsdl:message name="ReadKeysHttpPostIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadKeysHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="InitializeHttpPostIn" />
+  <wsdl:message name="InitializeHttpPostOut">
+    <wsdl:part name="Body" element="tns:TimeEntryData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeEmplUnoHttpPostIn">
+    <wsdl:part name="timekeeperUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InitializeEmplUnoHttpPostOut">
+    <wsdl:part name="Body" element="tns:TimeEntryData" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataCreateHttpPostIn" />
+  <wsdl:message name="InitializeDataCreateHttpPostOut">
+    <wsdl:part name="Body" element="tns:TimeEntryDataCreate" />
+  </wsdl:message>
+  <wsdl:message name="InitializeDataUpdateHttpPostIn" />
+  <wsdl:message name="InitializeDataUpdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:TimeEntryDataUpdate" />
+  </wsdl:message>
+  <wsdl:portType name="TimeEntryServiceSoap">
+    <wsdl:operation name="Create">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryCreate</documentation>
+      <wsdl:input message="tns:CreateSoapIn" />
+      <wsdl:output message="tns:CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryUpdate</documentation>
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWithText">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRelease</documentation>
+      <wsdl:input message="tns:ReleaseWithTextSoapIn" />
+      <wsdl:output message="tns:ReleaseWithTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRelease</documentation>
+      <wsdl:input message="tns:ReleaseSoapIn" />
+      <wsdl:output message="tns:ReleaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Unrelease">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryUnrelease</documentation>
+      <wsdl:input message="tns:UnreleaseSoapIn" />
+      <wsdl:output message="tns:UnreleaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrintedFlag">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntrySetPrinted</documentation>
+      <wsdl:input message="tns:SetPrintedFlagSoapIn" />
+      <wsdl:output message="tns:SetPrintedFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryDelete</documentation>
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleSoapIn" />
+      <wsdl:output message="tns:ReadSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRead</documentation>
+      <wsdl:input message="tns:ReadSoapIn" />
+      <wsdl:output message="tns:ReadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadKeys">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryReadKeys</documentation>
+      <wsdl:input message="tns:ReadKeysSoapIn" />
+      <wsdl:output message="tns:ReadKeysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitialize</documentation>
+      <wsdl:input message="tns:InitializeSoapIn" />
+      <wsdl:output message="tns:InitializeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeEmplUno">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitialize</documentation>
+      <wsdl:input message="tns:InitializeEmplUnoSoapIn" />
+      <wsdl:output message="tns:InitializeEmplUnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateSoapIn" />
+      <wsdl:output message="tns:InitializeDataCreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataUpdate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitializeDataUpdate</documentation>
+      <wsdl:input message="tns:InitializeDataUpdateSoapIn" />
+      <wsdl:output message="tns:InitializeDataUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryGetDataCreate</documentation>
+      <wsdl:input message="tns:GetDataCreateSoapIn" />
+      <wsdl:output message="tns:GetDataCreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryGetDataUpdate</documentation>
+      <wsdl:input message="tns:GetDataUpdateSoapIn" />
+      <wsdl:output message="tns:GetDataUpdateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TimeEntryServiceHttpGet">
+    <wsdl:operation name="ReleaseWithText">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRelease</documentation>
+      <wsdl:input message="tns:ReleaseWithTextHttpGetIn" />
+      <wsdl:output message="tns:ReleaseWithTextHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRelease</documentation>
+      <wsdl:input message="tns:ReleaseHttpGetIn" />
+      <wsdl:output message="tns:ReleaseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Unrelease">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryUnrelease</documentation>
+      <wsdl:input message="tns:UnreleaseHttpGetIn" />
+      <wsdl:output message="tns:UnreleaseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrintedFlag">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntrySetPrinted</documentation>
+      <wsdl:input message="tns:SetPrintedFlagHttpGetIn" />
+      <wsdl:output message="tns:SetPrintedFlagHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryDelete</documentation>
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleHttpGetIn" />
+      <wsdl:output message="tns:ReadSingleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRead</documentation>
+      <wsdl:input message="tns:ReadHttpGetIn" />
+      <wsdl:output message="tns:ReadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadKeys">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryReadKeys</documentation>
+      <wsdl:input message="tns:ReadKeysHttpGetIn" />
+      <wsdl:output message="tns:ReadKeysHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitialize</documentation>
+      <wsdl:input message="tns:InitializeHttpGetIn" />
+      <wsdl:output message="tns:InitializeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeEmplUno">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitialize</documentation>
+      <wsdl:input message="tns:InitializeEmplUnoHttpGetIn" />
+      <wsdl:output message="tns:InitializeEmplUnoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateHttpGetIn" />
+      <wsdl:output message="tns:InitializeDataCreateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataUpdate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitializeDataUpdate</documentation>
+      <wsdl:input message="tns:InitializeDataUpdateHttpGetIn" />
+      <wsdl:output message="tns:InitializeDataUpdateHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TimeEntryServiceHttpPost">
+    <wsdl:operation name="ReleaseWithText">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRelease</documentation>
+      <wsdl:input message="tns:ReleaseWithTextHttpPostIn" />
+      <wsdl:output message="tns:ReleaseWithTextHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRelease</documentation>
+      <wsdl:input message="tns:ReleaseHttpPostIn" />
+      <wsdl:output message="tns:ReleaseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Unrelease">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryUnrelease</documentation>
+      <wsdl:input message="tns:UnreleaseHttpPostIn" />
+      <wsdl:output message="tns:UnreleaseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrintedFlag">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntrySetPrinted</documentation>
+      <wsdl:input message="tns:SetPrintedFlagHttpPostIn" />
+      <wsdl:output message="tns:SetPrintedFlagHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryDelete</documentation>
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleHttpPostIn" />
+      <wsdl:output message="tns:ReadSingleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryRead</documentation>
+      <wsdl:input message="tns:ReadHttpPostIn" />
+      <wsdl:output message="tns:ReadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadKeys">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryReadKeys</documentation>
+      <wsdl:input message="tns:ReadKeysHttpPostIn" />
+      <wsdl:output message="tns:ReadKeysHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitialize</documentation>
+      <wsdl:input message="tns:InitializeHttpPostIn" />
+      <wsdl:output message="tns:InitializeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeEmplUno">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitialize</documentation>
+      <wsdl:input message="tns:InitializeEmplUnoHttpPostIn" />
+      <wsdl:output message="tns:InitializeEmplUnoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitializeDataCreate</documentation>
+      <wsdl:input message="tns:InitializeDataCreateHttpPostIn" />
+      <wsdl:output message="tns:InitializeDataCreateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataUpdate">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryInitializeDataUpdate</documentation>
+      <wsdl:input message="tns:InitializeDataUpdateHttpPostIn" />
+      <wsdl:output message="tns:InitializeDataUpdateHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimeEntryServiceSoap" type="tns:TimeEntryServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://cmsopen.com/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://cmsopen.com/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWithText">
+      <soap:operation soapAction="http://cmsopen.com/ReleaseWithText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReleaseWithTextCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <soap:operation soapAction="http://cmsopen.com/Release" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReleaseCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unrelease">
+      <soap:operation soapAction="http://cmsopen.com/Unrelease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UnreleaseCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPrintedFlag">
+      <soap:operation soapAction="http://cmsopen.com/SetPrintedFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetPrintedFlagCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://cmsopen.com/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <soap:operation soapAction="http://cmsopen.com/ReadSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadSingleCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <soap:operation soapAction="http://cmsopen.com/Read" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadKeys">
+      <soap:operation soapAction="http://cmsopen.com/ReadKeys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadKeysCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap:operation soapAction="http://cmsopen.com/Initialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InitializeCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeEmplUno">
+      <soap:operation soapAction="http://cmsopen.com/InitializeEmplUno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InitializeEmplUnoCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <soap:operation soapAction="http://cmsopen.com/InitializeDataCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InitializeDataCreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataUpdate">
+      <soap:operation soapAction="http://cmsopen.com/InitializeDataUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InitializeDataUpdateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCreate">
+      <soap:operation soapAction="http://cmsopen.com/GetDataCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDataCreateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUpdate">
+      <soap:operation soapAction="http://cmsopen.com/GetDataUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDataUpdateCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimeEntryServiceHttpGet" type="tns:TimeEntryServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ReleaseWithText">
+      <http:operation location="/ReleaseWithText" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <http:operation location="/Release" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Unrelease">
+      <http:operation location="/Unrelease" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrintedFlag">
+      <http:operation location="/SetPrintedFlag" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadKeys">
+      <http:operation location="/ReadKeys" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <http:operation location="/Initialize" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeEmplUno">
+      <http:operation location="/InitializeEmplUno" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <http:operation location="/InitializeDataCreate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataUpdate">
+      <http:operation location="/InitializeDataUpdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimeEntryServiceHttpPost" type="tns:TimeEntryServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ReleaseWithText">
+      <http:operation location="/ReleaseWithText" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Release">
+      <http:operation location="/Release" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Unrelease">
+      <http:operation location="/Unrelease" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetPrintedFlag">
+      <http:operation location="/SetPrintedFlag" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadKeys">
+      <http:operation location="/ReadKeys" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <http:operation location="/Initialize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeEmplUno">
+      <http:operation location="/InitializeEmplUno" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataCreate">
+      <http:operation location="/InitializeDataCreate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeDataUpdate">
+      <http:operation location="/InitializeDataUpdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimeEntryService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">TimeEntryService</documentation>
+    <wsdl:port name="TimeEntryServiceSoap" binding="tns:TimeEntryServiceSoap">
+      <soap:address location="http://localhost/CMSNet502/Time/TimeWS/TimeEntryService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimeEntryServiceHttpGet" binding="tns:TimeEntryServiceHttpGet">
+      <http:address location="http://localhost/CMSNet502/Time/TimeWS/TimeEntryService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimeEntryServiceHttpPost" binding="tns:TimeEntryServiceHttpPost">
+      <http:address location="http://localhost/CMSNet502/Time/TimeWS/TimeEntryService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

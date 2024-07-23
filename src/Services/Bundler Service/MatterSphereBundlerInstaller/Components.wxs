@@ -1,0 +1,40 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="MatterSphereBundler.Service" Directory="INSTALLFOLDER">
+      <File Id="MatterSphereBundlerWindowsService.exe" Source="$(MatterSphereBundlerWindowsService.TargetDir)\MatterSphereBundlerWindowsService.exe" KeyPath="yes" />
+      <File Id="MatterSphereBundlerWindowsService.exe.config" Source="$(MatterSphereBundlerWindowsService.TargetDir)\MatterSphereBundlerWindowsService.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSpherePDFBundlerService"
+                      DisplayName="3E MatterSphere PDF Bundler Service"
+                      Description="The 3E MatterSphere PDF Bundler creates one PDF file made up of documents against a matter."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSpherePDFBundlerService"
+                      Wait="yes" />
+    </Component>
+
+    <Component Id="MatterSphereBundler.Dependencies" Guid="{1189029A-EAC5-46AC-A5C7-1C29566A8A23}" Directory="INSTALLFOLDER">
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Aspose.Cells.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Aspose.Email.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Aspose.PDF.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Aspose.Slides.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Aspose.Words.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\FWBS.Common.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\FWBS.ExtAggClient.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\FWBS.OMS.PDFConversion.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Fwbs.Documents.Properties.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Fwbs.Framework.Common.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Fwbs.Framework.Composition.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Fwbs.Framework.Shared.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\Fwbs.Framework.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\MatterSphereBundlerLibrary.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\MatterSphereBundlerService.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\OMS.Data.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\OMS.Infrastructure.dll" />
+      <File Source="$(MatterSphereBundlerWindowsService.TargetDir)\OMS.Library.dll" />
+    </Component>
+  </Fragment>
+</Wix>

@@ -1,0 +1,14 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <StandardDirectory Id="ProgramFiles6432Folder">
+      <Directory Id="ManufacturerFolder" Name="!(bind.Property.ProductFamily)">
+        <Directory Id="INSTALLFOLDER" Name="!(bind.Property.ShortProductName)">
+          <Directory Id="DBObjectsFolder" Name="DBObjects" />
+        </Directory>
+      </Directory>
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ManufacturerMenuFolder" Name="!(bind.Property.ProductFamily)" />
+    </StandardDirectory>
+  </Fragment>
+</Wix>

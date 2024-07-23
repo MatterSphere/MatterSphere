@@ -1,0 +1,43 @@
+﻿<Window x:Class="FWBS.OMS.Workflow.Admin.ReferencesWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:ClassModifier="internal"
+		Title="Dependencies" Height="529" Width="534" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" >
+	
+	<DockPanel>
+		<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" >
+			<Button Content="OK"  Name="buttonOK" IsDefault="True" Click="buttonOK_Click" Width="75" Height="23" Margin="5, 2, 0, 2" />
+			<Button Content="Cancel" Name="buttonCancel" IsCancel="True" Width="75" Height="23" Margin="5, 2, 0, 2" />
+		</StackPanel>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<TabControl Grid.Column="0" HorizontalAlignment="Stretch" Name="tabControl1" VerticalAlignment="Stretch" SelectionChanged="tabControl1_SelectionChanged">
+				<TabItem Header="References Only" Name="tabReferences">
+					<DataGrid Name="dataGridReferences" AutoGenerateColumns="False" AlternationCount="1" CanUserAddRows="False" CanUserDeleteRows="False"
+                              GridLinesVisibility="None" SelectionMode="Extended"/>
+				</TabItem>
+				<TabItem Header="Distributed Assemblies" Name="tabDistribution">
+					<DataGrid Name="dataGridDistribution" AutoGenerateColumns="False" AlternationCount="1" CanUserAddRows="False" CanUserDeleteRows="False"
+                              GridLinesVisibility="None" SelectionMode="Extended"/>
+				</TabItem>
+				<TabItem Header="Workflow Scripts" Name="tabScripts">
+					<DataGrid Name="dataGridScripts" AutoGenerateColumns="False" AlternationCount="1" CanUserAddRows="False" CanUserDeleteRows="False"
+                              GridLinesVisibility="None" SelectionMode="Extended"/>
+				</TabItem>
+			</TabControl>
+			<StackPanel Grid.Column="1" Orientation="Vertical" >
+				<Button Content="Browse" Name="buttonBrowse" Margin="2, 5, 2, 0" Click="buttonBrowse_Click" />
+				<Button Content="Remove" Name="buttonRemove" Margin="2, 5, 2, 0" Click="buttonRemove_Click" />
+				<Button Name="buttonAddDA" Margin="2, 5, 2, 0" Click="buttonAddDA_Click" HorizontalContentAlignment="Center">
+					<TextBlock TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						Add<LineBreak/>Distributed<LineBreak/>Assemblies
+					</TextBlock>
+				</Button>
+			</StackPanel>
+		</Grid>
+	</DockPanel>
+</Window>

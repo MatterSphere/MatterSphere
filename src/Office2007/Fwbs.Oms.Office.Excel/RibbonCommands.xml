@@ -1,0 +1,7 @@
+﻿<commands>
+  <command idMso="FileSave"/>
+  <command idMso="FileSaveAs"/>
+  <command idMso="FilePrint"/>
+  <command idMso="FileOpen"/>
+  <command idMso="FilePrintPreview"/>
+</commands>

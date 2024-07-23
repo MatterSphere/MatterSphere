@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MatterSphere_Upgrade", "MatterSphere_Upgrade.sqlproj", "{0C4AE4C4-73E1-412A-A13A-5DE40CF497AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C4AE4C4-73E1-412A-A13A-5DE40CF497AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C4AE4C4-73E1-412A-A13A-5DE40CF497AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C4AE4C4-73E1-412A-A13A-5DE40CF497AF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0C4AE4C4-73E1-412A-A13A-5DE40CF497AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4AE4C4-73E1-412A-A13A-5DE40CF497AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C4AE4C4-73E1-412A-A13A-5DE40CF497AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24FC835A-8966-49DC-B87F-99F218E3203B}
+	EndGlobalSection
+EndGlobal

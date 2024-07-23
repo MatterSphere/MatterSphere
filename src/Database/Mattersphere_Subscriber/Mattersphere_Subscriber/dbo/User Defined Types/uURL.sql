@@ -1,0 +1,3 @@
+﻿CREATE TYPE [dbo].[uURL]
+    FROM NVARCHAR (255) NOT NULL;
+

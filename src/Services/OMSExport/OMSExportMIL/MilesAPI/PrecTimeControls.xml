@@ -1,0 +1,91 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrecTimeControls
+</name>
+</assembly>
+<members>
+<member name="M:Miles33.Precedent.TimeControlsBL.TimeControls.ManipulateFEUser(Miles33.Precedent.TimeRecordingBL.FeeEarnerUsers,Miles33.Precedent.ComboBL.PrecCombo,System.Object)">
+	<summary>
+ Populate a combobox with the fee earners that the current user has access to.
+ </summary>
+	<param name="FEUs">Fee Earner Users object</param>
+	<param name="cCombo">PrecCombo object</param>
+	<param name="comboBox">A combo box object</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeControlsBL.TimeControls.LegalAidActivityComboBox(Miles33.Precedent.TimeRecordingBL.TimeClient,System.String@,System.String,Miles33.Precedent.ComboBL.PrecCombo@,System.Object@)">
+	<summary>
+ Populate a combo box with legal aid structures
+ </summary>
+	<param name="TimeClient">current TimeClient object</param>
+	<param name="previousLAStructure ">The old legal aid structure code</param>
+	<param name="lAStructure">The current legal aid structure code</param>
+	<param name="cCombo">a PrecCombo object</param>
+	<param name="comboBox">A combo box object</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeControlsBL.TimeControls.ManipulateActivityTypeComboBox(Miles33.Precedent.TimeRecordingBL.TimeClient@,Miles33.Precedent.TimeRecordingBL.TimeLine@,Miles33.Precedent.ComboBL.PrecCombo@,System.Object@)">
+	<summary>
+ Populate an activity type combo box based upon a time item
+ </summary>
+	<param name="TimeClient">current TimeClient object</param>
+	<param name="currentTimeItem">current Time Line object</param>
+	<param name="cCombo">a PrecCombo object</param>
+	<param name="comboBox">A combo box object</param>
+	<remarks>If this is a non-chargeable then populate the combobox with non-chargeable activities.
+ If this is chargeable time line then populate the combobox
+ with the relevant chargeable activities based upon 
+ its contentious flag and whether an auditors rule set has
+ been set.
+ </remarks>
+</member><member name="M:Miles33.Precedent.TimeControlsBL.TimeControls.ManipulateLitigationStageComboBox(Miles33.Precedent.TimeRecordingBL.TimeClient,Miles33.Precedent.TimeRecordingBL.TimeLine,System.Object)">
+	<summary>
+ Populate a combobox with data based upon the litigation stages for a matter.  This data
+ is the stages in progress data
+ </summary>
+	<param name="TimeClient">current TimeClient object</param>
+	<param name="currentTimeItem">current Time Line object</param>
+	<param name="comboBox">A combo box object</param>
+	<returns>a PrecCombo object containing the litigation stages</returns>
+	<remarks>If the time item has already selected a litigation stage then pre-populate the combo box</remarks>
+</member><member name="M:Miles33.Precedent.TimeControlsBL.TimeControls.ManipulateLegalAidStructures(Miles33.Precedent.TimeRecordingBL.LegalAidStructures,Miles33.Precedent.ComboBL.PrecCombo,System.Object)">
+	<summary>
+ Populate a combobox with legal aid structures based upon a 
+ legal aid structures object
+ </summary>
+	<param name="laStructures">The base legal aid structures object</param>
+	<param name="cCombo">PrecCombo object</param>
+	<param name="comboBox">A combo box object</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeControlsBL.TimeControls.ManipulateLegalAidExpenseTypes(Miles33.Precedent.TimeRecordingBL.LAExpensePool,Miles33.Precedent.ComboBL.PrecCombo,System.Object)">
+	<summary>
+ Populate a combobox with expense type data derived from a 
+ legal aid charge structure.
+ </summary>
+	<param name="expenseTypes">An LAExpensePool object</param>
+	<param name="cCombo">PrecCombo object</param>
+	<param name="comboBox">A combo box object</param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeControlsBL.TimeControls">
+	<summary>
+ An object to faciliate complicated time-related combo boxes
+ </summary>
+	<remarks>This object is designed to populate combo boxes with complicated data,
+ such as activity type based on chargeable/auditors rule set.</remarks>
+</member><member name="P:Miles33.Precedent.TimeControlsBL.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Miles33.Precedent.TimeControlsBL.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Miles33.Precedent.TimeControlsBL.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

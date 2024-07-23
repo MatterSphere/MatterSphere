@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Active Directory Configurator</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Verdana" rel="stylesheet">
+    <!-- PRODUCTION MODE
+    <link rel="stylesheet" type="text/css" href="./dist/lightweight-admin-template.min.css">
+    -->
+    <link rel="stylesheet" type="text/css" href="/content/lightweight-admin-template.css">
+    <link rel="stylesheet" type="text/css" href="/content/bem-kit.min.css">
+    <link rel="stylesheet" type="text/css" href="/content/style.css">
+</head>
+<body class="site">
+    <header role="header" class="site__header header" id="home">
+        <div class="header__wrapper">
+            <div class="header__brand">
+                <img src="/content/elite_lg_rgb_blk_pos.png" />
+                <div class="header__title">
+                    <div class="content__wrapper ">
+                        3E MatterSphere Active Directory Synchronization
+                    </div>
+                </div>
+            </div>
+            <div class="header__nav--mobile">
+                <div class="header__nav-btn" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" class="site__main main">
+        <nav class="main__nav nav">
+            <ul class="nav__wrapper">
+                <!--<li class="nav__item nav__item--active">-->
+                <li class="nav__item">
+                    <a href="/">
+                        <i class="nav__icon fa fa-dashboard"></i> Synchronization
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="/config">
+                        <i class="nav__icon fa fa-edit"></i> Configurations
+                    </a>
+                </li>
+
+            </ul>
+            <div class="footer__wrapper">
+                @Section['Other']
+            </div>
+        </nav>
+        <article class="main__content content">
+            @Section['Content']
+        </article>
+    </main>
+
+    <script src="/content/jquery.min.js"></script>
+    <script src="/content/89344806bd.js"></script>
+    <script src="/content/lightweight-admin-template.js"></script>
+    <script src="/content/syncaction.js"></script>
+
+</body>
+</html>

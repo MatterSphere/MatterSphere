@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Fwbs.Documents.Test\Test.csproj", "{BB5A801F-7857-4492-B9AE-F8FEA6B2245A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{93A5465B-6618-4D62-BBBF-0076F7941316}"
+	ProjectSection(SolutionItems) = preProject
+		DocProps.vsmdi = DocProps.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsgProperties", "Fwbs.Common.MsgProperties\MsgProperties.csproj", "{235CCE83-2946-4D4B-9985-2B53FCFC1970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OleProperties", "Fwbs.Common.OleProperties\OleProperties.csproj", "{E23D2D56-4E1E-44A7-94BC-493CE96B2A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageProperties", "Fwbs.Common.PackageProperties\PackageProperties.csproj", "{900A63BD-B627-4AAA-BB38-74A9315D2DD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JZipPackageProperties", "Fwbs.Common.JZipPackageProperties\JZipPackageProperties.csproj", "{8A721804-5E30-458D-8568-D77C6EC7F9C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocProps", "Fwbs.Common.DocumentProperties\DocProps.csproj", "{1E179E43-3B81-47A2-974D-A0DE8733E057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeXpsProperties", "Fwbs.Common.OfficeXpsProperties\OfficeXpsProperties.csproj", "{4A5A6861-46A6-4CBA-82EE-5207D1C2E9D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB5A801F-7857-4492-B9AE-F8FEA6B2245A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5A801F-7857-4492-B9AE-F8FEA6B2245A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5A801F-7857-4492-B9AE-F8FEA6B2245A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5A801F-7857-4492-B9AE-F8FEA6B2245A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235CCE83-2946-4D4B-9985-2B53FCFC1970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235CCE83-2946-4D4B-9985-2B53FCFC1970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235CCE83-2946-4D4B-9985-2B53FCFC1970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235CCE83-2946-4D4B-9985-2B53FCFC1970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E23D2D56-4E1E-44A7-94BC-493CE96B2A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23D2D56-4E1E-44A7-94BC-493CE96B2A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23D2D56-4E1E-44A7-94BC-493CE96B2A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E23D2D56-4E1E-44A7-94BC-493CE96B2A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900A63BD-B627-4AAA-BB38-74A9315D2DD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900A63BD-B627-4AAA-BB38-74A9315D2DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900A63BD-B627-4AAA-BB38-74A9315D2DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900A63BD-B627-4AAA-BB38-74A9315D2DD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A721804-5E30-458D-8568-D77C6EC7F9C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A721804-5E30-458D-8568-D77C6EC7F9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A721804-5E30-458D-8568-D77C6EC7F9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A721804-5E30-458D-8568-D77C6EC7F9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E179E43-3B81-47A2-974D-A0DE8733E057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E179E43-3B81-47A2-974D-A0DE8733E057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E179E43-3B81-47A2-974D-A0DE8733E057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E179E43-3B81-47A2-974D-A0DE8733E057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5A6861-46A6-4CBA-82EE-5207D1C2E9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5A6861-46A6-4CBA-82EE-5207D1C2E9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5A6861-46A6-4CBA-82EE-5207D1C2E9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5A6861-46A6-4CBA-82EE-5207D1C2E9D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DocProps.vsmdi
+	EndGlobalSection
+EndGlobal

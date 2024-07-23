@@ -1,0 +1,140 @@
+﻿<UserControl x:Class="Horizon.Views.IndexReports.IndexStatusView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Horizon.Views.IndexReports"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" MaxWidth="250"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:ColorZone
+            Height="40"
+            Grid.ColumnSpan="3"
+            materialDesign:ThemeAssist.Theme="Light"
+            Mode="Light"/>
+
+        <GroupBox Header="Process Estimation"
+                  Grid.Row="1"
+                  Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="5"
+                           Text="Process Time:"/>
+                <TextBlock Margin="5"
+                           Grid.Column="1"
+                           Text="{Binding ProcessTime}"/>
+
+                <TextBlock Margin="5"
+                           Grid.Row="1"
+                           Text="Estimated Time:"/>
+                <TextBlock Margin="5"
+                           Grid.Column="1"
+                           Grid.Row="1"
+                           Text="{Binding EstimatedTime}"/>
+
+                <TextBlock Margin="5"
+                           Grid.Row="2"
+                           Text="Queue items Processed:"/>
+                <TextBlock Margin="5"
+                           Grid.Column="1"
+                           Grid.Row="2"
+                           Text="{Binding QueueItemsProcessed}"/>
+
+                <TextBlock Margin="5"
+                           Grid.Row="3"
+                           Text="Left Queue items:"/>
+                <TextBlock Margin="5"
+                           Grid.Column="1"
+                           Grid.Row="3"
+                           Text="{Binding LeftQueueItems}"/>
+            </Grid>
+        </GroupBox>
+        <GridSplitter
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="3"
+            Margin="2,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Stretch"
+            ShowsPreview="False" />
+        <GroupBox Header="Entities"
+                  Grid.Row="1"
+                  Grid.Column="2"
+                  Margin="5">
+            <ScrollViewer VerticalScrollBarVisibility="Disabled">
+                <ScrollViewer.Style>
+                    <Style BasedOn="{StaticResource {x:Type ScrollViewer}}" TargetType="ScrollViewer">
+                        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=StatusDataGrid, Path=Items.Count}" Value="0">
+                                <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ScrollViewer.Style>
+                <DataGrid x:Name="StatusDataGrid"
+                    CanUserResizeColumns="False"
+                    CellStyle="{StaticResource CustomDataGridCell}"
+                    HorizontalScrollBarVisibility="Auto"
+                    ItemsSource="{Binding Entities}"
+                    Style="{StaticResource CustomDataGrid}"
+                    VerticalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            MinWidth="200"
+                            Width="*"
+                            Binding="{Binding Name}"
+                            Header="Entity" />
+                        <DataGridTextColumn
+                            MinWidth="120"
+                            Width="130"
+                            Binding="{Binding DateLabel}"
+                            Header="Start Date" />
+                        <DataGridTextColumn
+                            MinWidth="90"
+                            Width="90"
+                            Binding="{Binding Success}"
+                            Header="Succeeded" />
+                        <DataGridTextColumn
+                            MinWidth="70"
+                            Width="90"
+                            Binding="{Binding Failed}"
+                            Header="Failed" />
+                        <DataGridTextColumn
+                            MinWidth="90"
+                            Width="90"
+                            Binding="{Binding Processed}"
+                            Header="Processed" />
+                        <DataGridTextColumn
+                            MinWidth="90"
+                            Width="100"
+                            Binding="{Binding SizeLabel}"
+                            Header="Size" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+        </GroupBox>
+    </Grid>
+</UserControl>

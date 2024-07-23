@@ -1,0 +1,226 @@
+﻿<Window x:Class="Horizon.Views.Settings.IndexFieldFormEditView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Horizon.Views.Settings"
+        xmlns:settings="clr-namespace:Horizon.ViewModels.Settings"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:common="clr-namespace:Horizon.Common"
+        mc:Ignorable="d"
+        Title="Edit Index Field"
+        d:DataContext="{d:DesignInstance Type=settings:IndexFieldFormViewModel}"
+        WindowStyle="None" ResizeMode="NoResize" SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterOwner"
+        Icon="../../Resources/icon.ico">
+    <Window.Resources>
+        <common:EnumBooleanConverter x:Key="EnumBooleanConverter" />
+    </Window.Resources>
+    <Border Background="White"
+            BorderBrush="{StaticResource EliteBrightPurple}"
+            BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource EliteDarkGray}" MouseDown="Grid_MouseDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding Title}" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+                <Button
+                    Grid.Column="1"
+                    Width="20"
+                    Height="20"
+                    Margin="5"
+                    Padding="0"
+                    Command="{Binding CloseCommand}"
+                    ToolTip="Close">
+                    <Button.Content>
+                        <materialDesign:PackIcon
+                            Width="15"
+                            Height="15"
+                            VerticalAlignment="Center"
+                            Kind="Close" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Visibility="Collapsed">
+                <Label Content="Source"
+                       VerticalAlignment="Center"/>
+                <RadioButton Grid.Column="1"
+                             Grid.Row="0"
+                             Content="Default Table"
+                             GroupName="Source"
+                             IsChecked="{Binding Path=SelectedRadioButton, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=DefaultTable}"
+                             VerticalAlignment="Center"
+                             Margin="5"/>
+                <RadioButton Grid.Column="1"
+                             Grid.Row="1"
+                             Content="Extended Data"
+                             GroupName="Source"
+                             IsChecked="{Binding Path=SelectedRadioButton, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=ExtendedData}"
+                             VerticalAlignment="Center"
+                             Margin="5"/>
+                <Label Content="Table"
+                       Grid.Row="0"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0"
+                         Grid.Column="4"
+                         Margin="5"
+                         Text="{Binding TableName, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="{Binding TableEnabled}"/>
+
+                <Label Content="Table Field"
+                       Grid.Row="1"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="1"
+                         Grid.Column="4"
+                         Margin="5"
+                         ItemsSource="{Binding TableFields}"
+                         DisplayMemberPath="Label"
+                         SelectedItem="{Binding SelectedTableField}"
+                         IsEnabled="{Binding FieldEnabled}"/>
+                </StackPanel>
+
+                <Label Content="Index Field"
+                       Grid.Row="2"
+                       VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2"
+                         Grid.Column="1"
+                         Margin="5"
+                         MaxLength="128"
+                         Text="{Binding ESField, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="False"/>
+
+                <Label Content="Type"
+                       Grid.Row="3"
+                       VerticalAlignment="Center"/>
+                <TextBox Grid.Row="3"
+                         Grid.Column="1"
+                         Margin="5"
+                         MaxLength="50"
+                         Text="{Binding SelectedESType, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="False"/>
+
+                <Label Content="Analyzer"
+                       Grid.Row="4"
+                       VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="4"
+                          Grid.Column="1"
+                          Margin="5"
+                          ItemsSource="{Binding Analyzers}"
+                          SelectedItem="{Binding SelectedAnalyzer}"
+                          IsEnabled="{Binding AnalyzerFieldEnabled}"/>
+
+                <Label Content="Language"
+                       Grid.Row="5"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="5"
+                          Grid.Column="1"
+                          Margin="5"
+                          ItemsSource="{Binding Languages}"
+                          SelectedItem="{Binding LanguageAnalyzer}"
+                          IsEnabled="{Binding LanguageEnabled}"/>
+
+                <Label Content="CodeLookup Group"
+                       Grid.Row="6"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="6"
+                          Grid.Column="1"
+                          Margin="5"
+                          MinWidth="150"
+                          ItemsSource="{Binding CodeLookupGroups}"
+                          SelectedItem="{Binding SelectedCodeLookupGroup}"
+                          IsEnabled="{Binding CodeLookupGroupEnabled}"/>
+
+                <Label Content="Searchable"
+                       Grid.Row="2"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="2"
+                          Grid.Column="4"
+                          Margin="5"
+                          IsChecked="{Binding Searchable}"
+                          IsEnabled="{Binding FieldPropertyEnabled}"/>
+
+                <Label Content="Suggestable"
+                       Grid.Row="3"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="3"
+                          Grid.Column="4"
+                          Margin="5"
+                          IsChecked="{Binding Suggestable}"
+                          IsEnabled="{Binding FieldPropertyEnabled}"/>
+
+                <Label Content="Facetable"
+                       Grid.Row="4"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="4"
+                          Grid.Column="4"
+                          Margin="5"
+                          IsChecked="{Binding Facetable}"
+                          IsEnabled="{Binding FacetableEnabled}"/>
+                
+                <Label Content="Facet Title"
+                       Grid.Row="5"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="5"
+                          Grid.Column="4"
+                          Margin="5"
+                          MinWidth="150"
+                          IsEditable="True"
+                          ItemsSource="{Binding FacetableLookups}"
+                          SelectedValuePath="Key" DisplayMemberPath="Value"
+                          SelectedValue="{Binding FieldCode}"
+                          Text="{Binding FieldDesc, UpdateSourceTrigger=PropertyChanged}"
+                          IsEnabled="{Binding FieldCodeEnabled}"/>
+
+                <Label Content="Facet Order"
+                       Grid.Row="6"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"/>
+                <TextBox x:Name="facetOrderTextBox"
+                         Grid.Row="6"
+                         Grid.Column="4"
+                         Margin="5"
+                         Text="{Binding FacetOrder, TargetNullValue=''}"
+                         IsEnabled="{Binding Facetable}" PreviewTextInput="facetOrderTextBox_PreviewTextInput" MaxLength="3" />
+            </Grid>
+
+            <Button Grid.Row="2"
+                    Margin="0,5,5,5"
+                    HorizontalAlignment="Right"
+                    Width="100"
+                    Content="Save"
+                    Command="{Binding SaveCommand}"/>
+        </Grid>
+    </Border>
+</Window>

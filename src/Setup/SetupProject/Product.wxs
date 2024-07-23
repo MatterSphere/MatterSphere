@@ -1,0 +1,135 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util">
+  <Package Version="!(bind.fileVersion.OMS.Shell.dll)" Name="3E MatterSphere Framework ($(var.Platform))" Language="1033" Manufacturer="ELITE" UpgradeCode="{2821844F-43E8-45D9-ABC8-6267C03DF615}" InstallerVersion="200" Compressed="yes" Scope="perMachine">
+    <SummaryInformation Keywords="Installer,MSI,MatterSphere" />
+    <?if $(var.Configuration) = "Debug" ?>
+    <MediaTemplate CompressionLevel="none" EmbedCab="yes" MaximumUncompressedMediaSize="400" />
+    <?else?>
+    <MediaTemplate CompressionLevel="high" EmbedCab="yes" MaximumUncompressedMediaSize="400" />
+    <?endif?>
+
+    <Property Id="ARPCONTACT" Value="!(loc.ARPContact)" />
+    <Property Id="ARPHELPLINK" Value="https://www.elite.com/support" />
+    <Property Id="ARPHELPTELEPHONE" Value="!(loc.ARPTelephone)" />
+    <!--<Property Id='ARPURLINFOABOUT'>http://www.mattersphere.com</Property>-->
+    <Property Id="INSTALLDIR" Secure="yes" />
+    <SetProperty Id="ARPINSTALLLOCATION" Value="[INSTALLDIR]" After="CostFinalize" />
+    <Property Id="DISABLEADVTSHORTCUTS" Value="1" />
+    <Property Id="MSIRESTARTMANAGERCONTROL" Value="Disable" />
+
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED" />
+    <Launch Condition="Installed OR WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED" Message="!(loc.DotNetFramework48Required)" />
+
+    <?include RegistrySearch.wxi ?>
+    <Launch Condition="Installed OR NOT (OLDPRODUCTDETECTED1 OR OLDPRODUCTDETECTED2 OR OLDPRODUCTDETECTED3 OR OLDPRODUCTDETECTED4 OR OLDPRODUCTDETECTED5 OR OLDPRODUCTDETECTED6 OR OLDPRODUCTDETECTED7 OR OLDPRODUCTDETECTED8)" Message="!(loc.UpgradeErrorMessage)" />
+
+    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)" AllowSameVersionUpgrades="yes" />
+
+    <StandardDirectory Id="ProgramFiles6432Folder">
+      <Directory Id="CompanyDir" Name="FWBS">
+        <Directory Id="INSTALLDIR" Name="OMS Matter Centre" />
+      </Directory>
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ProgramMenuDir" Name="3E MatterSphere" />
+    </StandardDirectory>
+    <StandardDirectory Id="StartupFolder" />
+
+    <SetDirectory Action="InitInstallDir" Id="INSTALLDIR" Value="[ProgramFiles6432Folder]FWBS\OMS Matter Centre\" Sequence="execute" Condition="NOT INSTALLDIR" />
+    <SetDirectory Id="ADDINOFFICE2010" Value="[INSTALLDIR]" Sequence="execute" Condition="WORD2010_ROOT OR EXCEL2010_ROOT" />
+    <SetDirectory Id="ADDINOFFICE2013" Value="[INSTALLDIR]" Sequence="execute" Condition="WORD2013_ROOT OR EXCEL2013_ROOT" />
+    <SetDirectory Id="ADDINOFFICE2016" Value="[INSTALLDIR]" Sequence="execute" Condition="WORD2016_ROOT OR EXCEL2016_ROOT" />
+
+    <Feature Id="OMSCore" Title="!(loc.OMSCore_Title)" Description="!(loc.OMSCore_Description)" Display="expand" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1" AllowAbsent="no">
+      <ComponentGroupRef Id="CG_CoreCommon" />
+      <ComponentGroupRef Id="CG_PreviewerModules" />
+      <ComponentGroupRef Id="CG_Aspose" />
+      <ComponentGroupRef Id="CG_Dsofile" />
+      <ComponentGroupRef Id="CG_Redemption" />
+      <ComponentGroupRef Id="CG_Infragistics" />
+      <ComponentGroupRef Id="CG_TelerikWinforms" />
+      <Feature Id="OMSCoreAddins" Title="!(loc.OMSCoreAddins_Title)" Description="!(loc.OMSCoreAddins_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+        <ComponentGroupRef Id="CG_Empty" Primary="yes" />
+        <Feature Id="OMSFileTask" Title="!(loc.OMSFileTask_Title)" Description="!(loc.OMSFileTask_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+          <ComponentGroupRef Id="CG_FileTaskManagement" />
+        </Feature>
+        <Feature Id="OMSHighQ" Title="!(loc.OMSHighQ_Title)" Description="!(loc.OMSHighQ_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="500">
+          <ComponentGroupRef Id="CG_HighQ" />
+        </Feature>
+        <Feature Id="OMSWorkflow" Title="!(loc.OMSWorkflow_Title)" Description="!(loc.OMSWorkflow_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+          <ComponentGroupRef Id="CG_Workflow" />
+          <ComponentGroupRef Id="CG_TelerikWpf" />
+          <ComponentGroupRef Id="CG_Actipro" Primary="no" />
+        </Feature>
+      </Feature>
+      <Feature Id="OMSCoreApps" Title="!(loc.OMSCoreApps_Title)" Description="!(loc.OMSCoreApps_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+        <ComponentGroupRef Id="CG_Empty" Primary="no" />
+        <Feature Id="OMSAdminKit" Title="!(loc.OMSAdminKit_Title)" Description="!(loc.OMSAdminKit_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+          <ComponentGroupRef Id="CG_AdminKit" />
+          <ComponentGroupRef Id="CG_Actipro" Primary="yes" />
+          <ComponentGroupRef Id="CG_SharePoint" />
+        </Feature>
+        <Feature Id="OMSReports" Title="!(loc.OMSReports_Title)" Description="!(loc.OMSReports_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+          <ComponentGroupRef Id="CG_Reports" />
+        </Feature>
+        <Feature Id="OMSScanning" Title="!(loc.OMSScanning_Title)" Description="!(loc.OMSScanning_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+          <ComponentGroupRef Id="CG_Scanning" />
+          <ComponentRef Id="cmp2C9D60A5A86985D40E5237FF60F262E1" />
+        </Feature>
+        <Feature Id="OMSQuickClient" Title="!(loc.OMSQuickClient_Title)" Description="!(loc.OMSQuickClient_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+          <ComponentGroupRef Id="CG_QuickClient" />
+        </Feature>
+      </Feature>
+      <Feature Id="OMSShell" Title="!(loc.OMSShell_Title)" Description="!(loc.OMSShell_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+        <ComponentGroupRef Id="CG_Shell" />
+        <Feature Id="OMSDrive" Title="!(loc.OMSDrive_Title)" Description="!(loc.OMSDrive_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1000">
+          <ComponentGroupRef Id="CG_Drive" />
+        </Feature>
+      </Feature>
+    </Feature>
+    <Feature Id="OMSOffice" Title="!(loc.OMSOffice_Title)" Description="!(loc.OMSOffice_Description)" Display="expand" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="0">
+      <ComponentGroupRef Id="CG_Office" />
+      <ComponentGroupRef Id="CG_VSTO_Tools" />
+      <Level Value="1" Condition="(WORD2010_ROOT OR EXCEL2010_ROOT) OR (WORD2013_ROOT OR EXCEL2013_ROOT) OR (WORD2016_ROOT OR EXCEL2016_ROOT)" />
+      <Feature Id="OMSOffice2010" ConfigurableDirectory="ADDINOFFICE2010" Title="!(loc.OMSOffice2010_Title)" Description="!(loc.OMSOffice2010_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="0" AllowAbsent="no">
+        <ComponentGroupRef Id="CG_Office2010" />
+        <Level Value="1" Condition="WORD2010_ROOT OR EXCEL2010_ROOT" />
+      </Feature>
+      <Feature Id="OMSOffice2013" ConfigurableDirectory="ADDINOFFICE2013" Title="!(loc.OMSOffice2013_Title)" Description="!(loc.OMSOffice2013_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="0" AllowAbsent="no">
+        <ComponentGroupRef Id="CG_Office2013" />
+        <Level Value="1" Condition="WORD2013_ROOT OR EXCEL2013_ROOT" />
+      </Feature>
+      <Feature Id="OMSOffice2016" ConfigurableDirectory="ADDINOFFICE2016" Title="!(loc.OMSOffice2016_Title)" Description="!(loc.OMSOffice2016_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="0" AllowAbsent="no">
+        <ComponentGroupRef Id="CG_Office2016" />
+        <Level Value="1" Condition="WORD2016_ROOT OR EXCEL2016_ROOT" />
+      </Feature>
+      <Feature Id="OMSFullDM" Title="!(loc.OMSFullDM_Title)" Description="!(loc.OMSFullDM_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+        <ComponentGroupRef Id="CG_FullDMTemplates" />
+      </Feature>
+      <Feature Id="OMSNoDM" Title="!(loc.OMSNoDM_Title)" Description="!(loc.OMSNoDM_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1000">
+        <ComponentGroupRef Id="CG_NoDMTemplates" />
+        <Feature Id="OMSiManage10" Title="!(loc.OMSiManage10_Title)" Description="!(loc.OMSiManage10_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+          <ComponentGroupRef Id="CG_iManageWork10" />
+          <ComponentGroupRef Id="CG_iManageWork10_Shell" />
+        </Feature>
+      </Feature>
+      <Feature Id="OMSLaserForm" Title="!(loc.OMSLaserForm_Title)" Description="!(loc.OMSLaserForm_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+        <ComponentGroupRef Id="CG_LaserForms" />
+      </Feature>
+      <Feature Id="OMSOyezForm" Title="!(loc.OMSOyezForm_Title)" Description="!(loc.OMSOyezForm_Description)" Display="collapse" AllowAdvertise="no" TypicalDefault="install" InstallDefault="local" Level="1">
+        <ComponentGroupRef Id="CG_OyezForms" />
+      </Feature>
+    </Feature>
+
+    <Binary Id="VBScriptCA" SourceFile="VBScriptCA.vbs" />
+    <CustomAction Id="RemoveExcelRegistryVBA" VBScriptCall="RemoveExcelRegistryVBA" Execute="deferred" Return="ignore" BinaryRef="VBScriptCA" />
+    <util:CloseApplication Id="omsexternalreports.exe" Target="omsexternalreports.exe" EndSessionMessage="yes" RebootPrompt="no" TerminateProcess="1" Timeout="5" />
+    <util:CloseApplication Id="OMS.Utils.exe" Target="OMS.Utils.exe" EndSessionMessage="yes" RebootPrompt="no" TerminateProcess="1" Timeout="5" />
+    <InstallExecuteSequence>
+      <Custom Action="RemoveExcelRegistryVBA" After="RemoveRegistryValues" Condition="REMOVE=&quot;ALL&quot; OR REMOVE &gt;&lt; &quot;OMSFullDM&quot; OR REMOVE &gt;&lt; &quot;OMSNoDM&quot;" />
+      <Custom Action="Wix4CloseApplications_$(sys.BUILDARCHSHORT)" Before="RemoveFiles" Condition="REMOVE=&quot;ALL&quot; OR REMOVE &gt;&lt; &quot;OMSShell&quot; OR REMOVE &gt;&lt; &quot;OMSDrive&quot; OR REMOVE &gt;&lt; &quot;OMSReports&quot;" />
+    </InstallExecuteSequence>
+    
+    <UIRef Id="WixUI_MatterSphere" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+  </Package>
+</Wix>

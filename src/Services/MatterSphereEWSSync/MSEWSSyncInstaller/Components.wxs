@@ -1,0 +1,72 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="MatterSphereEWSDelete.Service" Directory="INSTALLFOLDER">
+      <File Id="MatterSphereEWSDelete.exe" Source="$(SourceDir)\MatterSphereEWSDelete.exe" KeyPath="yes" />
+      <File Id="MatterSphereEWSDelete.exe.config" Source="$(SourceDir)\MatterSphereEWSDelete.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSphereEWSDeleteService"
+                      DisplayName="3E MatterSphere EWS Delete Service"
+                      Description="The 3E MatterSphere Exchange Sync Service deletes appointments in the 3E MatterSphere database, which were deleted from the fee earners' calendars."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSphereEWSDeleteService"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="MatterSphereEWSSync.Service" Directory="INSTALLFOLDER">
+      <File Id="MatterSphereEWSSync.exe" Source="$(SourceDir)\MatterSphereEWSSync.exe" KeyPath="yes" />
+      <File Id="MatterSphereEWSSync.exe.config" Source="$(SourceDir)\MatterSphereEWSSync.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSphereEWSSyncService"
+                      DisplayName="3E MatterSphere EWS Sync Service"
+                      Description="The 3E MatterSphere Exchange Sync Service synchronizes appointments within the 3E MatterSphere database with users' calendars."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSphereEWSSyncService"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="MSEWS.Dependencies" Guid="{6AAE4E06-4801-427D-85EA-2775E6D2EE29}" Directory="INSTALLFOLDER">
+      <File Source="$(SourceDir)\SampleConfig\MSEWS.config" />
+      <File Source="$(SourceDir)\MSEWSForm.exe" />
+      <File Source="$(SourceDir)\MSEWSForm.exe.config" />
+      <File Source="$(SourceDir)\MatterSphereEWS.dll" />
+      <File Source="$(SourceDir)\MatterSphereEWS.dll.config" />
+      <File Source="$(SourceDir)\Microsoft.Exchange.WebServices.Auth.dll" />
+      <File Source="$(SourceDir)\Microsoft.Exchange.WebServices.dll" />
+      <File Source="$(SourceDir)\Microsoft.Identity.Client.dll" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ManufacturerMenuFolder">
+      <Component Id="MSEWSFormShortcut" Guid="*">
+        <Shortcut Id="MSEWSFormMenuShortcut"
+                  Name="EWS Sync Config"
+                  Description="EWS Sync Config"
+                  Target="[INSTALLFOLDER]MSEWSForm.exe"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="MSEWSForm.ico" SourceFile="MSEWSForm.exe" />
+        </Shortcut>
+        <RegistryValue Root="HKCU"
+                       Key="Software\$(PublisherName)\$(ProductName)"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+        <RemoveFolder Id="RemoveManufacturerMenuFolder" Directory="ManufacturerMenuFolder" On="uninstall" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>
+

@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F7266B2-EC66-4324-8D85-859717449335}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FWBS.OMS.FileManagement</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FWBS.OMS.FileManagement</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FWBS.Common">
+      <HintPath>c:\OMSCoreAssemblies\FWBS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="FWBS.Common.UI">
+      <HintPath>c:\OMSCoreAssemblies\FWBS.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Framework.Common, Version=0.9.6.0, Culture=neutral, PublicKeyToken=7fb1051d3d2d9ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Fwbs.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Oms.ResourceLookup">
+      <HintPath>c:\OMSCoreAssemblies\Fwbs.Oms.ResourceLookup.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Data">
+      <HintPath>c:\OMSCoreAssemblies\OMS.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Infrastructure">
+      <HintPath>c:\OMSCoreAssemblies\OMS.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Library">
+      <HintPath>c:\OMSCoreAssemblies\OMS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.UI">
+      <HintPath>c:\OMSCoreAssemblies\OMS.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo</Link>
+    </Compile>
+    <Compile Include="ActionVisiblity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Addins\Dashboard\TasksBuilder.cs" />
+    <Compile Include="Addins\Dashboard\TasksDashboardItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\Dashboard\TasksDashboardItem.Designer.cs">
+      <DependentUpon>TasksDashboardItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Addins\Dashboard\TasksPageProvider.cs" />
+    <Compile Include="Addins\Dashboard\TasksProvider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\MilestonePlanOld.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\MilestoneStage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\Tasks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\Addin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Addins\WPFMilestoneLayout\Command.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\CultureConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\DateAsLocalConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Addins\WPFMilestoneLayout\FilterConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\ImageListConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\MilestonePlan.xaml.cs">
+      <DependentUpon>MilestonePlan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Addins\WPFMilestoneLayout\MilestonePlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addins\WPFMilestoneLayout\MilestonePlan.Designer.cs">
+      <DependentUpon>MilestonePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Addins\WPFMilestoneLayout\MilestonePlanVM.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\NotNullConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\SetExpandedStateADP.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\SetItemBinding.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\StageStatusConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\StageTaskConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\TaskActionsConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\TaskOrderConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\TasksCountConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\VisibilityConverter.cs" />
+    <Compile Include="Addins\WPFMilestoneLayout\WPFViewAction.cs" />
+    <Compile Include="Admin\ApplicationEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\ApplicationEditV2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\FMDesigner\ActionNode.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\FileEventNode.cs" />
+    <Compile Include="Admin\FMDesigner\FileEventsNode.cs" />
+    <Compile Include="Admin\FMDesigner\FileActionsNode.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\FMApplicationNode.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\FMDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\FMDesigner\FMDesigner.Designer.cs">
+      <DependentUpon>FMDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FMDesigner\FMNode.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\MilestonePlanNode.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\MilestoneStageNode.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\MilestoneTaskNode.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\MilestoneTasksCollection.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\TasksNode.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\TaskTypeCollection.cs">
+    </Compile>
+    <Compile Include="Admin\FMDesigner\TaskTypeNode.cs">
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ActionConfig.cs" />
+    <Compile Include="Configuration\ActionConfigCollection.cs" />
+    <Compile Include="Configuration\MilestoneTaskConfig.cs" />
+    <Compile Include="Configuration\MilestoneTaskConfigCollection.cs" />
+    <Compile Include="Configuration\TaskTypeConfig.cs" />
+    <Compile Include="Configuration\TaskTypeConfigCollection.cs" />
+    <Compile Include="FileExtender.cs" />
+    <Compile Include="Design\ActionConfigEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\MethodLister.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\MilestoneTaskConfigEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Design\TaskFilterConverter.cs" />
+    <Compile Include="Design\TaskTypeEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ErrorOption.cs" />
+    <Compile Include="FMApplicationInstance.cs" />
+    <Compile Include="Milestones\DateCalculationFrom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Milestones\Delegates.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Milestones\MilestonePlan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Milestones\MilestoneStage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Milestones\StageStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Milestones\Task.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Milestones\TaskCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Milestones\TaskStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Action.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FMApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApplicationScriptType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FMException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileTypeExtender.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Milestones\TaskRoles.cs" />
+    <Compile Include="UI\Assignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Assignment.Designer.cs">
+      <DependentUpon>Assignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="Addins\MilestonePlanOld.resx">
+      <DependentUpon>MilestonePlanOld.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\MilestoneStage.resx">
+      <DependentUpon>MilestoneStage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\Tasks.resx">
+      <DependentUpon>Tasks.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addins\WPFMilestoneLayout\MilestonePlan.resx">
+      <DependentUpon>MilestonePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ApplicationEdit.resx">
+      <DependentUpon>ApplicationEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ApplicationEditV2.resx">
+      <DependentUpon>ApplicationEditV2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\FMDesigner\FMDesigner.resx">
+      <DependentUpon>FMDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Assignment.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Assignment.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+    <None Include="Addins\MilestonePlan.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Addins\WPFMilestoneLayout\DatePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Addins\WPFMilestoneLayout\MilestonePlan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Addins\WPFMilestoneLayout\Down.png" />
+    <Resource Include="Addins\WPFMilestoneLayout\Up.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

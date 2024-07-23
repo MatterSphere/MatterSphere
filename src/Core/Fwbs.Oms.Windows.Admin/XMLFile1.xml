@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<script>
+		<staticMethods>
+			<staticMethod name="FilterPrecCat">
+        FWBS.Common.UI.IBasicEnquiryControl2 _preclib = EnquiryForm.GetIBasicEnquiryControl2("_preclib");
+        FWBS.Common.UI.IBasicEnquiryControl2 _prectype = EnquiryForm.GetIBasicEnquiryControl2("_prectype");
+        FWBS.Common.UI.IListEnquiryControl _preccat = EnquiryForm.GetIBasicEnquiryControl2("_preccat") as FWBS.Common.UI.IListEnquiryControl;
+        FWBS.Common.UI.IBasicEnquiryControl2 _precsubcat = EnquiryForm.GetIBasicEnquiryControl2("_precsubcat");
+        FWBS.Common.UI.IBasicEnquiryControl2 _precminorcat = EnquiryForm.GetIBasicEnquiryControl2("_precminorcat");
+
+        string lib = "";
+        string type = "";
+        string filter = "";
+
+        try
+        {
+        if (_preclib != null)
+        lib = Convert.ToString(_preclib.Value);
+
+        if (_prectype != null)
+        type = Convert.ToString(_prectype.Value);
+
+
+        if (lib == "")
+        filter += "preclibrary is null";
+        else
+        filter += "preclibrary = '" + FWBS.Common.SQLRoutines.RemoveRubbish(lib) + "'";
+
+        if (type == "")
+        filter += " AND prectype is null";
+        else
+        filter += " AND prectype = '" + FWBS.Common.SQLRoutines.RemoveRubbish(type) + "'";
+
+        if (_preccat != null)
+        {
+        _preccat.Filter(filter);
+        ((IBasicEnquiryControl2)_preccat).Value = DBNull.Value;
+        }
+
+        if (_precsubcat != null) _precsubcat.Value = DBNull.Value;
+        }
+        catch
+        {}
+
+        if (_precminorcat != null) _precminorcat.Value = DBNull.Value;
+        }
+        catch
+        {}
+      </staticMethod>
+			<staticMethod name="FilterPrecSubCat">
+        FWBS.Common.UI.IBasicEnquiryControl2 _preclib = EnquiryForm.GetIBasicEnquiryControl2("_preclib");
+        FWBS.Common.UI.IBasicEnquiryControl2 _prectype = EnquiryForm.GetIBasicEnquiryControl2("_prectype");
+        FWBS.Common.UI.IBasicEnquiryControl2 _preccat = EnquiryForm.GetIBasicEnquiryControl2("_preccat");
+        FWBS.Common.UI.IListEnquiryControl _precsubcat = EnquiryForm.GetIBasicEnquiryControl2("_precsubcat")  as FWBS.Common.UI.IListEnquiryControl;
+        FWBS.Common.UI.IListEnquiryControl _precminorcat = EnquiryForm.GetIBasicEnquiryControl2("_precminorcat")  as FWBS.Common.UI.IListEnquiryControl;
+
+        string lib = "";
+        string type = "";
+        string cat = "";
+        string filter = "";
+
+        try
+        {
+        if (_preclib != null)
+        lib = Convert.ToString(_preclib.Value);
+
+        if (_prectype != null)
+        type = Convert.ToString(_prectype.Value);
+
+        if (_preccat != null)
+        cat = Convert.ToString(_preccat.Value);
+
+        if (lib == "")
+        filter += "PrecLibrary is null";
+        else
+        filter += "PrecLibrary = '" + FWBS.Common.SQLRoutines.RemoveRubbish(lib) + "'";
+
+        if (type == "")
+        filter += " AND PrecType is null";
+        else
+        filter += " AND PrecType = '" + FWBS.Common.SQLRoutines.RemoveRubbish(type) + "'";
+
+
+        if (cat == "")
+        filter += " AND PrecCategory is null";
+        else
+        filter += " AND PrecCategory = '" + FWBS.Common.SQLRoutines.RemoveRubbish(cat) + "'";
+
+
+        if (_precsubcat != null)
+        {
+        _precsubcat.Filter(filter);
+        ((IBasicEnquiryControl2)_precsubcat).Value = DBNull.Value;
+        }
+        }
+        catch{}
+
+        if (_precminorcat != null)
+        {
+        _precminorcat.Filter(filter);
+        ((IBasicEnquiryControl2)_precminorcat).Value = DBNull.Value;
+        }
+        }
+        catch{}
+      </staticMethod>
+		</staticMethods>
+		<dynamicMethods>
+			<dynamicMethod name="_prectype_Cancelled" delegate=""></dynamicMethod>
+			<dynamicMethod name="_prectype_ActiveChanged" delegate="">FilterPrecCat();
+FilterPrecSubCat();</dynamicMethod>
+			<dynamicMethod name="_preclib_ActiveChanged" delegate="">FilterPrecCat();
+FilterPrecSubCat();
+</dynamicMethod>
+			<dynamicMethod name="_preccat_ActiveChanged" delegate="">FilterPrecSubCat();</dynamicMethod>
+			<dynamicMethod name="_addsubcat_LinkClicked" delegate="System.Windows.Forms.LinkLabelLinkClickedEventHandler, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">IBasicEnquiryControl2 _prectype = EnquiryForm.GetIBasicEnquiryControl2("_prectype");
+IBasicEnquiryControl2 _preccat = EnquiryForm.GetIBasicEnquiryControl2("_preccat");
+IBasicEnquiryControl2 _precsubcat = EnquiryForm.GetIBasicEnquiryControl2("_precsubcat");
+
+
+if (_prectype == null || _prectype.Value == DBNull.Value)
+{
+	FWBS.OMS.UI.Windows.MessageBox.Show(FWBS.OMS.Session.CurrentSession.Resources.GetMessage("PRECTYPEEXISTS","A %PRECEDENT% type must be chosen.","").Text,"",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+	if (_prectype != null) ((Control)_prectype).Focus();
+	return;
+}
+
+if (_preccat == null || _preccat.Value == DBNull.Value)
+{
+	FWBS.OMS.UI.Windows.MessageBox.Show(FWBS.OMS.Session.CurrentSession.Resources.GetMessage("PRECCATEXISTS","A %PRECEDENT% category must be chosen.","").Text,"",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+	if (_preccat != null) ((Control)_preccat).Focus();
+	return;
+}
+
+
+FWBS.OMS.CodeLookup lkp = FWBS.OMS.UI.Windows.Services.Wizards.CreateCodeLookup("PRECSUBCAT");
+
+if (lkp != null)
+{
+	System.Data.DataRow settings  = EnquiryForm.GetSettings((Control)_precsubcat);
+	string datlist = Convert.ToString(settings["quDataList"]);
+	if (datlist != String.Empty)
+	{
+		System.Data.DataTable dt = EnquiryForm.Enquiry.Source.Tables[datlist];
+		System.Data.DataRow row = dt.NewRow();
+		row[0] = lkp.Code;
+		row[1] = lkp.Default.Caption;
+		if (dt.Columns.Count >= 3)
+		{
+			if (_preccat != null) row[2] = Convert.ToString(_preccat.Value);
+			if (_prectype != null) row[3] = Convert.ToString(_prectype.Value);
+		}
+		dt.Rows.Add(row);
+		_precsubcat.Value = lkp.Code;
+	}
+	
+}</dynamicMethod>
+
+			<dynamicMethod name="_addcat_LinkClicked" delegate="System.Windows.Forms.LinkLabelLinkClickedEventHandler, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">IBasicEnquiryControl2 _prectype = EnquiryForm.GetIBasicEnquiryControl2("_prectype");
+IBasicEnquiryControl2 _preccat = EnquiryForm.GetIBasicEnquiryControl2("_preccat");
+
+if (_prectype == null || _prectype.Value == DBNull.Value)
+{
+	FWBS.OMS.UI.Windows.MessageBox.Show(FWBS.OMS.Session.CurrentSession.Resources.GetMessage("PRECTYPEEXISTS","A %PRECEDENT% type must be chosen.","").Text,"",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+	if (_prectype != null) ((Control)_prectype).Focus();
+	return;
+}
+
+FWBS.OMS.CodeLookup lkp = FWBS.OMS.UI.Windows.Services.Wizards.CreateCodeLookup("PRECCAT");
+
+if (lkp != null)
+{
+	System.Data.DataRow settings  = EnquiryForm.GetSettings((Control)_preccat);
+	string datlist = Convert.ToString(settings["quDataList"]);
+	if (datlist != String.Empty)
+	{
+		System.Data.DataTable dt = EnquiryForm.Enquiry.Source.Tables[datlist];
+		System.Data.DataRow row = dt.NewRow();
+		row[0] = lkp.Code;
+		row[1] = lkp.Default.Caption;
+		if (dt.Columns.Count >= 3) row[2] = Convert.ToString(_prectype.Value);
+		dt.Rows.Add(row);
+		_preccat.Value = lkp.Code;
+	}
+	
+}
+
+</dynamicMethod>
+      <dynamicMethod name="_addminorcat_LinkClicked" delegate="System.Windows.Forms.LinkLabelLinkClickedEventHandler, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        IBasicEnquiryControl2 _prectype = EnquiryForm.GetIBasicEnquiryControl2("_prectype");
+        IBasicEnquiryControl2 _preccat = EnquiryForm.GetIBasicEnquiryControl2("_preccat");
+        IBasicEnquiryControl2 _precsubcat = EnquiryForm.GetIBasicEnquiryControl2("_precsubcat");
+        IBasicEnquiryControl2 _precminorcat = EnquiryForm.GetIBasicEnquiryControl2("_precminorcat");
+
+        if (_prectype == null || _prectype.Value == DBNull.Value)
+        {
+        FWBS.OMS.UI.Windows.MessageBox.Show(FWBS.OMS.Session.CurrentSession.Resources.GetMessage("PRECTYPEEXISTS","A %PRECEDENT% type must be chosen.","").Text,"",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+        if (_prectype != null) ((Control)_prectype).Focus();
+        return;
+        }
+
+        if (_preccat == null || _preccat.Value == DBNull.Value)
+        {
+        FWBS.OMS.UI.Windows.MessageBox.Show(FWBS.OMS.Session.CurrentSession.Resources.GetMessage("PRECCATEXISTS","A %PRECEDENT% category must be chosen.","").Text,"",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+        if (_preccat != null) ((Control)_preccat).Focus();
+        return;
+        }
+
+
+        FWBS.OMS.CodeLookup lkp = FWBS.OMS.UI.Windows.Services.Wizards.CreateCodeLookup("PRECSUBCAT");
+
+        if (lkp != null)
+        {
+        System.Data.DataRow settings  = EnquiryForm.GetSettings((Control)_precsubcat);
+        string datlist = Convert.ToString(settings["quDataList"]);
+        if (datlist != String.Empty)
+        {
+        System.Data.DataTable dt = EnquiryForm.Enquiry.Source.Tables[datlist];
+        System.Data.DataRow row = dt.NewRow();
+        row[0] = lkp.Code;
+        row[1] = lkp.Default.Caption;
+        if (dt.Columns.Count >= 3)
+        {
+        if (_preccat != null) row[2] = Convert.ToString(_preccat.Value);
+        if (_prectype != null) row[3] = Convert.ToString(_prectype.Value);
+        }
+        dt.Rows.Add(row);
+        _precsubcat.Value = lkp.Code;
+
+        FWBS.OMS.CodeLookup lkpMinor = FWBS.OMS.UI.Windows.Services.Wizards.CreateCodeLookup("PRECMINORCAT");
+        if (lkpMinor != null)
+        {
+        System.Data.DataRow settingsMinor  = EnquiryForm.GetSettings((Control)_precminorcat);
+        string datlistMinor = Convert.ToString(settingsMinor["quDataList"]);
+        if (datlistMinor != String.Empty)
+        {
+        System.Data.DataTable dtMinor = EnquiryForm.Enquiry.Source.Tables[datlistMinor];
+        System.Data.DataRow rowMinor = dtMinor.NewRow();
+        rowMinor[0] = lkpMinor.Code;
+        rowMinor[1] = lkpMinor.Default.Caption;
+        if (dtMinor.Columns.Count >= 4)
+        {
+        if (_preccat != null) rowMinor[2] = Convert.ToString(_preccat.Value);
+        if (_precsubcat != null) rowMinor[3] = Convert.ToString(_precsubcat.Value);
+        if (_prectype != null) rowMinor[4] = Convert.ToString(_prectype.Value);
+        }
+        dtMinor.Rows.Add(row);
+        _precminorcat.Value = lkpMinor.Code;
+        }
+        }
+
+        }
+      </dynamicMethod>
+    </dynamicMethods>
+		<methods>
+		</methods>
+	</script>
+</config>

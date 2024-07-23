@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.elite.com/openapi" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.elite.com/openapi" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accessing Matter entity</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.elite.com/openapi">
+      <s:element name="GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMatter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Matter" nillable="true" type="tns:Matter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Matter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mmatter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mrtcode" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdept" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="head1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mprac" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="pdesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mloc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ldesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mopendt" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="mclosedt" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="mbillaty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mbillatytklast" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mbillatytkfirst" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mbiatyst" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="msupaty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msupatytklast" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msupatytkfirst" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msupatst" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="morgaty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="morgatytklast" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="morgatytkfirst" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="morgatst" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="mstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mholddt" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcontact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdesc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdesc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdesc3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="minstr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="minstr2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mclient" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clname1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clname2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddr2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddr3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddr4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddr5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddr6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtmin" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcmin" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtotmin" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mffreq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcfreq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtmplt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtformat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcformat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtmark" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtmrkled" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcmark" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcmrkled" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mintrst" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mintdays" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="mintled" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mffee" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mfcost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mrated" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="mrefer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcholddt" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="mftmplt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mfollow1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mfollow2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mfollow3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mfollow4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtracct" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtrret" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mmaster" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcopies" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="mnonbill" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="marrange" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ardesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mcurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mmoddate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="mmodtime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mmaxfee" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mprotem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mjnum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mphprefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtimeunit" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtaxt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxtimetcdesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mtaxc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxcosttcdesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mfax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mmoduser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="miobilling" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mrelated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mlang" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="language1ldesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="unit" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="user" type="tns:user" />
+      <s:complexType name="user" mixed="true">
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetAllShort">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllShortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllShortResult" type="tns:ArrayOfMatterShort" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMatterShort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MatterShort" nillable="true" type="tns:MatterShort" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MatterShort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mmatter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mprac" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="pdesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdesc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mclient" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clname1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clname2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mmoddate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllShortByRegion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllShortByRegionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllShortByRegionResult" type="tns:ArrayOfMatterShort" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMedium">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMediumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMediumResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matterNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByNumberResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByBillingTimekeeper">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="billingTimeKeeper" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByBillingTimekeeperResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByBillingTimekeeperResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBySupervisingTimekeeper">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timekeeper" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBySupervisingTimekeeperResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBySupervisingTimekeeperResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByOriginatingTimekeeper">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timekeeper" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByOriginatingTimekeeperResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByOriginatingTimekeeperResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOpenMatters">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOpenMattersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOpenMattersResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOpenedSince">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOpenedSinceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOpenedSinceResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClosedSince">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClosedSinceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClosedSinceResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByClientNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByClientNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByClientNumberResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByClientName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByClientNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByClientNameResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matterName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByNameResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByDescription1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matterDescription1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByDescription1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByDescription1Result" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="locationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByLocationResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByDepartmentResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByPracticeCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="practiceCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByPracticeCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByPracticeCodeResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModifiedSince">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModifiedSinceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetModifiedSinceResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModifiedSinceExact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModifiedSinceExactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetModifiedSinceExactResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModifiedSinceExactByRegion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModifiedSinceExactByRegionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetModifiedSinceExactByRegionResult" type="tns:ArrayOfMatter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlluser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShortSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllShort" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShortSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllShortResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShortuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShortByRegionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllShortByRegion" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShortByRegionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllShortByRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShortByRegionuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMediumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMedium" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMediumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMediumResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMediumuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetByNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByNumberuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByBillingTimekeeperSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByBillingTimekeeper" />
+  </wsdl:message>
+  <wsdl:message name="GetByBillingTimekeeperSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByBillingTimekeeperResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByBillingTimekeeperuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetBySupervisingTimekeeperSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBySupervisingTimekeeper" />
+  </wsdl:message>
+  <wsdl:message name="GetBySupervisingTimekeeperSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBySupervisingTimekeeperResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBySupervisingTimekeeperuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByOriginatingTimekeeperSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByOriginatingTimekeeper" />
+  </wsdl:message>
+  <wsdl:message name="GetByOriginatingTimekeeperSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByOriginatingTimekeeperResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByOriginatingTimekeeperuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetOpenMattersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOpenMatters" />
+  </wsdl:message>
+  <wsdl:message name="GetOpenMattersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOpenMattersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOpenMattersuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetOpenedSinceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOpenedSince" />
+  </wsdl:message>
+  <wsdl:message name="GetOpenedSinceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOpenedSinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOpenedSinceuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetClosedSinceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClosedSince" />
+  </wsdl:message>
+  <wsdl:message name="GetClosedSinceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClosedSinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClosedSinceuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByClientNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByClientNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetByClientNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByClientNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByClientNumberuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByClientNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByClientName" />
+  </wsdl:message>
+  <wsdl:message name="GetByClientNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByClientNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByClientNameuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByName" />
+  </wsdl:message>
+  <wsdl:message name="GetByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByNameuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByDescription1SoapIn">
+    <wsdl:part name="parameters" element="tns:GetByDescription1" />
+  </wsdl:message>
+  <wsdl:message name="GetByDescription1SoapOut">
+    <wsdl:part name="parameters" element="tns:GetByDescription1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetByDescription1user">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByLocation" />
+  </wsdl:message>
+  <wsdl:message name="GetByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByLocationuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetByDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByDepartmentuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetByPracticeCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByPracticeCode" />
+  </wsdl:message>
+  <wsdl:message name="GetByPracticeCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByPracticeCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByPracticeCodeuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetModifiedSince" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetModifiedSinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceExactSoapIn">
+    <wsdl:part name="parameters" element="tns:GetModifiedSinceExact" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceExactSoapOut">
+    <wsdl:part name="parameters" element="tns:GetModifiedSinceExactResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceExactuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceExactByRegionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetModifiedSinceExactByRegion" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceExactByRegionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetModifiedSinceExactByRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetModifiedSinceExactByRegionuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:portType name="MatterServiceSoap">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:GetAllSoapIn" />
+      <wsdl:output message="tns:GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShort">
+      <wsdl:input message="tns:GetAllShortSoapIn" />
+      <wsdl:output message="tns:GetAllShortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShortByRegion">
+      <wsdl:input message="tns:GetAllShortByRegionSoapIn" />
+      <wsdl:output message="tns:GetAllShortByRegionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMedium">
+      <wsdl:input message="tns:GetAllMediumSoapIn" />
+      <wsdl:output message="tns:GetAllMediumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByNumber">
+      <wsdl:input message="tns:GetByNumberSoapIn" />
+      <wsdl:output message="tns:GetByNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByBillingTimekeeper">
+      <wsdl:input message="tns:GetByBillingTimekeeperSoapIn" />
+      <wsdl:output message="tns:GetByBillingTimekeeperSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBySupervisingTimekeeper">
+      <wsdl:input message="tns:GetBySupervisingTimekeeperSoapIn" />
+      <wsdl:output message="tns:GetBySupervisingTimekeeperSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByOriginatingTimekeeper">
+      <wsdl:input message="tns:GetByOriginatingTimekeeperSoapIn" />
+      <wsdl:output message="tns:GetByOriginatingTimekeeperSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMatters">
+      <wsdl:input message="tns:GetOpenMattersSoapIn" />
+      <wsdl:output message="tns:GetOpenMattersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenedSince">
+      <wsdl:input message="tns:GetOpenedSinceSoapIn" />
+      <wsdl:output message="tns:GetOpenedSinceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClosedSince">
+      <wsdl:input message="tns:GetClosedSinceSoapIn" />
+      <wsdl:output message="tns:GetClosedSinceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByClientNumber">
+      <wsdl:input message="tns:GetByClientNumberSoapIn" />
+      <wsdl:output message="tns:GetByClientNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByClientName">
+      <wsdl:input message="tns:GetByClientNameSoapIn" />
+      <wsdl:output message="tns:GetByClientNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByName">
+      <wsdl:input message="tns:GetByNameSoapIn" />
+      <wsdl:output message="tns:GetByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByDescription1">
+      <wsdl:input message="tns:GetByDescription1SoapIn" />
+      <wsdl:output message="tns:GetByDescription1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByLocation">
+      <wsdl:input message="tns:GetByLocationSoapIn" />
+      <wsdl:output message="tns:GetByLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByDepartment">
+      <wsdl:input message="tns:GetByDepartmentSoapIn" />
+      <wsdl:output message="tns:GetByDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByPracticeCode">
+      <wsdl:input message="tns:GetByPracticeCodeSoapIn" />
+      <wsdl:output message="tns:GetByPracticeCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSince">
+      <wsdl:input message="tns:GetModifiedSinceSoapIn" />
+      <wsdl:output message="tns:GetModifiedSinceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSinceExact">
+      <wsdl:input message="tns:GetModifiedSinceExactSoapIn" />
+      <wsdl:output message="tns:GetModifiedSinceExactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSinceExactByRegion">
+      <wsdl:input message="tns:GetModifiedSinceExactByRegionSoapIn" />
+      <wsdl:output message="tns:GetModifiedSinceExactByRegionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MatterServiceSoap" type="tns:MatterServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAlluser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShort">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetAllShort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllShortuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShortByRegion">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetAllShortByRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllShortByRegionuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMedium">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetAllMedium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllMediumuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByNumber">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByNumberuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByBillingTimekeeper">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByBillingTimekeeper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByBillingTimekeeperuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBySupervisingTimekeeper">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetBySupervisingTimekeeper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBySupervisingTimekeeperuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByOriginatingTimekeeper">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByOriginatingTimekeeper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByOriginatingTimekeeperuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMatters">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetOpenMatters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOpenMattersuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenedSince">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetOpenedSince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOpenedSinceuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClosedSince">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetClosedSince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetClosedSinceuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByClientNumber">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByClientNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByClientNumberuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByClientName">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByClientName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByClientNameuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByName">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByNameuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByDescription1">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByDescription1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByDescription1user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByLocation">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByLocationuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByDepartment">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByDepartmentuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByPracticeCode">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetByPracticeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByPracticeCodeuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSince">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetModifiedSince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetModifiedSinceuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSinceExact">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetModifiedSinceExact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetModifiedSinceExactuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSinceExactByRegion">
+      <soap:operation soapAction="http://www.elite.com/openapi/GetModifiedSinceExactByRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetModifiedSinceExactByRegionuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MatterServiceSoap12" type="tns:MatterServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAlluser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShort">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetAllShort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllShortuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShortByRegion">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetAllShortByRegion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllShortByRegionuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMedium">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetAllMedium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllMediumuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByNumber">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByNumberuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByBillingTimekeeper">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByBillingTimekeeper" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByBillingTimekeeperuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBySupervisingTimekeeper">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetBySupervisingTimekeeper" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBySupervisingTimekeeperuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByOriginatingTimekeeper">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByOriginatingTimekeeper" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByOriginatingTimekeeperuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMatters">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetOpenMatters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOpenMattersuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenedSince">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetOpenedSince" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOpenedSinceuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClosedSince">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetClosedSince" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetClosedSinceuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByClientNumber">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByClientNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByClientNumberuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByClientName">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByClientName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByClientNameuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByName">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByNameuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByDescription1">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByDescription1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByDescription1user" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByLocation">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByLocationuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByDepartment">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByDepartmentuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByPracticeCode">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetByPracticeCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByPracticeCodeuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSince">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetModifiedSince" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetModifiedSinceuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSinceExact">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetModifiedSinceExact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetModifiedSinceExactuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedSinceExactByRegion">
+      <soap12:operation soapAction="http://www.elite.com/openapi/GetModifiedSinceExactByRegion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetModifiedSinceExactByRegionuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MatterService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accessing Matter entity</wsdl:documentation>
+    <wsdl:port name="MatterServiceSoap" binding="tns:MatterServiceSoap">
+      <soap:address location="http://dapent39/services/matterservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MatterServiceSoap12" binding="tns:MatterServiceSoap12">
+      <soap12:address location="http://dapent39/services/matterservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

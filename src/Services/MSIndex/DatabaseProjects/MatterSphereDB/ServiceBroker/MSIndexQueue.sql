@@ -1,0 +1,1 @@
+﻿CREATE QUEUE search.MSIndexQueue

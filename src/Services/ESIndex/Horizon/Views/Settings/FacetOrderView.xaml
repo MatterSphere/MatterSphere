@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Horizon.Views.Settings.FacetOrderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Horizon.Views.Settings"
+             xmlns:settings="clr-namespace:Horizon.ViewModels.Settings"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance Type=settings:FacetOrderViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone
+            Height="40"
+            Grid.ColumnSpan="3"
+            materialDesign:ThemeAssist.Theme="Light"
+            Mode="Light" />
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal">
+            <Button
+                Width="30"
+                Height="30"
+                Margin="5"
+                Padding="0"
+                Command="{Binding SaveCommand}"
+                HorizontalAlignment="Left"
+                ToolTip="Save to Database">
+                <Button.Content>
+                    <materialDesign:PackIcon
+                        Width="25"
+                        Height="25"
+                        VerticalAlignment="Center"
+                        Kind="ContentSave"/>
+                </Button.Content>
+            </Button>
+            <TextBlock Margin="10,0,10,0"
+                       Height="Auto"
+                       FontWeight="DemiBold"
+                       Foreground="{StaticResource EliteBrightPurple}"
+                       VerticalAlignment="Center">
+            You can change the order of facets by double-clicking on the value in the column "Facet Order".
+            </TextBlock>
+        </StackPanel>
+        <DataGrid Grid.Row="1"
+                  IsReadOnly="False"
+                  ItemsSource="{Binding FacetableFields}"
+                  AutoGenerateColumns="False"
+                  SelectedItem="{Binding SelectedField}"
+                  SelectedIndex="{Binding SelectedIndex}"
+                  Style="{StaticResource CustomDataGrid}"
+                  CellStyle="{StaticResource CustomDataGridCell}"
+                  VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Facet Order"
+                                    Binding="{Binding FacetOrder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}"
+                                    MinWidth="90" MaxWidth="90"
+                                    IsReadOnly="False" SortMemberPath="FacetSort" />
+                <DataGridTextColumn Header="Entity Name" 
+                                    Binding="{Binding EntityName}"
+                                    MinWidth="120" MaxWidth="120"
+                                    IsReadOnly="True" />
+                <DataGridTextColumn Header="Field Name"
+                                    Binding="{Binding Name}"
+                                    MinWidth="150" MaxWidth="250"
+                                    IsReadOnly="True" />
+                <DataGridTextColumn Header="Type"
+                                    Binding="{Binding FieldType}"
+                                    MinWidth="60" MaxWidth="60"
+                                    IsReadOnly="True" />
+                <DataGridTextColumn Header="Facet Title"
+                                    Binding="{Binding FacetTitle}"
+                                    MinWidth="250" Width="*"
+                                    IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

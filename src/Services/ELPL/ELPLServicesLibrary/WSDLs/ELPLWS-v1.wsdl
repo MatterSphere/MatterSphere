@@ -1,0 +1,2539 @@
+<definitions name="ELPLService" targetNamespace="http://ws.elpl.crif.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.elpl.crif.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<types>
+		<xs:schema targetNamespace="http://ws.elpl.crif.com/" version="1.0" xmlns:tns="http://ws.elpl.crif.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="acceptClaim" type="tns:acceptClaim"/>
+			<xs:element name="acceptClaimResponse" type="tns:acceptClaimResponse"/>
+			<xs:element name="acceptPartialInterimPayment" type="tns:acceptPartialInterimPayment"/>
+			<xs:element name="acceptPartialInterimPaymentResponse" type="tns:acceptPartialInterimPaymentResponse"/>
+			<xs:element name="acknowledgeCPPFResponse" type="tns:acknowledgeCPPFResponse"/>
+			<xs:element name="acknowledgeCPPFResponseResponse" type="tns:acknowledgeCPPFResponseResponse"/>
+			<xs:element name="acknowledgeClaim" type="tns:acknowledgeClaim"/>
+			<xs:element name="acknowledgeClaimResponse" type="tns:acknowledgeClaimResponse"/>
+			<xs:element name="acknowledgeDeniedLiability" type="tns:acknowledgeDeniedLiability"/>
+			<xs:element name="acknowledgeDeniedLiabilityResponse" type="tns:acknowledgeDeniedLiabilityResponse"/>
+			<xs:element name="acknowledgeExitProcess" type="tns:acknowledgeExitProcess"/>
+			<xs:element name="acknowledgeExitProcessResponse" type="tns:acknowledgeExitProcessResponse"/>
+			<xs:element name="acknowledgeFraudStated" type="tns:acknowledgeFraudStated"/>
+			<xs:element name="acknowledgeFraudStatedResponse" type="tns:acknowledgeFraudStatedResponse"/>
+			<xs:element name="acknowledgeInterimPaymentDecisionTimeout" type="tns:acknowledgeInterimPaymentDecisionTimeout"/>
+			<xs:element name="acknowledgeInterimPaymentDecisionTimeoutResponse" type="tns:acknowledgeInterimPaymentDecisionTimeoutResponse"/>
+			<xs:element name="acknowledgeLiabilityAdmitted" type="tns:acknowledgeLiabilityAdmitted"/>
+			<xs:element name="acknowledgeLiabilityAdmittedForChild" type="tns:acknowledgeLiabilityAdmittedForChild"/>
+			<xs:element name="acknowledgeLiabilityAdmittedForChildResponse" type="tns:acknowledgeLiabilityAdmittedForChildResponse"/>
+			<xs:element name="acknowledgeLiabilityAdmittedResponse" type="tns:acknowledgeLiabilityAdmittedResponse"/>
+			<xs:element name="acknowledgeLiabilityAdmittedWithNeg" type="tns:acknowledgeLiabilityAdmittedWithNeg"/>
+			<xs:element name="acknowledgeLiabilityAdmittedWithNegResponse" type="tns:acknowledgeLiabilityAdmittedWithNegResponse"/>
+			<xs:element name="acknowledgeLiabilityDecisionTimeout" type="tns:acknowledgeLiabilityDecisionTimeout"/>
+			<xs:element name="acknowledgeLiabilityDecisionTimeoutResponse" type="tns:acknowledgeLiabilityDecisionTimeoutResponse"/>
+			<xs:element name="acknowledgePartialPaymentDecision" type="tns:acknowledgePartialPaymentDecision"/>
+			<xs:element name="acknowledgePartialPaymentDecisionResponse" type="tns:acknowledgePartialPaymentDecisionResponse"/>
+			<xs:element name="acknowledgeRejectedInterimSettlementPack" type="tns:acknowledgeRejectedInterimSettlementPack"/>
+			<xs:element name="acknowledgeRejectedInterimSettlementPackResponse" type="tns:acknowledgeRejectedInterimSettlementPackResponse"/>
+			<xs:element name="acknowledgeStage2SPFAgreed" type="tns:acknowledgeStage2SPFAgreed"/>
+			<xs:element name="acknowledgeStage2SPFAgreedResponse" type="tns:acknowledgeStage2SPFAgreedResponse"/>
+			<xs:element name="acknowledgeStage2SPFConfirmation" type="tns:acknowledgeStage2SPFConfirmation"/>
+			<xs:element name="acknowledgeStage2SPFConfirmationResponse" type="tns:acknowledgeStage2SPFConfirmationResponse"/>
+			<xs:element name="acknowledgeStage2SPFDecisionTimeout" type="tns:acknowledgeStage2SPFDecisionTimeout"/>
+			<xs:element name="acknowledgeStage2SPFDecisionTimeoutResponse" type="tns:acknowledgeStage2SPFDecisionTimeoutResponse"/>
+			<xs:element name="acknowledgeStage2SPFNotAgreed" type="tns:acknowledgeStage2SPFNotAgreed"/>
+			<xs:element name="acknowledgeStage2SPFNotAgreedResponse" type="tns:acknowledgeStage2SPFNotAgreedResponse"/>
+			<xs:element name="acknowledgeStage2SPFRepudiation" type="tns:acknowledgeStage2SPFRepudiation"/>
+			<xs:element name="acknowledgeStage2SPFRepudiationResponse" type="tns:acknowledgeStage2SPFRepudiationResponse"/>
+			<xs:element name="addAttachment" type="tns:addAttachment"/>
+			<xs:element name="addAttachmentResponse" type="tns:addAttachmentResponse"/>
+			<xs:element name="addCPPFRequest" type="tns:addCPPFRequest"/>
+			<xs:element name="addCPPFRequestResponse" type="tns:addCPPFRequestResponse"/>
+			<xs:element name="addCPPFResponse" type="tns:addCPPFResponse"/>
+			<xs:element name="addCPPFResponseResponse" type="tns:addCPPFResponseResponse"/>
+			<xs:element name="addClaim" type="tns:addClaim"/>
+			<xs:element name="addClaimResponse" type="tns:addClaimResponse"/>
+			<xs:element name="addInterimSPFRequest" type="tns:addInterimSPFRequest"/>
+			<xs:element name="addInterimSPFRequestResponse" type="tns:addInterimSPFRequestResponse"/>
+			<xs:element name="addInterimSPFResponse" type="tns:addInterimSPFResponse"/>
+			<xs:element name="addInterimSPFResponseResponse" type="tns:addInterimSPFResponseResponse"/>
+			<xs:element name="addStage2SPFCounterOfferByCM" type="tns:addStage2SPFCounterOfferByCM"/>
+			<xs:element name="addStage2SPFCounterOfferByCMResponse" type="tns:addStage2SPFCounterOfferByCMResponse"/>
+			<xs:element name="addStage2SPFCounterOfferByCR" type="tns:addStage2SPFCounterOfferByCR"/>
+			<xs:element name="addStage2SPFCounterOfferByCRResponse" type="tns:addStage2SPFCounterOfferByCRResponse"/>
+			<xs:element name="addStage2SPFRequest" type="tns:addStage2SPFRequest"/>
+			<xs:element name="addStage2SPFRequestResponse" type="tns:addStage2SPFRequestResponse"/>
+			<xs:element name="addStage2SPFResponse" type="tns:addStage2SPFResponse"/>
+			<xs:element name="addStage2SPFResponseResponse" type="tns:addStage2SPFResponseResponse"/>
+			<xs:element name="allocateClaimToBranch" type="tns:allocateClaimToBranch"/>
+			<xs:element name="allocateClaimToBranchResponse" type="tns:allocateClaimToBranchResponse"/>
+			<xs:element name="allocateUser" type="tns:allocateUser"/>
+			<xs:element name="allocateUserResponse" type="tns:allocateUserResponse"/>
+			<xs:element name="deallocateUser" type="tns:deallocateUser"/>
+			<xs:element name="deallocateUserResponse" type="tns:deallocateUserResponse"/>
+			<xs:element name="exitProcess" type="tns:exitProcess"/>
+			<xs:element name="exitProcessResponse" type="tns:exitProcessResponse"/>
+			<xs:element name="extendInterimPaymentDecisionTimeout" type="tns:extendInterimPaymentDecisionTimeout"/>
+			<xs:element name="extendInterimPaymentDecisionTimeoutResponse" type="tns:extendInterimPaymentDecisionTimeoutResponse"/>
+			<xs:element name="extendStage2SPFCounterOfferTimeout" type="tns:extendStage2SPFCounterOfferTimeout"/>
+			<xs:element name="extendStage2SPFCounterOfferTimeoutResponse" type="tns:extendStage2SPFCounterOfferTimeoutResponse"/>
+			<xs:element name="extendStage2SPFDecisionTimeout" type="tns:extendStage2SPFDecisionTimeout"/>
+			<xs:element name="extendStage2SPFDecisionTimeoutResponse" type="tns:extendStage2SPFDecisionTimeoutResponse"/>
+			<xs:element name="forceUnlockClaim" type="tns:forceUnlockClaim"/>
+			<xs:element name="forceUnlockClaimResponse" type="tns:forceUnlockClaimResponse"/>
+			<xs:element name="getAttachment" type="tns:getAttachment"/>
+			<xs:element name="getAttachmentResponse" type="tns:getAttachmentResponse"/>
+			<xs:element name="getAttachmentsList" type="tns:getAttachmentsList"/>
+			<xs:element name="getAttachmentsListResponse" type="tns:getAttachmentsListResponse"/>
+			<xs:element name="getBranchesList" type="tns:getBranchesList"/>
+			<xs:element name="getBranchesListResponse" type="tns:getBranchesListResponse"/>
+			<xs:element name="getClaim" type="tns:getClaim"/>
+			<xs:element name="getClaimResponse" type="tns:getClaimResponse"/>
+			<xs:element name="getClaimsList" type="tns:getClaimsList"/>
+			<xs:element name="getClaimsListResponse" type="tns:getClaimsListResponse"/>
+			<xs:element name="getClaimsStatus" type="tns:getClaimsStatus"/>
+			<xs:element name="getClaimsStatusResponse" type="tns:getClaimsStatusResponse"/>
+			<xs:element name="getHospitalsList" type="tns:getHospitalsList"/>
+			<xs:element name="getHospitalsListResponse" type="tns:getHospitalsListResponse"/>
+			<xs:element name="getMyUsersList" type="tns:getMyUsersList"/>
+			<xs:element name="getMyUsersListResponse" type="tns:getMyUsersListResponse"/>
+			<xs:element name="getNotificationsList" type="tns:getNotificationsList"/>
+			<xs:element name="getNotificationsListResponse" type="tns:getNotificationsListResponse"/>
+			<xs:element name="getOrganisation" type="tns:getOrganisation"/>
+			<xs:element name="getOrganisationResponse" type="tns:getOrganisationResponse"/>
+			<xs:element name="getPrintableDocument" type="tns:getPrintableDocument"/>
+			<xs:element name="getPrintableDocumentResponse" type="tns:getPrintableDocumentResponse"/>
+			<xs:element name="getPrintableDocumentsList" type="tns:getPrintableDocumentsList"/>
+			<xs:element name="getPrintableDocumentsListResponse" type="tns:getPrintableDocumentsListResponse"/>
+			<xs:element name="getSystemProcessVersion" type="tns:getSystemProcessVersion"/>
+			<xs:element name="getSystemProcessVersionResponse" type="tns:getSystemProcessVersionResponse"/>
+			<xs:element name="lockClaim" type="tns:lockClaim"/>
+			<xs:element name="lockClaimResponse" type="tns:lockClaimResponse"/>
+			<xs:element name="reassignToAnotherCM" type="tns:reassignToAnotherCM"/>
+			<xs:element name="reassignToAnotherCMResponse" type="tns:reassignToAnotherCMResponse"/>
+			<xs:element name="rejectClaimToCR" type="tns:rejectClaimToCR"/>
+			<xs:element name="rejectClaimToCRResponse" type="tns:rejectClaimToCRResponse"/>
+			<xs:element name="rejectInterimSettlementPack" type="tns:rejectInterimSettlementPack"/>
+			<xs:element name="rejectInterimSettlementPackResponse" type="tns:rejectInterimSettlementPackResponse"/>
+			<xs:element name="removeNotification" type="tns:removeNotification"/>
+			<xs:element name="removeNotificationResponse" type="tns:removeNotificationResponse"/>
+			<xs:element name="resendRejectedClaim" type="tns:resendRejectedClaim"/>
+			<xs:element name="resendRejectedClaimResponse" type="tns:resendRejectedClaimResponse"/>
+			<xs:element name="returnToStartOfStage21" type="tns:returnToStartOfStage21"/>
+			<xs:element name="returnToStartOfStage21Response" type="tns:returnToStartOfStage21Response"/>
+			<xs:element name="searchClaims" type="tns:searchClaims"/>
+			<xs:element name="searchClaimsResponse" type="tns:searchClaimsResponse"/>
+			<xs:element name="searchCompensators" type="tns:searchCompensators"/>
+			<xs:element name="searchCompensatorsByInsurerIndex" type="tns:searchCompensatorsByInsurerIndex"/>
+			<xs:element name="searchCompensatorsByInsurerIndexResponse" type="tns:searchCompensatorsByInsurerIndexResponse"/>
+			<xs:element name="searchCompensatorsResponse" type="tns:searchCompensatorsResponse"/>
+			<xs:element name="sendLiabilityDecision" type="tns:sendLiabilityDecision"/>
+			<xs:element name="sendLiabilityDecisionResponse" type="tns:sendLiabilityDecisionResponse"/>
+			<xs:element name="setInterimPaymentNeeded" type="tns:setInterimPaymentNeeded"/>
+			<xs:element name="setInterimPaymentNeededResponse" type="tns:setInterimPaymentNeededResponse"/>
+			<xs:element name="setStage21Payment" type="tns:setStage21Payment"/>
+			<xs:element name="setStage21PaymentResponse" type="tns:setStage21PaymentResponse"/>
+			<xs:element name="setStage2SPFAgreementDecision" type="tns:setStage2SPFAgreementDecision"/>
+			<xs:element name="setStage2SPFAgreementDecisionResponse" type="tns:setStage2SPFAgreementDecisionResponse"/>
+			<xs:element name="setStage2SPFCounterOfferNeeded" type="tns:setStage2SPFCounterOfferNeeded"/>
+			<xs:element name="setStage2SPFCounterOfferNeededResponse" type="tns:setStage2SPFCounterOfferNeededResponse"/>
+			<xs:element name="stateFraud" type="tns:stateFraud"/>
+			<xs:element name="stateFraudResponse" type="tns:stateFraudResponse"/>
+			<xs:element name="unlockClaim" type="tns:unlockClaim"/>
+			<xs:element name="unlockClaimResponse" type="tns:unlockClaimResponse"/>
+			<xs:complexType name="addAttachment">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="attachment" type="tns:attachmentInput"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="attachmentInput">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+							<xs:element minOccurs="0" name="dataAttachmentDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="dataAttachmentFileName" type="xs:string"/>
+							<xs:element minOccurs="0" name="dataAttachmentFileZip" type="xs:base64Binary"/>
+							<xs:element minOccurs="0" name="dataAttachmentGuid" type="xs:string"/>
+							<xs:element minOccurs="0" name="dataAttachmentTitle" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="baseDTO">
+				<xs:sequence/>
+			</xs:complexType>
+			<xs:complexType name="userAuth">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="asUser" type="xs:string"/>
+							<xs:element minOccurs="0" name="password" type="xs:string"/>
+							<xs:element minOccurs="0" name="username" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="addAttachmentResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="stringResponse" type="tns:stringResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="stringResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="value" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="response">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="code" type="tns:responseCode"/>
+					<xs:element minOccurs="0" name="message" type="xs:string"/>
+					<xs:element minOccurs="0" name="trace" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getAttachment">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="attachmentGuid" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getAttachmentResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="attachmentResponse" type="tns:attachmentResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="attachmentResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="attachment" type="tns:attachment"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="attachment">
+				<xs:complexContent>
+					<xs:extension base="tns:attachmentInput">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="dataAttachmentDate" type="xs:string"/>
+							<xs:element minOccurs="0" name="dataAttachmentOwner" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="getOrganisation">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="organisationPath" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getOrganisationResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="organisationResponse" type="tns:organisationResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="organisationResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="organisation" type="tns:organisation"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="organisation">
+				<xs:complexContent>
+					<xs:extension base="tns:organisationInfo">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="address" type="tns:address"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="organisationInfo">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="organisationId" type="xs:string"/>
+							<xs:element minOccurs="0" name="organisationName" type="xs:string"/>
+							<xs:element minOccurs="0" name="organisationPath" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="address">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="addressType" type="xs:string"/>
+							<xs:element minOccurs="0" name="city" type="xs:string"/>
+							<xs:element minOccurs="0" name="country" type="xs:string"/>
+							<xs:element minOccurs="0" name="county" type="xs:string"/>
+							<xs:element minOccurs="0" name="district" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseName" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="street1" type="xs:string"/>
+							<xs:element minOccurs="0" name="street2" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="resendRejectedClaim">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="claimXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="claimData">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="activityEngineGuid" type="xs:string"/>
+							<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="resendRejectedClaimResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="claimInfoResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="claimInfo" type="tns:claimInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="claimInfo">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="activityEngineGuid" type="xs:string"/>
+							<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phaseCacheId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phaseCacheName" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="removeNotification">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="notificationGuid" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="removeNotificationResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="response" type="tns:response"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getClaim">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getClaimResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="stringResponse" type="tns:stringResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getAttachmentsList">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getAttachmentsListResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="attachmentListResponse" type="tns:attachmentsListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="attachmentsListResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="attachemntsList" nillable="true" type="tns:attachment"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="getClaimsList">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getClaimsListResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimsListResponse" type="tns:claimsListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="claimsListResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="claimsList" nillable="true" type="tns:claim"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="claim">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="activityEngineGuid" type="xs:string"/>
+							<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+							<xs:element minOccurs="0" name="applicationReferences" type="xs:string"/>
+							<xs:element name="attachmentsCount" type="xs:int"/>
+							<xs:element minOccurs="0" name="claimType" type="tns:claimType"/>
+							<xs:element minOccurs="0" name="creationTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="currentUserID" type="xs:string"/>
+							<xs:element name="lockStatus" type="xs:int"/>
+							<xs:element minOccurs="0" name="lockUserId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phaseCacheId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phaseCacheName" type="xs:string"/>
+							<xs:element name="printableDocumentsCount" type="xs:int"/>
+							<xs:element name="versionMajor" type="xs:int"/>
+							<xs:element name="versionMinor" type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="getPrintableDocumentsList">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getPrintableDocumentsListResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="attachmentsListResponse" type="tns:attachmentsListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getPrintableDocument">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="printableDocumentId" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getPrintableDocumentResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="attachmentResponse" type="tns:attachmentResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getHospitalsList">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="hospitalName" type="xs:string"/>
+					<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getHospitalsListResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="hospitalsListResponse" type="tns:hospitalsListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="hospitalsListResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="hospitalsList" nillable="true" type="tns:hospital"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="hospital">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="addressLine1" type="xs:string"/>
+							<xs:element minOccurs="0" name="addressLine2" type="xs:string"/>
+							<xs:element minOccurs="0" name="addressLine3" type="xs:string"/>
+							<xs:element minOccurs="0" name="addressLine4" type="xs:string"/>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="getNotificationsList">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getNotificationsListResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="notificationsListResponse" type="tns:notificationsListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="notificationsListResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="notificationsList" nillable="true" type="tns:notification"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="notification">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+							<xs:element minOccurs="0" name="formattedDate" type="xs:string"/>
+							<xs:element minOccurs="0" name="notificationDateTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="notificationGuid" type="xs:string"/>
+							<xs:element minOccurs="0" name="notificationMessage" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="lockClaim">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="lockClaimResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="response" type="tns:response"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="unlockClaim">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="unlockClaimResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="response" type="tns:response"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="forceUnlockClaim">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="forceUnlockClaimResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="response" type="tns:response"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="searchClaims">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="searchClaimCriteria" type="tns:searchClaimCriteria"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="searchClaimCriteria">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+							<xs:element minOccurs="0" name="branchPath" type="xs:string"/>
+							<xs:element minOccurs="0" name="CMReferenceNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="CRReferenceNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="claimType" type="tns:claimType"/>
+							<xs:element minOccurs="0" name="dispatchDateFrom" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="dispatchDateTo" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="phaseCacheId" type="xs:string"/>
+							<xs:element minOccurs="0" name="sentDateFrom" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="sentDateTo" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="sortField" type="tns:sortField"/>
+							<xs:element minOccurs="0" name="sortOrder" type="tns:sortOrder"/>
+							<xs:element minOccurs="0" name="startDateFrom" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="startDateTo" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="searchClaimsResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfosListResponse" type="tns:claimsListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getBranchesList">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getBranchesListResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="organisationInfosListResponse" type="tns:organisationInfosListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="organisationInfosListResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="organisationInfosList" nillable="true" type="tns:organisationInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="searchCompensators">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="compensatorType" type="xs:string"/>
+					<xs:element minOccurs="0" name="organisationName" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="searchCompensatorsResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="organisationInfosListResponse" type="tns:organisationInfosListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="searchCompensatorsByInsurerIndex">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="compensatorType" type="xs:string"/>
+					<xs:element minOccurs="0" name="organisationName" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="searchCompensatorsByInsurerIndexResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="InsurerIndexList" type="tns:insurerIndexList"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="insurerIndexList">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="insurerInfoList" nillable="true" type="tns:insurerInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="insurerInfo">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="contactName" type="xs:string"/>
+							<xs:element minOccurs="0" name="insurerName" type="xs:string"/>
+							<xs:element minOccurs="0" name="rapidInsurerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="rapidInsurerName" type="xs:string"/>
+							<xs:element minOccurs="0" name="rapidInsurerPath" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="getClaimsStatus">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="applicationId" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getClaimsStatusResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addClaim">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addClaimResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acceptClaim">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="insurerClaimReferenceNumber" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acceptClaimResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeDeniedLiability">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeDeniedLiabilityResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeClaim">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeClaimResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="allocateClaimToBranch">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="branchId" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="allocateClaimToBranchResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="reassignToAnotherCM">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="organisationPath" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="reassignToAnotherCMResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="rejectClaimToCR">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="rejectClaimToCRResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="sendLiabilityDecision">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="insurerResponseXml" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="sendLiabilityDecisionResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="stateFraud">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="reasonCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="reasonDescription" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="stateFraudResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeFraudStated">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeFraudStatedResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acceptPartialInterimPayment">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element name="isPartialInterimPaymentAccepted" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acceptPartialInterimPaymentResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgePartialPaymentDecision">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgePartialPaymentDecisionResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addInterimSPFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="ISPFRequestXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addInterimSPFRequestResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addInterimSPFResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="ISPFResponseXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addInterimSPFResponseResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="setInterimPaymentNeeded">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element name="isInterimPaymentNeeded" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="setInterimPaymentNeededResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="setStage21Payment">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element name="isStage21Paid" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="setStage21PaymentResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeCPPFResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeCPPFResponseResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFAgreed">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFAgreedResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFNotAgreed">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFNotAgreedResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addCPPFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="CPPFRequestXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addCPPFRequestResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addCPPFResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="CPPFResponseXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addCPPFResponseResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addStage2SPFCounterOfferByCM">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="S2SPFCounterOfferByCMXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addStage2SPFCounterOfferByCMResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addStage2SPFCounterOfferByCR">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="S2SPFCounterOfferByCRXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addStage2SPFCounterOfferByCRResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addStage2SPFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="S2SPFRequestXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addStage2SPFRequestResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addStage2SPFResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="S2SPFResponseXML" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="addStage2SPFResponseResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="setStage2SPFAgreementDecision">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element name="isAgreed" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="setStage2SPFAgreementDecisionResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="setStage2SPFCounterOfferNeeded">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element name="isStage2SPFCounterOfferNeeded" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="setStage2SPFCounterOfferNeededResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFRepudiation">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFRepudiationResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFConfirmation">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFConfirmationResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeLiabilityDecisionTimeout">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeLiabilityDecisionTimeoutResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFDecisionTimeout">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeStage2SPFDecisionTimeoutResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="exitProcess">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="exitReasonCode" type="xs:string"/>
+					<xs:element minOccurs="0" name="exitComment" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="exitProcessResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeExitProcess">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeExitProcessResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="allocateUser">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="targetUserID" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="allocateUserResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="deallocateUser">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="deallocateUserResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getSystemProcessVersion">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getSystemProcessVersionResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:systemProcessVersionResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="systemProcessVersionResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="systemProcessVersion" type="tns:systemProcessVersion"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="systemProcessVersion">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="processName" type="xs:string"/>
+							<xs:element name="versionMajor" type="xs:int"/>
+							<xs:element name="versionMinor" type="xs:int"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeLiabilityAdmittedWithNeg">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeLiabilityAdmittedWithNegResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeLiabilityAdmitted">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeLiabilityAdmittedResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeLiabilityAdmittedForChild">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeLiabilityAdmittedForChildResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="rejectInterimSettlementPack">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="rejectionComment" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="rejectInterimSettlementPackResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeRejectedInterimSettlementPack">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeRejectedInterimSettlementPackResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="extendInterimPaymentDecisionTimeout">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="extendInterimPaymentDecisionTimeoutResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeInterimPaymentDecisionTimeout">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acknowledgeInterimPaymentDecisionTimeoutResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="returnToStartOfStage21">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="returnToStartOfStage21Response">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="extendStage2SPFDecisionTimeout">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="newTimeOut" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="reasonForExtension" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="extendStage2SPFDecisionTimeoutResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="extendStage2SPFCounterOfferTimeout">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimData" type="tns:claimData"/>
+					<xs:element minOccurs="0" name="newTimeOut" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="reasonForExtension" type="xs:string"/>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="extendStage2SPFCounterOfferTimeoutResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="claimInfoResponse" type="tns:claimInfoResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getMyUsersList">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="userAuth" type="tns:userAuth"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getMyUsersListResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="userInfosListResponse" type="tns:userInfosListResponse"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="userInfosListResponse">
+				<xs:complexContent>
+					<xs:extension base="tns:response">
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="userInfosList" nillable="true" type="tns:userInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:complexType name="userInfo">
+				<xs:complexContent>
+					<xs:extension base="tns:baseDTO">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="userBranchId" type="xs:string"/>
+							<xs:element minOccurs="0" name="userEnabled" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="userId" type="xs:string"/>
+							<xs:element minOccurs="0" name="userName" type="xs:string"/>
+							<xs:element minOccurs="0" name="userOrganisationId" type="xs:string"/>
+							<xs:element minOccurs="0" name="userProfile" type="xs:string"/>
+							<xs:element minOccurs="0" name="userSecondName" type="xs:string"/>
+							<xs:element minOccurs="0" name="userSurname" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:simpleType name="responseCode">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Ok"/>
+					<xs:enumeration value="Failure"/>
+					<xs:enumeration value="Error"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="claimType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="EL"/>
+					<xs:enumeration value="PL"/>
+					<xs:enumeration value="ELD"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="sortField">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="StartDate"/>
+					<xs:enumeration value="UpdateDate"/>
+					<xs:enumeration value="ApplicationId"/>
+					<xs:enumeration value="Priority"/>
+					<xs:enumeration value="DispatchDate"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType name="sortOrder">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Asc"/>
+					<xs:enumeration value="Desc"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:schema>
+	</types>
+	<message name="ELPL_resendRejectedClaim">
+		<part element="tns:resendRejectedClaim" name="resendRejectedClaim"/>
+	</message>
+	<message name="ELPL_addCPPFResponseResponse">
+		<part element="tns:addCPPFResponseResponse" name="addCPPFResponseResponse"/>
+	</message>
+	<message name="ELPL_reassignToAnotherCMResponse">
+		<part element="tns:reassignToAnotherCMResponse" name="reassignToAnotherCMResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeLiabilityDecisionTimeout">
+		<part element="tns:acknowledgeLiabilityDecisionTimeout" name="acknowledgeLiabilityDecisionTimeout"/>
+	</message>
+	<message name="ELPL_getClaim">
+		<part element="tns:getClaim" name="getClaim"/>
+	</message>
+	<message name="ELPL_acknowledgeInterimPaymentDecisionTimeout">
+		<part element="tns:acknowledgeInterimPaymentDecisionTimeout" name="acknowledgeInterimPaymentDecisionTimeout"/>
+	</message>
+	<message name="ELPL_stateFraudResponse">
+		<part element="tns:stateFraudResponse" name="stateFraudResponse"/>
+	</message>
+	<message name="ELPL_returnToStartOfStage21">
+		<part element="tns:returnToStartOfStage21" name="returnToStartOfStage21"/>
+	</message>
+	<message name="ELPL_rejectClaimToCRResponse">
+		<part element="tns:rejectClaimToCRResponse" name="rejectClaimToCRResponse"/>
+	</message>
+	<message name="ELPL_searchClaimsResponse">
+		<part element="tns:searchClaimsResponse" name="searchClaimsResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeLiabilityAdmittedForChildResponse">
+		<part element="tns:acknowledgeLiabilityAdmittedForChildResponse" name="acknowledgeLiabilityAdmittedForChildResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeDeniedLiability">
+		<part element="tns:acknowledgeDeniedLiability" name="acknowledgeDeniedLiability"/>
+	</message>
+	<message name="ELPL_getClaimsListResponse">
+		<part element="tns:getClaimsListResponse" name="getClaimsListResponse"/>
+	</message>
+	<message name="ELPL_reassignToAnotherCM">
+		<part element="tns:reassignToAnotherCM" name="reassignToAnotherCM"/>
+	</message>
+	<message name="ELPL_sendLiabilityDecisionResponse">
+		<part element="tns:sendLiabilityDecisionResponse" name="sendLiabilityDecisionResponse"/>
+	</message>
+	<message name="ELPL_sendLiabilityDecision">
+		<part element="tns:sendLiabilityDecision" name="sendLiabilityDecision"/>
+	</message>
+	<message name="ELPL_deallocateUser">
+		<part element="tns:deallocateUser" name="deallocateUser"/>
+	</message>
+	<message name="ELPL_allocateUser">
+		<part element="tns:allocateUser" name="allocateUser"/>
+	</message>
+	<message name="ELPL_acknowledgeLiabilityAdmittedForChild">
+		<part element="tns:acknowledgeLiabilityAdmittedForChild" name="acknowledgeLiabilityAdmittedForChild"/>
+	</message>
+	<message name="ELPL_getPrintableDocumentsListResponse">
+		<part element="tns:getPrintableDocumentsListResponse" name="getPrintableDocumentsListResponse"/>
+	</message>
+	<message name="ELPL_deallocateUserResponse">
+		<part element="tns:deallocateUserResponse" name="deallocateUserResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeFraudStated">
+		<part element="tns:acknowledgeFraudStated" name="acknowledgeFraudStated"/>
+	</message>
+	<message name="ELPL_getClaimResponse">
+		<part element="tns:getClaimResponse" name="getClaimResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeRejectedInterimSettlementPack">
+		<part element="tns:acknowledgeRejectedInterimSettlementPack" name="acknowledgeRejectedInterimSettlementPack"/>
+	</message>
+	<message name="ELPL_acknowledgePartialPaymentDecisionResponse">
+		<part element="tns:acknowledgePartialPaymentDecisionResponse" name="acknowledgePartialPaymentDecisionResponse"/>
+	</message>
+	<message name="ELPL_addCPPFRequestResponse">
+		<part element="tns:addCPPFRequestResponse" name="addCPPFRequestResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeInterimPaymentDecisionTimeoutResponse">
+		<part element="tns:acknowledgeInterimPaymentDecisionTimeoutResponse" name="acknowledgeInterimPaymentDecisionTimeoutResponse"/>
+	</message>
+	<message name="ELPL_addStage2SPFResponseResponse">
+		<part element="tns:addStage2SPFResponseResponse" name="addStage2SPFResponseResponse"/>
+	</message>
+	<message name="ELPL_allocateUserResponse">
+		<part element="tns:allocateUserResponse" name="allocateUserResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFConfirmation">
+		<part element="tns:acknowledgeStage2SPFConfirmation" name="acknowledgeStage2SPFConfirmation"/>
+	</message>
+	<message name="ELPL_acceptPartialInterimPaymentResponse">
+		<part element="tns:acceptPartialInterimPaymentResponse" name="acceptPartialInterimPaymentResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeDeniedLiabilityResponse">
+		<part element="tns:acknowledgeDeniedLiabilityResponse" name="acknowledgeDeniedLiabilityResponse"/>
+	</message>
+	<message name="ELPL_getNotificationsListResponse">
+		<part element="tns:getNotificationsListResponse" name="getNotificationsListResponse"/>
+	</message>
+	<message name="ELPL_setStage2SPFAgreementDecision">
+		<part element="tns:setStage2SPFAgreementDecision" name="setStage2SPFAgreementDecision"/>
+	</message>
+	<message name="ELPL_unlockClaimResponse">
+		<part element="tns:unlockClaimResponse" name="unlockClaimResponse"/>
+	</message>
+	<message name="ELPL_addCPPFResponse">
+		<part element="tns:addCPPFResponse" name="addCPPFResponse"/>
+	</message>
+	<message name="ELPL_addAttachmentResponse">
+		<part element="tns:addAttachmentResponse" name="addAttachmentResponse"/>
+	</message>
+	<message name="ELPL_addStage2SPFResponse">
+		<part element="tns:addStage2SPFResponse" name="addStage2SPFResponse"/>
+	</message>
+	<message name="ELPL_stateFraud">
+		<part element="tns:stateFraud" name="stateFraud"/>
+	</message>
+	<message name="ELPL_allocateClaimToBranchResponse">
+		<part element="tns:allocateClaimToBranchResponse" name="allocateClaimToBranchResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFRepudiation">
+		<part element="tns:acknowledgeStage2SPFRepudiation" name="acknowledgeStage2SPFRepudiation"/>
+	</message>
+	<message name="ELPL_getClaimsList">
+		<part element="tns:getClaimsList" name="getClaimsList"/>
+	</message>
+	<message name="ELPL_acknowledgeLiabilityAdmittedWithNeg">
+		<part element="tns:acknowledgeLiabilityAdmittedWithNeg" name="acknowledgeLiabilityAdmittedWithNeg"/>
+	</message>
+	<message name="ELPL_acknowledgePartialPaymentDecision">
+		<part element="tns:acknowledgePartialPaymentDecision" name="acknowledgePartialPaymentDecision"/>
+	</message>
+	<message name="ELPL_getHospitalsList">
+		<part element="tns:getHospitalsList" name="getHospitalsList"/>
+	</message>
+	<message name="ELPL_rejectInterimSettlementPackResponse">
+		<part element="tns:rejectInterimSettlementPackResponse" name="rejectInterimSettlementPackResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeExitProcess">
+		<part element="tns:acknowledgeExitProcess" name="acknowledgeExitProcess"/>
+	</message>
+	<message name="ELPL_acknowledgeClaimResponse">
+		<part element="tns:acknowledgeClaimResponse" name="acknowledgeClaimResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFDecisionTimeout">
+		<part element="tns:acknowledgeStage2SPFDecisionTimeout" name="acknowledgeStage2SPFDecisionTimeout"/>
+	</message>
+	<message name="ELPL_getHospitalsListResponse">
+		<part element="tns:getHospitalsListResponse" name="getHospitalsListResponse"/>
+	</message>
+	<message name="ELPL_exitProcessResponse">
+		<part element="tns:exitProcessResponse" name="exitProcessResponse"/>
+	</message>
+	<message name="ELPL_getMyUsersList">
+		<part element="tns:getMyUsersList" name="getMyUsersList"/>
+	</message>
+	<message name="ELPL_searchCompensatorsByInsurerIndex">
+		<part element="tns:searchCompensatorsByInsurerIndex" name="searchCompensatorsByInsurerIndex"/>
+	</message>
+	<message name="ELPL_extendStage2SPFCounterOfferTimeout">
+		<part element="tns:extendStage2SPFCounterOfferTimeout" name="extendStage2SPFCounterOfferTimeout"/>
+	</message>
+	<message name="ELPL_extendStage2SPFDecisionTimeoutResponse">
+		<part element="tns:extendStage2SPFDecisionTimeoutResponse" name="extendStage2SPFDecisionTimeoutResponse"/>
+	</message>
+	<message name="ELPL_addAttachment">
+		<part element="tns:addAttachment" name="addAttachment"/>
+	</message>
+	<message name="ELPL_acknowledgeRejectedInterimSettlementPackResponse">
+		<part element="tns:acknowledgeRejectedInterimSettlementPackResponse" name="acknowledgeRejectedInterimSettlementPackResponse"/>
+	</message>
+	<message name="ELPL_acceptPartialInterimPayment">
+		<part element="tns:acceptPartialInterimPayment" name="acceptPartialInterimPayment"/>
+	</message>
+	<message name="ELPL_addStage2SPFCounterOfferByCRResponse">
+		<part element="tns:addStage2SPFCounterOfferByCRResponse" name="addStage2SPFCounterOfferByCRResponse"/>
+	</message>
+	<message name="ELPL_addClaim">
+		<part element="tns:addClaim" name="addClaim"/>
+	</message>
+	<message name="ELPL_getAttachmentsList">
+		<part element="tns:getAttachmentsList" name="getAttachmentsList"/>
+	</message>
+	<message name="ELPL_addStage2SPFRequest">
+		<part element="tns:addStage2SPFRequest" name="addStage2SPFRequest"/>
+	</message>
+	<message name="ELPL_getClaimsStatus">
+		<part element="tns:getClaimsStatus" name="getClaimsStatus"/>
+	</message>
+	<message name="ELPL_unlockClaim">
+		<part element="tns:unlockClaim" name="unlockClaim"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFDecisionTimeoutResponse">
+		<part element="tns:acknowledgeStage2SPFDecisionTimeoutResponse" name="acknowledgeStage2SPFDecisionTimeoutResponse"/>
+	</message>
+	<message name="ELPL_getAttachmentResponse">
+		<part element="tns:getAttachmentResponse" name="getAttachmentResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFNotAgreed">
+		<part element="tns:acknowledgeStage2SPFNotAgreed" name="acknowledgeStage2SPFNotAgreed"/>
+	</message>
+	<message name="ELPL_lockClaimResponse">
+		<part element="tns:lockClaimResponse" name="lockClaimResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeCPPFResponse">
+		<part element="tns:acknowledgeCPPFResponse" name="acknowledgeCPPFResponse"/>
+	</message>
+	<message name="ELPL_getPrintableDocumentsList">
+		<part element="tns:getPrintableDocumentsList" name="getPrintableDocumentsList"/>
+	</message>
+	<message name="ELPL_getSystemProcessVersion">
+		<part element="tns:getSystemProcessVersion" name="getSystemProcessVersion"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFAgreed">
+		<part element="tns:acknowledgeStage2SPFAgreed" name="acknowledgeStage2SPFAgreed"/>
+	</message>
+	<message name="ELPL_getSystemProcessVersionResponse">
+		<part element="tns:getSystemProcessVersionResponse" name="getSystemProcessVersionResponse"/>
+	</message>
+	<message name="ELPL_getBranchesListResponse">
+		<part element="tns:getBranchesListResponse" name="getBranchesListResponse"/>
+	</message>
+	<message name="ELPL_addStage2SPFCounterOfferByCMResponse">
+		<part element="tns:addStage2SPFCounterOfferByCMResponse" name="addStage2SPFCounterOfferByCMResponse"/>
+	</message>
+	<message name="ELPL_allocateClaimToBranch">
+		<part element="tns:allocateClaimToBranch" name="allocateClaimToBranch"/>
+	</message>
+	<message name="ELPL_getPrintableDocumentResponse">
+		<part element="tns:getPrintableDocumentResponse" name="getPrintableDocumentResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFRepudiationResponse">
+		<part element="tns:acknowledgeStage2SPFRepudiationResponse" name="acknowledgeStage2SPFRepudiationResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeLiabilityAdmittedWithNegResponse">
+		<part element="tns:acknowledgeLiabilityAdmittedWithNegResponse" name="acknowledgeLiabilityAdmittedWithNegResponse"/>
+	</message>
+	<message name="ELPL_rejectInterimSettlementPack">
+		<part element="tns:rejectInterimSettlementPack" name="rejectInterimSettlementPack"/>
+	</message>
+	<message name="ELPL_getOrganisationResponse">
+		<part element="tns:getOrganisationResponse" name="getOrganisationResponse"/>
+	</message>
+	<message name="ELPL_getMyUsersListResponse">
+		<part element="tns:getMyUsersListResponse" name="getMyUsersListResponse"/>
+	</message>
+	<message name="ELPL_setStage21Payment">
+		<part element="tns:setStage21Payment" name="setStage21Payment"/>
+	</message>
+	<message name="ELPL_searchClaims">
+		<part element="tns:searchClaims" name="searchClaims"/>
+	</message>
+	<message name="ELPL_acknowledgeCPPFResponseResponse">
+		<part element="tns:acknowledgeCPPFResponseResponse" name="acknowledgeCPPFResponseResponse"/>
+	</message>
+	<message name="ELPL_forceUnlockClaimResponse">
+		<part element="tns:forceUnlockClaimResponse" name="forceUnlockClaimResponse"/>
+	</message>
+	<message name="ELPL_setStage2SPFCounterOfferNeeded">
+		<part element="tns:setStage2SPFCounterOfferNeeded" name="setStage2SPFCounterOfferNeeded"/>
+	</message>
+	<message name="ELPL_addCPPFRequest">
+		<part element="tns:addCPPFRequest" name="addCPPFRequest"/>
+	</message>
+	<message name="ELPL_setStage2SPFCounterOfferNeededResponse">
+		<part element="tns:setStage2SPFCounterOfferNeededResponse" name="setStage2SPFCounterOfferNeededResponse"/>
+	</message>
+	<message name="ELPL_extendStage2SPFCounterOfferTimeoutResponse">
+		<part element="tns:extendStage2SPFCounterOfferTimeoutResponse" name="extendStage2SPFCounterOfferTimeoutResponse"/>
+	</message>
+	<message name="ELPL_rejectClaimToCR">
+		<part element="tns:rejectClaimToCR" name="rejectClaimToCR"/>
+	</message>
+	<message name="ELPL_lockClaim">
+		<part element="tns:lockClaim" name="lockClaim"/>
+	</message>
+	<message name="ELPL_addClaimResponse">
+		<part element="tns:addClaimResponse" name="addClaimResponse"/>
+	</message>
+	<message name="ELPL_extendStage2SPFDecisionTimeout">
+		<part element="tns:extendStage2SPFDecisionTimeout" name="extendStage2SPFDecisionTimeout"/>
+	</message>
+	<message name="ELPL_acceptClaimResponse">
+		<part element="tns:acceptClaimResponse" name="acceptClaimResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeFraudStatedResponse">
+		<part element="tns:acknowledgeFraudStatedResponse" name="acknowledgeFraudStatedResponse"/>
+	</message>
+	<message name="ELPL_setStage2SPFAgreementDecisionResponse">
+		<part element="tns:setStage2SPFAgreementDecisionResponse" name="setStage2SPFAgreementDecisionResponse"/>
+	</message>
+	<message name="ELPL_getAttachmentsListResponse">
+		<part element="tns:getAttachmentsListResponse" name="getAttachmentsListResponse"/>
+	</message>
+	<message name="ELPL_removeNotification">
+		<part element="tns:removeNotification" name="removeNotification"/>
+	</message>
+	<message name="ELPL_getOrganisation">
+		<part element="tns:getOrganisation" name="getOrganisation"/>
+	</message>
+	<message name="ELPL_searchCompensators">
+		<part element="tns:searchCompensators" name="searchCompensators"/>
+	</message>
+	<message name="ELPL_removeNotificationResponse">
+		<part element="tns:removeNotificationResponse" name="removeNotificationResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFAgreedResponse">
+		<part element="tns:acknowledgeStage2SPFAgreedResponse" name="acknowledgeStage2SPFAgreedResponse"/>
+	</message>
+	<message name="ELPL_returnToStartOfStage21Response">
+		<part element="tns:returnToStartOfStage21Response" name="returnToStartOfStage21Response"/>
+	</message>
+	<message name="ELPL_getNotificationsList">
+		<part element="tns:getNotificationsList" name="getNotificationsList"/>
+	</message>
+	<message name="ELPL_addInterimSPFRequestResponse">
+		<part element="tns:addInterimSPFRequestResponse" name="addInterimSPFRequestResponse"/>
+	</message>
+	<message name="ELPL_acceptClaim">
+		<part element="tns:acceptClaim" name="acceptClaim"/>
+	</message>
+	<message name="ELPL_addInterimSPFResponse">
+		<part element="tns:addInterimSPFResponse" name="addInterimSPFResponse"/>
+	</message>
+	<message name="ELPL_addStage2SPFRequestResponse">
+		<part element="tns:addStage2SPFRequestResponse" name="addStage2SPFRequestResponse"/>
+	</message>
+	<message name="ELPL_forceUnlockClaim">
+		<part element="tns:forceUnlockClaim" name="forceUnlockClaim"/>
+	</message>
+	<message name="ELPL_setInterimPaymentNeededResponse">
+		<part element="tns:setInterimPaymentNeededResponse" name="setInterimPaymentNeededResponse"/>
+	</message>
+	<message name="ELPL_setInterimPaymentNeeded">
+		<part element="tns:setInterimPaymentNeeded" name="setInterimPaymentNeeded"/>
+	</message>
+	<message name="ELPL_searchCompensatorsResponse">
+		<part element="tns:searchCompensatorsResponse" name="searchCompensatorsResponse"/>
+	</message>
+	<message name="ELPL_exitProcess">
+		<part element="tns:exitProcess" name="exitProcess"/>
+	</message>
+	<message name="ELPL_extendInterimPaymentDecisionTimeout">
+		<part element="tns:extendInterimPaymentDecisionTimeout" name="extendInterimPaymentDecisionTimeout"/>
+	</message>
+	<message name="ELPL_acknowledgeClaim">
+		<part element="tns:acknowledgeClaim" name="acknowledgeClaim"/>
+	</message>
+	<message name="ELPL_addInterimSPFRequest">
+		<part element="tns:addInterimSPFRequest" name="addInterimSPFRequest"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFNotAgreedResponse">
+		<part element="tns:acknowledgeStage2SPFNotAgreedResponse" name="acknowledgeStage2SPFNotAgreedResponse"/>
+	</message>
+	<message name="ELPL_addStage2SPFCounterOfferByCR">
+		<part element="tns:addStage2SPFCounterOfferByCR" name="addStage2SPFCounterOfferByCR"/>
+	</message>
+	<message name="ELPL_addStage2SPFCounterOfferByCM">
+		<part element="tns:addStage2SPFCounterOfferByCM" name="addStage2SPFCounterOfferByCM"/>
+	</message>
+	<message name="ELPL_addInterimSPFResponseResponse">
+		<part element="tns:addInterimSPFResponseResponse" name="addInterimSPFResponseResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeLiabilityAdmitted">
+		<part element="tns:acknowledgeLiabilityAdmitted" name="acknowledgeLiabilityAdmitted"/>
+	</message>
+	<message name="ELPL_acknowledgeLiabilityDecisionTimeoutResponse">
+		<part element="tns:acknowledgeLiabilityDecisionTimeoutResponse" name="acknowledgeLiabilityDecisionTimeoutResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeStage2SPFConfirmationResponse">
+		<part element="tns:acknowledgeStage2SPFConfirmationResponse" name="acknowledgeStage2SPFConfirmationResponse"/>
+	</message>
+	<message name="ELPL_getBranchesList">
+		<part element="tns:getBranchesList" name="getBranchesList"/>
+	</message>
+	<message name="ELPL_searchCompensatorsByInsurerIndexResponse">
+		<part element="tns:searchCompensatorsByInsurerIndexResponse" name="searchCompensatorsByInsurerIndexResponse"/>
+	</message>
+	<message name="ELPL_getAttachment">
+		<part element="tns:getAttachment" name="getAttachment"/>
+	</message>
+	<message name="ELPL_resendRejectedClaimResponse">
+		<part element="tns:resendRejectedClaimResponse" name="resendRejectedClaimResponse"/>
+	</message>
+	<message name="ELPL_setStage21PaymentResponse">
+		<part element="tns:setStage21PaymentResponse" name="setStage21PaymentResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeExitProcessResponse">
+		<part element="tns:acknowledgeExitProcessResponse" name="acknowledgeExitProcessResponse"/>
+	</message>
+	<message name="ELPL_acknowledgeLiabilityAdmittedResponse">
+		<part element="tns:acknowledgeLiabilityAdmittedResponse" name="acknowledgeLiabilityAdmittedResponse"/>
+	</message>
+	<message name="ELPL_getPrintableDocument">
+		<part element="tns:getPrintableDocument" name="getPrintableDocument"/>
+	</message>
+	<message name="ELPL_extendInterimPaymentDecisionTimeoutResponse">
+		<part element="tns:extendInterimPaymentDecisionTimeoutResponse" name="extendInterimPaymentDecisionTimeoutResponse"/>
+	</message>
+	<message name="ELPL_getClaimsStatusResponse">
+		<part element="tns:getClaimsStatusResponse" name="getClaimsStatusResponse"/>
+	</message>
+	<portType name="ELPL">
+		<operation name="acceptClaim" parameterOrder="acceptClaim">
+			<input message="tns:ELPL_acceptClaim"/>
+			<output message="tns:ELPL_acceptClaimResponse"/>
+		</operation>
+		<operation name="acceptPartialInterimPayment" parameterOrder="acceptPartialInterimPayment">
+			<input message="tns:ELPL_acceptPartialInterimPayment"/>
+			<output message="tns:ELPL_acceptPartialInterimPaymentResponse"/>
+		</operation>
+		<operation name="acknowledgeCPPFResponse" parameterOrder="acknowledgeCPPFResponse">
+			<input message="tns:ELPL_acknowledgeCPPFResponse"/>
+			<output message="tns:ELPL_acknowledgeCPPFResponseResponse"/>
+		</operation>
+		<operation name="acknowledgeClaim" parameterOrder="acknowledgeClaim">
+			<input message="tns:ELPL_acknowledgeClaim"/>
+			<output message="tns:ELPL_acknowledgeClaimResponse"/>
+		</operation>
+		<operation name="acknowledgeDeniedLiability" parameterOrder="acknowledgeDeniedLiability">
+			<input message="tns:ELPL_acknowledgeDeniedLiability"/>
+			<output message="tns:ELPL_acknowledgeDeniedLiabilityResponse"/>
+		</operation>
+		<operation name="acknowledgeExitProcess" parameterOrder="acknowledgeExitProcess">
+			<input message="tns:ELPL_acknowledgeExitProcess"/>
+			<output message="tns:ELPL_acknowledgeExitProcessResponse"/>
+		</operation>
+		<operation name="acknowledgeFraudStated" parameterOrder="acknowledgeFraudStated">
+			<input message="tns:ELPL_acknowledgeFraudStated"/>
+			<output message="tns:ELPL_acknowledgeFraudStatedResponse"/>
+		</operation>
+		<operation name="acknowledgeInterimPaymentDecisionTimeout" parameterOrder="acknowledgeInterimPaymentDecisionTimeout">
+			<input message="tns:ELPL_acknowledgeInterimPaymentDecisionTimeout"/>
+			<output message="tns:ELPL_acknowledgeInterimPaymentDecisionTimeoutResponse"/>
+		</operation>
+		<operation name="acknowledgeLiabilityAdmitted" parameterOrder="acknowledgeLiabilityAdmitted">
+			<input message="tns:ELPL_acknowledgeLiabilityAdmitted"/>
+			<output message="tns:ELPL_acknowledgeLiabilityAdmittedResponse"/>
+		</operation>
+		<operation name="acknowledgeLiabilityAdmittedForChild" parameterOrder="acknowledgeLiabilityAdmittedForChild">
+			<input message="tns:ELPL_acknowledgeLiabilityAdmittedForChild"/>
+			<output message="tns:ELPL_acknowledgeLiabilityAdmittedForChildResponse"/>
+		</operation>
+		<operation name="acknowledgeLiabilityAdmittedWithNeg" parameterOrder="acknowledgeLiabilityAdmittedWithNeg">
+			<input message="tns:ELPL_acknowledgeLiabilityAdmittedWithNeg"/>
+			<output message="tns:ELPL_acknowledgeLiabilityAdmittedWithNegResponse"/>
+		</operation>
+		<operation name="acknowledgeLiabilityDecisionTimeout" parameterOrder="acknowledgeLiabilityDecisionTimeout">
+			<input message="tns:ELPL_acknowledgeLiabilityDecisionTimeout"/>
+			<output message="tns:ELPL_acknowledgeLiabilityDecisionTimeoutResponse"/>
+		</operation>
+		<operation name="acknowledgePartialPaymentDecision" parameterOrder="acknowledgePartialPaymentDecision">
+			<input message="tns:ELPL_acknowledgePartialPaymentDecision"/>
+			<output message="tns:ELPL_acknowledgePartialPaymentDecisionResponse"/>
+		</operation>
+		<operation name="acknowledgeRejectedInterimSettlementPack" parameterOrder="acknowledgeRejectedInterimSettlementPack">
+			<input message="tns:ELPL_acknowledgeRejectedInterimSettlementPack"/>
+			<output message="tns:ELPL_acknowledgeRejectedInterimSettlementPackResponse"/>
+		</operation>
+		<operation name="acknowledgeStage2SPFAgreed" parameterOrder="acknowledgeStage2SPFAgreed">
+			<input message="tns:ELPL_acknowledgeStage2SPFAgreed"/>
+			<output message="tns:ELPL_acknowledgeStage2SPFAgreedResponse"/>
+		</operation>
+		<operation name="acknowledgeStage2SPFConfirmation" parameterOrder="acknowledgeStage2SPFConfirmation">
+			<input message="tns:ELPL_acknowledgeStage2SPFConfirmation"/>
+			<output message="tns:ELPL_acknowledgeStage2SPFConfirmationResponse"/>
+		</operation>
+		<operation name="acknowledgeStage2SPFDecisionTimeout" parameterOrder="acknowledgeStage2SPFDecisionTimeout">
+			<input message="tns:ELPL_acknowledgeStage2SPFDecisionTimeout"/>
+			<output message="tns:ELPL_acknowledgeStage2SPFDecisionTimeoutResponse"/>
+		</operation>
+		<operation name="acknowledgeStage2SPFNotAgreed" parameterOrder="acknowledgeStage2SPFNotAgreed">
+			<input message="tns:ELPL_acknowledgeStage2SPFNotAgreed"/>
+			<output message="tns:ELPL_acknowledgeStage2SPFNotAgreedResponse"/>
+		</operation>
+		<operation name="acknowledgeStage2SPFRepudiation" parameterOrder="acknowledgeStage2SPFRepudiation">
+			<input message="tns:ELPL_acknowledgeStage2SPFRepudiation"/>
+			<output message="tns:ELPL_acknowledgeStage2SPFRepudiationResponse"/>
+		</operation>
+		<operation name="addAttachment" parameterOrder="addAttachment">
+			<input message="tns:ELPL_addAttachment"/>
+			<output message="tns:ELPL_addAttachmentResponse"/>
+		</operation>
+		<operation name="addCPPFRequest" parameterOrder="addCPPFRequest">
+			<input message="tns:ELPL_addCPPFRequest"/>
+			<output message="tns:ELPL_addCPPFRequestResponse"/>
+		</operation>
+		<operation name="addCPPFResponse" parameterOrder="addCPPFResponse">
+			<input message="tns:ELPL_addCPPFResponse"/>
+			<output message="tns:ELPL_addCPPFResponseResponse"/>
+		</operation>
+		<operation name="addClaim" parameterOrder="addClaim">
+			<input message="tns:ELPL_addClaim"/>
+			<output message="tns:ELPL_addClaimResponse"/>
+		</operation>
+		<operation name="addInterimSPFRequest" parameterOrder="addInterimSPFRequest">
+			<input message="tns:ELPL_addInterimSPFRequest"/>
+			<output message="tns:ELPL_addInterimSPFRequestResponse"/>
+		</operation>
+		<operation name="addInterimSPFResponse" parameterOrder="addInterimSPFResponse">
+			<input message="tns:ELPL_addInterimSPFResponse"/>
+			<output message="tns:ELPL_addInterimSPFResponseResponse"/>
+		</operation>
+		<operation name="addStage2SPFCounterOfferByCM" parameterOrder="addStage2SPFCounterOfferByCM">
+			<input message="tns:ELPL_addStage2SPFCounterOfferByCM"/>
+			<output message="tns:ELPL_addStage2SPFCounterOfferByCMResponse"/>
+		</operation>
+		<operation name="addStage2SPFCounterOfferByCR" parameterOrder="addStage2SPFCounterOfferByCR">
+			<input message="tns:ELPL_addStage2SPFCounterOfferByCR"/>
+			<output message="tns:ELPL_addStage2SPFCounterOfferByCRResponse"/>
+		</operation>
+		<operation name="addStage2SPFRequest" parameterOrder="addStage2SPFRequest">
+			<input message="tns:ELPL_addStage2SPFRequest"/>
+			<output message="tns:ELPL_addStage2SPFRequestResponse"/>
+		</operation>
+		<operation name="addStage2SPFResponse" parameterOrder="addStage2SPFResponse">
+			<input message="tns:ELPL_addStage2SPFResponse"/>
+			<output message="tns:ELPL_addStage2SPFResponseResponse"/>
+		</operation>
+		<operation name="allocateClaimToBranch" parameterOrder="allocateClaimToBranch">
+			<input message="tns:ELPL_allocateClaimToBranch"/>
+			<output message="tns:ELPL_allocateClaimToBranchResponse"/>
+		</operation>
+		<operation name="allocateUser" parameterOrder="allocateUser">
+			<input message="tns:ELPL_allocateUser"/>
+			<output message="tns:ELPL_allocateUserResponse"/>
+		</operation>
+		<operation name="deallocateUser" parameterOrder="deallocateUser">
+			<input message="tns:ELPL_deallocateUser"/>
+			<output message="tns:ELPL_deallocateUserResponse"/>
+		</operation>
+		<operation name="exitProcess" parameterOrder="exitProcess">
+			<input message="tns:ELPL_exitProcess"/>
+			<output message="tns:ELPL_exitProcessResponse"/>
+		</operation>
+		<operation name="extendInterimPaymentDecisionTimeout" parameterOrder="extendInterimPaymentDecisionTimeout">
+			<input message="tns:ELPL_extendInterimPaymentDecisionTimeout"/>
+			<output message="tns:ELPL_extendInterimPaymentDecisionTimeoutResponse"/>
+		</operation>
+		<operation name="extendStage2SPFCounterOfferTimeout" parameterOrder="extendStage2SPFCounterOfferTimeout">
+			<input message="tns:ELPL_extendStage2SPFCounterOfferTimeout"/>
+			<output message="tns:ELPL_extendStage2SPFCounterOfferTimeoutResponse"/>
+		</operation>
+		<operation name="extendStage2SPFDecisionTimeout" parameterOrder="extendStage2SPFDecisionTimeout">
+			<input message="tns:ELPL_extendStage2SPFDecisionTimeout"/>
+			<output message="tns:ELPL_extendStage2SPFDecisionTimeoutResponse"/>
+		</operation>
+		<operation name="forceUnlockClaim" parameterOrder="forceUnlockClaim">
+			<input message="tns:ELPL_forceUnlockClaim"/>
+			<output message="tns:ELPL_forceUnlockClaimResponse"/>
+		</operation>
+		<operation name="getAttachment" parameterOrder="getAttachment">
+			<input message="tns:ELPL_getAttachment"/>
+			<output message="tns:ELPL_getAttachmentResponse"/>
+		</operation>
+		<operation name="getAttachmentsList" parameterOrder="getAttachmentsList">
+			<input message="tns:ELPL_getAttachmentsList"/>
+			<output message="tns:ELPL_getAttachmentsListResponse"/>
+		</operation>
+		<operation name="getBranchesList" parameterOrder="getBranchesList">
+			<input message="tns:ELPL_getBranchesList"/>
+			<output message="tns:ELPL_getBranchesListResponse"/>
+		</operation>
+		<operation name="getClaim" parameterOrder="getClaim">
+			<input message="tns:ELPL_getClaim"/>
+			<output message="tns:ELPL_getClaimResponse"/>
+		</operation>
+		<operation name="getClaimsList" parameterOrder="getClaimsList">
+			<input message="tns:ELPL_getClaimsList"/>
+			<output message="tns:ELPL_getClaimsListResponse"/>
+		</operation>
+		<operation name="getClaimsStatus" parameterOrder="getClaimsStatus">
+			<input message="tns:ELPL_getClaimsStatus"/>
+			<output message="tns:ELPL_getClaimsStatusResponse"/>
+		</operation>
+		<operation name="getHospitalsList" parameterOrder="getHospitalsList">
+			<input message="tns:ELPL_getHospitalsList"/>
+			<output message="tns:ELPL_getHospitalsListResponse"/>
+		</operation>
+		<operation name="getMyUsersList" parameterOrder="getMyUsersList">
+			<input message="tns:ELPL_getMyUsersList"/>
+			<output message="tns:ELPL_getMyUsersListResponse"/>
+		</operation>
+		<operation name="getNotificationsList" parameterOrder="getNotificationsList">
+			<input message="tns:ELPL_getNotificationsList"/>
+			<output message="tns:ELPL_getNotificationsListResponse"/>
+		</operation>
+		<operation name="getOrganisation" parameterOrder="getOrganisation">
+			<input message="tns:ELPL_getOrganisation"/>
+			<output message="tns:ELPL_getOrganisationResponse"/>
+		</operation>
+		<operation name="getPrintableDocument" parameterOrder="getPrintableDocument">
+			<input message="tns:ELPL_getPrintableDocument"/>
+			<output message="tns:ELPL_getPrintableDocumentResponse"/>
+		</operation>
+		<operation name="getPrintableDocumentsList" parameterOrder="getPrintableDocumentsList">
+			<input message="tns:ELPL_getPrintableDocumentsList"/>
+			<output message="tns:ELPL_getPrintableDocumentsListResponse"/>
+		</operation>
+		<operation name="getSystemProcessVersion" parameterOrder="getSystemProcessVersion">
+			<input message="tns:ELPL_getSystemProcessVersion"/>
+			<output message="tns:ELPL_getSystemProcessVersionResponse"/>
+		</operation>
+		<operation name="lockClaim" parameterOrder="lockClaim">
+			<input message="tns:ELPL_lockClaim"/>
+			<output message="tns:ELPL_lockClaimResponse"/>
+		</operation>
+		<operation name="reassignToAnotherCM" parameterOrder="reassignToAnotherCM">
+			<input message="tns:ELPL_reassignToAnotherCM"/>
+			<output message="tns:ELPL_reassignToAnotherCMResponse"/>
+		</operation>
+		<operation name="rejectClaimToCR" parameterOrder="rejectClaimToCR">
+			<input message="tns:ELPL_rejectClaimToCR"/>
+			<output message="tns:ELPL_rejectClaimToCRResponse"/>
+		</operation>
+		<operation name="rejectInterimSettlementPack" parameterOrder="rejectInterimSettlementPack">
+			<input message="tns:ELPL_rejectInterimSettlementPack"/>
+			<output message="tns:ELPL_rejectInterimSettlementPackResponse"/>
+		</operation>
+		<operation name="removeNotification" parameterOrder="removeNotification">
+			<input message="tns:ELPL_removeNotification"/>
+			<output message="tns:ELPL_removeNotificationResponse"/>
+		</operation>
+		<operation name="resendRejectedClaim" parameterOrder="resendRejectedClaim">
+			<input message="tns:ELPL_resendRejectedClaim"/>
+			<output message="tns:ELPL_resendRejectedClaimResponse"/>
+		</operation>
+		<operation name="returnToStartOfStage21" parameterOrder="returnToStartOfStage21">
+			<input message="tns:ELPL_returnToStartOfStage21"/>
+			<output message="tns:ELPL_returnToStartOfStage21Response"/>
+		</operation>
+		<operation name="searchClaims" parameterOrder="searchClaims">
+			<input message="tns:ELPL_searchClaims"/>
+			<output message="tns:ELPL_searchClaimsResponse"/>
+		</operation>
+		<operation name="searchCompensators" parameterOrder="searchCompensators">
+			<input message="tns:ELPL_searchCompensators"/>
+			<output message="tns:ELPL_searchCompensatorsResponse"/>
+		</operation>
+		<operation name="searchCompensatorsByInsurerIndex" parameterOrder="searchCompensatorsByInsurerIndex">
+			<input message="tns:ELPL_searchCompensatorsByInsurerIndex"/>
+			<output message="tns:ELPL_searchCompensatorsByInsurerIndexResponse"/>
+		</operation>
+		<operation name="sendLiabilityDecision" parameterOrder="sendLiabilityDecision">
+			<input message="tns:ELPL_sendLiabilityDecision"/>
+			<output message="tns:ELPL_sendLiabilityDecisionResponse"/>
+		</operation>
+		<operation name="setInterimPaymentNeeded" parameterOrder="setInterimPaymentNeeded">
+			<input message="tns:ELPL_setInterimPaymentNeeded"/>
+			<output message="tns:ELPL_setInterimPaymentNeededResponse"/>
+		</operation>
+		<operation name="setStage21Payment" parameterOrder="setStage21Payment">
+			<input message="tns:ELPL_setStage21Payment"/>
+			<output message="tns:ELPL_setStage21PaymentResponse"/>
+		</operation>
+		<operation name="setStage2SPFAgreementDecision" parameterOrder="setStage2SPFAgreementDecision">
+			<input message="tns:ELPL_setStage2SPFAgreementDecision"/>
+			<output message="tns:ELPL_setStage2SPFAgreementDecisionResponse"/>
+		</operation>
+		<operation name="setStage2SPFCounterOfferNeeded" parameterOrder="setStage2SPFCounterOfferNeeded">
+			<input message="tns:ELPL_setStage2SPFCounterOfferNeeded"/>
+			<output message="tns:ELPL_setStage2SPFCounterOfferNeededResponse"/>
+		</operation>
+		<operation name="stateFraud" parameterOrder="stateFraud">
+			<input message="tns:ELPL_stateFraud"/>
+			<output message="tns:ELPL_stateFraudResponse"/>
+		</operation>
+		<operation name="unlockClaim" parameterOrder="unlockClaim">
+			<input message="tns:ELPL_unlockClaim"/>
+			<output message="tns:ELPL_unlockClaimResponse"/>
+		</operation>
+	</portType>
+	<binding name="ELPLBinding" type="tns:ELPL">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="acceptClaim">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acceptPartialInterimPayment">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeCPPFResponse">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeClaim">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeDeniedLiability">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeExitProcess">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeFraudStated">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeInterimPaymentDecisionTimeout">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeLiabilityAdmitted">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeLiabilityAdmittedForChild">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeLiabilityAdmittedWithNeg">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeLiabilityDecisionTimeout">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgePartialPaymentDecision">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeRejectedInterimSettlementPack">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeStage2SPFAgreed">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeStage2SPFConfirmation">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeStage2SPFDecisionTimeout">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeStage2SPFNotAgreed">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="acknowledgeStage2SPFRepudiation">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addAttachment">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addCPPFRequest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addCPPFResponse">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addClaim">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addInterimSPFRequest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addInterimSPFResponse">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addStage2SPFCounterOfferByCM">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addStage2SPFCounterOfferByCR">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addStage2SPFRequest">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="addStage2SPFResponse">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="allocateClaimToBranch">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="allocateUser">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="deallocateUser">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="exitProcess">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="extendInterimPaymentDecisionTimeout">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="extendStage2SPFCounterOfferTimeout">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="extendStage2SPFDecisionTimeout">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="forceUnlockClaim">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getAttachment">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getAttachmentsList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getBranchesList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getClaim">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getClaimsList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getClaimsStatus">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getHospitalsList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getMyUsersList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getNotificationsList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getOrganisation">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getPrintableDocument">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getPrintableDocumentsList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getSystemProcessVersion">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="lockClaim">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="reassignToAnotherCM">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="rejectClaimToCR">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="rejectInterimSettlementPack">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="removeNotification">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="resendRejectedClaim">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="returnToStartOfStage21">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="searchClaims">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="searchCompensators">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="searchCompensatorsByInsurerIndex">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="sendLiabilityDecision">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setInterimPaymentNeeded">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setStage21Payment">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setStage2SPFAgreementDecision">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="setStage2SPFCounterOfferNeeded">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="stateFraud">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="unlockClaim">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ELPLService">
+		<port binding="tns:ELPLBinding" name="ELPLPort">
+			  <soap:address location="https://www.rapidclaimsettlement.org.uk/ELPL.WS/ELPLWS" /> 
+		</port>
+	</service>
+</definitions>

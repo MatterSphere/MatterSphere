@@ -1,0 +1,38 @@
+﻿<!--<InterimSettlementPackRequest xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  <ClaimantRepresentative PaymentMoreRequested='1'>
+    <CompanyDetails EmailAddress='' ContactName='FWBS' ContactMiddleName='' ContactSurname='Greaves' TelephoneNumber='01604 372828' ReferenceNumber='12345678'>
+      <Address Country='' City='Northampton' Street1='12 Gold Street' HouseNumber='' AddressType='A' />
+    </CompanyDetails>
+  </ClaimantRepresentative>
+  <MedicalReport NumberOfMedicalReport='0' />
+  <ClaimantLossesToDate LossType='0' EvidenceAttached='1' Comments='Test' GrossValueClaimed='1' PercContribNegDeductions='1' ValueClaimedAfterContrib='1' PercInterestRate='1' />
+  <ClaimantRequestForInterimPayment DateOfRequest='2010-03-26' ValueOfInterimRequest='1' ReasonsForInterimPaymentRequest='' PaymentDecision='AC' />
+</InterimSettlementPackRequest>-->
+
+<!--<InterimSettlementPackRequest xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  <ClaimantRepresentative PaymentMoreRequested="1">
+    <CompanyDetails EmailAddress="" ContactName="FWBS" ContactMiddleName="" ContactSurname="Greaves" TelephoneNumber="01604 372828" ReferenceNumber="12345678"></CompanyDetails>
+  </ClaimantRepresentative>
+  <MedicalReport MedicalReportStage2_1="0"/>
+  <InterimPayment>
+    <ClaimantRequestForInterimPayment ValueOfInterimRequest="1" ReasonsForInterimPaymentRequest="" />
+  </InterimPayment>
+  <ClaimantLosses>
+    <ClaimantLossesToDate LossType="0" EvidenceAttached="1" Comments="Test" GrossValueClaimed="1" PercContribNegDeductions="1"/>
+  </ClaimantLosses>
+  <StatementOfTruth SignatoryType="S" RetainedSignedCopy="1"/>
+</InterimSettlementPackRequest>-->
+
+<InterimSettlementPackRequest xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  <ClaimantRepresentative PaymentMoreRequested='1'>
+    <CompanyDetails ContactMiddleName='' ContactName='Alan' ContactSurname='Greaves' EmailAddress='' ReferenceNumber='12345678' TelephoneNumber='01604 372828' />
+  </ClaimantRepresentative>
+  <MedicalReport MedicalReportStage2_1='0' />
+  <InterimPayment>
+    <ClaimantRequestForInterimPayment ValueOfInterimRequest='1' ReasonsForInterimPaymentRequest='' />
+  </InterimPayment>
+  <ClaimantLosses>
+    <ClaimantLossesToDate LossType='0' EvidenceAttached='1' Comments='Test' GrossValueClaimed='1' PercContribNegDeductions='1' />
+  </ClaimantLosses>
+  <StatementOfTruth RetainedSignedCopy='1' SignatoryType='S' />
+</InterimSettlementPackRequest>

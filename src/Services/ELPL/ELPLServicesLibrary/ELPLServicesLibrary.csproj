@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FEA2DFF-10CD-4847-87D8-E8EEE0776D3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ELPLServicesLibrary</RootNamespace>
+    <AssemblyName>ELPLServicesLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\ServicesWVAssemblyInfo.cs">
+        <Link>Properties\ServicesWVAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\MSProductInfo.cs">
+        <Link>Properties\MSProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="CommonMethods.cs" />
+    <Compile Include="DataCollection.cs" />
+    <Compile Include="ELPLRegistry.cs" />
+    <Compile Include="ELPLServiceBase.cs" />
+    <Compile Include="ELPLServices1.cs" />
+    <Compile Include="ELPLServices2.cs" />
+    <Compile Include="ITokenStorageProvider.cs" />
+    <Compile Include="V3\SharedClassesV1.cs" />
+    <Compile Include="V3\SharedEnumsV1.cs" />
+    <Compile Include="StaticFunctions.cs" />
+    <Compile Include="V5\SharedClassesV5.cs" />
+    <Compile Include="V5\SharedEnumsV5.cs" />
+    <Compile Include="ValidationServices.cs" />
+    <Compile Include="Web References\PIPService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="XSDFiles.cs" />
+    <Compile Include="XSDs\V3\AddClaim_ClaimData-v1_1.cs" />
+    <Compile Include="XSDs\V3\AddCPPFRequest_CPPFRequestXML-v1_0.cs" />
+    <Compile Include="XSDs\V3\AddCPPFResponse_CPPFResponseXML-v1_0.cs" />
+    <Compile Include="XSDs\V3\AddInterimSPFRequest_InterimSettlementPackRequest-v1_0.cs" />
+    <Compile Include="XSDs\V3\AddInterimSPFResponse_InterimSettlementPackResponse-v1_0.cs" />
+    <Compile Include="XSDs\V3\AddStage2SPFCounterOfferByCM_S2SPFCounterOfferByCMXML-v1_0.cs" />
+    <Compile Include="XSDs\V3\AddStage2SPFCounterOfferByCR_S2SPFCounterOfferByCRXML-v1_0.cs" />
+    <Compile Include="XSDs\V3\AddStage2SPFRequest_S2SPFRequestXML-v1_0.cs" />
+    <Compile Include="XSDs\V3\AddStage2SPFResponse_S2SPFResponseXML-v1_0.cs" />
+    <Compile Include="XSDs\V3\GetClaim_ClaimData-v1_0.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="XSDs\V3\ResendRejectedClaim_ClaimData-v1_1.cs" />
+    <Compile Include="XSDs\V3\SendLiabilityDecision_InsurerResponse-v1_0.cs" />
+    <Compile Include="XSDs\V5\AddInterimSPFResponse_InterimSettlementPackResponse-v1_1.cs" />
+    <Compile Include="XSDs\V5\AddStage2SPFResponse_S2SPFResponseXML-v1_1.cs" />
+    <Compile Include="XSDs\V5\GetClaim_ClaimData-v1_2.cs" />
+    <Compile Include="XSDs\V6\AddClaim_ClaimData-v1_4.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\PIPService\acceptClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acceptPartialInterimPaymentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeCPPFResponseResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeDeniedLiabilityResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeExitProcessResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeFraudStatedResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeInterimPaymentDecisionTimeoutResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeLiabilityAdmittedForChildResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeLiabilityAdmittedResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeLiabilityAdmittedWithNegResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeLiabilityDecisionTimeoutResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgePartialPaymentDecisionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeRejectedClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeRejectedInterimSettlementPackResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeStage2SPFAgreedResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeStage2SPFConfirmationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeStage2SPFDecisionTimeoutResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeStage2SPFNotAgreedResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\acknowledgeStage2SPFRepudiationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addAttachmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addCPPFRequestResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addCPPFResponseResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addInterimSPFRequestResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addInterimSPFResponseResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addStage2SPFCounterOfferByCMResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addStage2SPFCounterOfferByCRResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addStage2SPFRequestResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\addStage2SPFResponseResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\allocateClaimToBranchResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\allocateUserResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\deallocateUserResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\ELPLService.wsdl" />
+    <None Include="Web References\PIPService\exitProcessResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\exitRejectedClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\extendInterimPaymentDecisionTimeoutResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\extendStage2SPFCounterOfferTimeoutResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\extendStage2SPFDecisionTimeoutResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\forceUnlockClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getAttachmentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getAttachmentsListResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getBranchesListResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getClaimsListResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getClaimsStatusResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getHospitalsListResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getMyUsersListResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getNotificationsListResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getOrganisationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getPrintableDocumentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getPrintableDocumentsListResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getSystemProcessVersionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\lockClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\reassignToAnotherCMResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PIPService\rejectClaimToCRResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\rejectInterimSettlementPackResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\removeNotificationResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\resendRejectedClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\returnToStartOfStage21Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\searchClaimsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\searchCompensatorsByInsurerIndexResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\searchCompensatorsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\sendLiabilityDecisionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\setInterimPaymentNeededResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\setStage21PaymentResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\setStage2SPFAgreementDecisionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\setStage2SPFCounterOfferNeededResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\stateFraudResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\unlockClaimResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\changePasswordResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\getTokenResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PIPService\refreshTokenResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="WSDLs\ELPLWSTK.wsdl" />
+    <None Include="WSDLs\ELPLWS-v1.1.WSDL" />
+    <None Include="WSDLs\ELPLWS_R5_v1.2.WSDL" />
+    <None Include="WSDLs\ELPLWS-v1.wsdl" />
+    <None Include="WSDLs\ELPLWS_R6.wsdl" />
+    <None Include="XSDs\V3\AddClaim_ClaimData-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\AddCPPFRequest_CPPFRequestXML-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\AddCPPFResponse_CPPFResponseXML-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\AddInterimSPFRequest_InterimSettlementPackRequest-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\AddInterimSPFResponse_InterimSettlementPackResponse-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\AddStage2SPFCounterOfferByCM_S2SPFCounterOfferByCMXML-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\AddStage2SPFCounterOfferByCR_S2SPFCounterOfferByCRXML-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\AddStage2SPFRequest_S2SPFRequestXML-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\AddStage2SPFResponse_S2SPFResponseXML-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config" />
+    <None Include="XSDs\V3\GetClaim_ClaimData-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XSDs\V3\ResendRejectedClaim_ClaimData-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V3\SendLiabilityDecision_InsurerResponse-v1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V5\AddInterimSPFResponse_InterimSettlementPackResponse-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V5\AddStage2SPFResponse_S2SPFResponseXML-v1.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V5\GetClaim_ClaimData-v1.2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSDs\V6\AddClaim_ClaimData-v1.4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include=".\WSDLs\ELPLWSTK.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PIPService\</RelPath>
+      <UpdateFromURL>.\WSDLs\ELPLWSTK.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ELPLServicesLibrary_PIPService_ELPLService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Test XML Files\AddInterimSPFRequest_F8-7_01-04-2014 111103_41.xml" />
+    <Content Include="XSDs\V5\ELPL Release 5 XSDs - READ ME.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

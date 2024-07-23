@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10845/ServiceAggregator?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FWBS.Requests" />
+  <xs:import schemaLocation="http://localhost:10845/ServiceAggregator?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" />
+  <xs:element name="CreateClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FWBS.Requests" minOccurs="0" name="client" nillable="true" type="q1:ClientDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateClientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" minOccurs="0" name="CreateClientResult" nillable="true" type="q2:CreateClientResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FWBS.Requests" minOccurs="0" name="client" nillable="true" type="q3:FileDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" minOccurs="0" name="CreateFileResult" nillable="true" type="q4:CreateFileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSecurity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FWBS.Requests" minOccurs="0" name="security" nillable="true" type="q5:SetSecurityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSecurityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" minOccurs="0" name="SetSecurityResult" nillable="true" type="q6:SetSecurityResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FWBS.Requests" minOccurs="0" name="template" nillable="true" type="q7:ApplyTemplateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplyTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" minOccurs="0" name="ApplyTemplateResult" nillable="true" type="q8:ApplyTemplateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/FWBS.Requests" minOccurs="0" name="file" nillable="true" type="q9:ArchiveFileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" minOccurs="0" name="ArchiveFileResult" nillable="true" type="q10:ArchiveFileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/FWBS.Requests" minOccurs="0" name="document" nillable="true" type="q11:ArchiveDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" minOccurs="0" name="ArchiveDocumentResult" nillable="true" type="q12:ArchiveDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveFileForceRelease">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/FWBS.Requests" minOccurs="0" name="file" nillable="true" type="q13:ArchiveFileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveFileForceReleaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" minOccurs="0" name="ArchiveFileForceReleaseResult" nillable="true" type="q14:ArchiveFileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveDocumentForceRelease">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/FWBS.Requests" minOccurs="0" name="document" nillable="true" type="q15:ArchiveDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveDocumentForceReleaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" minOccurs="0" name="ArchiveDocumentForceReleaseResult" nillable="true" type="q16:ArchiveDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

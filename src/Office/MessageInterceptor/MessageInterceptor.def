@@ -1,0 +1,7 @@
+; MessageInterceptor.def : Declares the module parameters.
+LIBRARY "FWBS.MessageInterceptor.dll"
+
+EXPORTS
+    HookWndProc       PRIVATE
+    RegisterWndProc   PRIVATE
+    UnregisterWndProc PRIVATE

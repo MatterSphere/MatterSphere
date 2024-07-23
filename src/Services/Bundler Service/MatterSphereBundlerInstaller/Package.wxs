@@ -1,0 +1,33 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package Name="$(ProductName)"
+           Manufacturer="$(PublisherName)"
+           Version="$(ProductVersion)"
+           UpgradeCode="$(UpgradeCode)"
+           Scope="perMachine">
+
+    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+
+    <MediaTemplate EmbedCab="yes"/>
+
+    <Icon Id="EE_App_Icon.ico" SourceFile="EE_App_Icon.ico"/>
+
+    <WixVariable Id="WixUIBannerBmp" Value="TopBanner.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="WhiteBackground.png" />
+
+    <Property Id="ProductFamily" Value="$(ProductFamily)" />
+    <Property Id="ShortProductName" Value="$(ShortProductName)" />
+
+    <Property Id="ARPPRODUCTICON" Value="EE_App_Icon.ico" />
+    <Property Id="ARPHELPLINK" Value="https://www.elite.com/products/3e/3e-matter-sphere" />
+    <Property Id="ARPURLINFOABOUT" Value="https://www.elite.com/support" />
+
+    <Feature Id="Main">
+      <ComponentRef Id="MatterSphereBundler.Service" />
+      <ComponentRef Id="MatterSphereBundler.Dependencies" />
+    </Feature>
+
+    <ui:WixUI Id="InstallDir_NoLicense" InstallDirectory="INSTALLFOLDER" />
+
+  </Package>
+</Wix>

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5260A7CD-2021-466D-B8D5-7994A382421F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FWBS.OMS.Addin.Security</RootNamespace>
+    <AssemblyName>FWBS.OMS.Addin.Security</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FWBS.Common">
+      <HintPath>c:\OMSCoreAssemblies\FWBS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="FWBS.Common.UI">
+      <HintPath>c:\OMSCoreAssemblies\FWBS.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Fwbs.Oms.ResourceLookup">
+      <HintPath>c:\OMSCoreAssemblies\Fwbs.Oms.ResourceLookup.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Shared, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics.Win, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics.Win.UltraWinTabControl, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="OMS.Data">
+      <HintPath>c:\OMSCoreAssemblies\OMS.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Infrastructure">
+      <HintPath>c:\OMSCoreAssemblies\OMS.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.Library">
+      <HintPath>c:\OMSCoreAssemblies\OMS.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="OMS.UI">
+      <HintPath>c:\OMSCoreAssemblies\OMS.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\ActiveDirectoryServices.cs" />
+    <Compile Include="Business\GroupPermissions.cs" />
+    <Compile Include="Business\IPermissions.cs" />
+    <Compile Include="Business\LocalUserGroupServices.cs" />
+    <Compile Include="Business\SystemPolicys.cs" />
+    <Compile Include="Business\ObjectPolicys.cs" />
+    <Compile Include="Business\ObjectGroups.cs" />
+    <Compile Include="Business\Permissions.cs" />
+    <Compile Include="Business\Services.cs" />
+    <Compile Include="Business\TemplateEditor.cs" />
+    <Compile Include="Business\UserGroups.cs" />
+    <Compile Include="Business\UserPermissions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\ucPermissions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\ucPermissions.Designer.cs">
+      <DependentUpon>ucPermissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ucSystemPolicy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\ucSystemPolicy.designer.cs">
+      <DependentUpon>ucSystemPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ucObjectPolicy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\ucObjectPolicy.designer.cs">
+      <DependentUpon>ucObjectPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\frmSecurityDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\frmSecurityDialog.Designer.cs">
+      <DependentUpon>frmSecurityDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PermissionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\PermissionItem.Designer.cs">
+      <DependentUpon>PermissionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ucObjectGroups.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\ucObjectGroups.designer.cs">
+      <DependentUpon>ucObjectGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ucSecurity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\ucSecurity.Designer.cs">
+      <DependentUpon>ucSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ucUserGroups.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\ucUserGroups.designer.cs">
+      <DependentUpon>ucUserGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\CoreAssemblyInfo</Link>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Windows\ucPermissions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucPermissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ucSystemPolicy.resx">
+      <DependentUpon>ucSystemPolicy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ucObjectPolicy.resx">
+      <DependentUpon>ucObjectPolicy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\frmSecurityDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSecurityDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\PermissionItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PermissionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ucObjectGroups.resx">
+      <DependentUpon>ucObjectGroups.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ucSecurity.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ucUserGroups.resx">
+      <DependentUpon>ucUserGroups.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

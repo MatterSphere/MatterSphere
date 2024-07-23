@@ -1,0 +1,1 @@
+﻿svcutil http://localhost:789/GatewayAdmin.svc /o:"c:\test\GatewayAdmin.cs" /n:*,FWBS.MatterSphereIntegration.Gateway

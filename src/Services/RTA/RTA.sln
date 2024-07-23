@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTA Demo", "RTA Demo\RTA Demo.csproj", "{99645937-C7A8-46F3-88BC-A25FE335BD09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTAServicesLibrary", "RTAServicesLibrary\RTAServicesLibrary.csproj", "{1007E61E-6942-44E2-B281-E4BCF519827E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTAServiceLibraryTestForm", "RTAServiceLibraryTestForm\RTAServiceLibraryTestForm.csproj", "{2FBEF060-728C-412F-8DE5-F77B1D0031FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulkTransfer", "BulkTransfer\BulkTransfer.csproj", "{A791E8F9-B792-4ED6-A5ED-510253A8E90C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99645937-C7A8-46F3-88BC-A25FE335BD09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99645937-C7A8-46F3-88BC-A25FE335BD09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99645937-C7A8-46F3-88BC-A25FE335BD09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1007E61E-6942-44E2-B281-E4BCF519827E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1007E61E-6942-44E2-B281-E4BCF519827E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1007E61E-6942-44E2-B281-E4BCF519827E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1007E61E-6942-44E2-B281-E4BCF519827E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FBEF060-728C-412F-8DE5-F77B1D0031FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBEF060-728C-412F-8DE5-F77B1D0031FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBEF060-728C-412F-8DE5-F77B1D0031FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBEF060-728C-412F-8DE5-F77B1D0031FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A791E8F9-B792-4ED6-A5ED-510253A8E90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A791E8F9-B792-4ED6-A5ED-510253A8E90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A791E8F9-B792-4ED6-A5ED-510253A8E90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A791E8F9-B792-4ED6-A5ED-510253A8E90C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52994EB3-B39C-42B1-BD76-11E3D2F2E7FF}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = RTA Demo.vsmdi
+	EndGlobalSection
+EndGlobal

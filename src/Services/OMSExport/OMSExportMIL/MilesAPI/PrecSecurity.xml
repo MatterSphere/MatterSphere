@@ -1,0 +1,493 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrecSecurity
+</name>
+</assembly>
+<members>
+<member name="P:Miles33.Precedent.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Miles33.Precedent.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Miles33.Precedent.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_CALLBACK">
+	<summary>Set a Callback</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_CREATE_CREATEQUERY">
+	<summary>Create New Queries</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CHEQUE_ADMINMANUALCHQ">
+	<summary>Manual cheque administration</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CHEQUE_ADMINCHQPRINTING">
+	<summary>Cheque printing</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CHEQUE_ADMINCHQPRINTINGADM">
+	<summary>Cheque printing administration</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CHEQUE_ADMINCHQSTOCK">
+	<summary>Cheque auditing and stocks</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_EDITCURRENTPATH">
+	<summary>Edit the current path</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_EDITCURRENTQUERYPATH">
+	<summary>Edit the current query path</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_EDITDIARISEDACTION">
+	<summary>Edit a diarised action</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_EDITDIARISEDTASK">
+	<summary>Edit a diarised task</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_FORCEMANQUERYREV">
+	<summary>Force a manual review before a diarised task</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_FORCEMANREV">
+	<summary>Force a manual review before a diarised action</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_NEWPATH">
+	<summary>Move customers and queries onto new paths</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_REMOVEPATH">
+	<summary>Remove customers and queries from paths</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_REVIEWAGAIN">
+	<summary>Review again</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_CMALTERESC">
+	<summary>Alter Exit Status Codes</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_MULTIDIARY">
+	<summary>View Other Diaries</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_EDIT_CREATESUBNOTES">
+	<summary>Create Subject Notes</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREDIT_CMALTERDEF">
+	<summary>Alter the Profile Type defaults subject form</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREDIT_CMALTERPT">
+	<summary>Alter the Profile Type on subject form</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_FEA_EDITFEA">
+	<summary>Edit fee earner allocation details.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_FEA_VIEWFEA">
+	<summary>View fee earner allocation details.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREFS_LGPARAMS">
+	<summary>Legalgard Parameters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFCURR">
+	<summary>Preferences - Multi Currency</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CHEQUE_ADMINPAYR">
+	<summary>Payment Receipts</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREFS_PREFTIME">
+	<summary>Preferences - Time Recording</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_DISBDESC">
+	<summary>Edit disbursement description.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_VATRATE">
+	<summary>Edit draft bill VAT rates.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_IMPORT_PAYRITE">
+	<summary>Import Payroll Data</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_AUTO_TRANAUBILL">
+	<summary>Auto Billing Form</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_RECOVER_TRANRECOVER">
+	<summary>Recover Transactions from file</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_TRAN_TRANTRANSFER">
+	<summary>View/Edit Transfer Transactions</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_ADMCONRAT">
+	<summary>Preferences - Contract Rate</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_MATTER_ADMMATTER">
+	<summary>Open Contract Rates in Admin Mode</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATESUBNOTES">
+	<summary>Create Subject Notes</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETE_DELETEFER">
+	<summary>Delete Fee Earner Responsibility.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITCMUR">
+	<summary>Edit matter uplift rate</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_OUTLOOK_OUTFOLD">
+	<summary>Outlook Folder Maintenance</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_OUTLOOK_OUTPARAM">
+	<summary>Outlook Folder Parameters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_ADMINIHEDIT">
+	<summary>Edit insurance history item.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_RISK_SUBJECTRISKINFO">
+	<summary>Subject Risk Information Administration</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_OUTLOOK_ADMINOUTEDIT">
+	<summary>Restrict Module for Outlook Editing</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTARCHIVE">
+	<summary>Allow the achiving of reports</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_TIME_TIMEEDITDESC">
+	<summary>Edit Posted Descriptions</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_GENERAL_TIMELGSU">
+	<summary>Litigation SuperUser</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CHEQUE_ADMINCHEQUE">
+	<summary>Cheque Administration</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETE_ADMINIHDELETE">
+	<summary>Delete insurance history item.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_EDIT_ENQINSEDIT">
+	<summary>Edit insurance details.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_EDIT_DISBVAT">
+	<summary>Edit disbursement vat at the transaction level.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILING_VIEWEVENTSCHEDULING">
+	<summary>View event schedules</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_BILLING_FEUSERBYPASS">
+	<summary>Bypasses FE User requirement for billing.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_CMSEDITSUBNOTES">
+	<summary>Edit the credit subject notes.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DELETE_CMSDELETESUBNOTES">
+	<summary>Delete the credit subject notes.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_RISK_PARAMRISKINFO">
+	<summary>Risk Information Parameter Administration</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_REPORTS_BCREPORTS">
+	<summary>Financial Reports</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWFEEEARN">
+	<summary>View Fee Earners</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWFERESTRICT">
+	<summary>Restrict fee earners viewed</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWGROUP">
+	<summary>View Groups</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWMARKETING">
+	<summary>View Marketing</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWNOMLEDGER">
+	<summary>View Nominal Accounts</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWSUBCLI">
+	<summary>View Subjects/Clients</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTADDRPT">
+	<summary>Ability to add reports to database</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTADDTOSCHED">
+	<summary>Add reports to the scheduler</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTLEVEL1">
+	<summary>View level 1 reports (low security)</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTLEVEL2">
+	<summary>View level 2 reports</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTLEVEL3">
+	<summary>View level 3 reports</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTLEVEL4">
+	<summary>View level 4 reports</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTLEVEL5">
+	<summary>View level 5 reports</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTLEVEL6">
+	<summary>View level 6 reports (high security)</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTVIEWADHOC">
+	<summary>View ad-hoc reports</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_REPORTVIEWSCHEDULED">
+	<summary>View reports run on scheduler</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_GENERAL_PWDCHANGE">
+	<summary>Change Password</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_RESTRICT_TIMESHEETREST">
+	<summary>View all timesheets</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_TIME_TIMESUPERUSER">
+	<summary>Time Super User</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.USERADMIN_USER_ROLEMAINTENANCE">
+	<summary>Role Maintenance</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.USERADMIN_USER_USERMAINTENANCE">
+	<summary>User Maintenance</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ALERT_ALERT_CREATEALERT">
+	<summary>Create user generated alert</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ALERT_ALERT_DELETEALERT">
+	<summary>Delete user generated alert</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ALERT_ALERT_EDITALERT">
+	<summary>Edit user generated alert</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ALERT_ALERT_VIEWALERT">
+	<summary>View user generated alerts</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.AUDIT_AUDITING_DELETEAUDIT">
+	<summary>Delete audit entries</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.AUDIT_AUDITING_EDITAUDIT">
+	<summary>Modify audit entries</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.AUDIT_AUDITING_SEARCHAUDIT">
+	<summary>View audit results</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_SEARCH_ENQGENSEARCH">
+	<summary>Generic Search</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_TIME_ENQTIMELEDGER">
+	<summary>Time Ledger Form</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEWEVENT_MARKETINGEVENTS">
+	<summary>Marketing Events Form</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_OPTIONS_OPTROWRET">
+	<summary>Allow users to change the max. search rows</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_GENERAL_PWDCHANGE">
+	<summary>Change Password</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWBILL">
+	<summary>View Bill Display Items</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWCM">
+	<summary>View Client Matters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWDESLEDGER">
+	<summary>View Designated Accounts</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWDOC">
+	<summary>View Documents</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_MATTER_ADMINCMEPF">
+	<summary>Restrict Matter Postings</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETION_ADMINDELETE">
+	<summary>Subject DB Deletion</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_ARCHIVE_ARCCM">
+	<summary>Archive Matters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATECLIENT">
+	<summary>Create Clients</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATECM">
+	<summary>Create Client Matters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATEDOC">
+	<summary>Create Documents</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATEDOCCM">
+	<summary>Create Matter/Client Documents</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATEDOCFM">
+	<summary>Create Firm Documents</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATEFEEEARN">
+	<summary>Create Fee Earners</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATEGROUP">
+	<summary>Create Groups</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATEMARKETING">
+	<summary>Create Marketing</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATESUBCLI">
+	<summary>Create Subjects/Clients</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_CREATE_CREATESUBJECT">
+	<summary>Create Subjects</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETE_DELETECM">
+	<summary>Delete Client Matters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETE_DELETEDOC">
+	<summary>Delete Documents</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETE_DELETEFEEEARN">
+	<summary>Delete Fee Earners</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETE_DELETEGROUP">
+	<summary>Delete Groups</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETE_DELETEMARKETING">
+	<summary>Delete Marketing</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_DELETE_DELETESUBCLI">
+	<summary>Delete Subjects/Clients</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITCM">
+	<summary>Edit Client Matters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITDOC">
+	<summary>Edit Documents</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITFEEEARN">
+	<summary>Edit Fee Earners</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITGROUP">
+	<summary>Edit Groups</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITMARKETING">
+	<summary>Edit Marketing</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITSUBCLI">
+	<summary>Edit Subjects/Clients</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_VIEWEVENT_MARKETINGEVENTS">
+	<summary>Marketing Events Form</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_OPTIONS_OPTADMINDEF">
+	<summary>Show the default tab on the options form</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_OPTIONS_OPTROWRET">
+	<summary>Allow users to change the max. search rows</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFARCHWILLSDEEDS">
+	<summary>Preferences - Archiving Wills and Deeds</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITMATTEROH">
+	<summary>Edit matter on hold status.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITCLIENTOH">
+	<summary>Edit client on hold status</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFMARKETING">
+	<summary>Preferences - Marketing Data</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFORGSTRUCNOMINAL">
+	<summary>Preferences - Org Structure and Nominal</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFPOSTINGS">
+	<summary>Preferences - Postings</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFSUBJECTDB">
+	<summary>Preferences - Subject Database</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_GENERAL_PWDCHANGE">
+	<summary>Change Password</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_MATTER_REEVALUFN">
+	<summary>Re Evaluate UFN Nos</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_REFERRALS_REFERRALS">
+	<summary>Referrals In / Out</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_SUBDBCON">
+	<summary>Conflict Searches</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_SUBDBDUP">
+	<summary>Duplication Searches</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_TRAN_TRANCANCEL">
+	<summary>Cancel Transactions</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_TRAN_TRANDELETE">
+	<summary>Delete Suspended Transactions</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFCREDITCONTROL">
+	<summary>Preferences - Credit Control</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_EDIT_EDITCREDIT">
+	<summary>Edit Credit Management Details</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ENQUIRY_VIEW_VIEWCREDIT">
+	<summary>View Credit Management Details</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_TRAN_TRANNOMIN">
+	<summary>View/Edit Nominal Transactions</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_TRAN_TRANNORMAL">
+	<summary>View/Edit Other Transactions</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.REPORTS_REPORTS_UPDATEPROCEDUREFLAG">
+	<summary>Allow update 'Uses_Procedure' flag in table</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_TIME_TIMESHEETVL">
+	<summary>View Locked Timesheets</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_BILLING_BILLINGFORMS">
+	<summary>Edit/View Billing Forms</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFLA">
+	<summary>Preferences - Legal Aid</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_TIME_TIMEREVALUEWIP">
+	<summary>Revalue unbilled WIP</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_TIME_TIMESHEETPPOST">
+	<summary>Partially Post Time</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_TIME_TIMESHEETDELETE">
+	<summary>Delete Timesheet</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DELETE_DELETEQUERY">
+	<summary>Delete Queries</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_EDITCREDITPATH">
+	<summary>Edit Credit Paths</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_EDITQUERY">
+	<summary>Edit Queries</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_EDITUSERS">
+	<summary>Edit User Responsibilities</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_SYSTEM_EXECRULES">
+	<summary>Execute Rules</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_VIEW_VIEWQUERY">
+	<summary>View Queries</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_EDITCREDITFIELDS">
+	<summary>Edit Subject Credit Details</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_EDITCREDITRULES">
+	<summary>Edit Credit Path Rules</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_EDITQUERYPATH">
+	<summary>Edit Query Paths</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_EDITSUBCREDITPATH">
+	<summary>Edit Subject Credit Paths</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_EDIT_EDITWORKRULES">
+	<summary>Edit Work Responsibility Rules</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_PRINT_PROCESSEXCLUDEDDOCS">
+	<summary>Process Excluded Documents</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_VIEW_VIEWUSERS">
+	<summary>View User Responsibilities</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_CREATE_REQUESTDRAFT">
+	<summary>Request Draft Bills</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DELETION_DELETEDRAFT">
+	<summary>Delete Draft Bills</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_ADDNYPD">
+	<summary>Add NYP Disbursements</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_DISBSINCLUDE">
+	<summary>Include/Exclude draft bill disbursements</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ACCOUNTS_BANK_ACCBANKREC">
+	<summary>Bank Reconciliation</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_DISBSWRITEOFF">
+	<summary>Write off draft bill disbursements.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_EDITADDRESS">
+	<summary>Add/Edit subject addresses from draft bill form.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILES_EDITFEEALLOCATION">
+	<summary>Edit fee allocation details</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_RESP_EDITFERESPONSIBILITY">
+	<summary>Edit fee earner responsibilities</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILES_EDITPROFILEACTIVE">
+	<summary>Edit Profile Active option</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_EXPSINCLUDE">
+	<summary>Include/Exclude draft bill expenses.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_EXPSWRITEOFF">
+	<summary>Write off draft bill expenses.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_TIMEINCLUDE">
+	<summary>Include/Exclude draft bill time items.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_TIMEWRITEOFF">
+	<summary>Write off draft bill time items.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_UPDATE_UPDATEDRAFT">
+	<summary>Update Draft Bill Status</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PRINT_PRINTDRAFT">
+	<summary>Print Draft Bills</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_AUTODRAFT_VIEWAUTODRAFT">
+	<summary>Edit the auto draft parameters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILING_VIEWCMPROFILING">
+	<summary>Edit client / matter profiles</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILING_VIEWFWTPROFILING">
+	<summary>Edit firm profiles</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILING_VIEWMMPROFILING">
+	<summary>Edit Multi matter profiles</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILING_VIEWWTPROFILING">
+	<summary>Edit work type profiles</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PRINT_EDITBILLFORMAT">
+	<summary>Edit the bill format from the print bills screen.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.ADMIN_PREF_PREFSYSPARAMS">
+	<summary>Preferences - System Parameters</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_ADDDIARISEDACTION">
+	<summary>Add an action before the diarised action</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.CREDIT_DIARY_ADDDIARISEDTASK">
+	<summary>Add a task before the diarised task</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.TIME_RESTRICT_TIMEVWFETS">
+	<summary>Open timesheets in readonly except user's own</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_EDITCR">
+	<summary>Edit Contract Rates</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_DRAFTFORM_VIEWBG">
+	<summary>View Billing Guide History</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILING_PROFMD">
+	<summary>Edit MD profile ID on billing profiles</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_BILLING_PREVENTFASTTRACK">
+	<summary>Prevent bill fastrack apprvl proc(via the FE User)</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.MAILER_CONFIG_EDITMAILCONFIG">
+	<summary>View and edit the mailer configuration details.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.MAILER_TASKS_VIEWMAILTASKS">
+	<summary>View mailer task details.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.MAILER_TASKS_EDITMAILTASKS">
+	<summary>Edit mailer task details.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.MAILER_TASKS_RUNMAILTASKS">
+	<summary>Run the mailer task list.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.MAILER_TASKS_DELETEMAILTASKS">
+	<summary>Delete mailer tasks.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.BILLING_PROFILING_EDITMDP">
+	<summary>Edit multi-debtor profiles</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.GRS_MAINTAIN_GRSMAINTENANCE">
+	<summary>View and edit the group reporting details.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.GRS_TASKS_GRSRUNRULES">
+	<summary>Run the group reporting rules.</summary>
+</member><member name="F:Miles33.Precedent.Security.SecurityId.GRS_DELETE_GRSDELETESUBMATTER">
+	<summary>Delete a subject / matter from a reporting group.</summary>
+</member><member name="T:Miles33.Precedent.Security.SecurityId">
+	<summary>
+ Maps the database secure IDs to an enum
+ </summary>
+	<remarks>
+ Use the following query to generate the enums:
+ select ' '''''' <summary>'||description||'</summary>'|| CHR(10)||upper(module_id)||'_'||replace(upper(group_id),' ','')||'_'||upper(secure_id)||'='||rownum as enum from security_secure_item; 
+ NOTE: a secure ID cannot contain any underscores otherwise this fn will not work
+ </remarks>
+</member><member name="M:Miles33.Precedent.Security.CheckSecurity(Miles33.Precedent.Security.SecurityId)">
+	<summary>
+ Tests a security ID to see whether a user has been
+ allocated that secure ID
+ </summary>
+	<param name="testSecureID">The Secure ID we are testing</param>
+	<returns>TRUE - if the user is allocated the secure ID</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.Security.ReturnSecureID(Miles33.Precedent.Security.SecurityId)">
+	<summary>
+ Using the enum representation of a secure id convert it to
+ a string
+ </summary>
+	<param name="testSecureID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.Security">
+	<summary>
+ An object to store the user's login details against each thread
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.InnerSecurity.GetData">
+	<summary>
+ Get the roles on the system and then get the
+ secure items for each role.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.InnerSecurity.GetRoles">
+	<summary>
+ Get all of the roles on the system and store them in the collection mcol.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.InnerSecurity">
+	<summary>
+ A class to store all of the roles on the system and the secure items that
+ belong to those roles.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.UserSecurity.GetData">
+	<summary>
+ Populate the object with the roles allocated to this user.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.UserSecurity">
+	<summary>
+ Find out what roles this user has and store them
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.Role.GetData">
+	<summary>
+ Get the secure items associated with a role.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.Role.GetRoleRestrictionData">
+	<summary>
+ Get the secure items that have been restricted
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.Role">
+	<summary>
+ This object represents an individual security_role
+ and the secure IDs owned by the role.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

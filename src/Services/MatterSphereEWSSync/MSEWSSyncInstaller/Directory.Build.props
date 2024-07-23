@@ -1,0 +1,13 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ProductName>3E MatterSphere EWS Sync</ProductName>
+    <ProductFamily>3E MatterSphere</ProductFamily>
+    <ShortProductName>EWS Sync</ShortProductName>
+    <PublisherName>ELITE</PublisherName>
+    <ProductVersion>10.1.0</ProductVersion>
+    <UpgradeCode>8AB90E75-FDA9-48AD-86ED-32F04CFA5BA5</UpgradeCode>
+    <SourceDir>C:\MSEWSOutput</SourceDir>
+    <OutputName>3EMatterSphereEWSSyncInstaller</OutputName>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[PII_Tables]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[PII_Schema] Nvarchar(250) NOT NULL,
+    [PII_TableName] NVARCHAR(250) NOT NULL, 
+    [PII_ISController] BIT NOT NULL DEFAULT 0, 
+    [PII_UIHidden] BIT NOT NULL DEFAULT 0, 
+    [PII_Rule] NVARCHAR(MAX) NULL 
+)

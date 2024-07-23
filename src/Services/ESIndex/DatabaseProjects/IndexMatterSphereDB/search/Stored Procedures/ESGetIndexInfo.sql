@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE search.ESGetIndexInfo
+AS
+SET NOCOUNT ON
+SELECT * FROM search.ESIndex WITH(NOLOCK)

@@ -1,0 +1,77 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="Horizon.App" Guid="{9FCB89FB-7EA3-4580-8836-DFB5B1FD8B74}" Directory="INSTALLFOLDER">
+      <File Source="$(Horizon.TargetDir)Horizon.exe" />
+      <File Source="$(Horizon.TargetDir)Horizon.exe.config" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="Horizon.Dependencies" Guid="{8B18D62D-E10E-4D31-88BB-D6129B3AFA91}" Directory="INSTALLFOLDER">
+      <File Source="$(Horizon.TargetDir)Common.dll" />
+      <File Source="$(Horizon.TargetDir)DocumentReader.dll" />
+      <File Source="$(Horizon.TargetDir)Models.dll" />
+      <File Source="$(Horizon.TargetDir)Horizon.Common.dll" />
+      <File Source="$(Horizon.TargetDir)Horizon.DAL.dll" />
+      <File Source="$(Horizon.TargetDir)Horizon.TestiFilter.dll" />
+      <File Source="$(Horizon.TargetDir)CsvHelper.dll" />
+      <File Source="$(Horizon.TargetDir)Aspose.Cells.dll" />
+      <File Source="$(Horizon.TargetDir)Aspose.Drawing.dll" />
+      <File Source="$(Horizon.TargetDir)Aspose.Email.dll" />
+      <File Source="$(Horizon.TargetDir)Aspose.OCR.dll" />
+      <File Source="$(Horizon.TargetDir)Aspose.PDF.dll" />
+      <File Source="$(Horizon.TargetDir)Aspose.Words.dll" />
+      <File Source="$(Horizon.TargetDir)IFilterTextReader.dll" />
+      <File Source="$(Horizon.TargetDir)MaterialDesignColors.dll" />
+      <File Source="$(Horizon.TargetDir)MaterialDesignThemes.Wpf.dll" />
+      <File Source="$(Horizon.TargetDir)RestSharp.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)Microsoft.ML.OnnxRuntime.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)OcrDocumentReader.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)onnxruntime.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)onnxruntime_providers_shared.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Buffers.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Memory.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Numerics.Vectors.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Runtime.CompilerServices.Unsafe.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Text.Encoding.CodePages.dll" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="Horizon.TestFiles" Guid="{DFA5863E-0322-4BC3-A600-854A17843E5B}" Directory="TestFilesFolder">
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\01.htm" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\02.html" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\03.zip" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\04.eml" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\05.xls" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\06.xlsx" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\07.doc" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\08.docx" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\09.msg" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\10.pdf" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\11.rtf" />
+      <File Source="$(Horizon.TestiFilter.TargetDir)PredefinedTestFiles\12.txt" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ManufacturerMenuFolder">
+      <Component Id="Horizon.AppShortcut" Guid="*">
+        <Shortcut Id="Horizon.AppMenuShortcut"
+                  Name="$(ShortProductName)"
+                  Description="Starts $(ProductName)"
+                  Target="[INSTALLFOLDER]Horizon.exe"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="Horizon.ico" SourceFile="Horizon.exe" />
+        </Shortcut>
+        <RegistryValue Root="HKCU"
+                       Key="Software\$(PublisherName)\$(ProductName)"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+        <RemoveFolder Id="RemoveManufacturerMenuFolder" Directory="ManufacturerMenuFolder" On="uninstall" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

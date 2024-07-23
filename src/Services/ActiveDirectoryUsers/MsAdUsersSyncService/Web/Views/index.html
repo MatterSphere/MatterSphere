@@ -1,0 +1,28 @@
+﻿@Master['MasterPage']
+
+@Section['Content']
+
+<div class="content__wrapper grid">
+    <div class="grid__col-10">
+        <h1>Synchronize Groups and Users</h1>
+        <div class="grid__col-10-1" style="margin: 2em 0;">
+            <input id="syncActionNTUsers" style="display: none; width: 240px;" class="button button--elite" type="submit" value="Synchronize User Account States" />
+        </div>
+        <div class="grid__col-10-1" style="margin: 2em 0;">
+            <input id="syncActionNTUserNames" style="display: none; width: 240px;" class="button button--elite" type="submit" value="Update User Logon Names" />
+        </div>
+        <div id="loadProcess" style="display: none;">
+            <img src="/content/loading.gif" alt="Synchronization is in progress" />
+        </div>
+        <div>&nbsp;</div>
+        <div id="errorInfo" style="display: none;" class="alert alert--radius alert--red">
+        </div>
+        <div id="successInfo" style="display: none;" class="alert alert--radius alert--green">
+        </div>
+    </div>
+</div>
+@EndSection
+
+@Section['Other']
+<!--This area can be used to display other helpful information.-->
+@EndSection

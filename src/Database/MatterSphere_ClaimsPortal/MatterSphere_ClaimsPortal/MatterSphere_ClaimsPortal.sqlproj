@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MatterSphere_ClaimsPortal</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{34d58ec6-94b1-48ac-b040-87ab8f138644}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MatterSphere_ClaimsPortal</RootNamespace>
+    <AssemblyName>MatterSphere_ClaimsPortal</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Scripts\Post" />
+    <Folder Include="dbo\Functions" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\User Defined Types" />
+    <Folder Include="dbo\Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\fdRaPIdFileHospitals.sql" />
+    <Build Include="dbo\Tables\fdRaPIdDefendantDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdClaimantDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdClaim.sql" />
+    <Build Include="dbo\Tables\fdRaPIdAccidentDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdVerificationComplete.sql" />
+    <Build Include="dbo\Tables\fdRaPIdVehicleRepairDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdOtherPartyDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdOrganisationContacts.sql" />
+    <Build Include="dbo\Tables\fdRaPIdMedicalDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdLiabilityDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdInsData.sql" />
+    <Build Include="dbo\User Defined Types\uCodeLookup.sql" />
+    <Build Include="dbo\Functions\fdGetRaPIdAddress.sql" />
+    <Build Include="dbo\Views\fdvwRaPIdAddresses.sql" />
+    <Build Include="dbo\Stored Procedures\fdsprRaPIdSearchDocs.sql" />
+    <Build Include="dbo\User Defined Types\uUICultureInfo.sql" />
+    <Build Include="dbo\Tables\fdRaPIdDocumentUploads.sql" />
+    <Build Include="dbo\Tables\fdRaPIdDocumentDownloads.sql" />
+    <Build Include="dbo\Tables\fdRaPIdClaimantLosses.sql" />
+    <Build Include="dbo\Tables\fdRaPIdSettlementDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdNotificationList.sql" />
+    <Build Include="dbo\Tables\fdRaPIdHospitalDetails.sql" />
+    <Build Include="dbo\Tables\fdRaPIdOrganisation.sql" />
+    <Build Include="dbo\Tables\fdRaPIdDefendantResponse.sql" />
+    <Build Include="dbo\Stored Procedures\fdsprsearchContact.sql" />
+    <Build Include="dbo\Stored Procedures\srepCreateNotification.sql" />
+    <Build Include="dbo\User Defined Types\tblClaimsPortalClaimsList.sql" />
+    <Build Include="dbo\Stored Procedures\fdsprRaPIdUpdateClaims.sql" />
+    <Build Include="dbo\Tables\fdRaPIdClaimTransfers.sql" />
+    <Build Include="dbo\Tables\fdRaPIdPasswordChanges.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Post\DataScript.sql" />
+    <None Include="Scripts\Post\RolePermissionsRebuild.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MatterSphere_ClaimsPortal.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MS Deploy.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

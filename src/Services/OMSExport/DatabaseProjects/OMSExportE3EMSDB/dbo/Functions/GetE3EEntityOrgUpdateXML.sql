@@ -1,0 +1,182 @@
+CREATE FUNCTION [dbo].[GetE3EEntityOrgUpdateXML] (
+	@CONTID BIGINT,
+	@PROCESS_TYPE NCHAR(3) = N'E3E')
+RETURNS NVARCHAR ( MAX ) AS
+BEGIN
+DECLARE @XML NVARCHAR ( MAX ) 
+
+--OPTIONS
+DECLARE @USEPROXYUSER			BIT
+SET @USEPROXYUSER				= 0
+
+--REPLACEMENT VARIABLES
+--ENTITY BASED
+DECLARE @COMMENT				NVARCHAR ( 4000 )
+
+--ENTITYORG BASED
+DECLARE @ORGNAME				NVARCHAR ( 128 )
+
+--SITE/ADDRESS BASED
+DECLARE @SITE_DESCRIPTION		NVARCHAR ( 50 ) 
+DECLARE @SITE_SITETYPE			NVARCHAR ( 50 ) 
+DECLARE @STREET					NVARCHAR ( 64 )
+DECLARE	@ADDITIONAL1			NVARCHAR ( 64 ) 
+DECLARE @ADDITIONAL2			NVARCHAR ( 64 )
+DECLARE @CITY					NVARCHAR ( 64 )
+DECLARE @COUNTY					NVARCHAR ( 64 )
+DECLARE @STATE					NVARCHAR ( 16 )
+DECLARE @ZIPCODE				NVARCHAR ( 20 )
+DECLARE @COUNTRY				NVARCHAR ( 8 )
+
+--OTHERS
+DECLARE @PROXYUSER				NVARCHAR ( 50 )
+DECLARE @CONTEXTID				BIGINT
+DECLARE @CONTEXTTXTID			NVARCHAR ( 36 )
+
+--CHILDREN XML IF NEEDED
+DECLARE @PHONEXML				NVARCHAR ( 1000 )
+DECLARE @EMAILXML				NVARCHAR ( 1000 )
+
+--IF CONTACT TYPE IS COMPANY THEN RETURN NULL AS THIS IS FOR ENTITYPERSON
+DECLARE @CONTTYPEXML NVARCHAR ( MAX )
+SELECT @CONTTYPEXML = TYPEXML FROM DBCONTACT INNER JOIN DBCONTACTTYPE ON DBCONTACT.CONTTYPECODE = DBCONTACTTYPE.TYPECODE WHERE CONTID = @CONTID
+
+IF ( SELECT CHARINDEX ( 'GeneralType="Company"' , @CONTTYPEXML ) ) = 0
+	RETURN NULL
+
+
+--COLLECT THE DATA
+SELECT
+	@COMMENT					= ISNULL ( CONTNOTES , '' )
+	, @ORGNAME					= ISNULL ( CONTNAME , 'MISSING' )
+	, @SITE_DESCRIPTION			= 'Default Address - MatterSphere'
+	, @SITE_SITETYPE			= 'Billing'
+	, @STREET					= ISNULL ( ADDLINE1 , 'MISSING' )
+	, @ADDITIONAL1				= ISNULL ( ADDLINE2 , '' )
+	, @ADDITIONAL2				= ISNULL ( ADDLINE3 , '' )
+	, @CITY						= ISNULL ( ADDLINE4 , '' )
+	, @COUNTY					= CASE ctryISOCode
+									WHEN 'US' THEN ''
+									WHEN 'CA' THEN ''
+									WHEN 'AU' THEN ''
+									ELSE ISNULL ( ADDLINE5 , '' )
+								END 
+	, @STATE					= CASE ctryISOCode
+									WHEN 'US' THEN ISNULL ( ADDLINE5 , '' )
+									WHEN 'CA' THEN ISNULL ( ADDLINE5 , '' )
+									WHEN 'AU' THEN ISNULL ( ADDLINE5 , '' )
+									ELSE ''
+								END
+	, @ZIPCODE					= ISNULL ( ADDPOSTCODE , '' )
+	, @COUNTRY					= ctryISOCode
+	, @CONTEXTID				= DBCONTACT.CONTEXTID
+	, @CONTEXTTXTID				= DBCONTACT.CONTEXTTXTID
+	, @PROXYUSER				= CASE WHEN @USEPROXYUSER = 1 THEN 'ProxyUser="' + CREATEDBY.USRADID + '"' ELSE '' END 
+FROM 
+	DBCONTACT
+INNER JOIN 
+	DBADDRESS ON DBADDRESS.ADDID = DBCONTACT.CONTDEFAULTADDRESS
+INNER JOIN 
+	DBUSER CREATEDBY ON CREATEDBY.USRID = DBCONTACT.CREATEDBY
+INNER JOIN 
+	DBCOUNTRY ON DBCOUNTRY.CTRYID = DBADDRESS.ADDCOUNTRY
+WHERE 
+	DBCONTACT.CONTID = @CONTID
+	
+--IF NOT ALREADY EXPORTED RETURN NULL
+IF ISNUMERIC ( @CONTEXTID ) = 0 AND @PROCESS_TYPE = N'E3E'
+	RETURN NULL
+
+IF @CONTEXTTXTID IS NULL AND @PROCESS_TYPE = N'C3E'
+	RETURN NULL
+
+--CHECK FOR ADDRESS OF TYPE BILLING
+IF EXISTS ( SELECT TOP 1 DBADDRESS.ADDID FROM DBADDRESS INNER JOIN DBCOUNTRY ON DBCOUNTRY.CTRYID = DBADDRESS.ADDCOUNTRY INNER JOIN DBCONTACTADDRESSES ON DBCONTACTADDRESSES.CONTADDID = DBADDRESS.ADDID WHERE DBCONTACTADDRESSES.CONTID = @CONTID AND DBCONTACTADDRESSES.CONTCODE = 'BILLING' AND DBCONTACTADDRESSES.CONTACTIVE = 1 )
+BEGIN
+	SELECT TOP 1
+	@STREET						= ISNULL ( ADDLINE1 , 'MISSING' )
+	, @ADDITIONAL1				= ISNULL ( ADDLINE2 , '' )
+	, @ADDITIONAL2				= ISNULL ( ADDLINE3 , '' )
+	, @CITY						= ISNULL ( ADDLINE4 , '' )
+	, @COUNTY					= CASE ctryISOCode
+									WHEN 'US' THEN ''
+									WHEN 'CA' THEN ''
+									WHEN 'AU' THEN ''
+									ELSE ISNULL ( ADDLINE5 , '' )
+								END 
+	, @STATE					= CASE ctryISOCode
+									WHEN 'US' THEN ISNULL ( ADDLINE5 , '' )
+									WHEN 'CA' THEN ISNULL ( ADDLINE5 , '' )
+									WHEN 'AU' THEN ISNULL ( ADDLINE5 , '' )
+									ELSE ''
+								END
+
+	, @ZIPCODE					= ISNULL ( ADDPOSTCODE , '' )
+	, @COUNTRY					= ctryISOCode
+FROM
+	DBADDRESS
+INNER JOIN 
+	DBCOUNTRY ON DBCOUNTRY.CTRYID = DBADDRESS.ADDCOUNTRY
+INNER JOIN 
+	DBCONTACTADDRESSES ON DBCONTACTADDRESSES.CONTADDID = DBADDRESS.ADDID
+WHERE
+	DBCONTACTADDRESSES.CONTID = @CONTID AND
+	DBCONTACTADDRESSES.CONTCODE = 'BILLING' AND 
+	DBCONTACTADDRESSES.CONTACTIVE = 1
+ORDER BY 
+	CONTORDER ASC
+END 
+	
+SET @XML = 
+'<NxBizTalkEntityOrgLoad xmlns="http://elite.com/schemas/transaction/process/write/NxBizTalkEntityOrgLoad" ' + @PROXYUSER + '>
+  <Initialize xmlns="http://elite.com/schemas/transaction/object/write/EntityOrg">
+   <Edit>
+    <EntityOrg KeyValue = "' + 
+		CASE @PROCESS_TYPE
+			WHEN N'E3E' THEN CONVERT ( NVARCHAR ( 36 ) , @CONTEXTID )
+			WHEN N'C3E' THEN @CONTEXTTXTID
+		END                  + '">
+     <Attributes>
+      <Comment>' +				DBO.GETHTMLENCODE ( @COMMENT, 0 )				+ '</Comment>
+      <OrgName>' +				DBO.GETHTMLENCODE ( @ORGNAME, 0 )				+ '</OrgName>
+     </Attributes>
+     <Children>
+      <Relate>
+       <Edit>
+        <Relate Position="0">
+         <Children>
+          <Site>
+           <Edit>
+            <Site KeyValue="%SITEINDEX%">
+             <Attributes>
+			  <OrgName>' +		DBO.GETHTMLENCODE ( @ORGNAME, 0 )				+ '</OrgName>
+              <Description>' +						@SITE_DESCRIPTION			+ '</Description>
+              <SiteType>' +							@SITE_SITETYPE				+ '</SiteType>
+              <Street>' +		DBO.GETHTMLENCODE ( @STREET, 0 )				+ '</Street>
+              <Additional1>' +	DBO.GETHTMLENCODE ( @ADDITIONAL1, 0 )			+ '</Additional1>
+              <Additional2>' +	DBO.GETHTMLENCODE ( @ADDITIONAL2, 0 )			+ '</Additional2>
+              <City>' +			DBO.GETHTMLENCODE ( @CITY, 0 )					+ '</City>
+              <County>' +		DBO.GETHTMLENCODE ( @COUNTY, 0 )				+ '</County>
+              <State>' +		DBO.GETHTMLENCODE ( @STATE, 0 )					+ '</State>
+              <ZipCode>' +		DBO.GETHTMLENCODE ( @ZIPCODE, 0 )				+ '</ZipCode>
+              <Country>' +							@COUNTRY					+ '</Country>
+			  <IsDefault>1</IsDefault>
+             </Attributes>
+            </Site>
+           </Edit>
+          </Site>
+         </Children>
+        </Relate>
+       </Edit>
+      </Relate>
+     </Children>
+    </EntityOrg>
+   </Edit>
+  </Initialize>
+ </NxBizTalkEntityOrgLoad>'
+
+
+RETURN @XML
+END
+
+

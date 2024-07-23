@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FWBS.ExternalSystemAggregatorService.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CreateClientResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedClientId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateClientResponse" nillable="true" type="tns:CreateClientResponse" />
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="System" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response" nillable="true" type="tns:Response" />
+  <xs:complexType name="CreateFileResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedFileId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateFileResponse" nillable="true" type="tns:CreateFileResponse" />
+  <xs:complexType name="SetSecurityResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetSecurityResponse" nillable="true" type="tns:SetSecurityResponse" />
+  <xs:complexType name="ApplyTemplateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApplyTemplateResponse" nillable="true" type="tns:ApplyTemplateResponse" />
+  <xs:complexType name="ArchiveFileResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArchivedClientId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ArchivedFileId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ArchiveFileResponse" nillable="true" type="tns:ArchiveFileResponse" />
+  <xs:complexType name="ArchiveDocumentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArchivedDocumentId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ArchiveDocumentResponse" nillable="true" type="tns:ArchiveDocumentResponse" />
+</xs:schema>

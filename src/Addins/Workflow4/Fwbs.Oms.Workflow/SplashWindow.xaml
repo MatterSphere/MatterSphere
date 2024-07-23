@@ -1,0 +1,11 @@
+﻿<Window x:Class="FWBS.OMS.Workflow.SplashWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:ClassModifier="internal"
+		Title="" WindowStartupLocation="CenterScreen" BorderThickness="1"
+		ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="None" Topmost="True" SizeToContent="WidthAndHeight" Background="{x:Static SystemColors.ControlBrush}">
+	<Grid>
+		<TextBlock Name="textBlockMessage" Height="Auto" Width="Auto" Margin="10, 10, 10, 10"
+				   Background="{x:Static SystemColors.ControlBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	</Grid>
+</Window>

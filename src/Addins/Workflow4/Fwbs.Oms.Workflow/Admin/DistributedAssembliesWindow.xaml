@@ -1,0 +1,14 @@
+﻿<Window x:Class="FWBS.OMS.Workflow.Admin.DistributedAssembliesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:ClassModifier="internal"
+        Title="Distributed Assemblies" Height="529" Width="350" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" >
+            <Button Content="OK"  Name="buttonOK" IsDefault="True" Click="buttonOK_Click" Width="75" Height="23" Margin="5, 2, 0, 2" />
+            <Button Content="Cancel" Name="buttonCancel" IsCancel="True" Width="75" Height="23" Margin="5, 2, 0, 2" />
+        </StackPanel>
+
+        <ListBox Grid.Column="0" Name="listBoxDistribution" SelectionMode="Multiple"/>
+    </DockPanel>
+</Window>

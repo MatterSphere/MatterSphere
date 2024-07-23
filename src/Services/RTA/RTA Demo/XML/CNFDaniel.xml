@@ -1,0 +1,46 @@
+﻿<DocumentInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplicationData>
+    <ClaimDetails Signatory="C" RetainedCopy="1" />
+  </ApplicationData>
+  <ClaimAndClaimantDetails>
+    <ClaimantRepresentative>
+      <CompanyDetails CompanyName="Product Team" EmailAddress="Daniel.i@fwbs.net" ContactName="Will" ContactSurname="MacKenzie" TelephoneNumber="01604 857857" ReferenceNumber="F84/1">
+        <Address Country="England" PostCode="PS11 3DE" District="Line 3" County="County" City="Town" Street1="Default Address" Street2="Line 2" HouseName="The Old Brewery" HouseNumber="" AddressType="A" />
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantDetails DefendantStatus="B" DefDriverName="" PolicyNumberReference="123456789" ReferralSource="" Comments="">
+      <Vehicle VRN="GU51 HHT" />
+      <InsurerInformation InsurerType="I" InsurerName="FWBS COMP" Selected="1" InsurerOrganizationID="COMP009" InsurerOrganizationPath="/COMP009" />
+      <CompanyDetails CompanyName="Yellow Bricks Corp">
+        <Address Country="England" PostCode="WE1 8TR" City="Wellingborough" Street1="The Road" HouseNumber="1" AddressType="A" />
+      </CompanyDetails>
+    </DefendantDetails>
+    <ClaimantDetails Occupation="Butcher" ChildClaim="0" NINComment="No national insurance no supplied.">
+      <PersonalDetails Name="Emily" Surname="Rose" DateOfBirth="1987-07-16" TitleType="2">
+        <Address Country="England" PostCode="NR1 1CH" City="Norwich" Street1="Tawny Road" HouseNumber="6" AddressType="A" />
+      </PersonalDetails>
+      <Vehicle VRN="" />
+    </ClaimantDetails>
+  </ClaimAndClaimantDetails>
+  <MedicalDetails>
+    <Injury SoftTissue="0" BoneInjury="0" Whiplash="0" Other="0" InjurySustainedDescription="none." TimeOffRequired="0" TimeOffPeriod="0" MedicalAttentionSeeking="0" HospitalAttendance="0" />
+    <Rehabilitation RehabilitationUndertaken="1" RehabilitationNeeds="0" />
+  </MedicalDetails>
+  <RepairsAndAlternativeVehicleProvision>
+    <Repairs ClaiimingDamageOwnVehicle="0" />
+    <AlternativeVehicleProvision ClaimantEntitled="1" />
+  </RepairsAndAlternativeVehicleProvision>
+  <AccidentData>
+    <AccidentDetails ClaimantType="0" OccupantsNumber="1" Seatbelt="1" DriverIsDefendant="0" AccidentDate="2010-04-05" AccidentTime="13:00" AccidentLocation="local" AccidentDescription="Tripped over" PoliceReported="0">
+      <InsuranceCompanyInformatiion />
+      <WeatherConditions  Sun="1" Rain="0" Snow="0" Ice="0" Fog="0" Other="0" />
+      <RoadConditions Dry="1" Wet="0" Snow="0" Ice="0" Mud="0" Oil="0" Other="0" />
+      <AccidentCircumstances VhclHitSideRoad="1" VhclHitInRear="0" VhclHitWhilstParked="0" AccidCarPark="0" AccidRoundabout="0" AccidChangingLanes="0" ConcertinaCollision="0" Other="0" />
+    </AccidentDetails>
+    <BusCoach BussOrCoach="0" />
+  </AccidentData>
+  <LiabilityFunding>
+    <Liability DefendantResponsability="Defendant's responsibility" />
+    <Funding FundingUndertaken="0" Comments="" />
+  </LiabilityFunding>
+</DocumentInput>

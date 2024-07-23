@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF5AF97F-C132-41AC-940A-E6D4E1EBE85C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IndexingController</RootNamespace>
+    <AssemblyName>IndexingController</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.5\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.15.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.15.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builders\BuilderFactory.cs" />
+    <Compile Include="Builders\Decorator.cs" />
+    <Compile Include="Builders\DocumentBuilder.cs" />
+    <Compile Include="Builders\EntityBuilder.cs" />
+    <Compile Include="Builders\MultiBuilder.cs" />
+    <Compile Include="Builders\RelationBuilder.cs" />
+    <Compile Include="Builders\SingleBuilder.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="ElasticsearchProviderBuilder.cs" />
+    <Compile Include="MessageTypeValidator.cs" />
+    <Compile Include="Models\EntityInfo.cs" />
+    <Compile Include="Models\AppLogger.cs" />
+    <Compile Include="Models\LoggerExt.cs" />
+    <Compile Include="Models\Logging\IndexingProcessResult.cs" />
+    <Compile Include="Providers\BlacklistValidator.cs" />
+    <Compile Include="Providers\DbLogger.cs" />
+    <Compile Include="QueueHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\ServicesAssemblyInfo.cs">
+        <Link>Properties\ServicesAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\MSProductInfo.cs">
+        <Link>Properties\MSProductInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{2852D7B1-B67B-48C1-B67C-D1331BC9F201}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DbProvider\DbProvider.csproj">
+      <Project>{4a42d72d-7668-4bb2-9bc0-eaf0d00d6759}</Project>
+      <Name>DbProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DocumentReader\DocumentReader.csproj">
+      <Project>{c348603a-afa4-4ede-9c15-a8d778583a83}</Project>
+      <Name>DocumentReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ElasticsearchProvider\ElasticsearchProvider.csproj">
+      <Project>{427cc8db-681f-4488-9892-8647a4d7264f}</Project>
+      <Name>ElasticsearchProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileStorageProvider\FileStorageProvider.csproj">
+      <Project>{c56c138d-9d40-491e-b1d7-264912464d64}</Project>
+      <Name>FileStorageProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{3a9bca52-1707-444d-b8dd-6109fd116936}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QueueReader\QueueReader.csproj">
+      <Project>{6fddc48c-8a63-494e-a0d6-9d2c130d03e5}</Project>
+      <Name>QueueReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XmlConverter\XmlConverter.csproj">
+      <Project>{84d4c3f8-6b4e-4e69-a2ee-b06b64943ca2}</Project>
+      <Name>XmlConverter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

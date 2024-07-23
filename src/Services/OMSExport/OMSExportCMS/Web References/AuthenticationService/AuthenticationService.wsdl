@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://cmsopen.com/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://cmsopen.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cmsopen.com/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="options" type="tns:LoginOptions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginOptions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LoginAuthority" type="tns:LoginAuthorityType" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseOfficeXtension" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModuleName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LoginAuthorityType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="AutoDetect" />
+          <s:enumeration value="Windows" />
+          <s:enumeration value="NetWare" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CioSoapHeader" type="tns:CioSoapHeader" />
+      <s:complexType name="CioSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="locale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="formsTicket" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="session" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="useOfficeXtension" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="satelliteDbTarget" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="satelliteDbOnly" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoggedIn">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoggedInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoggedInResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhoAmI">
+        <s:complexType />
+      </s:element>
+      <s:element name="WhoAmIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhoAmIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logout">
+        <s:complexType />
+      </s:element>
+      <s:element name="LogoutResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoggedInSoapIn">
+    <wsdl:part name="parameters" element="tns:LoggedIn" />
+  </wsdl:message>
+  <wsdl:message name="LoggedInSoapOut">
+    <wsdl:part name="parameters" element="tns:LoggedInResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoggedInCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="WhoAmISoapIn">
+    <wsdl:part name="parameters" element="tns:WhoAmI" />
+  </wsdl:message>
+  <wsdl:message name="WhoAmISoapOut">
+    <wsdl:part name="parameters" element="tns:WhoAmIResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhoAmICioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoggedInHttpGetIn" />
+  <wsdl:message name="LoggedInHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WhoAmIHttpGetIn" />
+  <wsdl:message name="WhoAmIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LogoutHttpGetIn" />
+  <wsdl:message name="LogoutHttpGetOut" />
+  <wsdl:message name="LoggedInHttpPostIn" />
+  <wsdl:message name="LoggedInHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WhoAmIHttpPostIn" />
+  <wsdl:message name="WhoAmIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LogoutHttpPostIn" />
+  <wsdl:message name="LogoutHttpPostOut" />
+  <wsdl:portType name="AuthenticationServiceSoap">
+    <wsdl:operation name="Login">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Given a username and password, this method logs a user into the CiO system. The return value indicates whether the user was successfully validated.</documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoggedIn">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Indicates whether the current user is logged into CiO.</documentation>
+      <wsdl:input message="tns:LoggedInSoapIn" />
+      <wsdl:output message="tns:LoggedInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhoAmI">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the username used to log into CiO.</documentation>
+      <wsdl:input message="tns:WhoAmISoapIn" />
+      <wsdl:output message="tns:WhoAmISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Logs a currently authenticated CiO user out of the system.</documentation>
+      <wsdl:input message="tns:LogoutSoapIn" />
+      <wsdl:output message="tns:LogoutSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AuthenticationServiceHttpGet">
+    <wsdl:operation name="LoggedIn">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Indicates whether the current user is logged into CiO.</documentation>
+      <wsdl:input message="tns:LoggedInHttpGetIn" />
+      <wsdl:output message="tns:LoggedInHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhoAmI">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the username used to log into CiO.</documentation>
+      <wsdl:input message="tns:WhoAmIHttpGetIn" />
+      <wsdl:output message="tns:WhoAmIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Logs a currently authenticated CiO user out of the system.</documentation>
+      <wsdl:input message="tns:LogoutHttpGetIn" />
+      <wsdl:output message="tns:LogoutHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AuthenticationServiceHttpPost">
+    <wsdl:operation name="LoggedIn">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Indicates whether the current user is logged into CiO.</documentation>
+      <wsdl:input message="tns:LoggedInHttpPostIn" />
+      <wsdl:output message="tns:LoggedInHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhoAmI">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns the username used to log into CiO.</documentation>
+      <wsdl:input message="tns:WhoAmIHttpPostIn" />
+      <wsdl:output message="tns:WhoAmIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Logs a currently authenticated CiO user out of the system.</documentation>
+      <wsdl:input message="tns:LogoutHttpPostIn" />
+      <wsdl:output message="tns:LogoutHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AuthenticationServiceSoap" type="tns:AuthenticationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://cmsopen.com/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoginCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoggedIn">
+      <soap:operation soapAction="http://cmsopen.com/LoggedIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoggedInCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhoAmI">
+      <soap:operation soapAction="http://cmsopen.com/WhoAmI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:WhoAmICioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://cmsopen.com/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LogoutCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:LogoutCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuthenticationServiceHttpGet" type="tns:AuthenticationServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="LoggedIn">
+      <http:operation location="/LoggedIn" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhoAmI">
+      <http:operation location="/WhoAmI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <http:operation location="/Logout" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuthenticationServiceHttpPost" type="tns:AuthenticationServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="LoggedIn">
+      <http:operation location="/LoggedIn" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhoAmI">
+      <http:operation location="/WhoAmI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <http:operation location="/Logout" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthenticationService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">AuthenticationService is used to log consumers of CiO web services into and out of the system.</documentation>
+    <wsdl:port name="AuthenticationServiceSoap" binding="tns:AuthenticationServiceSoap">
+      <soap:address location="http:\\vpc-aderant\cmsnet/Tools/ToolsWS/AuthenticationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AuthenticationServiceHttpGet" binding="tns:AuthenticationServiceHttpGet">
+      <http:address location="http:\\vpc-aderant\cmsnet/Tools/ToolsWS/AuthenticationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AuthenticationServiceHttpPost" binding="tns:AuthenticationServiceHttpPost">
+      <http:address location="http://vpc-aderant/CMSNet/Tools/ToolsWS/AuthenticationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

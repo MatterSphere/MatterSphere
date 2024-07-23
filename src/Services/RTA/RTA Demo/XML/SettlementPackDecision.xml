@@ -1,0 +1,29 @@
+﻿
+<Stage2SettlementPack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClaimantRepresentative>
+    <CompanyDetails CompanyName="" ContactName="" ContactSurname="" EmailAddress="" ReferenceNumber="" TelephoneNumber="" />
+  </ClaimantRepresentative>
+  <DefendantRepresentative>
+    <DefendantsInsurer CompanyName="" ContactName="Name" ContactSurname="Surname" ReferenceNumber="123456789" TelephoneNumber="01604 362728" />
+  </DefendantRepresentative>
+  <MedicalReport MedicalReportStage2="1" />
+  <LossesToDate>
+    <ClaimantLosses>
+      <CurrentClaimantOffer LossType="1" EvidenceAttached="1" Comments="Losses Test" GrossValueClaimed="1000" PercContribNegDeductions="0" ValueClaimedAfterContrib="100" />
+    </ClaimantLosses>
+    <DefendantReplies>
+      <CurrentDefendantResponse AmountInDispute="900" Comments="Current Defendant Response Losses" GrossValueOffered="500" IsGrossAmountAgreed="0" LossType="1" PercContribNegDeductions="0" ValueOfferedAfterContrib="100" />
+    </DefendantReplies>
+  </LossesToDate>
+  <AgreementData>
+    <FinalAgreementDetails>
+      <AgreementDetails Comments="Comments" />
+    </FinalAgreementDetails>
+  </AgreementData>
+  <LastExtendedTime NewTimeOutDate="2010-12-08" ReasonForExtension="1" />
+  <StatementOfTruth SignatoryType="S" RetainedSignedCopy="1" />
+  <Phase2ClaimantDefendantDates>
+    <ClaimantRepresentativeDates DateOfClaimantFirstOffer="2010-12-08" DateOfClaimantReplyToInsurer="2010-12-08" />
+  </Phase2ClaimantDefendantDates>
+</Stage2SettlementPack>
+

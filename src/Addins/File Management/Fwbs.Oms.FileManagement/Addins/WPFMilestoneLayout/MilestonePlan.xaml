@@ -1,0 +1,631 @@
+﻿<UserControl x:Class="FWBS.OMS.FileManagement.Addins.WPFMilestoneLayout.MilestonePlan"
+             x:Name="Root"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FWBS.OMS.FileManagement.Addins.WPFMilestoneLayout"
+             xmlns:fmc="clr-namespace:FWBS.OMS.FileManagement.Configuration"
+             xmlns:msc="clr-namespace:FWBS.OMS.FileManagement.Milestones"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             mc:Ignorable="d" 
+             FocusManager.FocusedElement="{Binding ElementName=SearchText}"
+             Cursor="{Binding CurrentCursor}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ModelProxy x:Key="ModelProxy"/>
+        <local:TasksOrderConverter x:Key="OrderByTask" />
+        <Style TargetType="{x:Type DatePicker}">
+            <Setter Property="Foreground" Value="#FF333333"/>
+            <Setter Property="IsTodayHighlighted" Value="True"/>
+            <Setter Property="SelectedDateFormat" Value="Short"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint=".5,0" StartPoint=".5,1">
+                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                        <GradientStop Color="#FF718597" Offset="0.375"/>
+                        <GradientStop Color="#FF617584" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DatePicker}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PART_DisabledVisual"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid x:Name="PART_Root" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <Grid.Resources>
+                                    <SolidColorBrush x:Key="DisabledBrush" Color="#A5FFFFFF"/>
+                                    <ControlTemplate x:Key="DropDownButtonTemplate" TargetType="{x:Type Button}">
+                                        <Grid>
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0"/>
+                                                        <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+                                                        <VisualTransition GeneratedDuration="0:0:0.1" To="Pressed"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="MouseOver">
+                                                        <Storyboard>
+                                                            <ColorAnimation Duration="0" To="#FF448DCA" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background"/>
+                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                <SplineColorKeyFrame KeyTime="0" Value="#7FFFFFFF"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                <SplineColorKeyFrame KeyTime="0" Value="#CCFFFFFF"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                <SplineColorKeyFrame KeyTime="0" Value="#F2FFFFFF"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Pressed">
+                                                        <Storyboard>
+                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background">
+                                                                <SplineColorKeyFrame KeyTime="0" Value="#FF448DCA"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                            <DoubleAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Highlight">
+                                                                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                            </DoubleAnimationUsingKeyFrames>
+                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                <SplineColorKeyFrame KeyTime="0" Value="#EAFFFFFF"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                <SplineColorKeyFrame KeyTime="0" Value="#C6FFFFFF"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                <SplineColorKeyFrame KeyTime="0" Value="#6BFFFFFF"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient">
+                                                                <SplineColorKeyFrame KeyTime="0" Value="#F4FFFFFF"/>
+                                                            </ColorAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Disabled"/>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <Grid Background="#11FFFFFF" FlowDirection="LeftToRight" HorizontalAlignment="Center" Height="18" Margin="0" VerticalAlignment="Center" Width="19">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="20*"/>
+                                                    <ColumnDefinition Width="20*"/>
+                                                    <ColumnDefinition Width="20*"/>
+                                                    <ColumnDefinition Width="20*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="23*"/>
+                                                    <RowDefinition Height="19*"/>
+                                                    <RowDefinition Height="19*"/>
+                                                    <RowDefinition Height="19*"/>
+                                                </Grid.RowDefinitions>
+                                                <Border x:Name="Highlight" BorderBrush="#FF45D6FA" BorderThickness="1" Grid.ColumnSpan="4" CornerRadius="0,0,1,1" Margin="-1" Opacity="0" Grid.Row="0" Grid.RowSpan="4"/>
+                                                <Border x:Name="Background" BorderBrush="#FFFFFFFF" BorderThickness="1" Background="#FF1F3B53" Grid.ColumnSpan="4" CornerRadius=".5" Margin="0,-1,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="3"/>
+                                                <Border x:Name="BackgroundGradient" BorderBrush="#BF000000" BorderThickness="1" Grid.ColumnSpan="4" CornerRadius=".5" Margin="0,-1,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="3">
+                                                    <Border.Background>
+                                                        <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                            <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                                            <GradientStop Color="#F9FFFFFF" Offset="0.375"/>
+                                                            <GradientStop Color="#E5FFFFFF" Offset="0.625"/>
+                                                            <GradientStop Color="#C6FFFFFF" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Border.Background>
+                                                </Border>
+                                                <Rectangle Grid.ColumnSpan="4" Grid.RowSpan="1" StrokeThickness="1">
+                                                    <Rectangle.Fill>
+                                                        <LinearGradientBrush EndPoint="0.3,-1.1" StartPoint="0.46,1.6">
+                                                            <GradientStop Color="#FF4084BD"/>
+                                                            <GradientStop Color="#FFAFCFEA" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Rectangle.Fill>
+                                                    <Rectangle.Stroke>
+                                                        <LinearGradientBrush EndPoint="0.48,-1" StartPoint="0.48,1.25">
+                                                            <GradientStop Color="#FF494949"/>
+                                                            <GradientStop Color="#FF9F9F9F" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Rectangle.Stroke>
+                                                </Rectangle>
+                                                <Path Grid.ColumnSpan="4" Grid.Column="0" Data="M11.426758,8.4305077 L11.749023,8.4305077 L11.749023,16.331387 L10.674805,16.331387 L10.674805,10.299648 L9.0742188,11.298672 L9.0742188,10.294277 C9.4788408,10.090176 9.9094238,9.8090878 10.365967,9.4510155 C10.82251,9.0929432 11.176106,8.7527733 11.426758,8.4305077 z M14.65086,8.4305077 L18.566387,8.4305077 L18.566387,9.3435936 L15.671368,9.3435936 L15.671368,11.255703 C15.936341,11.058764 16.27293,10.960293 16.681133,10.960293 C17.411602,10.960293 17.969301,11.178717 18.354229,11.615566 C18.739157,12.052416 18.931622,12.673672 18.931622,13.479336 C18.931622,15.452317 18.052553,16.438808 16.294415,16.438808 C15.560365,16.438808 14.951641,16.234707 14.468243,15.826504 L14.881817,14.929531 C15.368796,15.326992 15.837872,15.525723 16.289043,15.525723 C17.298809,15.525723 17.803692,14.895514 17.803692,13.635098 C17.803692,12.460618 17.305971,11.873379 16.310528,11.873379 C15.83071,11.873379 15.399232,12.079271 15.016094,12.491055 L14.65086,12.238613 z" Fill="#FF2F2F2F" HorizontalAlignment="Center" Margin="4,3,4,3" Grid.Row="1" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Stretch="Fill" VerticalAlignment="Center"/>
+                                                <Ellipse Grid.ColumnSpan="4" Fill="#FFFFFFFF" HorizontalAlignment="Center" Height="3" StrokeThickness="0" VerticalAlignment="Center" Width="3"/>
+                                                <Border x:Name="DisabledVisual" BorderBrush="#B2FFFFFF" BorderThickness="1" Grid.ColumnSpan="4" CornerRadius="0,0,.5,.5" Opacity="0" Grid.Row="0" Grid.RowSpan="4"/>
+                                            </Grid>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="PART_Button" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Left" Margin="3,0,3,0" Grid.Row="0" Template="{StaticResource DropDownButtonTemplate}" VerticalAlignment="Top" Width="20"/>
+                                <DatePickerTextBox x:Name="PART_TextBox" IsEnabled="False" Grid.Column="0" Foreground="{TemplateBinding Foreground}" Focusable="{TemplateBinding Focusable}" HorizontalContentAlignment="Stretch" Grid.Row="0" VerticalContentAlignment="Stretch"/>
+                                <Grid x:Name="PART_DisabledVisual" Grid.ColumnSpan="2" Grid.Column="0" IsHitTestVisible="False" Opacity="0" Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Grid.Column="0" Fill="#A5FFFFFF" RadiusY="1" Grid.Row="0" RadiusX="1"/>
+                                    <Rectangle Grid.Column="1" Fill="#A5FFFFFF" Height="18" Margin="3,0,3,0" RadiusY="1" Grid.Row="0" RadiusX="1" Width="19"/>
+                                    <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="separatorStyle" TargetType="{x:Type MenuItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Separator HorizontalAlignment="Stretch" IsEnabled="False" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="MenuItem" x:Key="ms">
+            <Setter Property="Header" Value="{Binding Description}" />
+            <Setter Property="Icon" Value="{Binding Action.ActionConfiguration}" />
+            <Setter Property="Command" Value="{Binding TaskActionClicked}" />
+            <Setter Property="CommandParameter" Value="{Binding Action}" />
+        </Style>
+        <Style TargetType="MenuItem" x:Key="msd" BasedOn="{StaticResource ms}">
+            <Setter Property="IsEnabled" Value="False"/>
+        </Style>
+        <!--Selectors-->
+        <local:SeparatorStyleSelector x:Key="sss" />
+
+        <!--Converters-->
+        <local:StageStatusConverter x:Key="StageStatusConverter" />
+        <local:StageTaskConverter x:Key="StageTaskConverter" />
+        <local:NotNullConverter x:Key="NotNullConverter" />
+        <local:FilterConverter x:Key="FilterConverter" />
+        <local:VisibilityConverter x:Key="VisiblityConverter" />
+        <local:ImageListConverter x:Key="ImageListConverter" />
+        <local:TaskActionsConverter x:Key="TaskActionsConverter" />
+        <local:CultureConverter x:Key="CultureConverter" />
+        <local:DateAsLocalConverter x:Key="DateAsLocalConverter" />
+        <local:TasksCountConverter x:Key="TasksCountConverter" />
+        <!--Data Templates-->
+        <DataTemplate DataType="{x:Type local:UISeparator}">
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:UIMenuItem}" >
+            <Button Style="{DynamicResource {x:Static ToolBar.ButtonStyleKey}}" Command="{Binding DataContext.MenuCommand, ElementName=Root}" CommandParameter="{Binding Command}" IsEnabled="{Binding Enabled}" Visibility="{Binding Visible, Converter={StaticResource VisiblityConverter}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding Image, Converter={StaticResource ImageListConverter}}" Margin="2" />
+                    <TextBlock Text="{Binding Title}" Grid.Column="1" VerticalAlignment="Center" />
+                </Grid>
+            </Button>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type msc:Task}">
+            <Border Padding="2" Visibility="{Binding Visible, Converter={StaticResource VisiblityConverter}}">
+                <Border.Background>
+                    <MultiBinding Converter="{StaticResource StageTaskConverter}">
+                        <Binding Path="Status" />
+                        <Binding />
+                    </MultiBinding>
+                </Border.Background>
+                <Border.ContextMenu>
+                    <ContextMenu ItemContainerStyleSelector="{StaticResource sss}" Closed="ContextMenu_Closed">
+                        <ContextMenu.ItemsSource>
+                            <MultiBinding Converter="{StaticResource TaskActionsConverter}" >
+                                <Binding />
+                                <Binding Path="Model.ActionsOrderType" Source="{StaticResource ModelProxy}" />
+                                <Binding Path="Model.ActionsToDisplay" Source="{StaticResource ModelProxy}"  />
+                            </MultiBinding>
+                        </ContextMenu.ItemsSource>
+                        <ContextMenu.Resources>
+                            <DataTemplate DataType="{x:Type fmc:ActionConfig}">
+                                <Image Source="{Binding Glyph, Converter={StaticResource ImageListConverter}}" Margin="2" />
+                            </DataTemplate>
+                           
+                        </ContextMenu.Resources>
+
+                    </ContextMenu>
+                </Border.ContextMenu>
+                <Grid ToolTip="{Binding Description}" >
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Visibility="{Binding Model.ShowTaskFlowCheckboxes,Source={StaticResource ModelProxy},Converter={StaticResource VisiblityConverter}}" IsEnabled="{Binding DataContext.IsCheckable, ElementName=Root}" IsChecked="{Binding IsCompleted, Mode=OneWay}" Command="{Binding DataContext.TaskCheckedCommand, ElementName=Root}" CommandParameter="{Binding}" />
+                    <TextBlock Text="{Binding Description}" Grid.Column="1" Margin="3,0"/>
+                    <StackPanel Visibility="{Binding Model.ShowAllTaskFlowColumns,Source={StaticResource ModelProxy},Converter={StaticResource VisiblityConverter}}" Orientation="Horizontal" Grid.Column="2" Margin="5,0">
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Margin" Value="2,0" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Visibility="{Binding AssignedTeam, Converter={StaticResource NotNullConverter}}" >
+                            <TextBlock.Resources>
+                                <sys:String x:Key="Code">
+                                    MSTEAMTITLE
+                                </sys:String>
+                                    <sys:String x:Key="Text">
+                                    Assigned To: %1%
+                                </sys:String>
+                            </TextBlock.Resources>
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource CultureConverter}">
+                                        <Binding Source="{StaticResource Code}" />
+                                        <Binding Source="{StaticResource Text}" />
+                                        <Binding Path="AssignedTeam.Name" FallbackValue="n/a" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock Visibility="{Binding AssignedTo, Converter={StaticResource NotNullConverter}}" >
+                            <TextBlock.Resources>
+                            <sys:String x:Key="Code">
+                                MSTEAMTITLE
+                            </sys:String>
+                                <sys:String x:Key="Text">
+                                Assigned To: %1%
+                            </sys:String>
+                        </TextBlock.Resources>
+                            <TextBlock.Text>
+                                <MultiBinding Converter="{StaticResource CultureConverter}">
+                                    <Binding Source="{StaticResource Code}" />
+                                    <Binding Source="{StaticResource Text}" />
+                                    <Binding Path="AssignedTo.FullName" FallbackValue="n/a" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock Visibility="{Binding Completed, Converter={StaticResource NotNullConverter}}">
+                            <TextBlock.Resources>
+                            <sys:String x:Key="Code">
+                                MSACHIEVEBY
+                            </sys:String>
+                                <sys:String x:Key="Text">
+                                Achieved: %1% (%2%)
+                            </sys:String>
+                        </TextBlock.Resources>
+                            <TextBlock.Text>
+                                <MultiBinding Converter="{StaticResource CultureConverter}">
+                                    <Binding Source="{StaticResource Code}" />
+                                    <Binding Source="{StaticResource Text}" />
+                                    <Binding Path="Completed" />
+                                <Binding Path="CompletedBy.FullName" FallbackValue="n/a" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+
+                        </TextBlock>
+                    </StackPanel>
+                    <TextBlock Visibility="{Binding Model.ShowAllTaskFlowColumns,Source={StaticResource ModelProxy},Converter={StaticResource VisiblityConverter}}" Grid.Column="3">
+                        <TextBlock.Resources>
+                            <sys:String x:Key="Code">
+                                MSTARGETDATE
+                            </sys:String>
+                            <sys:String x:Key="Text">Target Date: %1%</sys:String>
+                        </TextBlock.Resources>
+                            <TextBlock.Text>
+                                <MultiBinding Converter="{StaticResource CultureConverter}">
+                                    <Binding Source="{StaticResource Code}" />
+                                    <Binding Source="{StaticResource Text}" />
+                                    <Binding Path="Due" />                            
+                                </MultiBinding>
+                            </TextBlock.Text>
+                    </TextBlock>
+                </Grid>
+            </Border>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type msc:MilestoneStage}">
+            <Border Margin="2" Padding="2" BorderBrush="Gray" BorderThickness="1" >
+                <Grid>                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid Name="StageHeader">
+                        <Grid.ContextMenu>
+                            <ContextMenu ItemContainerStyleSelector="{StaticResource sss}">
+                                <ContextMenu.ItemsSource>
+                                    <MultiBinding Converter="{StaticResource TaskActionsConverter}">
+                                        <Binding />
+                                        <Binding Path="Model.ActionsOrderType" Source="{StaticResource ModelProxy}" />
+                                        <Binding Path="Model.ActionsToDisplay" Source="{StaticResource ModelProxy}"  />
+                                    </MultiBinding>
+                                </ContextMenu.ItemsSource>
+                                <ContextMenu.Resources>
+                                    <DataTemplate DataType="{x:Type fmc:ActionConfig}">
+                                        <Image Source="{Binding Glyph, Converter={StaticResource ImageListConverter}}" Margin="2" />
+                                    </DataTemplate>
+                                </ContextMenu.Resources>                               
+                            </ContextMenu>
+                        </Grid.ContextMenu>
+                        <Grid.Background>
+                            <MultiBinding Converter="{StaticResource StageStatusConverter}">
+                                <Binding Path="Status" />
+                                <Binding />
+                            </MultiBinding>
+                        </Grid.Background>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Visibility="{Binding Model.ShowTaskFlowCheckboxes,Source={StaticResource ModelProxy},Converter={StaticResource VisiblityConverter}}" IsEnabled ="{Binding DataContext.IsCheckable, ElementName=Root}"  Name="completeCheck" IsChecked="{Binding Status, Converter={StaticResource StageStatusConverter}, Mode=OneWay}" Margin="2" VerticalAlignment="Center" Command="{Binding DataContext.StageCheckedCommand, ElementName=Root}" CommandParameter="{Binding}"  />
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat=" {0}.{1}">
+                                    <Binding Path="StageNumber" />
+                                    <Binding Path="Description" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <!--MS Due Days-->
+                        <StackPanel Visibility="{Binding Model.ShowAllTaskFlowColumns,Source={StaticResource ModelProxy},Converter={StaticResource VisiblityConverter}}" Orientation="Horizontal" Grid.Column="2" Margin="2,0">
+                            <TextBlock Visibility="{Binding IsChecked, ElementName=completeCheck, Converter={StaticResource NotNullConverter}}"  VerticalAlignment="Center" >
+                                    <TextBlock.Resources>
+                                    <sys:String x:Key="Code">
+                                        MSDUEDAYS
+                                    </sys:String>
+                                        <sys:String x:Key="Text">
+                                        Due Days: %1%
+                                    </sys:String>
+                                </TextBlock.Resources>
+                                    <TextBlock.Text>
+                                        <MultiBinding Converter="{StaticResource CultureConverter}">
+                                            <Binding Source="{StaticResource Code}" />
+                                            <Binding Source="{StaticResource Text}" />
+                                            <Binding Path="DaysDue" />                 
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                            </TextBlock>
+                            <TextBlock Visibility="{Binding IsChecked, ElementName=completeCheck, Converter={StaticResource VisiblityConverter}}"  VerticalAlignment="Center" >
+                                <TextBlock.Resources>
+                                <sys:String x:Key="Code">
+                                    MSSTGACHIEVED
+                                </sys:String>
+                                    <sys:String x:Key="Text">
+                                    Achieved: %1%
+                                </sys:String>
+                            </TextBlock.Resources>
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource CultureConverter}">
+                                        <Binding Source="{StaticResource Code}" />
+                                        <Binding Source="{StaticResource Text}" />
+                                        <Binding Path="Achieved" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </StackPanel>
+                        <Grid Grid.Column="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Visibility="{Binding Model.ShowAllTaskFlowColumns,Source={StaticResource ModelProxy},Converter={StaticResource VisiblityConverter}}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3,0">
+                                <TextBlock.Resources>
+                                    <sys:String x:Key="Code">
+                                        MSSTGTARGETDATE
+                                    </sys:String>
+                                    <sys:String x:Key="Text">
+                                        Target Date: %1%
+                                    </sys:String>
+                                </TextBlock.Resources>
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource CultureConverter}">
+                                        <Binding Source="{StaticResource Code}" />
+                                        <Binding Source="{StaticResource Text}" />
+                                        <Binding Path="DaysDue" />
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                                
+                            <!--DataContext="{Binding _DueUI, Mode=TwoWay, Converter={StaticResource DateAsLocalConverter}}"-->
+                            <local:DatePicker  Visibility="{Binding Model.ShowAllTaskFlowColumns,Source={StaticResource ModelProxy},Converter={StaticResource VisiblityConverter}}" Grid.Column="1" VerticalAlignment="Center"/>
+                            <!-- SelectedDate=""-->
+                            <!---->
+                        </Grid>
+                        <ToggleButton Name="TasksExpand" Margin="5,2,2,2" Grid.Column="4" local:SetExpandedStateADP.CurrentStage="{Binding}" local:SetExpandedStateADP.StageStates="{Binding DataContext.StageStates, ElementName=Root}" local:SetExpandedStateADP.SetExpanded="{Binding DataContext.ExpandAll, ElementName=Root}" Click="TasksExpand_Checked" Visibility="{Binding Tasks, Converter={StaticResource TasksCountConverter}}">
+                            <Grid>
+                                <Image Source="/FWBS.OMS.FileManagement;component/Addins/WPFMilestoneLayout/Up.png" Visibility="{Binding IsChecked, ElementName=TasksExpand, Converter={StaticResource VisiblityConverter}}"/>
+                                <Image Source="/FWBS.OMS.FileManagement;component/Addins/WPFMilestoneLayout/Down.png"  Visibility="{Binding IsChecked, ElementName=TasksExpand, Converter={StaticResource NotNullConverter}}" />
+                            </Grid>
+                        </ToggleButton>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="10,3,3,3" Visibility="{Binding IsChecked, ElementName=TasksExpand, Converter={StaticResource VisiblityConverter}}" VerticalAlignment="Top" >
+                                                
+                            <ListBox ItemsSource="{Binding Tasks, Converter={StaticResource OrderByTask}}" HorizontalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" local:SetItemBinding.StageTasksBinding="{Binding DataContext.SelectedStage, ElementName=Root}" GotFocus="ListBox_GotFocus" Loaded="ListBox_Loaded">
+                            <ListBox.Template>
+                                <ControlTemplate>
+                                    <!-- Empty template to allow parent ScrollViewer to capture mouse scroll -->
+                                    <ItemsPresenter />
+                                </ControlTemplate>
+                            </ListBox.Template>
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel VerticalAlignment="Top" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Visibility">
+                                        <Setter.Value>
+                                            <MultiBinding Converter="{StaticResource FilterConverter}" >
+                                                <Binding ElementName="SearchText" Path="Text" />
+                                                <Binding />
+                                                <Binding Path="Status" />
+                                                <Binding ElementName="SearchStatus" Path="SelectedValue.Status" />
+                                            </MultiBinding>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                                    <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                                    <Setter Property="Padding" Value="2,0,0,0"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                                                    <VisualStateManager.VisualStateGroups>
+                                                        <VisualStateGroup x:Name="SelectionStates">
+                                                            <VisualState x:Name="Unselected"/>
+                                                            <VisualState x:Name="Selected"/>
+                                                            <VisualState x:Name="SelectedUnfocused"/>
+                                                        </VisualStateGroup>
+                                                    </VisualStateManager.VisualStateGroups>
+                                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsSelected" Value="true">
+                                                        <Setter Property="BorderBrush" Value="Black" />
+                                                        <Setter Property="BorderThickness" Value="1" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                        </ListBox>
+                    </Grid>
+                </Grid>
+
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--Title Area-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="12" Foreground="#FF1669C8" FontWeight="Bold" Margin="2,5"> 
+                <TextBlock.Resources>
+                    <sys:String x:Key="Code">
+                        MSHEADER
+                    </sys:String>
+                     <sys:String x:Key="Text">
+                        Application : %1% - Milestone Plan : %2%
+                    </sys:String>
+                </TextBlock.Resources>
+                    <TextBlock.Text>
+                        <MultiBinding Converter="{StaticResource CultureConverter}">
+                            <Binding Source="{StaticResource Code}" />
+                            <Binding Source="{StaticResource Text}" />
+                            <Binding Path="Application.Parent.Description" FallbackValue="n/a" />
+                             <Binding Path="Application.CurrentPlan.Description" FallbackValue="n/a" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            <Rectangle Height="1" HorizontalAlignment="Stretch" Fill="LightGray" Grid.Column="1" Margin="3,0"/>
+        </Grid>
+        <!--Search And Data-->
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--Search-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding QuickSearchText}" VerticalAlignment="Center" Target="{Binding ElementName=SearchText}" />
+                <TextBox  Name="SearchText" Text="{Binding FilterText}" Grid.Column="1" Margin="5,3"/>
+                <Label Content="{Binding StatusText}" VerticalAlignment="Center" Grid.Row="1" Target="{Binding ElementName=SearchStatus}" />
+                <ComboBox Name="SearchStatus" ItemsSource="{Binding StatusFilters}" DisplayMemberPath="DisplayName" Grid.Row="1" Grid.Column="1" Margin="5,3" HorizontalAlignment="Left" Width="150" SelectedIndex="0" VerticalAlignment="Stretch" />
+            </Grid>
+            <!--Stage Display-->
+            <ListBox Name="CurrentPlanList" ItemsSource="{Binding Application.CurrentPlan}" SelectedItem="{Binding SelectedStage}" IsTabStop="True" Grid.Row="2" HorizontalContentAlignment="Stretch" ScrollViewer.CanContentScroll="False" >
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Visibility">
+                            <Setter.Value>
+                                <MultiBinding Converter="{StaticResource FilterConverter}" >
+                                    <Binding ElementName="SearchText" Path="Text" />
+                                    <Binding />
+                                    <Binding Path="Status" />
+                                    <Binding ElementName="SearchStatus" Path="SelectedValue.Status" />
+                                </MultiBinding>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                        <Setter Property="Padding" Value="2,0,0,0"/>
+                        <EventSetter Event="MouseDoubleClick" Handler="ListBoxItem_MouseDoubleClick" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="SelectionStates">
+                                                <VisualState x:Name="Unselected"/>
+                                                <VisualState x:Name="Selected"/>
+                                                <VisualState x:Name="SelectedUnfocused"/>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="true">
+                                            <Setter Property="BorderBrush" Value="Black" />
+                                            <Setter Property="BorderThickness" Value="1" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </Grid>
+
+        <!--Menu-->
+        <!--<ItemsControl ItemsSource="{Binding MenuItems}" Margin="2" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>-->
+        <ToolBarTray Background="White" IsLocked="True">
+            <ToolBar Background="White" KeyboardNavigation.TabNavigation="Continue" ItemsSource="{Binding MenuItems}"></ToolBar>
+        </ToolBarTray>
+
+    </Grid>
+</UserControl>

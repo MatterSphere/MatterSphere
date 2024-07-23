@@ -1,0 +1,63 @@
+﻿<WixLocalization Culture="en-us" xmlns="http://wixtoolset.org/schemas/v4/wxl">
+  <String Id="WelcomeDlgDescription" Value="The Setup Wizard will install [Manufacturer] [ProductName] v[ProductVersion] on your computer. Click Next to continue or Cancel to exit the Setup Wizard." />
+  <String Id="DiskCostDlgDescription" Value="The disk space required for the installation." />
+  <String Id="VerifyReadyDlgInstallTitle" Value="{\WixUI_Font_Title}Ready to install" />
+  <String Id="VerifyReadyDlgChangeTitle" Value="{\WixUI_Font_Title}Ready to change" />
+  <String Id="VerifyReadyDlgRepairTitle" Value="{\WixUI_Font_Title}Ready to repair" />
+  <String Id="VerifyReadyDlgRemoveTitle" Value="{\WixUI_Font_Title}Ready to remove" />
+  <String Id="VerifyReadyDlgUpdateTitle" Value="{\WixUI_Font_Title}Ready to update" />
+  <String Id="CustomizeDlgLocation" Value="[INSTALLDIR]" />
+
+  <String Id="UpgradeErrorMessage" Value="An older version of this product or components has been detected. Please uninstall it and run this setup again." />
+  <String Id="DowngradeErrorMessage" Value="A newer version of [ProductName] is already installed." />
+  <String Id="DotNetFramework48Required" Value="This product requires .NET Framework 4.8." />
+  <String Id="PackageComments" Value="Contact your ELITE partner reseller" />
+  <String Id="ARPContact" Value="Contact your Partner or Distributor in your local region" />
+  <String Id="ARPTelephone" Value="UK 0800 0151631 International +44 20 3684 7842" />
+  <String Id="LaunchOmsUtils" Value="Launch 3E MatterSphere Utilities Application" />
+  <String Id="LaunchVstoRuntime" Value="Please install Visual Studio 2010 Tools for Office (VSTO) Runtime. The download page will be opened automatically after this Setup Wizard exits." />
+
+  <String Id="OMSCore_Title" Value="OMS Core" />
+  <String Id="OMSCore_Description" Value="OMS Core Framework" />
+  <String Id="OMSCoreAddins_Title" Value="OMS Core Add-ins" />
+  <String Id="OMSCoreAddins_Description" Value="OMS Core Add-ins" />
+  <String Id="OMSFileTask_Title" Value="File Task Management" />
+  <String Id="OMSFileTask_Description" Value="OMS File Task Management Support" />
+  <String Id="OMSHighQ_Title" Value="HighQ" />
+  <String Id="OMSHighQ_Description" Value="OMS HighQ Integration Support" />
+  <String Id="OMSWorkflow_Title" Value="Workflow" />
+  <String Id="OMSWorkflow_Description" Value="OMS Windows Workflow Foundation Support" />
+  <String Id="OMSCoreApps_Title" Value="OMS Core Applications" />
+  <String Id="OMSCoreApps_Description" Value="OMS Core Applications" />
+  <String Id="OMSAdminKit_Title" Value="Admin Kit" />
+  <String Id="OMSAdminKit_Description" Value="OMS Administration Kit" />
+  <String Id="OMSReports_Title" Value="Reports" />
+  <String Id="OMSReports_Description" Value="OMS Reports Support Requires Crystal Reports Runtime v13.0.25." />
+  <String Id="OMSScanning_Title" Value="Scanning" />
+  <String Id="OMSScanning_Description" Value="OMS Scanning Support" />
+  <String Id="OMSQuickClient_Title" Value="Quick Client" />
+  <String Id="OMSQuickClient_Description" Value="OMS Quick Client Creation" />
+  <String Id="OMSShell_Title" Value="OMS Shell" />
+  <String Id="OMSShell_Description" Value="OMS Shell Extensions &quot;Save to OMS&quot;" />
+  <String Id="OMSDrive_Title" Value="OMS Drive" />
+  <String Id="OMSDrive_Description" Value="OMS Shell Virtual Drive Requires Dokan file system driver v1.5.1.1000." />
+  <String Id="OMSOffice_Title" Value="OMS Office" />
+  <String Id="OMSOffice_Description" Value="OMS Office Integration Either Full or Limited Document Management should also be selected." />
+  <String Id="OMSOffice2010_Title" Value="Office 2010 Add-ins" />
+  <String Id="OMSOffice2010_Description" Value="OMS Office 2010 Support Requires Visual Studio 2010 Tools for Office (VSTO) Runtime." />
+  <String Id="OMSOffice2013_Title" Value="Office 2013 Add-ins" />
+  <String Id="OMSOffice2013_Description" Value="OMS Office 2013 Support Requires Visual Studio 2010 Tools for Office (VSTO) Runtime." />
+  <String Id="OMSOffice2016_Title" Value="Office 2016-2021 Add-ins" />
+  <String Id="OMSOffice2016_Description" Value="OMS Office 2016-2021 Support Requires Visual Studio 2010 Tools for Office (VSTO) Runtime." />
+  <String Id="OMSFullDM_Title" Value="Full Document Management" />
+  <String Id="OMSFullDM_Description" Value="Full Document Management Support Mutually exclusive with Limited Document Management." />
+  <String Id="OMSLaserForm_Title" Value="OMS Laserforms" />
+  <String Id="OMSLaserForm_Description" Value="OMS Laserforms Integration" />
+  <String Id="OMSOyezForm_Title" Value="OMS Oyez Forms" />
+  <String Id="OMSOyezForm_Description" Value="OMS Oyez Forms Integration" />
+  <String Id="OMSNoDM_Title" Value="Limited Document Management" />
+  <String Id="OMSNoDM_Description" Value="Limited Document Management Support Mutually exclusive with Full Document Management." />
+  <String Id="OMSiManage10_Title" Value="OMS iManage Work 10" />
+  <String Id="OMSiManage10_Description" Value="iManage Work 10 Integration" />
+
+</WixLocalization>

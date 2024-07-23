@@ -1,0 +1,469 @@
+﻿<cp:coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+	<dc:creator>Tayfun.k</dc:creator>
+	<cp:keywords/>
+	<dc:description/>
+	<dc:subject/>
+	<dc:title/>
+	<cp:category/>
+	<cp:contentStatus/>
+</cp:coreProperties>
+
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
+	<Company/>
+	<Manager/>
+</Properties>
+
+<CoverPageProperties xmlns="http://schemas.microsoft.com/office/2006/coverPageProps">
+	<PublishDate/>
+	<Abstract/>
+	<CompanyAddress/>
+	<CompanyPhone/>
+	<CompanyFax/>
+	<CompanyEmail/>
+</CoverPageProperties>
+
+<?xml version="1.0"?>
+<ct:contentTypeSchema ma:contentTypeName="Document" ma:contentTypeID="0x010100E8A5A2AEF2923D4B885A59F09DBA723A" ma:contentTypeVersion="4" ma:contentTypeDescription="Create a new document." ma:versionID="b90454d1c21375b450719e6d56a58682" xmlns:ma="http://schemas.microsoft.com/office/2006/metadata/properties/metaAttributes" xmlns:ct="http://schemas.microsoft.com/office/2006/metadata/contentType">
+	<xsd:schema xmlns:ns1="ed5929ce-2cbf-4985-bb1d-3e605e9eb871" xmlns:ma="http://schemas.microsoft.com/office/2006/metadata/properties/metaAttributes" xmlns:p="http://schemas.microsoft.com/office/2006/metadata/properties" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/2006/metadata/properties" ma:root="true" ma:fieldsID="14c3466de92a7aab7d0a4cb1f16e1aa5">
+		<xs:import namespace="ed5929ce-2cbf-4985-bb1d-3e605e9eb871"/>
+		<xs:element name="properties">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="documentManagement">
+						<xs:complexType>
+							<xs:all>
+								<xs:element minOccurs="0" ref="ns1:ClientNo"/>
+								<xs:element minOccurs="0" ref="ns1:MatterNo"/>
+							</xs:all>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xsd:schema>
+	<xsd:schema xmlns:dms="http://schemas.microsoft.com/office/2006/documentManagement/types" xmlns:ma="http://schemas.microsoft.com/office/2006/metadata/properties/metaAttributes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="ed5929ce-2cbf-4985-bb1d-3e605e9eb871">
+		<xs:import namespace="http://schemas.microsoft.com/office/2006/documentManagement/types"/>
+		<xs:element ma:index="8" ma:default="SHARED" ma:internalName="ClientNo" ma:displayName="ClientNo" ma:description="Client Number" name="ClientNo" nillable="true">
+			<xs:simpleType>
+				<xs:restriction base="dms:Text">
+					<xs:maxLength value="15"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+		<xs:element ma:index="9" ma:internalName="MatterNo" ma:displayName="MatterNo" ma:description="Matter Number" name="MatterNo" nillable="true">
+			<xs:simpleType>
+				<xs:restriction base="dms:Text">
+					<xs:maxLength value="15"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+	</xsd:schema>
+	<xsd:schema targetNamespace="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:odoc="http://schemas.microsoft.com/internal/obd">
+		<xsd:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd"/>
+		<xsd:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd"/>
+		<xsd:element name="coreProperties" type="CT_coreProperties"/>
+		<xsd:complexType name="CT_coreProperties">
+			<xsd:all>
+				<xsd:element ref="dc:creator" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dcterms:created" minOccurs="0" maxOccurs="1"/>
+				<xsd:element="" ref="dc:identifier" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="contentType" minOccurs="0" maxOccurs="1" type="xsd:string" ma:index="0" ma:displayName="Content Type"/>
+				<xsd:element ref="dc:title" minOccurs="0" maxOccurs="1" ma:index="4" ma:displayName="Title"/>
+				<xsd:element ref="dc:subject" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dc:description" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="keywords" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element ref="dc:language" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="category" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element name="version" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element name="revision" minOccurs="0" maxOccurs="1" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>This value indicates the number of saves or revisions. The application is responsible for updating this value after each revision.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="lastModifiedBy" minOccurs="0" ma="" xOccurs="1" type="xsd:string"/>
+				<xsd:element ref="dcterms:modified" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="contentStatus" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:schema>
+</ct:contentTypeSchema>
+
+<?mso-contentType?>
+<FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+	<Display>DocumentLibraryForm</Display>
+	<Edit>DocumentLibraryForm</Edit>
+	<New>DocumentLibraryForm</New>
+</FormTemplates>
+
+<?xml version="1.0"?>
+<p:properties xmlns:p="http://schemas.microsoft.com/office/2006/metadata/properties" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pc="http://schemas.microsoft.com/office/infopath/2007/PartnerControls">
+	<documentManagement>
+		<ClientNo xmlns="ed5929ce-2cbf-4985-bb1d-3e605e9eb871">C00001</ClientNo>
+		<MatterNo xmlns="ed5929ce-2cbf-4985-bb1d-3e605e9eb871">F00001</MatterNo>
+	</documentManagement>
+</p:properties>
+
+<?xml version="1.0"?>
+<ct:contentTypeSchema ma:contentTypeName="Document" ma:contentTypeID="0x010100E8A5A2AEF2923D4B885A59F09DBA723A" ma:contentTypeVersion="4" ma:contentTypeDescription="Create a new document." ma:versionID="b90454d1c21375b450719e6d56a58682" xmlns:ma="http://schemas.microsoft.com/office/2006/metadata/properties/metaAttributes" xmlns:ct="http://schemas.microsoft.com/office/2006/metadata/contentType">
+	<xsd:schema xmlns:ns1="ed5929ce-2cbf-4985-bb1d-3e605e9eb871" xmlns:ma="http://schemas.microsoft.com/office/2006/metadata/properties/metaAttributes" xmlns:p="http://schemas.microsoft.com/office/2006/metadata/properties" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/office/2006/metadata/properties" ma:root="true" ma:fieldsID="14c3466de92a7aab7d0a4cb1f16e1aa5">
+		<xs:import namespace="ed5929ce-2cbf-4985-bb1d-3e605e9eb871"/>
+		<xs:element name="properties">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="documentManagement">
+						<xs:complexType>
+							<xs:all>
+								<xs:element minOccurs="0" ref="ns1:ClientNo"/>
+								<xs:element minOccurs="0" ref="ns1:MatterNo"/>
+							</xs:all>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xsd:schema>
+	<xsd:schema xmlns:dms="http://schemas.microsoft.com/office/2006/documentManagement/types" xmlns:ma="http://schemas.microsoft.com/office/2006/metadata/properties/metaAttributes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="ed5929ce-2cbf-4985-bb1d-3e605e9eb871">
+		<xs:import namespace="http://schemas.microsoft.com/office/2006/documentManagement/types"/>
+		<xs:element ma:index="8" ma:default="SHARED" ma:internalName="ClientNo" ma:displayName="ClientNo" ma:description="Client Number" name="ClientNo" nillable="true">
+			<xs:simpleType>
+				<xs:restriction base="dms:Text">
+					<xs:maxLength value="15"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+		<xs:element ma:index="9" ma:internalName="MatterNo" ma:displayName="MatterNo" ma:description="Matter Number" name="MatterNo" nillable="true">
+			<xs:simpleType>
+				<xs:restriction base="dms:Text">
+					<xs:maxLength value="15"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+	</xsd:schema>
+	<xsd:schema targetNamespace="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:odoc="http://schemas.microsoft.com/internal/obd">
+		<xsd:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd"/>
+		<xsd:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd"/>
+		<xsd:element name="coreProperties" type="CT_coreProperties"/>
+		<xsd:complexType name="CT_coreProperties">
+			<xsd:all>
+				<xsd:element ref="dc:creator" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dcterms:created" minOccurs="0" maxOccurs="1"/>
+				<xsd:element="" ref="dc:identifier" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="contentType" minOccurs="0" maxOccurs="1" type="xsd:string" ma:index="0" ma:displayName="Content Type"/>
+				<xsd:element ref="dc:title" minOccurs="0" maxOccurs="1" ma:index="4" ma:displayName="Title"/>
+				<xsd:element ref="dc:subject" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dc:description" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="keywords" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element ref="dc:language" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="category" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element name="version" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element name="revision" minOccurs="0" maxOccurs="1" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>This value indicates the number of saves or revisions. The application is responsible for updating this value after each revision.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="lastModifiedBy" minOccurs="0" ma="" xOccurs="1" type="xsd:string"/>
+				<xsd:element ref="dcterms:modified" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="contentStatus" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:schema>
+</ct:contentTypeSchema>
+
+<?mso-contentType?>
+<FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+	<Display>DocumentLibraryForm</Display>
+	<Edit>DocumentLibraryForm</Edit>
+	<New>DocumentLibraryForm</New>
+</FormTemplates>
+
+<?xml version="1.0"?>
+<p:properties xmlns:p="http://schemas.microsoft.com/office/2006/metadata/properties" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pc="http://schemas.microsoft.com/office/infopath/2007/PartnerControls">
+	<documentManagement>
+		<ClientNo xmlns="ed5929ce-2cbf-4985-bb1d-3e605e9eb871">C00001</ClientNo>
+		<MatterNo xmlns="ed5929ce-2cbf-4985-bb1d-3e605e9eb871">F00001</MatterNo>
+	</documentManagement>
+</p:properties>
+
+
+
+
+
+
+<?xml version="1.0"?>
+<p:properties xmlns:p="http://schemas.microsoft.com/office/2006/metadata/properties" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pc="http://schemas.microsoft.com/office/infopath/2007/PartnerControls">
+	<documentManagement>
+		<ClientNo xmlns="ed5929ce-2cbf-4985-bb1d-3e605e9eb871"/>
+		<MatterNo xmlns="ed5929ce-2cbf-4985-bb1d-3e605e9eb871" xsi:nil="true"/>
+	</documentManagement>
+</p:properties>
+
+<?mso-contentType?>
+<FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+	<Display>DocumentLibraryForm</Display>
+	<Edit>DocumentLibraryForm</Edit>
+	<New>DocumentLibraryForm</New>
+</FormTemplates>
+
+<?xml version="1.0"?>
+<ct:contentTypeSchema ct:_="" ma:_="" ma:contentTypeName="Document" ma:contentTypeID="0x010100E8A5A2AEF2923D4B885A59F09DBA723A" ma:contentTypeVersion="4" ma:contentTypeDescription="Create a new document." ma:contentTypeScope="" ma:versionID="b90454d1c21375b450719e6d56a58682" xmlns:ct="http://schemas.microsoft.com/office/2006/metadata/contentType" xmlns:ma="http://schemas.microsoft.com/office/2006/metadata/properties/metaAttributes">
+	<xsd:schema targetNamespace="http://schemas.microsoft.com/office/2006/metadata/properties" ma:root="true" ma:fieldsID="3075341da58ab1c3c3d6bb96a60a6dab" ns2:_="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:p="http://schemas.microsoft.com/office/2006/metadata/properties" xmlns:ns2="ed5929ce-2cbf-4985-bb1d-3e605e9eb871">
+		<xsd:import namespace="ed5929ce-2cbf-4985-bb1d-3e605e9eb871"/>
+		<xsd:element name="properties">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="documentManagement">
+						<xsd:complexType>
+							<xsd:all>
+								<xsd:element ref="ns2:ClientNo" minOccurs="0"/>
+								<xsd:element ref="ns2:MatterNo" minOccurs="0"/>
+							</xsd:all>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<xsd:schema targetNamespace="ed5929ce-2cbf-4985-bb1d-3e605e9eb871" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dms="http://schemas.microsoft.com/office/2006/documentManagement/types" xmlns:pc="http://schemas.microsoft.com/office/infopath/2007/PartnerControls">
+		<xsd:import namespace="http://schemas.microsoft.com/office/2006/documentManagement/types"/>
+		<xsd:import namespace="http://schemas.microsoft.com/office/infopath/2007/PartnerControls"/>
+		<xsd:element name="ClientNo" ma:index="8" nillable="true" ma:displayName="ClientNo" ma:default="SHARED" ma:description="Client Number" ma:internalName="ClientNo">
+			<xsd:simpleType>
+				<xsd:restriction base="dms:Text">
+					<xsd:maxLength value="15"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="MatterNo" ma:index="9" nillable="true" ma:displayName="MatterNo" ma:description="Matter Number" ma:internalName="MatterNo">
+			<xsd:simpleType>
+				<xsd:restriction base="dms:Text">
+					<xsd:maxLength value="15"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+	</xsd:schema>
+	<xsd:schema targetNamespace="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:odoc="http://schemas.microsoft.com/internal/obd">
+		<xsd:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd"/>
+		<xsd:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd"/>
+		<xsd:element name="coreProperties" type="CT_coreProperties"/>
+		<xsd:complexType name="CT_coreProperties">
+			<xsd:all>
+				<xsd:element ref="dc:creator" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dcterms:created" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dc:identifier" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="contentType" minOccurs="0" maxOccurs="1" type="xsd:string" ma:index="0" ma:displayName="Content Type"/>
+				<xsd:element ref="dc:title" minOccurs="0" maxOccurs="1" ma:index="4" ma:displayName="Title"/>
+				<xsd:element ref="dc:subject" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dc:description" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="keywords" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element ref="dc:language" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="category" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element name="version" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element name="revision" minOccurs="0" maxOccurs="1" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>
+							This value indicates the number of saves or revisions. The application is responsible for updating this value after each revision.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="lastModifiedBy" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element ref="dcterms:modified" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="contentStatus" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:schema>
+	<xs:schema targetNamespace="http://schemas.microsoft.com/office/infopath/2007/PartnerControls" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:pc="http://schemas.microsoft.com/office/infopath/2007/PartnerControls" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:element name="Person">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="pc:DisplayName" minOccurs="0"></xs:element>
+					<xs:element ref="pc:AccountId" minOccurs="0"></xs:element>
+					<xs:element ref="pc:AccountType" minOccurs="0"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="DisplayName" type="xs:string"></xs:element>
+		<xs:element name="AccountId" type="xs:string"></xs:element>
+		<xs:element name="AccountType" type="xs:string"></xs:element>
+		<xs:element name="BDCAssociatedEntity">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="pc:BDCEntity" minOccurs="0" maxOccurs="unbounded"></xs:element>
+				</xs:sequence>
+				<xs:attribute ref="pc:EntityNamespace"></xs:attribute>
+				<xs:attribute ref="pc:EntityName"></xs:attribute>
+				<xs:attribute ref="pc:SystemInstanceName"></xs:attribute>
+				<xs:attribute ref="pc:AssociationName"></xs:attribute>
+			</xs:complexType>
+		</xs:element>
+		<xs:attribute name="EntityNamespace" type="xs:string"></xs:attribute>
+		<xs:attribute name="EntityName" type="xs:string"></xs:attribute>
+		<xs:attribute name="SystemInstanceName" type="xs:string"></xs:attribute>
+		<xs:attribute name="AssociationName" type="xs:string"></xs:attribute>
+		<xs:element name="BDCEntity">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="pc:EntityDisplayName" minOccurs="0"></xs:element>
+					<xs:element ref="pc:EntityInstanceReference" minOccurs="0"></xs:element>
+					<xs:element ref="pc:EntityId1" minOccurs="0"></xs:element>
+					<xs:element ref="pc:EntityId2" minOccurs="0"></xs:element>
+					<xs:element ref="pc:EntityId3" minOccurs="0"></xs:element>
+					<xs:element ref="pc:EntityId4" minOccurs="0"></xs:element>
+					<xs:element ref="pc:EntityId5" minOccurs="0"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="EntityDisplayName" type="xs:string"></xs:element>
+		<xs:element name="EntityInstanceReference" type="xs:string"></xs:element>
+		<xs:element name="EntityId1" type="xs:string"></xs:element>
+		<xs:element name="EntityId2" type="xs:string"></xs:element>
+		<xs:element name="EntityId3" type="xs:string"></xs:element>
+		<xs:element name="EntityId4" type="xs:string"></xs:element>
+		<xs:element name="EntityId5" type="xs:string"></xs:element>
+		<xs:element name="Terms">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="pc:TermInfo" minOccurs="0" maxOccurs="unbounded"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="TermInfo">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="pc:TermName" minOccurs="0"></xs:element>
+					<xs:element ref="pc:TermId" minOccurs="0"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="TermName" type="xs:string"></xs:element>
+		<xs:element name="TermId" type="xs:string"></xs:element>
+	</xs:schema>
+</ct:contentTypeSchema>
+
+<cp:coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+	<dc:creator>Tayfun.k</dc:creator>
+	<cp:keywords/>
+	<dc:description/>
+	<dc:subject/>
+	<dc:title/>
+	<cp:category/>
+	<cp:contentStatus/>
+</cp:coreProperties>
+
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
+	<Company/>
+	<Manager/>
+</Properties>
+
+<CoverPageProperties xmlns="http://schemas.microsoft.com/office/2006/coverPageProps">
+	<PublishDate/>
+	<Abstract/>
+	<CompanyAddress/>
+	<CompanyPhone/>
+	<CompanyFax/>
+	<CompanyEmail/>
+</CoverPageProperties>
+
+
+*******************************************
+
+<?xml version="1.0"?>
+<p:properties xmlns:p="http://schemas.microsoft.com/office/2006/metadata/properties" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<documentManagement>
+		<ClientNo xmlns="ed5929ce-2cbf-4985-bb1d-3e605e9eb871"/>
+		<MatterNo xmlns="ed5929ce-2cbf-4985-bb1d-3e605e9eb871" xsi:nil="true"/>
+	</documentManagement>
+</p:properties>
+<?mso-contentType?><FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+	<Display>DocumentLibraryForm</Display>
+	<Edit>DocumentLibraryForm</Edit>
+	<New>DocumentLibraryForm</New>
+</FormTemplates>
+<?xml version="1.0"?><ct:contentTypeSchema ct:_="" ma:_="" ma:contentTypeName="Document" ma:contentTypeID="0x010100E1DE9B9BFC0BC148AFFCE5A229DF61F1" ma:contentTypeVersion="0" ma:contentTypeDescription="Create a new document." ma:contentTypeScope="" ma:versionID="3ad0b98d9a53c384a7f83c6830a43471" xmlns:ct="http://schemas.microsoft.com/office/2006/metadata/contentType" xmlns:ma="http://schemas.microsoft.com/office/2006/metadata/properties/metaAttributes">
+	<xsd:schema targetNamespace="http://schemas.microsoft.com/office/2006/metadata/properties" ma:root="true" ma:fieldsID="ed489f23c02e82b4ab7922fcd65f2c17" ns2:_="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:p="http://schemas.microsoft.com/office/2006/metadata/properties" xmlns:ns2="ed5929ce-2cbf-4985-bb1d-3e605e9eb871">
+		<xsd:import namespace="ed5929ce-2cbf-4985-bb1d-3e605e9eb871"/>
+		<xsd:element name="properties">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="documentManagement">
+						<xsd:complexType>
+							<xsd:all>
+								<xsd:element ref="ns2:ClientNo"/>
+								<xsd:element ref="ns2:MatterNo" minOccurs="0"/>
+							</xsd:all>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<xsd:schema targetNamespace="ed5929ce-2cbf-4985-bb1d-3e605e9eb871" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dms="http://schemas.microsoft.com/office/2006/documentManagement/types">
+		<xsd:import namespace="http://schemas.microsoft.com/office/2006/documentManagement/types"/>
+		<xsd:element name="ClientNo" ma:index="8" ma:displayName="ClientNo" ma:description="Client Number" ma:internalName="ClientNo" ma:readOnly="false">
+			<xsd:simpleType>
+				<xsd:restriction base="dms:Text">
+					<xsd:maxLength value="15"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+		<xsd:element name="MatterNo" ma:index="9" nillable="true" ma:displayName="MatterNo" ma:description="Matter Number" ma:internalName="MatterNo">
+			<xsd:simpleType>
+				<xsd:restriction base="dms:Text">
+					<xsd:maxLength value="15"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:element>
+	</xsd:schema>
+	<xsd:schema targetNamespace="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="#all" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:odoc="http://schemas.microsoft.com/office/internal/2005/internalDocumentation">
+		<xsd:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2003/04/02/dc.xsd"/>
+		<xsd:import namespace="http://purl.org/dc/terms/" schemaLocation="http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd"/>
+		<xsd:element name="coreProperties" type="CT_coreProperties"/>
+		<xsd:complexType name="CT_coreProperties">
+			<xsd:all>
+				<xsd:element ref="dc:creator" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dcterms:created" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dc:identifier" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="contentType" minOccurs="0" maxOccurs="1" type="xsd:string" ma:index="0" ma:displayName="Content Type"/>
+				<xsd:element ref="dc:title" minOccurs="0" maxOccurs="1" ma:index="4" ma:displayName="Title"/>
+				<xsd:element ref="dc:subject" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="dc:description" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="keywords" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element ref="dc:language" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="category" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element name="version" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element name="revision" minOccurs="0" maxOccurs="1" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>
+							This value indicates the number of saves or revisions. The application is responsible for updating this value after each revision.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="lastModifiedBy" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+				<xsd:element ref="dcterms:modified" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="lastPrinted" minOccurs="0" maxOccurs="1" type="xsd:dateTime"/>
+				<xsd:element name="contentStatus" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:schema>
+</ct:contentTypeSchema>
+<CoverPageProperties xmlns="http://schemas.microsoft.com/office/2006/coverPageProps">
+	<PublishDate/>
+	<Abstract/>
+	<CompanyAddress/>
+	<CompanyPhone/>
+	<CompanyFax/>
+	<CompanyEmail/>
+</CoverPageProperties>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
+	<Company/>
+	<Manager/>
+</Properties>
+<cp:coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+	<dc:creator>Tayfun.k</dc:creator>
+	<cp:keywords/>
+	<dc:description/>
+	<dc:subject/>
+	<dc:title/>
+	<cp:category/>
+	<cp:contentStatus/>
+</cp:coreProperties>
+

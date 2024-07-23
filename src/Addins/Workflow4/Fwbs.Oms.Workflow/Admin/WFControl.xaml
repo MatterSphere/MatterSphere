@@ -1,0 +1,206 @@
+﻿<UserControl x:Class="FWBS.OMS.Workflow.Admin.WFControl"
+			 x:ClassModifier="internal"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:sapt="clr-namespace:System.Activities.Presentation.Toolbox;assembly=System.Activities.Presentation"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+			 xmlns:local="clr-namespace:FWBS.OMS.Workflow.Admin"
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:mcc="clr-namespace:FWBS.MatterCentre.Controls"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="300" d:DesignWidth="800" Height="Auto" Width="Auto">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+        <Grid.Resources>
+            <mcc:MCImageListConverter x:Key="MCImageConverter" />
+        </Grid.Resources>
+		<Menu>
+			<Menu.Resources>
+				<Style TargetType="MenuItem">
+					<Setter Property="FontSize" Value="12" />
+				</Style>
+			</Menu.Resources>
+
+			<MenuItem Name="menuItemSave" >
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal">
+                        <Image Height="16"  Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="2"/>
+						<TextBlock Text="Save" VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<MenuItem Name="menuItemClear" >
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal">
+                        <Image Height="16"  Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="114" />
+						<TextBlock Text="Clear" VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<Separator />
+			<MenuItem Name="menuItemClose" >
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal">
+                        <Image Height="16"  Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="21" />
+						<TextBlock Text="Close" VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<Separator />
+			<MenuItem Name="menuItemRun">
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal" >
+                        <Image Height="16" Width="16"  Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="46" />
+						<TextBlock Text="Run" VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<MenuItem Name="menuItemStop">
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal">
+                        <Image Height="16" Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="113" />
+						<TextBlock Text="Stop" VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<Separator/>
+			<MenuItem  Name="menuItemLoadFromFile" >
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal">
+                        <Image Height="16" Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="1"/>
+						<TextBlock Text="Import From File" VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<MenuItem Name="menuItemSaveToFile">
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal" >
+                        <Image Height="16" Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="35"/>
+						<TextBlock Text="Export To File"  VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<Separator />
+			<MenuItem Name="menuItemRemoveSettings">
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal" >
+                        <Image Height="16" Width="16" Margin="2" Source="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource MCImageConverter}, ConverterParameter=COOL 16}" Tag="6"/>
+						<TextBlock Text="Reset Settings"  VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+		</Menu>
+		<telerik:RadDocking Grid.Row="1" x:Name="radDocking" >
+			<telerik:RadSplitContainer InitialPosition="DockedLeft" Name="leftContainer">
+				<telerik:RadPaneGroup TabStripPlacement="Bottom">
+					<telerik:RadPane Name="leftContainerTab1"  Header="ToolBox" CanFloat="False" CanUserClose="False" CanDockInDocumentHost="False" telerik:RadDocking.SerializationTag="leftContainerTab1" ContextMenuTemplate="{x:Null}">
+						<Grid>
+							<Grid.Resources>
+								<local:ToolTipConverter x:Key="toolTipConvertor" />
+							</Grid.Resources>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<sapt:ToolboxControl Grid.Row="1" HorizontalAlignment="Stretch" Name="toolBoxCtrl" VerticalAlignment="Stretch">
+								<sapt:ToolboxControl.ToolItemStyle>
+									<Style TargetType="{x:Type FrameworkElement}">
+										<Setter Property="ToolTip" Value="{Binding Converter={StaticResource toolTipConvertor}}" />
+									</Style>
+								</sapt:ToolboxControl.ToolItemStyle>
+								<sapt:ToolboxControl.Style>
+									<Style TargetType="{x:Type sapt:ToolboxControl}">
+										<Style.Resources>
+											<local:ToolboxItemConverter x:Key="iconConverter" />
+										</Style.Resources>
+										<Setter Property="ToolTemplate">
+											<Setter.Value>
+												<DataTemplate DataType="{x:Type sapt:ToolboxItemWrapper}">
+													<Grid>
+														<Grid.ColumnDefinitions>
+															<ColumnDefinition Width="Auto"/>
+															<ColumnDefinition Width="*" SharedSizeGroup="toolLabel"/>
+														</Grid.ColumnDefinitions>
+														<Rectangle Width="16" Height="16" Margin="4">
+															<Rectangle.Fill>
+																<DrawingBrush Drawing="{Binding Converter={StaticResource iconConverter}}"/>
+															</Rectangle.Fill>
+														</Rectangle>
+														<TextBlock Text="{Binding DisplayName}" Grid.Column="1" VerticalAlignment="Center"/>
+													</Grid>
+												</DataTemplate>
+											</Setter.Value>
+										</Setter>
+									</Style>
+								</sapt:ToolboxControl.Style>
+							</sapt:ToolboxControl>
+						</Grid>
+					</telerik:RadPane>
+                    <telerik:RadPane Name="leftContainerTab2" Header="Workflows" CanFloat="False" CanUserClose="False" CanDockInDocumentHost="False" telerik:RadDocking.SerializationTag="leftContainerTab2">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<sapt:ToolboxControl Name="workflowToolBoxCtrl" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+								<sapt:ToolboxControl.Style>
+									<Style TargetType="{x:Type sapt:ToolboxControl}">
+										<Style.Resources>
+											<local:ToolboxItemConverter x:Key="iconConverter" />
+										</Style.Resources>
+										<Setter Property="ToolTemplate">
+											<Setter.Value>
+												<DataTemplate DataType="{x:Type sapt:ToolboxItemWrapper}">
+													<Grid>
+														<Grid.ColumnDefinitions>
+															<ColumnDefinition Width="Auto"/>
+															<ColumnDefinition Width="*" SharedSizeGroup="toolLabel"/>
+														</Grid.ColumnDefinitions>
+														<Rectangle Width="16" Height="16" Margin="4">
+															<Rectangle.Fill>
+																<DrawingBrush Drawing="{Binding Converter={StaticResource iconConverter}}"/>
+															</Rectangle.Fill>
+														</Rectangle>
+														<TextBlock Text="{Binding DisplayName}" Grid.Column="1" VerticalAlignment="Center"/>
+													</Grid>
+												</DataTemplate>
+											</Setter.Value>
+										</Setter>
+									</Style>
+								</sapt:ToolboxControl.Style>
+							</sapt:ToolboxControl>
+						</Grid>
+					</telerik:RadPane>
+				</telerik:RadPaneGroup>
+			</telerik:RadSplitContainer>
+            <telerik:RadSplitContainer InitialPosition="DockedRight" Name="rightContainer">
+                <telerik:RadPaneGroup TabStripPlacement="Bottom">
+					<telerik:RadPane Name="rightContainerTab1"  Header="Activity Properties" CanFloat="False" CanUserClose="False" CanDockInDocumentHost="False" CanUserPin="False" telerik:RadDocking.SerializationTag="rightContainerTab1" ContextMenuTemplate="{x:Null}">
+						<ContentControl Name="propertyBorder" />
+					</telerik:RadPane>
+					<telerik:RadPane Name="rightContainerTab2"  Header="Workflow Properties" CanFloat="False" CanUserClose="False" CanDockInDocumentHost="False" telerik:RadDocking.SerializationTag="rightContainerTab2" ContextMenuTemplate="{x:Null}">
+						<Grid Name="WorkFlowPropertiesGrid">
+                            <local:PropertyGridUserControl x:Name="WorkFlowPropertyGrid"></local:PropertyGridUserControl>
+						</Grid>
+					</telerik:RadPane>
+				</telerik:RadPaneGroup>
+			</telerik:RadSplitContainer>
+			<telerik:RadSplitContainer InitialPosition="DockedBottom" Name="bottomContainer" >
+				<telerik:RadPaneGroup>
+					<telerik:RadPane Name="bottomContainerTab1" Header="Errors" CanFloat="False" CanUserClose="False" CanDockInDocumentHost="False" telerik:RadDocking.SerializationTag="bottomContainerTab1" ContextMenuTemplate="{x:Null}">
+						<TextBox Name="textBoxErrors" IsReadOnly="True" TextWrapping="Wrap" />
+					</telerik:RadPane>
+				</telerik:RadPaneGroup>
+			</telerik:RadSplitContainer>
+			<telerik:RadDocking.DocumentHost>
+				<ContentControl Name="designerBorder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+			</telerik:RadDocking.DocumentHost>
+		</telerik:RadDocking>
+	</Grid>
+</UserControl>

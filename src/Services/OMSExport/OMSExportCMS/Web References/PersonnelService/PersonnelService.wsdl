@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://cmsopen.com/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://cmsopen.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cmsopen.com/">
+      <s:element name="ReadSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="employeeUno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSingleResult" type="tns:PersonnelData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonnelData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:PersonnelDataBase" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="PersonnelDataBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AppGroupUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompYear" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dept" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeEdListReqd" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EditDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmplUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GradYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HireDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="HldyGroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inactive" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Initials" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternalNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastModified" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModEffDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NameUno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Offc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersnlTypCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrevHireDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrevTermDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prof" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortPos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SupervEmplUno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TerminateDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkTypeCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CioSoapHeader" type="tns:CioSoapHeader" />
+      <s:complexType name="CioSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="locale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="formsTicket" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="session" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="useOfficeXtension" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="satelliteDbTarget" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="satelliteDbOnly" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Read">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadResult" type="tns:ArrayOfPersonnelData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonnelData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonnelData" nillable="true" type="tns:PersonnelData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PersonnelData" nillable="true" type="tns:PersonnelData" />
+      <s:element name="ArrayOfPersonnelData" nillable="true" type="tns:ArrayOfPersonnelData" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReadSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSingle" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapIn">
+    <wsdl:part name="parameters" element="tns:Read" />
+  </wsdl:message>
+  <wsdl:message name="ReadSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadCioSoapHeader">
+    <wsdl:part name="CioSoapHeader" element="tns:CioSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetIn">
+    <wsdl:part name="employeeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpGetOut">
+    <wsdl:part name="Body" element="tns:PersonnelData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPersonnelData" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostIn">
+    <wsdl:part name="employeeUno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSingleHttpPostOut">
+    <wsdl:part name="Body" element="tns:PersonnelData" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostIn">
+    <wsdl:part name="filter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPersonnelData" />
+  </wsdl:message>
+  <wsdl:portType name="PersonnelServiceSoap">
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleSoapIn" />
+      <wsdl:output message="tns:ReadSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadSoapIn" />
+      <wsdl:output message="tns:ReadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PersonnelServiceHttpGet">
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleHttpGetIn" />
+      <wsdl:output message="tns:ReadSingleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadHttpGetIn" />
+      <wsdl:output message="tns:ReadHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PersonnelServiceHttpPost">
+    <wsdl:operation name="ReadSingle">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">ReadSingle</documentation>
+      <wsdl:input message="tns:ReadSingleHttpPostIn" />
+      <wsdl:output message="tns:ReadSingleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Read</documentation>
+      <wsdl:input message="tns:ReadHttpPostIn" />
+      <wsdl:output message="tns:ReadHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PersonnelServiceSoap" type="tns:PersonnelServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="ReadSingle">
+      <soap:operation soapAction="http://cmsopen.com/ReadSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadSingleCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <soap:operation soapAction="http://cmsopen.com/Read" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReadCioSoapHeader" part="CioSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PersonnelServiceHttpGet" type="tns:PersonnelServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PersonnelServiceHttpPost" type="tns:PersonnelServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ReadSingle">
+      <http:operation location="/ReadSingle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Read">
+      <http:operation location="/Read" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersonnelService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">PersonnelService</documentation>
+    <wsdl:port name="PersonnelServiceSoap" binding="tns:PersonnelServiceSoap">
+      <soap:address location="http://vpc-aderant/CMSNet//FileOpening/FileOpeningWS/PersonnelService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PersonnelServiceHttpGet" binding="tns:PersonnelServiceHttpGet">
+      <http:address location="http://vpc-aderant/CMSNet//FileOpening/FileOpeningWS/PersonnelService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PersonnelServiceHttpPost" binding="tns:PersonnelServiceHttpPost">
+      <http:address location="http://vpc-aderant/CMSNet//FileOpening/FileOpeningWS/PersonnelService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

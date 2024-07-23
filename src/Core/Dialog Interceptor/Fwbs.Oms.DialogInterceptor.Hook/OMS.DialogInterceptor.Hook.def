@@ -1,0 +1,4 @@
+LIBRARY	"OMS.DialogInterceptor.Hook.dll"
+
+EXPORTS
+	SetSecondaryHook	PRIVATE

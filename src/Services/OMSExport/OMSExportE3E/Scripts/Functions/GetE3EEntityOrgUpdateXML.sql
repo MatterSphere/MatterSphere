@@ -1,0 +1,175 @@
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GetE3EEntityOrgUpdateXML]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+DROP FUNCTION [dbo].[GetE3EEntityOrgUpdateXML]
+GO
+
+CREATE FUNCTION [dbo].[GetE3EEntityOrgUpdateXML] ( @CONTID BIGINT )
+RETURNS NVARCHAR ( MAX ) AS
+BEGIN
+DECLARE @XML NVARCHAR ( MAX ) 
+
+--OPTIONS
+DECLARE @USEPROXYUSER			BIT
+SET @USEPROXYUSER				= 0
+
+--REPLACEMENT VARIABLES
+--ENTITY BASED
+DECLARE @COMMENT				NVARCHAR ( 4000 )
+
+--ENTITYORG BASED
+DECLARE @ORGNAME				NVARCHAR ( 128 )
+
+--SITE/ADDRESS BASED
+DECLARE @SITE_DESCRIPTION		NVARCHAR ( 50 ) 
+DECLARE @SITE_SITETYPE			NVARCHAR ( 50 ) 
+DECLARE @STREET					NVARCHAR ( 64 )
+DECLARE	@ADDITIONAL1			NVARCHAR ( 64 ) 
+DECLARE @ADDITIONAL2			NVARCHAR ( 64 )
+DECLARE @CITY					NVARCHAR ( 64 )
+DECLARE @COUNTY					NVARCHAR ( 64 )
+DECLARE @STATE					NVARCHAR ( 16 )
+DECLARE @ZIPCODE				NVARCHAR ( 20 )
+DECLARE @COUNTRY				NVARCHAR ( 8 )
+
+--OTHERS
+DECLARE @PROXYUSER				NVARCHAR ( 50 )
+DECLARE @CONTEXTID				BIGINT
+
+--CHILDREN XML IF NEEDED
+DECLARE @PHONEXML				NVARCHAR ( 1000 )
+DECLARE @EMAILXML				NVARCHAR ( 1000 )
+
+--IF CONTACT TYPE IS COMPANY THEN RETURN NULL AS THIS IS FOR ENTITYPERSON
+DECLARE @CONTTYPEXML NVARCHAR ( MAX )
+SELECT @CONTTYPEXML = TYPEXML FROM DBCONTACT INNER JOIN DBCONTACTTYPE ON DBCONTACT.CONTTYPECODE = DBCONTACTTYPE.TYPECODE WHERE CONTID = @CONTID
+
+IF ( SELECT CHARINDEX ( 'GeneralType="Company"' , @CONTTYPEXML ) ) = 0
+	RETURN NULL
+
+
+--COLLECT THE DATA
+SELECT
+	@COMMENT					= ISNULL ( CONTNOTES , '' )
+	, @ORGNAME					= ISNULL ( CONTNAME , 'MISSING' )
+	, @SITE_DESCRIPTION			= 'Default Address - MatterSphere'
+	, @SITE_SITETYPE			= 'Billing'
+	, @STREET					= ISNULL ( ADDLINE1 , 'MISSING' )
+	, @ADDITIONAL1				= ISNULL ( ADDLINE2 , '' )
+	, @ADDITIONAL2				= ISNULL ( ADDLINE3 , '' )
+	, @CITY						= ISNULL ( ADDLINE4 , '' )
+	, @COUNTY					= CASE CTRYCODE
+									WHEN 'US' THEN ''
+									WHEN 'CA' THEN ''
+									WHEN 'AU' THEN ''
+									ELSE ISNULL ( ADDLINE5 , '' ) 
+								END 
+	, @STATE					= CASE CTRYCODE
+									WHEN 'US' THEN ISNULL ( ADDLINE5 , '' )
+									WHEN 'CA' THEN ISNULL ( ADDLINE5 , '' )
+									WHEN 'AU' THEN ISNULL ( ADDLINE5 , '' )
+									ELSE ''
+								END
+	, @ZIPCODE					= ISNULL ( ADDPOSTCODE , '' )
+	, @COUNTRY					= CTRYCODE
+	, @CONTEXTID				= DBCONTACT.CONTEXTID
+	, @PROXYUSER				= CASE WHEN @USEPROXYUSER = 1 THEN 'ProxyUser="' + CREATEDBY.USRADID + '"' ELSE '' END 
+FROM 
+	DBCONTACT
+INNER JOIN 
+	DBADDRESS ON DBADDRESS.ADDID = DBCONTACT.CONTDEFAULTADDRESS
+INNER JOIN 
+	DBUSER CREATEDBY ON CREATEDBY.USRID = DBCONTACT.CREATEDBY
+INNER JOIN 
+	DBCOUNTRY ON DBCOUNTRY.CTRYID = DBADDRESS.ADDCOUNTRY
+WHERE 
+	DBCONTACT.CONTID = @CONTID
+	
+--IF NOT ALREADY EXPORTED RETURN NULL
+IF ISNUMERIC ( @CONTEXTID ) = 0 RETURN NULL
+
+--CHECK FOR ADDRESS OF TYPE BILLING
+IF EXISTS ( SELECT TOP 1 DBADDRESS.ADDID FROM DBADDRESS INNER JOIN DBCOUNTRY ON DBCOUNTRY.CTRYID = DBADDRESS.ADDCOUNTRY INNER JOIN DBCONTACTADDRESSES ON DBCONTACTADDRESSES.CONTADDID = DBADDRESS.ADDID WHERE DBCONTACTADDRESSES.CONTID = @CONTID AND DBCONTACTADDRESSES.CONTCODE = 'BILLING' AND DBCONTACTADDRESSES.CONTACTIVE = 1 )
+BEGIN
+	SELECT TOP 1
+	@STREET						= ISNULL ( ADDLINE1 , 'MISSING' )
+	, @ADDITIONAL1				= ISNULL ( ADDLINE2 , '' )
+	, @ADDITIONAL2				= ISNULL ( ADDLINE3 , '' )
+	, @CITY						= ISNULL ( ADDLINE4 , '' )
+	, @COUNTY					= CASE CTRYCODE
+									WHEN 'US' THEN ''
+									WHEN 'CA' THEN ''
+									WHEN 'AU' THEN ''
+									ELSE ISNULL ( ADDLINE5 , '' )
+								END 
+	, @STATE					= CASE CTRYCODE
+									WHEN 'US' THEN ISNULL ( ADDLINE5 , '' )
+									WHEN 'CA' THEN ISNULL ( ADDLINE5 , '' )
+									WHEN 'AU' THEN ISNULL ( ADDLINE5 , '' )
+									ELSE ''
+								END
+
+	, @ZIPCODE					= ISNULL ( ADDPOSTCODE , '' )
+	, @COUNTRY					= CTRYCODE
+FROM
+	DBADDRESS
+INNER JOIN 
+	DBCOUNTRY ON DBCOUNTRY.CTRYID = DBADDRESS.ADDCOUNTRY
+INNER JOIN 
+	DBCONTACTADDRESSES ON DBCONTACTADDRESSES.CONTADDID = DBADDRESS.ADDID
+WHERE
+	DBCONTACTADDRESSES.CONTID = @CONTID AND
+	DBCONTACTADDRESSES.CONTCODE = 'BILLING' AND 
+	DBCONTACTADDRESSES.CONTACTIVE = 1
+ORDER BY 
+	CONTORDER ASC
+END 
+	
+SET @XML = 
+'<NxBizTalkEntityOrgLoad xmlns="http://elite.com/schemas/transaction/process/write/NxBizTalkEntityOrgLoad" ' + @PROXYUSER + '>
+  <Initialize xmlns="http://elite.com/schemas/transaction/object/write/EntityOrg">
+   <Edit>
+    <EntityOrg KeyValue = "' + CONVERT ( NVARCHAR ( 20 ) , @CONTEXTID ) + '">
+     <Attributes>
+      <Comment>' +				DBO.GETHTMLENCODE ( @COMMENT, 0 )				+ '</Comment>
+      <OrgName>' +				DBO.GETHTMLENCODE ( @ORGNAME, 0 )				+ '</OrgName>
+     </Attributes>
+     <Children>
+      <Relate>
+       <Edit>
+        <Relate Position="0">
+         <Children>
+          <Site>
+           <Edit>
+            <Site KeyValue="%SITEINDEX%">
+             <Attributes>
+			  <OrgName>' +		DBO.GETHTMLENCODE ( @ORGNAME, 0 )				+ '</OrgName>
+              <Description>' +						@SITE_DESCRIPTION			+ '</Description>
+              <SiteType>' +							@SITE_SITETYPE				+ '</SiteType>
+              <Street>' +		DBO.GETHTMLENCODE ( @STREET, 0 )				+ '</Street>
+              <Additional1>' +	DBO.GETHTMLENCODE ( @ADDITIONAL1, 0 )			+ '</Additional1>
+              <Additional2>' +	DBO.GETHTMLENCODE ( @ADDITIONAL2, 0 )			+ '</Additional2>
+              <City>' +			DBO.GETHTMLENCODE ( @CITY, 0 )					+ '</City>
+              <County>' +		DBO.GETHTMLENCODE ( @COUNTY, 0 )				+ '</County>
+              <State>' +		DBO.GETHTMLENCODE ( @STATE, 0 )					+ '</State>
+              <ZipCode>' +		DBO.GETHTMLENCODE ( @ZIPCODE, 0 )				+ '</ZipCode>
+              <Country>' +							@COUNTRY					+ '</Country>
+			  <IsDefault>1</IsDefault>
+             </Attributes>
+            </Site>
+           </Edit>
+          </Site>
+         </Children>
+        </Relate>
+       </Edit>
+      </Relate>
+     </Children>
+    </EntityOrg>
+   </Edit>
+  </Initialize>
+ </NxBizTalkEntityOrgLoad>'
+
+
+RETURN @XML
+END
+GO
+
+

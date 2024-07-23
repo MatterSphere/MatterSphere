@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B719E424-AD9C-4F95-A929-FC90EEF825A2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FWBS.Common.UI</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FWBS.Common.UI.Windows</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\FWBS.Common.UI.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fwbs.Oms.Library\Business.csproj">
+      <Project>{249bc08d-5364-40cf-983a-8580dda5b00b}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Fwbs.Common\Common.csproj">
+      <Name>Common</Name>
+      <Project>{4998E285-9BBB-4589-BC2D-56649563C765}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CoreAssemblyInfo.cs">
+      <Link>Properties\CoreAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Common\CueComboBox.cs" />
+    <Compile Include="Common\CueTextBox.cs" />
+    <Compile Include="Common\eInformation2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\eCaptionLinePainter.cs" />
+    <Compile Include="Common\eXPFrame2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\eCaptionLine2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\eXPFramePainter.cs" />
+    <Compile Include="IBasicEnquiryControls2\eNumbersOnly.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\ExtColor.cs" />
+    <Compile Include="Common\ExtColorConvertor.cs" />
+    <Compile Include="Common\ImageListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\ImageListBox.Designer.cs">
+      <DependentUpon>ImageListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFullScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFullScreen.Designer.cs">
+      <DependentUpon>frmFullScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\eButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\eCaptionLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\eComboBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\eGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\eInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\eTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\eXPFrame.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\eXPPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\MaskedEdit.cs" />
+    <Compile Include="Common\Toolbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood\DrawHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Crownwood\ResourceHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="eBase2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnqCtrlAttributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eCheckBox2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eCheckBoxListBoxBitMasks.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eComboBox2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eComboBoxList2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eComboImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eLabel2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eListBox2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eMultiTextBox2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\ePassword2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eRadioGroup2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eSpin2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eTextBox2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eWebBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\AxWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\eXPComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IBasicEnquiryControls2\ucComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interfaces.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="uceBaseDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Common\eInformation2.resx">
+      <DependentUpon>eInformation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eXPFrame2.resx">
+      <DependentUpon>eXPFrame2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eCaptionLine2.resx">
+      <DependentUpon>eCaptionLine2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eButton.resx">
+      <DependentUpon>eButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eCaptionLine.resx">
+      <DependentUpon>eCaptionLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eComboBoxForm.resx">
+      <DependentUpon>eComboBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eGroupBox.resx">
+      <DependentUpon>eGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eInformation.resx">
+      <DependentUpon>eInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eTabControl.resx">
+      <DependentUpon>eTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eXPFrame.resx">
+      <DependentUpon>eXPFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\eXPPanel.resx">
+      <DependentUpon>eXPPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\MaskedEdit.resx">
+      <DependentUpon>MaskedEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Toolbar.resx">
+      <DependentUpon>Toolbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eBase2.resx">
+      <DependentUpon>eBase2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFullScreen.resx">
+      <DependentUpon>frmFullScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eCheckBox2.resx">
+      <DependentUpon>eCheckBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eCheckBoxListBoxBitMasks.resx">
+      <DependentUpon>eCheckBoxListBoxBitMasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eComboBox2.resx">
+      <DependentUpon>eComboBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eComboBoxList2.resx">
+      <DependentUpon>eComboBoxList2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eComboImageBox.resx">
+      <DependentUpon>eComboImageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eLabel2.resx">
+      <DependentUpon>eLabel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eListBox2.resx">
+      <DependentUpon>eListBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eMultiTextBox2.resx">
+      <DependentUpon>eMultiTextBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\ePassword2.resx">
+      <DependentUpon>ePassword2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eRadioButton.resx">
+      <DependentUpon>eRadioButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eRadioGroup2.resx">
+      <DependentUpon>eRadioGroup2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eSpin2.resx">
+      <DependentUpon>eSpin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eTextBox2.resx">
+      <DependentUpon>eTextBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eWebBrowser.resx">
+      <DependentUpon>eWebBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\eXPComboBox.resx">
+      <DependentUpon>eXPComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBasicEnquiryControls2\ucComponent.resx">
+      <DependentUpon>ucComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

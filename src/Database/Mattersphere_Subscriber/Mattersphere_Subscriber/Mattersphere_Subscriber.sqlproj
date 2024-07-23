@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Mattersphere_Subscriber</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{b8c66519-c560-41d6-aef4-a87056c6e496}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Mattersphere_Subscriber</RootNamespace>
+    <AssemblyName>Mattersphere_Subscriber</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Storage\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Database Triggers\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="PostScripts" />
+    <Folder Include="PostScripts\NewInstallScripts" />
+    <Folder Include="PostScripts\Security" />
+    <Folder Include="PostScripts\SQLAgentJobs" />
+    <Folder Include="Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\dbState.sql" />
+    <Build Include="dbo\Tables\dbRegInfo.sql" />
+    <Build Include="Storage\IndexGroup.sql" />
+    <Build Include="dbo\Functions\Decr.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetLicenseInfo.sql" />
+    <Build Include="dbo\Stored Procedures\sprAudit.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsGrantToOMSRole.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsGrantToOMSApplicationRole.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsGrantToOMSAdminRole.sql" />
+    <Build Include="Database Triggers\tgrSchemaChangeNotification.sql" />
+    <Build Include="dbo\User Defined Types\uXML.sql" />
+    <Build Include="dbo\User Defined Types\uURL.sql" />
+    <Build Include="dbo\User Defined Types\uUICultureInfo.sql" />
+    <Build Include="dbo\User Defined Types\uTelephone.sql" />
+    <Build Include="dbo\User Defined Types\uPostcode.sql" />
+    <Build Include="dbo\User Defined Types\uFilePath.sql" />
+    <Build Include="dbo\User Defined Types\uEmail.sql" />
+    <Build Include="dbo\User Defined Types\uDirectory.sql" />
+    <Build Include="dbo\User Defined Types\uCreatedBy.sql" />
+    <Build Include="dbo\User Defined Types\uCreated.sql" />
+    <Build Include="dbo\User Defined Types\uCountry.sql" />
+    <Build Include="dbo\User Defined Types\uCodeLookup.sql" />
+    <Build Include="dbo\User Defined Types\uAddressLineReq.sql" />
+    <Build Include="dbo\User Defined Types\uAddressLine.sql" />
+    <Build Include="dbo\User Defined Types\querystringtable.sql" />
+    <None Include="PostScripts\NewInstallScripts\dbRegInfo_SubscriptionInstall.sql" />
+    <None Include="PostScripts\NewInstallScripts\OMSPermissions.sql" />
+    <None Include="PostScripts\Security\RunPermissions.sql" />
+    <None Include="PostScripts\SQLAgentJobs\ClientDeleteJob.sql" />
+    <None Include="PostScripts\SQLAgentJobs\ContactMergeDeleteJob.sql" />
+    <None Include="PostScripts\SQLAgentJobs\MatterMergeDeleteJob.sql" />
+    <None Include="Security\OMSAdminRole.sql" />
+    <None Include="Security\OMSApplicationRole.sql" />
+    <None Include="Security\OMSRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostScripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Mattersphere_Subscriber.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MS Deploy.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

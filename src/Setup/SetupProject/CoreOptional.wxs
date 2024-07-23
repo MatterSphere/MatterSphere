@@ -1,0 +1,336 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <?if $(var.Platform) = "x86" ?>
+  <?define ExeNameSuffix = "32" ?>
+  <?elseif $(var.Platform) = "x64" ?>
+  <?define ExeNameSuffix = "" ?>
+  <?endif?>
+
+  <Fragment>
+    <ComponentGroup Id="CG_Actipro" Directory="INSTALLDIR">
+      <Component Id="cmpF27D8FAEFCCEE784ED8091A118F415E1" Guid="{04AA7CD6-FECB-41BE-8ACF-67289EEA001A}">
+        <File Id="ActiproSoftware.Shared.Net20.dll" KeyPath="yes" Source="$(var.SourceDir)\ActiproSoftware.Shared.Net20.dll" />
+      </Component>
+      <Component Id="cmp3EE8F276847273995972373DF8F630F4" Guid="{501CC220-D51D-4D51-8464-43D5915BEF4A}">
+        <File Id="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll" KeyPath="yes" Source="$(var.SourceDir)\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll" />
+      </Component>
+      <Component Id="cmp8ED7EC43AA2CD0839CB47CE1CAEF6ADC" Guid="{2DC42605-550F-485D-8D01-7C0911EECF81}">
+        <File Id="ActiproSoftware.SyntaxEditor.Net20.dll" KeyPath="yes" Source="$(var.SourceDir)\ActiproSoftware.SyntaxEditor.Net20.dll" />
+      </Component>
+      <Component Id="cmp2D60173C18EDC1C63EDD3FF8CC83808F" Guid="{6A24B605-261D-4A10-9516-E7135F4E8BB0}">
+        <File Id="ActiproSoftware.WinUICore.Net20.dll" KeyPath="yes" Source="$(var.SourceDir)\ActiproSoftware.WinUICore.Net20.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_TelerikWpf" Directory="INSTALLDIR">
+      <Component Id="cmp446E22D50F35E4F0CA56F3366609A2E8" Guid="{F72EE6EF-8022-4EF7-96CB-096B989F23AD}">
+        <File Id="Telerik.Windows.Controls.Data.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.Windows.Controls.Data.dll" />
+      </Component>
+      <Component Id="cmp6EE07EE5DEF839A1118345E242245ADE" Guid="{DC3399F9-EDA0-427A-95A8-DF3D5A68E1C1}">
+        <File Id="Telerik.Windows.Controls.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.Windows.Controls.dll" />
+      </Component>
+      <Component Id="cmp12B7B443030190382A12AE1136A0DF1F" Guid="{9A87313C-1415-4255-918B-BD92E95A7BA3}">
+        <File Id="Telerik.Windows.Controls.Docking.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.Windows.Controls.Docking.dll" />
+      </Component>
+      <Component Id="cmpE0C74643FE9BB431D4520A5DFBC328B7" Guid="{12191596-7E6A-49C0-8DAA-3C49BC4EBF5E}">
+        <File Id="Telerik.Windows.Controls.GridView.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.Windows.Controls.GridView.dll" />
+      </Component>
+      <Component Id="cmpD911CDAC6D44EF503177EA7157198535" Guid="{C45EDE1F-55CA-42CE-817C-704D91213007}">
+        <File Id="Telerik.Windows.Controls.Input.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.Windows.Controls.Input.dll" />
+      </Component>
+      <Component Id="cmp23E6BBA01C37BA4A8DD7158455265D8F" Guid="{32C2ADF9-3474-4793-A18A-6C818DA121AF}">
+        <File Id="Telerik.Windows.Controls.Navigation.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.Windows.Controls.Navigation.dll" />
+      </Component>
+      <Component Id="cmp417A2E8F1647ECDB8C91C2EC7660F12E" Guid="{74829F75-65A0-4A2C-AB70-BBC9C533A300}">
+        <File Id="Telerik.Windows.Data.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.Windows.Data.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="Languages" Name="languages">
+        <Component Id="cmp2C9D60A5A86985D40E5237FF60F262E1" Guid="{C8FF98E5-5ECD-4F33-A990-8D8C548687D5}">
+          <File Id="eng.traineddata" KeyPath="yes" Source="$(var.SourceDir)\languages\eng.traineddata" />
+        </Component>
+      </Directory>
+    </DirectoryRef>
+    <ComponentGroup Id="CG_Scanning" Directory="INSTALLDIR">
+      <Component Id="cmpF78D43347E852C153DB24EEE3D041C70" Guid="{FDDE3F9E-8213-425D-8598-BE0BFEA1916B}">
+        <File Id="Dynamsoft.Forms.Viewer.dll" KeyPath="yes" Source="$(var.SourceDir)\Dynamsoft.Forms.Viewer.dll" />
+      </Component>
+      <Component Id="cmp7305AAFDFFF2BDC53939AC343766A453" Guid="{51BC2ACB-DA6D-4C30-A221-3BB238641F54}">
+        <File Id="Dynamsoft.ImageCore.dll" KeyPath="yes" Source="$(var.SourceDir)\Dynamsoft.ImageCore.dll" />
+      </Component>
+      <Component Id="cmpF99A40D75E38D6D6E417484E13DCEFD9" Guid="{3E3A7637-EE1B-4F5D-996D-8DAB23A7DD8F}">
+        <File Id="Dynamsoft.OCR.dll" KeyPath="yes" Source="$(var.SourceDir)\Dynamsoft.OCR.dll" />
+      </Component>
+      <Component Id="cmp0D6E9E7C641A3E57699FD3519B8851AD" Guid="{45511619-A32C-40F1-966E-5D2CB1AD0FD8}">
+        <File Id="OMSSCANUI.exe" KeyPath="yes" Name="OMSSCANUI.exe" Source="$(var.SourceDir)\OMSSCANUI$(var.ExeNameSuffix).exe">
+          <Shortcut Id="PostRoomShortcut" Name="Post Room" Description="3E MatterSphere Post Room Application" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+        </File>
+        <File Id="OMSSCANUI.exe.config" CompanionFile="OMSSCANUI.exe" Source="$(var.SourceDir)\OMSSCANUI.exe.config" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="CG_FileTaskManagement" Directory="INSTALLDIR">
+      <Component Id="cmpD1E0760A0184B9E0B2EE40F3B9726889" Guid="{E5F4D8F2-657E-4B98-930D-02183A7EB01F}">
+        <File Id="FWBS.OMS.FileManagement.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.FileManagement.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_HighQ" Directory="INSTALLDIR">
+      <Component Id="cmp6F80CC2A276EE2F979744BA46FF0F88B" Guid="{639040C5-3609-4FB3-B279-305475712D5E}">
+        <File Id="FWBS.OMS.HighQ.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.HighQ.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_Workflow" Directory="INSTALLDIR">
+      <Component Id="cmp7DD7FBD5D4B5ECBFC4A06C9A6C6B9A0B" Guid="{F1E5CFDF-4FDB-43CB-AD22-040243425255}">
+        <File Id="Elite.Workflow.Framework.Client.Administrator.dll" KeyPath="yes" Source="$(var.SourceDir)\Elite.Workflow.Framework.Client.Administrator.dll" />
+      </Component>
+      <Component Id="cmp9C0FF9D59991D781E8D41702D881B2E4" Guid="{903960C0-29EF-48C5-90A4-FB9EA15F019F}">
+        <File Id="Elite.Workflow.Framework.Client.dll" KeyPath="yes" Source="$(var.SourceDir)\Elite.Workflow.Framework.Client.dll" />
+      </Component>
+      <Component Id="cmpFA9C75391B58FE626F6162E790BAFD6D" Guid="{5DA84D56-6F2D-46C8-B522-EE8DDBC4FA38}">
+        <File Id="Elite.Workflow.Framework.Client.ExecutionEngine.dll" KeyPath="yes" Source="$(var.SourceDir)\Elite.Workflow.Framework.Client.ExecutionEngine.dll" />
+      </Component>
+      <Component Id="cmp150F5F0D9C81D023C83E397DC1432C7D" Guid="{3690A40C-7722-42D4-8DA2-422035C5B430}">
+        <File Id="Elite.Workflow.Framework.Client.WorkflowToken.dll" KeyPath="yes" Source="$(var.SourceDir)\Elite.Workflow.Framework.Client.WorkflowToken.dll" />
+      </Component>
+      <Component Id="cmpE9FD6F59BC5563E160F508D61FF93310" Guid="{3E434618-61EC-4FA7-89CD-E70435E60217}">
+        <File Id="FWBS.OMS.WFRuntime.exe" KeyPath="yes" Name="FWBS.OMS.WFRuntime.exe" Source="$(var.SourceDir)\FWBS.OMS.WFRuntime$(var.ExeNameSuffix).exe" />
+      </Component>
+      <Component Id="cmp6E9507B5454DDE2F7CBB5F29ABEAFCA8" Guid="{0DF5B396-6525-4881-8270-38740356D856}">
+        <File Id="FWBS.OMS.Workflow.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.Workflow.dll" />
+      </Component>
+      <Component Id="cmpB55126BAD5D7CD380970DD40F4BA089F" Guid="{45618F9E-C4C8-4464-B2DC-3F7B4CA6EDC1}">
+        <File Id="FWBS.WF.ActivityLibrary.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.WF.ActivityLibrary.dll" />
+      </Component>
+      <Component Id="cmp09C20FE4E92B7B110A1EEB81D5953AFA" Guid="{E4552DE6-2D6A-4CF1-83E2-A844C5895FD0}">
+        <File Id="FWBS.WF.OMS.ActivityLibrary.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.WF.OMS.ActivityLibrary.dll" />
+      </Component>
+      <!--
+      <Component Id="cmp570CA27419836A3FEB40CC0FA2E26FD9" Guid="{FABBEC18-E56B-4351-ADF5-034AFC54D265}">
+        <File Id="FWBS.WF.Packaging.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.WF.Packaging.dll" />
+      </Component>
+      -->
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="CG_Shell" Directory="INSTALLDIR">
+      <Component Id="cmp8C8F486731B352D656E4B8784472DACC" Guid="{D3FF0578-97AA-43C3-9430-ECC0D81F3CE5}">
+        <File Id="OMS.DialogInterceptor.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.DialogInterceptor.dll" />
+      </Component>
+      <Component Id="cmp804149A0CB37306C3C8D139169D6EA84" Guid="{3344F271-2B80-4F3A-ACC2-0F2C13B5726E}">
+        <File Id="OMS.DialogInterceptor.Hook.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.DialogInterceptor.Hook.dll" />
+      </Component>
+      <Component Id="cmp0CA9F378AB93390284B31BD8D0E3053C" Guid="{DE2A7342-A54A-4B00-942A-1BF5DD11CED7}">
+        <File Id="OMS.DialogInterceptor.Hook64.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.DialogInterceptor.Hook64.dll" />
+      </Component>
+      <Component Id="cmp34E0D04BBCC8F16736681D60F144E250" Guid="{5A925021-7954-429A-9BE9-EA60362CEBDF}">
+        <File Id="OMS.Shell.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.Shell.dll" Assembly=".net" AssemblyApplication="OMS.Shell.dll" />
+      </Component>
+      <Component Id="cmpC516560A5EB3BC115DF9018FDA929B10" Guid="{18881005-AB9A-4CB0-B9AE-B492EC4F7006}">
+        <RegistryValue Root="HKCR" Key="*\shellex\ContextMenuHandlers\{FB6D8570-49B2-4fcf-9BE4-79A74369CF4D}" Value="OMS Context Menu Handler" Type="string" Action="write" />
+        <Class Id="{FB6D8570-49B2-4FCF-9BE4-79A74369CF4D}" Context="InprocServer32" Description="FWBS.OMS.Shell.OMSShellExt" ThreadingModel="both" ForeignServer="mscoree.dll">
+          <ProgId Id="FWBS.OMS.UI.Windows.OMSShellExt" Description="FWBS.OMS.Shell.OMSShellExt" />
+        </Class>
+        <RegistryKey Root="HKCR" Key="CLSID\{FB6D8570-49B2-4FCF-9BE4-79A74369CF4D}">
+          <RegistryValue Key="Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+          <RegistryKey Key="InprocServer32">
+            <RegistryKey Key="!(bind.assemblyVersion.OMS.Shell.dll)">
+              <RegistryValue Name="Class" Value="FWBS.OMS.Shell.OMSShellExt" Type="string" Action="write" />
+              <RegistryValue Name="Assembly" Value="OMS.Shell, Version=!(bind.assemblyVersion.OMS.Shell.dll), Culture=neutral, PublicKeyToken=7212801a92a1726d" Type="string" Action="write" />
+              <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+              <RegistryValue Name="CodeBase" Value="file:///[INSTALLDIR]OMS.Shell.dll" Type="string" Action="write" />
+            </RegistryKey>
+            <RegistryValue Name="Class" Value="FWBS.OMS.Shell.OMSShellExt" Type="string" Action="write" />
+            <RegistryValue Name="Assembly" Value="OMS.Shell, Version=!(bind.assemblyVersion.OMS.Shell.dll), Culture=neutral, PublicKeyToken=7212801a92a1726d" Type="string" Action="write" />
+            <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+            <RegistryValue Name="CodeBase" Value="file:///[INSTALLDIR]OMS.Shell.dll" Type="string" Action="write" />
+          </RegistryKey>
+        </RegistryKey>
+      </Component>
+      <?if $(var.Platform) = "x86" ?>
+      <Component Id="cmpF2735808D9EBD189B55E5CC5893D8B64" Guid="{E63454BC-175A-4C6D-A64D-7D889C447039}" DisableRegistryReflection="yes" Condition="VersionNT64" Bitness="always64">
+        
+        <RegistryValue Root="HKCR" Key="*\shellex\ContextMenuHandlers\{FB6D8570-49B2-4fcf-9BE4-79A74369CF4D}" Value="OMS Context Menu Handler" Type="string" Action="write" />
+        <Class Id="{FB6D8570-49B2-4FCF-9BE4-79A74369CF4D}" Context="InprocServer32" Description="FWBS.OMS.Shell.OMSShellExt" ThreadingModel="both" ForeignServer="mscoree.dll">
+          <ProgId Id="FWBS.OMS.UI.Windows.OMSShellExt" Description="FWBS.OMS.Shell.OMSShellExt" />
+        </Class>
+        <RegistryKey Root="HKCR" Key="CLSID\{FB6D8570-49B2-4FCF-9BE4-79A74369CF4D}">
+          <RegistryValue Key="Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+          <RegistryKey Key="InprocServer32">
+            <RegistryKey Key="!(bind.assemblyVersion.OMS.Shell.dll)">
+              <RegistryValue Name="Class" Value="FWBS.OMS.Shell.OMSShellExt" Type="string" Action="write" />
+              <RegistryValue Name="Assembly" Value="OMS.Shell, Version=!(bind.assemblyVersion.OMS.Shell.dll), Culture=neutral, PublicKeyToken=7212801a92a1726d" Type="string" Action="write" />
+              <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+              <RegistryValue Name="CodeBase" Value="file:///[INSTALLDIR]OMS.Shell.dll" Type="string" Action="write" />
+            </RegistryKey>
+            <RegistryValue Name="Class" Value="FWBS.OMS.Shell.OMSShellExt" Type="string" Action="write" />
+            <RegistryValue Name="Assembly" Value="OMS.Shell, Version=!(bind.assemblyVersion.OMS.Shell.dll), Culture=neutral, PublicKeyToken=7212801a92a1726d" Type="string" Action="write" />
+            <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+            <RegistryValue Name="CodeBase" Value="file:///[INSTALLDIR]OMS.Shell.dll" Type="string" Action="write" />
+          </RegistryKey>
+        </RegistryKey>
+      </Component>
+      <?endif?>
+      <Component Id="cmpE3908005A1EC92064EC006E7E940D89F" Guid="{CF7024EB-586F-4771-B19F-FDE7763E2EEA}">
+        <File Id="OMS.Utils.exe" KeyPath="yes" Name="OMS.Utils.exe" Source="$(var.SourceDir)\OMS.Utils$(var.ExeNameSuffix).exe">
+          <Shortcut Id="OmsUtilsShortcut" Name="3E MatterSphere Utilities" Description="3E MatterSphere Utilities Application" Directory="StartupFolder" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+        </File>
+        <File Id="OMS.Utils.exe.config" CompanionFile="OMS.Utils.exe" Source="$(var.SourceDir)\OMS.Utils.exe.config" />
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\OMS.Utils.exe">
+          <RegistryValue Value="[#OMS.Utils.exe]" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+      <Component Id="cmp21114E770EA38627232604DEBC0BC164" Guid="{E0BA1EE2-E313-41BD-BF54-6C6D39F6E041}">
+        <RegistryKey Root="HKCR" Key="omsmc">
+          <RegistryValue Value="URL:OMSMC Protocol" Type="string" Action="write" />
+          <RegistryValue Name="EditFlags" Value="02000000" Type="binary" Action="write" />
+          <RegistryValue Name="URL Protocol" Value="" Type="string" Action="write" />
+          <RegistryValue Key="DefaultIcon" Value="[INSTALLDIR]OMS.Utils.exe,1" Type="string" Action="write" />
+          <RegistryValue Key="shell\open\command" Value="&quot;[INSTALLDIR]OMS.Utils.exe&quot; &quot;%1&quot;" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+      <Component Id="cmp0F82658D4E0D558E68A3E5EC95CE7C05" Guid="{E2DF0E72-819E-4DF4-971A-1D84472D26B8}">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\FWBS\OMS\DialogInterceptor">
+          <RegistryKey Key="Dialogs\SaveAs">
+            <RegistryValue Name="OkDialogId" Value="1" Type="integer" Action="write" />
+            <RegistryValue Name="CancelDialogId" Value="2" Type="integer" Action="write" />
+            <RegistryValue Name="FileNameClass" Value="Edit;ComboBox" Type="string" Action="write" />
+            <RegistryValue Name="WindowClass" Value="#32770" Type="string" Action="write" />
+            <RegistryValue Name="WindowTitle" Value="Save As" Type="string" />
+          </RegistryKey>
+          <RegistryKey Key="Processes">
+            <RegistryValue Key="ACRORD32.EXE\SaveAs" Name="FileExtension" Value="pdf" Type="string" Action="write" />
+            <RegistryValue Key="MSPAINT.EXE\SaveAs" Name="FileExtension" Value="jpg" Type="string" Action="write" />
+            <RegistryValue Key="NOTEPAD.EXE\SaveAs" Name="FileExtension" Value="txt" Type="string" Action="write" />
+          </RegistryKey>
+        </RegistryKey>
+      </Component>
+      <Component Id="cmpD99A3114C65455F37EC15F12BF19087A" Guid="{11F1FC03-264E-4A95-B0DB-F8000F7664B7}" DisableRegistryReflection="yes" Condition="VersionNT64" Bitness="always64">
+        
+        <?if $(var.Platform) = "x86" ?>
+        <?define DialogInterceptorKey="SOFTWARE\FWBS\OMS\DialogInterceptor" ?>
+        <?elseif $(var.Platform) = "x64" ?>
+        <?define DialogInterceptorKey="SOFTWARE\WOW6432Node\FWBS\OMS\DialogInterceptor" ?>
+        <?endif?>
+        <RegistryKey Root="HKLM" Key="$(var.DialogInterceptorKey)">
+          <RegistryKey Key="Dialogs\SaveAs">
+            <RegistryValue Name="OkDialogId" Value="1" Type="integer" Action="write" />
+            <RegistryValue Name="CancelDialogId" Value="2" Type="integer" Action="write" />
+            <RegistryValue Name="FileNameClass" Value="Edit;ComboBox" Type="string" Action="write" />
+            <RegistryValue Name="WindowClass" Value="#32770" Type="string" Action="write" />
+            <RegistryValue Name="WindowTitle" Value="Save As" Type="string" />
+          </RegistryKey>
+          <RegistryKey Key="Processes">
+            <RegistryValue Key="ACRORD32.EXE\SaveAs" Name="FileExtension" Value="pdf" Type="string" Action="write" />
+            <RegistryValue Key="MSPAINT.EXE\SaveAs" Name="FileExtension" Value="jpg" Type="string" Action="write" />
+            <RegistryValue Key="NOTEPAD.EXE\SaveAs" Name="FileExtension" Value="txt" Type="string" Action="write" />
+          </RegistryKey>
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_Drive" Directory="INSTALLDIR">
+      <Component Id="cmp6C6113BEB0D2741D97FB72AEB0305065" Guid="{2337DD0B-A81F-4B2D-87AB-4E424483EE46}">
+        <File Id="DokanNet.dll" KeyPath="yes" Source="$(var.SourceDir)\DokanNet.dll" />
+      </Component>
+      <Component Id="cmp28EC4331678126F391408DEA34F90A85" Guid="{DD2347C1-2894-46EF-B1EE-231C49170748}">
+        <File Id="OMS.Drive.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.Drive.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="CG_AdminKit" Directory="INSTALLDIR">
+      <Component Id="cmp36C898B88AFEB29F365352A23C97C786" Guid="{D3D7F4B1-5E84-4035-9754-D15F680096C9}">
+        <File Id="omsAdmin.exe" KeyPath="yes" Name="omsAdmin.exe" Source="$(var.SourceDir)\omsAdmin$(var.ExeNameSuffix).exe">
+          <Shortcut Id="AdminKitShortcut" Name="Administration Kit" Description="3E MatterSphere Administration Kit Application" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+        </File>
+        <File Id="omsAdmin.exe.config" CompanionFile="omsAdmin.exe" Source="$(var.SourceDir)\omsAdmin.exe.config" />
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\omsAdmin.exe">
+          <RegistryValue Value="[#omsAdmin.exe]" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_Reports" Directory="INSTALLDIR">
+      <Component Id="cmp62F1D9ECE0F8C148B0AA56B10C5ADE72" Guid="{B877AC45-70A6-41A0-A7E8-785323E63B7B}">
+        <File Id="OMS.UI.REPORTS.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.UI.REPORTS.dll" />
+      </Component>
+      <Component Id="cmp1C7AD751FD7D2409B9601A8BC2D0F41E" Guid="{D741CB6C-7CF4-485B-BB87-139562534EFF}">
+        <File Id="omsexternalreports.exe" KeyPath="yes" Name="omsexternalreports.exe" Source="$(var.SourceDir)\omsexternalreports$(var.ExeNameSuffix).exe" />
+        <File Id="omsexternalreports.exe.config" CompanionFile="omsexternalreports.exe" Source="$(var.SourceDir)\omsexternalreports.exe.config" />
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\omsexternalreports.exe">
+          <RegistryValue Value="[#omsexternalreports.exe]" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+      <Component Id="cmp367F5F83C50E14ABB0424B7680F5D9A2" Guid="{D23A3082-826F-466A-9A6A-330DFAD18EF4}">
+        <File Id="omsreports.exe" KeyPath="yes" Name="omsreports.exe" Source="$(var.SourceDir)\omsreports$(var.ExeNameSuffix).exe">
+          <Shortcut Id="OmsReportsShortcut" Name="Reports Viewer" Description="3E MatterSphere Reports Viewer Application" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+        </File>
+        <File Id="omsreports.exe.config" CompanionFile="omsreports.exe" Source="$(var.SourceDir)\omsreports.exe.config" />
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\omsreports.exe">
+          <RegistryValue Value="[#omsreports.exe]" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_QuickClient" Directory="INSTALLDIR">
+      <Component Id="cmp2528CF19F57C5EBE54EB1C75D39662E8" Guid="{75534A06-0E13-44EE-BD62-D1E6B841E4F8}">
+        <File Id="OMSQuickClient.exe" KeyPath="yes" Name="OMSQuickClient.exe" Source="$(var.SourceDir)\OMSQuickClient$(var.ExeNameSuffix).exe">
+          <Shortcut Id="QuickClientShortcut" Name="Client Matter Creation Tool" Description="3E MatterSphere Quick Client Matter Creation Tool" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+        </File>
+        <File Id="OMSQuickClient.exe.config" CompanionFile="OMSQuickClient.exe" Source="$(var.SourceDir)\OMSQuickClient.exe.config" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="CG_Empty" Directory="TARGETDIR">
+      <Component Id="cmp0D61EA1FB847339CCEA10D7FA9EDA1A7" Guid="{8B5BD20A-AB50-4D45-AA47-E4F7135E675C}" />
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="SharePointTemplates" Name="SharePoint Templates" />
+    </DirectoryRef>
+    <ComponentGroup Id="CG_SharePoint">
+      <Component Id="cmpB27A911D8E0DE75433B215D64722FBCA" Directory="INSTALLDIR" Guid="{B1F5AF53-8FB4-4388-855B-B51A70CAA009}">
+        <File Id="MCSPIntegration.dll" KeyPath="yes" Source="$(var.SourceDir)\MCSPIntegration.dll" />
+      </Component>
+      <Component Id="cmp66C53BF874FF969F602C900C18D5E4F3" Directory="INSTALLDIR" Guid="{41295690-4B26-45D7-BC1A-C1285856795D}">
+        <Class Id="{F17841E6-E78E-4591-9198-37E647EA4928}" Context="InprocServer32" Description="FWBS.Sharepoint.COMInterface" ThreadingModel="both" ForeignServer="mscoree.dll">
+          <ProgId Id="FWBS.Sharepoint.VBA.Helper" Description="FWBS.Sharepoint.COMInterface" />
+        </Class>
+        <RegistryKey Root="HKCR" Key="CLSID\{F17841E6-E78E-4591-9198-37E647EA4928}">
+          <RegistryValue Key="Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+          <RegistryKey Key="InprocServer32">
+            <RegistryKey Key="1.0.0.1">
+              <RegistryValue Name="Class" Value="FWBS.Sharepoint.COMInterface" Type="string" Action="write" />
+              <RegistryValue Name="Assembly" Value="MCSPIntegration, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7212801a92a1726d" Type="string" Action="write" />
+              <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+              <RegistryValue Name="CodeBase" Value="file:///[INSTALLDIR]MCSPIntegration.dll" Type="string" Action="write" />
+            </RegistryKey>
+            <RegistryValue Name="Class" Value="FWBS.Sharepoint.COMInterface" Type="string" Action="write" />
+            <RegistryValue Name="Assembly" Value="MCSPIntegration, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7212801a92a1726d" Type="string" Action="write" />
+            <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+            <RegistryValue Name="CodeBase" Value="file:///[INSTALLDIR]MCSPIntegration.dll" Type="string" Action="write" />
+          </RegistryKey>
+        </RegistryKey>
+      </Component>
+      <Component Id="cmp8140012F937F5BFABAFBEDCEB094B6CB" Directory="SharePointTemplates" Guid="{57C215AE-D5D2-4108-9661-963D164B1EC9}">
+        <File Id="omsfwspdm.dotm" KeyPath="yes" Source="$(var.SourceDir)\omsfwspdm.dotm" />
+      </Component>
+      <Component Id="cmpCD2FFAEED8588FA60362F680887B2601" Directory="SharePointTemplates" Guid="{9C6FDCD5-5BD5-4886-AA0B-5709D31CB9B7}">
+        <File Id="omsfwspdm.xla" KeyPath="yes" Source="$(var.SourceDir)\omsfwspdm.xla" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

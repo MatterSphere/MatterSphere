@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A9BCA52-1707-444D-B8DD-6109FD116936}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\EntityEnum.cs" />
+    <Compile Include="Common\EntityType.cs" />
+    <Compile Include="Common\Message.cs" />
+    <Compile Include="Common\MessageTypeEnum.cs" />
+    <Compile Include="Common\ParametersData.cs" />
+    <Compile Include="DbModels\BlacklistCriterion.cs" />
+    <Compile Include="DbModels\DocumentLog.cs" />
+    <Compile Include="DbModels\IndexField.cs" />
+    <Compile Include="DbModels\IndexInfo.cs" />
+    <Compile Include="DbModels\IndexTypeEnum.cs" />
+    <Compile Include="DbModels\MessageLog.cs" />
+    <Compile Include="ElasticsearchModels\ElasticsearchClientParameters.cs" />
+    <Compile Include="ElasticsearchModels\ElasticsearchResponse.cs" />
+    <Compile Include="ElasticsearchModels\Field.cs" />
+    <Compile Include="ElasticsearchModels\IndexDocument.cs" />
+    <Compile Include="ElasticsearchModels\ProcessingItemLog.cs" />
+    <Compile Include="Interfaces\IBlacklistValidator.cs" />
+    <Compile Include="Interfaces\ICacheProvider.cs" />
+    <Compile Include="Interfaces\IContentReader.cs" />
+    <Compile Include="Interfaces\IDbLogger.cs" />
+    <Compile Include="Interfaces\IDbProvider.cs" />
+    <Compile Include="Interfaces\IElasticsearchProvider.cs" />
+    <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Interfaces\ISuggestionsFactory.cs" />
+    <Compile Include="MSBaseEntities\IEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\ServicesAssemblyInfo.cs">
+        <Link>Properties\ServicesAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\MSProductInfo.cs">
+        <Link>Properties\MSProductInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{2852D7B1-B67B-48C1-B67C-D1331BC9F201}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

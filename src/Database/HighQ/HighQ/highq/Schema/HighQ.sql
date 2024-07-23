@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [highq]
+    AUTHORIZATION [dbo];
+GO

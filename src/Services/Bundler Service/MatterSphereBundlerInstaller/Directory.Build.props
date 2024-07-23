@@ -1,0 +1,13 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ProductName>3E MatterSphere PDF Bundler</ProductName>
+    <ProductFamily>3E MatterSphere</ProductFamily>
+    <ShortProductName>PDF Bundler</ShortProductName>
+    <PublisherName>ELITE</PublisherName>
+    <ProductVersion>10.1.0</ProductVersion>
+    <UpgradeCode>82B3C2FC-902D-4D80-BD83-75AFBCE182DD</UpgradeCode>
+    <SourceDir></SourceDir>
+    <OutputName>3EMatterSpherePDFBundlerInstaller</OutputName>
+  </PropertyGroup>
+</Project>

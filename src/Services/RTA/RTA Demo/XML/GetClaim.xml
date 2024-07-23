@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ApplicationData>
+    <ApplicationIDs ClaimID="0000000000017776" InsurerAcceptingBranchID="001" InsurerAcceptingBranchName="FWBS COMP branch 1" InsurerBranchID="001" InsurerBranchName="FWBS COMP branch 1" InsurerID="COMP009" InsurerName="FWBS COMP" MainApplicant="Jordan, Carol " RepresentativeBranchID="002" RepresentativeBranchName="FWBS branch 2" RepresentativeID="CR00009" RepresentativeName="FWBS" RepresentativeOrgPath="/CR00009"/>
+    <ClaimDetails Article75="0" SentDate="2010-12-06"/>
+    <FraudStated/>
+    <StatementOfTruth SignatoryType="S" RetainedSignedCopy="1"/>
+    <ExitProcess>
+      <ExitCR/>
+      <ExitCM/>
+    </ExitProcess>
+    <AllocatedUser>
+      <AllocatedCR/>
+      <AllocatedCM/>
+    </AllocatedUser>
+  </ApplicationData>
+  <ClaimAndClaimantDetails>
+    <ClaimantRepresentative PaymentMoreRequested="0">
+      <CompanyDetails CompanyName="Default Company" ContactName="Daniel Ince" ContactSurname="Administrator" EmailAddress="" ReferenceNumber="F10/1" TelephoneNumber="01604857857">
+        <Address xmlns:xsd="http://www.w3.org/2001/XMLSchema" AddressType="A" City="Milton Malsor" Country="England" HouseName="FWBS" HouseNumber="" Street1="Default Address"/>
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantDetails Comments="" DefDriverName="" DefendantStatus="P" PolicyNumberReference="DEF001" ReferralSource="">
+      <PersonalDetails Name="Robin" Surname="Thomas" TitleType="1">
+        <Address/>
+      </PersonalDetails>
+      <Vehicle xmlns:xsd="http://www.w3.org/2001/XMLSchema" VRN="GH51 HHH"/>
+      <InsurerInformation InsurerName="FWBS COMP" InsurerOrganizationID="COMP009" InsurerOrganizationPath="/COMP009" InsurerType="I">
+        <BranchDetails BranchID="001" BranchName="FWBS COMP branch 1" BranchPath="/COMP009/001"/>
+      </InsurerInformation>
+      <CompanyDetails>
+        <Address AddressType="A"/>
+      </CompanyDetails>
+    </DefendantDetails>
+    <ClaimantDetails xmlns:xsd="http://www.w3.org/2001/XMLSchema" ChildClaim="0" NINComment="To follow" Occupation="Gardener">
+      <PersonalDetails DateOfBirth="1980-12-12" Name="Carol" Surname="Jordan" TitleType="4">
+        <Address AddressType="A" City="Watford" Country="England" County="Hertfordshire" HouseNumber="1" PostCode="WD2 5FF" Street1="Hillside Avenue"/>
+      </PersonalDetails>
+      <Vehicle VRN=""/>
+    </ClaimantDetails>
+  </ClaimAndClaimantDetails>
+  <MedicalDetails>
+    <Injury xmlns:xsd="http://www.w3.org/2001/XMLSchema" BoneInjury="0" HospitalAttendance="0" InjurySustainedDescription="Injuries sustained." MedicalAttentionSeeking="0" Other="0" SoftTissue="0" TimeOffRequired="0" Whiplash="0"/>
+    <Rehabilitation xmlns:xsd="http://www.w3.org/2001/XMLSchema" RehabilitationNeeds="0" RehabilitationUndertaken="1"/>
+    <HospitalSearch/>
+  </MedicalDetails>
+  <RepairsAndAlternativeVehicleProvision>
+    <Repairs ClaiimingDamageOwnVehicle="0">
+      <AlternativeCompany/>
+    </Repairs>
+    <AlternativeVehicleProvision ClaimantEntitled="1">
+      <Provider>
+        <Vehicle/>
+      </Provider>
+    </AlternativeVehicleProvision>
+  </RepairsAndAlternativeVehicleProvision>
+  <AccidentData>
+    <AccidentDetails AccidentDate="2010-12-01" AccidentDescription="Defendant drove into Claimant" AccidentLocation="Roundabout" AccidentTime="11:50" ClaimantType="0" OccupantsNumber="1" PoliceReported="0" Seatbelt="1">
+      <Driver>
+        <Address/>
+      </Driver>
+      <Owner>
+        <Address/>
+      </Owner>
+      <Vehicle/>
+      <InsuranceCompanyInformatiion>
+        <Address/>
+      </InsuranceCompanyInformatiion>
+      <WeatherConditions xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+      <RoadConditions xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+      <AccidentCircumstances xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+      <PoliceDetails/>
+    </AccidentDetails>
+    <BusCoach BussOrCoach="0"/>
+  </AccidentData>
+  <OtherPartyDetails/>
+  <LiabilityFunding>
+    <Liability xmlns:xsd="http://www.w3.org/2001/XMLSchema" DefendantResponsability="It was."/>
+    <Funding xmlns:xsd="http://www.w3.org/2001/XMLSchema" Comments="" ConsideredFreeLegalExpIns="0" FundingUndertaken="0"/>
+  </LiabilityFunding>
+  <InsurerResponse Capacity="1">
+    <LiabilityCausation xmlns:xsd="http://www.w3.org/2001/XMLSchema" LiabilityDecision="A" UnadmittedLiabilityReasons="">
+      <DefendantAdmits AccidentOccurred="1" CausedByDefendant="1" CausedSomeLossToTheClaimant="1"/>
+    </LiabilityCausation>
+    <ProvidedServices AltVchlProvided="0" NotificationDate="2010-12-06" PreparedToProvideReabilitation="0" ReabilitationProvided="0" RepairsProvided="0" ResponseDate="2010-12-06">
+      <DefendantsInsurer ContactMiddleName="" ContactName="Fred" ContactSurname="Smith" EmailAddress="Fred@Smith.co.uk" ReferenceNumber="6473828" TelephoneNumber="01604 263738">
+        <Address AddressType="A" City="Northampton" Country="UK" County="" District="" HouseName="" HouseNumber="77" PostCode="" Street1="The Mews" Street2=""/>
+      </DefendantsInsurer>
+    </ProvidedServices>
+  </InsurerResponse>
+  <InterimSettlementPack>
+    <ClaimantRepresentative PaymentMoreRequested="0">
+      <CompanyDetails CompanyName="Default Company" ContactName="Daniel Ince" ContactSurname="Administrator" EmailAddress="" ReferenceNumber="F10/1" TelephoneNumber="01604857857">
+        <Address AddressType="A" City="Milton Malsor" Country="England" HouseNumber="" Street1="Default Address"/>
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantRepresentative>
+      <DefendantsInsurer ContactMiddleName="" ContactName="Fred" ContactSurname="Smith" EmailAddress="Fred@Smith.co.uk" ReferenceNumber="6473828" TelephoneNumber="01604 263738"/>
+    </DefendantRepresentative>
+    <MedicalReport MedicalReportStage2_1="0"/>
+    <LossesToDate>
+      <ClaimantLosses>
+        <ClaimantLossesToDate Comments="Car Hire Claimant Loss" EvidenceAttached="1" GrossValueClaimed="1000" LossType="2" PercContribNegDeductions="10" ValueClaimedAfterContrib="900.00"/>
+      </ClaimantLosses>
+      <DefendantReplies>
+        <DefendantResponse LossType="2"/>
+      </DefendantReplies>
+      <Total>
+        <LossesTotal TotalHeads="900.00"/>
+      </Total>
+    </LossesToDate>
+    <InterimPayment>
+      <ClaimantRequestForInterimPayment xmlns:xsd="http://www.w3.org/2001/XMLSchema" DateOfRequest="2010-12-06" ReasonsForInterimPaymentRequest="Rental car cost £1000" ValueOfInterimRequest="1000"/>
+      <DefendantResponsesToInterimPaymentRequest/>
+    </InterimPayment>
+    <StatementOfTruth RetainedSignedCopy="1" SignatoryType="S"/>
+    <Phase2ClaimantDefendantDates>
+      <ClaimantRepresentativeDates DateOfNotification="2010-12-06"/>
+      <DefendantRepresentativeDates/>
+    </Phase2ClaimantDefendantDates>
+  </InterimSettlementPack>
+  <Stage2SettlementPack>
+    <ClaimantRepresentative>
+      <CompanyDetails CompanyName="Default Company" ContactName="Daniel Ince" ContactSurname="Administrator" EmailAddress="" ReferenceNumber="F10/1" TelephoneNumber="01604857857">
+        <Address AddressType="A" City="Milton Malsor" Country="England" HouseNumber="" Street1="Default Address"/>
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantRepresentative>
+      <DefendantsInsurer ContactName="Fred" ContactSurname="Smith" ReferenceNumber="6473828" TelephoneNumber="01604 263738"/>
+    </DefendantRepresentative>
+    <MedicalReport/>
+    <LossesToDate>
+      <ClaimantLosses/>
+      <DefendantReplies/>
+      <Total>
+        <CurrentTotal/>
+      </Total>
+    </LossesToDate>
+    <AgreementData>
+      <FinalAgreementDetails>
+        <AgreementDetails/>
+      </FinalAgreementDetails>
+    </AgreementData>
+    <LastExtendedTime/>
+    <StatementOfTruth/>
+    <Phase2ClaimantDefendantDates>
+      <ClaimantRepresentativeDates/>
+      <DefendantRepresentativeDates/>
+    </Phase2ClaimantDefendantDates>
+  </Stage2SettlementPack>
+  <CourtProceedingsPack>
+    <ClaimantRepresentative>
+      <CompanyDetails CompanyName="Default Company" ContactName="Daniel Ince" ContactSurname="Administrator" EmailAddress="" ReferenceNumber="F10/1" TelephoneNumber="01604857857">
+        <Address AddressType="A"/>
+      </CompanyDetails>
+    </ClaimantRepresentative>
+    <DefendantRepresentative>
+      <DefendantsInsurer ContactMiddleName="" ContactName="Fred" ContactSurname="Smith" EmailAddress="Fred@Smith.co.uk" ReferenceNumber="6473828" TelephoneNumber="01604 263738"/>
+    </DefendantRepresentative>
+    <LossesToDate>
+      <ClaimantLosses/>
+      <DefendantReplies/>
+    </LossesToDate>
+    <CourtProceedingsPackPartA/>
+    <DisbursmentDisputed/>
+    <CourtProceedingsPackPartB>
+      <FixedCosts/>
+    </CourtProceedingsPackPartB>
+    <StatementOfTruth/>
+    <Phase2ClaimantDefendantDates>
+      <ClaimantRepresentativeDates/>
+      <DefendantRepresentativeDates/>
+    </Phase2ClaimantDefendantDates>
+  </CourtProceedingsPack>
+  <Timeouts>
+    <CurrentTimeout TimeOutType="21" SelectedTimeOut="2010-12-08"/>
+    <PreCalculatedTimeouts>
+      <ClaimNotificationForm>
+        <Insurer LiabilityDecisionTimeout="2010-12-08" Stage1PaymentTimeout="2010-12-09"/>
+        <MIBorArt75 LiabilityDecisionTimeout="2010-12-09" Stage1PaymentTimeout="2010-12-10"/>
+      </ClaimNotificationForm>
+      <InterimSettlementPack>
+        <LowPayment InterimPaymentTimeout="2010-12-08"/>
+        <HighPayment InterimPaymentTimeout="2010-12-09"/>
+      </InterimSettlementPack>
+      <Stage2SettlementPack>
+        <Stage2DecisionOrCounterOffer/>
+      </Stage2SettlementPack>
+      <CourtProceedingsPack>
+        <CourtProceedings/>
+      </CourtProceedingsPack>
+    </PreCalculatedTimeouts>
+  </Timeouts>
+</Data>

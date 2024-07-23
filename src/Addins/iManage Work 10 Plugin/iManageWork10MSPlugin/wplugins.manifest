@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <word>
+    <entrypoints>
+      <entrypoint class="MatterSphereIntercept.WordIntercept" resource="MatterSphereIntercept.sideload_config.txt">
+        <assemblyIdentity name="MatterSphereIntercept" version="10.1.0.0" publicKeyToken="7212801a92a1726d" language="neutral" processorArchitecture="msil" />
+        <provider name="iManage">MatterSphereIntercept.WordIntercept</provider>
+      </entrypoint>
+    </entrypoints>
+  </word>
+  <excel>
+    <entrypoints>
+      <entrypoint class="MatterSphereIntercept.ExcelIntercept" resource="MatterSphereIntercept.sideload_config.txt">
+        <assemblyIdentity name="MatterSphereIntercept" version="10.1.0.0" publicKeyToken="7212801a92a1726d" language="neutral" processorArchitecture="msil" />
+        <provider name="iManage">MatterSphereIntercept.ExcelIntercept</provider>
+      </entrypoint>
+    </entrypoints>
+  </excel>
+</configuration>

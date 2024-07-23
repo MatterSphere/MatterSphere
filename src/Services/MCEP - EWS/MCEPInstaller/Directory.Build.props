@@ -1,0 +1,13 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ProductName>3E MatterSphere MCEP</ProductName>
+    <ProductFamily>3E MatterSphere</ProductFamily>
+    <ShortProductName>MCEP</ShortProductName>
+    <PublisherName>ELITE</PublisherName>
+    <ProductVersion>10.1.0</ProductVersion>
+    <UpgradeCode>2AEB9CD5-4A90-4FF2-9C37-D278CA452A91</UpgradeCode>
+    <SourceDir>C:\MCEPOutput</SourceDir>
+    <OutputName>3EMatterSphereMCEPInstaller</OutputName>
+  </PropertyGroup>
+</Project>

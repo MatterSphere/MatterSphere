@@ -1,0 +1,21 @@
+﻿<Project Sdk="WixToolset.Sdk/4.0.5">
+  <PropertyGroup Label="Globals">
+    <DefineConstants>ProductName=$(ProductName);ShortProductName=$(ShortProductName);ProductFamily=$(ProductFamily);PublisherName=$(PublisherName);ProductVersion=$(ProductVersion);UpgradeCode=$(UpgradeCode);SourceDir=$(SourceDir);</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Directory.Build.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MatterSphereBundlerWindowsService\MatterSphereBundlerWindowsService.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <SignFilesScript>$(ProjectDir)..\..\..\Scripts\AzureSignFiles.ps1</SignFilesScript>
+    <OutputName>$(OutputName)</OutputName>
+  </PropertyGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="powershell &quot;&amp; '$(SignFilesScript)'&quot; -FileList '$(ProjectDir)\..\MatterSphereBundlerWCFService\*.dll','$(ProjectDir)\..\MatterSphereBundlerWindowsService\*.exe','$(ProjectDir)\..\MatterSphereBundlerWindowsService\*.dll' -Recurse" Condition="Exists('$(SignFilesScript)')" />
+  </Target>
+</Project>

@@ -1,0 +1,29 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="MSIndexTool.Service" Directory="INSTALLFOLDER">
+      <File Id="MSIndex.IndexService.exe" Source="$(MSIndex.IndexService.TargetDir)MSIndex.IndexService.exe" KeyPath="yes" />
+      <File Id="MSIndex.IndexService.exe.config" Source="$(MSIndex.IndexService.TargetDir)MSIndex.IndexService.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSphereMSIndexTool"
+                      DisplayName="3E MatterSphere MSIndex Tool"
+                      Description="The 3E MatterSphere MSIndex Tool service reads MatterSphere data and creates SQL Server full-text search indexes."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSphereMSIndexTool"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="MSIndexTool.Dependencies" Guid="{84557896-D1C6-4DF2-A7EB-390D1149AD9D}" Directory="INSTALLFOLDER">
+      <File Source="$(MSIndex.IndexService.TargetDir)MSIndex.Common.dll" />
+      <File Source="$(MSIndex.IndexService.TargetDir)MSIndex.Controller.dll" />
+      <File Source="$(MSIndex.IndexService.TargetDir)NLog.config" />
+      <File Source="$(MSIndex.IndexService.TargetDir)NLog.dll" />
+      <File Source="$(MSIndex.IndexService.TargetDir)Newtonsoft.Json.dll" />
+    </Component>
+  </Fragment>
+</Wix>

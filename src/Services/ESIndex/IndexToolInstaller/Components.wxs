@@ -1,0 +1,53 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="IndexTool.Service" Directory="INSTALLFOLDER">
+      <File Id="IndexToolService.exe" Source="$(IndexToolService.TargetDir)IndexToolService.exe" KeyPath="yes" />
+      <File Id="IndexToolService.exe.config" Source="$(IndexToolService.TargetDir)IndexToolService.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSphereESIndexTool"
+                      DisplayName="3E MatterSphere ESIndex Tool"
+                      Description="3E MatterSphere ESIndex Tool service reads the MatterSphere data and creates an Elasticsearch index for full-text search."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSphereESIndexTool"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="IndexTool.Dependencies" Guid="{D61E28F8-5A93-40BF-BD36-3A674480B3BD}" Directory="INSTALLFOLDER">
+      <File Source="$(IndexToolService.TargetDir)Common.dll" />
+      <File Source="$(IndexToolService.TargetDir)DbProvider.dll" />
+      <File Source="$(IndexToolService.TargetDir)DocumentReader.dll" />
+      <File Source="$(IndexToolService.TargetDir)ElasticsearchProvider.dll" />
+      <File Source="$(IndexToolService.TargetDir)FileStorageProvider.dll" />
+      <File Source="$(IndexToolService.TargetDir)IndexingController.dll" />
+      <File Source="$(IndexToolService.TargetDir)Models.dll" />
+      <File Source="$(IndexToolService.TargetDir)QueueReader.dll" />
+      <File Source="$(IndexToolService.TargetDir)XmlConverter.dll" />
+      <File Source="$(IndexToolService.TargetDir)Aspose.Cells.dll" />
+      <File Source="$(IndexToolService.TargetDir)Aspose.Drawing.dll" />
+      <File Source="$(IndexToolService.TargetDir)Aspose.Email.dll" />
+      <File Source="$(IndexToolService.TargetDir)Aspose.OCR.dll" />
+      <File Source="$(IndexToolService.TargetDir)Aspose.PDF.dll" />
+      <File Source="$(IndexToolService.TargetDir)Aspose.Words.dll" />
+      <File Source="$(IndexToolService.TargetDir)IFilterTextReader.dll" />
+      <File Source="$(IndexToolService.TargetDir)Newtonsoft.Json.dll" />
+      <File Source="$(IndexToolService.TargetDir)NLog.config" />
+      <File Source="$(IndexToolService.TargetDir)NLog.dll" />
+      <File Source="$(IndexToolService.TargetDir)RestSharp.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)Microsoft.ML.OnnxRuntime.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)OcrDocumentReader.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)onnxruntime.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)onnxruntime_providers_shared.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Buffers.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Memory.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Numerics.Vectors.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Runtime.CompilerServices.Unsafe.dll" />
+      <File Source="$(OcrDocumentReader.TargetDir)System.Text.Encoding.CodePages.dll" />
+    </Component>
+  </Fragment>
+</Wix>

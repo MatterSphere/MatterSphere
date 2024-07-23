@@ -1,0 +1,1047 @@
+﻿<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="OnLoad" loadImage="GetImage">
+
+  <ribbon>
+
+    <tabs>
+
+
+
+      <!--TabMail-->
+
+      <tab idMso="TabMail" visible="true" >
+        <group id="TabMail_Connect" insertBeforeMso="GroupMailNew" visible="true" getLabel="GetLogonLabel">
+
+          <button
+              id="TabMail_Connect_Connect"
+              getImage="GetConnectImage"
+              tag="ADDIN;CONNECT"/>
+
+          <separator id="TabMail_Connect_Sep1" visible="false"/>
+
+          <menu id="TabMail_Connect_CreateMenu"
+          size="normal"
+          image="QueryShowTable">
+            <button id="TabMail_Connect_Create_AssocEmail"
+           image="AttachItem"
+           tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>
+            <button id="TabMail_Connect_Create_ClientEmail"
+            image="AttachItem"
+            tag="OMS;TEMPLATESTART;EMAIL;CLIENT"/>
+
+            <menuSeparator id="TabMail_Connect_CreateMenu_Sep1"/>
+
+            <button id="TabMail_Connect_Create_AssocLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;ASSOC"/>
+            <button id="TabMail_Connect_Create_ClientLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;CLIENT"/>
+
+            <menuSeparator id="TabMail_Connect_CreateMenu_Sep2"/>
+
+            <button id="TabMail_Connect_Create_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;NEWFILE;MODELESS"/>
+            <button id="TabMail_Connect_Create_Time"
+            image="StartAfterPrevious"
+            tag="SCRIPT;NEWTIME"/>
+            <button
+              id="TabMail_Connect_Create_AddTask"
+              image="FilePrepareMenu"
+              tag="SCRIPT;NEWOMSTASK"/>
+            <button
+              id="TabMail_Connect_Create_AddAppointment"
+              image="ViewAllProposals"
+              tag="SCRIPT;NEWAPPOINTMENT"/>
+          </menu>
+          <menu id="TabMail_Connect_ViewMenu"
+                    size="normal"
+                    image="DocumentMapReadingView">
+            <button id="TabMail_Connect_View_Client"
+            image="AccessTableContacts"
+            tag="OMS;CLIENTINFO"/>
+            <button id="TabMail_Connect_View_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;FILEINFO"/>
+            <button id="TabMail_Connect_View_Command"
+            image="BlogHomePage"
+            tag="OMS;COMMANDCENTRE"/>
+            <button id ="TabMail_Connect_View_PrecedentLibrary"
+                    image="LookUp"
+                    tag="OMS;PRECEDENTS;MAIN" />
+            <button id ="TabMail_Connect_View_ContactManager"
+                    image="AddressBook"
+                    tag="OMS;CONTACTMANAGER" />
+
+            <menuSeparator id="TabMail_Connect_ViewMenu_Sep1"/>
+
+            <button id ="TabMail_Connect_View_OpenDocument"
+                    image="FileOpen"
+                    tag="OMS;OPENDOCUMENT" />
+
+          </menu>
+
+          <splitButton id="TabMail_Connect_SaveButtons" size="normal">
+            <menu id="TabMail_Connect_SaveButtonsMenu">
+              <button
+              id="TabMail_Connect_SaveButtonsMenu_SaveAll"
+              image="FileSave"
+              tag="OMS;SAVEALLEX"/>
+              <button
+              id="TabMail_Connect_SaveButtonsMenu_FileIt"
+              image="CreateMailRule"
+              tag="OMS;FILEALL"/>
+            </menu>
+          </splitButton>
+
+        </group>
+
+      </tab>
+
+      <!--TabCalendarTableView-->
+
+      <tab idMso="TabCalendarTableView" visible="true" >
+        <group id="TabCalendarTableView_Connect" insertBeforeMso="GroupCalendarNew" visible="true" getLabel="GetLogonLabel">
+
+          <button
+              id="TabCalendarTableView_Connect_Connect"
+              getImage="GetConnectImage"
+              tag="ADDIN;CONNECT"/>
+
+          <separator id="TabCalendarTableView_Connect_Sep1" visible="false"/>
+
+          <menu id="TabCalendarTableView_Connect_CreateMenu"
+            size="normal"
+            image="QueryShowTable">
+
+            <button id="TabCalendarTableView_Connect_Create_AssocEmail"
+           image="AttachItem"
+           tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>
+            <button id="TabCalendarTableView_Connect_Create_ClientEmail"
+            image="AttachItem"
+            tag="OMS;TEMPLATESTART;EMAIL;CLIENT"/>
+
+            <menuSeparator id="TabCalendarTableView_Connect_CreateMenu_Sep1"/>
+
+            <button id="TabCalendarTableView_Connect_Create_AssocLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;ASSOC"/>
+            <button id="TabCalendarTableView_Connect_Create_ClientLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;CLIENT"/>
+
+            <menuSeparator id="TabCalendarTableView_Connect_CreateMenu_Sep2"/>
+
+
+            <button id="TabCalendarTableView_Connect_Create_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;NEWFILE;MODELESS"/>
+            <button id="TabCalendarTableView_Connect_Create_Time"
+            image="StartAfterPrevious"
+            tag="SCRIPT;NEWTIME"/>
+            <button
+             id="TabCalendarTableView_Connect_Create_AddTask"
+             image="FilePrepareMenu"
+             tag="SCRIPT;NEWOMSTASK"/>
+            <button
+              id="TabCalendarTableView_Connect_Create_AddAppointment"
+              image="ViewAllProposals"
+              tag="SCRIPT;NEWAPPOINTMENT"/>
+          </menu>
+          <menu id="TabCalendarTableView_Connect_ViewMenu"
+          size="normal"
+          image="DocumentMapReadingView">
+            <button id="TabCalendarTableView_Connect_View_Client"
+            image="AccessTableContacts"
+            tag="OMS;CLIENTINFO"/>
+            <button id="TabCalendarTableView_Connect_View_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;FILEINFO"/>
+            <button id="TabCalendarTableView_Connect_View_Command"
+            image="BlogHomePage"
+            tag="OMS;COMMANDCENTRE"/>
+            <button id ="TabCalendarTableView_Connect_View_PrecedentLibrary"
+                    image="LookUp"
+                    tag="OMS;PRECEDENTS;MAIN" />
+            <button id ="TabCalendarTableView_Connect_View_ContactManager"
+                    image="AddressBook"
+                    tag="OMS;CONTACTMANAGER" />
+
+            <menuSeparator id="TabCalendarTableView_Connect_ViewMenu_Sep1"/>
+
+            <button id ="TabCalendarTableView_Connect_View_OpenDocument"
+                    image="FileOpen"
+                    tag="OMS;OPENDOCUMENT" />
+
+          </menu>
+
+          <splitButton id="TabCalendarTableView_Connect_SaveButtons" size="normal">
+            <menu id="TabCalendarTableView_Connect_SaveButtonsMenu">
+              <button
+              id="TabCalendarTableView_Connect_SaveButtonsMenu_SaveAll"
+              image="FileSave"
+              tag="OMS;SAVEALLEX"/>
+              <button
+              id="TabCalendarTableView_Connect_SaveButtonsMenu_FileIt"
+              image="CreateMailRule"
+              tag="OMS;FILEALL"/>
+            </menu>
+          </splitButton>
+
+        </group>
+
+      </tab>
+
+      <!--TabCalendar-->
+
+      <tab idMso="TabCalendar" visible="true" >
+        <group id="TabCalendar_Connect" insertBeforeMso="GroupCalendarNew" visible="true" getLabel="GetLogonLabel">
+
+          <button
+              id="TabCalendar_Connect_Connect"
+              getImage="GetConnectImage"
+              tag="ADDIN;CONNECT"/>
+
+          <separator id="TabCalendar_Connect_Sep1" visible="false"/>
+
+
+          <menu id="TabCalendar_Connect_CreateMenu"
+          size="normal"
+          image="QueryShowTable">
+            <button id="TabCalendar_Connect_Create_AssocEmail"
+            image="AttachItem"
+            tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>
+            <button id="TabCalendar_Connect_Create_ClientEmail"
+            image="AttachItem"
+            tag="OMS;TEMPLATESTART;EMAIL;CLIENT"/>
+
+            <menuSeparator id="TabCalendar_Connect_CreateMenu_Sep1"/>
+
+            <button id="TabCalendar_Connect_Create_AssocLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;ASSOC"/>
+            <button id="TabCalendar_Connect_Create_ClientLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;CLIENT"/>
+
+            <menuSeparator id="TabCalendar_Connect_CreateMenu_Sep2"/>
+
+            <button id="TabCalendar_Connect_Create_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;NEWFILE;MODELESS"/>
+            <button id="TabCalendar_Connect_Create_Time"
+            image="StartAfterPrevious"
+            tag="SCRIPT;NEWTIME"/>
+            <button
+             id="TabCalendar_Connect_Create_AddTask"
+             image="FilePrepareMenu"
+             tag="SCRIPT;NEWOMSTASK"/>
+            <button
+              id="TabCalendar_Connect_Create_AddAppointment"
+              image="ViewAllProposals"
+              tag="SCRIPT;NEWAPPOINTMENT"/>
+          </menu>
+          <menu id="TabCalendar_Connect_ViewMenu"
+          size="normal"
+          image="DocumentMapReadingView">
+            <button id="TabCalendar_Connect_View_Client"
+            image="AccessTableContacts"
+            tag="OMS;CLIENTINFO"/>
+            <button id="TabCalendar_Connect_View_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;FILEINFO"/>
+            <button id="TabCalendar_Connect_View_Command"
+            image="BlogHomePage"
+            tag="OMS;COMMANDCENTRE"/>
+            <button id ="TabCalendar_Connect_View_PrecedentLibrary"
+                    image="LookUp"
+                    tag="OMS;PRECEDENTS;MAIN" />
+            <button id ="TabCalendar_Connect_View_ContactManager"
+                    image="AddressBook"
+                    tag="OMS;CONTACTMANAGER" />
+
+            <menuSeparator id="TabCalendar_Connect_ViewMenu_Sep1"/>
+
+            <button id ="TabCalendar_Connect_View_OpenDocument"
+                    image="FileOpen"
+                    tag="OMS;OPENDOCUMENT" />
+
+          </menu>
+
+
+
+          <splitButton id="TabCalendar_Connect_SaveButtons" size="normal">
+            <menu id="TabCalendar_Connect_SaveButtonsMenu">
+              <button
+              id="TabCalendar_Connect_SaveButtonsMenu_SaveAll"
+              image="FileSave"
+              tag="OMS;SAVEALLEX"/>
+              <button
+              id="TabCalendar_Connect_SaveButtonsMenu_FileIt"
+              image="CreateMailRule"
+              tag="OMS;FILEALL"/>
+            </menu>
+          </splitButton>
+
+        </group>
+
+      </tab>
+
+
+
+      <!--TabTasks-->
+
+      <tab idMso="TabTasks" visible="true" >
+        <group id="TabTasks_Connect" insertBeforeMso="GroupTasksNew" visible="true" getLabel="GetLogonLabel">
+
+          <button
+              id="TabTasks_Connect_Connect"
+              getImage="GetConnectImage"
+              tag="ADDIN;CONNECT"/>
+
+          <separator id="TabTasks_Connect_Sep1" visible="false"/>
+
+
+          <menu id="TabTasks_Connect_CreateMenu"
+          size="normal"
+          image="QueryShowTable">
+            <button id="TabTasks_Connect_Create_AssocEmail"
+            image="AttachItem"
+            tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>
+            <button id="TabTasks_Connect_Create_ClientEmail"
+            image="AttachItem"
+            tag="OMS;TEMPLATESTART;EMAIL;CLIENT"/>
+
+            <menuSeparator id="TabTasks_Connect_CreateMenu_Sep1"/>
+
+            <button id="TabTasks_Connect_Create_AssocLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;ASSOC"/>
+            <button id="TabTasks_Connect_Create_ClientLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;CLIENT"/>
+
+            <menuSeparator id="TabTasks_Connect_CreateMenu_Sep2"/>
+
+            <button id="TabTasks_Connect_Create_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;NEWFILE;MODELESS"/>
+            <button id="TabTasks_Connect_Create_Time"
+            image="StartAfterPrevious"
+            tag="SCRIPT;NEWTIME"/>
+            <button
+             id="TabTasks_Connect_Create_AddTask"
+             image="FilePrepareMenu"
+             tag="SCRIPT;NEWOMSTASK"/>
+            <button
+              id="TabTasks_Connect_Create_AddAppointment"
+              image="ViewAllProposals"
+              tag="SCRIPT;NEWAPPOINTMENT"/>
+          </menu>
+          <menu id="TabTasks_Connect_ViewMenu"
+          size="normal"
+          image="DocumentMapReadingView">
+            <button id="TabTasks_Connect_View_Client"
+            image="AccessTableContacts"
+            tag="OMS;CLIENTINFO"/>
+            <button id="TabTasks_Connect_View_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;FILEINFO"/>
+            <button id="TabTasks_Connect_View_Command"
+            image="BlogHomePage"
+            tag="OMS;COMMANDCENTRE"/>
+            <button id ="TabTasks_Connect_View_PrecedentLibrary"
+                    image="LookUp"
+                    tag="OMS;PRECEDENTS;MAIN" />
+            <button id ="TabTasks_Connect_View_ContactManager"
+                    image="AddressBook"
+                    tag="OMS;CONTACTMANAGER" />
+
+            <menuSeparator id="TabTasks_Connect_ViewMenu_Sep1"/>
+
+            <button id ="TabTasks_Connect_View_OpenDocument"
+                    image="FileOpen"
+                    tag="OMS;OPENDOCUMENT" />
+
+          </menu>
+
+
+          <splitButton id="TabTasks_Connect_SaveButtons" size="normal">
+            <menu id="TabTasks_Connect_SaveButtonsMenu">
+              <button
+              id="TabTasks_Connect_SaveButtonsMenu_SaveAll"
+              image="FileSave"
+              tag="OMS;SAVEALLEX"/>
+              <button
+              id="TabTasks_Connect_SaveButtonsMenu_FileIt"
+              image="CreateMailRule"
+              tag="OMS;FILEALL"/>
+            </menu>
+          </splitButton>
+
+        </group>
+      </tab>
+
+      <!--TabContacts-->
+
+      <tab idMso="TabContacts" visible="true" >
+        <group id="TabContacts_Connect" insertBeforeMso="GroupContactsNew" visible="true" getLabel="GetLogonLabel">
+
+          <button
+              id="TabContacts_Connect_Connect"
+              getImage="GetConnectImage"
+              tag="ADDIN;CONNECT"/>
+
+          <separator id="TabContacts_Connect_Sep1" visible="false"/>
+
+          <menu id="TabContacts_Connect_CreateMenu"
+            size="normal"
+            image="QueryShowTable">
+
+            <button id="TabContacts_Connect_Create_AssocEmail"
+image="AttachItem"
+tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>
+            <button id="TabContacts_Connect_Create_ClientEmail"
+            image="AttachItem"
+            tag="OMS;TEMPLATESTART;EMAIL;CLIENT"/>
+
+            <menuSeparator id="TabContacts_Connect_CreateMenu_Sep1"/>
+
+            <button id="TabContacts_Connect_Create_AssocLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;ASSOC"/>
+            <button id="TabContacts_Connect_Create_ClientLetter"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;TEMPLATESTART;LETTERHEAD;CLIENT"/>
+
+            <menuSeparator id="TabContacts_Connect_CreateMenu_Sep2"/>
+
+            <button id="TabContacts_Connect_Create_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;NEWFILE;MODELESS"/>
+            <button id="TabContacts_Connect_Create_Time"
+            image="StartAfterPrevious"
+            tag="SCRIPT;NEWTIME"/>
+            <button
+             id="TabContacts_Connect_Create_AddTask"
+             image="FilePrepareMenu"
+             tag="SCRIPT;NEWOMSTASK"/>
+            <button
+              id="TabContacts_Connect_Create_AddAppointment"
+              image="ViewAllProposals"
+              tag="SCRIPT;NEWAPPOINTMENT"/>
+          </menu>
+          <menu id="TabContacts_Connect_ViewMenu"
+          size="normal"
+          image="DocumentMapReadingView">
+            <button id="TabContacts_Connect_View_Client"
+            image="AccessTableContacts"
+            tag="OMS;CLIENTINFO"/>
+            <button id="TabContacts_Connect_View_Matter"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;FILEINFO"/>
+            <button id="TabContacts_Connect_View_Command"
+            image="BlogHomePage"
+            tag="OMS;COMMANDCENTRE"/>
+            <button id ="TabContacts_Connect_View_PrecedentLibrary"
+                    image="LookUp"
+                    tag="OMS;PRECEDENTS;MAIN" />
+            <button id ="TabContacts_Connect_View_ContactManager"
+                    image="AddressBook"
+                    tag="OMS;CONTACTMANAGER" />
+
+            <menuSeparator id="TabContacts_Connect_ViewMenu_Sep1"/>
+
+            <button id ="TabContacts_Connect_View_OpenDocument"
+                    image="FileOpen"
+                    tag="OMS;OPENDOCUMENT" />
+
+          </menu>
+
+
+          <splitButton id="TabContacts_Connect_SaveButtons" size="normal">
+            <menu id="TabContacts_Connect_SaveButtonsMenu">
+              <button
+              id="TabContacts_Connect_SaveButtonsMenu_SaveAll"
+              image="FileSave"
+              tag="OMS;SAVEALLEX"/>
+              <button
+              id="TabContacts_Connect_SaveButtonsMenu_FileIt"
+              image="CreateMailRule"
+              tag="OMS;FILEALL"/>
+            </menu>
+          </splitButton>
+
+        </group>
+
+      </tab>
+
+      <!--TabSendReceive-->
+      <tab idMso="TabSendReceive" visible="true">
+        <group id="TabSendReceive_Send" insertAfterMso="GroupSendReceive">
+          <button id="TabSendReceive_Send_Outbox"
+                  imageMso="SendAll"
+                  tag="ADDIN;SENDOUTBOX" />
+        </group>
+      </tab>
+      
+      <!--TabOMS-->
+      <tab id="TabOMS">
+
+        <!--View Menu-->
+        <group id="TabOMS_View" >
+          <button
+            id="TabOMS_View_CommandCentre"
+            image="BlogHomePage"
+            tag="OMS;COMMANDCENTRE"/>
+          <separator id="TabOMS_View_Sep1"/>
+          <button
+            id="TabOMS_View_ContactManager"
+            image="AddressBook"
+            tag="OMS;CONTACTMANAGER"/>
+          <separator id="TabOMS_View_Sep2"/>
+          <button
+            id="TabOMS_View_ShowClient"
+            image="AccessTableContacts"
+            tag="OMS;CLIENTINFO"/>
+          <button
+            id="TabOMS_View_ShowFile"
+            image="FormulaMoreFunctionsMenu"
+            tag="OMS;FILEINFO"/>
+          <separator id="TabOMS_View_Sep3"/>
+          <splitButton id="TabOMS_View_PrecedentLibrary_Split">
+            <menu id="TabOMS_View_PrecedentLibrary_Menu">
+              <button
+                 id="TabOMS_View_PrecedentLibrary"
+                 image="LookUp"
+                 tag="OMS;PRECEDENTS;MAIN"/>
+              <button
+                 id="TabOMS_View_PrecedentLibrary_Quick"
+                 image="LookUp"
+                 tag="OMS;PRECEDENTS;QUICK"/>
+            </menu>
+          </splitButton>
+
+          <button
+            id="TabOMS_View_JobList"
+            image="RecurrenceEdit"
+            tag="SCRIPT;VIEWJOBLIST"/>
+          <button
+            id="TabOMS_View_MilestoneInfo"
+            image="FormatNumberDefault"
+            tag="OMS;FILEINFO;SCRFILMSTAD"/>
+          <button
+            id="TabOMS_View_UFNInformation"
+            image="TableSelectCell"
+            tag="OMS;UFNINFORMATION"/>
+        </group>
+
+
+        <!--Create Group-->
+        <group id="TabOMS_Create">
+          <menu id="TabOMS_Create_NewMenu"
+            size="large"
+            image="QueryShowTable">
+            <button
+            id="TabOMS_Create_New_File"
+            image="FormulaMoreFunctionsMenu+"
+            tag="OMS;NEWFILE;MODELESS"/>
+            <button
+            id="TabOMS_Create_New_Contact"
+            image="BusinessCardInsertMenu"
+            tag="OMS;CREATECONTACT;MODELESS"/>
+            <button
+            id="TabOMS_Create_New_Associate"
+            image="RecordsAddFromOutlook+"
+            tag="OMS;NEWASSOC;MODELESS"/>
+            <menuSeparator id="TabOMS_Create_NewMenu_Sep1"/>
+            <button
+              id="TabOMS_Create_New_Client_Standard"
+              image="DistributionListAddNewMember"
+              tag="OMS;NEWCLIENT;MODELESS"/>
+            <button
+               id="TabOMS_Create_New_Client_PreClient"
+               image="DistributionListAddNewMember+"
+               tag="OMS;NEWPRECLIENT;MODELESS"/>
+            <button
+               id="TabOMS_Create_New_Client_PreClientCorporate"
+               image="DistributionListAddNewMember+"
+               tag="OMS;CREATEPRECLIENTCORPORATE;MODELESS"/>
+            <menuSeparator id="TabOMS_Create_NewMenu_Sep2"/>
+            <button
+              id="TabOMS_Create_NewEntry_Appointment"
+              image="ViewAllProposals"
+              tag="SCRIPT;NEWAPPOINTMENT"/>
+            <button
+              id="TabOMS_Create_NewEntry_Archive"
+              image="AdpPrimaryKey"
+              tag="SCRIPT;NEWARCHIVE"/>
+            <button
+              id="TabOMS_Create_NewEntry_Complaint"
+              image="HighImportance"
+              tag="SCRIPT;NEWCOMPLAINT"/>
+            <button
+              id="TabOMS_Create_NewEntry_DocReceipt"
+              image="MasterNotesPageOrientation"
+              tag="OMS;TEMPLATESTART;RECEIPT;ASSOC"/>
+            <button
+             id="TabOMS_Create_NewEntry_KeyDate"
+             image="ViewAllProposals+"
+             tag="SCRIPT;CREATEKEYDATE"/>
+            <button
+              id="TabOMS_Create_NewEntry_Note"
+              image="MoveToFolder"
+              tag="OMS;TEMPLATESTART;FILENOTE;ASSOC"/>
+            <button
+              id="TabOMS_Create_NewEntry_SMS"
+              image="OmsSend"
+              tag="OMS;TEMPLATESTART;SMS;ASSOC"/>
+            <button
+              id="TabOMS_Create_NewEntry_Task"
+              image="FilePrepareMenu"
+              tag="SCRIPT;NEWOMSTASK"/>
+            <button
+              id="TabOMS_Create_NewEntry_Time"
+              image="StartAfterPrevious"
+              tag="SCRIPT;NEWTIME"/>
+            <button
+              id="TabOMS_Create_NewEntry_Mail"
+              image="AttachItem"
+              tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>
+          </menu>
+
+
+          <separator id="TabOMS_Create_Sep1"/>
+          <button
+            id="TabOMS_Create_New_Time"
+            image="StartAfterPrevious"
+            tag="SCRIPT;NEWTIME"/>
+          <separator id="TabOMS_Create_Sep2"/>
+          <menu id="TabOMS_Create_LettersMenu"
+                size="large"
+                image="MailMergeAddressBlockInsert">
+            <button
+              id="TabOMS_Create_Letters_ToClient"
+              image="MailMergeAddressBlockInsert#"
+              tag="OMS;TEMPLATESTART;LETTERHEAD;CLIENT"/>
+            <button
+               id="TabOMS_Create_Letters_ToAssociate"
+               image="RecordsAddFromOutlook"
+               tag="OMS;TEMPLATESTART;LETTERHEAD;ASSOC"/>
+              <menuSeparator id="TabOMS_Create_Letters_Sep1"/>
+              <button
+              id="TabOMS_Create_New_Fax"
+              image="FileInternetFax"
+              tag="OMS;TEMPLATESTART;FAX;ASSOC"/>
+              <button
+              id="TabOMS_Create_New_Memo"
+              image="CreateReportBlankReport"
+              tag="OMS;TEMPLATESTART;MEMO;ASSOC"/>
+              <button
+              id="TabOMS_Create_New_Compliment"
+              image="SlideMasterInsertLayout"
+              tag="OMS;TEMPLATESTART;COMPSLIP;ASSOC"/>
+              <menuSeparator id="TabOMS_Create_Letters_Sep2"/>
+              <button
+              id="TabOMS_Create_Letters_Picker"
+              image="MailMergeAddressBlockInsert+"
+              tag="SCRIPT;LETTERHEADPICKER"/>
+          </menu>
+          <menu
+             id="TabOMS_Create_Notes"
+			 size="large"
+             image="ReviewEditComment">
+            <button
+                  id="TabOMS_Create_Notes_AttendanceNote"
+                  image="CheckNames"
+                  tag="OMS;TEMPLATESTART;ATTNOTE;ASSOC"/>
+            <button
+                  id="TabOMS_Create_Notes_Meeting"
+                  image="MeetingsWorkspace"
+                  tag="OMS;TEMPLATESTART;MEETINGNOTE;ASSOC"/>
+            <menuSeparator id="TabOMS_Create_Notes_Sep1"/>
+            <button
+              id="TabOMS_Create_Notes_File"
+              image="MoveToFolder+"
+              tag="OMS;TEMPLATESTART;FILENOTE;ASSOC"/>
+            <menuSeparator id="TabOMS_Create_Notes_Sep2"/>
+            <button
+              id="TabOMS_Create_Notes_TelIn"
+              image="AutoDial"
+              tag="OMS;TEMPLATESTART;TELEPHONENOTEIN;ASSOC"/>
+            <button
+              id="TabOMS_Create_Notes_TelOut"
+              image="AutoDial+"
+              tag="OMS;TEMPLATESTART;TELEPHONENOTE;ASSOC"/>
+          </menu>
+          <menu
+            id="TabOMS_Create_Documents"
+			size="large"
+             image="ReadingViewShowPrintedPage">
+            <button
+              id="TabOMS_Create_Documents_Blank"
+              image="ReflectionGallery"
+              tag="OMS;TEMPLATESTART;BLANK;ASSOC"/>
+            <button
+              id="TabOMS_Create_Documents_Court"
+              image="ProtectDocument"
+              tag="OMS;TEMPLATESTART;COURTDOC;ASSOC"/>
+            <menuSeparator id="TabOMS_Create_Documents_Sep1"/>
+            <button
+            id="TabOMS_Create_FinancialDocs_Invoice"
+            image="ZoomCurrent100+"
+            tag="OMS;TEMPLATESTART;INVOICE;ASSOC"/>
+          </menu>
+        </group>
+        <!--Tools Group-->
+        <group id="TabOMS_Tools">
+
+          <button
+           id="TabOMS_Tools_UserSettings"
+           image="DirectRepliesTo"
+           tag="OMS;USERSETTINGS"/>
+          <button
+           id="TabOMS_Tools_ConflictSearch"
+           image="ZoomPrintPreviewExcel"
+           tag="SCRIPT;CONFLICTSEARCH"/>
+          <button
+          id="TabOMS_Tools_SearchTools"
+          image="ZoomPrintPreviewExcel"
+          tag="SCRIPT;ShowAdminSearches"/>
+          <menu
+          id="TabOMS_Tools_Reports"
+           image="Chart3DPieChart">
+
+            <button
+            id="TabOMS_Tools_Reports_CoreReports"
+            image="PivotChartType"
+            tag="SCRIPT;LOADCOREREPORTS"/>
+            <button
+             id="TabOMS_Tools_Reports_Time"
+             image="SlideShowRehearseTimings"
+             tag="SCRIPT;VIEWTIMEREPORT"/>
+          </menu>
+
+          <menu
+          id="TabOMS_Tools_ExternalApps"
+           image="WindowsArrangeAll">
+
+            <button
+            id="TabOMS_Tools_ExternalApps_Accounts"
+            image="WindowsArrangeAll+"
+            tag="SCRIPT;VIEWACCOUNTS"/>
+            <button
+            id="TabOMS_Tools_ExternalApps_Intranet"
+            image="WindowsArrangeAll+"
+            tag="SCRIPT;VIEWINTRANET"/>
+            <button
+            id="TabOMS_Tools_ExternalApps_Microsoft"
+            image="WindowsArrangeAll+"
+            tag="SCRIPT;VIEWMICROSOFTWEB"/>
+            <button
+            id="TabOMS_Tools_ExternalApps_ExternalApp1"
+            image="WindowsArrangeAll+"
+            tag="SCRIPT;EXTERNALAPP1"/>
+            <button
+            id="TabOMS_Tools_ExternalApps_ExternalApp2"
+            image="WindowsArrangeAll+"
+            tag="SCRIPT;EXTERNALAPP2"/>
+          </menu>
+          
+
+        </group>
+
+        <group id="TabOMS_AboutGroup">
+          <button
+            id="TabOMS_AboutGroup_About"
+            image="Help"
+            tag="OMS;ABOUT"/>
+        </group>
+        <group id="TabOMS_SearchGroup">
+          <button
+            id="TabOMS_SearchGroup_Search"
+            image="FindText"
+            tag="OMS;SEARCH"/>
+        </group>
+      </tab>
+    </tabs>
+
+  </ribbon>
+
+  <contextMenus>
+    
+    <contextMenu idMso="ContextMenuMailItem">
+      <button
+        id="mailcontext_Authorise"
+        image="ReadingViewShowPrintedPage"
+        tag="OMS;AUTHORISE" />
+      <button
+         id="mailcontext_ConfAuthorise"
+         image="ReviewAcceptChange"
+         tag="OMS;AUTHORISE;CONFIRM" />
+      <button
+         id="mailcontext_RefAuthorise"
+         image="ReviewRejectChange"
+         tag="OMS;AUTHORISE;REJECT" />
+      <menuSeparator id="mailcontext_MySeparator_Sep0" />
+
+      <button id="mailcontext_Save"
+              image="FileSave"
+              tag="OMS;SAVEALLEX"/>      
+      <button id="mailcontext_Save_As"
+              image="FileSave"
+              tag="OMS;SAVEASEX"/>      
+      <menuSeparator id="mailcontext_MySeparator_Sep1" />      
+      
+      <button
+              id="mailcontext_View_File"
+              image="FormulaMoreFunctionsMenu"
+              tag="OMS;VIEWCURRENTFILE"/>            
+      <menuSeparator id="mailcontext_MySeparator_Sep2" />
+      
+      <button id="mailcontext_View_Client"
+              image="AccessTableContacts"
+              tag="OMS;VIEWCURRENTCLIENT"/>
+      <button id="mailcontext_Detach"
+              image="InkDeleteAllInk"
+              tag="OMS;DETACHDOCVARS"/>
+      <button id="mailcontext_OMS_FileIt"
+              image="CreateMailRule"
+              tag="OMS;FILEIT"/>    
+      <menuSeparator id="mailcontext_MySeparator_Sep3" />                 
+      
+               
+      <menu id="mailcontext_Reply">                    
+              <menu id="mailcontext_Reply_Letters">
+                <button
+                  id="mailcontext_Reply_ToClient"
+                  image="MailMergeAddressBlockInsert"
+                  tag="OMS;REPLY;LETTERHEAD;CLIENT"/>
+               <button
+                  id="mailcontext_Reply_ToAssociate"
+                  image="MailMergeAddressBlockInsert"
+                  tag="OMS;REPLY;LETTERHEAD;ASSOC"/>
+             </menu>      
+                
+             <menuSeparator id="mailcontext_MySeparator_Sep4" />
+        
+
+            <menu id="mailcontext_Reply_Notes">
+              <button
+                     id="mailcontext_Reply_Notes_AttendanceNote"
+                     image="CheckNames"
+                     tag="OMS;TEMPLATESTART;ATTNOTE;ASSOC"/>
+              <button
+                     id="mailcontext_Reply_Notes_Meeting"
+                     image="MeetingsWorkspace"
+                     tag="OMS;TEMPLATESTART;MEETINGNOTE;ASSOC"/>
+              <menuSeparator id="mailcontext_MySeparator_Sep5" />
+
+              <button
+                   id="mailcontext_Reply_Notes_File"
+                   image="MoveToFolder"
+                   tag="OMS;TEMPLATESTART;FILENOTE;ASSOC"/>
+          
+              <menuSeparator id="mailcontext_MySeparator_Sep6" />
+          
+              <button
+                  id="mailcontext_Reply_Notes_TelIn"
+                  image="AutoDial"
+                  tag="OMS;TEMPLATESTART;TELEPHONENOTEIN;ASSOC"/>
+            <button
+                 id="mailcontext_Reply_Notes_TelOut"
+                 image="AutoDial"
+                 tag="OMS;TEMPLATESTART;TELEPHONENOTE;ASSOC"/>        
+            </menu>
+
+        <button
+            id="mailcontext_Reply_New_Fax"
+            image="FileInternetFax"
+            tag="OMS;TEMPLATESTART;FAX;ASSOC"/>
+
+        <button
+              id="mailcontext_Reply_NewEntry_Mail"
+              image="AttachItem"
+              tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>       
+        
+      </menu>     
+    
+      <button
+            id="mailcontext_View_DocVars"
+            image="ViewHandoutMasterView"
+            tag="OMS;SHOWDOCVARS"/>                             
+            
+    </contextMenu>
+    
+    
+    
+    
+    <contextMenu idMso="ContextMenuCalendarItem">
+      
+      <button id="calendarcontext_Save"
+              image="FileSave"
+              tag="OMS;SAVEALLEX"/>
+      <button id="calendarcontext_Save_As"
+              image="FileSave"
+              tag="OMS;SAVEAS"/>
+      <menuSeparator id="calendarcontext_MySeparator_Sep1" />            
+      <button
+              id="calendarcontext_View_File"
+              image="FormulaMoreFunctionsMenu"
+              tag="OMS;VIEWCURRENTFILE"/>
+      <menuSeparator id="calendarcontext_MySeparator_Sep2" />
+      <button id="calendarcontext_View_Client"
+             image="AccessTableContacts"
+             tag="OMS;VIEWCURRENTCLIENT"/>
+      <button id="calendarcontext_Detach"
+              image="InkDeleteAllInk"
+              tag="OMS;DETACHDOCVARS"/>
+      <menuSeparator id="calendarcontext_MySeparator_Sep3" />
+      <menu id="calendarcontext_Reply">
+        <menu id="calendarcontext_Reply_Letters">
+          <button
+            id="calendarcontext_Reply_ToClient"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;REPLY;LETTERHEAD;CLIENT"/>
+          <button
+             id="calendarcontext_Reply_ToAssociate"
+             image="MailMergeAddressBlockInsert"
+             tag="OMS;REPLY;LETTERHEAD;ASSOC"/>
+        </menu>
+        <menuSeparator id="calendarcontext_MySeparator_Sep4" />
+        <menu id="calendarcontext_Reply_Notes">
+          <button
+                 id="calendarcontext_Reply_Notes_AttendanceNote"
+                 image="CheckNames"
+                 tag="OMS;TEMPLATESTART;ATTNOTE;ASSOC"/>
+          <button
+                 id="calendarcontext_Reply_Notes_Meeting"
+                 image="MeetingsWorkspace"
+                 tag="OMS;TEMPLATESTART;MEETINGNOTE;ASSOC"/>
+          <menuSeparator id="calendarcontext_MySeparator_Sep5" />
+          <button
+               id="calendarcontext_Reply_Notes_File"
+               image="MoveToFolder"
+               tag="OMS;TEMPLATESTART;FILENOTE;ASSOC"/>
+          <menuSeparator id="calendarcontext_MySeparator_Sep6" />
+          <button
+              id="calendarcontext_Reply_Notes_TelIn"
+              image="AutoDial"
+              tag="OMS;TEMPLATESTART;TELEPHONENOTEIN;ASSOC"/>
+          <button
+               id="calendarcontext_Reply_Notes_TelOut"
+               image="AutoDial"
+               tag="OMS;TEMPLATESTART;TELEPHONENOTE;ASSOC"/>
+        </menu>
+        <button
+            id="calendarcontext_Reply_New_Fax"
+            image="FileInternetFax"
+            tag="OMS;TEMPLATESTART;FAX;ASSOC"/>
+        <button
+              id="calendarcontext_Reply_NewEntry_Mail"
+              image="AttachItem"
+              tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>
+      </menu>
+      <button
+          id="calendarcontext_View_DocVars"
+          image="ViewHandoutMasterView"
+          tag="OMS;SHOWDOCVARS"/>
+    </contextMenu>
+
+
+
+
+
+    <contextMenu idMso="ContextMenuTaskItem">
+
+      <button id="taskcontext_Save"
+              image="FileSave"
+              tag="OMS;SAVEALLEX"/>
+      <button id="taskcontext_Save_As"
+              image="FileSave"
+              tag="OMS;SAVEAS"/>
+      <menuSeparator id="taskcontext_MySeparator_Sep1" />
+      <button
+              id="taskcontext_View_File"
+              image="FormulaMoreFunctionsMenu"
+              tag="OMS;VIEWCURRENTFILE"/>
+      <menuSeparator id="taskcontext_MySeparator_Sep2" />
+      <button id="taskcontext_View_Client"
+             image="AccessTableContacts"
+             tag="OMS;VIEWCURRENTCLIENT"/>
+      <button id="taskcontext_Detach"
+              image="InkDeleteAllInk"
+              tag="OMS;DETACHDOCVARS"/>
+      <menuSeparator id="taskcontext_MySeparator_Sep3" />
+      <menu id="taskcontext_Reply">
+        <menu id="taskcontext_Reply_Letters">
+          <button
+            id="taskcontext_Reply_ToClient"
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;REPLY;LETTERHEAD;CLIENT"/>
+          <button
+             id="taskcontext_Reply_ToAssociate"
+             image="MailMergeAddressBlockInsert"
+             tag="OMS;REPLY;LETTERHEAD;ASSOC"/>
+        </menu>
+        <menuSeparator id="taskcontext_MySeparator_Sep4" />
+        <menu id="taskcontext_Reply_Notes">
+          <button
+                 id="taskcontext_Reply_Notes_AttendanceNote"
+                 image="CheckNames"
+                 tag="OMS;TEMPLATESTART;ATTNOTE;ASSOC"/>
+          <button
+                 id="taskcontext_Reply_Notes_Meeting"
+                 image="MeetingsWorkspace"
+                 tag="OMS;TEMPLATESTART;MEETINGNOTE;ASSOC"/>
+          <menuSeparator id="taskcontext_MySeparator_Sep5" />
+          <button
+               id="taskcontext_Reply_Notes_File"
+               image="MoveToFolder"
+               tag="OMS;TEMPLATESTART;FILENOTE;ASSOC"/>
+          <menuSeparator id="taskcontext_MySeparator_Sep6" />
+          <button
+              id="taskcontext_Reply_Notes_TelIn"
+              image="AutoDial"
+              tag="OMS;TEMPLATESTART;TELEPHONENOTEIN;ASSOC"/>
+          <button
+               id="taskcontext_Reply_Notes_TelOut"
+               image="AutoDial"
+               tag="OMS;TEMPLATESTART;TELEPHONENOTE;ASSOC"/>
+        </menu>
+        <button
+            id="taskcontext_Reply_New_Fax"
+            image="FileInternetFax"
+            tag="OMS;TEMPLATESTART;FAX;ASSOC"/>
+        <button
+              id="taskcontext_Reply_NewEntry_Mail"
+              image="AttachItem"
+              tag="OMS;TEMPLATESTART;EMAIL;ASSOC"/>
+      </menu>
+      <button
+          id="taskcontext_View_DocVars"
+          image="ViewHandoutMasterView"
+          tag="OMS;SHOWDOCVARS"/>
+    </contextMenu>
+
+
+    <contextMenu idMso="ContextMenuFolder">
+      <button
+             id="Foldercontext_View_Client"
+             image="AccessTableContacts"
+             tag="ADDIN;F_CONTEXTVIEWCLIENT"/>
+      <button
+             id="Foldercontext_View_File"
+             image="FormulaMoreFunctionsMenu"
+             tag="ADDIN;F_CONTEXTVIEWFILE"/>
+      <button
+             id="Foldercontext_View_Associates"
+             image="Search"
+             tag="ADDIN;F_CONTEXTVIEWASSOCIATES"/>
+      <button
+             id="Foldercontext_Set_as_Folder"
+             image="ChangeFolderDownloadSettings"
+             tag="ADDIN;SETPROFILEDFOLDER"/>
+    </contextMenu>
+  </contextMenus>
+</customUI>

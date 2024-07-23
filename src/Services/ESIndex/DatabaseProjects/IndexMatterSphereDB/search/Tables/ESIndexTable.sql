@@ -1,0 +1,15 @@
+﻿CREATE TABLE search.ESIndexTable (
+	ESIndexTableId SMALLINT NOT NULL
+	, ESIndexId SMALLINT NOT NULL 
+	, ObjectType NVARCHAR (100) NOT NULL
+	, tablename NVARCHAR (128) NOT NULL
+	, pkFieldName NVARCHAR(128)
+	, summaryTemplate NVARCHAR(128)
+	, FullCopyRequired BIT NULL CONSTRAINT DF_ESIndex_FullCopyRequired DEFAULT 1
+	, IndexingEnabled BIT NULL CONSTRAINT DF_ESIndex_IndexingEnabled DEFAULT 0
+	, IsDefault BIT NOT NULL CONSTRAINT DF_ESIndexIsDefault DEFAULT 0
+, CONSTRAINT [PK_ESIndexTable] PRIMARY KEY CLUSTERED (ESIndexTableId ASC)
+, CONSTRAINT [FK_ESIndexTable_EsIndex] FOREIGN KEY (ESIndexId) REFERENCES search.ESIndex (ESIndexId) NOT FOR REPLICATION,
+
+);
+

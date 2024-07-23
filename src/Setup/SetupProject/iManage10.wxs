@@ -1,0 +1,125 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="iManageWork10Shell" Name="iManageWork10.Shell" />
+    </DirectoryRef>
+
+    <ComponentGroup Id="CG_iManageWork10" Directory="INSTALLDIR">
+      <Component Id="cmp4B38FFA6B8D8325C6C8A71B195BE7933" Guid="{33B84BE9-55E8-4320-B120-17C2F33DE0A8}">
+        <File Id="iManageWork10.Integration.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Integration.dll" />
+      </Component>
+      <Component Id="cmp6D461CDF5CFF805B24794DEACEA749B3" Guid="{45ED4A31-7691-4BFF-ACE9-5C20C4FCC04B}">
+        <File Id="iManageWork10.Shell.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell.dll" />
+      </Component>
+      <Component Id="cmp5B2D79B1BED7E8CDA9FB200D525291CB" Guid="{9AEF78C8-7E33-42F8-A36C-DA71836EC460}">
+        <File Id="iManageWork10HostRestApi.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10HostRestApi.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_iManageWork10_Shell" Directory="iManageWork10Shell">
+      <Component Id="cmp2D70B1AFF0F7CB1046204CCF5075975C" Guid="{BBED1C78-3FB0-4903-A495-89C4319E5CB1}">
+        <File Id="Analytics.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\Analytics.dll" />
+      </Component>
+      <Component Id="cmpBD452E077282C0671C4B419907EDEDC5" Guid="{A3F8A874-F02C-4D2C-88C1-8ADDE3D96C45}">
+        <File Id="ARSoft.Tools.Net.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\ARSoft.Tools.Net.dll" />
+      </Component>
+      <Component Id="cmp7FED60E9C27373D4F03AC23034A0743C" Guid="{3BC717D1-AAB4-4728-A1E6-F0321D23A82E}">
+        <File Id="BouncyCastle.Crypto.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\BouncyCastle.Crypto.dll" />
+      </Component>
+      <Component Id="cmpA15CD2604452BF4FABBB493E4B3FE487" Guid="{4C6B85D5-CD5B-4532-B92C-D55EF8BFAEF2}">
+        <File Id="DocumentFormat.OpenXml.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\DocumentFormat.OpenXml.dll" />
+      </Component>
+      <Component Id="cmp37904249FD046D35BC9AC2CCF81C2984" Guid="{A277E531-D005-4DB0-B11B-3E7C0F06B17C}">
+        <File Id="iManage.Common.LocalizableRes.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iManage.Common.LocalizableRes.dll" />
+      </Component>
+      <Component Id="cmp49807AEDBD00BDAECF612801B4E22B9B" Guid="{BE39AEF0-FDA4-4383-A3BB-DEE5DACB76A8}">
+        <File Id="iManage.Utilities.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iManage.Utilities.dll" />
+      </Component>
+      <Component Id="cmpDB6B01DF53532F23BB7EE5DF2B84EB52" Guid="{46C06816-9FF5-4D15-919C-8303ED7A71E9}">
+        <File Id="iManage.WorkOfficeAddIn.Patcher.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iManage.WorkOfficeAddIn.Patcher.dll" />
+      </Component>
+      <Component Id="cmp39F888EEC960F07A226D830A34F4BC98" Guid="{18C3951A-C088-4E13-AC75-C8BD08A24140}">
+        <File Id="iManage.WorkOfficeAddinRes.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iManage.WorkOfficeAddinRes.dll" />
+      </Component>
+      <Component Id="cmp4119B96B4145D0B763019EE5E6E35945" Guid="{65C4E791-476F-430A-B184-C5C2F4C3592A}">
+        <File Id="IManExtNet.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\IManExtNet.dll" />
+      </Component>
+      <Component Id="cmp3CD3F108462A262AC30EC645876614A8" Guid="{D9E18C81-F8BE-4F61-8657-75DEB4375F47}">
+        <File Id="Interop.Acrobat.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\Interop.Acrobat.dll" />
+      </Component>
+      <Component Id="cmp8DB5A8D599ED4742C197B816D12D7090" Guid="{155AF85A-913E-49E4-A96B-7CE9B7031C28}">
+        <File Id="iwAddinInterfaces.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwAddinInterfaces.dll" />
+      </Component>
+      <Component Id="cmpEFB39755D71E71063F023D408873A228" Guid="{50EE9BD6-7EB8-453A-A3D4-9AD8DCCB0BC6}">
+        <File Id="iwAddinObjects.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwAddinObjects.dll" />
+      </Component>
+      <Component Id="cmp78C426534C4CC3DD0EE851B85BE6F536" Guid="{B7E091A6-F1E3-4893-A25D-ACF2830E293C}">
+        <File Id="iwADFS.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwADFS.dll" />
+      </Component>
+      <Component Id="cmpA238A7DE411632DEC9DB12D4E566A10B" Guid="{054F7C06-6204-4723-8620-E64D7688507D}">
+        <File Id="iwCoauthorExt.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwCoauthorExt.dll" />
+      </Component>
+      <Component Id="cmp4C9C59CBA9A45A6F1D97216870096729" Guid="{E722AC7F-AFCF-49EF-920C-CBFAAE1973FD}">
+        <File Id="iwCommands.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwCommands.dll" />
+      </Component>
+      <Component Id="cmpC9B15F60E9FCED5F0324D11DB0C1A7AB" Guid="{77AEA155-8601-40FC-BB35-69A002ED2C30}">
+        <File Id="iwCommandsRes.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwCommandsRes.dll" />
+      </Component>
+      <Component Id="cmp84D8EEB4F34346DD23B50AFC3D6EFD0D" Guid="{F0D3295C-6643-4EA8-BD9B-39022935FE7C}">
+        <File Id="iwCommandUtilities.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwCommandUtilities.dll" />
+      </Component>
+      <Component Id="cmp67D95C2BF7AFB05FA7A7C98C2BD0C1EC" Guid="{A25A8D4A-7621-464E-801A-F2F086DF819B}">
+        <File Id="iwExtensibility.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwExtensibility.dll" />
+      </Component>
+      <Component Id="cmpEEF6E53343E31A052F9795387E69EEC9" Guid="{4CF891C8-EA98-4A4D-B1A2-7BFEAF84F2B9}">
+        <File Id="iwForms.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwForms.dll" />
+      </Component>
+      <Component Id="cmp56B176E565BE9BADDDAB5EFD03B57BDE" Guid="{5284DF4A-C63D-41B8-A962-499279BE948A}">
+        <File Id="iwhost.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwhost.dll" />
+      </Component>
+      <Component Id="cmp4E812C8011868B2657F7BC118EA7AD7C" Guid="{22981B6E-390F-4BE0-B098-71913E875FE8}">
+        <File Id="iwIntegratedAppObjects.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwIntegratedAppObjects.dll" />
+      </Component>
+      <Component Id="cmp249CD77EB1342AE77B113FC52ABA5E78" Guid="{9FCB152F-FD4A-4F26-BB95-15B5A454D6E6}">
+        <File Id="IWInterfaces.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\IWInterfaces.dll" />
+      </Component>
+      <Component Id="cmpB266079DA6194AE1C2A056A93287B346" Guid="{788FBCA5-618A-4CD4-A0D4-BA74EE5AD3D1}">
+        <File Id="iwObjects.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwObjects.dll" />
+      </Component>
+      <Component Id="cmp0FE4EA82B40B8E9E229092E999097237" Guid="{FE7FCD1F-4E04-42E0-B030-627FF7217DCF}">
+        <File Id="iwPortable.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwPortable.dll" />
+      </Component>
+      <Component Id="cmpAB944CFEDF64F9FF1135183997E6DF90" Guid="{9B7373DB-AADE-43F3-8ADE-C09AC4C33248}">
+        <File Id="iwRestServices.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwRestServices.dll" />
+      </Component>
+      <Component Id="cmpB6E0C2EBA288DA32032CE2ED5E4E1D68" Guid="{1095203D-6081-40AC-A6AE-47F25C404AF9}">
+        <File Id="iwto.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwto.dll" />
+      </Component>
+      <Component Id="cmpA913107F0FD8926E42F53E5F80A13CFD" Guid="{7AD12E2E-2374-450A-ACF8-8F7B922E080F}">
+        <File Id="iwZipHttpServer.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\iwZipHttpServer.dll" />
+      </Component>
+      <Component Id="cmpDC62243A056F75EF10EEC7D72A344711" Guid="{42084272-D6A7-4034-AFBF-5CA981CB4D67}">
+        <File Id="JetBrains.Profiler.Windows.Api.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\JetBrains.Profiler.Windows.Api.dll" />
+      </Component>
+      <Component Id="cmpDB8B93E3B3D73EAF03593992DB082D34" Guid="{FBF5A108-C522-4F2D-84F7-48BDB272BA5C}">
+        <File Id="JetBrains.Profiler.Windows.SelfApi.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\JetBrains.Profiler.Windows.SelfApi.dll" />
+      </Component>
+      <Component Id="cmp6B59C5953D98278C585ADCA552F00C29" Guid="{B0BA809A-9ECA-4ACC-B67A-42FC8B902625}">
+        <File Id="log4net.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\log4net.dll" />
+      </Component>
+      <Component Id="cmpCBAC14FEE95873270BEEB4B1D2C440CA" Guid="{920D26BA-7C16-45D4-B742-970F112E25CA}">
+        <File Id="Mono.Net.HttpListener.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\Mono.Net.HttpListener.dll" />
+      </Component>
+      <Component Id="cmp7437F1253C95FFA42AADF37656540B64" Guid="{B1F8BD39-861B-4C65-8139-5F4B6DCAB1B8}">
+        <File Id="Mono.Security.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\Mono.Security.dll" />
+      </Component>
+      <Component Id="cmp31202FBBBF3B1308E846F4B0048FBBD7" Guid="{9E4F2B26-3A34-4667-BBF7-38CD4270B9F6}">
+        <File Id="System.Runtime.InteropServices.APIs.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\System.Runtime.InteropServices.APIs.dll" />
+      </Component>
+      <Component Id="cmpC2F05953BAAFADFEC86827FC458F456A" Guid="{B9D86AEB-14F2-4BE8-889D-D1348FED6D15}">
+        <File Id="System.Windows.Forms.TreeListView.dll" KeyPath="yes" Source="$(var.SourceDir)\iManageWork10.Shell\System.Windows.Forms.TreeListView.dll" />
+      </Component>
+    </ComponentGroup>
+
+  </Fragment>
+</Wix>

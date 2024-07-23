@@ -1,0 +1,50 @@
+﻿:root {
+    --elite_light_lavender: #FAF7FF;
+    --elite_primary_200: #D6BBFB;
+    --elite_bright_purple_400: #5F01C6;
+    --elite_purple_500: #412280;
+    --elite_dark_purple_800: #25114C;
+    --elite_deep_purple_900: #100128;
+}
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Verdana,"Helvetica Neue",Arial,sans-serif
+}
+
+.header {
+    background-color: white;
+    color: #666666;
+    border-bottom: 1px solid #b4b4b4;
+}
+
+.nav {
+    background-color: var(--elite_deep_purple_900);
+}
+
+.nav__item > a {
+    background-color: var(--elite_deep_purple_900);
+}
+
+.nav__item > a:hover, .nav__item > a:active, .nav__item > a:focus {
+    background-color: var(--elite_purple_500);
+    text-decoration: none;
+}
+
+.nav__item > a:active {
+    background-color: var(--elite_bright_purple_400);
+}
+
+.button--elite {
+    background: var(--elite_bright_purple_400);
+    color: var(--elite_light_lavender);
+}
+
+.button--elite:hover {
+    background: var(--elite_primary_200);
+    color: var(--elite_deep_purple_900);
+}
+
+.button--elite:active {
+    outline: 2px solid var(--elite_bright_purple_400);
+    outline-offset: 2px;
+}

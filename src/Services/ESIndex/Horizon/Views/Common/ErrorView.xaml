@@ -1,0 +1,60 @@
+﻿<Window x:Class="Horizon.Views.Common.ErrorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Horizon.Views.Common"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:common="clr-namespace:Horizon.ViewModels.Common"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=common:ErrorViewModel}"
+        Title="Error"
+        WindowStartupLocation="CenterOwner"
+        Height="200"
+        Width="350"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        ShowInTaskbar="False"
+        MinHeight="198"
+        MinWidth="344">
+    <Border Background="White"
+            BorderBrush="{StaticResource EliteBrightPurple}"
+            BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Background="{StaticResource EliteDarkGray}" MouseDown="Grid_MouseDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Error" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+                <Button
+                    Grid.Column="1"
+                    Width="20"
+                    Height="20"
+                    Margin="5"
+                    Padding="0"
+                    Command="{Binding CloseCommand}"
+                    ToolTip="Close">
+                    <Button.Content>
+                        <materialDesign:PackIcon
+                            Width="15"
+                            Height="15"
+                            VerticalAlignment="Center"
+                            Kind="Close" />
+                    </Button.Content>
+                </Button>
+            </Grid>
+            <ScrollViewer Grid.Row="1" Margin="20" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <TextBlock
+                       Text="{Binding ErrorMessage}"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap" />
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</Window>

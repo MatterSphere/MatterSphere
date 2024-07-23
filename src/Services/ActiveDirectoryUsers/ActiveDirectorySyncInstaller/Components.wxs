@@ -1,0 +1,32 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="MsAdUsersSyncService.Service" Directory="INSTALLFOLDER">
+      <File Id="MsAdUsersSyncService.exe" Source="$(MsAdUsersSyncService.TargetDir)\MsAdUsersSyncService.exe" KeyPath="yes" />
+      <File Id="MsAdUsersSyncService.exe.config" Source="$(MsAdUsersSyncService.TargetDir)\MsAdUsersSyncService.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSphereADSyncService"
+                      DisplayName="3E MatterSphere ADSync Service"
+                      Description="The 3E MatterSphere ADSync Service runs to automatically update the Active Directory Groups and any sub groups."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" 
+                      Arguments="-displayname &quot;3E MatterSphere ADSync Service&quot; -servicename &quot;3EMatterSphereADSyncService&quot;" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSphereADSyncService"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="MsAdUsersSyncService.Dependencies" Guid="{D5B2720A-BB04-46FA-ABB9-DDA7C30C3748}" Directory="INSTALLFOLDER">
+      <File Source="$(MsAdUsersSyncService.ProjectDir)\ADSync.Config.txt" />
+      <File Source="$(MsAdUsersSyncService.TargetDir)\Topshelf.dll" />
+      <File Source="$(MsAdUsersSyncService.TargetDir)\Nancy.dll" />
+      <File Source="$(MsAdUsersSyncService.TargetDir)\Nancy.Hosting.Self.dll" />
+      <File Source="$(MsAdUsersSyncService.TargetDir)\Install.cmd" />
+      <File Source="$(MsAdUsersSyncService.TargetDir)\Uninstall.cmd" />
+    </Component>
+  </Fragment>
+
+</Wix>

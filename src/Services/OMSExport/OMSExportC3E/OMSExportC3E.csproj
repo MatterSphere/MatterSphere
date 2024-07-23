@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{256398D8-18C7-4BBB-84A4-1FD6CAA63F12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FWBS.OMS.OMSEXPORT</RootNamespace>
+    <AssemblyName>OMSExportC3E</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\MatterSphereKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.15.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.15.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\ServicesAssemblyInfo.cs">
+        <Link>Properties\ServicesAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\MSProductInfo.cs">
+        <Link>Properties\MSProductInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\OMSExportE3E\ResetFlagCommands\IResetNeedExportFlagCommand.cs">
+      <Link>ResetFlagCommands\IResetNeedExportFlagCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\OMSExportE3E\ResetFlagCommands\ResetNeedExportFlagForClientCommand.cs">
+      <Link>ResetFlagCommands\ResetNeedExportFlagForClientCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\OMSExportE3E\ResetFlagCommands\ResetNeedExportFlagForContactCommand.cs">
+      <Link>ResetFlagCommands\ResetNeedExportFlagForContactCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\OMSExportE3E\ResetFlagCommands\ResetNeedExportFlagForMatterCommand.cs">
+      <Link>ResetFlagCommands\ResetNeedExportFlagForMatterCommand.cs</Link>
+    </Compile>
+    <Compile Include="ApiRequester.cs" />
+    <Compile Include="ITokenStorageProvider.cs" />
+    <Compile Include="Models\BaseResponse.cs" />
+    <Compile Include="Models\FindInvoiceAttachmentAttribute.cs" />
+    <Compile Include="Models\FindInvoiceAttachmentRequest.cs" />
+    <Compile Include="Models\FindMatterAttribute.cs" />
+    <Compile Include="Models\FindMatterRequest.cs" />
+    <Compile Include="Models\GetClientResponse.cs" />
+    <Compile Include="Models\FindClientAttribute.cs" />
+    <Compile Include="Models\FindClientRequest.cs" />
+    <Compile Include="Models\FindContactRequest.cs" />
+    <Compile Include="Models\FindContactAttribute.cs" />
+    <Compile Include="Models\FindGenericRequest.cs" />
+    <Compile Include="Models\FindGenericResponse.cs" />
+    <Compile Include="Models\GenericResponse.cs" />
+    <Compile Include="Models\GetMatterResponse.cs" />
+    <Compile Include="Models\GetMeResponse.cs" />
+    <Compile Include="Models\GetNBISearchResponse.cs" />
+    <Compile Include="Models\GetUserResponse.cs" />
+    <Compile Include="Models\InfoResponse.cs" />
+    <Compile Include="Models\TokenResponse.cs" />
+    <Compile Include="OMSExportC3E.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\XmlToJson.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OMSDocumentStorer\OMSDocumentStorer.csproj">
+      <Project>{bfe9fadb-6685-453e-ab79-1c7476053260}</Project>
+      <Name>OMSDocumentStorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OMSExportBase\OMSExportBase.csproj">
+      <Project>{b4176477-4dbb-4831-b218-12edaebe3dfd}</Project>
+      <Name>OMSExportBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="XSLT\Client.xslt" />
+    <EmbeddedResource Include="XSLT\CostCard.xslt" />
+    <EmbeddedResource Include="XSLT\Matter.xslt" />
+    <EmbeddedResource Include="XSLT\OrgContact.xslt" />
+    <EmbeddedResource Include="XSLT\PersContact.xslt" />
+    <EmbeddedResource Include="XSLT\Time.xslt" />
+    <EmbeddedResource Include="XSLT\NBISearch.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\MatterSphereKey.snk">
+      <Link>MatterSphereKey.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).*" "$(SolutionDir)OMSExportService\bin\$(ConfigurationName)\" /c /y
+xcopy "$(TargetDir)Newtonsoft.Json.dll" "$(SolutionDir)OMSExportService\bin\$(ConfigurationName)\" /c /y
+xcopy "$(TargetDir)RestSharp.dll" "$(SolutionDir)OMSExportService\bin\$(ConfigurationName)\" /c /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

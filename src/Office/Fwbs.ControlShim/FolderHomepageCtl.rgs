@@ -1,0 +1,24 @@
+HKCR
+{
+	FolderHomepageControlShim.FolderHomepage = s 'FolderHomepageCtl Class'
+	{
+		CLSID = s '{B9C8117E-C13B-4ff5-BF75-03BE75EB7FE5}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B9C8117E-C13B-4ff5-BF75-03BE75EB7FE5} = s 'FolderHomepageCtl Class'
+		{
+			ProgID = s 'FolderHomepageControlShim.FolderHomepage'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Control'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+		}
+	}
+}

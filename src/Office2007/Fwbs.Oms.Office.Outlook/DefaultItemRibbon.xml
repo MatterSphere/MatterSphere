@@ -1,0 +1,222 @@
+﻿<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui"  xmlns:oms='http://schemas.fwbs.net/oms/2006/11/omsui' onLoad="OnLoad" loadImage="GetImage">
+     
+  <ribbon>
+    <tabs>
+
+      <tab idMso="TabAppointment" visible ="true" oms:RibbonIDRegEx ="Microsoft.Outlook.Appointment$">
+        <group id="TabAppointment_OMS" insertBeforeMso ="GroupSend">
+          <button
+          id="TabAppointment_OMS_Save"
+          image="FileSave"
+          tag="OMS;SAVE"/>
+          <button
+           id="TabAppointment_OMS_SaveAs"
+           image="FileSave"
+           tag="OMS;SAVEAS"/>
+        </group>
+        </tab>
+
+      <tab idMso="TabTask"  visible ="true" oms:RibbonIDRegEx ="Microsoft.Outlook.Task$">
+        <group id="TabTask_OMS" insertBeforeMso ="GroupSend">
+          <button
+          id="TabTask_OMS_Save"
+          image="FileSave"
+          tag="OMS;SAVE"/>
+          <button
+         id="TabTask_OMS_SaveAs"
+         image="FileSave"
+         tag="OMS;SAVEAS"/>
+        </group>
+      </tab>
+
+      <tab idMso="TabNewMailMessage" visible ="true" oms:RibbonIDRegEx="Microsoft.Outlook.Mail.Compose$">
+        <group id="TabNewMailMessage_OMS" insertBeforeMso ="GroupSend">
+          <button
+           id="TabNewMailMessage_OMS_SaveAndSend"
+           image="FileSave"
+           tag="OMS;SAVESENDITEM"/>
+          <button
+           id="TabNewMailMessage_OMS_SaveAsPrec"
+           image="FormPublish"
+           tag="OMS;SAVEASPREC"/>
+        </group>
+      </tab>
+
+      <tab idMso="TabReadMessage" visible="true" oms:RibbonIDRegEx="Microsoft.Outlook.Mail.Read$">
+        <group id="TabReadMessage_OMS" insertBeforeMso ="GroupRespond">
+          <button
+          id="TabReadMessage_OMS_Save"
+          image="FileSave"
+          tag="OMS;SAVE"/>
+          <button
+         id="TabReadMessage_OMS_SaveAs"
+         image="FileSave"
+         tag="OMS;SAVEAS"/>
+          <button
+            id="TabReadMessage_OMS_FileIt"
+            image="CreateMailRule"
+            tag="OMS;FILEIT"/>
+        </group>
+      </tab>
+      
+          <!--Current Document-->
+      <tab id="TabOMSDocument">
+        
+        <!--Tools Menu-->
+        <group id="TabOMSDocument_Tools">
+
+          <button 
+            id="TabOMSDocument_Tools_SaveAsPrec"  
+            image="FormPublish"
+            tag="OMS;SAVEASPREC"/>
+          <button 
+            id="TabOMSDocument_Tools_SaveAs"  
+            image="FileSave"
+            tag="OMS;SAVEAS"/>
+          <button 
+           id="TabOMSDocument_Tools_Save"  
+           image="FileSave"
+           tag="OMS;SAVE"/>
+          <button 
+            id="TabOMSDocument_Tools_SaveAndSend"  
+            image="FileSave"
+            tag="OMS;SAVESENDITEM"/>          
+
+
+          <separator id="TabOMSDocument_Tools_Sep1"/>
+          <button 
+            id="TabOMSDocument_Tools_DetachVars"  
+            image="InkDeleteAllInk"
+            tag="OMS;DETACHDOCVARS"/>
+          <button 
+            id="TabOMSDocument_Tools_FileIt"  
+            image="CreateMailRule"
+            tag="OMS;FILEIT"/>
+          <button 
+            id="TabOMSDocument_Tools_Authorise"  
+            image="ReadingViewShowPrintedPage"
+            tag="OMS;AUTHORISE"/>
+          <button
+             id="TabOMSDocument_Tools_ConfAuthorise"
+             image ="ReviewAcceptChange"
+             tag="OMS;AUTHORISE;CONFIRM"
+             size="normal"
+            />
+          <button
+             id="TabOMSDocument_Tools_RefAuthorise"
+             image ="ReviewRejectChange"
+             tag="OMS;AUTHORISE;REJECT"
+             size="normal"
+            />
+        </group>
+
+        <!--View Menu-->
+        <group id="TabOMSDocument_View">
+
+          <!--<labelControl 
+            id="TabOMSDocument_View_FileInfo" 
+            tag="OMS;VIEWCURRENTFILE"/>-->
+          <button 
+            id="TabOMSDocument_View_Client" 
+            image="AccessTableContacts"
+            tag="OMS;VIEWCURRENTCLIENT"/>
+          <button 
+              id="TabOMSDocument_View_File"  
+              image="FormulaMoreFunctionsMenu"
+              tag="OMS;VIEWCURRENTFILE"/>
+          <button 
+            id="TabOMSDocument_View_Associate"  
+            image="AccessTableContacts"
+            tag="OMS;VIEWCURRENTASSOCIATE"/>
+          <button 
+            id="TabOMSDocument_View_AssociatedDocs"  
+            image="ViewHandoutMasterView"
+            tag="ADDIN;ASSOCDOCSPANE"/>
+          <separator id="TabOMSDocument_View_Sep1"/>
+          <button 
+              id="TabOMSDocument_View_DocProps"  
+              image="PropertySheet"
+              tag="OMS;DOCPROPS"/>
+          <button 
+              id="TabOMSDocument_View_DocVars"  
+              image="ViewHandoutMasterView"
+              tag="OMS;SHOWDOCVARS"/>
+          <dialogBoxLauncher>
+            <button 
+              id="TabOMSDocument_View_DocPropToggle" 
+              tag="ADDIN;DOCPROPSPANE"        
+              />
+          </dialogBoxLauncher>
+        </group>
+
+      
+        <!--Insert Menu-->
+        <group id="TabOMSDocument_Insert">
+          <button 
+            id="TabOMSDocument_Insert_AddField"  
+            image="QueryAppend"
+            tag="OMS;ADDFIELD"/>
+          <button 
+            id="TabOMSDocument_Insert_RemoveField"  
+            image="QueryDelete"
+            tag="OMS;DELETEFIELD"/>
+          <button 
+            id="TabOMSDocument_Insert_RelinkFields"  
+            image="QueryUpdate"
+            tag="OMS;RELINKFIELDS"/>
+          <separator id="TabOMSDocument_Insert_Sep1"/>
+          <dynamicMenu 
+            id="TabOMSDocument_Insert_Precedent" 
+            getContent="GetContent"
+            image="MailMergeAddressBlockInsert"
+            tag="ADDIN;INSERTPRECEDENT"/>
+          <button 
+            id="TabOMSDocument_Insert_PrecedentLibrary"  
+            image="LookUp"
+            tag="OMS;PRECEDENTS;ACTIVE"/>
+          <separator id="TabOMSDocument_Insert_Sep2"/>
+          <button 
+              id="TabOMSDocument_Insert_AttachCC"  
+              image="DistributionListAddNewMember"
+              tag="OMS;ATTACHRECIPIENT;CC"/>
+          <button 
+              id="TabOMSDocument_Insert_AttachBCC"  
+              image="ShowBcc"
+              tag="OMS;ATTACHRECIPIENT;BCC"/>
+          <button 
+            id="TabOMSDocument_Insert_AttachDoc"  
+            image="AttachFile"
+            tag="OMS;ATTACHDOC"/>
+          <button            
+           id="TabOMSDocument_Insert_AttachPDFDoc"
+           image="AttachFile"
+           tag="OMS;ATTACHPDFDOC"/>
+
+          <!--separator id="TabOMSDocument_Insert_Sep3"/-->
+          <button
+             id="TabOMSDocument_Insert_ConvertToPDF"
+             image="FileSaveAsPdfOrXps"
+             tag="OMS;CONVERTATTAPDF"/>      
+          
+          
+        </group>
+
+        <group id="TabOMSDocument_Reply">
+          <button 
+            id="TabOMSDocument_Reply_ToClient"  
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;REPLY;LETTERHEAD;CLIENT"/>
+          <button 
+            id="TabOMSDocument_Reply_ToAssociate"  
+            image="MailMergeAddressBlockInsert"
+            tag="OMS;REPLY;LETTERHEAD;ASSOC"/>
+          <separator id="TabOMSDocument_Reply_Sep1"/>
+          <button 
+              id="TabOMSDocument_Reply_Mail"
+              image="AttachItem" 
+              tag="OMS;REPLY;EMAIL;ASSOC"/>
+        </group>
+      </tab>
+      </tabs>
+  </ribbon>
+</customUI>

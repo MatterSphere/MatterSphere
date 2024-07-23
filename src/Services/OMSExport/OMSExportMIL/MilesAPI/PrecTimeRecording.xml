@@ -1,0 +1,2512 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PrecTimeRecording
+</name>
+</assembly>
+<members>
+<member name="M:Miles33.Precedent.TimeRecordingBL.MIPs.Count">
+	<summary>
+ Returns the total number of matters in the matters in progress list.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.MIPs.Item(System.Int32)">
+	<summary>
+ Returns the matters in progress object represented by the index
+ </summary>
+	<param name="Index"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.MIPs.Item(System.String)">
+	<summary>
+ Returns the matters in progress object represented by the matter ID
+ </summary>
+	<param name="matterID"></param>
+	<returns></returns>
+	<remarks>returns an exception if the matter ID does not exist in our object</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.MIPs.Contains(System.String)">
+	<summary>
+ Does our MIP list contain a specific matter ID?
+ </summary>
+	<param name="matterID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.MIPs.AddQueue(Miles33.Precedent.TimeRecordingBL.WorkingMatter)">
+	<summary>
+ Add a matter to the matters in progress list.  If the matter is already in the list
+ it is 'bumped' to the top
+ </summary>
+	<param name="WorkingMatter">working matter object - representing a current matter</param>
+	<remarks>The matter is identified by the WorkingMatter object.  The changes are automatically saved to the database.</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.MIPs.GetData">
+	<summary>
+ Populate our object with the matters in progress data for the user.
+ </summary>
+	<remarks>The lowest mip entry will be first in the list</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.MIPs.RemoveArchivedMatters">
+	<summary>
+ Remove any archived matters from the users's matters in progress list
+ </summary>
+	<remarks>It is recommend that this is periodically run to improve the performance 
+ of the MIP list</remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.MIPs">
+	<summary>
+ Represents multiple matters in progress
+ </summary>
+	<remarks>The MIPs object represents a collection of MIP objects.  Thus, the MIPs object is used to store the matters in progress for a particular user.</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.MIP.CreateRow">
+	<summary>
+ Set to true if this is a new row
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.MIP.Deleted">
+	<summary>
+ Set to true if this MIP row is to be removed from the database
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.MIP.Rank">
+	<summary>
+ The rank of the MIP record
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.MIP.MatterID">
+	<summary>
+ The Matter ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.MIP.SubNum">
+	<summary>
+ The Sub num of the client
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.MIP.MatterNum">
+	<summary>
+ The Matter number
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.MIP.ShortName">
+	<summary>
+ The short name of the relevant client
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.MIP.Description">
+	<summary>
+ The matter’s description
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.MIP">
+	<summary>
+ Represents a single matter in progress
+ </summary>
+	<remarks>The MIP object represents a matters in progress record.  MIP objects can be stored in a MIPS object.  </remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.Text">
+	<summary>
+ Returns the time value represented by the stopwatch in the format HH:MM:SS
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwActiveFlag">
+	<summary>
+ Is the stop watch active?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwPausedFlag">
+	<summary>
+ Is the stop watch paused?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwDateAction">
+	<summary>
+ Currently unused
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwStartIndex">
+	<summary>
+ Currently unused
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwStoredTime">
+	<summary>
+ Currently unused
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwWatchTime">
+	<summary>
+ Currently unused
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwHours">
+	<summary>
+ Stop watch hours
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwMins">
+	<summary>
+ Stop watch minutes
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.SwSecs">
+	<summary>
+ Stop watch seconds
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.StopWatch.StartTime">
+	<summary>
+ Sets the initial value of a stop watch
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.StopWatch.FormatText">
+	<summary>
+ Format the time as a string
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.StopWatch.SetHMS(System.String)">
+	<summary>
+ Set the Hours Mins and Seconds based upon a string
+ </summary>
+	<param name="s">The String used to set the hours mins and secs</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.StopWatch.TimeExists">
+	<summary>
+ Has time been recorded via the stopwatch?
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.StopWatch.TotalMinutes">
+	<summary>
+ Return the total number of minutes recorded via the stopwatch
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.StopWatch.ResetRunningWatch">
+	<summary>
+ Return the elapsed time between the StartTime and the 
+ current time.  The time is formatted to HH:MM:SS
+ </summary>
+	<returns>A string of the elapsed time</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.StopWatch.SetStartTime">
+	<summary>
+ Sets the start time based upon any previously recorded time.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.StopWatch.Clone(Miles33.Precedent.TimeRecordingBL.StopWatch)">
+	<summary>
+ Copy a stopwatch object
+ </summary>
+	<param name="SW">StopWatch object to clone to</param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.StopWatch">
+	<summary>
+ StopWatch object
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetLock.#ctor(Miles33.Precedent.TimeRecordingBL.TimeClient)">
+	<summary>
+ Default constructor
+ </summary>
+	<param name="timeClient"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetLock.UnlockTimesheet">
+	<summary>
+ Release the timesheet from it's psuedo lock
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetLock.LockTimesheet(System.Boolean)">
+	<summary>
+ Create the psuedo lock on the timesheet
+ </summary>
+	<param name="ignoreUserLock">If the timesheet is locked but it is locked by the current user then ignore it</param>
+	<returns></returns>
+	<remarks>An exception is generated if the timesheet is locked</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetLock.LockExists">
+	<summary>
+ Does a timesheet lock exist?
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetLock.UpdateTimesheetLock">
+	<summary>
+ Update an existing timesheet_lock row
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TimesheetLock">
+	<summary>
+ Class to control entries in the timesheet_lock table
+ </summary>
+	<remarks>The TimesheetLock class controls entries in the psuedo locking
+ table timesheet_lock</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityTypes.Item(System.Int32)">
+	<summary>
+ Returns the activity type represented by the index
+ </summary>
+	<param name="Index"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityTypes.Item(System.String)">
+	<summary>
+ Returns the activity type represented by the activityType parameter, which will be an activity type.
+ </summary>
+	<param name="activityType"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityTypes.Count">
+	<summary>
+ Returns the total number of activities in the collection
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityTypes.ReturnNonChargeableActivities">
+	<summary>
+ Returns an object containing all of the non-chargeable activities from
+ this object
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityTypes.ReturnChargeableActivitiesNoSiteLitigation">
+	<summary>
+ Returns an activity types collection of just chargeable activities for use when the site
+ do not use Litigation Stages.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityTypes.ReturnChargeableActivitiesNoARS">
+	<summary>
+ Returns an activity types collection, which will contain all of the activities which do
+ not belong to any auditors rule sets.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityTypes.ReturnChargeableActivitiesARSSpecific(System.String)">
+	<summary>
+ Returns an activity types collection, which will contain all of the activities which
+ belong to the auditor rules set ARS.
+ </summary>
+	<param name="ARS"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityTypes.GetData">
+	<summary>
+ Populates the Activity types collection with all of the activities
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.ActivityTypes">
+	<summary>
+ Represents multiple activity types within the Precedent system
+ </summary>
+	<remarks>An object representing a collection of activities. This class allows the entire
+ collection of activities to be stored (via the GetData method). This data can then be
+ restricted via one of the four Return methods.</remarks>
+	<example><code>Dim AllActivityTypes As New PrecTimeRecording.ActivityTypes
+ ' Populate all of the activitytypes data
+AllActivityTypes.GetData()
+ ' Get a count of the number of activities in the system
+MsgBox("There are " + CStr(AllActivityTypes.Count) + " activitie(s)")
+ ' Get all of the non-chargeable activities
+Dim NonChargeableActivities As PrecTimeRecording.ActivityTypes
+NonChargeableActivities = AllActivityTypes.ReturnNonChargeableActivities
+ ' Get a count of the number of non-chargeable activities in the system
+ MsgBox("There are " + CStr(NonChargeableActivities.Count) + " N/C activitie(s")
+ </code></example>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.ActivityType.UsedInSort">
+	<summary>
+ Used for sorting purposes
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.ActivityType.ActivityType">
+	<summary>
+ The activity type code for this activity
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.ActivityType.Description">
+	<summary>
+ The description for this activity
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.ActivityType.Chargeable">
+	<summary>
+ Set to true if this activity is chargeable
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityType.ARSCount">
+	<summary>
+ Returns a count of the number of auditor rule sets that this activity is a member off
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ActivityType.ARSMember(System.String)">
+	<summary>
+ Returns true if the activity is a member of the Auditors Rule Set ARS
+ </summary>
+	<param name="ARS">The auditors rule set you are testing.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.ActivityType">
+	<summary>
+ This object represents an activity type
+ </summary>
+	<remarks>This object represents an activity type in the Precedent database. Activity types can
+ be grouped together in an ActivityTypes object.</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LitigationStages.Contains(System.String)">
+	<summary>
+ Does the litigation stage object contain a particular stage id
+ </summary>
+	<param name="litigationStageID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LitigationStages.ReturnLitigationStagesViaRuleSetCode(System.String)">
+	<summary>
+ Return all of the litigation stages associated with a rule set code
+ </summary>
+	<param name="RuleSetCode"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LitigationStages.ReturnLitigationStagesWithoutRuleSetCode">
+	<summary>
+ Return all of the litigation stages which are no associated with any rule set codes
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LitigationStages.GetData">
+	<summary>
+ Gets all of the litigation stage data
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.LitigationStages">
+	<summary>
+ Represents multiple litigation stages
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LitigationStage.ARS">
+	<summary>
+ Does this Litigation Stage belong to an auditors rule set
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LitigationStage.Description">
+	<summary>
+ Description
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LitigationStage.LitigationStageID">
+	<summary>
+ Litigation Stage ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LitigationStage.RuleSetCode">
+	<summary>
+ Auditors rule set code
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LitigationStage.Clone(Miles33.Precedent.TimeRecordingBL.LitigationStage)">
+	<summary>
+ Create a clone of our litigation stage object
+ </summary>
+	<param name="LitigationStage"></param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.LitigationStage">
+	<summary>
+ Litigation Stage class
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerUsers.Count">
+	<summary>
+ Returns the total number of fee earner user rows in the collection
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerUsers.Item(System.Int32)">
+	<summary>
+ Returns a Fee Earner User object represented by the index
+ </summary>
+	<param name="Index"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerUsers.Item(System.String)">
+	<summary>
+ Returns a Fee Earner User object represented by the index, where the index is a fee earner ID
+ </summary>
+	<param name="Index"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerUsers.ReturnFeeEarner(System.Int32)">
+	<summary>
+ Returns true if the fee earner indicated by FeNum is a member of the fee earner users collection.
+ </summary>
+	<param name="FeNum"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerUsers.GetData">
+	<summary>
+ Populates the fee earner user collection based upon the User's security.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.FeeEarnerUsers">
+	<summary>
+ The feeearnerusers object is a collection of feeearneruser objects. It provides a
+ collection of the fee earners for a particular user. The number of fee earners returned
+ to the object by the GetData method is dependent upon the user’s security rights.
+ </summary>
+	<remarks><example><code>Dim FEUs As New PrecTimeRecording.FeeEarnerUsers
+ Dim TSD As New PrecTimeRecording.TimeStaticData
+ ' Populate PrecTimeRecording's PrecGlobals.clsGlobals object
+ TSD.Refresh()
+ ' Get the FEU rows
+ FEUs.GetData()
+ ' Display a count of the fee earner users
+ MsgBox("The user can record time for " + FEUs.Count() + " FEs")
+ Dim a As Integer
+ Dim FEU As PrecTimeRecording.FeeEarnerUser
+ For a = 1 To FEUs.Count
+ FEU = FEUs.Item(a)
+ MsgBox(FEU.FirstName + " " + FEU.Surname)
+ Next</code></example></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.FeeEarnerUser.FeID">
+	<summary>
+ The fee earner ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.FeeEarnerUser.Title">
+	<summary>
+ The fee earner’s title
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.FeeEarnerUser.FirstName">
+	<summary>
+ The fee earner’s first name
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.FeeEarnerUser.MiddleName">
+	<summary>
+ The fee earner’s middle name
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.FeeEarnerUser.Surname">
+	<summary>
+ The fee earner’s surname
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.FeeEarnerUser">
+	<summary>
+ This object represents a fee earner user. A fee earner user ties one user id to one fee earner ID
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.TimesheetCancellationDate">
+	<summary>
+ The date to use for cancelling time/expense lines
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>If this date is left blank the software will automatically insert 
+ the current system date.</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.ShowStandardHoursWarning">
+	<summary>
+ Do we show a posting warning when the user's time is under the standard hours.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Setting this to FALSE means the time recording business layer will assume the user 
+ has already been shown the warning and has decided to continue.
+ The warning only takes affect when LeoUserParameters.PostTimeWarningError 
+ is set to 'W'</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.AbsentTimeDummy">
+	<summary>
+ Setting this flag to true bypasses some of the validation when creating a new line
+ Principally used for absent time recording.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.TimesheetNum">
+	<summary>
+ The internal Precedent timesheet num
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.FeNum">
+	<summary>
+ The fe num of the timesheet
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.LDateDue">
+	<summary>
+ The timesheet's due date
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.TimeQtyCtrl">
+	<summary>
+ Return the time on the timesheet in the format hours.mins
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.ReturnTotalMinutes(System.Boolean)">
+	<summary>
+ Return the total minutes on the timesheet
+ </summary>
+	<param name="bRestrictViaStatus">when TRUE exclude those lines pending cancellation or actually cancelled</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.ValueExpensesCtrl">
+	<summary>
+ Return the total amount of expenses
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.SuspensionFlag">
+	<summary>
+ The timesheet suspension flag.  This is based on whether the timesheet has been subject to a 
+ true 'post' and not whether items have been partially posted.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.TimeFormatCode">
+	<summary>
+ The time format code of the timesheet
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.TimeUnitsPerHour">
+	<summary>
+ Returns the number of time units per hour used on this timesheet
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.MinsPerUnit">
+	<summary>
+ The number of minutes per unit of time
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.RateType">
+	<summary>
+ The default rate type of the timesheet
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.CurrencyCode">
+	<summary>
+ The currency code used on the timesheet
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.NewSheet">
+	<summary>
+ Is this is a new timesheet?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.ValidateTimesheet(System.Boolean)">
+	<summary>
+ Validate the timesheet, raises and exception if validation fails
+ </summary>
+	<param name="suspendTimesheet">if true, validate the timesheet in suspend mode</param>
+	<remarks>Validate should always be called before the SaveData method</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.ValidateCancellationDate">
+	<summary>
+ Validate the timesheet cancellation date, will raise an exception if invalid.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.TestAccountingPeriod(System.String)">
+	<summary>
+ Ensure the accounting period has not been closed or frozen
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.SaveData(System.Boolean,System.Boolean)">
+	<summary>
+ Save the timesheet back to the database
+ </summary>
+	<param name="suspendTimesheet">set to TRUE to suspend otherwise set to FALSE to post&gt;</param>
+	<param name="partialSave">Are we performing a partial-save</param>
+	<remarks>This method is a self-contained timesheet save function within its own
+ database transaction.  All underlying time/expense items are saved as well
+ and these changes are permanent.  If an exception occurs the database transaction
+ is automatically rolled back.</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.AbandonTimesheet">
+	<summary>
+ Call when leaving the timesheet without saving
+ </summary>
+	<returns></returns>
+	<remarks>Releases the psuedo lock and any other resources</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.CountNonPostableLines">
+	<summary>
+ Count the number of lines that cannot be posted because the matter id is non-postable
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.CountNonSuspendable">
+	<summary>
+ Count the number of lines that cannot be suspended.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.CountSuspendableLines">
+	<summary>
+ Count the lines that can have a suspended action performed against them
+ </summary>
+	<returns></returns>
+	<remarks>These are lines of status NEW, SUS and pending-posting</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.Item(System.Int32)">
+	<summary>
+ Selects an item from the timesheet
+ </summary>
+	<param name="Index"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.Count">
+	<summary>
+ The total number of (expense and time) rows on the timesheet. 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.CountNonDeleted">
+	<summary>
+ The total number of (expense and time) rows on the timesheet excluding those that have
+ been deleted by the user.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.CountNonDeletedTimeLines">
+	<summary>
+ The total number of time lines that have not been deleted
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.CountNonDeletedExpenseLines">
+	<summary>
+ The total number of expense lines that have not been deleted
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.NewExpenseLine">
+	<summary>
+ Create a new expense line on the timesheet
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.NewTimeLine(System.Boolean)">
+	<summary>
+ Add a new time line to the timesheet
+ </summary>
+	<param name="AddToTimeSheet"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.Timesheet.IgnoreUserLock">
+	<summary>
+ When opening a timesheet, do we ignore a lock if the lock
+ is 'owned' by the current user
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.LoadTimesheet">
+	<summary>
+ Load an existing timesheet, if it does not exist then create one.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.PostedTimesheet">
+	<summary>
+ Has the timesheet been posted?
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.GetExpenseItems">
+	<summary>
+ Get the expense item objects for the current timesheet
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.GetTimeItems">
+	<summary>
+ Get the time item objects for the current timesheet
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.Timesheet.LitigationSuperUserAvailable">
+	<summary>
+ Is litigation super user functionality available
+ </summary>
+	<returns>TRUE - if the user/timesheet will allow the litigation super user functions</returns>
+	<remarks>This method will return true if the security item is enabled
+ and the pfw2 option 76 is fulfilled</remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.Timesheet">
+	<summary>
+ This object represents a physical timesheet.  A timesheet may contain time items and expense items.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.DeleteTimesheet.DeleteTimesheet(System.Int32)">
+	<summary>
+ Completely remove a timesheet from Precedent
+ </summary>
+	<param name="timesheetNum">The timesheet num that requires deleting</param>
+	<returns></returns>
+	<remarks>Deletion is subject to the user's security privileges</remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.DeleteTimesheet">
+	<summary>
+ An object to control timesheet deletion
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimesheetList.Count">
+	<summary>
+ Returns the total number of Tlist objects in the collection.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>One Tlist object should be created for each day in the date range.</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetList.Item(System.Int32)">
+	<summary>
+ Returns the Tlist object represented by the index
+ </summary>
+	<param name="Index"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetList.Item(System.String)">
+	<summary>
+ Returns the TList represented by the index,
+ </summary>
+	<param name="Index"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimesheetList.TimesheetTotals">
+	<summary>
+ The Tlist object representing the totals of the timesheet range.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimesheetList.StartDate">
+	<summary>
+ The start date of the time range.  The date should be in the format ‘DD-MON-YYYY’
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimesheetList.EndDate">
+	<summary>
+ The end date of the time range.  The date should be in the format ‘DD-MON-YYYY’
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimesheetList.FEID">
+	<summary>
+ The fee earner ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimesheetList.FeNum">
+	<summary>
+ The fee earner number
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetList.GetData">
+	<summary>
+ Populates the timesheet list collection with timesheet summaries for the date range.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TimesheetList">
+	<summary>
+	</summary>
+	<remarks>This object returns statistics on a date range of timesheets.  
+ For each timesheet a Tlist object summary is available.  
+ The totals for the timesheet range are also available via the TimesheetTotals attribute.</remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TList">
+	<summary>
+ A timesheet list object.  Represents totals for an individual timesheet
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatters.TimeClient">
+	<summary>
+ Current timeclient object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.#ctor(Miles33.Precedent.TimeRecordingBL.TimeClient)">
+	<summary>
+ Constructor - Creates the data for the non-chargeable contract-rate rate-type
+ </summary>
+	<param name="TimeClient"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.AddNonChargeables">
+	<summary>
+ Adds the non-chargeable and non-postable matters
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.Item(System.String)">
+	<summary>
+ Returns the working matter object represented by the matter id.
+ </summary>
+	<param name="MatterID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.Contains(System.String)">
+	<summary>
+ Does the matter ID already exist in our WorkingMatters object?
+ </summary>
+	<param name="MatterID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.Contains(System.Int32,System.Int32)">
+	<summary>
+ Does the matter already exist in our WorkingMatters object?
+ </summary>
+	<param name="SubNum"></param>
+	<param name="MatterNum"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.Item(System.Int32)">
+	<summary>
+ Returns the working matter object represented by the index
+ </summary>
+	<param name="Index">Index – an integer representing a working matter’s position in the collection.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.Count">
+	<summary>
+ Returns a count of the number of items in the working matters collection.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.Item(System.String,System.String)">
+	<summary>
+ Returns the working matter object represented by the subnum and matternum
+ </summary>
+	<param name="SubNum">SubNum – The subnum as a string</param>
+	<param name="MatterNum">MatterNum – The matternum as a string</param>
+	<returns></returns>
+	<remarks>An exception is raised if the matter cannot be found</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.LoadMatter(System.String)">
+	<summary>
+ Loads a new working matter object into the working matters collection based upon the MatterID variables.
+ </summary>
+	<param name="MatterID">MatterID – The MatterID</param>
+	<returns>the matter's WorkingMatter object</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatters.LoadMatter(System.Int32,System.Int32)">
+	<summary>
+ Loads a new working matter object into the working matters collection based upon 
+ the SubNum and MatterNum variables.
+ </summary>
+	<param name="SubNum">subNum as an integer</param>
+	<param name="MatterNum">MatterNum as in integer</param>
+	<returns>the matter's WorkingMatter object</returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.WorkingMatters">
+	<summary>
+ Represents multiple matters known to the time recording system
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.MatterUpliftMultiplier">
+	<summary>
+ The matter uplift.  Extra uplift can be applied just for specific matters
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.LitigationStageStagesInProgress">
+	<summary>
+ A PrecCombo object representing the litigation stages 
+ "Stages in Progress"
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>This is a list of the previously recorded litigation stages</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.BillEvents">
+	<summary>
+ A PrecCombo object representing the billable events available for this matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.LegalAidStructures">
+	<summary>
+ Returns the legal aid structures permissable for the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.DefaultBillEvent">
+	<summary>
+ The default billable event for the matter.  
+ If a default cannot be determined then this property will not be set.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.DefaultLAStruc">
+	<summary>
+ The default legal aid structure for the matter.  
+ If a default cannot be determined then this property will not be set.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.OnHoldFlag">
+	<summary>
+ Set to true if the matter’s status indicates it is on-hold
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.SubNum">
+	<summary>
+ SubNum is a string as non-chargeable is represented by an empty string
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.MatterNum">
+	<summary>
+ MatterNum is a string as non-chargeable is represented by an empty string
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.MatterID">
+	<summary>
+ The matter ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.ChargeableFlag">
+	<summary>
+ Set to true if the time created by this matter is chargeable
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.ShortName">
+	<summary>
+ The short name of the client
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.MatterDescription">
+	<summary>
+ The description of the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.LegalAidFlag">
+	<summary>
+ Returns TRUE if the matter is a legal aid matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.CurrencyCode">
+	<summary>
+ Currency code of the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.WorkType">
+	<summary>
+ Matter's work type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.MatterRate">
+	<summary>
+ The rate type stamped on the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.Contentious">
+	<summary>
+ returns TRUE if the matter is contentious
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.OUID">
+	<summary>
+ The OU ID of the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.RuleSetCode">
+	<summary>
+ The Rule Set Code of the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.MatterRateDesc">
+	<summary>
+ The description of the default rate of the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.ContractRateNum">
+	<summary>
+ The Contract Rate Num
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.RateFlag">
+	<summary>
+ Set to “Y” to indicate contract rates are applicable.</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.ContractRate">
+	<summary>
+ The contract rate used on the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.ContractRateDesc">
+	<summary>
+ The description of the contract rate used on the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatter.GetBillEvent">
+	<summary>
+ Populate the available bill events for the matter
+ </summary>
+	<remarks>This information is obtained from the billing matter profile</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatter.GetLegalAid">
+	<summary>
+ Get the legal aid charge structures associated with this matter.
+ </summary>
+	<remarks>This also gets the expense types associated with the
+ legal aid charge structure</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatter.GetLitStage">
+	<summary>
+ Get the litigation "stages in process" data.  This is information on
+ the previous litigation stages the matter has been through.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatter.AddStageToLitigation(Miles33.Precedent.TimeRecordingBL.LitigationStage)">
+	<summary>
+ Adds a litigation stage (LitigationStage) to the top of the litigation stage clsCombo object.
+ </summary>
+	<param name="LitigationStage"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkingMatter.#ctor(Miles33.Precedent.TimeRecordingBL.TimeClient)">
+	<summary>
+ Constructor
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkingMatter.TimeClient">
+	<summary>
+ The time client object owning this working matter object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.WorkingMatter">
+	<summary>
+ The workingmatter object represents a client matter that is being used
+ in the user's time recording session.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeFns.ReturnMattersOnTimesheet(Miles33.Precedent.TimeRecordingBL.Timesheet@)">
+	<summary>
+ Return a collection of all of the matters on a timesheet
+ </summary>
+	<param name="Timesheet"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeFns.ReturnSortedMattersOnTimesheet(Miles33.Precedent.TimeRecordingBL.Timesheet@)">
+	<summary>
+ Return a sorted collection of all of the matters on a timesheet
+ </summary>
+	<param name="Timesheet"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeFns.GetStandardMinutes(System.String)">
+	<summary>
+ Given a string representation of the standard hours return the number of minutes
+ </summary>
+	<param name="vStdHours"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeFns.ConvertMinstoHourMins(System.Int32)">
+	<summary>
+ Convert time in minutes to hours:minutes (string)
+ </summary>
+	<param name="Mins"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeFns.ConvertMinstoHourMinsFullStop(System.Int32)">
+	<summary>
+ Convert time in minutes to hours.minutes (string)
+ </summary>
+	<param name="Mins"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeFns.GetStatus(System.String)">
+	<summary>
+ Return the status description based upon a status code
+ </summary>
+	<param name="StatusCode"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TimeFns">
+	<summary>
+ Time manipulation class
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.HoursMinsUnits.Convert">
+	<summary>
+ Convert from total minutes to hours and minutes
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.HoursMinsUnits.Convert(System.Int32)">
+	<summary>
+ Convert from total minutes to hours and units (or hours and mins)
+ </summary>
+	<param name="TimeUnitsPerHour"></param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.HoursMinsUnits">
+	<summary>
+ Class to facilitate conversion between hours,minutes and units
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerDisplay.Transform(System.Int32)">
+	<summary>
+ Return a string representation of the total time recorded
+ based upon the fee earner's time format.
+ </summary>
+	<param name="totalMins">The total time recorded in minutes</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerDisplay.Transform(System.String)">
+	<summary>
+ Return a string representation of the total time recorded
+ based upon an "hours and minutes" input string
+ </summary>
+	<param name="sHoursDotMins"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerDisplay.ReturnWordStandardHours">
+	<summary>
+ Return the word standard hours based upon the 
+ fee earner's time format
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerDisplay.ReturnWordUnitsorTime">
+	<summary>
+ Return the word units/timeformatted to proper case based upon the
+ fee earner's time format
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.FeeEarnerDisplay.ReturnWordUnitsorTime(System.Boolean)">
+	<summary>
+ Return the word units/time based upon the
+ fee earner's time format
+ </summary>
+	<param name="bLowercase">set to TRUE to return the word in lowercase</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.LitigationStages">
+	<summary>
+ Returns a LitigationStages object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.WorkTypes">
+	<summary>
+ Returns a WorkTypes object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.CurrencyCode">
+	<summary>
+ Returns the default currency code of the site
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.CurrencyDesc">
+	<summary>
+ Returns the default currency description of the site
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.LAChargeStructure">
+	<summary>
+ Returns a clsCombo object representing legal aid charge structures
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.ActivityTypes">
+	<summary>
+ Returns an ActivityTypes object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.ExpenseTypes">
+	<summary>
+ Returns a PrecCombo object representing expense types
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.ExpenseTypeData">
+	<summary>
+ Returns an ExpenseTypes object this represents all of the
+ expense types available to time recording along with the
+ charge per unit.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.Currency">
+	<summary>
+ Returns a clsCombo object representing currencies
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.BillEvent">
+	<summary>
+ Returns a clsCombo object representing Bill Events
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.RateType">
+	<summary>
+ Returns a clsCombo object representing rate types
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeStaticData.OrgUnit">
+	<summary>
+ Returns a clsCombo object representing organisation units
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeStaticData.Refresh">
+	<summary>
+ This method re-queries all of the static data objects within the time static data object
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.TimeRecordingBL.TimeStaticData.First">
+	<summary>
+ Used for threading synchornization, do not set this 
+ value elsewhere
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Miles33.Precedent.TimeRecordingBL.TimeStaticData.lockObject">
+	<summary>
+ Used to control threading synchornization
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeStaticData.GetData(System.Boolean)">
+	<summary>
+ If this is the first time we have entered this method or
+ the forceRefresh is set to TRUE, then update all of the
+ time static data.
+ </summary>
+	<param name="forceRefresh"></param>
+	<remarks>Thread synchonrisation is employed in this method
+ to ensure that only one thread accesses this method at one 
+ point in time.  However, most calls to method will
+ be when First is set to FALSE so will be over very
+ quickly</remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TimeStaticData">
+	<summary>
+ The TimeStaticData object is used as a store of all of the constants used 
+ within Precedent time recording.  The data can be refreshed by calling the
+ refresh method.  This object is thread safe and only one thread can refresh
+ the data at one point in time.  If the data is currently being refreshed 
+ all threads requesting data will be suspended until the data has been
+ retrieved.
+ </summary>
+	<remarks>In a thin-client app (web) there only needs to be one instance of the TimeStaticData.
+ The data is automatically looked up when first needed but can be populated by a client by
+ calling the Refresh method</remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.ExpenseType">
+	<summary>
+ Represents a single expense type
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LegalAidStructures.AddLAStructure(System.String,System.String,System.Nullable{System.Decimal})">
+	<summary>
+ Add a legal aid structure to our object.  If
+ we already have this la structure then do not add
+ it again.
+ </summary>
+	<param name="laStructureCode"></param>
+	<param name="laDescription"></param>
+	<param name="valueLimitPerMatter"></param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.LegalAidStructures">
+	<summary>
+ Represents multiple legal aid structures.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LegalAidStructure.LAChargeStructureCode">
+	<summary>
+ Legal Aid Charge Structure Code
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LegalAidStructure.Description">
+	<summary>
+ Description
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LegalAidStructure.ValueLimitPerMatter">
+	<summary>
+ Value limit per matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LegalAidStructure.GetLAExpenseTypeData(System.String)">
+	<summary>
+ Get the expense type data for the charge structure
+ </summary>
+	<param name="transactionDate"></param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.LegalAidStructure">
+	<summary>
+ Represents a single legal aid structure
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LARatePool.LARateBand">
+	<summary>
+ The legal aid band
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LARatePool.GetData(System.String,System.String)">
+	<summary>
+ Get the legal aid rate data
+ </summary>
+	<param name="LAStructure">legal aid charge structure</param>
+	<param name="transactionDate">transaction date</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LARatePool.ReturnLARate(System.String,System.String)">
+	<summary>
+ Return the legal aid rate object associated with a particular charge structure
+ and activity code.
+ </summary>
+	<param name="LAStructureCode"></param>
+	<param name="ActivityType"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LARatePool.ReturnActivityTypesForLAStructure(System.String,System.String)">
+	<summary>
+ Return the activities associated with a legal aid charge structure
+ </summary>
+	<param name="LAStructure"></param>
+	<param name="transactionDate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.LARatePool">
+	<summary>
+ Store of multiple legal aid rates
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LAExpensePool.LAChargeStructureCode">
+	<summary>
+ Legal Aid Charge Structure Code
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LAExpensePool.GetData(System.String)">
+	<summary>
+ Get the legal aid data on a particular date for a particular legal aid
+ charge structure
+ </summary>
+	<param name="transactionDate">Transaction date</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LAExpensePool.ExpenseTypeExists(System.String)">
+	<summary>
+ return TRUE if the expense type exists
+ </summary>
+	<param name="expenseType">expense type code</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.LAExpensePool.ReturnLAUnitRate(System.String)">
+	<summary>
+ Return the legal aid value per unit associated with a legal aid
+ structure code and an expense type.  If the combination does not
+ exist then an exception will be raised.
+ </summary>
+	<param name="expenseType">expense type code</param>
+	<returns>The legal aid rate per unit</returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.LAExpensePool">
+	<summary>
+ Store of multiple legal aid expense objects
+ </summary>
+	<remarks>A collection of legal aid charge structures and expense types that
+ can be used for legal aid expense recording.</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LAExpense.ReturnKey">
+	<summary>
+ The internal key of the legal aid expense object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LAExpense.LAStructureCode">
+	<summary>
+ Legal aid charge structure code
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LAExpense.ValuePerUnit">
+	<summary>
+ Value per unit
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LAExpense.ExpenseType">
+	<summary>
+ Expense type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.LAExpense">
+	<summary>
+ A legal aid expense class
+ </summary>
+	<remarks>Represents an instance of a legal aid structure against an expense
+ type and the value per unit of that expense.
+ This data is stored in the Precedent legal_aid_expense_value table.</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LARate.LAStructureCode">
+	<summary>
+ Legal aid charge structure code
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LARate.ActivityType">
+	<summary>
+ Activity type code
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LARate.Description">
+	<summary>
+ Description
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.LARate.ValuePerUnit">
+	<summary>
+ Value per time unit
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.LARate">
+	<summary>
+ Legal Aid Rate class
+ </summary>
+	<remarks>Stored information about the charges for various activites under the LA structure code</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.RevalueTime.HistoricFlag">
+	<summary>
+ Set to TRUE to indicate data is evaluated within a historical context
+ otherwise the current rates are used.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.RevalueTime.RateType">
+	<summary>
+ The revised rate type for the time items
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.RevalueTime.RevalueTime">
+	<summary>
+ Revalue time items based upon a rate type and whether the items are
+ revalued historically.
+ NOTE: Currently the begin/commit occurs in a separate database transaction
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.RevalueTime.DuplicateRateTypes">
+	<summary>
+ Are the time lines a mix of contract rates and non-contract rates?
+ </summary>
+	<returns>TRUE - if the time lines are a mix of CR and non-CR, otherwise FALSE</returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.RevalueTime">
+	<summary>
+ Revalue multiple time items to a rate type, and apply a historic rate
+ if required.  Populate the timelines property with the time items of
+ interest.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.RevalueTimeLine.ObtainLACost(System.Decimal@)">
+	<summary>
+ Obtain the LA Cost rates associated with a legal aid time line
+ </summary>
+	<param name="laValuePerUnit"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.RevalueTimeLine.RevalueDate">
+	<summary>
+ Return the revaluation date, this is dependent upon whether we
+ are revaluing time in a historical context.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.RevalueTimeLine.DetermineRate">
+	<summary>
+ Attempt to apply a FERate, if none exists then apply a Grade Rate.
+ </summary>
+	<returns>TRUE if a rate was found, otherwise return FALSE</returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.RevalueTimeLine.DetermineFeRate">
+	<summary>
+ See if a FERate is available
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.RevalueTimeLine.DetermineGradeRate">
+	<summary>
+ See if a Grade rate is available for the date, rate type and ouid
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.RevalueTimeLine.PopulateRateData(Miles33.Precedent.TimeRecordingBL.GradeFERate)">
+	<summary>
+ Populate data from the ferate/grade rate into a revalue rate object
+ </summary>
+	<param name="FERate"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.RevalueTimeLine">
+	<summary>
+ One time line, which requires to revaluation
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.RevalueRate">
+	<summary>
+ Revalue Rate class used in the RevalueTimeLine routines
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimesheetSave.#ctor(Miles33.Precedent.TimeRecordingBL.TimeClient)">
+	<summary>
+ Default constructor
+ </summary>
+	<param name="timeClient"></param>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeFeeEarner.LegalAidRates">
+	<summary>
+ Returns a legal aid band object for the fee earner
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeFeeEarner.OUID">
+	<summary>
+ The current organisation unit ID of the fee earner
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeFeeEarner.GradeRate">
+	<summary>
+ The current grade rate of the fee earner
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeFeeEarner.FeeEarnerRates">
+	<summary>
+ Returns an object representing the fee earner rates for this fee earner
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeFeeEarner.GradeRates">
+	<summary>
+ Returns an object representing the grade rates for this fee earner
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeFeeEarner.DueDate">
+	<summary>
+ The date that we are querying upon.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>A fee earners rates will alter over time, 
+ thus the software needs to know the date of which you are recording time</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeFeeEarner.GetData">
+	<summary>
+ Populates the object with the fee earner time recording data
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TimeFeeEarner">
+	<summary>
+ This class represents a time recording fee earner
+ </summary>
+	<remarks>The TimeFeeEarner represents a time recording fee earner, 
+ it inherits the functionality of the FeeEarner object.</remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.FeeEarner">
+	<summary>
+ A fee earner in the Precedent system
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.GradeFERates.GetFERates(System.Int32,System.String,System.String)">
+	<summary>
+ Get all of the fee earner rates for a FE/Date combination
+ </summary>
+	<param name="FeNum">The FE Num - to identify a fee earner</param>
+	<param name="transactionDate">The date when the timesheet was rendered</param>
+	<param name="CurrencyCode">The currency code</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.GradeFERates.GetFeeEarnerRate(System.String)">
+	<summary>
+ Get the fee earner rate for a particular rate type
+ </summary>
+	<param name="RateType">the rate type we are interested in</param>
+	<returns></returns>
+	<remarks>Throws an exception if the rate type is not found</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.GradeFERates.GetGradeRate(System.String,System.String)">
+	<summary>
+ Get a grade rate for a particular rate type/ ouid
+ </summary>
+	<param name="RateType"></param>
+	<param name="OUID"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.GradeFERates.GetGradeRates(System.String,System.String,System.String)">
+	<summary>
+ Get all of the grade rates for a FE/Date combination
+ </summary>
+	<param name="GradeCode"></param>
+	<param name="transactionDate"></param>
+	<param name="CurrencyCode"></param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.GradeFERates">
+	<summary>
+ A class to store grade rate and FE rates
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.GradeFERate">
+	<summary>
+ Represents a grade or FE rate
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.TimeSecurity">
+	<summary>
+ The time only security related to just the current user
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.ContractRates">
+	<summary>
+ Contract Rates business layer object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.MipList">
+	<summary>
+ The user's matters in progress list
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.WorkingMatters">
+	<summary>
+ The user's matters they have been working on in this timeclient
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.DueDate">
+	<summary>
+ Due date of a timesheet
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>in form dd-MMM-YYYY</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.FeNum">
+	<summary>
+ Fee earner's fenum
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.FeID">
+	<summary>
+ Fee earner's FE ID
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.FeeEarner">
+	<summary>
+ Fee Earner object containing fee earner details
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeClient.TimeSheet">
+	<summary>
+ The current timesheet
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeClient.RefreshFeeEarner">
+	<summary>
+ Refresh the fee earner details
+ </summary>
+	<remarks>Populates the Fee Earner object and then populates the timesheet object with 
+ fee earner related data.  If contract rates is turned on, the contract rate 
+ matrix is then populated.  
+ A workingmatters object is then created.</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeClient.#ctor">
+	<summary>
+ Default constructor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeClient.#ctor(System.Int32,System.String)">
+	<summary>
+ Constructor with defaults for fenum and due date
+ </summary>
+	<param name="FeNum"></param>
+	<param name="DueDate"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeClient.#ctor(System.String,System.String)">
+	<summary>
+ Constructor with defaults for fe ID and due date
+ </summary>
+	<param name="FeID"></param>
+	<param name="DueDate"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeClient.CreateMIPList">
+	<summary>
+ Create the matters in progress list and populate it with the user's data
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TimeClient">
+	<summary>
+ Represents one instance of a user modifying time recording
+ </summary>
+	<remarks>The TimeClient object represents a client’s perspective of time recording.  
+ It allows access to objects, which represent the Timesheet, the user’s security, 
+ the current working matters, the matters in progress list and the fee earner.</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeSecurity.ViewAllTimesheets">
+	<summary>
+ Can the user view other people's timesheets?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeSecurity.SuperUser">
+	<summary>
+ Is the user a time super user?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>This security item controls cancellation, pending-posting and adding to a posted timesheet</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeSecurity.PartiallyPostTime">
+	<summary>
+ Can the user partially-post time?
+ </summary>
+	<value></value>
+	<returns></returns>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeSecurity.DeleteTimesheet">
+	<summary>
+ Can the user delete a timesheet?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeSecurity.EditPostedDescriptions">
+	<summary>
+ Can the user alter descriptions on posted timesheets?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeSecurity.LitigationSuperUser">
+	<summary>
+ Is the user a litigation super user?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TimeSecurity">
+	<summary>
+ Specific time recording security data for the user 
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.Narrative">
+	<summary>
+ The timeline narrative object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.Stopwatch">
+	<summary>
+ Returns the item's stop watch object
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.UpdateTimeFromStopwatch">
+	<summary>
+ Update the time line details with the data from the stop watch object
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.Clone(Miles33.Precedent.TimeRecordingBL.TimeLine@)">
+	<summary>
+ Clone the time line
+ </summary>
+	<param name="TL">the Cloned copy of the time line</param>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.TimeDisplayValue">
+	<summary>
+ The time’s value as displayed to the user.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>This is dependent upon whether the time item is legally aided and the site’s default 
+ display code.  (Cost or Uplift)</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.Validate">
+	<summary>
+ Validate the time item - raises an exception is an error occurs
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.SaveData(System.Boolean,System.Boolean)">
+	<summary>
+ Save the time line to the database
+ </summary>
+	<param name="Suspend">set to TRUE if performing a timesheet suspend</param>
+	<param name="partialSave">set to TRUE if we are just performing an intermediate save</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.PopulateFromWorkingMatter(Miles33.Precedent.TimeRecordingBL.WorkingMatter@)">
+	<summary>
+ Populate the time item with data from a working matter object
+ </summary>
+	<param name="wm">WorkingMatter object</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.UpdateTimeQty(System.String,System.String)">
+	<summary>
+ Update the time recorded on this time line
+ </summary>
+	<param name="Hours">Hours recorded, ignored for just pure units</param>
+	<param name="minsUnits">The units or minutes recorded</param>
+	<returns>TRUE if successful</returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.IgnoreRateErrorFlag">
+	<summary>
+ Do we want to ignore the fee earner rate/grade rate exception?
+ Can be used to turn off the message if the user has already seen it.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.UpdateTimeValue">
+	<summary>
+ Update the time values based upon the details on the time line.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.TimeQty">
+	<summary>
+ The total number of minutes for the time item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.RateType">
+	<summary>
+ The rate for the time item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.LAValuePerUnit">
+	<summary>
+ The Value per unit for legal aid in string format, set to an empty string if the matter is legally aided
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.TimeUnitsPerHour">
+	<summary>
+ The number of units in an hour
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.ValueTime">
+	<summary>
+ The cost value of the time in string format.  
+ This property will be an empty string if the cost value cannot be calculated.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.ValueUplifted">
+	<summary>
+ The uplift value of the time in string format.  
+ This property will be an empty string if the uplift value cannot be calculated.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.ValueLegalAidCost">
+	<summary>
+ The value of the legal aid cost in string format.  This property will be an emptystring if the matter does not use legal aid.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.TimeQtyKeyed">
+	<summary>
+ The total amount of time as keyed in by the user
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.OUID">
+	<summary>
+ The organisation unit for the time item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.EventID">
+	<summary>
+ The event id selected for the time item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.MatterRate">
+	<summary>
+ The default rate type for the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.ContentiousMatter">
+	<summary>
+ Set to true if this matter has the contentious flag set to true
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.LitigationStageID">
+	<summary>
+ The litigation stage id
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.LitigationStageDesc">
+	<summary>
+ The description of the litigation stage, only populated if a litigation stage is 
+ selected for the time item
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.ContractRate">
+	<summary>
+ The contract rate type (if the matter is using contract rates)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.ContractRateDesc">
+	<summary>
+ The description of the contract rate if a contract rate is set
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.ContractRateNum">
+	<summary>
+ The contract rate number if the matter is using contract rates
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TimeLine.RateFlag">
+	<summary>
+ Determines whether the time item is utilising contract rates.  
+ If this value is “Y” then the time item is using contract rates
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.ContractRateApplicable">
+	<summary>
+ Returns true if the matter is set up to record time with contract rates.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TimeLine.#ctor(Miles33.Precedent.TimeRecordingBL.TimeClient)">
+	<summary>
+ Create a new time item object
+ </summary>
+	<param name="timeClient">the parent TimeClient object</param>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TimeLine">
+	<summary>
+ The TimeLine object represents one time entry on a timesheet.
+ </summary>
+	<remarks>Inherits TSLine</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ExpenseLine.#ctor(Miles33.Precedent.TimeRecordingBL.TimeClient)">
+	<summary>
+ Create a new expense item charge
+ </summary>
+	<param name="timeClient"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ExpenseLine.Clone(Miles33.Precedent.TimeRecordingBL.ExpenseLine@)">
+	<summary>
+ Create a clone of the expense line
+ </summary>
+	<param name="EL"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.ExpenseLine.Validate">
+	<summary>
+ Validate that the expense item is valid
+ </summary>
+	<remarks>An exception is raised if the item is invalid.</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.ExpenseLine.ExpenseType">
+	<summary>
+ Sets / Gets the expense type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.ExpenseLine.Value">
+	<summary>
+ The total value of the expense line
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.ExpenseLine.ValuePerUnit">
+	<summary>
+ The value per unit of the expense line
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.ExpenseLine.Reference">
+	<summary>
+ The reference of the expense line
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.ExpenseLine">
+	<summary>
+ The ExpenseLine class, which represents one expense entry on a timesheet.
+ </summary>
+	<remarks>Inherits TSLine</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.TimeClient">
+	<summary>
+ The time client object that created this timesheet
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.MatterIDChanged(System.String)">
+	<summary>
+ Return TRUE if the MatterID parameter is different to
+ the current Matter ID
+ </summary>
+	<param name="MatterIDIn">The Matter ID to test</param>
+	<returns>Return TRUE if the Matter IDs match otherwise FALSE</returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.Tag">
+	<summary>
+ A tag field (string)
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.Clone(Miles33.Precedent.TimeRecordingBL.TSLine@)">
+	<summary>
+ Clone a TSLine
+ </summary>
+	<param name="TSL"></param>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.NewRow">
+	<summary>
+ Is this a new row in the database?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.Rank">
+	<summary>
+ Timesheet rank
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.Deleted">
+	<summary>
+ Has the user deleted this row?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.NumUnits">
+	<summary>
+ The number of units
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.MatterID">
+	<summary>
+ Matter ID.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.SubNum">
+	<summary>
+ The sub num of the matter.  
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Emptystring for a non-chargeable and -1 for non-postable</remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.MatterNum">
+	<summary>
+ The matter num of the matter
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>Emptystring for a non-chargeable and -1 for non-postable</remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.TimeLine">
+	<summary>
+ Return true if this item is a time line
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.ExpenseLine">
+	<summary>
+ Return true if this item is an expense line
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.Status">
+	<summary>
+ Used when the front end wants to view/change the line's status
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.ValidateActivityType(System.Boolean,System.String)">
+	<summary>
+ Validate the activity type associated with the line
+ </summary>
+	<param name="contentiousFlag">set to TRUE to indicate that the activity type should be validated against the contentious activity types</param>
+	<param name="auditorsRuleSet">the auditors rule set applicable to this activity</param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.CheckStatusChangePossible(System.String)">
+	<summary>
+ Is the change of status valid?
+ </summary>
+	<param name="newStatus"></param>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.ActivityType">
+	<summary>
+ The activity type of the line
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.LitigationSuperUserChange">
+	<summary>
+ Can the data change because of the litigation super user
+ permissions
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.ItemDescription">
+	<summary>
+ Item description
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.LAStructure">
+	<summary>
+ Legal aid charge structure
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.DocRefNum">
+	<summary>
+ for narrative entry, the document reference number
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.Currency">
+	<summary>
+ Currency code of the line
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.ShortName">
+	<summary>
+ Short name of the client
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.MatterDescription">
+	<summary>
+ Full matter description
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.ChargeableFlag">
+	<summary>
+ Is the timesheet line chargeable?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.LegalAidFlag">
+	<summary>
+ Is this timesheet line using legal aid?
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.TSLine.DateStatusCode">
+	<summary>
+ The date the status was last changed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.PostableItem">
+	<summary>
+ Returns TRUE if the timesheet line is for a matter,
+ FALSE for non-chargeable and non-postable
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.SuspendedItem">
+	<summary>
+ Is the item of status suspended.  This includes suspended, new and pending-posting
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.ItemPosted">
+	<summary>
+ Is the item of posted status.  This includes posted, unbilled, cancelled, billed, pending-cancellation
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.ResetStatus">
+	<summary>
+ If a pending posting or a pending cancellation has been reset then put the
+ item's status back to its original value
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.PopulateFromWorkingMatter(Miles33.Precedent.TimeRecordingBL.WorkingMatter)">
+	<summary>
+ Populate the timesheet line from the working matter object
+ </summary>
+	<param name="wm"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.#ctor(Miles33.Precedent.TimeRecordingBL.TimeClient)">
+	<summary>
+ Default constructor
+ </summary>
+	<param name="timeClient"></param>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.TSLine.RevisedLdateStatusCode">
+	<summary>
+ Return the SQL to reset the ldate_status_code
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.TSLine">
+	<summary>
+ An object representing a line of a timesheet
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Miles33.Precedent.TimeRecordingBL.WorkTypes.GetData">
+	<summary>
+ Get all of the work type data 
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.WorkTypes">
+	<summary>
+ Multiple work types in the Precedent system
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkType.Description">
+	<summary>
+ Work type description
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkType.Multiple">
+	<summary>
+ The uplift multiple applied by the Work type
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Miles33.Precedent.TimeRecordingBL.WorkType.WorkType">
+	<summary>
+ Work type code
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Miles33.Precedent.TimeRecordingBL.WorkType">
+	<summary>
+ Single work types in the Precedent system
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

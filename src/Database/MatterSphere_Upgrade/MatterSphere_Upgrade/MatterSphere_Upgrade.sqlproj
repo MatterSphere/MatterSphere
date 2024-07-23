@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MatterSphere_Upgrade</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{0c4ae4c4-73e1-412a-a13a-5de40cf497af}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MatterSphere_Upgrade</RootNamespace>
+    <AssemblyName>MatterSphere_Upgrade</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <IsChangeTrackingOn>True</IsChangeTrackingOn>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <AnsiNulls>True</AnsiNulls>
+    <AnsiPadding>True</AnsiPadding>
+    <AnsiWarnings>True</AnsiWarnings>
+    <ArithAbort>True</ArithAbort>
+    <ConcatNullYieldsNull>True</ConcatNullYieldsNull>
+    <QuotedIdentifier>True</QuotedIdentifier>
+    <DefaultCursor>LOCAL</DefaultCursor>
+    <Recovery>FULL</Recovery>
+    <PageVerify>TORN_PAGE_DETECTION</PageVerify>
+    <ChangeTrackingRetentionPeriod>3</ChangeTrackingRetentionPeriod>
+    <EnableFullTextSearch>False</EnableFullTextSearch>
+    <AllowSnapshotIsolation>True</AllowSnapshotIsolation>
+    <Trustworthy>True</Trustworthy>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\PreDeployment" />
+    <Folder Include="Scripts\PostDeployment" />
+    <Folder Include="config" />
+    <Folder Include="config\Stored Procedures" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\User Defined Types" />
+    <Folder Include="dbo\Functions" />
+    <Folder Include="Security" />
+    <Folder Include="config\Functions" />
+    <Folder Include="Relationship" />
+    <Folder Include="Relationship\Tables" />
+    <Folder Include="Relationship\Indexes" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="Storage" />
+    <Folder Include="dbo\Triggers" />
+    <Folder Include="Scripts\PostDeployment\SQLAgentJobs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+    <None Include="Scripts\PostDeployment\CreatefwbsGrantStoredProcedures.sql" />
+    <None Include="Scripts\PostDeployment\32816_dbEnquiryControl_InsertUpdate_ucRichBrowser.sql" />
+    <None Include="Scripts\PostDeployment\32454_dbEnquiryControl_InsertUpdate_omsbrowser.sql" />
+    <None Include="Scripts\PostDeployment\32318_Create_Matter_Folders_Tree_Enquiry_Form_Control.sql" />
+    <None Include="Scripts\PostDeployment\32120_Precedent_field_improvements.sql" />
+    <None Include="Scripts\PostDeployment\34014_Add_ucSearchConflicts_Control.sql" />
+    <None Include="Scripts\PostDeployment\43500_DocuSign_AddConstraints.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\PostDeployment\Delete_Tickford_Caption_From_CodeLookup.sql" />
+    <Build Include="config\Stored Procedures\DeleteObjectPolicy.sql" />
+    <None Include="MatterSphere_Upgrade.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\PostDeployment\RolePermissionsRebuild.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsGrantToRole.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprSearchListBuilder.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprCommandCentreType.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprAssociateType.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprClientType.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprContactType.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprDocumentType.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprFeeEarnerType.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprFileType.sql" />
+    <None Include="Scripts\PostDeployment\UpdatesprUserType.sql" />
+    <None Include="Scripts\PostDeployment\DropADAssemblies.sql" />
+    <None Include="Scripts\PostDeployment\AssemblyMatterCentreCLR.sql" />
+    <None Include="Scripts\PostDeployment\AdvancedSecurityInheritedClientAccessDefault.sql" />
+    <None Include="Scripts\PreDeployment\vwdbDocument.sql" />
+    <None Include="Scripts\PreDeployment\24377_Add_Column_Indexes.sql" />
+    <None Include="Scripts\PostDeployment\24357_GetCodeLookupDesc_vs_GetCodeLookupDescription.sql" />
+    <None Include="Scripts\PreDeployment\vwdbDocumentPreview.sql" />
+    <None Include="Scripts\PreDeployment\vwdbClient.sql" />
+    <None Include="Scripts\PostDeployment\WO27924_Changes.sql" />
+    <None Include="Scripts\PreDeployment\vwdbAssociates.sql" />
+    <None Include="Scripts\PreDeployment\vwdbContact.sql" />
+    <None Include="Scripts\PostDeployment\28486_RecreateClusteredIndex.sql" />
+    <None Include="Scripts\PostDeployment\28594_Precedent_object_locking.sql" />
+    <None Include="Scripts\PostDeployment\24377_Change_SP_Function.sql" />
+    <None Include="Scripts\PostDeployment\31939_Toolbar_Update_specific_buttons_codelookups.sql" />
+    <None Include="Scripts\PostDeployment\35540_dbCommandCentreType_RemoveDictations.sql" />
+    <None Include="Scripts\PostDeployment\32692_dbCommandCentreType_UpdateIcons.sql" />
+    <None Include="Scripts\PostDeployment\32170_PrecedentAccessManagement.sql" />
+    <None Include="Scripts\PostDeployment\32167_PrecedentManagerFavorites.sql" />
+    <Build Include="dbo\Stored Procedures\sprPrecMinorCatList.sql" />
+    <Build Include="dbo\Functions\GetPrecedent.sql" />
+    <None Include="Scripts\PreDeployment\28760_Precedent_MinorCategory.sql" />
+    <Build Include="dbo\Stored Procedures\sprPrecedentMatch.sql" />
+    <None Include="Scripts\PostDeployment\28760_Precedent_MinorCategory.sql" />
+    <None Include="Scripts\PostDeployment\33329_TemplateMatterTypesChanged.sql" />
+    <None Include="Scripts\PostDeployment\33331_DocumentsTab_Refactoring.sql" />
+    <None Include="Scripts\PostDeployment\34016_Create_Upload_Control.sql" />
+    <None Include="Scripts\PostDeployment\34016_AddPictureBoxControlCodeLookups.sql" />
+    <None Include="Scripts\PreDeployment\32360_AddNewColumnForDashboards.sql" />
+    <None Include="Scripts\PostDeployment\34413_General_Client_Details.sql" />
+    <None Include="Scripts\PostDeployment\34427_Add_Placeholder_for_Basic_Inquiry_Controls.sql" />
+    <None Include="Scripts\PreDeployment\34800_MatterType_Add_MinorCategory.sql" />
+    <None Include="Scripts\PreDeployment\32360_AddNewColumnForDashboards.sql" />
+    <None Include="Scripts\PostDeployment\34158_Appointments.sql" />
+    <None Include="Scripts\PreDeployment\22027_Expand_contRegCoName_dbContactCompany.sql" />
+    <None Include="Scripts\PreDeployment\31864_Expand_usrFavObjParam3_dbUserFavourites.sql" />
+    <None Include="Scripts\PreDeployment\38302_Expand_dbAssociates_assocHeading.sql" />
+    <None Include="Scripts\PostDeployment\34158_HideButtons_Attribute_Added.sql" />
+    <None Include="Scripts\PostDeployment\33194_Remove_hhmmss_fromDOBfield.sql" />
+    <None Include="Scripts\PostDeployment\34855-DashboardCodeLookups.sql" />
+    <None Include="Scripts\PostDeployment\34162_Tasks.sql" />
+    <None Include="Scripts\PreDeployment\34161_CommandCentre_KeyDates.sql" />
+    <None Include="MS Deploy.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\PostDeployment\34161_CommandCentre_KeyDates.sql" />
+    <None Include="Scripts\PostDeployment\34159_CommandCentre_Associates.sql" />
+    <None Include="Scripts\PostDeployment\34163_CommandCentre_Undertakings.sql" />
+    <None Include="Scripts\PostDeployment\36014_NewIndex_for_SCHCLIARCHLIST.sql" />
+    <None Include="Scripts\PostDeployment\35736_ContactType_removal.sql" />
+    <None Include="Scripts\PostDeployment\36089_NewIndexForSearchListSorting.sql" />
+    <None Include="Scripts\PostDeployment\36038_States_for_address.sql" />
+    <None Include="Scripts\PostDeployment\36179_Objects_With_uXML.sql" />
+    <None Include="Scripts\PreDeployment\36179_uXML.sql" />
+    <None Include="Scripts\PreDeployment\38026_uAddressLine.sql" />
+    <None Include="Scripts\PreDeployment\38026_uPostcode.sql" />
+    <None Include="Scripts\PreDeployment\42468_Bundler_Add_Columns.sql" />
+    <None Include="Scripts\PreDeployment\43016_AdvancedSecurity_InactiveGroup.sql" />
+    <None Include="Scripts\PreDeployment\45697_External_Access_Denies_Views.sql" />
+    <None Include="Scripts\PreDeployment\43542_Add_Column_to_track_deleted_entities.sql" />
+    <None Include="Scripts\PostDeployment\36131_Archiving_errors_install.sql" />
+    <None Include="Scripts\PostDeployment\34240_CommandCentre_ContactManager.sql" />
+    <None Include="Scripts\PostDeployment\31919_Trigger_tgrFileNumberGenerator.sql" />
+    <None Include="Scripts\PostDeployment\32193_Trigger_generating_existing_number_of_Client.sql" />
+    <None Include="Scripts\PostDeployment\36450_Changing_of_data_grid_columns.sql" />
+    <None Include="Scripts\PostDeployment\35300_Legal_aid_issues.sql" />
+    <None Include="Scripts\PostDeployment\36357_CommandCentre_TaskAssignment.sql" />
+    <None Include="Scripts\PostDeployment\36043_Undertakings.sql" />
+    <None Include="Scripts\PostDeployment\36490_Configurable_Navigation_Panel.sql" />
+    <None Include="Scripts\PostDeployment\37523_Populate_dbFileFolder.sql" />
+    <None Include="Scripts\PostDeployment\36133_Change_Delete_Triggers.sql" />
+    <None Include="Scripts\PostDeployment\38023_38026_Modify_Columns_3E.sql" />
+    <None Include="Scripts\PostDeployment\40152_VirtualDrive_Performance.sql" />
+    <None Include="Scripts\PreDeployment\45385_dbFileManagementApplication.sql" />
+    <None Include="Scripts\PostDeployment\DocumentArchiving_Indexes.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Stored Procedures\ADSyncGroupUsers.sql" />
+    <Build Include="dbo\Stored Procedures\sprStoreNewFileFolderTreeTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\sprStoreFileFolderTree.sql" />
+    <Build Include="dbo\Stored Procedures\sprRetrieveFileFolderTree.sql" />
+    <Build Include="dbo\Stored Procedures\sprRetrieveFileFolderTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetFileDocumentsWithoutGUIDs.sql" />
+    <Build Include="dbo\Stored Procedures\sprDeleteFileFolderTreeXML.sql" />
+    <Build Include="dbo\Stored Procedures\sprDeleteFileFolderTreeTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\sprCheckForDocumentsWithGUID.sql" />
+    <Build Include="dbo\Stored Procedures\sprAutoAssignFolderGUID.sql" />
+    <Build Include="dbo\Stored Procedures\sprAssignFolderGUID.sql" />
+    <Build Include="dbo\Stored Procedures\MapDocumentsToFoldersCreatedFromWallets.sql" />
+    <Build Include="dbo\Stored Procedures\GetMatterDocumentWalletCodes.sql" />
+    <Build Include="dbo\Stored Procedures\sprObjectLinkedItemData.sql" />
+    <Build Include="dbo\Tables\dbFileManagementVersionData.sql" />
+    <Build Include="dbo\Tables\dbFileFolderTreeTemplates.sql" />
+    <Build Include="dbo\Tables\dbFileFolderTreeData.sql" />
+    <Build Include="dbo\User Defined Types\tblWalletFolders.sql" />
+    <Build Include="dbo\Functions\GetFolderCodesForMatterDocumentTree.sql" />
+    <Build Include="dbo\Functions\Split.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDocContact.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDocClient.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDoc.sql" />
+    <Build Include="dbo\Stored Procedures\GetMatterDocumentFolderList.sql" />
+    <Build Include="dbo\Stored Procedures\GetDocumentDocumentFolderList.sql" />
+    <Build Include="dbo\Stored Procedures\GetContactDocumentFolderList.sql" />
+    <Build Include="dbo\Stored Procedures\GetClientDocumentFolderList.sql" />
+    <Build Include="dbo\User Defined Types\tblFolderData.sql" />
+    <Build Include="dbo\User Defined Types\uUICultureInfo.sql" />
+    <Build Include="dbo\User Defined Types\uCodeLookup.sql" />
+    <None Include="Scripts\PreDeployment\Add_Column_docFolderGuid.sql" />
+    <Build Include="dbo\Functions\SpecialSeed.sql" />
+    <None Include="Scripts\PostDeployment\dbObjectLocking_Amend_rowguid_column_to_UniqueIdentifier.sql" />
+    <Build Include="dbo\Tables\dbNetDocumentsTokenAccess.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetMilestonePlanStages.sql" />
+    <None Include="Scripts\PreDeployment\dbMSConfig_OMS2k-update_to_30_stages.sql" />
+    <None Include="Scripts\PreDeployment\dbMSData_OMS2k-update_to_30_stages.sql" />
+    <None Include="Scripts\PostDeployment\Change_CodeLookups_For_3e_MatterSphere.sql" />
+    <None Include="Scripts\PostDeployment\Object_Type_Configuration_Menu_Update.sql" />
+    <None Include="Scripts\PostDeployment\dbVersion.sql" />
+    <None Include="Scripts\PostDeployment\RemoveWalletFilterCodeLookup.sql" />
+    <Build Include="config\Stored Procedures\DeleteSystemPolicy.sql" />
+    <Build Include="Security\config.sql" />
+    <Build Include="Security\OMSAdminRole.sql" />
+    <Build Include="Security\OMSApplicationRole.sql" />
+    <Build Include="Security\OMSRole.sql" />
+    <Build Include="config\Functions\ClientFileAccess.sql" />
+    <Build Include="config\Functions\FileAccess.sql" />
+    <Build Include="dbo\Stored Procedures\sprClientRecord_Files.sql" />
+    <Build Include="dbo\Stored Procedures\sprClientRecord2.sql" />
+    <Build Include="dbo\Stored Procedures\sprFileStatusRecord.sql" />
+    <Build Include="dbo\Stored Procedures\sprTimeActivities.sql" />
+    <None Include="Scripts\PostDeployment\FileAccessDenies.sql" />
+    <None Include="Scripts\PreDeployment\vwdbfile.sql" />
+    <Build Include="config\Stored Procedures\ListAllowedFileIDs.sql" />
+    <None Include="Scripts\PostDeployment\AddTaskNoFilterCodeLookup.sql" />
+    <Build Include="dbo\Views\vwMilestones.sql" />
+    <Build Include="dbo\Stored Procedures\srepFeeMilestoneMgr.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilTaskManagement.sql" />
+    <Build Include="dbo\Stored Procedures\srepMilestoneMatterPlan.sql" />
+    <Build Include="dbo\Tables\dbMSConfig_OMS2K.sql" />
+    <Build Include="dbo\Tables\dbMSData_OMS2K.sql" />
+    <Build Include="Storage\IndexGroup.sql" />
+    <None Include="Scripts\PostDeployment\SetObjectNotSetPermissions.sql" />
+    <Build Include="dbo\Functions\ConvertBinary.sql" />
+    <Build Include="dbo\Stored Procedures\sprAssignFolderGUIDBatch.sql" />
+    <Build Include="config\Stored Procedures\ApplyFileSecurity.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMilestones.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMilestoneTasks.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteDocWithEmptyPathById.sql" />
+    <Build Include="dbo\Stored Procedures\sprDeleteDocumentData.sql" />
+    <Build Include="dbo\Stored Procedures\sprUpdateDocumentLastOpened.sql" />
+    <Build Include="config\Functions\searchDocumentAccess.sql" />
+    <Build Include="config\Stored Procedures\GetClientSecurity.sql" />
+    <Build Include="config\Stored Procedures\GetConfigurableTypeSecurity.sql" />
+    <Build Include="config\Stored Procedures\GetContactSecurity.sql" />
+    <Build Include="config\Stored Procedures\GetDocumentSecurity.sql" />
+    <Build Include="config\Stored Procedures\GetFileSecurity.sql" />
+    <Build Include="config\Stored Procedures\ListActiveUserGroupsAndUsers.sql" />
+    <Build Include="config\Stored Procedures\ListClientAssociatedUserGroups.sql" />
+    <Build Include="config\Stored Procedures\ListConfigurableTypeUserGroups.sql" />
+    <Build Include="config\Stored Procedures\ListContactAssociatedUserGroups.sql" />
+    <Build Include="config\Stored Procedures\ListDocumentAssociatedUserGroups.sql" />
+    <Build Include="config\Stored Procedures\ListFileAssociatedUserGroups.sql" />
+    <Build Include="config\Stored Procedures\ListPolicyTemplates.sql" />
+    <Build Include="config\Stored Procedures\ListPolicyType.sql" />
+    <Build Include="config\Stored Procedures\ListSecurityGroups.sql" />
+    <Build Include="config\Stored Procedures\ListUserAndGroup.sql" />
+    <Build Include="dbo\Stored Procedures\fdsprContactContactLinks_Contacts.sql" />
+    <Build Include="dbo\Stored Procedures\fdsprContactLinks_Contacts.sql" />
+    <Build Include="dbo\Stored Procedures\fdsprContactLinks_List.sql" />
+    <Build Include="dbo\Stored Procedures\fdsprContactLinks_Main.sql" />
+    <Build Include="dbo\Stored Procedures\GetAdminKitMenuData.sql" />
+    <Build Include="dbo\Stored Procedures\ptlSchSearchDoc.sql" />
+    <Build Include="dbo\Stored Procedures\schContactInfoCheck.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchAppointments.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchArchive.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchArchiveAll.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDept.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDocEmail.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchEmailEnhanced.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchEmailSimple.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchEscalatedTasks.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchFileReview.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchPrecedent.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchReports.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDocsToArchive.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDocsToDelete.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchTasks.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchTeamTasks.sql" />
+    <Build Include="dbo\Stored Procedures\sprAddressFormat.sql" />
+    <Build Include="dbo\Stored Procedures\sprAssociateTypes.sql" />
+    <Build Include="dbo\Stored Procedures\sprAssocList.sql" />
+    <Build Include="dbo\Stored Procedures\sprAssocListForDoc.sql" />
+    <Build Include="dbo\Stored Procedures\sprCommandBarBuilder.sql" />
+    <Build Include="dbo\Stored Procedures\sprCountries.sql" />
+    <Build Include="dbo\Stored Procedures\sprDateWizardBuilder.sql" />
+    <Build Include="dbo\Stored Procedures\sprEnquiryBuilder.sql" />
+    <Build Include="dbo\Stored Procedures\sprEnquiryFolders.sql" />
+    <Build Include="dbo\Stored Procedures\sprEnquiryTableInformation.sql" />
+    <Build Include="dbo\Stored Procedures\sprExtendedDataBuilder.sql" />
+    <Build Include="dbo\Stored Procedures\sprExtendedDataList.sql" />
+    <Build Include="dbo\Stored Procedures\sprFieldListEx.sql" />
+    <Build Include="dbo\Stored Procedures\sprFileEventRecords.sql" />
+    <Build Include="dbo\Stored Procedures\sprFolders.sql" />
+    <Build Include="dbo\Stored Procedures\sprOMSAssociateTypeTabList.sql" />
+    <Build Include="dbo\Stored Procedures\sprOMSClientTypeTabList.sql" />
+    <Build Include="dbo\Stored Procedures\sprOMSCommandCentreTypeTabList.sql" />
+    <Build Include="dbo\Stored Procedures\sprOMSContactTypeTabList.sql" />
+    <Build Include="dbo\Stored Procedures\sprOMSFeeEarnerTypeTabList.sql" />
+    <Build Include="dbo\Stored Procedures\sprOMSFileTypeTabList.sql" />
+    <Build Include="dbo\Stored Procedures\sprOMSUserTypeTabList.sql" />
+    <Build Include="dbo\Stored Procedures\sprPrecCatList.sql" />
+    <Build Include="dbo\Stored Procedures\sprPrecLibrary.sql" />
+    <Build Include="dbo\Stored Procedures\sprPrecSubCatList.sql" />
+    <Build Include="dbo\Stored Procedures\sprTimeRecords.sql" />
+    <Build Include="dbo\Stored Procedures\sprWorkRecord.sql" />
+    <Build Include="dbo\Stored Procedures\srepAnnivFiles.sql" />
+    <Build Include="dbo\Stored Procedures\srepAppointmentByDate.sql" />
+    <Build Include="dbo\Stored Procedures\srepArchiveListing.sql" />
+    <Build Include="dbo\Stored Procedures\srepBillandWipAvg.sql" />
+    <Build Include="dbo\Stored Procedures\srepClArchList.sql" />
+    <Build Include="dbo\Stored Procedures\srepCliArchListing.sql" />
+    <Build Include="dbo\Stored Procedures\srepCliComplaints.sql" />
+    <Build Include="dbo\Stored Procedures\srepCliComplaintsList.sql" />
+    <Build Include="dbo\Stored Procedures\srepClientComplaints.sql" />
+    <Build Include="dbo\Stored Procedures\srepClientDocList.sql" />
+    <Build Include="dbo\Stored Procedures\srepCliFileList.sql" />
+    <Build Include="dbo\Stored Procedures\srepCliListing.sql" />
+    <Build Include="dbo\Stored Procedures\srepCliXmasCard.sql" />
+    <Build Include="dbo\Stored Procedures\srepComplaintNote.sql" />
+    <Build Include="dbo\Stored Procedures\srepComplaints.sql" />
+    <Build Include="dbo\Stored Procedures\srepConFileAssociations.sql" />
+    <Build Include="dbo\Stored Procedures\srepConListNoSec.sql" />
+    <Build Include="dbo\Stored Procedures\srepContactsAndAssocs.sql" />
+    <Build Include="dbo\Stored Procedures\srepCostAnalysisByFile.sql" />
+    <Build Include="dbo\Stored Procedures\srepDailyTasks.sql" />
+    <Build Include="dbo\Stored Procedures\srepDocCreatedLeagueDep.sql" />
+    <Build Include="dbo\Stored Procedures\srepDocListFiles.sql" />
+    <Build Include="dbo\Stored Procedures\srepDocsUsingPrecs.sql" />
+    <Build Include="dbo\Stored Procedures\srepFeeEarner.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilAssocList.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilAverageCost.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilCompTaskList.sql" />
+    <Build Include="dbo\Stored Procedures\srepFileAllTasks.sql" />
+    <Build Include="dbo\Stored Procedures\srepFileBillingGuide.sql" />
+    <Build Include="dbo\Stored Procedures\srepFileByDesc.sql" />
+    <Build Include="dbo\Stored Procedures\srepFileList.sql" />
+    <Build Include="dbo\Stored Procedures\srepFileOpenedClosed.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilesforClient.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilesForUser.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilesLinkedContact.sql" />
+    <Build Include="dbo\Stored Procedures\srepFileTasksComplete.sql" />
+    <Build Include="dbo\Stored Procedures\srepFileTasksIncomplete.sql" />
+    <Build Include="dbo\Stored Procedures\srepFileUndertakingList.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilEventChronology.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilInactivityDoc.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilOpenedClosed.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilTasksAll.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilTasksComp.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilUndertakings.sql" />
+    <Build Include="dbo\Stored Procedures\srepFilWipDis.sql" />
+    <Build Include="dbo\Stored Procedures\srepLAMatrix.sql" />
+    <Build Include="dbo\Stored Procedures\srepTimeBillingGuideFE.sql" />
+    <Build Include="dbo\Stored Procedures\srepTimeBillingGuideFiles.sql" />
+    <Build Include="dbo\Stored Procedures\srepTimeNilValue.sql" />
+    <Build Include="dbo\Stored Procedures\srepTimeSheetFeeEarner.sql" />
+    <Build Include="dbo\Stored Procedures\srepUndertakingListing.sql" />
+    <Build Include="dbo\Stored Procedures\srepUsrTasks.sql" />
+    <Build Include="dbo\Stored Procedures\srepWIPbyFiles.sql" />
+    <Build Include="dbo\Stored Procedures\srepWIPDisFile.sql" />
+    <Build Include="dbo\Stored Procedures\sprFieldList.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetReportsLists.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetSearchLists.sql" />
+    <Build Include="dbo\Stored Procedures\sprTimeActivities2.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchAdminKit.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDocEmailSimple.sql" />
+    <Build Include="dbo\Stored Procedures\sprPrecedentRecord.sql" />
+    <None Include="Scripts\PostDeployment\New_indexes_MultiPrecedent.sql" />
+    <Build Include="dbo\Tables\dbPowerUserProfiles.sql" />
+    <None Include="Scripts\PostDeployment\dbUser_Add_usrPowerUserProfileID_Column.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetFMMilestonePlans.sql" />
+    <Build Include="dbo\Stored Procedures\sprUpdateAdminFavourites.sql" />
+    <Build Include="dbo\Stored Procedures\sprCheckForDuplicatePrecedent.sql" />
+    <None Include="Scripts\PostDeployment\28225_Prompts_that_are_not_a_code_lookup.sql" />
+    <None Include="Scripts\PostDeployment\31863_AddMemosCodeLookup.sql" />
+    <None Include="Scripts\PostDeployment\31944_ReplacePostRoomComponent.sql" />
+    <None Include="Scripts\PostDeployment\Hardcode_removal.sql" />
+    <None Include="Scripts\PostDeployment\32681_DataGridView_SearchControl.sql" />
+    <Build Include="dbo\Tables\dbPrecedentTeamsAccess.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchPrecedentByTitle.sql" />
+    <None Include="Scripts\PostDeployment\32682_FilterCodeLookup.sql" />
+    <Build Include="dbo\Stored Procedures\srepClUpTypes.sql" />
+    <Build Include="dbo\Tables\dbPrecedentKeys.sql" />
+    <None Include="Scripts\PostDeployment\32116_Precedent_Common_Field_Improvements.sql" />
+    <Build Include="dbo\Stored Procedures\sprCheckForDuplicateTeam.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetUserDashboardCells.sql" />
+    <Build Include="dbo\Stored Procedures\sprAddDeleteUserDashboardCells.sql" />
+    <None Include="Scripts\PostDeployment\34013_Add_AutoSuggest_Text_Box_Control.sql" />
+    <Build Include="dbo\Stored Procedures\dshMatterList.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchAppointmentFile.sql" />
+    <Build Include="dbo\Stored Procedures\dshTasks.sql" />
+    <Build Include="config\Stored Procedures\ApplyObjectPolicy.sql" />
+    <Build Include="config\Stored Procedures\ApplySystemPolicy.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchFileTasks.sql" />
+    <Build Include="dbo\Stored Procedures\dshRecentFavourites.sql" />
+    <Build Include="dbo\Stored Procedures\dshKeyDates.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchFileKeyDates.sql" />
+    <None Include="Scripts\PostDeployment\33222_ContactType_AdditionalInformation.sql" />
+    <Build Include="dbo\Stored Procedures\dshCalendar.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchContact.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchFileUndertakings.sql" />
+    <None Include="Scripts\PostDeployment\35674_ItemAddingError.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchClient.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCLIARCHLIST.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCLIARCHLOG.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCLICOMPLAINT.sql" />
+    <Build Include="dbo\Stored Procedures\fdSCHCONLINKADM.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCONASSOC.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCONLINKREL.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCONLINKS.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCONPERFRATE.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCONREMACCLST.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchAddress.sql" />
+    <Build Include="dbo\Stored Procedures\fdSCHCONLINKACS.sql" />
+    <Build Include="dbo\Stored Procedures\fdSCHCONLINKAFS.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCOMAWAITACK.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFEEDUEIN7.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFEEDUETODAY.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFEEFILELIST.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFEEREVFILE7.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFEEREVTODAY.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFEERSKMANAGE.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFEETASKALL.sql" />
+    <Build Include="dbo\Stored Procedures\SCHREVOVER7.sql" />
+    <Build Include="dbo\Stored Procedures\SCHASSREMOTE.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCOMUNDTAKING.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILAPPOINTS2.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILASSOCCOPY.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILCOURTPART.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILEVENTS.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILPHASES.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILREMOTEACC.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILRISKCFG.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILTASKINCOM.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILTIMERECD.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILTIMREC.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILTRANSLIST.sql" />
+    <Build Include="dbo\Tables\dbArchiveParties.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCLIARCHALL.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCLISCHARCH.sql" />
+    <Build Include="dbo\Stored Procedures\SCHCOMARCHALL.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILARCHLIST.sql" />
+    <Build Include="dbo\Stored Procedures\SCHFILSCHARCH.sql" />
+    <Build Include="dbo\Stored Procedures\SCHDOCLOG.sql" />
+    <Build Include="dbo\Stored Procedures\SCHDOCTIME.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchMilestones.sql" />
+    <Build Include="config\Stored Procedures\DeleteUserGroup.sql" />
+    <Build Include="config\Stored Procedures\DeleteUserGroupFromObject.sql" />
+    <Build Include="dbo\Tables\dbFileFolder.sql" />
+    <Build Include="dbo\Triggers\dbFileFolderTreeIUD.sql" />
+    <Build Include="dbo\Triggers\tgrDeleteFileFolder.sql" />
+    <Build Include="dbo\Stored Procedures\GetClientDocumentFolderCode.sql" />
+    <Build Include="dbo\Stored Procedures\GetContactDocumentFolderCode.sql" />
+    <None Include="Scripts\PostDeployment\37178_OMS_code_lookups_fix.sql" />
+    <Build Include="dbo\Functions\GetFolderCodesForClientDocumentTree.sql" />
+    <Build Include="dbo\Functions\GetFolderCodesForContactDocumentTree.sql" />
+    <Build Include="dbo\Functions\GetAddress.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsListAssociateContacts.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsListAssociateContactsMover.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchClientFile.sql" />
+    <Build Include="dbo\Stored Procedures\sprContactPassiveSearch.sql" />
+    <Build Include="dbo\Stored Procedures\sprImportFile.sql" />
+    <Build Include="dbo\Stored Procedures\srepClDOB.sql" />
+    <Build Include="dbo\Stored Procedures\srepCliDOB.sql" />
+    <Build Include="dbo\Stored Procedures\srepCliFiles.sql" />
+    <Build Include="dbo\Stored Procedures\srepConAssocs.sql" />
+    <Build Include="dbo\Stored Procedures\srepConList.sql" />
+    <Build Include="dbo\Stored Procedures\srepContactList.sql" />
+    <Build Include="dbo\Stored Procedures\srepContsAssocFile.sql" />
+    <Build Include="dbo\Stored Procedures\sprLogin.sql" />
+    <None Include="Scripts\PreDeployment\dbTokens.sql" />
+    <Build Include="dbo\Stored Procedures\GetTokens.sql" />
+    <Build Include="dbo\Stored Procedures\SetTokens.sql" />
+    <Build Include="dbo\Stored Procedures\ContactMergeDelete_dbContactLinks.sql" />
+    <Build Include="dbo\Stored Procedures\ContactMergeDelete_dbAssociates.sql" />
+    <Build Include="dbo\Stored Procedures\ContactMergeDelete_dbClient.sql" />
+    <Build Include="dbo\Stored Procedures\ContactMergeDelete_dbContact.sql" />
+    <Build Include="dbo\Stored Procedures\ContactMergeDelete_dbFile.sql" />
+    <Build Include="dbo\Stored Procedures\ClientDelete_dbClient.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbAssociates.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbDocument.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbDocumentLog.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbDocumentPreview.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbDocumentStorage.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbDocumentVersion.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbDocumentVersionPreview.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbFile.sql" />
+    <None Include="Scripts\PostDeployment\39422_Dashboard_Refactoring.sql" />
+    <Build Include="dbo\Stored Procedures\VirtualDriveFindFiles.sql" />
+    <Build Include="dbo\Functions\VirtualDriveReplaceInvalidCharsInFileName.sql" />
+    <Build Include="dbo\Functions\GetTableRowCount.sql" />
+    <Build Include="dbo\Stored Procedures\schSearchDocAll.sql" />
+    <None Include="Scripts\PostDeployment\39627_DocumentDialog_Timeout.sql" />
+    <None Include="Scripts\PostDeployment\SQLAgentJobs\ContactMergeDeleteJob.sql" />
+    <None Include="Scripts\PostDeployment\SQLAgentJobs\ClientDeleteJob.sql" />
+    <None Include="Scripts\PostDeployment\SQLAgentJobs\MatterMergeDeleteJob.sql" />
+    <None Include="Scripts\PostDeployment\SQLAgentJobs\OMSPermissions.sql" />
+    <Build Include="dbo\Stored Procedures\ClientDelete_dbAppointments.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsDeleteClient.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsDeleteContact.sql" />
+    <Build Include="dbo\Stored Procedures\fwbsDeleteFile.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbAppointments.sql" />
+    <Build Include="dbo\Stored Procedures\MatterMergeDelete_dbTasks.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetLicenseInfo.sql" />
+    <Build Include="dbo\Stored Procedures\sprGetNextSeedNo.sql" />
+    <Build Include="dbo\Functions\GetNextStageDesc.sql" />
+    <Build Include="dbo\Functions\GetUser.sql" />
+    <Build Include="dbo\Stored Procedures\srepMilestoneManager.sql" />
+    <Build Include="dbo\Views\vwDBMSConfig.sql" />
+    <Build Include="dbo\Views\vwDBMSData.sql" />
+    <Build Include="dbo\Stored Procedures\ADUpdateUsersADID.sql" />
+    <Build Include="dbo\Stored Procedures\sprAddDocumentToArchiveExclusions.sql" />
+    <Build Include="dbo\Stored Procedures\sprDocumentArchiveDocVersionInfo.sql" />
+    <Build Include="dbo\Stored Procedures\sprRemoveDocumentfromArchiveExclusions.sql" />
+    <Build Include="dbo\Tables\dbDocusignEnvelopes.sql" />
+    <Build Include="dbo\Stored Procedures\schDocuSignEnvelopes.sql" />
+    <Build Include="dbo\Stored Procedures\schDocuSignRecipients.sql" />
+    <Build Include="dbo\User Defined Types\uCreated.sql" />
+    <Build Include="dbo\User Defined Types\uCreatedBy.sql" />
+  </ItemGroup>
+</Project>

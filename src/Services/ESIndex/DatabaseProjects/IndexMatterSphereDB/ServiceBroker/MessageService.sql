@@ -1,0 +1,1 @@
+﻿CREATE SERVICE [//esindex/MessageService] AUTHORIZATION [dbo] ON QUEUE search.ESIndexQueue ( [//esindex/MessageContract] )

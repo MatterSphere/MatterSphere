@@ -1,0 +1,307 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Horizon"
+                    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+  <Style x:Key="PlaceHolder" TargetType="{x:Type TextBox}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type TextBox}">
+          <Grid>
+            <TextBox
+                x:Name="textSource"
+                VerticalAlignment="Center"
+                Panel.ZIndex="2"
+                Background="Transparent"
+                BorderThickness="0"
+                CaretBrush="White"
+                Foreground="White"
+                Style="{x:Null}"
+                Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox
+                VerticalAlignment="Center"
+                Panel.ZIndex="1"
+                Background="Transparent"
+                BorderThickness="0"
+                Text="{TemplateBinding Tag}">
+              <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                  <Setter Property="Foreground" Value="Transparent" />
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="" />
+                        <Condition Binding="{Binding ElementName=textSource, Path=IsFocused}" Value="False" />
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="Foreground" Value="LightGray" />
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                </Style>
+              </TextBox.Style>
+            </TextBox>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!--  DataGrid styles  -->
+  <Style
+      x:Key="CustomDataGrid"
+      BasedOn="{StaticResource MaterialDesignDataGrid}"
+      TargetType="{x:Type DataGrid}">
+    <Setter Property="AutoGenerateColumns" Value="False" />
+    <Setter Property="IsReadOnly" Value="True" />
+    <Setter Property="SelectionMode" Value="Single" />
+    <Setter Property="RowStyle">
+      <Setter.Value>
+        <Style TargetType="DataGridRow">
+          <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+              <Setter Property="Background" Value="{DynamicResource EliteBrightPurple}" />
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="materialDesign:DataGridAssist.CellPadding" Value="6,8,4,8" />
+    <Setter Property="materialDesign:DataGridAssist.ColumnHeaderPadding" Value="4,8,4,8" />
+  </Style>
+
+  <Style
+      x:Key="CustomDataGridWithAlterRows"
+      BasedOn="{StaticResource CustomDataGrid}"
+      TargetType="{x:Type DataGrid}">
+    <Setter Property="AlternatingRowBackground" Value="{DynamicResource EliteMutedGray}" />
+  </Style>
+
+  <!--  DetailsDataGrid styles  -->
+  <Style
+      x:Key="CustomDetailsDataGrid"
+      BasedOn="{StaticResource MaterialDesignDataGrid}"
+      TargetType="{x:Type DataGrid}">
+    <Setter Property="AutoGenerateColumns" Value="False" />
+    <Setter Property="IsReadOnly" Value="True" />
+    <Setter Property="SelectionMode" Value="Single" />
+    <Setter Property="RowStyle">
+      <Setter.Value>
+        <Style TargetType="DataGridRow">
+          <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+              <Setter Property="Background" Value="White" />
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!--  DataGridCell styles  -->
+  <Style
+      x:Key="CustomDataGridCell"
+      BasedOn="{StaticResource MaterialDesignDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Style.Triggers>
+      <Trigger Property="IsSelected" Value="True">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="{DynamicResource EliteBrightPurple}" />
+        <Setter Property="Foreground" Value="{DynamicResource EliteLightLavender}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="CustomDataGridCellLabel" TargetType="Label">
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridCell}}, Path=IsSelected}" Value="True">
+        <Setter Property="Foreground" Value="{DynamicResource EliteLightLavender}"/>
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style
+      x:Key="CustomDataGridCenterCell"
+      BasedOn="{StaticResource CustomDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type DataGridCell}">
+          <Grid Background="{TemplateBinding Background}">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style
+      x:Key="CustomDataGridRightCell"
+      BasedOn="{StaticResource CustomDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type DataGridCell}">
+          <Grid Background="{TemplateBinding Background}">
+            <ContentPresenter HorizontalAlignment="Right" VerticalAlignment="Center" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style
+      x:Key="CustomDataGridWrapCenterCell"
+      BasedOn="{StaticResource CustomDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type DataGridCell}">
+          <Grid Background="{TemplateBinding Background}">
+            <ContentPresenter
+                Margin="0,9,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style
+      x:Key="CustomDataGridWrapRightCell"
+      BasedOn="{StaticResource CustomDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type DataGridCell}">
+          <Grid Background="{TemplateBinding Background}">
+            <ContentPresenter
+                Margin="0,9,0,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!--  DetailsDataGridCell styles  -->
+  <Style
+      x:Key="CustomDetailsDataGridCell"
+      BasedOn="{StaticResource MaterialDesignDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Style.Triggers>
+      <Trigger Property="IsSelected" Value="True">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="White" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style
+      x:Key="CustomDetailsDataGridLeftCell"
+      BasedOn="{StaticResource CustomDetailsDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type DataGridCell}">
+          <Grid Background="{TemplateBinding Background}">
+            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style
+      x:Key="CustomDetailsDataGridCenterCell"
+      BasedOn="{StaticResource CustomDetailsDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type DataGridCell}">
+          <Grid Background="{TemplateBinding Background}">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style
+      x:Key="CustomDetailsDataGridRightCell"
+      BasedOn="{StaticResource CustomDetailsDataGridCell}"
+      TargetType="{x:Type DataGridCell}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type DataGridCell}">
+          <Grid Background="{TemplateBinding Background}">
+            <ContentPresenter HorizontalAlignment="Right" VerticalAlignment="Center" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <!--  ListBox styles  -->
+  <Style x:Key="CustomListBoxItem" TargetType="ListBoxItem">
+    <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+          <Border
+              x:Name="Bd"
+              Padding="{TemplateBinding Padding}"
+              Background="{TemplateBinding Background}"
+              BorderBrush="{TemplateBinding BorderBrush}"
+              BorderThickness="{TemplateBinding BorderThickness}"
+              SnapsToDevicePixels="true">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Trigger.Setters>
+                <Setter Property="Background" Value="{DynamicResource EliteMutedGray}" />
+              </Trigger.Setters>
+            </Trigger>
+            <MultiTrigger>
+              <MultiTrigger.Conditions>
+                <Condition Property="Selector.IsSelectionActive" Value="True" />
+                <Condition Property="IsSelected" Value="True" />
+              </MultiTrigger.Conditions>
+              <Setter TargetName="Bd" Property="Background" Value="{DynamicResource EliteBrightPurple}" />
+              <Setter Property="Foreground" Value="{DynamicResource EliteLightLavender}" />
+            </MultiTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="CustomSelectedLabelStyle" TargetType="Label">
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" Value="True">
+        <Setter Property="Foreground" Value="{DynamicResource EliteLightLavender}"/>
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <!--  GroupBox styles  -->
+  <Style
+      x:Key="CustomGroupBox"
+      BasedOn="{StaticResource MaterialDesignGroupBox}"
+      TargetType="GroupBox">
+    <Setter Property="HeaderTemplate">
+      <Setter.Value>
+        <DataTemplate>
+          <TextBlock
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Text="{Binding (GroupBox.Header), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GroupBox}}}" />
+        </DataTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

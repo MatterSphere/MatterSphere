@@ -1,0 +1,35 @@
+﻿CREATE FUNCTION [dbo].[SplitString] 
+(
+    @IN_STRING NVARCHAR ( MAX )
+	, @SEPARATE_BY CHAR (1)
+)
+RETURNS TABLE
+AS
+RETURN 
+(
+	WITH PARTS (X , Y , Z) AS 
+	(
+    SELECT 
+        CAST(1 AS BIGINT), 
+        CAST(1 AS BIGINT), 
+        CHARINDEX(@SEPARATE_BY, @IN_STRING)
+    UNION ALL
+    SELECT
+        X + 1, 
+        Z + 1, 
+        CHARINDEX(@SEPARATE_BY, @IN_STRING, Z + 1)
+    FROM PARTS
+    WHERE Z > 0
+)
+SELECT
+    X-1 IND,
+    SUBSTRING(
+        @IN_STRING, 
+        Y, 
+        CASE WHEN Z > 0 THEN Z-Y ELSE LEN(@IN_STRING) END) 
+    AS VALUE
+FROM PARTS
+);
+
+
+

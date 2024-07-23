@@ -1,0 +1,33 @@
+﻿
+-- DI:20.04.15
+-- WHEN RUNNING THE SCRIPTS ON INSTALLATION, REMAIN ON THE SOURCE DATABASE AND RUN THIS SCRIPT. 
+-- THIS WILL CREATE A NEW 'MSAUDITOR' ROLE ON THE ASSOCIATED AUDIT DATABASE OF THE SOURCE DATABASE.
+
+ 
+DECLARE @DB_NAME SYSNAME
+DECLARE @AUDIT_DB_NAME SYSNAME
+declare @SQL nvarchar(max)
+
+SET @DB_NAME = DB_NAME ()
+SET @AUDIT_DB_NAME = DB_NAME () + '_Audit'
+
+set @SQL = 
+'USE [master]
+IF NOT EXISTS(SELECT * FROM sys.server_principals WHERE name = ''MSAUDITOR'')
+CREATE LOGIN [MSAUDITOR] WITH PASSWORD=N''Passw0rd'', DEFAULT_DATABASE=[' + @AUDIT_DB_NAME + '], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+			
+USE [' + @AUDIT_DB_NAME + ']
+EXEC dbo.sp_changedbowner @loginame = N''MSAUDITOR'', @map = false
+
+USE [' + @DB_NAME + ']
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N''MSAUDITOR'')
+CREATE USER [MSAUDITOR] FOR LOGIN [MSAUDITOR]
+
+EXEC sp_addrolemember N''OMSAdminRole'', N''MSAUDITOR''
+EXEC sp_addrolemember N''OMSRole'', N''MSAUDITOR''
+EXEC sp_addrolemember N''db_datareader'', N''MSAUDITOR''
+
+'
+
+--print @SQL	 
+EXEC sp_executesql @SQL

@@ -1,0 +1,344 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <ComponentGroup Id="CG_Office" Directory="INSTALLDIR">
+      <?if $(var.Platform) = "x86" ?>
+      <Component Id="cmp812FEE071872B7A06DAEABC4D477A569" Guid="{349D3450-8374-4465-A9AC-3A31AB37D716}">
+        <File Id="Fwbs.ControlShim.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.ControlShim.dll">
+          <TypeLib Id="{648EC993-5231-480D-BBFB-3B277C26EF31}" Description="FWBSSecondary Shim 1.0 Type Library" HelpDirectory="INSTALLDIR" Language="0" MajorVersion="1" MinorVersion="0" Advertise="no">
+            <AppId Description="FolderHomepageControlShim" Id="{0DEBFF83-B583-48A2-BD14-D4D0B269B74B}" Advertise="no" />
+            <Interface Id="{52147600-33E8-46AD-9666-A3E13BB46DC8}" Name="IFolderHomepageCtl" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Class Id="{B9C8117E-C13B-4FF5-BF75-03BE75EB7FE5}" Context="InprocServer32" Description="FolderHomepageCtl Class" ThreadingModel="apartment" Programmable="yes" Control="yes" Advertise="no">
+              <ProgId Id="FolderHomepageControlShim.FolderHomepage" Description="FolderHomepageCtl Class" />
+            </Class>
+          </TypeLib>
+        </File>
+        <RegistryValue Root="HKCR" Key="AppID\FolderHomepageControlShim.DLL" Name="AppID" Value="{0DEBFF83-B583-48A2-BD14-D4D0B269B74B}" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{B9C8117E-C13B-4ff5-BF75-03BE75EB7FE5}\MiscStatus\1" Value="131473" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{B9C8117E-C13B-4ff5-BF75-03BE75EB7FE5}\MiscStatus" Value="0" Type="string" Action="write" />
+      </Component>
+      <?elseif $(var.Platform) = "x64" ?>
+      <Component Id="cmpDEF691E63E1C6A5D08E5EEBAA881033B" Guid="{87CF3337-1779-4765-A167-A63EAFF0AB91}">
+        <File Id="Fwbs.ControlShim64.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.ControlShim64.dll">
+          <TypeLib Id="{648EC993-5231-480D-BBFB-3B277C26EF31}" Description="FWBSSecondary Shim 1.0 Type Library" HelpDirectory="INSTALLDIR" Language="0" MajorVersion="1" MinorVersion="0" Advertise="no">
+            <AppId Description="FolderHomepageControlShim" Id="{0DEBFF83-B583-48A2-BD14-D4D0B269B74B}" Advertise="no" />
+            <Interface Id="{52147600-33E8-46AD-9666-A3E13BB46DC8}" Name="IFolderHomepageCtl" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Class Id="{B9C8117E-C13B-4FF5-BF75-03BE75EB7FE5}" Context="InprocServer32" Description="FolderHomepageCtl Class" ThreadingModel="apartment" Programmable="yes" Control="yes" Advertise="no">
+              <ProgId Id="FolderHomepageControlShim.FolderHomepage" Description="FolderHomepageCtl Class" />
+            </Class>
+          </TypeLib>
+        </File>
+        <RegistryValue Root="HKCR" Key="AppID\FolderHomepageControlShim.DLL" Name="AppID" Value="{0DEBFF83-B583-48A2-BD14-D4D0B269B74B}" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="TypeLib\{648EC993-5231-480D-BBFB-3B277C26EF31}\1.0\0\win32" Value="[#Fwbs.ControlShim64.dll]" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{B9C8117E-C13B-4ff5-BF75-03BE75EB7FE5}\MiscStatus\1" Value="131473" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{B9C8117E-C13B-4ff5-BF75-03BE75EB7FE5}\MiscStatus" Value="0" Type="string" Action="write" />
+      </Component>
+      <?endif?>
+      <Component Id="cmpFB9233F5CE3C494D258197E91DC99033" Guid="{A27943F0-367A-4ED3-8BA7-56E3903EEB30}">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\FWBS\OMS\2.0">
+          <RegistryValue Name="OMSAddinCOM" Value="OMSOffice2007" Type="string" Action="write" />
+          <RegistryValue Name="OMSAddinWord" Value="OMSOffice2007" Type="string" Action="write" />
+          <RegistryValue Name="OMSAddinExcel" Value="OMSOffice2007" Type="string" Action="write" />
+          <RegistryValue Name="OMSAddinOutlook" Value="OMSOffice2007" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+      <Component Id="cmp60505B9B9CDBA480B4EF54829AEE2CE2" Guid="{2D9520A1-E6C2-4362-AD6D-B311B23D60D7}">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Office\Word\Addins\OMSOffice2007">
+          <RegistryValue Name="CommandLineSafe" Value="1" Type="integer" Action="write" />
+          <RegistryValue Name="Description" Value="3E MatterSphere Word add-in" Type="string" Action="write" />
+          <RegistryValue Name="FriendlyName" Value="3E MatterSphere" Type="string" Action="write" />
+          <RegistryValue Name="LoadBehavior" Value="3" Type="integer" Action="write" />
+          <RegistryValue Name="Manifest" Value="[INSTALLDIR]Fwbs.Oms.Office.Word.vsto|vstolocal" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+      <Component Id="cmp570970F4738DA45369C2385693FD2689" Guid="{AEE319EE-3C64-42FA-A96D-31E3F3320ED7}">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Office\Excel\Addins\OMSOffice2007">
+          <RegistryValue Name="CommandLineSafe" Value="1" Type="integer" Action="write" />
+          <RegistryValue Name="Description" Value="3E MatterSphere Excel add-in" Type="string" Action="write" />
+          <RegistryValue Name="FriendlyName" Value="3E MatterSphere" Type="string" Action="write" />
+          <RegistryValue Name="LoadBehavior" Value="3" Type="integer" Action="write" />
+          <RegistryValue Name="Manifest" Value="[INSTALLDIR]Fwbs.Oms.Office.Excel.vsto|vstolocal" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+      <Component Id="cmp8D6A7250A61D71E4F5EF8E396FB0887B" Guid="{3522F09A-A984-4D71-889B-2A01CA46B8DB}">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Office\Outlook\Addins\OMSOffice2007">
+          <RegistryValue Name="CommandLineSafe" Value="1" Type="integer" Action="write" />
+          <RegistryValue Name="Description" Value="3E MatterSphere Outlook add-in" Type="string" Action="write" />
+          <RegistryValue Name="FriendlyName" Value="3E MatterSphere" Type="string" Action="write" />
+          <RegistryValue Name="LoadBehavior" Value="3" Type="integer" Action="write" />
+          <RegistryValue Name="Manifest" Value="[INSTALLDIR]Fwbs.Oms.Office.Outlook.vsto|vstolocal" Type="string" Action="write" />
+        </RegistryKey>
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Office\Outlook\FormRegions\IPM.Appointment">
+          <RegistryValue Name="Outlook.ClientFormRegion" Value="=OMSOffice2007" Type="string" Action="write" />
+          <RegistryValue Name="Outlook.MailFormRegion" Value="=OMSOffice2007" Type="string" Action="write" />
+        </RegistryKey>
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Office\Outlook\FormRegions\IPM.Note">
+          <RegistryValue Name="Outlook.ClientFormRegion" Value="=OMSOffice2007" Type="string" Action="write" />
+          <RegistryValue Name="Outlook.MailFormRegion" Value="=OMSOffice2007" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+      <Component Id="cmpBB21894C843172CD7EFD13682CE24211" Guid="{AE0C9855-2295-462C-8718-E87DB70FDA88}">
+        <Class Id="{56620968-9FE3-45C2-BC75-F4C34715A819}" Context="InprocServer32" Description="Fwbs.Oms.Office.Outlook.ExternalOutlookOMSAddin" ThreadingModel="both" ForeignServer="mscoree.dll">
+          <ProgId Id="Fwbs.Oms.Office.Outlook.ExternalOutlookOMSAddin" Description="Fwbs.Oms.Office.Outlook.ExternalOutlookOMSAddin" />
+        </Class>
+        <RegistryKey Root="HKCR" Key="CLSID\{56620968-9FE3-45C2-BC75-F4C34715A819}">
+          <RegistryValue Key="Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+          <RegistryKey Key="InprocServer32">
+            <RegistryKey Key="!(bind.assemblyVersion.OMS.Shell.dll)">
+              <RegistryValue Name="Class" Value="Fwbs.Oms.Office.Outlook.ExternalOutlookOMSAddin" Type="string" Action="write" />
+              <RegistryValue Name="Assembly" Value="Fwbs.Oms.Office.Outlook, Version=!(bind.assemblyVersion.OMS.Shell.dll), Culture=neutral, PublicKeyToken=7212801a92a1726d" Type="string" Action="write" />
+              <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+              <RegistryValue Name="CodeBase" Value="file:///[INSTALLDIR]Fwbs.Oms.Office.Outlook.dll" Type="string" Action="write" />
+            </RegistryKey>
+            <RegistryValue Name="Class" Value="Fwbs.Oms.Office.Outlook.ExternalOutlookOMSAddin" Type="string" Action="write" />
+            <RegistryValue Name="Assembly" Value="Fwbs.Oms.Office.Outlook, Version=!(bind.assemblyVersion.OMS.Shell.dll), Culture=neutral, PublicKeyToken=7212801a92a1726d" Type="string" Action="write" />
+            <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+            <RegistryValue Name="CodeBase" Value="file:///[INSTALLDIR]Fwbs.Oms.Office.Outlook.dll" Type="string" Action="write" />
+          </RegistryKey>
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_VSTO_Tools" Directory="INSTALLDIR">
+      <Component Id="cmpDB844508D2F48C2569B1C2575ACD685C" Guid="{1B6E583E-E767-48FE-9849-B10C4BF6EA18}">
+        <File Id="Extensibility.dll" KeyPath="yes" Source="$(var.SourceDir)\Extensibility.dll" />
+      </Component>
+      <Component Id="cmpD7905903BEC4D5235C881454BA27B24A" Guid="{B3666300-0B4E-4165-B6AC-49D5BD13FA2C}">
+        <File Id="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Office.Tools.Common.v4.0.Utilities.dll" />
+      </Component>
+      <Component Id="cmpF36F2243D338E767FA2382A1086193DD" Guid="{F51C1A8F-EE2E-4061-8468-6BC4B2DB9FB1}">
+        <File Id="Microsoft.Office.Tools.Excel.v4.0.Utilities.dll" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Office.Tools.Excel.v4.0.Utilities.dll" />
+      </Component>
+      <Component Id="cmpAB189970839B201EDB6D8A87D624CB4B" Guid="{6F116486-D71F-488F-9819-9E9D1043A810}">
+        <File Id="Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll" />
+      </Component>
+      <Component Id="cmp68BC9648F3772442F5861E194FC752D6" Guid="{A5C51FFB-08CB-493B-BA93-1924EB8CB50D}">
+        <File Id="Microsoft.Office.Tools.Word.v4.0.Utilities.dll" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Office.Tools.Word.v4.0.Utilities.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="ADDINOFFICE2010" Name="Office2010" />
+    </DirectoryRef>
+    <ComponentGroup Id="CG_Office2010" Directory="ADDINOFFICE2010">
+      <Component Id="cmp92BE2F3E5D48AD79679A14D9814526B2" Guid="{FE622BA2-5130-4844-969D-33F7739CFAF1}">
+        <File Id="Fwbs.Oms.Office.Common.dll.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Common.dll" />
+      </Component>
+      <Component Id="cmp493B07152A89FC34F0A8B2477A082275" Guid="{19724370-FA0D-4A88-A814-3D6A2E26108E}">
+        <File Id="Fwbs.Oms.Office.Core.dll.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Core.dll" />
+      </Component>
+      <Component Id="cmp66E70F9956C40EE9E0F5E7309434F2ED" Guid="{BB7EADD7-A6BD-45AA-AA9F-9B901C71F9A7}">
+        <File Id="Fwbs.Oms.Office.Excel.dll.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Excel.dll" />
+      </Component>
+      <Component Id="cmp308BC5668F17976A4B7EFD71C1C7A573" Guid="{B91846D4-147D-4672-B2CF-3C50E192EDC2}">
+        <File Id="Fwbs.Oms.Office.Excel.dll.manifest.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Excel.dll.manifest" />
+      </Component>
+      <Component Id="cmpE13FA8A3F71BF24C21C39BDA7D277D6A" Guid="{314EC944-A272-4C94-937F-DF25041C782F}">
+        <File Id="Fwbs.Oms.Office.Excel.vsto.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Excel.vsto" />
+      </Component>
+      <Component Id="cmpD7FEAEE4699AAAA529948618D74BB8E7" Guid="{E05E0B64-4A62-46C4-829E-74EC3B707E2F}">
+        <File Id="Fwbs.Oms.Office.Outlook.dll.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Outlook.dll" />
+      </Component>
+      <Component Id="cmp5219F27E205EE66CD922AA9B8E4907FF" Guid="{897B0E5C-9612-4544-919E-4B7FB7FE1BB6}">
+        <File Id="Fwbs.Oms.Office.Outlook.dll.manifest.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Outlook.dll.manifest" />
+      </Component>
+      <Component Id="cmp3DEB13780EDA61ACA1A86B52714A4185" Guid="{6461A381-254C-45F3-9B70-49D9C471785F}">
+        <File Id="Fwbs.Oms.Office.Outlook.vsto.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Outlook.vsto" />
+      </Component>
+      <Component Id="cmp9D39E93ADBB10FB74C9A07C992AC4784" Guid="{AE3E01B8-DA06-44A1-AC5F-8C5AAD9FCA81}">
+        <File Id="Fwbs.Oms.Office.Word.dll.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Word.dll" />
+      </Component>
+      <Component Id="cmp723205F8B4FE73500A1C7F4EEE2F47BD" Guid="{B37A7631-8B4E-4A6A-8EAE-7437720C1BBB}">
+        <File Id="Fwbs.Oms.Office.Word.dll.manifest.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Word.dll.manifest" />
+      </Component>
+      <Component Id="cmp9FB9AEC5DA1FD92F11DF010282A98937" Guid="{0836EFF0-100D-446E-AB8B-D2215F1D1D75}">
+        <File Id="Fwbs.Oms.Office.Word.vsto.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\Fwbs.Oms.Office.Word.vsto" />
+      </Component>
+      <Component Id="cmpEACE1AE6B410723A93088371B326EE78" Guid="{8F200314-DEF4-4823-A661-91FDE5734AD2}">
+        <File Id="OMSOffice.dll.2010" KeyPath="yes" Source="$(var.SourceDir)\Office2010\OMSOffice.dll" />
+      </Component>
+      <Component Id="cmpBBE49B45DD5AC13E4333FC39F1A1B896" Guid="{C68EB8BF-9AE9-4553-9721-2B2817B473CD}">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Office\14.0\Common\COM Compatibility\{DFEAF541-F3E1-4c24-ACAC-99C30715084A}">
+          <RegistryValue Name="ActivationFilterOverride" Value="1" Type="integer" Action="write" />
+          <RegistryValue Name="Compatibility Flags" Value="0" Type="integer" Action="write" />
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="ADDINOFFICE2013" Name="Office2013" />
+    </DirectoryRef>
+    <ComponentGroup Id="CG_Office2013" Directory="ADDINOFFICE2013">
+      <Component Id="cmp0C891F4C77EA82C750CA225653835312" Guid="{456680D6-DD1C-4B90-B392-B61C81809310}">
+        <File Id="Fwbs.Oms.Office.Common.dll.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Common.dll" />
+      </Component>
+      <Component Id="cmp3253783B68883C3578CBC510C0586535" Guid="{3AC85EF0-2896-438D-B852-97A297C44D48}">
+        <File Id="Fwbs.Oms.Office.Core.dll.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Core.dll" />
+      </Component>
+      <Component Id="cmpA1F015CE3AE0DE105E97A19B992F99F5" Guid="{05001627-A69E-4F11-A699-9610EA2C17FC}">
+        <File Id="Fwbs.Oms.Office.Excel.dll.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Excel.dll" />
+      </Component>
+      <Component Id="cmpD1579A29CB6E9272E6F0DFA0B99FC58A" Guid="{7569618F-0CD0-4922-A3A5-77DEDFE297D1}">
+        <File Id="Fwbs.Oms.Office.Excel.dll.manifest.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Excel.dll.manifest" />
+      </Component>
+      <Component Id="cmp70149166064F88F717F58214896A7F9D" Guid="{843D0C9E-A970-46B0-97F9-8286ECC74F18}">
+        <File Id="Fwbs.Oms.Office.Excel.vsto.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Excel.vsto" />
+      </Component>
+      <Component Id="cmp046986DC77B707ED2567B10968C178C0" Guid="{86E9FFE9-0F4B-4AD9-A0D4-B1020B34DAFB}">
+        <File Id="Fwbs.Oms.Office.Outlook.dll.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Outlook.dll" />
+      </Component>
+      <Component Id="cmp14417E7C6657A6EB74EC0573CAFCF5FC" Guid="{F7BA4E33-D1FA-454A-97C5-1823CFB850FB}">
+        <File Id="Fwbs.Oms.Office.Outlook.dll.manifest.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Outlook.dll.manifest" />
+      </Component>
+      <Component Id="cmpC14446B2B0013B80C864EE626B6D4152" Guid="{F80AFD18-7E65-451B-A80A-AAC905FA09AE}">
+        <File Id="Fwbs.Oms.Office.Outlook.vsto.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Outlook.vsto" />
+      </Component>
+      <Component Id="cmpD17E63DD5A256E8393C38AFC534F5370" Guid="{33CD6446-F756-4BDF-AC74-F12FC051CB49}">
+        <File Id="Fwbs.Oms.Office.Word.dll.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Word.dll" />
+      </Component>
+      <Component Id="cmp5E2819F1AEB5C7F76E8CF09576FADF26" Guid="{A868D05E-B6DB-422C-94E5-6EF2121E2CC5}">
+        <File Id="Fwbs.Oms.Office.Word.dll.manifest.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Word.dll.manifest" />
+      </Component>
+      <Component Id="cmpF5663735AECE99A8650A0F034344D544" Guid="{C8A2B45D-E53B-411D-95E2-942B084AB789}">
+        <File Id="Fwbs.Oms.Office.Word.vsto.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\Fwbs.Oms.Office.Word.vsto" />
+      </Component>
+      <Component Id="cmpF2E59CC948AAB7BDFA17D1B18E636BEE" Guid="{14D78205-6508-424B-8533-74FB35F03B1B}">
+        <File Id="OMSOffice.dll.2013" KeyPath="yes" Source="$(var.SourceDir)\Office2013\OMSOffice.dll" />
+      </Component>
+      <Component Id="cmpD4F2D9B862A0873EC378AD10ED853810" Guid="{6FCD2BAA-9167-403C-8F9F-E593A571588A}">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Office\15.0\Common\COM Compatibility\{DFEAF541-F3E1-4c24-ACAC-99C30715084A}">
+          <RegistryValue Name="ActivationFilterOverride" Value="1" Type="integer" Action="write" />
+          <RegistryValue Name="Compatibility Flags" Value="0" Type="integer" Action="write" />
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="ADDINOFFICE2016" Name="Office2016" />
+    </DirectoryRef>
+    <ComponentGroup Id="CG_Office2016" Directory="ADDINOFFICE2016">
+      <Component Id="cmp46FFB0FBD3E8041035312804F9746697" Guid="{B7C35383-638A-49DC-844F-EFC8C9B11F32}">
+        <File Id="Fwbs.Oms.Office.Common.dll.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Common.dll" />
+      </Component>
+      <Component Id="cmpF251D5AB0750606B900A4EA51A4F14A7" Guid="{24D57E9E-C117-4F15-AD69-FA96A1E35759}">
+        <File Id="Fwbs.Oms.Office.Core.dll.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Core.dll" />
+      </Component>
+      <Component Id="cmpA398F5ECE71F2F5C0203C8713DEF4E06" Guid="{1E54286C-C6B6-446E-8597-CE980BF2B332}">
+        <File Id="Fwbs.Oms.Office.Excel.dll.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Excel.dll" />
+      </Component>
+      <Component Id="cmp083A0F26825DECEB9F853092B13BBEBD" Guid="{F425A1FD-E9D5-40D1-B9E6-0A9BC6E3CE5B}">
+        <File Id="Fwbs.Oms.Office.Excel.dll.manifest.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Excel.dll.manifest" />
+      </Component>
+      <Component Id="cmp55E8DCE61D5FCE7F780CF7B4F33E99E3" Guid="{B4B8CCE3-9587-4B33-BCEB-DBDB71155214}">
+        <File Id="Fwbs.Oms.Office.Excel.vsto.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Excel.vsto" />
+      </Component>
+      <Component Id="cmpBBB06414AD770592147921A3DE459084" Guid="{3D83E8B2-5C89-4C7A-B699-67FBFFBCCBCC}">
+        <File Id="Fwbs.Oms.Office.Outlook.dll.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Outlook.dll" />
+      </Component>
+      <Component Id="cmp6397E918056072368849C1CA334BA67F" Guid="{095C2226-507A-4231-9419-49941F06C1B4}">
+        <File Id="Fwbs.Oms.Office.Outlook.dll.manifest.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Outlook.dll.manifest" />
+      </Component>
+      <Component Id="cmp5CB7D4A5F9D55BBE84992F38A997F4BC" Guid="{50891508-3A00-4807-BF36-7242714E04F3}">
+        <File Id="Fwbs.Oms.Office.Outlook.vsto.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Outlook.vsto" />
+      </Component>
+      <Component Id="cmpADF1AE97DE17FC8646B861B9423D4F01" Guid="{CA7BEA48-9ABB-416E-B47B-92EFB5336CB7}">
+        <File Id="Fwbs.Oms.Office.Word.dll.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Word.dll" />
+      </Component>
+      <Component Id="cmpA2E7F95DF12F96175AFDAE664EB56325" Guid="{423574DD-440A-4E76-A6F6-278923E1F139}">
+        <File Id="Fwbs.Oms.Office.Word.dll.manifest.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Word.dll.manifest" />
+      </Component>
+      <Component Id="cmp0D55C999EB59BD78BA213E2AFF61ECDF" Guid="{484225D8-69F0-4104-BD64-2721DFBDEABD}">
+        <File Id="Fwbs.Oms.Office.Word.vsto.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\Fwbs.Oms.Office.Word.vsto" />
+      </Component>
+      <Component Id="cmp0D995D57D39C9FFDA9059AF99A81A844" Guid="{C39338EA-C588-4255-9BC4-AA5336CE2481}">
+        <File Id="OMSOffice.dll.2016" KeyPath="yes" Source="$(var.SourceDir)\Office2016\OMSOffice.dll" />
+      </Component>
+      <Component Id="cmpD5E5A99FBE9BF993AB6C5FA667074547" Guid="{9992B95A-AC25-4934-84CD-E9137DF3F89A}">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Office\16.0\Common\COM Compatibility\{DFEAF541-F3E1-4c24-ACAC-99C30715084A}">
+          <RegistryValue Name="ActivationFilterOverride" Value="1" Type="integer" Action="write" />
+          <RegistryValue Name="Compatibility Flags" Value="0" Type="integer" Action="write" />
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="CG_FullDMTemplates" Directory="INSTALLDIR">
+      <?if $(var.Platform) = "x86" ?>
+      <Component Id="cmp55D9906B20AF2F902488C2C35A4F791A" Guid="{32A737E9-1FFD-479E-90BA-A04D7F4BB42F}">
+        <File Id="omsfw2007.dot" KeyPath="yes" Source="$(var.SourceDir)\omsfw2007.dot">
+          <CopyFile Id="omsfw2007.dot" DestinationProperty="WORD_STARTUP" />
+        </File>
+      </Component>
+      <Component Id="cmpDDAC3E139D7F3356262AB0E6CD404797" Guid="{FD83F71A-92A0-42BC-B3B1-979FB88B5C4E}">
+        <File Id="omsfw2007.xla" KeyPath="yes" Source="$(var.SourceDir)\omsfw2007.xla">
+          <CopyFile Id="omsfw2007.xla" DestinationProperty="EXCEL_STARTUP" />
+        </File>
+      </Component>
+      <?elseif $(var.Platform) = "x64" ?>
+      <Component Id="cmpBB775037D6C0FBCD67AA2A37DE1C4620" Guid="{8C5F6E37-2A41-4692-A96B-D274A21B1368}">
+        <File Id="omsfw2007_64.dot" KeyPath="yes" Source="$(var.SourceDir)\omsfw2007_64.dot">
+          <CopyFile Id="omsfw2007_64.dot" DestinationProperty="WORD_STARTUP" />
+        </File>
+      </Component>
+      <Component Id="cmp4A08D2AFF56760AE157228CBE84F750A" Guid="{6C3B085D-3110-47F9-8608-98A7FCD9FE03}">
+        <File Id="omsfw2007_64.xla" KeyPath="yes" Source="$(var.SourceDir)\omsfw2007_64.xla">
+          <CopyFile Id="omsfw2007_64.xla" DestinationProperty="EXCEL_STARTUP" />
+        </File>
+      </Component>
+      <?endif?>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_NoDMTemplates" Directory="INSTALLDIR">
+      <Component Id="cmpA9466493755728A937E30668D11C1577" Guid="{18129E28-AB01-4612-95FE-F83623354B73}">
+        <RegistryValue Root="HKLM" Key="SOFTWARE\FWBS\OMS\2.0" Name="DisableDMFunctions" Value="True" Type="string" Action="write" />
+        <RegistryValue Root="HKLM" Key="SOFTWARE\FWBS\OMS\2.0\DocumentManagement" Name="DocumentManagementMode" Value="LIMITDM" Type="string" Action="write" />
+      </Component>
+      <?if $(var.Platform) = "x86" ?>
+      <Component Id="cmpA4AAB5295EDC5241A2A2E4E9FE60B8B6" Guid="{256D16B0-31FE-4E4E-A904-282735DDA1E7}">
+        <File Id="omsfw2007NoDM.dot" KeyPath="yes" Source="$(var.SourceDir)\omsfw2007NoDM.dot">
+          <CopyFile Id="omsfw2007NoDM.dot" DestinationProperty="WORD_STARTUP" />
+        </File>
+      </Component>
+      <Component Id="cmpF2FA3F422BAD4B1F0B005D83F79C00D4" Guid="{B1E82FC0-5B42-414A-98A4-F703E1D90E93}">
+        <File Id="omsfw2007NoDM.xla" KeyPath="yes" Source="$(var.SourceDir)\omsfw2007NoDM.xla">
+          <CopyFile Id="omsfw2007NoDM.xla" DestinationProperty="EXCEL_STARTUP" />
+        </File>
+      </Component>
+      <?elseif $(var.Platform) = "x64" ?>
+      <Component Id="cmp82CDC37749E320BEB4D4218947718D55" Guid="{520DF49B-1C94-47EF-8771-70A672FB8F18}">
+        <File Id="omsfw2007NoDM_64.dot" KeyPath="yes" Source="$(var.SourceDir)\omsfw2007NoDM_64.dot">
+          <CopyFile Id="omsfw2007NoDM_64.dot" DestinationProperty="WORD_STARTUP" />
+        </File>
+      </Component>
+      <Component Id="cmp62CA15DBEF45DEE761670C8760C8039D" Guid="{BC6BC89B-ED98-4DDD-B8DA-95562B7987A6}">
+        <File Id="omsfw2007NoDM_64.xla" KeyPath="yes" Source="$(var.SourceDir)\omsfw2007NoDM_64.xla">
+          <CopyFile Id="omsfw2007NoDM_64.xla" DestinationProperty="EXCEL_STARTUP" />
+        </File>
+      </Component>
+      <?endif?>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="CG_LaserForms" Directory="INSTALLDIR">
+      <Component Id="cmpCBD2E286A13EC51D3320958806DB7BB2" Guid="{D0307F15-3892-43F3-9EB9-C1D236EFD174}">
+        <File Id="FWBS.OMS.LASER.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.LASER.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_OyezForms" Directory="INSTALLDIR">
+      <Component Id="cmpE0155F01697B9B7CFE033B7A98873F3B" Guid="{12754DFB-6548-4E20-A375-98F8612CFE3C}">
+        <File Id="FWBS.OMS.Oyez.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.Oyez.dll" />
+      </Component>
+      <Component Id="cmp587B9BE24D274E9202BCC1E4CA3C9C72" Guid="{ADA0A3FB-BA40-44D1-BE03-1C4F79B5DD51}">
+        <File Id="Interop.OyezFrms.dll" KeyPath="yes" Source="$(var.SourceDir)\Interop.OyezFrms.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

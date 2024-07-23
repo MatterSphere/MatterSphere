@@ -1,0 +1,50 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="DocumentArchiving.Service" Directory="INSTALLFOLDER">
+      <File Id="DocumentArchivingService.exe" Source="$(SourceDir)\DocumentArchivingService.exe" KeyPath="yes" />
+      <File Id="DocumentArchivingService.exe.config" Source="$(SourceDir)\DocumentArchivingService.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSphereDocumentArchiverService"
+                      DisplayName="3E MatterSphere Document Archiver Service"
+                      Description="The 3E MatterSphere Document Archiver Service enables documents in the 3E MatterSphere Document Management System to be archived and deleted."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSphereDocumentArchiverService"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="DocumentArchiving.Dependencies" Guid="{8B95B9ED-5C85-4973-A354-B6B253F8DBB9}" Directory="INSTALLFOLDER">
+      <File Source="$(SourceDir)\SampleConfig\DocArchive.config" />
+      <File Source="$(SourceDir)\DocumentArchivingClass.dll" />
+      <File Source="$(SourceDir)\DocumentArchivingClass.dll.config" />
+      <File Source="$(SourceDir)\DocumentArchivingForm.exe" />
+      <File Source="$(SourceDir)\DocumentArchivingForm.exe.config" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ManufacturerMenuFolder">
+      <Component Id="DocumentArchivingFormShortcut" Guid="*">
+        <Shortcut Id="DocumentArchivingFormMenuShortcut"
+                  Name="Document Archiver"
+                  Description="Document Archiver"
+                  Target="[INSTALLFOLDER]DocumentArchivingForm.exe"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="DocumentArchivingForm.ico" SourceFile="DocumentArchivingForm.exe" />
+        </Shortcut>
+        <RegistryValue Root="HKCU"
+                       Key="Software\$(PublisherName)\$(ProductName)"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+        <RemoveFolder Id="RemoveManufacturerMenuFolder" Directory="ManufacturerMenuFolder" On="uninstall" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

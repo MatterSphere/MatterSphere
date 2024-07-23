@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Fwbs.WinFinder.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WindowClassGadgets" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SideBar_HTMLHostWindow</Value>
+    </Setting>
+    <Setting Name="WindowClassNotificationArea" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ToolbarWindow32</Value>
+    </Setting>
+    <Setting Name="WindowClassNotificationBar" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TrayNotifyWnd</Value>
+    </Setting>
+    <Setting Name="WindowClassQuickLaunch" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ToolbarWindow32</Value>
+    </Setting>
+    <Setting Name="WindowClassRunningApps" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ToolbarWindow32</Value>
+    </Setting>
+    <Setting Name="WindowClassSideBar" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SideBar_AppBarWindow</Value>
+    </Setting>
+    <Setting Name="WindowClassSystemControlArea" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ToolbarWindow32</Value>
+    </Setting>
+    <Setting Name="WindowClassTaskBar" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Shell_TrayWnd</Value>
+    </Setting>
+    <Setting Name="WindowClassTray" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TrayClockWClass</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

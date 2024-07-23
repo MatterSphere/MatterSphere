@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="Horizon.Views.ProcessingStatus.ProcessingStatusView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Horizon.Views.IndexReports"
+             xmlns:indexReports="clr-namespace:Horizon.ViewModels.IndexReports"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:common="clr-namespace:Horizon.Common"
+             xmlns:processingStatus="clr-namespace:Horizon.ViewModels.ProcessingStatus"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=processingStatus:ProcessingStatusViewModel}"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <materialDesign:ColorZone
+            Height="40"
+            materialDesign:ThemeAssist.Theme="Light"
+            Mode="Light">
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <TextBlock
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Text="Select Date:" />
+                <DatePicker
+                    MinWidth="150"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    DisplayDateEnd="{Binding Today}"
+                    FirstDayOfWeek="Monday"
+                    IsTodayHighlighted="True"
+                    SelectedDate="{Binding Path=DateStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedDateFormat="Long" />
+            </StackPanel>
+        </materialDesign:ColorZone>
+
+        <DataGrid x:Name="StatusDataGrid"
+            Grid.Row="1"
+            CellStyle="{StaticResource CustomDataGridCell}"
+            ItemsSource="{Binding HistoryItems}"
+            SelectedItem="{Binding SelectedHistoryItem}"
+            Style="{StaticResource CustomDataGrid}"
+            ScrollViewer.CanContentScroll="False"
+            Loaded="StatusDataGrid_Loaded" Unloaded="StatusDataGrid_Unloaded">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Status}" Value="CompletedWithErrors">
+                            <Setter Property="Background" Value="{StaticResource EliteLightRed}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    MinWidth="100"
+                    Binding="{Binding StartLabel}"
+                    Header="Start"
+                    SortMemberPath="StartDate" />
+                <DataGridTextColumn
+                    MinWidth="100"
+                    Binding="{Binding FinishLabel}"
+                    Header="Finish"
+                    SortMemberPath="FinishDate" />
+                <DataGridTextColumn
+                    MinWidth="100"
+                    Binding="{Binding Successful}"
+                    Header="Succeeded" />
+                <DataGridTextColumn
+                    MinWidth="100"
+                    Binding="{Binding Failed}"
+                    Header="Failed" />
+                <DataGridTextColumn
+                    MinWidth="100" Width="*"
+                    Binding="{Binding ContentErrors}"
+                    Header="Content Errors" />
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <DataGrid x:Name="DetailDataGrid"
+                        Margin="0"
+                        Padding="10,2,2,2"
+                        DataContext="{Binding}"
+                        CellStyle="{StaticResource CustomDetailsDataGridCell}"
+                        ItemsSource="{Binding DetailItems, Mode=TwoWay}"
+                        SelectedItem="{Binding SelectedEntityItem,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                        Style="{StaticResource CustomDetailsDataGrid}"
+                        ScrollViewer.CanContentScroll="False"
+                        PreviewMouseWheel="DetailDataGrid_PreviewMouseWheel">
+                        <DataGrid.InputBindings>
+                            <MouseBinding Command="{Binding OpenDocumentErrorGroupsCommand}" MouseAction="LeftDoubleClick" />
+                        </DataGrid.InputBindings>
+                        <DataGrid.Resources>
+                            <common:BindingProxy x:Key="Proxy" Data="{Binding}" />
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="50"
+                                Binding="{Binding Index}"
+                                CanUserReorder="False"
+                                CanUserResize="False"
+                                CanUserSort="False"
+                                Header="#" />
+                            <DataGridTextColumn
+                                MinWidth="120"
+                                Binding="{Binding Entity}"
+                                Header="Entity" />
+                            <DataGridTextColumn
+                                MinWidth="100"
+                                Binding="{Binding StartLabel}"
+                                Header="Start"
+                                SortMemberPath="StartDate" />
+                            <DataGridTextColumn
+                                MinWidth="100"
+                                Binding="{Binding FinishLabel}"
+                                Header="Finish"
+                                SortMemberPath="FinishDate" />
+                            <DataGridTextColumn
+                                MinWidth="100"
+                                Binding="{Binding Successful}"
+                                Header="Succeeded" />
+                            <DataGridTextColumn
+                                MinWidth="100"
+                                Binding="{Binding Failed}"
+                                Header="Failed" />
+                            <DataGridTextColumn
+                                MinWidth="100"
+                                Binding="{Binding ContentErrors}"
+                                Header="Content Errors" />
+                            <DataGridTextColumn
+                                MinWidth="60"
+                                Binding="{Binding SizeLabel}"
+                                CellStyle="{StaticResource CustomDetailsDataGridRightCell}"
+                                Header="Size"
+                                SortMemberPath="Size" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+    </Grid>
+</UserControl>

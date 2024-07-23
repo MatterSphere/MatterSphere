@@ -1,0 +1,212 @@
+﻿<oms>
+  <rules>
+    <controls>
+      <control id="Menu_Manual_Open" resource="MANUALOPEN"/>
+
+      <control id="TabHome_Connect" hide="false"/>
+      <control id="TabHome_Connect_Connect"/>
+      <control id="TabHome_Connect_CreateMenu" resource="CREATE"/>
+      <control id="TabHome_Connect_Create_AssocLetter" resource="TOASSOC" package="DMS" license="DP"/>
+      <control id="TabHome_Connect_Create_ClientLetter" resource="TOCLIENT" package="DMS" license="DP"/>
+      <control id="TabHome_Connect_Create_Matter" resource="NEWFILE" package="CLMCONTLEGAL" />
+      <control id="TabHome_Connect_Create_Time" resource="NEWTIME" license="TIMEREC" package="TIMERECORDING"/>
+      <control id="TabHome_Connect_ViewMenu" resource="VIEW" />
+      <control id="TabHome_Connect_View_Client" resource="CLIENTINFO" package="CLMCONTLEGAL"/>
+      <control id="TabHome_Connect_View_Matter" resource="FILEINFO" package="CLMCONTLEGAL" />
+      <control id="TabHome_Connect_View_Command" resource="COMMANDCENTRE" package="COMMANDCENTRE"/>
+      <control id="TabHome_Connect_View_PrecedentLibrary" resource="PRECEDENTS" package="DMS" filter="*!Outlook" license="DP"/>
+      <control id="TabHome_Connect_View_ContactManager" resource="CONTMANAGER" package="CLMCONTLEGAL" />
+      <control id="TabHome_Connect_View_OpenDocument" resource="OPENDOC" package="DMS" license="DM"/>
+      <control id="TabHome_Connect_SaveButtonsMenu_Save" resource="SAVE" package="DMS" license="DM"/>
+      <control id="TabHome_Connect_SaveButtonsMenu_SaveAs" resource="SAVEAS" package="DMS" license="DM"/>
+      <control id="TabHome_Connect_SaveButtonsMenu_SaveAndContinue" resource="DOCSAVE;CONT" package="DMS" license="DM"/>
+      <control id="TabHome_Connect_SaveButtonsMenu_SaveAsPrec" resource="SAVEASPREC" role="PRECEDIT" package="DMS" license="DP"/>
+      <control id="TabHome_Connect_SaveButtonsMenu_Precedent"  resource="INSPRECEDENT"  package="DMS" license="DP"/>
+      <control id="TabHome_Connect_SaveButtonMenu_ManualSave" resource="MANUALSAVE" package="DMS" license="DM"/>
+      <control id="TabOMS" resource="OMS"/>
+      <control id="TabOMS_View" resource="OMSVIEW" />
+      <control id="TabOMS_View_CommandCentre" resource="COMMANDCENTRE" package="COMMANDCENTRE" />
+      <control id="TabOMS_View_Sep1" />
+      <control id="TabOMS_View_ContactManager" resource="CONTMANAGER" package="CLMCONTLEGAL" />
+      <control id="TabOMS_View_Sep2" />
+      <control id="TabOMS_View_ShowClient" resource="CLIENTINFO" package="CLMCONTLEGAL" />
+      <control id="TabOMS_View_ShowFile" resource="FILEINFO" package="CLMCONTLEGAL" />
+      <control id="TabOMS_View_Sep3" />
+      <control id="TabOMS_View_PrecedentLibrary_Split" resource="PRECHD" package="DMS" license="DP"/>
+      <control id="TabOMS_View_PrecedentLibrary_Menu" resource="PRECHD" package="DMS" license="DP"/>
+      <control id="TabOMS_View_PrecedentLibrary" resource="PRECEDENTS" package="DMS" license="DP"/>
+      <control id="TabOMS_View_PrecedentLibrary_Quick" resource="PRECEDENTSQ" package="DMS" license="DP"/>
+      <control id="TabOMS_View_JobList" resource="JOBLIST" package="DMS" license="DP"/>
+      <control id="TabOMS_View_MilestoneInfo" resource="MILESTONE" package="MILESTONES"/>
+      <control id="TabOMS_View_UFNInformation" resource="UFNINFO" package="LEGALAIDCRIM"/>
+      <control id="TabOMS_Create" resource="CREATE" />
+      <control id="TabOMS_Create_New_Client" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_ClientMenu" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Client_Standard" resource="NEWCLIENT" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Client_PreClient" resource="NEWPRECLIDOC" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Client_PreClientCorporate" resource="NEWPRECORPCLI" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_File" resource="NEWFILE" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Contact" resource="NEWCONTACT" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_New_Associate" resource="NEWASSOC" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_Sep1" />
+      <control id="TabOMS_Create_New_Time" resource="NEWTIME" license="TIMEREC" package="TIMERECORDING" />
+      <control id="TabOMS_Create_Sep2" />
+      <control id="TabOMS_Create_Letters" resource="LETTERS" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_LettersMenu" resource="MEMOS" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Letters_ToClient" resource="TOCLIENT" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Letters_ToAssociate" resource="TOASSOC" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Letters_Sep1" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Letters_Picker" resource="ANOLETTHEAD" role="LETTHEADPICKER" package="LETTHEADPICK" license="DP"/>
+      <control id="TabOMS_Create_New_Fax" resource="NEWFAX" size="normal" package="FAX" license="DP"/>
+      <control id="TabOMS_Create_New_Memo" resource="NEWMEMO" size="normal" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_New_Compliment" resource="NEWCOMPSLIP" size="normal" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Notes" resource="NOTES" size="normal" package="CLMCONTLEGAL" license="DP"/>
+      <control id="TabOMS_Create_Notes_AttendanceNote" resource="ATTNOTE" package="BASEPREC" license="DP"/>
+      <control id="TabOMS_Create_Notes_Meeting" resource="MEETING" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Notes_Sep1" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Notes_File" resource="FILE" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Notes_Sep2" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Notes_TelIn" resource="TELIN" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Notes_TelOut" resource="TELOUT" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_FinancialDocs" resource="BILLGUIDE" package="DMS" size="normal" license="DP"/>
+      <control id="TabOMS_Create_FinancialDocs_Invoice" resource="INVOICING" package="BILLING" license="DP"/>
+      <control id="TabOMS_Create_Documents" resource="DOCUMENTS" size="normal" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Documents_Blank" resource="BLANKDOC" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_Documents_Court" resource="COURTDOC" package="COURTDOC" license="DP"/>
+      <control id="TabOMS_Create_NewMenu" resource="NEWENTRY"/>
+      <control id="TabOMS_Create_NewEntry_Appointment" resource="APPOINTMENT" package="APPOINTMENTS" />
+      <control id="TabOMS_Create_NewEntry_Archive" resource="ARCHIVE" package="ARCHIVEDDOC" />
+      <control id="TabOMS_Create_NewEntry_Complaint" resource="COMPLAINT" package="COMPLAINTS" />
+      <control id="TabOMS_Create_NewEntry_DocReceipt" resource="DOCRECEIPT" package="DMS" license="DP"/>
+      <control id="TabOMS_Create_NewEntry_KeyDate" resource="DATEWIZARD" package="KEYDATES" />
+      <control id="TabOMS_Create_NewEntry_Note" resource="NOTE" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Create_NewEntry_SMS" resource="SMS" license="SMS" package="SMS" />
+      <control id="TabOMS_Create_NewEntry_Task" resource="TASK" package="TASKS" />
+      <control id="TabOMS_Create_NewEntry_Time" resource="TIMEENTRY" license="TIMEREC" package="TIMERECORDING" />
+      <control id="TabOMS_Create_NewEntry_Mail" resource="NEWENTRYMAIL" package="DMS" license="DP"/>
+      <control id="TabOMS_Outlook" resource="OUTLOOK" package="DMS" />
+      <control id="TabOMS_Outlook_NewMail" resource="NEWMAIL" package="DMS" license="DP"/>
+      <control id="TabOMS_Outlook_Sep1" />
+      <control id="TabOMS_Outlook_TasksMenu" resource="TASKSGROUP"/>
+      <control id="TabOMS_Outlook_AddTask" resource="ADDTASK2" size="normal" package="TASKS" />
+      <control id="TabOMS_Outlook_AddAppointment" resource="NEWAPPOINTMENT" size="normal" package="APPOINTMENTS" />
+      <control id="TabOMS_Outlook_ViewInbox" resource="VIEWINBOX" package="DMS" />
+      <control id="TabOMS_Outlook_ViewCalendarMenu" resource="CALENDARGROUP" package="DMS" />
+      <control id="TabOMS_Outlook_ViewCalendar_Own" resource="MYCALENDAR" package="DMS" />
+      <control id="TabOMS_Outlook_ViewCalendar_FeeEarner" resource="FEECALENDAR" package="DMS" />
+      <control id="TabOMS_Outlook_ViewCalendar_Other" resource="OTHCALENDAR" package="DMS" />
+      <control id="TabOMS_Outlook_ViewTasks" size="normal" package="TASKS" />
+      <control id="TabOMS_Outlook_ViewTasksMenu" package="TASKS" />
+      <control id="TabOMS_Outlook_ViewTasks_OMS" resource="VIEWOMSTASKS2" package="TASKS" />
+      <control id="TabOMS_Outlook_ViewTasks_Own" resource="VIEWMYTASKS" package="TASKS" />
+      <control id="TabOMS_Outlook_ViewTasks_FeeEarner" resource="VIEWFEETASKS2" package="TASKS" />
+      <control id="TabOMS_Outlook_ViewTasks_Other" resource="VIEWOTHTASKS2" package="TASKS" />
+      <control id="TabOMS_Tools" resource="TOOLS" />
+      <control id="TabOMS_Tools_UserSettings" resource="USERSETTINGS" />
+      <control id="TabOMS_Tools_ConflictSearch" resource="CONFLICTSEARCH" package="CLMCONTLEGAL" />
+      <control id="TabOMS_Tools_SearchTools" resource="SEARCHTOOLS" role="ADMIN;ACCOUNTS" package="ADMINSEARCHES" />
+      
+      <control id="TabOMS_Tools_Reports" resource="REPORTS" role="REPORTS" package="RPTCLMCONTLEGAL" />
+      <control id="TabOMS_Tools_Reports_CoreReports" resource="COREREPORTS" package="RPTCLMCONTLEGAL" />
+      <control id="TabOMS_Tools_Reports_Time" resource="TIMEREPORT" package="RPTTIMERECORDIN" />
+      <control id="TabOMS_Tools_ExternalApps" resource="EXTERNALAPPS" />
+
+      <control id="TabOMS_AboutGroup" resource="ABOUT" />
+      <control id="TabOMS_SearchGroup" resource="SEARCH" condition="issearchconfigured" />
+      <control id="TabOMS_AboutGroup_About" resource="ABOUT" />
+      <control id="TabOMS_SearchGroup_Search" resource="SEARCH" />
+
+      <control id="TabOMSDocument" resource="OMSDOC" filter="NEW;SAVED" package="DMS"/>
+      <control id="TabOMSDocument_Tools" resource="TOOLS" />
+      <control id="TabOMSDocument_Tools_SaveAsPrec" resource="SAVEASPREC" role="PRECEDIT" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Tools_SaveAndContinue" resource="DOCSAVE;CONT" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Tools_Sep1" license="DM"/>
+      <control id="TabOMSDocument_Tools_TemplateProps" resource="TEMPLATEPROP" package="DMS" filter="*Word" license="DP"/>
+      <control id="TabOMSDocument_Tools_Sep2" license="DP"/>
+      <control id="TabOMSDocument_Tools_Email" resource="EMAILDOC" package="DMS" enabledFilter="DOC+SAVED" license="DP"/>
+      <control id="TabOMSDocument_View" resource="VIEW" enabledFilter="ASSOCIATE" />
+      <control id="TabOMSDocument_View_Client" resource="CURCLINFO" size="normal" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_File" resource="CURFILEINFO" size="normal" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_Associate" resource="CURASSOCINFO" size="normal" package="CLMCONTLEGAL" />
+      <control id="TabOMSDocument_View_Sep1" />
+      <control id="TabOMSDocument_View_DocProps" resource="DOCPROPS" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_View_DocVars" resource="SHOWDOCVARS" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_View_DocPropToggle" resource="" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning" resource="VERSIONING"  package="DMS" enabledFilter="DOC+SAVED" license="DM"/>
+      <control id="TabOMSDocument_Versioning_CheckIn" resource="CHECKIN" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_CheckOut" resource="CHECKOUT" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Undo" resource="UNDODOC" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Sep1" license="DM"/>
+      <control id="TabOMSDocument_Versioning_GetLatest" resource="DOCGETLATEST" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Versions" resource="DOCVERSIONS" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Sep2" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Compare" resource="COMPARE" package="DMS" filter="*Word" license="DM"/>
+      <control id="TabOMSDocument_Versioning_CompareMenu" resource="COMPARE" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Compare_Latest" resource="COMPARELATEST" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Compare_Version" resource="COMPAREVER" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Compare_File" resource="COMPAREWITH" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Compare_Client" resource="COMPAREWITHCL" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Compare_Sep1" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Compare_Recent" resource="COMPARERECENT" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Versioning_Compare_Any" resource="COMPAREANY" package="DMS" license="DM"/>
+      <control id="TabOMSDocument_Insert" resource="INSERT" license="DP"/>
+      <control id="TabOMSDocument_Insert_Fields" resource="FIELDLOGO" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddField" resource="ADDFIELD" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_RemoveField" resource="DELETEFIELD" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_RefreshFields" resource="REFRESHFIELDS" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_RelinkFields" resource="RELINKFIELDS" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_Sep1" license="DP"/>
+      <control id="TabOMSDocument_Insert_Precedent" resource="INSPRECEDENT"  package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_Sep2" license="DP"/>
+      <control id="TabOMSDocument_Insert_Sig" resource="SIGLOGO" package="DMS" filter="*Word" license="DP"/>
+      <control id="TabOMSDocument_Insert_SigMenu" resource="SIGLOGO" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddSignature" resource="SIGNDOC" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddFeeSig" resource="ADDFEESIGNATURE" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddCompanySig" resource="ADDCOMSIGNATURE" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_RemoveSignature" resource="REMOVESIG" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_Sig_Sep1" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddDraft" resource="DRAFTDOC" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_RemoveDraft" resource="REMOVEDRAFT" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_Sig_Sep2" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddFileCopy" resource="FILECOPY" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_RemoveFileCopy" resource="REMOVEFILECOPY" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_Sig_Sep3" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddSlogan" resource="ADDSLOGAN" package="DMS" license="DP"/>
+      <control id="TabOMSDocument_Insert_Styles" resource="STYLES" package="DMS" role="PRECEDIT" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddStop" resource="INSERTSTOP" package="DMS" role="PRECEDIT" license="DP"/>
+      <control id="TabOMSDocument_Insert_AddParaStop" resource="INSERTPARASTOP" package="DMS" role="PRECEDIT" license="DP"/>
+      <control id="TabOMSDocument_Insert_StripFormatting" resource="STRIPFORMATTING" package="DMS" role="PRECEDIT" license="DP"/>
+
+      <control id="TabOMS_Tools_ExternalApps" resource="EXTERNALAPPS"/>
+      <control id="TabOMS_Tools_ExternalApps_Accounts" resource="ACCOUNTS" package="PARAGONACC"/>
+      <control id="TabOMS_Tools_ExternalApps_Intranet" resource="INTRANET"/>
+      <control id="TabOMS_Tools_ExternalApps_Microsoft" resource="MSWEBSITE"/>
+      <control id="TabOMS_Tools_ExternalApps_ExternalApp1" resource="EXTERNAL1"/>
+      <control id="TabOMS_Tools_ExternalApps_ExternalApp2" resource="EXTERNAL2"/>
+
+    </controls>
+
+    <commands>
+      <command id="OMS;VIEWCURRENTCLIENT" enabledFilter="CLIENT" />
+      <command id="OMS;VIEWCURRENTFILE" enabledFilter="FILE" />
+      <command id="OMS;VIEWCURRENTASSOCIATE" enabledFilter="ASSOCIATE" />
+      <command id="ADDIN;INSERTPRECEDENT" enabledFilter="ASSOCIATE" />
+      <command id="ADDIN;ASSOCDOCSPANE" enabledFilter="ASSOCIATE" />
+      <command id="OMS;DOCPROPS" enabledFilter="DOC+SAVED" />
+      <command id="ADDIN;DOCPROPSPANE" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;IN" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;OUT" enabledFilter="DOC+SAVED" />
+      <command id="OMS;LOCKDOC;UNDO" enabledFilter="DOC+SAVED" />
+      <command id="OMS;GETLATESTVERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;OPEN;VERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;LATEST" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;VERSION" enabledFilter="DOC+SAVED" />
+      <command id="OMS;COMPARE;CLIENT" enabledFilter="CLIENT" />
+      <command id="OMS;COMPARE;FILE" enabledFilter="FILE" />
+      <command id="OMS;STYLES" enabledFilter="*Word+PREC" />
+      <command id="OMS;STRIPFORMATTING" enabledFilter="*Word+PREC" />
+      <command id="OMS;INSERTSTOP" enabledFilter="*Word+PREC" />
+      <command id="OMS;INSERTPARASTOP" enabledFilter="*Word+PREC" />
+    </commands>
+  </rules>
+</oms>

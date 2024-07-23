@@ -1,0 +1,74 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <Component Id="OMSExport.Service" Directory="INSTALLFOLDER">
+      <File Id="OMSExportService.exe" Source="$(OMSExportService.TargetDir)OMSExportService.exe" KeyPath="yes" />
+      <File Id="OMSExportService.exe.config" Source="$(OMSExportService.TargetDir)OMSExportService.exe.config" />
+      <ServiceInstall Type="ownProcess"
+                      Name="3EMatterSphereOMSExportService"
+                      DisplayName="$(ProductName)"
+                      Description="The $(ProductName) exports MatterSphere data to the 3E."
+                      Vital="yes"
+                      Start="demand"
+                      ErrorControl="normal" />
+      <ServiceControl Stop="both"
+                      Remove="uninstall"
+                      Name="3EMatterSphereOMSExportService"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="OMSExport.ServiceManager" Guid="{39BD58A1-3026-4460-AA93-480039AB7CE4}" Directory="INSTALLFOLDER">
+      <File Source="$(OMSExportServiceMgr.TargetDir)OMSExportServiceMgr.exe" />
+      <File Source="$(OMSExportServiceMgr.TargetDir)OMSExportServiceMgr.exe.config" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="OMSExport.Dependencies" Guid="{3A6B4C66-D0CA-4308-9E36-B0041AFC3739}" Directory="INSTALLFOLDER">
+      <File Source="$(OMSExportService.TargetDir)Fwbs.Framework.Common.dll" />
+      <File Source="$(OMSExportService.TargetDir)Fwbs.Framework.Composition.dll" />
+      <File Source="$(OMSExportService.TargetDir)Fwbs.Framework.dll" />
+      <File Source="$(OMSExportService.TargetDir)Fwbs.Framework.Shared.dll" />
+      <File Source="$(OMSExportService.TargetDir)Newtonsoft.Json.dll" />
+      <File Source="$(OMSExportService.TargetDir)OMSDocumentStorer.dll" />
+      <File Source="$(OMSExportService.TargetDir)OMSExport.dll" />
+      <File Source="$(OMSExportService.TargetDir)OMSExportC3E.dll" />
+      <File Source="$(OMSExportService.TargetDir)OMSExportE3E.dll" />
+      <File Source="$(OMSExportService.TargetDir)OMSExportENT.dll" />
+      <File Source="$(OMSExportService.TargetDir)OMSExportFFF.dll" />
+      <File Source="$(OMSExportService.TargetDir)OMSExportIGO.dll" />
+      <File Source="$(OMSExportService.TargetDir)OMSExportMIL.dll" />
+      <File Source="$(OMSExportService.TargetDir)RestSharp.dll" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="OMSExport.DBObjects" Guid="{BA4F43EB-131E-4303-B2F0-9F8765CCB4B8}" Directory="DBObjectsFolder">
+      <File Source="$(OMSExportE3EMSDB.TargetDir)Deploy.bat" />
+      <File Source="$(OMSExportE3EMSDB.TargetDir)OMSExportE3EMSDB.dacpac" />
+      <File Source="$(OMSExportE3EMSDB.TargetDir)OMSExportE3EMSDB.publish.xml" />
+    </Component>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ManufacturerMenuFolder">
+      <Component Id="OMSExportServiceMgrShortcut" Guid="*">
+        <Shortcut Id="OMSExportServiceMgrMenuShortcut"
+                  Name="OMS Export Service Manager"
+                  Description="Starts OMS Export Service Manager"
+                  Target="[INSTALLFOLDER]OMSExportServiceMgr.exe"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="ServiceMgr.ico" SourceFile="OMSExportServiceMgr.exe" />
+        </Shortcut>
+        <RegistryValue Root="HKCU"
+                       Key="Software\$(PublisherName)\$(ProductName)"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+        <RemoveFolder Id="RemoveManufacturerMenuFolder" Directory="ManufacturerMenuFolder" On="uninstall" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

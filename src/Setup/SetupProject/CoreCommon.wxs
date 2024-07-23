@@ -1,0 +1,278 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:iis="http://wixtoolset.org/schemas/v4/wxs/iis">
+  <?if $(var.Platform) = "x86" ?>
+  <?define ExeNameSuffix = "32" ?>
+  <?elseif $(var.Platform) = "x64" ?>
+  <?define ExeNameSuffix = "" ?>
+  <?endif?>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="Modules" Name="Modules" />
+      <!--<Directory Id="zh" Name="zh" />-->
+
+      <Directory Id="runtimes" Name="runtimes">
+        <?if $(var.Platform) = "x86" ?>
+        <Directory Id="runtimes_win_x86" Name="win-x86">
+          <Directory Id="runtimes_win_x86_native" Name="native">
+            <Component Id="cmpA94B75651045F785CCA29EE2638258AF" Guid="{40D4D0BE-A059-4A07-AF6D-647FD1633A4E}" Feature="OMSCore">
+              <File Id="WebView2Loader.dll" KeyPath="yes" Source="$(var.SourceDir)\runtimes\win-x86\native\WebView2Loader.dll" />
+            </Component>
+          </Directory>
+        </Directory>
+        <?elseif $(var.Platform) = "x64" ?>
+        <Directory Id="runtimes_win_x64" Name="win-x64">
+          <Directory Id="runtimes_win_x64_native" Name="native">
+            <Component Id="cmpAB864564FF3651C4D146E03D87252A7A" Guid="{AD1C075D-E5E1-42CD-8FD8-D0983FD86018}" Feature="OMSCore">
+              <File Id="WebView2Loader.dll" KeyPath="yes" Source="$(var.SourceDir)\runtimes\win-x64\native\WebView2Loader.dll" />
+            </Component>
+          </Directory>
+        </Directory>
+        <?endif?>
+      </Directory>
+
+      <Component Id="cmp104087D18B25A9A8D2ECC5B6EA2AE79B" Guid="{46763B5B-0212-4B94-B8C0-5B19611B6F5A}" Feature="OMSCore">
+        <File Id="Microsoft.Web.WebView2.Core.dll" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Web.WebView2.Core.dll" />
+      </Component>
+      <Component Id="cmp3ED4B6E14797367C1383E408A6961B85" Guid="{8FFF6B95-AF98-4C5F-99EC-FAAC653FC42C}" Feature="OMSCore">
+        <File Id="Microsoft.Web.WebView2.WinForms.dll" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Web.WebView2.WinForms.dll" />
+      </Component>
+
+      <Component Id="cmpAE6C400254731E5C353D4C78AE962DA6" Guid="{2023D984-7C17-4E4E-B7E9-31E001264A13}" Feature="OMSCore">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\FWBS\OMS">
+          <RegistryValue Key="2.0" Name="InstallPath" Value="[INSTALLDIR]" Type="string" Action="write" KeyPath="yes" />
+          <RegistryValue Key="Framework" Name="Installed" Value="true" Type="string" Action="write" />
+        </RegistryKey>
+        <RemoveFolder Id="RemoveProgramMenuDir" Directory="ProgramMenuDir" On="uninstall" />
+      </Component>
+    </DirectoryRef>
+
+    <Component Id="cmp4996F2F6FB00AE09EADD67ECD4FBFEAA" Guid="{AFA922B0-48A2-489C-BBFB-79271992C66C}" Directory="TARGETDIR" Feature="OMSCore" Permanent="no">
+      <iis:Certificate Id="TR_MSCert_LM_tp" Name="MatterSphere" Request="no" StoreLocation="localMachine" StoreName="trustedPublisher" BinaryRef="MatterSphereCertificate" />
+      <iis:Certificate Id="TR_MSOCert_LM_tp" Name="MatterSphereOffice" Request="no" StoreLocation="localMachine" StoreName="trustedPublisher" BinaryRef="MatterSphereOfficeCertificate" />
+    </Component>
+    <Binary Id="MatterSphereCertificate" SourceFile="$(var.SourceDir)\MatterSphere.cer" />
+    <Binary Id="MatterSphereOfficeCertificate" SourceFile="$(var.SourceDir)\MatterSphereOffice.cer" />
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="CG_Aspose" Directory="INSTALLDIR">
+      <Component Id="cmp827B3D504619300491208A04A86409B9" Guid="{C94CE0B5-4C4C-42A8-BAFA-4168483EB512}">
+        <File Id="Aspose.Cells.dll" KeyPath="yes" Source="$(var.SourceDir)\Aspose.Cells.dll" />
+      </Component>
+      <Component Id="cmp1DDD65857960175A01D85656775D8EFB" Guid="{CC655813-18B7-4DAF-851D-C603478A3632}">
+        <File Id="Aspose.Email.dll" KeyPath="yes" Source="$(var.SourceDir)\Aspose.Email.dll" />
+      </Component>
+      <Component Id="cmpC74754020911BD49C0FC95C6B7764A91" Guid="{9D574AE0-F5C2-4BA9-8606-EABA325373B9}">
+        <File Id="Aspose.Pdf.dll" KeyPath="yes" Source="$(var.SourceDir)\Aspose.Pdf.dll" />
+      </Component>
+      <Component Id="cmp03C3C3AB9915012B893A3F772EC25EAB" Guid="{A810E1FA-6E98-4933-BA25-185949E0AC1D}">
+        <File Id="Aspose.Slides.dll" KeyPath="yes" Source="$(var.SourceDir)\Aspose.Slides.dll" />
+      </Component>
+      <Component Id="cmpFD0968C7775FB476084FA07ED87066B2" Guid="{D7D2C0E3-8CD2-4260-B4D9-E436465E66F8}">
+        <File Id="Aspose.Words.dll" KeyPath="yes" Source="$(var.SourceDir)\Aspose.Words.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_Dsofile" Directory="INSTALLDIR">
+      <Component Id="cmp97FC86606781CDA64A3086C9BB16BAF5" Guid="{42350BF2-F90F-41B3-A6FE-1AA7BA28B8C7}">
+        <File Id="dsofile.dll" KeyPath="yes" Source="$(var.SourceDir)\dsofile.dll" />
+      </Component>
+      <Component Id="cmp75662A124D187B12BD4DEDB377080B3F" Guid="{B4021D5A-B1ED-4B0D-95B3-7E90AF94271A}">
+        <File Id="dsofile64.dll" KeyPath="yes" Source="$(var.SourceDir)\dsofile64.dll" />
+      </Component>
+      <Component Id="cmp031D7BD83A48784778F3C4BA3F868AD1" Guid="{91CDC1EF-45D6-4A07-8584-8087380FB84B}">
+        <File Id="Interop.Dsofile.dll" KeyPath="yes" Source="$(var.SourceDir)\Interop.Dsofile.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_Redemption" Directory="INSTALLDIR">
+      <Component Id="cmp46DC7818C2A22CFE8CAC045B28926529" Guid="{315355CF-7731-4CED-A099-FFD5E594FDC0}">
+        <File Id="Interop.Redemption.dll" KeyPath="yes" Source="$(var.SourceDir)\Interop.Redemption.dll" />
+      </Component>
+      <Component Id="cmp4D5C91DABE3A659DDAF33D305CE8972B" Guid="{EFA4A517-CD7C-45D6-A893-F9545168B49F}">
+        <File Id="Redemption.dll" KeyPath="yes" Source="$(var.SourceDir)\Redemption.dll" />
+      </Component>
+      <Component Id="cmp25BB849A1C989EA77C219B07F3D16E0A" Guid="{85CC5CF3-ED59-4F23-B7C3-058A4E6D2D2F}">
+        <File Id="Redemption64.dll" KeyPath="yes" Source="$(var.SourceDir)\Redemption64.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_Infragistics" Directory="INSTALLDIR">
+      <Component Id="cmp617D4E7EF8CF5098611033900568FA31" Guid="{0C4B198A-09CB-4103-8A17-254EF1AC6956}">
+        <File Id="Infragistics.Shared.dll" KeyPath="yes" Source="$(var.SourceDir)\Infragistics.Shared.dll" />
+      </Component>
+      <Component Id="cmp66BD68809D2CB3B4D0BDEFA8FD279185" Guid="{951F5D33-F21B-48A0-977D-432206238763}">
+        <File Id="Infragistics.Win.dll" KeyPath="yes" Source="$(var.SourceDir)\Infragistics.Win.dll" />
+      </Component>
+      <Component Id="cmp9EEC17AA8D06F9E7C5030EF9A1D26C77" Guid="{57C29274-8832-4883-AFB6-C62C9D4045C3}">
+        <File Id="Infragistics.Win.Misc.dll" KeyPath="yes" Source="$(var.SourceDir)\Infragistics.Win.Misc.dll" />
+      </Component>
+      <Component Id="cmp0C30EE0302FD5F6FAC2FE2DD941EEF95" Guid="{D45B0473-CFE7-4B4F-99C1-1207845F276B}">
+        <File Id="Infragistics.Win.UltraWinDock.dll" KeyPath="yes" Source="$(var.SourceDir)\Infragistics.Win.UltraWinDock.dll" />
+      </Component>
+      <Component Id="cmpD40B099724914FFE305724AE94DA4C54" Guid="{CEA30C27-0884-4CAA-89CD-841929392249}">
+        <File Id="Infragistics.Win.UltraWinTabControl.dll" KeyPath="yes" Source="$(var.SourceDir)\Infragistics.Win.UltraWinTabControl.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_TelerikWinforms" Directory="INSTALLDIR">
+      <Component Id="cmp3617A5266CD392EECDA872932BC9EF37" Guid="{A00288DD-ACAC-41DE-ADEF-C34C24A56224}">
+        <File Id="Telerik.WinControls.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.WinControls.dll" />
+      </Component>
+      <Component Id="cmp4BB09847617E9E6DA3F2BBB6A2FC394B" Guid="{FACF35E1-8B4A-4E16-8B54-2185D49635E3}">
+        <File Id="Telerik.WinControls.Themes.Windows8.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.WinControls.Themes.Windows8.dll" />
+      </Component>
+      <Component Id="cmp56DB899771F6F11BED630126757983FF" Guid="{9596F675-F230-4253-9759-9720D272B8DE}">
+        <File Id="Telerik.WinControls.UI.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.WinControls.UI.dll" />
+      </Component>
+      <Component Id="cmpC36793A5186EDA1D10D0172AF635B0E3" Guid="{8CFCBDCF-CE25-4650-9AC6-5DC867AA0CBA}">
+        <File Id="TelerikCommon.dll" KeyPath="yes" Source="$(var.SourceDir)\TelerikCommon.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="CG_CoreCommon" Directory="INSTALLDIR">
+      <Component Id="cmp95C8F9ED523695E495CB01B393811AEC" Guid="{CEB14C6F-4357-4FFF-A447-19165F21634A}">
+        <File Id="FWBS.Common.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.Common.dll" />
+      </Component>
+      <Component Id="cmp4C7756BB892285B61E346AC223FBA87B" Guid="{8E012A72-C724-4605-8167-BECB730A5CDC}">
+        <File Id="FWBS.Common.UI.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.Common.UI.dll" />
+      </Component>
+      <Component Id="cmp9F9221294708D0E813E46674D2376267" Guid="{A923B193-A772-497F-882A-503A9A080EE7}">
+        <File Id="FWBS.DocumentPreviewer.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.DocumentPreviewer.dll" />
+      </Component>
+      <Component Id="cmpDFA5AC836D0E2CBDB274A8F4B6197950" Guid="{2C34D762-00E7-48F8-9A4F-D172A5FE721E}">
+        <File Id="FWBS.DocumentPreviewer.Infrastructure.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.DocumentPreviewer.Infrastructure.dll" />
+      </Component>
+      <Component Id="cmp085196A4A6E43497A677E5B1444A3130" Guid="{D4171239-E8A0-4266-A66C-4A8C1370DA20}">
+        <File Id="Fwbs.Documents.JZipPackageProperties.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Documents.JZipPackageProperties.dll" />
+      </Component>
+      <Component Id="cmp9094D62AF388F34D7D0D10BEA603311B" Guid="{B4C3308E-1DAA-4E08-9739-898C24112C41}">
+        <File Id="Fwbs.Documents.MsgProperties.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Documents.MsgProperties.dll" />
+      </Component>
+      <Component Id="cmp2D3ED8D6CFC3D4A0B50EC9025385FEF7" Guid="{9D51C146-8C6D-4D57-8258-03CEF4E2A6C6}">
+        <File Id="Fwbs.Documents.OfficeProperties.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Documents.OfficeProperties.dll" />
+      </Component>
+      <Component Id="cmp3B057DDACC93C6C86BE68B3AC3DAB906" Guid="{1C062F7A-5844-4209-8288-15D8816210D1}">
+        <File Id="Fwbs.Documents.OfficeXpsProperties.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Documents.OfficeXpsProperties.dll" />
+      </Component>
+      <Component Id="cmp19EF06C10F49948D42AB5F1BE75DB686" Guid="{599E876F-3CEA-49A0-8314-60FC8537CD18}">
+        <File Id="Fwbs.Documents.OleProperties.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Documents.OleProperties.dll" />
+      </Component>
+      <Component Id="cmp9BA6370763D3D69E0376D62A70B1F558" Guid="{10454DC7-F41C-43BE-8313-7909F1AB5783}">
+        <File Id="Fwbs.Documents.PackageProperties.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Documents.PackageProperties.dll" />
+      </Component>
+      <Component Id="cmp974EDD1497C939B9D49C2C87CD4E47DA" Guid="{CD125EE0-ABEB-47AD-AC93-362662D1552E}">
+        <File Id="Fwbs.Documents.Properties.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Documents.Properties.dll" />
+      </Component>
+      <Component Id="cmp6989E570C96038AA9C6F923473C6FAB9" Guid="{03CCA17B-E58C-4063-AD74-87AB6BD63698}">
+        <File Id="FWBS.Elasticsearch.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.Elasticsearch.dll" />
+      </Component>
+      <Component Id="cmp96F259576A4B6F60E3177A811777F595" Guid="{3DC7D658-E9BE-4310-A788-779AC9DA87E0}">
+        <File Id="FWBS.ExtAggClient.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.ExtAggClient.dll" />
+        <File Id="FWBS.ExtAggClient.dll.config" CompanionFile="FWBS.ExtAggClient.dll" Source="$(var.SourceDir)\FWBS.ExtAggClient.dll.config" />
+      </Component>
+      <Component Id="cmpD82381F818A6E83E4AA955DA4BBC9FED" Guid="{E77E9169-22BD-48E5-BE62-5831A6709BBE}">
+        <File Id="FWBS.ExtAggClient.XmlSerializers.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.ExtAggClient.XmlSerializers.dll" />
+      </Component>
+      <Component Id="cmp0ECC535D0F93FDD618D65382943ACA66" Guid="{0D4F6B5F-407E-41A4-B9D8-30B8DDF0A183}">
+        <File Id="Fwbs.Framework.Common.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Framework.Common.dll" />
+      </Component>
+      <Component Id="cmp8CDAC8C9A25A6AFBC4CCCEFABCF1706C" Guid="{95616E30-5286-4C88-8BE4-6D6F3E4A9016}">
+        <File Id="Fwbs.Framework.Composition.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Framework.Composition.dll" />
+      </Component>
+      <Component Id="cmp58A558BE248E7C1080D14FE9614DEA2E" Guid="{C91A4176-8807-454E-AA26-39431841A0D6}">
+        <File Id="Fwbs.Framework.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Framework.dll" />
+      </Component>
+      <Component Id="cmp365C88DBE32DCC6021B19E01BF14205B" Guid="{E39179C5-FBB0-4EF2-B80B-F15ACABD6DF1}">
+        <File Id="Fwbs.Framework.Shared.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Framework.Shared.dll" />
+      </Component>
+      <Component Id="cmpCEA4F1A35D1DB0DEF5C2DC59CE549395" Guid="{E2FB85A1-0636-4E8D-812F-E9D57B926050}">
+        <File Id="FWBS.Logging.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.Logging.dll" />
+      </Component>
+      <Component Id="cmp74D1726111804B3519E1230E1D0FBF3F" Guid="{3AC75177-6ADA-4B4B-A5FF-1BC576755F99}">
+        <File Id="FWBS.MatterSphereIntegration.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.MatterSphereIntegration.dll" />
+      </Component>
+      <Component Id="cmp5652ACA2EE8AC0867EBAE9EE53B54433" Guid="{18FE8D2C-92F9-41D6-84A8-2F9AD72D4747}">
+        <File Id="FWBS.MatterSphereIntegration.Gateway.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.MatterSphereIntegration.Gateway.dll" />
+      </Component>
+      <Component Id="cmpCA907A492EFF95C955998B8FCE707D59" Guid="{EBF96EA5-4727-4B85-B0E1-F5E4A7FA3C8D}">
+        <File Id="FWBS.OMS.Addin.Security.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.Addin.Security.dll" />
+      </Component>
+      <Component Id="cmp08BEA6037C4B85781041C6C6D2183F90" Guid="{6B5EF24F-4E13-41B6-8067-88D9B45E08C7}">
+        <File Id="FWBS.OMS.FinancialTile.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.FinancialTile.dll" />
+      </Component>
+      <Component Id="cmp590FE21B20B76AED1A1237717ECB849B" Guid="{1B545948-54D2-463F-AB0F-3A139E9C0852}">
+        <File Id="FWBS.OMS.PDFConversion.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.PDFConversion.dll" />
+      </Component>
+      <Component Id="cmp8A0CB20D0D6389C4A9D1A118D05173E9" Guid="{A7E5A7A2-0503-422E-9AFE-2A37588A04C4}">
+        <File Id="Fwbs.Oms.ResourceLookup.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.Oms.ResourceLookup.dll" />
+      </Component>
+      <Component Id="cmp39FDEA16DCE41F467E9072251ECD1D1B" Guid="{81C16F02-90A5-4085-9E83-73864A759661}">
+        <File Id="FWBS.OMS.TIFFConversion.dll" KeyPath="yes" Source="$(var.SourceDir)\FWBS.OMS.TIFFConversion.dll" />
+      </Component>
+      <Component Id="cmp7F68335F3EC4FE91A9AAE752D990188D" Guid="{2EDC89E0-3105-4ABC-A676-6C715AAEC2D5}">
+        <File Id="Fwbs.WindowFinder.dll" KeyPath="yes" Source="$(var.SourceDir)\Fwbs.WindowFinder.dll" />
+      </Component>
+      <Component Id="cmp40189BD51B34AECB87DBD9CB4F6B240F" Guid="{23479D3D-6043-47E3-A918-F8C0B0CFCA4A}">
+        <File Id="MSCacheMgr.exe" KeyPath="yes" Source="$(var.SourceDir)\MSCacheMgr$(var.ExeNameSuffix).exe">
+          <Shortcut Id="CacheManagerShortcut" Name="Cache Manager" Description="3E MatterSphere Cache Manager Application" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+        </File>
+        <File Id="MSCacheMgr.exe.config" CompanionFile="MSCacheMgr.exe" Source="$(var.SourceDir)\MSCacheMgr.exe.config" />
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\MSCacheMgr.exe">
+          <RegistryValue Value="[#MSCacheMgr.exe]" Type="string" Action="write" />
+        </RegistryKey>
+      </Component>
+      <Component Id="cmp1874AB219070404EED322213C6A1A49E" Guid="{CA0D86BB-8260-478A-B060-4E355619E8DC}">
+        <File Id="Newtonsoft.Json.dll" KeyPath="yes" Source="$(var.SourceDir)\Newtonsoft.Json.dll" />
+      </Component>
+      <Component Id="cmp45B4C4CD6CA1DC684847D884244DBB73" Guid="{EFADDB58-CC2A-414C-BA3C-C13517878961}">
+        <File Id="OMS.Data.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.Data.dll" />
+      </Component>
+      <Component Id="cmpC3C4F48DE7E4F089CB36E30BD0EE6B26" Guid="{8644F48A-0ACB-4CA8-BED6-C6F37738529E}">
+        <File Id="OMS.Infrastructure.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.Infrastructure.dll" />
+      </Component>
+      <Component Id="cmpC645A6CCFC95569D6765B0DA8C0EC7DD" Guid="{4E7C82B3-AC80-4327-990E-BA21162A1172}">
+        <File Id="OMS.Library.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.Library.dll" />
+      </Component>
+      <Component Id="cmp26F8D7AB952FE2214791AC15D6243FBF" Guid="{F3E502EE-4C1C-4289-B63C-679069AA6F0B}">
+        <File Id="OMS.Library.XmlSerializers.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.Library.XmlSerializers.dll" />
+      </Component>
+      <Component Id="cmpA4D550CE84D2C0998140B10EB16D2050" Guid="{16EDCB5B-DA33-4DE8-91CA-F866410C54FB}">
+        <File Id="OMS.UI.dll" KeyPath="yes" Source="$(var.SourceDir)\OMS.UI.dll" />
+      </Component>
+      <Component Id="cmp5C9D3FEFF8E6518C98D597CE4D19B943" Guid="{B67A0D04-584D-4C9D-9BF4-78C02CFE1BFE}">
+        <File Id="RestSharp.dll" KeyPath="yes" Source="$(var.SourceDir)\RestSharp.dll" />
+      </Component>
+    </ComponentGroup>
+
+    <ComponentGroup Id="CG_PreviewerModules" Directory="Modules">
+      <Component Id="cmp5A21355657E1545745CF3D37836A041E" Guid="{C998EF87-C71C-441B-B20B-D519CE4622C4}">
+        <File Id="FWBS.Controls.XpsViewer.dll" KeyPath="yes" Source="$(var.SourceDir)\modules\FWBS.Controls.XpsViewer.dll" />
+      </Component>
+      <Component Id="cmp291F1888040123C2E5271C0A2B03044A" Guid="{18A0BDCE-B5E7-4AED-914E-B22E630DE65A}">
+        <File Id="FWBS.DocumentPreviewer.Csv.dll" KeyPath="yes" Source="$(var.SourceDir)\modules\FWBS.DocumentPreviewer.Csv.dll" />
+      </Component>
+      <Component Id="cmpDB98E70B86DFF3E98A5646A341B6C77B" Guid="{9E143D73-62CB-413B-9852-21533356DCC0}">
+        <File Id="FWBS.DocumentPreviewer.Excel.dll" KeyPath="yes" Source="$(var.SourceDir)\modules\FWBS.DocumentPreviewer.Excel.dll" />
+      </Component>
+      <Component Id="cmp39E938E5F01E990F262EC5B31DC73F1F" Guid="{931C9198-3659-41D0-A510-4EC971CE3211}">
+        <File Id="FWBS.DocumentPreviewer.Image.dll" KeyPath="yes" Source="$(var.SourceDir)\modules\FWBS.DocumentPreviewer.Image.dll" />
+      </Component>
+      <Component Id="cmp13CD9892A4CCE7D7AF2DB618344C7190" Guid="{FD4AC470-ED24-41F2-AF2C-51C922A0EBF8}">
+        <File Id="FWBS.DocumentPreviewer.Msg.dll" KeyPath="yes" Source="$(var.SourceDir)\modules\FWBS.DocumentPreviewer.Msg.dll" />
+      </Component>
+      <Component Id="cmpD90837FC6034ADEFB73D75FA10C9878E" Guid="{F2515B37-5E3A-4F9F-91F1-5238175BAAE4}">
+        <File Id="FWBS.DocumentPreviewer.Word.dll" KeyPath="yes" Source="$(var.SourceDir)\modules\FWBS.DocumentPreviewer.Word.dll" />
+      </Component>
+      <Component Id="cmpEDAD10C3B9C977D8E3B3A05B37747F5C" Guid="{4A2178E1-17A5-4BD6-9D4E-9B3B93436BE9}">
+        <File Id="FWBS.DocumentPreviewer.Xps.dll" KeyPath="yes" Source="$(var.SourceDir)\modules\FWBS.DocumentPreviewer.Xps.dll" />
+      </Component>
+      <Component Id="cmp16F2F95440436210E6179ABFCC8A8913" Guid="{63A64BAB-36FB-4FEA-B828-631AC3F5F368}">
+        <File Id="FWBS.DocumentPreviewer.Zip.dll" KeyPath="yes" Source="$(var.SourceDir)\modules\FWBS.DocumentPreviewer.Zip.dll" />
+      </Component>
+    </ComponentGroup>
+
+  </Fragment>
+</Wix>

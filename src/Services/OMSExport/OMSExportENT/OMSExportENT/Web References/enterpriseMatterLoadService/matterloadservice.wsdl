@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.elite.com/openapi/matterload" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.elite.com/openapi/matterload" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Triggering the generation of new bills</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.elite.com/openapi/matterload">
+      <s:element name="Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="matter" type="tns:MatterLoad" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MatterLoad">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NVSerializable">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MMATTER" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MNAME" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MODEL" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MRTCODE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MDEPT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MPRAC" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MLOC" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MOPENDT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MBILLATY" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MSUPATY" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MORGATY" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MHOLDDT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCONTACT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MDESC1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MDESC2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MDESC3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MINSTR1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MINSTR2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCLIENT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MADDR1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MADDR2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MADDR3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MADDR4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MADDR5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MADDR6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MPHONE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTMIN" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCMIN" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTOTMIN" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFFREQ" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCFREQ" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTMPLT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTFORMAT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCFORMAT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTMARK" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTMRKLED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCMARK" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCMRKLED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MINTRST" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MINTDAYS" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MINTLED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFFEE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFCOST" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MRATED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MREFER" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCHOLDDT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFTMPLT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFOLLOW1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFOLLOW2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFOLLOW3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFOLLOW4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTRACCT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCURRENCY" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MMAXFEE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MPHPREFIX" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MMASTER" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCOPIES" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MARRANGE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTIMEUNIT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD7" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD8" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD9" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD10" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FIELD11" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MNONBILL" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MNPOSTF" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MNBCOST" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1PR260" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1PR270" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1PR280" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1PR290" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1DP260" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1DP270" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1DP280" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1DP290" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2PR260" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2PR270" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2PR280" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2PR290" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2DP260" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2DP270" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2DP280" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2DP290" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1ACU260" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1ACU270" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1ACU280" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN1ACU290" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2ACU260" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2ACU270" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2ACU280" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MN2ACU290" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MSTATUS" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MPROTEM" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MJNUM" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFAX" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MCLOSEDT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MRELATED" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MNARRATIVE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MIOBILLING" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MLANG" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTAXC" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MTAXT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MUNIT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MFIXCAP" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MRATE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MDISCOUNTGRP" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MGLOBAL" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="unbounded" name="udf" type="tns:Udf" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="NVSerializable" abstract="true" />
+      <s:complexType name="Udf">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NVSerializable">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="label" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="val" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="user" type="tns:user" />
+      <s:complexType name="user" mixed="true">
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="CreateMultiPayor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="matter" type="tns:MatterMultiLoad" />
+            <s:element minOccurs="0" maxOccurs="1" name="runOption" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MatterMultiLoad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mmatter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="mattadd" type="tns:MatterAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="mattmultipay" type="tns:MatterMultiPayor" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MatterAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="matype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddress3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddress4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddress5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maddress6" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MatterMultiPayor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="mmdate1" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="mattmultipayd" type="tns:MatterMultiPayorDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MatterMultiPayorDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mplcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mpclnum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mppercent" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="mpaddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mpaddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mpaddress3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mpaddress4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mpaddress5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mpaddress6" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateMultiPayorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMultiPayorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Create" />
+  </wsdl:message>
+  <wsdl:message name="CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Createuser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:message name="CreateMultiPayorSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMultiPayor" />
+  </wsdl:message>
+  <wsdl:message name="CreateMultiPayorSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMultiPayorResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMultiPayoruser">
+    <wsdl:part name="user" element="tns:user" />
+  </wsdl:message>
+  <wsdl:portType name="MatterLoadServiceSoap">
+    <wsdl:operation name="Create">
+      <wsdl:input message="tns:CreateSoapIn" />
+      <wsdl:output message="tns:CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMultiPayor">
+      <wsdl:input message="tns:CreateMultiPayorSoapIn" />
+      <wsdl:output message="tns:CreateMultiPayorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MatterLoadServiceSoap" type="tns:MatterLoadServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://www.elite.com/openapi/matterload/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Createuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMultiPayor">
+      <soap:operation soapAction="http://www.elite.com/openapi/matterload/CreateMultiPayor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateMultiPayoruser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MatterLoadServiceSoap12" type="tns:MatterLoadServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create">
+      <soap12:operation soapAction="http://www.elite.com/openapi/matterload/Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Createuser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMultiPayor">
+      <soap12:operation soapAction="http://www.elite.com/openapi/matterload/CreateMultiPayor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateMultiPayoruser" part="user" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MatterLoadService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Triggering the generation of new bills</wsdl:documentation>
+    <wsdl:port name="MatterLoadServiceSoap" binding="tns:MatterLoadServiceSoap">
+      <soap:address location="http://dapent39/services/matterloadservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MatterLoadServiceSoap12" binding="tns:MatterLoadServiceSoap12">
+      <soap12:address location="http://dapent39/services/matterloadservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

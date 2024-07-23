@@ -1,0 +1,76 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <WixVariable Id="WixUISupportPerUser" Value="0" Overridable="yes" />
+    <WixVariable Id="WixUISupportPerMachine" Value="1" Overridable="yes" />
+
+    <SetProperty Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="!(loc.LaunchOmsUtils)" Sequence="ui" Before="ExecuteAction" Condition="NOT Installed AND (&amp;OMSShell = 3)" />
+    <Property Id="WixShellExecTarget" Value="[#OMS.Utils.exe]" />
+    <CustomAction Id="LaunchApplication" DllEntry="WixShellExec" Impersonate="yes" BinaryRef="Wix4UtilCA_$(sys.BUILDARCHSHORT)" />
+
+    <SetProperty Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="!(loc.LaunchVstoRuntime)" Sequence="ui" Before="ExecuteAction" Condition="NOT Installed AND (&amp;OMSOffice = 3) AND NOT VSTORUNTIMEREDIST &gt;= &quot;10.0.60828&quot;" />    
+    <CustomAction Id="SetVstoDownloadWebsite" Property="WixShellExecTarget" Value="https://go.microsoft.com/fwlink/?LinkId=140384" />
+    <CustomAction Id="OpenVstoDownloadWebsite" DllEntry="WixShellExec" Impersonate="yes" BinaryRef="Wix4UtilCA_$(sys.BUILDARCHSHORT)" />
+
+    <UI Id="WixUI_MatterSphere">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="11" Bold="yes" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="MatterSphere" />
+
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999" />
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication" Condition="NOT Installed AND WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1" />
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="SetVstoDownloadWebsite" Condition="NOT Installed" />
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="OpenVstoDownloadWebsite" Condition="NOT Installed AND (UILevel &gt;= 4) AND (&amp;OMSOffice = 3) AND NOT VSTORUNTIMEREDIST &gt;= &quot;10.0.60828&quot;" />
+
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="CustomizeDlg" Order="1" Condition="NOT Installed" />
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg" Condition="Installed AND PATCH" />
+
+      <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="1" Condition="Installed" />
+      <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2" Condition="NOT Installed" />
+      <Publish Dialog="CustomizeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg" />
+
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="CustomizeDlg" Order="1" Condition="NOT Installed OR WixUI_InstallMode = &quot;Change&quot;" />
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2" Condition="Installed AND NOT PATCH" />
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="3" Condition="Installed AND PATCH" />
+
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg" />
+
+      <Publish Dialog="MaintenanceTypeDlg" Control="ChangeButton" Event="NewDialog" Value="CustomizeDlg" />
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg" />
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg" />
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg" />
+
+      <!-- Tricky logic to enable or disable Next button in CustomizeDlg depending on mutually exclusive features selection -->
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureOfficeToBeInstalled" Value="1" Condition="NOT Installed AND (&amp;OMSOffice = 3)" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureOfficeToBeInstalled" Value="0" Condition="NOT Installed AND (&amp;OMSOffice &lt;&gt; 3)" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureOfficeToBeInstalled" Value="1" Condition="Installed AND ((!OMSOffice = 2 AND &amp;OMSOffice = 3) OR (!OMSOffice = 3 AND &amp;OMSOffice = -1))" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureOfficeToBeInstalled" Value="0" Condition="Installed AND ((!OMSOffice = 3 AND &amp;OMSOffice = 2) OR (!OMSOffice = 2 AND &amp;OMSOffice = -1))" />
+
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureFullDMToBeInstalled" Value="1" Condition="NOT Installed AND (&amp;OMSFullDM = 3)" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureFullDMToBeInstalled" Value="0" Condition="NOT Installed AND (&amp;OMSFullDM &lt;&gt; 3)" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureFullDMToBeInstalled" Value="1" Condition="Installed AND ((!OMSFullDM = 2 AND &amp;OMSFullDM = 3) OR (!OMSFullDM = 3 AND &amp;OMSFullDM = -1))" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureFullDMToBeInstalled" Value="0" Condition="Installed AND ((!OMSFullDM = 3 AND &amp;OMSFullDM = 2) OR (!OMSFullDM = 2 AND &amp;OMSFullDM = -1))" />
+
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureNoDMToBeInstalled" Value="1" Condition="NOT Installed AND (&amp;OMSNoDM = 3)" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureNoDMToBeInstalled" Value="0" Condition="NOT Installed AND (&amp;OMSNoDM &lt;&gt; 3)" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureNoDMToBeInstalled" Value="1" Condition="Installed AND ((!OMSNoDM = 2 AND &amp;OMSNoDM = 3) OR (!OMSNoDM = 3 AND &amp;OMSNoDM = -1))" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="FeatureNoDMToBeInstalled" Value="0" Condition="Installed AND ((!OMSNoDM = 3 AND &amp;OMSNoDM = 2) OR (!OMSNoDM = 2 AND &amp;OMSNoDM = -1))" />
+
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="CustomizeDlgNextEnable" Value="1" Condition="FeatureOfficeToBeInstalled = 0 OR FeatureFullDMToBeInstalled &lt;&gt; FeatureNoDMToBeInstalled" />
+      <Publish Dialog="CustomizeDlg" Control="Tree" Property="CustomizeDlgNextEnable" Value="0" Condition="FeatureOfficeToBeInstalled = 1 AND FeatureFullDMToBeInstalled = FeatureNoDMToBeInstalled" />
+    </UI>
+
+    <UIRef Id="WixUI_Common" />
+  </Fragment>
+</Wix>
