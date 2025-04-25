@@ -143,27 +143,35 @@ namespace FWBS.OMS.UI.Windows
         {
             CheckObjectIsDoc(ref obj);
 
-            ShellFile sf = (ShellFile)obj;
-
-            return sf.GetProperty(varName);
+            if (obj is ShellFile)
+            {
+                ShellFile sf = (ShellFile)obj;
+                return sf.GetProperty(varName);
+            }
+            return null;
         }
 
         public override bool HasDocVariable(object obj, string varName)
         {
             CheckObjectIsDoc(ref obj);
 
-            ShellFile sf = (ShellFile)obj;
-
-            return sf.HasProperty(varName);
+            if (obj is ShellFile)
+            {
+                ShellFile sf = (ShellFile)obj;
+                return sf.HasProperty(varName);
+            }
+            return false;
         }
 
         public override void RemoveDocVariable(object obj, string varName)
         {
             CheckObjectIsDoc(ref obj);
 
-            ShellFile sf = (ShellFile)obj;
-
-            sf.RemoveProperty(varName);
+            if (obj is ShellFile)
+            {
+                ShellFile sf = (ShellFile)obj;
+                sf.RemoveProperty(varName);
+            }
         }
 
 
@@ -172,17 +180,21 @@ namespace FWBS.OMS.UI.Windows
            
             CheckObjectIsDoc(ref obj);
 
-            ShellFile sf = (ShellFile)obj;
+            if (obj is ShellFile)
+            {
+                ShellFile sf = (ShellFile)obj;
 
-            try
-            {
-                sf.SetProperty(varName, val);
-                return true;
+                try
+                {
+                    sf.SetProperty(varName, val);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }
-            catch
-            {
-                return false;
-            }
+            return false;
         }
 
 
@@ -330,37 +342,32 @@ namespace FWBS.OMS.UI.Windows
 
         protected override object TemplateStart(object obj, PrecedentLink preclink)
         {
-            System.IO.FileInfo tmppath = null;
-
             //Get the Precedent File to Load...
             FWBS.OMS.DocumentManagement.Storage.FetchResults fetch = preclink.Merge();
 
             if (fetch == null)
                 return null;
-            
-            tmppath = fetch.LocalFile;
 
-            CreatePDFDocument(obj, preclink, tmppath);
+            var newPDF = CreatePDFDocument(obj, preclink, fetch.LocalFile);
 
-            return _pdfPrecedent;
+            return this;
         }
 
 
-        private object CreatePDFDocument(object obj, PrecedentLink preclink, System.IO.FileInfo tmppath)
+        private OMSDocument CreatePDFDocument(object obj, PrecedentLink preclink, System.IO.FileInfo tmppath)
         {
+            OMSDocument newPDFDocument = null;
             if (tmppath != null)
             {
                 switch (preclink.Precedent.PrecedentType.ToUpper())
                 {
                     case "PDF":
-                        OMSDocument newPDFDocument = CreateNewPDFDocument(obj, preclink, tmppath);
+                        newPDFDocument = CreateNewPDFDocument(obj, preclink, tmppath);
                         OpenDocument(newPDFDocument);
                         break;
                 }
-                return true;
             }
-            else
-                return false;
+            return newPDFDocument;
         }
 
         #endregion

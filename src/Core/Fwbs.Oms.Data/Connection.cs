@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using FWBS.Common.Security.Cryptography;
@@ -59,9 +60,9 @@ namespace FWBS.OMS.Data
             {
                 case "SQL":
                     if (Encryption.NewKeyDecrypt(db.ApplicationRoleName) == "")
-                        cnn = new SQLConnection(connectionString, userName);
+                        cnn = new SQLConnection(connectionString, userName, password);
                     else
-                        cnn = new SQLConnection(connectionString, userName, db.ApplicationRoleName, db.ApplicationRolePassword);
+                        cnn = new SQLConnection(connectionString, userName, password, db.ApplicationRoleName, db.ApplicationRolePassword);
                     break;
                 case "OLEDB":
                     break;
@@ -485,7 +486,9 @@ namespace FWBS.OMS.Data
                 catch (Exception ex)
                 {
                     Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-                    throw new ConnectionException("SQL Code Error" + Environment.NewLine + Environment.NewLine + "Connection : " + Environment.NewLine + "     " + _cnn.ConnectionString + Environment.NewLine + "Command Text : " + Environment.NewLine + "     " + sql + Environment.NewLine + "Parameters : " + Environment.NewLine + erroutput + Environment.NewLine + ex.Message, ex);
+
+                    string msg = FormatExecuteExceptionMessage(sql, erroutput, ex.Message);
+                    throw new ConnectionException(msg, ex);
                 }
                 finally
                 {
@@ -597,7 +600,9 @@ namespace FWBS.OMS.Data
                 catch (Exception ex)
                 {
                     Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-                    throw new ConnectionException("SQL Code Error" + Environment.NewLine + Environment.NewLine + "Connection : " + Environment.NewLine + "     " + _cnn.ConnectionString + Environment.NewLine + "Command Text : " + Environment.NewLine + "     " + sql + Environment.NewLine + "Parameters : " + Environment.NewLine + erroutput + Environment.NewLine + ex.Message, ex);
+
+                    string msg = FormatExecuteExceptionMessage(sql, erroutput, ex.Message);
+                    throw new ConnectionException(msg, ex);
                 }
                 finally
                 {
@@ -730,7 +735,9 @@ namespace FWBS.OMS.Data
             catch (Exception ex)
             {
                 Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-                throw new ConnectionException("SQL Code Error" + Environment.NewLine + Environment.NewLine + "Connection : " + Environment.NewLine + "     " + _cnn.ConnectionString + Environment.NewLine + "Command Text : " + Environment.NewLine + "     " + sql + Environment.NewLine + "Parameters : " + Environment.NewLine + erroutput + Environment.NewLine + ex.Message, ex);
+
+                string msg = FormatExecuteExceptionMessage(sql, erroutput, ex.Message);
+                throw new ConnectionException(msg, ex);
             }
             finally
             {
@@ -823,7 +830,9 @@ namespace FWBS.OMS.Data
             catch (Exception ex)
             {
                 Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-                throw new ConnectionException("SQL Code Error" + Environment.NewLine + Environment.NewLine + "Connection : " + Environment.NewLine + "     " + _cnn.ConnectionString + Environment.NewLine + "Command Text : " + Environment.NewLine + "     " + sql + Environment.NewLine + "Parameters : " + Environment.NewLine + erroutput + Environment.NewLine + ex.Message, ex);
+
+                string msg = FormatExecuteExceptionMessage(sql, erroutput, ex.Message);
+                throw new ConnectionException(msg, ex);
             }
             
             return rdr;
@@ -901,7 +910,9 @@ namespace FWBS.OMS.Data
             catch (Exception ex)
             {
                 Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-                throw new ConnectionException("SQL Code Error" + Environment.NewLine + Environment.NewLine + "Connection : " + Environment.NewLine + "     " + _cnn.ConnectionString + Environment.NewLine + "Command Text : " + Environment.NewLine + "     " + sql + Environment.NewLine + "Parameters : " + Environment.NewLine + erroutput + Environment.NewLine + ex.Message, ex);
+
+                string msg = FormatExecuteExceptionMessage(sql, erroutput, ex.Message);
+                throw new ConnectionException(msg, ex);
             }
             finally
             {
@@ -1209,9 +1220,9 @@ namespace FWBS.OMS.Data
             catch (Exception ex)
             {
 				Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-				throw new ConnectionException("Update Error" + Environment.NewLine + Environment.NewLine + "Connection : "
-					+ Environment.NewLine + "     " + _cnn.ConnectionString					
-					+ Environment.NewLine + ex.Message, ex);      
+
+                string msg = FormatUpdateExceptionMessage(ex.Message);
+                throw new ConnectionException(msg, ex);
             }
             finally
             {
@@ -1237,9 +1248,9 @@ namespace FWBS.OMS.Data
             catch (Exception ex)
             {
 				Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-				throw new ConnectionException("Update Error" + Environment.NewLine + Environment.NewLine + "Connection : "
-					+ Environment.NewLine + "     " + _cnn.ConnectionString
-					+ Environment.NewLine + ex.Message, ex);      
+
+                string msg = FormatUpdateExceptionMessage(ex.Message);
+                throw new ConnectionException(msg, ex);
             }
             finally
             {
@@ -1277,10 +1288,9 @@ namespace FWBS.OMS.Data
             catch (Exception ex)
             {
 				Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-				throw new ConnectionException("Update Error" + Environment.NewLine + Environment.NewLine + "Connection : "
-					+ Environment.NewLine + "     " + _cnn.ConnectionString
-					+ Environment.NewLine + "     " + string.Format("Insert SQL: {1}{0}Update SQL:{2}{0}Delete SQL:{3}", Environment.NewLine, insert, update, delete)
-					+ Environment.NewLine + ex.Message, ex);       
+
+                string msg = FormatCRUDExceptionMessage(insert, update, delete, ex.Message);
+                throw new ConnectionException(msg, ex);
             }
             finally
             {
@@ -1990,9 +2000,9 @@ namespace FWBS.OMS.Data
             catch (Exception ex)
             {
 				Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-				throw new ConnectionException("Update Error" + Environment.NewLine + Environment.NewLine + "Connection : "
-					+ Environment.NewLine + "     " + _cnn.ConnectionString
-					+ Environment.NewLine + ex.Message, ex);      
+
+                string msg = FormatUpdateExceptionMessage(ex.Message);
+                throw new ConnectionException(msg, ex);
             }
             finally
             {
@@ -2014,9 +2024,9 @@ namespace FWBS.OMS.Data
             catch (Exception ex)
             {
 				Trace.WriteLineIf(Global.LogSwitch.TraceError, ex.Message, Global.LogSwitch.DisplayName);
-				throw new ConnectionException("Update Error" + Environment.NewLine + Environment.NewLine + "Connection : "
-					+ Environment.NewLine + "     " + _cnn.ConnectionString			
-					+ Environment.NewLine + ex.Message, ex);      
+
+                string msg = FormatUpdateExceptionMessage(ex.Message);
+                throw new ConnectionException(msg, ex);
             }
             finally
             {
@@ -2024,6 +2034,33 @@ namespace FWBS.OMS.Data
             }
         }
 
+        #endregion
+
+        #region FormatExceptionMessages
+        private string FormatExecuteExceptionMessage(string sql, string erroutput, string exceptionMessage)
+        {
+            string connectionString = GetConnectionStringWithoutPassword();
+            string format = "SQL Code Error{0}{0}Connection : {0}     {1}{0}Command Text : {0}     {2}{0}Parameters : {0}{3}{0}{4}";
+            return string.Format(format, Environment.NewLine, connectionString, sql, erroutput, exceptionMessage);
+        }
+        private string FormatUpdateExceptionMessage(string exceptionMessage)
+        {
+            string connectionString = GetConnectionStringWithoutPassword();
+            string format = "Update Error{0}{0}Connection : {1}{0}{2}";
+            return string.Format(format, Environment.NewLine, connectionString, exceptionMessage);
+        }
+        private string FormatCRUDExceptionMessage(string insert, string update, string delete, string exceptionMessage)
+        {
+            string connectionString = GetConnectionStringWithoutPassword();
+            string format = "Update Error{0}{0}Connection : {1}{0}{0}Insert SQL: {2}{0}Update SQL: {3}{0}Delete SQL: {4}{0}{5}";
+            return string.Format(format, Environment.NewLine, connectionString, insert, update, delete, exceptionMessage);
+        }
+        private string GetConnectionStringWithoutPassword()
+        {
+            var builder = new SqlConnectionStringBuilder(_cnn.ConnectionString);
+            builder.Remove("Password");
+            return builder.ConnectionString;
+        }
         #endregion
     }
 }

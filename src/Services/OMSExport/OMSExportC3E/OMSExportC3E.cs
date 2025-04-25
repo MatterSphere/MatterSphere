@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Text;
 using System.Xml;
 using FWBS.OMS.OMSEXPORT.ResetFlagCommands;
@@ -381,14 +380,28 @@ namespace FWBS.OMS.OMSEXPORT
                 {
                     //Write to disk
                     WriteFile(Action, fileID, jsonToSend, response.Dump, _debugFailedLocation);
-                    //Complete failure so try again next time or NOT;
-                    if (_ResetFlagInCaseOfFailure)
+                    if (response.GetErrorType() == "NxDuplicateKeyException" &&
+                        response.DataCollection.Rows[0].Attributes["Number"] != null &&
+                        !string.IsNullOrEmpty(response.DataCollection.Rows[0].Attributes["Number"].Value))
                     {
-                        new ResetNeedExportFlagForMatterCommand(fileID, this).Execute();
+                        string mattExtTxtId = response.GetItemID();
+                        var number = response.DataCollection.Rows[0].Attributes["Number"].Value;
+                        CheckMatterIn3E(fileID, number);
+                        return mattExtTxtId;
                     }
-                    throw new Exception(GetErrors(jsonToSend, response.ErrorMessage, Action, fileID));
-                }
+                    else
+                    {
+                        const string updateSql = "UPDATE DBFILE SET FILEEXTLINKID = -1 , FILENEEDEXPORT = 0 WHERE FILEID = @FILEID";
+                        ExecuteSQL(updateSql, new List<SqlParameter> { new SqlParameter("FILEID", fileID) });
 
+                        //Complete failure so try again next time or NOT;
+                        if (_ResetFlagInCaseOfFailure)
+                        {
+                            new ResetNeedExportFlagForMatterCommand(fileID, this).Execute();
+                        }
+                        throw new Exception(GetErrors(jsonToSend, response.ErrorMessage, Action, fileID));
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -396,6 +409,40 @@ namespace FWBS.OMS.OMSEXPORT
                 Exception enew = new Exception(s);
                 throw enew;
             }
+        }
+
+        private void CheckMatterIn3E(long fileId, string number)
+        {
+            try
+            {
+                var matterResponse = _requester.GetMatterByNumber(number);
+                if (matterResponse.Success && matterResponse.Rows.Length == 1)
+                {
+                    var matterId = matterResponse.GetMatterID();
+                    var matterIndex = matterResponse.GetMatterIndex();
+                    RemoveCreatedMatterFromExportQueue(fileId, matterId, matterIndex);
+                }
+            }
+            catch (Exception ex)
+            {
+                string s = ex.Message;
+                Exception enew = new Exception(s);
+                throw enew;
+            }
+        }
+
+        private void RemoveCreatedMatterFromExportQueue(long fileID, string externalId, string externalIndex)
+        {
+            List<SqlParameter> parList = new List<SqlParameter>
+            {
+                new SqlParameter("FILEID", fileID),
+                new SqlParameter("FILEEXTID", externalIndex),
+                new SqlParameter("FILEEXTTXTID", externalId)
+            };
+            string sql = " UPDATE dbFile " +
+                         " SET fileNeedExport = 0, fileExtLinkID = @FILEEXTID, fileExtLinkTxtID = @FILEEXTTXTID " +
+                         " WHERE fileId = @FILEID";
+            ExecuteSQL(sql, parList);
         }
 
         private void ExportMatterPostProcess(string Action, long fileID, string mattExtTxtId)

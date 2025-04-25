@@ -13,6 +13,12 @@ AS
 SET TRAN ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
+DECLARE @search1 NVARCHAR(128);
+DECLARE @search2 NVARCHAR(128);
+DECLARE @search3 NVARCHAR(128);
+DECLARE @search4 NVARCHAR(128);
+DECLARE @search5 NVARCHAR(128);
+
 DECLARE @Select NVARCHAR(MAX)
 	, @Where NVARCHAR(MAX) = N'WHERE 1 = 1'
 
@@ -81,34 +87,51 @@ BEGIN
 		OR SOUNDEX (CL.clSearch5) = SOUNDEX(@SEARCH))'
 	ELSE
 	BEGIN
-		DECLARE @searchPhrases TABLE(rowNum INT, phrase NVARCHAR(128));
+		DECLARE @searchPhrases TABLE([rowNum] [int] IDENTITY(1,1) NOT NULL, phrase NVARCHAR(128));
+		DECLARE @cmptlevel int = 0;
+		SELECT @cmptlevel= cmptlevel FROM master.dbo.sysdatabases WHERE name = db_name();
 
-		INSERT INTO @searchPhrases
-		SELECT ROW_NUMBER() OVER(ORDER BY tmpTable.items ASC) AS Row#, tmpTable.items
-		FROM SplitStringToTable(TRIM(@SEARCH), ' ') AS tmpTable;
+		IF @cmptlevel < 130 
+		BEGIN
+			INSERT INTO @searchPhrases
+			SELECT items
+			FROM SplitStringToTable(TRIM(@SEARCH), ' ');
+		END
+		ELSE
+		BEGIN
+			INSERT INTO @searchPhrases
+			SELECT value FROM STRING_SPLIT(TRIM(@SEARCH), ' ')
+			WHERE RTRIM(value) <> '';
+		END
 
 		DECLARE @phrasesCount INT;
 		SET @phrasesCount = (SELECT COUNT(*) FROM @searchPhrases);
 
 		IF @phrasesCount > 1
 		BEGIN
-			DECLARE @phrase NVARCHAR(128);
-			DECLARE @whereStr NVARCHAR(MAX) = N' 1 = 1 ';
+			DECLARE @searchParamName NVARCHAR(128);
+
+			SELECT 
+				@search1 = (CASE WHEN rowNum = 1 THEN phrase ELSE @search1 end),
+				@search2 = (CASE WHEN rowNum = 2 THEN phrase ELSE @search2 end),
+				@search3 = (CASE WHEN rowNum = 3 THEN phrase ELSE @search3 end),
+				@search4 = (CASE WHEN rowNum = 4 THEN phrase ELSE @search4 end),
+				@search5 = (CASE WHEN rowNum = 5 THEN phrase ELSE @search5 end)
+			FROM @searchPhrases
 
 			DECLARE @i INT = 0;
 			WHILE @i < @phrasesCount
 			BEGIN
 				SET @i = @i + 1;
-				SET @phrase = (SELECT phrase FROM @searchPhrases WHERE rowNum = @i);
-
+				SET @searchParamName = '@search' + cast(@i as nvarchar);
 				SET @Where = @Where + N'
-		AND (CL.clSearch1 = ' + '''' + @phrase + '''' + '
-			OR CL.clSearch2 = ' + '''' + @phrase + '''' + '
-			OR CL.clSearch3 = ' + '''' + @phrase + ''''  + ' 
-			OR CL.clSearch4 = ' + '''' + @phrase + '''' + '
-			OR CL.clSearch5 = ' + '''' + @phrase + ''')'
+		AND (CL.clSearch1 =  ' + @searchParamName + '
+			OR CL.clSearch2 = ' + @searchParamName + '
+			OR CL.clSearch3 = ' + @searchParamName + '
+			OR CL.clSearch4 = ' + @searchParamName + '
+			OR CL.clSearch5 = ' + @searchParamName + ')';
 			END
-			END
+		END
 		ELSE
 			SET @Where = @Where +N'
 		AND (CL.clSearch1 = @SEARCH 
@@ -150,7 +173,11 @@ ELSE
 
 IF @DEBUG = 1 PRINT @Select
  
-EXEC sp_executesql @Select,  N'@SEARCH NVARCHAR(128), @ADDRESS NVARCHAR(150), @CLTYPE uCodeLookup, @FEEUSRID BIGINT, @MAX_RECORDS INT', @SEARCH, @ADDRESS, @CLTYPE, @FEEUSRID, @MAX_RECORDS
+EXEC sp_executesql @Select,  N'
+	@SEARCH NVARCHAR(128), @ADDRESS NVARCHAR(150), @CLTYPE uCodeLookup, @FEEUSRID BIGINT, @MAX_RECORDS INT, 
+	@search1 NVARCHAR(128), @search2 NVARCHAR(128), @search3 NVARCHAR(128), @search4 NVARCHAR(128), @search5 NVARCHAR(128)', 
+	@SEARCH, @ADDRESS, @CLTYPE, @FEEUSRID, @MAX_RECORDS,
+	@search1, @search2, @search3, @search4, @search5;
 
 SET ANSI_NULLS ON
 

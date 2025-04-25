@@ -2696,6 +2696,12 @@ namespace FWBS.OMS.UI.Windows
             {
                 Cursor = Cursors.WaitCursor;
                 this.BindingContext[_enq.Source.Tables["DATA"]].EndCurrentEdit();
+				if (_enq.Code.Equals("SCRADDSPDATA"))
+				{
+                    var row = _enq.Source.Tables["DATA"].Rows[0];
+					row["spLookup"] = row["spLookup"].ToString().Trim();
+					row["spData"] = row["spData"].ToString().Trim();
+                }
                 _enq.Update();
                 allowFinish = true;
                 if (this.ParentForm != null && _style == EnquiryStyle.Wizard)

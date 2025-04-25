@@ -1364,10 +1364,10 @@ namespace FWBS.OMS.UI.Windows
                                 SetDocVariable(obj, RETENTION_PERIOD, policy.Period);
                             }
 
-
                             AttachDocumentVars(obj, docobj, version);
 
-
+                            var shellFile = obj as ShellFile;
+                            shellFile?.RestoreDatesOrigin();
 
                             try
                             {
@@ -1380,7 +1380,8 @@ namespace FWBS.OMS.UI.Windows
                                     }
                                     InternalDocumentSave(obj, settings.Mode, settings.Printing.Mode, docobj, version);
                                     //Call doc saved
-
+                                    shellFile?.RestoreDatesOrigin();
+                                    
                                     docobj.PhysicalDocumentSaved();
 
                                 }
@@ -1405,7 +1406,10 @@ namespace FWBS.OMS.UI.Windows
                             try
                             {
                                 if (!docobj.ContinueAfterSave || !docobj.AllowContinueAfterSave)
+                                {
                                     Close(obj);
+                                    shellFile?.RestoreDatesOrigin();
+                                }
                                 else
                                 {
                                     string caption = "";
@@ -2062,6 +2066,9 @@ namespace FWBS.OMS.UI.Windows
             }
 
             InternalSave(obj, acceptChangesIfNew);
+
+            var shellFile = obj as ShellFile;
+            shellFile?.RestoreDatesOrigin();
 
             if (localfile != null)
             {

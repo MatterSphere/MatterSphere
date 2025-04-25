@@ -18,17 +18,19 @@ namespace FWBS.OMS.UI.UserControls.Dashboard.CellControls.Common
 
         public int GetWeeksCount(DateTime date)
         {
-            var firstDate = GetFirstMonthDate(date);
-            var firstMonthDay = firstDate.DayOfWeek;
-            var lastDay = GetLastMonthDay(date);
-            var fullWeeks = lastDay / 7;
-            var additionalDays = lastDay % 7;
+            var firstDateOfMonth = GetFirstMonthDate(date);
+            var daysInMonth = DateTime.DaysInMonth(firstDateOfMonth.Year, firstDateOfMonth.Month);
+            var firstDayOfWeek = (int)firstDateOfMonth.DayOfWeek;
+            var totalDaysWithOffset = firstDayOfWeek + daysInMonth;
+            var numberOfWeeks = totalDaysWithOffset / 7;
 
-            return additionalDays > 0
-                ? additionalDays > 7 - (int)firstMonthDay
-                    ? fullWeeks + 2
-                    : fullWeeks + 1
-                : fullWeeks;
+            // Check if there are extra days that do not fit into a complete row
+            if (totalDaysWithOffset % 7 != 0)
+            {
+                numberOfWeeks++;  // Add an extra week for those remaining days
+            }
+
+            return numberOfWeeks;
         }
 
         public List<WeekInfo> GetWeeks(DateTime date)

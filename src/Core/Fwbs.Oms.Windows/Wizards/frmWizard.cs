@@ -746,61 +746,36 @@ namespace FWBS.OMS.UI.Windows
 			}
 		}
 
-		/// <summary>
-		/// Captures the enquiry forms after page change event which passes current page information.
-		/// </summary>
-		/// <param name="sender">Enquiry form object that raised the event.</param>
-		/// <param name="e">Specifies the page number, page type and direction the wizard is going.</param>
-		protected virtual void enquiryForm1_PageChanged(object sender, FWBS.OMS.UI.Windows.PageChangedEventArgs e)
-		{
-			//If the page number is less than zero then display the welcome panel.
-			//Otherwise, show the panel with the enquiry form on it.
-			if (e.PageType == EnquiryPageType.Start)
-			{
-                switch (Session.CurrentSession.CurrentUser.HideAllWelcomeWizardPages)
-                {
-                    case FWBS.Common.TriState.True:
-                        chkDisable.Checked = true;
-                        break;
-                    case FWBS.Common.TriState.False:
-                        chkDisable.Checked = false;
-                        goto default;
-                    case FWBS.Common.TriState.Null:
-                        chkDisable.Checked = Session.CurrentSession.HideAllWizardWelcomePages;
-                        goto default;
-                    default:
-                        if (_favourites == null)
-                            _favourites = new Favourites("WINUIWIZARD", enquiryForm1.Code);
-
-                        if (_favourites.Count == 0)
-                            _favourites.AddFavourite(enquiryForm1.Code, "", chkDisable.Checked.ToString());
-
-                        try
-                        {
-                            chkDisable.Checked = Convert.ToBoolean(_favourites.Param1(0));
-                        }
-                        catch
-                        {
-                            chkDisable.Checked = false;
-                        }
-                        break;
-                }
-
-				this.Controls.SetChildIndex(pnlWelcome,0);
-			}
-			else if (e.PageType == EnquiryPageType.Enquiry)
+        /// <summary>
+        /// Captures the enquiry forms after page change event which passes current page information.
+        /// </summary>
+        /// <param name="sender">Enquiry form object that raised the event.</param>
+        /// <param name="e">Specifies the page number, page type and direction the wizard is going.</param>
+        protected virtual void enquiryForm1_PageChanged(object sender, FWBS.OMS.UI.Windows.PageChangedEventArgs e)
+        {
+            //If the page number is less than zero then display the welcome panel.
+            //Otherwise, show the panel with the enquiry form on it.
+            switch (e.PageType)
             {
-                this.Controls.SetChildIndex(pnlEnquiry, 0);
-                if (_hideWelcomePage && e.PageNumber == 0)
-                    btnBack.Enabled = false;
+                case EnquiryPageType.Start:
+                    ApplyWelcomePageSettings();
+                    // Apply user settings to the Welcome Page to allow change it when navigating Back in the wizard.
+                    ApplyUserWelcomePageSettings();
+                    pnlWelcome.Visible = true;
+                    Controls.SetChildIndex(pnlWelcome, 0);
+                    break;
+                case EnquiryPageType.Enquiry:
+                    Controls.SetChildIndex(pnlEnquiry, 0);
+                    if (_hideWelcomePage && e.PageNumber == 0)
+                        btnBack.Enabled = false;
+                    break;
+                case EnquiryPageType.Custom:
+                    Controls.SetChildIndex(pnlEnquiry, 0);
+                    break;
             }
-            else if (e.PageType == EnquiryPageType.Custom)
-			{
-				this.Controls.SetChildIndex(pnlEnquiry,0);
-			}
-			enquiryForm1.Focus();
+            enquiryForm1.Focus();
 
-			//Enable the accept button depending on what page it is on.
+            //Enable the accept button depending on what page it is on.
             if (this.AcceptButton == null || this.AcceptButton == btnNext || this.AcceptButton == btnFinished)
             {
                 if ((e.PageNumber + 1) == enquiryForm1.PageCount)
@@ -810,8 +785,8 @@ namespace FWBS.OMS.UI.Windows
             }
 
             RunPageTrackingProcess((EnquiryForm)sender, e);
-			accelerators1.Execute();
-		}
+            accelerators1.Execute();
+        }
 
 
         /// <summary>
@@ -825,23 +800,26 @@ namespace FWBS.OMS.UI.Windows
         }
 
 
-		/// <summary>
-		/// The event that gets captures before a page change.
-		/// </summary>
-		/// <param name="sender">Enquiry form.</param>
-		/// <param name="e">Before page change event arguments.</param>
-		protected virtual void enquiryForm1_PageChanging(object sender, FWBS.OMS.UI.Windows.PageChangingEventArgs e)
-		{
-            if (e.PageType == EnquiryPageType.Start && e.Direction == EnquiryPageDirection.Next && Session.CurrentSession.HideAllWizardWelcomePages == false && Session.CurrentSession.CurrentUser.HideAllWelcomeWizardPages != FWBS.Common.TriState.True && chkDisable.Checked)
-			{
-				//Make sure that the favourites object is initialised.
-				if (_favourites == null)
-					_favourites = new Favourites(enquiryForm1.Code);
+        /// <summary>
+        /// The event that gets captures before a page change.
+        /// </summary>
+        /// <param name="sender">Enquiry form.</param>
+        /// <param name="e">Before page change event arguments.</param>
+        protected virtual void enquiryForm1_PageChanging(object sender, FWBS.OMS.UI.Windows.PageChangingEventArgs e)
+        {
+            if (e.PageType == EnquiryPageType.Start
+                && e.Direction == EnquiryPageDirection.Next
+                && !Session.CurrentSession.HideAllWizardWelcomePages
+                && Session.CurrentSession.CurrentUser.HideAllWelcomeWizardPages != FWBS.Common.TriState.True)
+            {
+                //Make sure that the favourites object is initialised.
+                if (_favourites == null)
+                    _favourites = new Favourites(enquiryForm1.Code);
 
-				//Set the first parameter to be the value of the disable welcome screen check box.
-				_favourites.Param1(0, chkDisable.Checked.ToString());
-			}
-		}
+                //Set the first parameter to be the value of the disable welcome screen check box.
+                _favourites.Param1(0, chkDisable.Checked.ToString());
+            }
+        }
 
         private void btnCancel_Click(object sender, System.EventArgs e)
         {
@@ -849,27 +827,30 @@ namespace FWBS.OMS.UI.Windows
                 Close();
         }
 
-		//Capture the finish button click and update any changes to the user favourites object for the current user.
-		private void btnFinished_Click(object sender, System.EventArgs e)
-		{
-			btnFinished.Focus();
-			Application.DoEvents();
-			try
-			{
-				Cursor = Cursors.WaitCursor;
-                if (Session.CurrentSession.HideAllWizardWelcomePages == false && Session.CurrentSession.CurrentUser.HideAllWelcomeWizardPages != FWBS.Common.TriState.True && _favourites != null)
+        //Capture the finish button click and update any changes to the user favourites object for the current user.
+        private void btnFinished_Click(object sender, System.EventArgs e)
+        {
+            btnFinished.Focus();
+            Application.DoEvents();
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+                if (!Session.CurrentSession.HideAllWizardWelcomePages
+                    && Session.CurrentSession.CurrentUser.HideAllWelcomeWizardPages != FWBS.Common.TriState.True
+                    && _favourites != null)
+                {
                     _favourites.Update();
-			}
-			catch (Exception ex)
-			{
-				ErrorBox.Show(this, ex);
-			}
-			finally
-			{
-				Cursor = Cursors.Default;
-			}
-
-		}
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorBox.Show(this, ex);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
 
 		private void txtDescription_LinkClicked(object sender, System.Windows.Forms.LinkClickedEventArgs e)
 		{
@@ -886,46 +867,19 @@ namespace FWBS.OMS.UI.Windows
         {
             //See whether to skip the welcome screen or not.
             bool skipwelcome = _hideWelcomePage;
-            User user = Session.CurrentSession.CurrentUser;
-            if (user != null)
-            {
-                switch (user.HideAllWelcomeWizardPages)
-                {
-                    case FWBS.Common.TriState.True:
-                        chkDisable.Checked = true;
-                        break;
-                    case FWBS.Common.TriState.False:
-                        chkDisable.Checked = false;
-                        goto default;
-                    case FWBS.Common.TriState.Null:
-                        chkDisable.Checked = Session.CurrentSession.HideAllWizardWelcomePages;
-                        if (chkDisable.Checked == false)
-                            goto default;
-                        else
-                            break;
-                    default:
-                        //Initialise the favourties object.
-                        if (_favourites == null)
-                            _favourites = new Favourites("WINUIWIZARD", enquiryForm1.Code);
 
-                        try
-                        {
-                            chkDisable.Checked = Convert.ToBoolean(_favourites.Param1(0));
-                        }
-                        catch { }
-                        break;
-                }
-            }
+            ApplyWelcomePageSettings();
+
             skipwelcome |= chkDisable.Checked;
 
             //Skip the welcome if the variable turns out to be true.
             if (skipwelcome)
             {
+                pnlWelcome.Visible = false;
                 //Only skip the welcome page if it is currently on the welcome page.
                 if (enquiryForm1.PageNumber < 0)
                     enquiryForm1.NextPage();
             }
-
         }
 
         public void SetRTL(Form parentform)
@@ -943,6 +897,44 @@ namespace FWBS.OMS.UI.Windows
             var storel = control2.Left;
             control2.Left = control1.Left;
             control1.Left = storel;
+        }
+
+        private void ApplyWelcomePageSettings()
+        {
+            switch (Session.CurrentSession.CurrentUser.HideAllWelcomeWizardPages)
+            {
+                case FWBS.Common.TriState.True:
+                    chkDisable.Checked = true;
+                    break;
+                case FWBS.Common.TriState.False:
+                    chkDisable.Checked = false;
+                    ApplyUserWelcomePageSettings();
+                    break;
+                case FWBS.Common.TriState.Null:
+                    chkDisable.Checked = Session.CurrentSession.HideAllWizardWelcomePages;
+                    if (chkDisable.Checked)
+                        break;
+                    ApplyUserWelcomePageSettings();
+                    break;
+            }
+        }
+
+        private void ApplyUserWelcomePageSettings()
+        {
+            if (_favourites == null)
+                _favourites = new Favourites("WINUIWIZARD", enquiryForm1.Code);
+
+            if (_favourites.Count == 0)
+                _favourites.AddFavourite(enquiryForm1.Code, "", chkDisable.Checked.ToString());
+
+            try
+            {
+                chkDisable.Checked = Convert.ToBoolean(_favourites.Param1(0));
+            }
+            catch
+            {
+                chkDisable.Checked = false;
+            }
         }
 
         #region Wizard In-Place Modifications

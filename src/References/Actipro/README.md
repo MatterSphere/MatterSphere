@@ -1,1 +1,1 @@
-Please install Actipro SyntaxEditor v4.0.0290 for Windows Forms + SyntaxEditor .NET Languages Add-on
+Please install Actipro SyntaxEditor v18.1.342.0 for Windows Forms + SyntaxEditor .NET Languages Add-on

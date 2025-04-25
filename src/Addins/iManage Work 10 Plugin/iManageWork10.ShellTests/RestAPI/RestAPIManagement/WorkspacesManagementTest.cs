@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using iManageWork10.Shell.JsonResponses;
-using iManageWork10.Shell.JsonResponses.AdvancedSearch;
 using iManageWork10.Shell.RestAPI;
 using iManageWork10.Shell.RestAPI.RestAPIManagement;
 using iManageWork10.Shell.RestAPI.RestAPIManagement.RequestProperties;
@@ -124,51 +123,30 @@ namespace iManageWork10.ShellTests.RestAPI.RestAPIManagement
         [TestCase("not_default_library")]
         public void SearchWorkspaces_CorrectUrlBuilt(string library)
         {
-            SearchWorkspacesProperties searchWorkspacesProperties = new SearchWorkspacesProperties();
-            if (string.IsNullOrEmpty(library))
-            {
-                _restApiClient.Expect(client => client.PreferredLibrary).Return(LIBRARY);
-            }
-            _restApiClient
-                .Expect(client => client.ExecuteRequest<DataResponse<List<Workspace>>>(
-                    Arg<string>.Is.Equal($"{GetExpectedRootUrl(library)}/search"), 
-                    Arg<HttpMethod>.Is.Equal(HttpMethod.Get), 
-                    Arg<object>.Is.Equal(searchWorkspacesProperties),
-                    Arg<string>.Is.Null))
-                .Return(new DataResponse<List<Workspace>>());
+            var workspaceId = "1";
+            var libraryId = string.IsNullOrEmpty(library)? LIBRARY : library;
+            var searchWorkspacesProperties = new SearchWorkspacesProperties() {Libraries = libraryId};
+            var advancedSearchWorkspacesProperties = new AdvancedSearchWorkspacesProperties(searchWorkspacesProperties);
+            var workspace = new Workspace() { Id = workspaceId, Database = libraryId };
 
-            _workspacesManagement.SearchWorkspaces(searchWorkspacesProperties,  library);
+            var workspaceDataResponse = new WorkspaceDataResponse();
+            workspaceDataResponse.Workspaces.Add(workspace);
+            
+            _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<Workspace>>(
+                $"{GetExpectedRootUrl(library)}/{workspaceId}",
+                HttpMethod.Get))
+                .Return(new DataResponse<Workspace>());
 
-            _restApiClient.VerifyAllExpectations();
-        }
-
-        [Test]
-        [TestCase("")]
-        [TestCase(null)]
-        [TestCase("not_default_library")]
-        public void SearchWorkspaces_AdvancedSearchCorrectUrlBuilt(string library)
-        {
-            SearchWorkspacesProperties searchWorkspacesProperties = new SearchWorkspacesProperties() {Libraries = "addLib1,addLib2"};
-            if (string.IsNullOrEmpty(library))
-            {
-                _restApiClient.Expect(client => client.PreferredLibrary).Return(LIBRARY);
-            }
             _restApiClient
-                .Expect(client => client.ExecuteRequest<DataResponse<List<Workspace>>>(
-                    Arg<string>.Is.Equal($"{GetExpectedRootUrl(library)}/search"),
-                    Arg<HttpMethod>.Is.Equal(HttpMethod.Get),
-                    Arg<object>.Is.Equal(searchWorkspacesProperties),
-                    Arg<string>.Is.Null))
-                .Return(new DataResponse<List<Workspace>> {Data = new List<Workspace>()});
-            _restApiClient
-                .Expect(client => client.ExecuteRequest<DataResponse<AdvancedSearchResult<AdvancedSearchWorkspaceData>>>(
+                .Expect(client => client.ExecuteRequest<WorkspaceDataResponse>(
                     Arg<string>.Is.Equal($"workspaces/search"),
                     Arg<HttpMethod>.Is.Equal(HttpMethod.Post),
-                    Arg<AdvancedSearchWorkspacesProperties>.Is.TypeOf,
+                    Arg<object>.Is.Equal(advancedSearchWorkspacesProperties),
                     Arg<string>.Is.Null))
-                .Return(new DataResponse<AdvancedSearchResult<AdvancedSearchWorkspaceData>>() { Data =  new AdvancedSearchResult<AdvancedSearchWorkspaceData> {Results = new List<AdvancedSearchWorkspaceData>()} });
-            _workspacesManagement.SearchWorkspaces(searchWorkspacesProperties, library);
+                .Return(workspaceDataResponse);
 
+            _workspacesManagement.SearchWorkspaces(advancedSearchWorkspacesProperties, library);
+            
             _restApiClient.VerifyAllExpectations();
         }
 
@@ -179,13 +157,18 @@ namespace iManageWork10.ShellTests.RestAPI.RestAPIManagement
         [Test]
         public void SearchFolders_WorkspaceIdNull_ArgumentNullExceptionThrown()
         {
-            Assert.Throws<ArgumentNullException>(() => _workspacesManagement.SearchFolders(null, new SearchFoldersProperties()));
+            var searchFoldersProperties = new SearchFoldersProperties();
+            var searchFoldersProperties2 = new SearchFoldersProperties2(searchFoldersProperties.Name, null);
+
+            Assert.Throws<ArgumentNullException>(() => _workspacesManagement.SearchFolders(null, searchFoldersProperties2));
         }
 
         [Test]
         public void SearchFolders_WorkspaceIdEmpty_ArgumentExceptionThrown()
         {
-            ArgumentException ex = Assert.Throws<ArgumentException>(() => _workspacesManagement.SearchFolders(string.Empty, new SearchFoldersProperties()));
+            var searchFoldersProperties = new SearchFoldersProperties();
+            var searchFoldersProperties2 = new SearchFoldersProperties2(searchFoldersProperties.Name, string.Empty);
+            ArgumentException ex = Assert.Throws<ArgumentException>(() => _workspacesManagement.SearchFolders(string.Empty, searchFoldersProperties2));
             Assert.That(ex.Message, Is.EqualTo("Value cannot be empty.\r\nParameter name: workspaceId"));
             Assert.That(ex.ParamName, Is.EqualTo("workspaceId"));
         }
@@ -196,21 +179,22 @@ namespace iManageWork10.ShellTests.RestAPI.RestAPIManagement
         [TestCase("1", "not_default_library")]
         public void SearchFolders_CorrectUrlBuilt(string workspaceId, string library)
         {
-            SearchFoldersProperties searchFoldersProperties = new SearchFoldersProperties();
-            
+            var searchFoldersProperties = new SearchFoldersProperties();
+            var searchFoldersProperties2 = new SearchFoldersProperties2(searchFoldersProperties.Name, workspaceId);
+
             if (string.IsNullOrEmpty(library))
             {
                 _restApiClient.Expect(client => client.PreferredLibrary).Return(LIBRARY);
             }
             _restApiClient
                 .Expect(client => client.ExecuteRequest<DataResponse<List<Folder>>>(
-                    Arg<string>.Is.Equal($"{GetExpectedRootUrl(library)}/{workspaceId}/folders/search"), 
-                    Arg<HttpMethod>.Is.Equal(HttpMethod.Get), 
-                    Arg<object>.Is.Equal(searchFoldersProperties),
+                    Arg<string>.Is.Equal($"{GetExpectedFolderRootUrl(library)}/folders/search"), 
+                    Arg<HttpMethod>.Is.Equal(HttpMethod.Post), 
+                    Arg<object>.Is.Equal(searchFoldersProperties2),
                     Arg<string>.Is.Null))
                 .Return(new DataResponse<List<Folder>>());
 
-            _workspacesManagement.SearchFolders(workspaceId, searchFoldersProperties, library);
+            _workspacesManagement.SearchFolders(workspaceId, searchFoldersProperties2, library);
 
             _restApiClient.VerifyAllExpectations();
         }
@@ -220,6 +204,11 @@ namespace iManageWork10.ShellTests.RestAPI.RestAPIManagement
         private string GetExpectedRootUrl(string library)
         {
             return $"libraries/{(string.IsNullOrEmpty(library) ? LIBRARY :library)}/workspaces";
+        }
+
+        private string GetExpectedFolderRootUrl(string library = null)
+        {
+            return $"libraries/{(string.IsNullOrEmpty(library) ? LIBRARY : library)}";
         }
 
     }

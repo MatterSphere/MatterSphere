@@ -57,7 +57,7 @@ namespace iManageWork10.ShellTests.RestAPI.RestAPIManagement
             }
             _restApiClient
                 .Expect(client => client.ExecuteRequest<DataResponse<List<DocumentProfile>>>(
-                    Arg<string>.Is.Equal($"{GetExpectedRootUrl(library)}/{folderId}/documents"), 
+                    Arg<string>.Is.Equal($"{GetExpectedRootUrl(library)}/{folderId}/children"), 
                     Arg<HttpMethod>.Is.Equal(HttpMethod.Get), 
                     Arg<object>.Is.Equal(searchDocumentsProperties),
                     Arg<string>.Is.Null))

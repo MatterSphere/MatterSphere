@@ -104,6 +104,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"</PostBuildEvent>
+    <PostBuildEvent>if not exist "C:\OMSCoreAssemblies" mkdir "C:\OMSCoreAssemblies"
+copy /y "$(TargetDir)$(TargetName).*" "C:\OMSCoreAssemblies\"</PostBuildEvent>
   </PropertyGroup>
 </Project>

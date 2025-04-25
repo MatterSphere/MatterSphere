@@ -8,7 +8,7 @@ using System.Reflection;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ELITE")]
 [assembly: AssemblyProduct("3E MatterSphere")]
-[assembly: AssemblyCopyright("© 2024 Elite. All rights reserved.")]
+[assembly: AssemblyCopyright("© 2025 Elite. All rights reserved.")]
 [assembly: AssemblyTrademark("All trademarks reserved")]
 
 //
@@ -23,7 +23,7 @@ using System.Reflection;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("10.1.0.0")]
-[assembly: AssemblyFileVersion("10.1.1.0")]
+[assembly: AssemblyFileVersion("10.1.2.0")]
 
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyName("")]

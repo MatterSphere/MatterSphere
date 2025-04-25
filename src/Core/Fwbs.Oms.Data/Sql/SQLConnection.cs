@@ -15,6 +15,8 @@ namespace FWBS.OMS.Data
     [Serializable()]
     public class SQLConnection : Connection
     {
+        private readonly string password;
+
         #region Constructors
 
         private SQLConnection() { }
@@ -30,6 +32,23 @@ namespace FWBS.OMS.Data
             _userName = userName;
             _cnn = new SqlConnection(connectionString);
         }
+
+        internal SQLConnection(string connectionString, string userName, string password)
+        {
+            _userName = userName;
+            _cnn = new SqlConnection(connectionString);
+            this.password = password;
+        }
+
+        internal SQLConnection(string connectionString, string userName, string password, string appRoleName, string appRolePassword)
+        {
+            _userName = userName;
+            this.password = password;
+            _cnn = new SqlConnection(connectionString);
+            _appRoleName = appRoleName;
+            _appRolePassword = appRolePassword;
+        }
+
         /// <summary>
         /// Creates a sql server based connection by giving it a connection string
         /// to use.
@@ -938,7 +957,12 @@ where PR.is_ms_shipped = 0";
 
         public override object Clone()
         {
-            return new SQLConnection(_cnn.ConnectionString, _userName, _appRoleName, _appRolePassword);
+            var builder = new SqlConnectionStringBuilder(_cnn.ConnectionString)
+            {
+                Password = password
+            };
+
+            return new SQLConnection(builder.ConnectionString, _userName, _appRoleName, _appRolePassword);
         }
 
         /// <summary>

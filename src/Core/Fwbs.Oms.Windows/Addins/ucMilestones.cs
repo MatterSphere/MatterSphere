@@ -419,7 +419,15 @@ namespace FWBS.OMS.UI.Windows
 					FWBS.Common.KeyValueCollection items = FWBS.OMS.UI.Windows.Services.Searches.ShowSearch(OMS.Session.CurrentSession.DefaultSystemSearchListGroups(SystemSearchListGroups.SelectMilestone) ,new Size(300,400),null,null);
 					if (items != null)
 					{
-						if (MessageBox.Show(Session.CurrentSession.Resources.GetMessage("NEWMILESTONE","Would you like to base the Milestone start from today?  Select No to create from the File Created date.","").Text,FWBS.OMS.Branding.APPLICATION_NAME,MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes) 
+						if (MessageBox.Show(
+                                Session.CurrentSession.Resources.GetMessage(
+                                    "NEWMILESTONE", 
+                                    "Would you like to base the Milestone start from today? " + 
+									"Select No to create from the %FILE% Created date.", 
+									"").Text,
+								FWBS.OMS.Branding.APPLICATION_NAME,
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == DialogResult.Yes) 
 						{
 							//Base Milestone creation off todays date (ie Yes!)
 							msanswer = true ;
@@ -445,7 +453,16 @@ namespace FWBS.OMS.UI.Windows
 					    Session.CurrentSession.CurrentUser.IsInRoles("DELETEMILSTONE") == false)
                             throw new FWBS.OMS.Security.PermissionsException("EXPERMDENIED2", "Permission Denied", true, "");
 
-                    if (MessageBox.Show(Session.CurrentSession.Resources.GetMessage("DELETEMILESTONE","Are you sure you would like to remove the milestone plan from this file?  This will cause any entered information to be lost.  Are you sure you want to remove this plan?","").Text,FWBS.OMS.Branding.APPLICATION_NAME, MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+                    if (MessageBox.Show(
+                            Session.CurrentSession.Resources.GetMessage(
+                                "DELETEMILESTONE",
+                                "Are you sure you would like to remove the milestone plan from this %FILE%? " +
+								"This will cause any entered information to be lost. " +
+								"Are you sure you want to remove this plan?",
+                                "").Text,
+							FWBS.OMS.Branding.APPLICATION_NAME, 
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning) == DialogResult.Yes)
 					{
 						try
 						{
