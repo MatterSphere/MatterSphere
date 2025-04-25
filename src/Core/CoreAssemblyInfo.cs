@@ -8,7 +8,7 @@ using System.Reflection;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ELITE")]
 [assembly: AssemblyProduct("3E MatterSphere Core")]
-[assembly: AssemblyCopyright("© 2024 Elite. All rights reserved.")]
+[assembly: AssemblyCopyright("© 2025 Elite. All rights reserved.")]
 [assembly: AssemblyTrademark("All trademarks reserved")]
 [assembly: AssemblyCulture("")]
 
@@ -25,7 +25,7 @@ using System.Reflection;
 
 
 [assembly: AssemblyVersion("10.1.0.0")]
-[assembly: AssemblyFileVersion("10.1.1.0")]
+[assembly: AssemblyFileVersion("10.1.2.0")]
 
 #if BL
 

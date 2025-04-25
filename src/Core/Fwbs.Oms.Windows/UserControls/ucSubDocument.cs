@@ -1,7 +1,9 @@
 using System;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using FWBS.OMS.UI.DocumentManagement.DocumentFolderManagement.DocumentFolderControls;
 
@@ -71,16 +73,21 @@ namespace FWBS.OMS.UI.Windows
 		private ToolStripButton btnChangeDocDesc;
 
 		private bool folderChanged = false;
+		private ToolStripButton btnShowHidePreview;
+		private SplitContainer splitContainer1;
 		ucTreeViewArgs args;
 
-        #endregion
+		private Fwbs.Documents.Preview.PreviewerControl previewerControl1;
+		private Timer previewDelayTimer;
+		private string previewedFilePath = "";
+		#endregion
 
         #region Constructors 
 
         public ucSubDocument()
-		{
-			// This call is required by the Windows.Forms Form Designer.
-			InitializeComponent();
+        {
+            // This call is required by the Windows.Forms Form Designer.
+            InitializeComponent();
             // Set code lookups
             Res res = Session.CurrentSession.Resources;
             colName.Text = res.GetResource("NAME", "Name", "").Text;
@@ -91,7 +98,8 @@ namespace FWBS.OMS.UI.Windows
             colFile.Text = res.GetResource("DETAILS", "Details", "").Text;
             btnAttach.Text = btnAttach.Text;
             mnuAttach.Text = mnuAttach.Text;
-		}
+            previewerControl1.Container = Session.CurrentSession.Container;
+        }
 
 		/// <summary> 
 		/// Clean up any resources being used.
@@ -141,7 +149,9 @@ namespace FWBS.OMS.UI.Windows
             this.btnResolve = new System.Windows.Forms.ToolStripButton();
             this.btnChangeDocDesc = new System.Windows.Forms.ToolStripButton();
             this.btnDocFolder = new System.Windows.Forms.ToolStripButton();
+            this.btnShowHidePreview = new System.Windows.Forms.ToolStripButton();
             this.lblWarning = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this._list = new FWBS.OMS.UI.ListView();
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDocId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -149,9 +159,15 @@ namespace FWBS.OMS.UI.Windows
             this.colDocDesc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDocFolder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colFile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.previewerControl1 = new Fwbs.Documents.Preview.PreviewerControl();
+            this.previewDelayTimer = new System.Windows.Forms.Timer(this.components);
             this._res = new FWBS.OMS.UI.Windows.ResourceLookup(this.components);
             this.mnuOptions.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuOptions
@@ -164,7 +180,7 @@ namespace FWBS.OMS.UI.Windows
             this.mnuRename,
             this.mnuDocFolder});
             this.mnuOptions.Name = "mnuOptions";
-            this.mnuOptions.Size = new System.Drawing.Size(205, 114);
+            this.mnuOptions.Size = new System.Drawing.Size(205, 136);
             this.mnuOptions.Opening += new System.ComponentModel.CancelEventHandler(this.mnuOptions_Opening);
             // 
             // mnuDetach
@@ -241,12 +257,13 @@ namespace FWBS.OMS.UI.Windows
             this.sepResolve,
             this.btnResolve,
             this.btnChangeDocDesc,
-            this.btnDocFolder});
+            this.btnDocFolder,
+            this.btnShowHidePreview});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(660, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(900, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -302,7 +319,7 @@ namespace FWBS.OMS.UI.Windows
             this.btnAttach.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._res.SetLookup(this.btnAttach, new FWBS.OMS.UI.Windows.ResourceLookupItem("ATTACHTOVERSION", "Attach To Version", ""));
             this.btnAttach.Name = "btnAttach";
-            this.btnAttach.Size = new System.Drawing.Size(130, 22);
+            this.btnAttach.Size = new System.Drawing.Size(102, 22);
             this.btnAttach.Text = "Attach To Version";
             this.btnAttach.Click += new System.EventHandler(this.MenuClick);
             // 
@@ -351,9 +368,20 @@ namespace FWBS.OMS.UI.Windows
             this.btnDocFolder.ImageTransparentColor = System.Drawing.Color.Magenta;
             this._res.SetLookup(this.btnDocFolder, new FWBS.OMS.UI.Windows.ResourceLookupItem("BTNDOCFOLDER", "Assign Document Folder", ""));
             this.btnDocFolder.Name = "btnDocFolder";
-            this.btnDocFolder.Size = new System.Drawing.Size(141, 19);
+            this.btnDocFolder.Size = new System.Drawing.Size(141, 22);
             this.btnDocFolder.Text = "Assign Document Folder";
             this.btnDocFolder.Click += new System.EventHandler(this.btnDocFolder_Click);
+            // 
+            // btnShowHidePreview
+            // 
+            this.btnShowHidePreview.CheckOnClick = true;
+            this.btnShowHidePreview.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnShowHidePreview.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._res.SetLookup(this.btnShowHidePreview, new FWBS.OMS.UI.Windows.ResourceLookupItem("BTNSHOWHIDEPREV", "Show/Hide Preview", ""));
+            this.btnShowHidePreview.Name = "btnShowHidePreview";
+            this.btnShowHidePreview.Size = new System.Drawing.Size(114, 22);
+            this.btnShowHidePreview.Text = "Show/Hide Preview";
+            this.btnShowHidePreview.Click += new System.EventHandler(this.btnShowHidePreview_Click);
             // 
             // lblWarning
             // 
@@ -361,15 +389,31 @@ namespace FWBS.OMS.UI.Windows
             this.lblWarning.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblWarning.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblWarning.ForeColor = System.Drawing.Color.Red;
-            this.lblWarning.Location = new System.Drawing.Point(0, 177);
-            this._res.SetLookup(this.lblWarning, new FWBS.OMS.UI.Windows.ResourceLookupItem("SUBDOCATTACHWRN", "Warning - There are documents attached to existing documents under a different %F" +
-            "ILE%", ""));
+            this.lblWarning.Location = new System.Drawing.Point(0, 265);
+            this._res.SetLookup(this.lblWarning, new FWBS.OMS.UI.Windows.ResourceLookupItem("SUBDOCATTACHWRN", "Warning - There are documents attached to existing documents under a different %FILE%", ""));
             this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(660, 35);
+            this.lblWarning.Size = new System.Drawing.Size(900, 35);
             this.lblWarning.TabIndex = 6;
-            this.lblWarning.Text = "Warning - There are documents attached to existing documents under a different %F" +
-    "ILE%";
+            this.lblWarning.Text = "Warning - There are documents attached to existing documents under a different %FILE%";
             this.lblWarning.Visible = false;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this._list);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.previewerControl1);
+            this.splitContainer1.Panel2Collapsed = true;
+            this.splitContainer1.Size = new System.Drawing.Size(900, 240);
+            this.splitContainer1.SplitterDistance = 600;
+            this.splitContainer1.TabIndex = 8;
             // 
             // _list
             // 
@@ -396,9 +440,9 @@ namespace FWBS.OMS.UI.Windows
             listViewGroup3});
             this._list.HideSelection = false;
             this._list.LargeImageList = this.largeicons;
-            this._list.Location = new System.Drawing.Point(0, 25);
+            this._list.Location = new System.Drawing.Point(0, 0);
             this._list.Name = "_list";
-            this._list.Size = new System.Drawing.Size(660, 152);
+            this._list.Size = new System.Drawing.Size(900, 240);
             this._list.SmallImageList = this.smallicons;
             this._list.TabIndex = 0;
             this._list.UseCompatibleStateImageBehavior = false;
@@ -437,19 +481,39 @@ namespace FWBS.OMS.UI.Windows
             this.colFile.Text = "Details";
             this.colFile.Width = 200;
             // 
+            // previewerControl1
+            // 
+            this.previewerControl1.AdditionalProperties = ((System.Collections.Generic.Dictionary<string, string>)(resources.GetObject("previewerControl1.AdditionalProperties")));
+            this.previewerControl1.Container = null;
+            this.previewerControl1.CultureProperties = ((System.Collections.Generic.Dictionary<string, string>)(resources.GetObject("previewerControl1.CultureProperties")));
+            this.previewerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.previewerControl1.Location = new System.Drawing.Point(0, 0);
+            this.previewerControl1.Name = "previewerControl1";
+            this.previewerControl1.Size = new System.Drawing.Size(96, 100);
+            this.previewerControl1.TabIndex = 9;
+            // 
+            // previewDelayTimer
+            // 
+            this.previewDelayTimer.Interval = 300;
+            this.previewDelayTimer.Tick += new System.EventHandler(this.previewDelayTimer_Tick);
+            // 
             // ucSubDocument
             // 
-            this.Controls.Add(this._list);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblWarning);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Name = "ucSubDocument";
-            this.Size = new System.Drawing.Size(660, 212);
+            this.Size = new System.Drawing.Size(900, 300);
             this.VisibleChanged += new System.EventHandler(this.ucSubDocument_VisibleChanged);
             this.ParentChanged += new System.EventHandler(this.ucSubDocument_ParentChanged);
             this.mnuOptions.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,6 +667,11 @@ namespace FWBS.OMS.UI.Windows
 			ShowResults();
 		}
 
+        private void btnShowHidePreview_Click(object sender, EventArgs e)
+        {
+            splitContainer1.Panel2Collapsed = !splitContainer1.Panel2Collapsed;
+            previewDelayTimer.Enabled = !splitContainer1.Panel2Collapsed;
+        }
 
 		private void _list_ItemCheck(object sender, System.Windows.Forms.ItemCheckEventArgs e)
 		{
@@ -635,6 +704,11 @@ namespace FWBS.OMS.UI.Windows
             InitializeMenuOptions();
         }
 
+        private void previewDelayTimer_Tick(object sender, EventArgs e)
+        {
+            previewDelayTimer.Enabled = false;
+            PreviewDocument();
+        }
         #endregion
 
         #region Methods
@@ -851,8 +925,79 @@ namespace FWBS.OMS.UI.Windows
 
 		}
 
+        private void PreviewDocument()
+        {
+            if (splitContainer1.Panel2Collapsed)
+                return;
+
+            if (_list.SelectedItems.Count == 0)
+            {
+                previewerControl1.ShowMessage("Select a document to preview");
+                return;
+            }
+
+            ListViewItem item = null;
+            if (_list.SelectedItems.Count == 1)
+            {
+                item = _list.SelectedItems[0];
+            }
+            else
+            {
+                item = _list.SelectedItems.Where<ListViewItem>(viewItem => viewItem.Focused).FirstOrDefault();
+            }
+
+            if (item == null)
+            {
+                previewerControl1.ShowMessage("Select any document to preview");
+                return;
+            }
+
+            if (item.Tag == null)
+            {
+                Trace.TraceWarning("item.Tag is null");
+                return;
+            }
+
+            if (!(item.Tag is SubDocument doc))
+            {
+                Trace.TraceWarning("SubDocument is null");
+                return;
+            }
+
+            if (previewedFilePath.Equals(doc.File.FullName))
+                return;
+
+            try
+            {
+                previewerControl1.PreviewFile(doc.File);
+
+                previewedFilePath = doc.File.FullName;
+            }
+            catch (NotSupportedException)
+            {
+                previewedFilePath = string.Empty;
+                return;
+            }
+            catch (Exception ex)
+            {
+                previewedFilePath = string.Empty;
+                if (!string.IsNullOrWhiteSpace(ex.Message))
+                {
+                    previewerControl1.ShowMessage(Session.CurrentSession.Resources.GetResource("DP_NOPREVIEW", "No Preview Available", "").Text);
+                }
+                else
+                {
+                    if (previewerControl1.CultureProperties.ContainsKey("NoPreview") && !string.IsNullOrEmpty(previewerControl1.CultureProperties["NoPreview"]))
+                    {
+                        previewerControl1.ShowMessage(previewerControl1.CultureProperties["NoPreview"]);
+                    }
+                }
+                Trace.TraceError(ex.Message);
+            }
+        }
 		#endregion
 
+		#region Other methods
 		private void MenuClick(object sender, EventArgs e)
 		{
 			foreach (ListViewItem item in _list.SelectedItems)
@@ -939,6 +1084,7 @@ namespace FWBS.OMS.UI.Windows
 		private void _list_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			CheckMenuStatus();
+			previewDelayTimer.Enabled = true;
 		}
 
 
@@ -1096,6 +1242,7 @@ namespace FWBS.OMS.UI.Windows
 				folderChanged = true;
 			}
 		}
+		#endregion
     }
 
 

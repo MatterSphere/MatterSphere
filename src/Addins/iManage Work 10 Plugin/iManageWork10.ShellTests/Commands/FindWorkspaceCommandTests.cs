@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using iManageWork10.Shell.Commands;
 using iManageWork10.Shell.Exceptions;
 using iManageWork10.Shell.JsonResponses;
@@ -19,24 +17,23 @@ namespace iManageWork10.ShellTests.Commands
         private FindWorkspaceCommand _command;
         private SearchWorkspacesProperties _searchProperties;
         private IRestApiClient _restApiClient;
+        private AdvancedSearchWorkspacesProperties _advancedSearchWorkspacesProperties;
 
         [SetUp]
         public void SetUp()
         {
             _searchProperties = new SearchWorkspacesProperties();
+            _advancedSearchWorkspacesProperties = new AdvancedSearchWorkspacesProperties(_searchProperties);
             _restApiClient = MockRepository.GenerateMock<IRestApiClient>();
-            _command = new FindWorkspaceCommand(_searchProperties);
+            _command = new FindWorkspaceCommand(_advancedSearchWorkspacesProperties);
         }
 
         [Test]
         public void Execute_WorkspaceNotFound_ThrowsWorkspaceNotFoundException()
         {
-            var dataResponse = new DataResponse<List<Workspace>>()
-            {
-                Data = new List<Workspace>()
-            };
+            var workspaceDataResponse = new WorkspaceDataResponse();
             _restApiClient.Expect(c => c.PreferredLibrary).Return(PREF_LIB);
-            _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<List<Workspace>>>($"libraries/{PREF_LIB}/workspaces/search", HttpMethod.Get, _searchProperties)).Return(dataResponse);
+            _restApiClient.Expect(client => client.ExecuteRequest<WorkspaceDataResponse>("workspaces/search", HttpMethod.Post, _advancedSearchWorkspacesProperties)).Return(workspaceDataResponse);
 
             Assert.Throws<WorkspaceNotFoundException>(() => _command.Execute(_restApiClient));
         }
@@ -45,18 +42,21 @@ namespace iManageWork10.ShellTests.Commands
         [TestCase(AccessLevel.Read)]
         [TestCase(AccessLevel.ReadWrite)]
         [TestCase(AccessLevel.FullAccess)]
-        public void Execute_WorkspaceWithAppropriateFixFound_ReturnFoundWorkspace(AccessLevel accessLevel)
+        public void Execute_WorkspaceWithAppropriateAccessFound_ReturnFoundWorkspace(AccessLevel accessLevel)
         {
-            var dataResponse = GetWorkspacesDataResponse("workspaceId");
+            var dataResponse = GetWorkspaceDataResponse("workspaceId");
             var currentUserResponse = GetCurrentUserProfileResponse("1");
             var securityResponse = GetWorkspaceSecurityResponse(accessLevel);
-            var expectedWorkspace = dataResponse.Data.First();
+            var expectedWorkspace = dataResponse.Data;
             var currentUser = currentUserResponse.Data;
+            var workspaceDataResponse = new WorkspaceDataResponse();
+            workspaceDataResponse.Workspaces.Add(expectedWorkspace);
 
             _restApiClient.Expect(c => c.PreferredLibrary).Return(PREF_LIB);
-            _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<List<Workspace>>>($"libraries/{PREF_LIB}/workspaces/search", HttpMethod.Get, _searchProperties)).Return(dataResponse);
+            _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<Workspace>>($"libraries/{PREF_LIB}/workspaces/{expectedWorkspace.Id}", HttpMethod.Get)).Return(dataResponse);
             _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<CurrentUserProfile>>($"libraries/{PREF_LIB}/users/me", HttpMethod.Get)).Return(currentUserResponse);
             _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<WorkspaceSecurity>>($"libraries/{PREF_LIB}/workspaces/{expectedWorkspace.Id}/users/{currentUser.Id}/security", HttpMethod.Get)).Return(securityResponse);
+            _restApiClient.Expect(c => c.ExecuteRequest<WorkspaceDataResponse>("workspaces/search", HttpMethod.Post, _advancedSearchWorkspacesProperties)).Return(workspaceDataResponse);
 
             var actualWorkspace = _command.Execute(_restApiClient);
 
@@ -69,31 +69,31 @@ namespace iManageWork10.ShellTests.Commands
         [TestCase(AccessLevel.Unknown)]
         public void Execute_WorkspaceFoundWithNotSuitableAccessLevel_ThrowsWorkspaceNotFoundException(AccessLevel accessLevel)
         {
-            var dataResponse = GetWorkspacesDataResponse("workspaceId");
+            var dataResponse = GetWorkspaceDataResponse("workspaceId");
             var currentUserResponse = GetCurrentUserProfileResponse("1");
             var securityResponse = GetWorkspaceSecurityResponse(accessLevel);
-            var workspace = dataResponse.Data.First();
+            var workspace = dataResponse.Data;
             var currentUser = currentUserResponse.Data;
+            var workspaceDataResponse = new WorkspaceDataResponse();
+            workspaceDataResponse.Workspaces.Add(workspace);
 
             _restApiClient.Expect(c => c.PreferredLibrary).Return(PREF_LIB);
-            _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<List<Workspace>>>($"libraries/{PREF_LIB}/workspaces/search", HttpMethod.Get, _searchProperties)).Return(dataResponse);
+            _restApiClient.Expect(c => c.ExecuteRequest<WorkspaceDataResponse>("workspaces/search", HttpMethod.Post, _advancedSearchWorkspacesProperties)).Return(workspaceDataResponse);
             _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<CurrentUserProfile>>($"libraries/{PREF_LIB}/users/me", HttpMethod.Get)).Return(currentUserResponse);
             _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<WorkspaceSecurity>>($"libraries/{PREF_LIB}/workspaces/{workspace.Id}/users/{currentUser.Id}/security", HttpMethod.Get)).Return(securityResponse);
+            _restApiClient.Expect(c => c.ExecuteRequest<DataResponse<Workspace>>($"libraries/{PREF_LIB}/workspaces/{workspace.Id}", HttpMethod.Get)).Return(dataResponse);
 
             Assert.Throws<WorkspaceNotFoundException>(() => _command.Execute(_restApiClient));
         }
 
-        private DataResponse<List<Workspace>> GetWorkspacesDataResponse(string workspaceId)
+        private DataResponse<Workspace> GetWorkspaceDataResponse(string workspaceId)
         {
-            return new DataResponse<List<Workspace>>()
+            return new DataResponse<Workspace>()
             {
-                Data = new List<Workspace>()
-                {
-                    new Workspace()
-                    {
-                        Id = workspaceId,
-                        Database = PREF_LIB
-                    }
+                Data = new Workspace()
+                { 
+                    Id = workspaceId, 
+                    Database = PREF_LIB 
                 }
             };
         }

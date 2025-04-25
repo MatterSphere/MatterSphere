@@ -13,18 +13,23 @@ namespace iManageWork10.Shell.Commands
 {
     public class FindWorkspaceCommand : IManageCommand<Workspace>
     {
-        private readonly SearchWorkspacesProperties _searchWorkspacesProperties;
+        private readonly AdvancedSearchWorkspacesProperties _advancedSearchWorkspacesProperties;
+
+        public FindWorkspaceCommand(AdvancedSearchWorkspacesProperties advancedSearchWorkspacesProperties)
+        {
+            _advancedSearchWorkspacesProperties = advancedSearchWorkspacesProperties;
+        }
 
         public FindWorkspaceCommand(SearchWorkspacesProperties searchWorkspacesProperties)
         {
-            _searchWorkspacesProperties = searchWorkspacesProperties;
+            _advancedSearchWorkspacesProperties = new AdvancedSearchWorkspacesProperties(searchWorkspacesProperties);
         }
 
         public Workspace Execute(IRestApiClient restApiClient)
         {
             var workspacesManagement = new WorkspacesManagement(restApiClient);
 
-            var libraries = _searchWorkspacesProperties.Libraries;
+            var libraries = _advancedSearchWorkspacesProperties.Filters.Libraries;
             if (!string.IsNullOrEmpty(libraries))
             {
                 var validator = new LibrariesValidator(restApiClient);
@@ -34,10 +39,10 @@ namespace iManageWork10.Shell.Commands
                 }
                 catch (ArgumentException)
                 {
-                    _searchWorkspacesProperties.Libraries = null;
+                    _advancedSearchWorkspacesProperties.Filters.Libraries = null;
                 }
             }
-            List<Workspace> workspaces = workspacesManagement.SearchWorkspaces(_searchWorkspacesProperties);
+            List<Workspace> workspaces = workspacesManagement.SearchWorkspaces(_advancedSearchWorkspacesProperties);
             if (workspaces.Any())
             {
                 var workspace = workspaces.First();

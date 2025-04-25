@@ -26,6 +26,8 @@ namespace FWBS.OMS.DocumentManagement.Storage.Providers
 
                 source.CopyTo(destination.FullName, true);
 
+                RestoreDatesOrigin(source, destination.FullName);
+
                 return new StoreResults(item, token, source);
             }
             catch (Exception)
@@ -88,6 +90,8 @@ namespace FWBS.OMS.DocumentManagement.Storage.Providers
 
                     File.Copy(file.FullName, local.FullName);
 
+                    RestoreDatesOrigin(file, local);
+
                     return new FetchResults(item, local);
                 }
 
@@ -107,6 +111,25 @@ namespace FWBS.OMS.DocumentManagement.Storage.Providers
 			{
 				throw;
 			}
+        }
+        
+        private static void RestoreDatesOrigin(FileInfo source, FileInfo dest)
+        {
+            try
+            {
+                dest.LastWriteTime = source.LastWriteTime;
+                dest.CreationTime = source.CreationTime;
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+            }
+        }
+
+        private static void RestoreDatesOrigin(FileInfo source, string destPath)
+        {
+            var dest = new FileInfo(destPath);
+            RestoreDatesOrigin(source, dest);
         }
 
         #endregion

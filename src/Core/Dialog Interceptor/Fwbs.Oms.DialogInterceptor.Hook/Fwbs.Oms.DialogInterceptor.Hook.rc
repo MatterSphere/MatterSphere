@@ -71,7 +71,7 @@ BEGIN
             VALUE "FileDescription", "Dialog Interceptor"
             VALUE "FileVersion", CORE_ASSEMBLY_VERSION_STR
             VALUE "InternalName", "Dialog Hook"
-            VALUE "LegalCopyright", "© 2024 Elite. All rights reserved."
+            VALUE "LegalCopyright", "© 2025 Elite. All rights reserved."
             VALUE "LegalTrademarks", "All Trademarks Reserved"
             VALUE "OriginalFilename", "OMS.DialogInterceptor.Hook"
             VALUE "ProductName", "FWBS Framework"

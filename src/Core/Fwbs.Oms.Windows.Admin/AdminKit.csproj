@@ -169,9 +169,9 @@
       <Project>{78D7F7DC-33C4-4CF6-9976-9B3B227D993D}</Project>
       <Name>Windows</Name>
     </ProjectReference>
-    <Reference Include="Telerik.WinControls, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.UI, Version=2018.2.621.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="omsadmin.exe.config" />

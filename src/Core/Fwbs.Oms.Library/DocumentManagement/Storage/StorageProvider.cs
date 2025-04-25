@@ -72,9 +72,9 @@ namespace FWBS.OMS.DocumentManagement.Storage
             return Fetch(item, throwOnError, item.GetSettings());
         }
 
-        public FetchResults Fetch(IStorageItem item, bool throwOnError, StorageSettingsCollection settings)
+        public FetchResults Fetch(IStorageItem item, bool throwOnError, StorageSettingsCollection settings, bool isExport = false)
         {
-            return Fetch(item, throwOnError, settings, Common.TriState.Null);
+            return Fetch(item, throwOnError, settings, Common.TriState.Null, isExport);
         }
 
         public FetchResults Fetch(IStorageItem item, bool throwOnError, Common.TriState force)
@@ -82,7 +82,7 @@ namespace FWBS.OMS.DocumentManagement.Storage
             return Fetch(item, throwOnError, item.GetSettings(), force);
         }
 
-        public FetchResults Fetch(IStorageItem item, bool throwOnError, StorageSettingsCollection settings, Common.TriState force,bool SpecificVersion = false )
+        public FetchResults Fetch(IStorageItem item, bool throwOnError, StorageSettingsCollection settings, Common.TriState force,bool SpecificVersion = false, bool isExport = false)
         {
             if (item == null)
                 throw new ArgumentNullException("item");
@@ -106,7 +106,7 @@ namespace FWBS.OMS.DocumentManagement.Storage
                 BeforeFetch(ref item, settings, SpecificVersion);
 
 
-                FetchResults results = GetExistingLocalFile(item, settings, force);
+                FetchResults results = isExport ? null : GetExistingLocalFile(item, settings, force);
                 if (results == null)
                 {
                     results = InternalFetch(item, settings);

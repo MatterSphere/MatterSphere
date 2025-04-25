@@ -154,6 +154,12 @@ namespace FWBS.OMS.OMSEXPORT
             return ExecuteRequest<GetMatterResponse>(request);
         }
 
+        public GetMatterResponse GetMatterByNumber(string matterNumber)
+        {
+            var request = CreateRequest("v1/matter?Number=" + matterNumber, Method.GET);
+            return ExecuteRequest<GetMatterResponse>(request);
+        }
+
         public GenericResponse CreateMatter(string matter)
         {
             var request = CreateRequest("v1/matter", Method.POST, matter);

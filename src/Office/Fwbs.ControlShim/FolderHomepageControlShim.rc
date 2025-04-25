@@ -77,7 +77,7 @@ BEGIN
             VALUE "FileDescription", "Outlook Matter View"
             VALUE "FileVersion", "1.0.0.2"
             VALUE "InternalName", "FolderHomepageControlShim.dll"
-            VALUE "LegalCopyright", "© 2024 Elite. All rights reserved."
+            VALUE "LegalCopyright", "© 2025 Elite. All rights reserved."
             VALUE "OriginalFilename", "FolderHomepageControlShim.dll"
             VALUE "ProductName", "Outlook Matter View"
             VALUE "ProductVersion", "1.0.0.2"

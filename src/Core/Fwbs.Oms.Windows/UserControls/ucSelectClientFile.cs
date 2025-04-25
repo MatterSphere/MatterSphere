@@ -15,10 +15,11 @@ namespace FWBS.OMS.UI.Windows
     /// </summary>
     public class ucSelectClientFile : System.Windows.Forms.UserControl
 	{
-      
+        private const char FixedDelimiter = '|';
+
         #region Fields
 
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 		private FWBS.Common.UI.Windows.eXPFrame pnlFileInfo;
 		private FWBS.Common.UI.Windows.eXPFrame pnlMain;
 		private FWBS.Common.UI.Windows.eXPComboBox cboFileList;
@@ -2144,13 +2145,15 @@ namespace FWBS.OMS.UI.Windows
 					// Parse the clientno and split
 					string[] splitstr = new string[2];
 					char[] delimiter;
-					//TODO: ConfigSetting-/ClientSearch/ClientDelimiter
-					delimiter = FWBS.OMS.Session.CurrentSession.GetSessionConfigSetting("/config/clientSearch/clientDelimiter"," ./:").ToCharArray();
+                    //TODO: ConfigSetting-/ClientSearch/ClientDelimiter
+                    delimiter = FWBS.OMS.Session.CurrentSession.GetSessionConfigSetting("/config/clientSearch/clientDelimiter", " ./:").ToCharArray();
 					try
 					{
 						txtClientNo.Text = txtClientNo.Text.Trim();
-						splitstr = txtClientNo.Text.Split(delimiter,2);
-						txtClientNo.Text =  splitstr[0];
+						splitstr = txtClientNo.Text.Contains(FixedDelimiter.ToString()) ? 
+                                   txtClientNo.Text.Split(FixedDelimiter) :
+                                   txtClientNo.Text.Split(delimiter,2);
+						txtClientNo.Text = splitstr[0];
 						cboFileList.Tag = splitstr[1];
 					}
 					catch 
@@ -2225,7 +2228,7 @@ namespace FWBS.OMS.UI.Windows
 				{
                     _client = file.Client;
                     // 26/02/2010 - Remove the Show All Files Checked True
-					txtClientNo.Text = _client.ClientNo + " " + _file.FileNo;
+					txtClientNo.Text = _client.ClientNo + FixedDelimiter + _file.FileNo;
                     return GetClient();
 				}
 			}
@@ -2604,27 +2607,32 @@ namespace FWBS.OMS.UI.Windows
 			OnStateChanged(ClientFileState.None);
 		}
 
-		private void splitter1_SplitterMoved(object sender, System.Windows.Forms.SplitterEventArgs e)
-		{
-			_favourites = new Favourites(_favname,"PNLFAVSIZE");
-			if (_favourites.Count > 0)
-				_favourites.Glyph(0,pnlFavourites.Width.ToString());
-			else
-				_favourites.AddFavourite("PNLFAVSIZE",pnlFavourites.Width.ToString());
-		
-		}
+        private void splitter1_SplitterMoved(object sender, System.Windows.Forms.SplitterEventArgs e)
+        {
+            _favourites = new Favourites(_favname, "PNLFAVSIZE");
+            if (_favourites.Count > 0)
+            {
+                _favourites.Glyph(0, pnlFavourites.Width.ToString());
+                _favourites.Update();
+            }
+            else
+                _favourites.AddFavourite("PNLFAVSIZE", pnlFavourites.Width.ToString());
+        }
 
-		private void splitter2_SplitterMoved(object sender, System.Windows.Forms.SplitterEventArgs e)
-		{
-			if (pnlFileInfo.Visible)
-			{
-				_favourites = new Favourites(_favname,"FILINFOHEIGHT");
-				if (_favourites.Count > 0)
-					_favourites.Param1(0,pnlFileInfo.Height.ToString());
-				else
-					_favourites.AddFavourite("FILINFOHEIGHT","",pnlFileInfo.Height.ToString());
-			}
-		}
+        private void splitter2_SplitterMoved(object sender, System.Windows.Forms.SplitterEventArgs e)
+        {
+            if (pnlFileInfo.Visible)
+            {
+                _favourites = new Favourites(_favname, "FILINFOHEIGHT");
+                if (_favourites.Count > 0)
+                {
+                    _favourites.Param1(0, pnlFileInfo.Height.ToString());
+                    _favourites.Update();
+                }
+                else
+                    _favourites.AddFavourite("FILINFOHEIGHT", "", pnlFileInfo.Height.ToString());
+            }
+        }
 
 		private void lnkRefresh_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 		{

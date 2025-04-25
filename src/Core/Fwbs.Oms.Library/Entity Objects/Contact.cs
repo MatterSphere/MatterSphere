@@ -3480,6 +3480,14 @@ namespace FWBS.OMS
                     new SystemPermission(StandardPermissionType.UpdateContact).Check();
                 }
             }
+			else
+			{
+                if (!skipUpdatePermissionCheck)
+                {
+                    new ContactPermission(this, StandardPermissionType.Update).Check();
+                    new SystemPermission(StandardPermissionType.UpdateContact).Check();
+                }
+            }
         }
 
         #endregion

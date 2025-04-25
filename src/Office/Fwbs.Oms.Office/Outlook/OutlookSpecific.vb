@@ -1,5 +1,6 @@
 Imports System.Collections.Generic
 Imports System.Linq
+Imports System.Text.RegularExpressions
 Imports System.Windows.Forms
 Imports FWBS.OMS.DocumentManagement
 Imports FWBS.OMS.DocumentManagement.Storage
@@ -250,10 +251,10 @@ Public Class OutlookOMS
     End Property
 
     Public Overrides ReadOnly Property ApplicationVersion() As Integer
-		Get
-			Return Version.Parse(_app.Version).Major
-		End Get
-	End Property
+        Get
+            Return Version.Parse(_app.Version).Major
+        End Get
+    End Property
 
     Public Overrides ReadOnly Property ModuleName() As String
         Get
@@ -1539,6 +1540,29 @@ calfee:
         Dim pi As IProfileItem = GetProfileItem(obj)
         If (pi Is Nothing OrElse Not pi.BeforeDocumentSave(Me, obj, doc, version)) Then
             MyBase.BeforeDocumentSave(obj, doc, version)
+        End If
+    End Sub
+
+    Protected Overrides Sub BeforePrecedentSave(obj As Object, prec As Precedent)
+        MyBase.BeforePrecedentSave(obj, prec)
+        CleanSpellcheckerErrorTags(obj)
+    End Sub
+
+    Protected Overrides Sub BeforePrecedentSave(obj As Object, prec As Precedent, version As PrecedentVersion)
+        MyBase.BeforePrecedentSave(obj, prec, version)
+        CleanSpellcheckerErrorTags(obj)
+    End Sub
+
+    Private Shared Sub CleanSpellcheckerErrorTags(obj As Object)
+        Dim mail As OutlookMail = obj
+        If mail.BodyFormat = Outlook.OlBodyFormat.olFormatHTML Then
+            Try
+                ' Remove <span class="SpellE"> tags inserted by Word spellchecker
+                ' because they can break document creation from this precedent
+                mail.HTMLBody = Regex.Replace(mail.HTMLBody, "<span\s+class=[""']?SpellE[""']?\s*>(.+?)<\/span>", "$1", RegexOptions.IgnoreCase Or RegexOptions.Singleline)
+            Catch ex As Exception
+                Trace.TraceError($"An error occurred while cleaning HTML body: {ex}")
+            End Try
         End If
     End Sub
 

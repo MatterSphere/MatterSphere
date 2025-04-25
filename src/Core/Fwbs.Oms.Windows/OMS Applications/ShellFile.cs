@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 namespace FWBS.OMS.UI.Windows
 {
@@ -8,6 +9,8 @@ namespace FWBS.OMS.UI.Windows
         private System.IO.FileInfo[] _attachments = null;
         private System.Xml.XmlDocument _doc = null;
         private System.IO.OleFileInfo _olefile;
+        private readonly DateTime? dateCreateOrigin;
+        private readonly DateTime? dateUpdateOrigin;
 
         private ShellFile()
         {
@@ -17,6 +20,9 @@ namespace FWBS.OMS.UI.Windows
         {
             if (file == null)
                 throw new ArgumentNullException("file");
+
+            dateCreateOrigin = file.CreationTime;
+            dateUpdateOrigin = file.LastWriteTime;
 
             _file = file;
             _attachments = attachments;
@@ -56,6 +62,26 @@ namespace FWBS.OMS.UI.Windows
                 if (_attachments.GetLength(0) == 0)
                     _attachments = new System.IO.FileInfo[0];
                 return _attachments;
+            }
+        }
+
+        public void RestoreDatesOrigin()
+        {
+            try
+            {
+                if (dateCreateOrigin.HasValue)
+                {
+                    File.CreationTime = dateCreateOrigin.Value;
+                }
+
+                if (dateUpdateOrigin.HasValue)
+                {
+                    File.LastWriteTime = dateUpdateOrigin.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
             }
         }
 

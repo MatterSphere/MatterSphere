@@ -743,17 +743,17 @@ namespace FWBS.OMS.UI.Windows
 
 				if (_title != null)
 				{
-					_title.Changed -=new EventHandler(eContactPassiveSearch_Name_Changed);
+					_title.ActiveChanged -=new EventHandler(eContactPassiveSearch_Name_ActiveChanged);
 					_title = null;
 				}
 				if (_intitials != null)
 				{
-					_intitials.Changed -=new EventHandler(eContactPassiveSearch_Name_Changed);
+					_intitials.ActiveChanged -=new EventHandler(eContactPassiveSearch_Name_ActiveChanged);
 					_intitials = null;
 				}
 				if (_surname != null)
 				{
-					_surname.Changed -=new EventHandler(eContactPassiveSearch_Name_Changed);
+					_surname.ActiveChanged -=new EventHandler(eContactPassiveSearch_Name_ActiveChanged);
 					_surname = null;
 				}
 				_parent.PageChanged -=new PageChangedEventHandler(_parent_PageChanged);
@@ -1236,18 +1236,18 @@ namespace FWBS.OMS.UI.Windows
 						if (xe.Name.ToUpper() == "EXTCONTINDIV.CONTTITLE")
 						{
 							_title = _parent.GetIBasicEnquiryControl2(MappingValue(xe.Value));
-							_title.Changed +=new EventHandler(eContactPassiveSearch_Name_Changed);
+							_title.ActiveChanged +=new EventHandler(eContactPassiveSearch_Name_ActiveChanged);
 						}
 						if (xe.Name.ToUpper() == "EXTCONTINDIV.CONTINITIALS")
 						{
 							_intitials = _parent.GetIBasicEnquiryControl2(MappingValue(xe.Value));
-							_intitials.Changed +=new EventHandler(eContactPassiveSearch_Name_Changed);
+							_intitials.ActiveChanged +=new EventHandler(eContactPassiveSearch_Name_ActiveChanged);
 						}
 						if (xe.Name.ToUpper() == "EXTCONTINDIV.CONTSURNAME")
 						{
 							_surname = _parent.GetIBasicEnquiryControl2(MappingValue(xe.Value));
-							_surname.Changed +=new EventHandler(eContactPassiveSearch_Name_Changed);
-						}					
+							_surname.ActiveChanged +=new EventHandler(eContactPassiveSearch_Name_ActiveChanged);
+						}
 					}
 					catch{}
 				}
@@ -1386,10 +1386,15 @@ namespace FWBS.OMS.UI.Windows
 			_IcontAddressControlName.Enabled = !Convert.ToBoolean(_Icopyfromprinciple.Value);
 		}
 
-		private void eContactPassiveSearch_Name_Changed(object sender, EventArgs e)
+		private void eContactPassiveSearch_Name_ActiveChanged(object sender, EventArgs e)
 		{
-			string contname = Convert.ToString(_title.Value).Trim() + " " + Convert.ToString(_intitials.Value).Trim() + " " + Convert.ToString(_surname.Value).Trim();
-			_IcontNameControlName.Value = contname.Trim();
+			string contname = string.Format("{0} {1} {2}",
+				_title.Value,
+				_intitials.Value,
+				_surname.Value
+			).Replace("  ", " ").Trim();
+
+			_IcontNameControlName.Value = contname;
 			_IcontNameControlName.IsDirty = true;
 			_IcontNameControlName.OnActiveChanged();
 		}

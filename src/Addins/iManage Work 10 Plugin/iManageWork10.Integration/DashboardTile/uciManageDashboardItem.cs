@@ -104,7 +104,10 @@ namespace iManageWork10.Integration.DashboardTile
                         Custom2 = custom2Value,
                         Libraries = libraries
                     };
-                    var command = new FindWorkspaceCommand(workspaceSearchProperties);
+
+                    var advancedSearchProperties = new AdvancedSearchWorkspacesProperties(workspaceSearchProperties);
+
+                    var command = new FindWorkspaceCommand(advancedSearchProperties);
                     var workspace = new CommandsExecuter(_apiClient).Execute(command);
                     url = UriComposer.ComposeWorkspaceUrl(_baseUrl ,workspace);
                 }

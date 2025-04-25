@@ -81,6 +81,11 @@ namespace FWBS.OMS.OMSEXPORT.Models
             return DataCollection.Rows[0].Attributes["ItemID"].Value;
         }
 
+        public string GetErrorType()
+        {
+            return DataCollection.Rows[0].Error != null ? DataCollection.Rows[0].Error.Type : string.Empty;
+        }
+
         public bool IsRecordLocked()
         {
             if (DataCollection != null)
@@ -147,6 +152,9 @@ namespace FWBS.OMS.OMSEXPORT.Models
 
                 [JsonProperty("subclassId")]
                 public string SubclassId { get; set; }
+
+                [JsonProperty("error")]
+                public ResponseErrors.ResponseError Error { get; set; }
             }
 
             public class ResponseErrors

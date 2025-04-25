@@ -224,7 +224,8 @@ namespace MatterSphereIntercept
                         WLog.Warn(ex.Message);
                     }
                 }
-                var workspaces = wm.SearchWorkspaces(searchProperties);
+                var advancedSearchProperties = new AdvancedSearchWorkspacesProperties(searchProperties);
+                var workspaces = wm.SearchWorkspaces(advancedSearchProperties);
                 if (workspaces?.Count == 0)
                 {
                     var message = $"The workspace with search criteria Client={custom1}, Matter={custom2} cannot be found within the database. Or you have insufficient permission to view the workspace.";
@@ -257,7 +258,8 @@ namespace MatterSphereIntercept
         private Folder GetFolder(Workspace workspace, string folderName)
         {
             var wm = new WorkspacesManagement(RestApiClient);
-            var folders =  wm.SearchFolders(workspace.Id, new SearchFoldersProperties { Name = folderName}, workspace.Database);
+            var searchFoldersProperties2 = new SearchFoldersProperties2(folderName, workspace.Id);
+            var folders =  wm.SearchFolders(workspace.Id, searchFoldersProperties2, workspace.Database);
             if (folders.Any())
             {
                 return folders.First();

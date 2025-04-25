@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using FWBS.OMS.DocumentManagement.Storage;
 
@@ -90,7 +91,7 @@ namespace FWBS.OMS.DocumentManagement
                     try
                     {
 
-                        FetchResults fetch = item.GetStorageProvider().Fetch(item, true, coll);
+                        FetchResults fetch = item.GetStorageProvider().Fetch(item, true, coll, true);
                         _progress.Message = "Exporting : " + info.Name;
 
                         if (info.Exists)
@@ -102,6 +103,17 @@ namespace FWBS.OMS.DocumentManagement
                         }
 
                         fetch.LocalFile.CopyTo(info.FullName);
+
+                        try
+                        {
+                            info.LastWriteTime = fetch.LocalFile.LastWriteTime;
+                            info.CreationTime = fetch.LocalFile.CreationTime;
+                        }
+                        catch (Exception ex)
+                        {
+                            Trace.WriteLine(ex.Message);
+                        }
+
                         _progress.Current++;
                         FWBS.OMS.Session.CurrentSession.OnProgress(_progress);
                     }

@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using FWBS.Common;
@@ -1678,21 +1679,67 @@ namespace FWBS.OMS.UI.Windows
 			{
 				this.Cursor = Cursors.WaitCursor;
 				timFilterDown.Enabled = false;
-				search= true;
+				search = true;
 				lblSearching.Visible = true;
 				Application.DoEvents();
 				ucPrecList.Search(false,true,false);
                 ucPrecFav.Search(false, true, false);
+
+                UpdateDescriptionFromResource(ucPrecList.DataTable);
+                UpdateDescriptionFromResource(ucPrecFav.DataTable);
+
                 lblSearching.Visible = false;
-				search=false;
+                search = false;
 				this.Cursor = Cursors.Default;
             }
 		}
 
-		/// <summary>
-		/// Private Method to Start the Search Timer
-		/// </summary>
-		private void StartTimer()
+        private static void UpdateDescriptionFromResource(DataTable table)
+        {
+            if (table == null)
+            {
+                return;
+            }
+
+            bool hasPrecDesc = table.Columns.Contains("PrecDesc") && table.Columns.Contains("PrecID");
+            bool hasPrecTypeDesc = table.Columns.Contains("PrecTypeDesc") && table.Columns.Contains("PrecType");
+
+            try
+            {
+                foreach (DataRow dr in table.Rows)
+                {
+                    if (hasPrecDesc)
+                    {
+                        UpdateColumnDescription(dr, "PrecDesc", "PrecID");
+                    }
+
+                    if (hasPrecTypeDesc)
+                    {
+                        UpdateColumnDescription(dr, "PrecTypeDesc", "PrecType");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+        }
+
+        private static void UpdateColumnDescription(DataRow dr, string descColumnName, string idColumnName)
+        {
+            var desc = dr[descColumnName].ToString();
+            if (desc.Contains("%"))
+            {
+                var id = dr[idColumnName].ToString();
+                var newDesc = Session.CurrentSession.Resources.GetResource(id, desc, "").Text;
+                dr[descColumnName] = newDesc;
+            }
+        }
+
+        /// <summary>
+        /// Private Method to Start the Search Timer
+        /// </summary>
+        private void StartTimer()
 		{
 			// Do no Start if the Searching or the Form is not Visible
 			if (search==false && this.Visible==true)

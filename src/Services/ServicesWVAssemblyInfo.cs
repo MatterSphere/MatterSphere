@@ -8,7 +8,7 @@ using System.Reflection;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ELITE")]
 
-[assembly: AssemblyCopyright("© 2024 Elite. All rights reserved.")]
+[assembly: AssemblyCopyright("© 2025 Elite. All rights reserved.")]
 [assembly: AssemblyTrademark("All trademarks reserved")]
 
 [assembly: AssemblyDelaySign(false)]
