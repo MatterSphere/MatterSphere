@@ -356,6 +356,13 @@ namespace FWBS.OMS
         public string CC { get; set; }
         public string BCC { get; set; }
 
+        public System.IO.FileInfo File
+        {
+            get
+            {
+                return _file;
+            }
+        }
         #endregion
 
         #region Methods
