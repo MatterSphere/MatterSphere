@@ -2,6 +2,6 @@ ActiproSoftware.SyntaxEditor.Addons.VB.VBSyntaxLanguage, ActiproSoftware.SyntaxE
 ActiproSoftware.SyntaxEditor.Addons.CSharp.CSharpSyntaxLanguage, ActiproSoftware.SyntaxEditor.Addons.DotNet.WinForms, Version=18.1.342.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763
 ActiproSoftware.SyntaxEditor.SyntaxEditor, ActiproSoftware.SyntaxEditor.WinForms, Version=18.1.342.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763
 Infragistics.Win.UltraWinDock.UltraDockManager, Infragistics.Win.UltraWinDock, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
-Telerik.WinControls.Themes.Windows8Theme, Telerik.WinControls.Themes.Windows8, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
-Telerik.WinControls.UI.RadTreeView, Telerik.WinControls.UI, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
-Telerik.WinControls.UI.RadCollapsiblePanel, Telerik.WinControls.UI, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.Themes.Windows8Theme, Telerik.WinControls.Themes.Windows8, Version=2025.1.211.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadTreeView, Telerik.WinControls.UI, Version=2025.1.211.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadCollapsiblePanel, Telerik.WinControls.UI, Version=2025.1.211.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e

@@ -138,6 +138,63 @@
   <data name="SuperTip_Disconnect" xml:space="preserve">
     <value>Disconnects or logs off a current %APPNAME% session.</value>
   </data>
+  <data name="SuperTip_TabHome_Connect_Create_AssocLetter" xml:space="preserve">
+    <value>Writes a letter to the %ASSOCIATE%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_Create_ClientLetter" xml:space="preserve">
+    <value>Writes a letter to the current %CLIENT%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_Create_Matter" xml:space="preserve">
+    <value>Creates a new %FILE% under a selected %CLIENT%</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_Create_Time" xml:space="preserve">
+    <value>Creates a new time entry under a chosen %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_ViewMenu" xml:space="preserve">
+    <value>Shows a number of different items within the system.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_View_Client" xml:space="preserve">
+    <value>Views %CLIENT% information based on the selected %CLIENT%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_View_Matter" xml:space="preserve">
+    <value>Views %FILE% information based on the selected %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_View_PrecedentLibrary" xml:space="preserve">
+    <value>Displays the global list of %PRECEDENTS% within %APPNAME%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_View_ContactManager" xml:space="preserve">
+    <value>Views the global contact manager from %APPNAME%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_View_OpenDocument" xml:space="preserve">
+    <value>Opens a selected document.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_SaveButtonsMenu_Save" xml:space="preserve">
+    <value>Saves the document to a selected %CLIENT% and %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_SaveButtonsMenu_SaveAs" xml:space="preserve">
+    <value>Saves the document as a new version or to a different %CLIENT% and %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_SaveButtonsMenu_SaveAndContinue" xml:space="preserve">
+    <value>Saves the document but keeps it open after the wizard has been run.</value>
+  </data>
+  <data name="SuperTip_TabHome_Connect_SaveButtonsMenu_SaveAsPrec" xml:space="preserve">
+    <value>Saves the current document as a new %PRECEDENT% on %APPNAME%.</value>
+  </data>
+  <data name="SuperTip_TabOMSDocument_Tools_Email" xml:space="preserve">
+    <value>Sends the file as an attachment to an %ASSOCIATE% on the %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_Create_NewMenu" xml:space="preserve">
+    <value>Creates a number of different items within the system.</value>
+  </data>
+  <data name="SuperTip_TabOMS_SearchGroup_Search" xml:space="preserve">
+    <value>Enables performing a global search.</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_ShowClient" xml:space="preserve">
+    <value>Views %CLIENT% information based on the selected %CLIENT%.</value>
+  </data>
+  <data name="SuperTip_TabOMS_View_PrecedentLibrary_Quick" xml:space="preserve">
+    <value>Selects a %PRECEDENT% based on the name of the %PRECEDENT%.</value>
+  </data>
   <data name="SuperTip_DynamicOMS_Insert_Precedent_Zero" xml:space="preserve">
     <value>No %PRECEDENTS% associated to the currently opened document.</value>
   </data>

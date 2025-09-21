@@ -374,6 +374,7 @@ namespace FWBS.OMS.FinancialTile
             request.AddHeader("Content-Type", "application/json-patch+json");
             request.AddHeader("X-3E-SessionId", _session);
             request.AddHeader("X-3E-InstanceId", GetTenantId((NetworkCredential)_credentials));
+            request.AddHeader("X-subscription-key", GetSubscriptionKey((NetworkCredential)_credentials));
             request.AddHeader("Cache-Control", "no-cache");
             request.AddJsonBody(json);
             return request;
@@ -434,6 +435,7 @@ namespace FWBS.OMS.FinancialTile
         private const int CredentialsAudienceIdIndex = 0;
         private const int CredentialsTenantIdIndex = 1;
         private const int CredentialsInstanceIdIndex = 2;
+        private const int CredentialsSubscriptionKeyIndex = 3;
 
         private string GetAudience(NetworkCredential credentials)
         {
@@ -450,6 +452,11 @@ namespace FWBS.OMS.FinancialTile
             return GetFromCredentials(credentials, CredentialsInstanceIdIndex);
         }
 
+        private string GetSubscriptionKey(NetworkCredential credentials)
+        {
+            return GetFromCredentials(credentials, CredentialsSubscriptionKeyIndex);
+        }
+        
         private string GetFromCredentials(NetworkCredential credentials, int index)
         {
             if (credentials == null || string.IsNullOrEmpty(credentials.Domain))

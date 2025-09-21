@@ -23,6 +23,7 @@ namespace FWBS.Common.UI.Windows
 		private string _acceptedChars = "";
         private CodeLookupDisplay _cueText;
         private string _cueTextCode;
+        private bool disableOnChangedHandler = false;
 
         #endregion
 
@@ -38,15 +39,15 @@ namespace FWBS.Common.UI.Windows
             MaskedEdit txt = new MaskedEdit();
             //Use the lost focus event as the change event.
             txt.BackColor = SystemColors.Window;
-            txt.TextChanged +=new EventHandler(RaiseActiveChangedEvent);
+            txt.TextChanged += new EventHandler(RaiseActiveChangedEvent);
             txt.InputMask = "";
             txt.InputChar = '_';
             //User the exisitng leave event as the new leave event.
             txt.Leave += new System.EventHandler(this.RaiseLeaveEvent);
             txt.GotFocus += new System.EventHandler(this.RaiseGotFocusEvent);
-            txt.KeyDown +=new KeyEventHandler(txt_KeyDown);
-            txt.KeyPress +=new KeyPressEventHandler(txt_KeyPress);
-            txt.KeyUp +=new KeyEventHandler(txt_KeyUp);
+            txt.KeyDown += new KeyEventHandler(txt_KeyDown);
+            txt.KeyPress += new KeyPressEventHandler(txt_KeyPress);
+            txt.KeyUp += new KeyEventHandler(txt_KeyUp);
             txt.ReadOnlyChanged += new EventHandler(txt_ReadOnlyChanged);
             txt.BackColorChanged += new EventHandler(txt_BackColorChanged);
             //Assign the protected base item to the new text box.
@@ -56,10 +57,18 @@ namespace FWBS.Common.UI.Windows
 			Controls.Add(_ctrl);
 		}
 
+        public bool DisableOnChangedHandler
+        {
+            set => disableOnChangedHandler = value;
+        }
+
         protected override void RaiseActiveChangedEvent(object sender, System.EventArgs e)
         {
             base.OnActiveChanged();
-            base.OnChanged();
+            if (!disableOnChangedHandler)
+            {
+                base.OnChanged();
+            }
         }
 
         void txt_BackColorChanged(object sender, EventArgs e)

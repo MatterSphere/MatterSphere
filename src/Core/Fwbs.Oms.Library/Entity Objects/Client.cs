@@ -788,6 +788,25 @@ namespace FWBS.OMS
 		}
 
         /// <summary>
+        /// Gets the omsfiles collection in object form.
+        /// </summary>
+        /// <remarks></remarks>
+        [Obsolete]
+        public OMSFile[] OMSFiles
+        {
+            get
+            {
+                DataView vw = GetFiles(true);
+                OMSFile[] omsfiles = new OMSFile[vw.Count];
+                for (int ctr = 0; ctr < omsfiles.Length; ctr++)
+                {
+                    omsfiles[ctr] = OMSFile.GetFile((long)vw[ctr]["fileid"]);
+                }
+                return omsfiles;
+            }
+        }
+
+        /// <summary>
         /// Gets or Sets the clients default contact.
         /// </summary>
         /// <value>The default contact.</value>
