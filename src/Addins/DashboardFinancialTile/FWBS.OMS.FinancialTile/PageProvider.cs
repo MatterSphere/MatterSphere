@@ -154,7 +154,8 @@ namespace FWBS.OMS.FinancialTile
                             value[1], //Client Secret
                             Convert.ToString(Session.CurrentSession.GetSpecificData("__fdE3EAADAUDIENCE")) + " " +
                             Convert.ToString(Session.CurrentSession.GetSpecificData("__fdE3EAADTENANTID")) + " " +
-                            Convert.ToString(Session.CurrentSession.GetSpecificData("__fdE3EAADINSTANCEID")));
+                            Convert.ToString(Session.CurrentSession.GetSpecificData("__fdE3EAADINSTANCEID")) + " " +
+                            Convert.ToString(Session.CurrentSession.GetSpecificData("__fdE3ESUBSCRIPKEY")));
                         dataProvider = new DataProvider(url, endpoint, credentials, env);
                     }
                 }

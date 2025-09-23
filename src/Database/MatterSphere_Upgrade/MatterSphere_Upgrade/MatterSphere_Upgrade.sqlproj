@@ -550,5 +550,7 @@
     <Build Include="dbo\Stored Procedures\schDocuSignRecipients.sql" />
     <Build Include="dbo\User Defined Types\uCreated.sql" />
     <Build Include="dbo\User Defined Types\uCreatedBy.sql" />
+    <Build Include="dbo\Stored Procedures\fdCheckDocumentSecurity.sql" />
+    <Build Include="dbo\Stored Procedures\fdCheckFileSecurity.sql" />
   </ItemGroup>
 </Project>

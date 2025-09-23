@@ -386,12 +386,7 @@ namespace FWBS.OMS
 		public string GetTimeActivityCode(DocumentDirection docDirection)
 		{
 			if (docDirection == DocumentDirection.In)
-			{
-				if (TimeRecordingActivityInwardCode == "")
-					return TimeRecordingActivityCode;
-				else
-					return TimeRecordingActivityInwardCode;
-			}
+				return TimeRecordingActivityInwardCode;
 			else
 				return TimeRecordingActivityCode;
 		}

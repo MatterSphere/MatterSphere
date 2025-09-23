@@ -210,6 +210,8 @@ namespace FWBS.OMS.OMSEXPORT
         private Label lblC3EAzureADTenantId;
         private TextBox txtC3EAzureADInstanceId;
         private Label lblC3EAzureADInstanceId;
+        private TextBox txtC3ESubscriptionKey;
+        private Label lblC3ESubscriptionKey;
         private System.Windows.Forms.TextBox txtUserName;
 		
 		#endregion
@@ -415,6 +417,8 @@ namespace FWBS.OMS.OMSEXPORT
             this.lblEnterpriseBaseUrl = new System.Windows.Forms.Label();
             this.txtEnterpriseBaseURL = new System.Windows.Forms.TextBox();
             this.grpC3E = new System.Windows.Forms.GroupBox();
+            this.txtC3EAzureADInstanceId = new System.Windows.Forms.TextBox();
+            this.lblC3EAzureADInstanceId = new System.Windows.Forms.Label();
             this.txtC3EAzureADTenantId = new System.Windows.Forms.TextBox();
             this.lblC3EAzureADTenantId = new System.Windows.Forms.Label();
             this.txtC3EAzureADClientSecret = new System.Windows.Forms.TextBox();
@@ -438,8 +442,8 @@ namespace FWBS.OMS.OMSEXPORT
             this.lblC3EDebug = new System.Windows.Forms.Label();
             this.txtC3EURL = new System.Windows.Forms.TextBox();
             this.lblC3EBaseUrl = new System.Windows.Forms.Label();
-            this.txtC3EAzureADInstanceId = new System.Windows.Forms.TextBox();
-            this.lblC3EAzureADInstanceId = new System.Windows.Forms.Label();
+            this.txtC3ESubscriptionKey = new System.Windows.Forms.TextBox();
+            this.lblC3ESubscriptionKey = new System.Windows.Forms.Label();
             this.grp4.SuspendLayout();
             this.grp3.SuspendLayout();
             this.grp2.SuspendLayout();
@@ -2024,6 +2028,8 @@ namespace FWBS.OMS.OMSEXPORT
             // 
             // grpC3E
             // 
+            this.grpC3E.Controls.Add(this.txtC3ESubscriptionKey);
+            this.grpC3E.Controls.Add(this.lblC3ESubscriptionKey);
             this.grpC3E.Controls.Add(this.txtC3EAzureADInstanceId);
             this.grpC3E.Controls.Add(this.lblC3EAzureADInstanceId);
             this.grpC3E.Controls.Add(this.txtC3EAzureADTenantId);
@@ -2053,10 +2059,28 @@ namespace FWBS.OMS.OMSEXPORT
             this.grpC3E.ForeColor = System.Drawing.Color.Black;
             this.grpC3E.Location = new System.Drawing.Point(91, 15);
             this.grpC3E.Name = "grpC3E";
-            this.grpC3E.Size = new System.Drawing.Size(456, 364);
+            this.grpC3E.Size = new System.Drawing.Size(456, 388);
             this.grpC3E.TabIndex = 73;
             this.grpC3E.TabStop = false;
             this.grpC3E.Text = "Elite 3E Cloud Settings";
+            // 
+            // txtC3EAzureADInstanceId
+            // 
+            this.txtC3EAzureADInstanceId.Location = new System.Drawing.Point(163, 261);
+            this.txtC3EAzureADInstanceId.Name = "txtC3EAzureADInstanceId";
+            this.txtC3EAzureADInstanceId.Size = new System.Drawing.Size(273, 20);
+            this.txtC3EAzureADInstanceId.TabIndex = 58;
+            this.txtC3EAzureADInstanceId.Visible = false;
+            // 
+            // lblC3EAzureADInstanceId
+            // 
+            this.lblC3EAzureADInstanceId.AutoSize = true;
+            this.lblC3EAzureADInstanceId.Location = new System.Drawing.Point(9, 261);
+            this.lblC3EAzureADInstanceId.Name = "lblC3EAzureADInstanceId";
+            this.lblC3EAzureADInstanceId.Size = new System.Drawing.Size(85, 13);
+            this.lblC3EAzureADInstanceId.TabIndex = 57;
+            this.lblC3EAzureADInstanceId.Text = "AAD Instance Id";
+            this.lblC3EAzureADInstanceId.Visible = false;
             // 
             // txtC3EAzureADTenantId
             // 
@@ -2261,23 +2285,23 @@ namespace FWBS.OMS.OMSEXPORT
             this.lblC3EBaseUrl.TabIndex = 31;
             this.lblC3EBaseUrl.Text = "Base Url";
             // 
-            // txtC3EAzureADInstanceId
+            // txtC3ESubscriptionKey
             // 
-            this.txtC3EAzureADInstanceId.Location = new System.Drawing.Point(163, 261);
-            this.txtC3EAzureADInstanceId.Name = "txtC3EAzureADInstanceId";
-            this.txtC3EAzureADInstanceId.Size = new System.Drawing.Size(273, 20);
-            this.txtC3EAzureADInstanceId.TabIndex = 58;
-            this.txtC3EAzureADInstanceId.Visible = false;
+            this.txtC3ESubscriptionKey.Location = new System.Drawing.Point(163, 357);
+            this.txtC3ESubscriptionKey.Name = "txtC3ESubscriptionKey";
+            this.txtC3ESubscriptionKey.Size = new System.Drawing.Size(273, 20);
+            this.txtC3ESubscriptionKey.TabIndex = 60;
+            this.txtC3ESubscriptionKey.Visible = false;
             // 
-            // lblC3EAzureADInstanceId
+            // lblC3ESubscriptionKey
             // 
-            this.lblC3EAzureADInstanceId.AutoSize = true;
-            this.lblC3EAzureADInstanceId.Location = new System.Drawing.Point(9, 261);
-            this.lblC3EAzureADInstanceId.Name = "lblC3EAzureADInstanceId";
-            this.lblC3EAzureADInstanceId.Size = new System.Drawing.Size(85, 13);
-            this.lblC3EAzureADInstanceId.TabIndex = 57;
-            this.lblC3EAzureADInstanceId.Text = "AAD Instance Id";
-            this.lblC3EAzureADInstanceId.Visible = false;
+            this.lblC3ESubscriptionKey.AutoSize = true;
+            this.lblC3ESubscriptionKey.Location = new System.Drawing.Point(9, 357);
+            this.lblC3ESubscriptionKey.Name = "lblC3ESubscriptionKey";
+            this.lblC3ESubscriptionKey.Size = new System.Drawing.Size(86, 13);
+            this.lblC3ESubscriptionKey.TabIndex = 59;
+            this.lblC3ESubscriptionKey.Text = "Subscription Key";
+            this.lblC3ESubscriptionKey.Visible = false;
             // 
             // frmSettings
             // 
@@ -2806,6 +2830,7 @@ namespace FWBS.OMS.OMSEXPORT
                     if (value.Length > 2) { txtC3EAzureADClientSecret.Text = value[2]; }
                     if (value.Length > 3) { txtC3EAzureADTenantId.Text = value[3]; }
                     if (value.Length > 4) { txtC3EAzureADInstanceId.Text = value[4]; }
+                    if (value.Length > 5) { txtC3ESubscriptionKey.Text = value[5]; }
                 }
                 catch { }
             }
@@ -3041,7 +3066,8 @@ namespace FWBS.OMS.OMSEXPORT
                             txtC3EAzureADClientId.Text.Trim(), " ", 
                             txtC3EAzureADClientSecret.Text.Trim(), " ",
                             txtC3EAzureADTenantId.Text.Trim(), " ",
-                            txtC3EAzureADInstanceId.Text.Trim()).Trim();
+                            txtC3EAzureADInstanceId.Text.Trim(), " ",
+                            txtC3ESubscriptionKey.Text.Trim()).Trim();
                         if (!string.IsNullOrEmpty(conf))
                         {
                             conf = Convert.ToBase64String(EncryptionV2.Encrypt(System.Text.Encoding.UTF8.GetBytes(conf), string.Concat(Environment.MachineName, ":", "AAD")));
@@ -3341,6 +3367,8 @@ namespace FWBS.OMS.OMSEXPORT
             txtC3EAzureADTenantId.Visible = isChecked;
             lblC3EAzureADInstanceId.Visible = isChecked;
             txtC3EAzureADInstanceId.Visible = isChecked;
+            lblC3ESubscriptionKey.Visible = isChecked;
+            txtC3ESubscriptionKey.Visible = isChecked;
         }
     }
 }

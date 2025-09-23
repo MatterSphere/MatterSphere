@@ -231,7 +231,10 @@ namespace FWBS.OMS.UI.Windows
             return Show(null, FWBS.OMS.Session.CurrentSession.Resources.GetResource(resourcecode, resourcedescription, "", resourceparams).Text, FWBS.OMS.Global.ApplicationName, MessageBoxButtons.YesNo, MessageBoxIcon.Question, defaultyes ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
         }
 
-
+        public static DialogResult ShowWarning(string resourcecode, string resourcedescription, bool defaultyes, params string[] resourceparams)
+        {
+            return Show(null, FWBS.OMS.Session.CurrentSession.Resources.GetResource(resourcecode, resourcedescription, "", resourceparams).Text, FWBS.OMS.Global.ApplicationName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning, defaultyes ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
+        }
 
         public static DialogResult ShowInformation(string resourcecode, string resourcedescription, params string[] resourceparams)
         {

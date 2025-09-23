@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using FWBS.Common.UI;
+using FWBS.Common.UI.Windows;
 
 namespace FWBS.OMS.UI.Windows
 {
@@ -413,6 +414,13 @@ namespace FWBS.OMS.UI.Windows
 
                     InitializeCustomForm(_omsType.Wizard, SystemForms.AssociateWizard, _obj, objchanged);
                     custom.Enquiry.Offline = _offline;
+
+                    var txtSalutation = Controls.Find("txtSalutation", true).FirstOrDefault<eTextBox2>();
+
+                    if (txtSalutation != null)
+                    {
+                        txtSalutation.DisableOnChangedHandler = true;
+                    }
 
                     SetControlValues(custom);
                     FillquickHeading(_quickHeading);

@@ -986,11 +986,7 @@ namespace FWBS.OMS.UI.Windows
 
 					for (int i = 0; i < dt.Rows.Count; i++)
 					{
-                        string key = "";
-                        if (cboFileList.Visible)
-                            key = Convert.ToString(dt.Rows[i]["usrFavObjParam2"]) + " " + Convert.ToString(dt.Rows[i]["usrFavObjParam3"]);
-                        else
-                            key = Convert.ToString(dt.Rows[i]["usrFavObjParam2"]);
+                        var key = JoinClientFileNo(dt.Rows[i]["usrFavObjParam2"], dt.Rows[i]["usrFavObjParam3"], cboFileList.Visible);
                         ucNavCmdButtons navButton = new ucNavCmdButtons();
                         txtClientNo.AutoCompleteCustomSource.Add(key);
                         navButton.Text = Convert.ToString(dt.Rows[i]["usrFavObjParam1"]);
@@ -1310,16 +1306,22 @@ namespace FWBS.OMS.UI.Windows
                 dt.RowFilter = dt.RowFilter + " and  usrFavObjParam4 = 0";
                 if (_favourites.Count > 0)
                 {
-                    string key;
-                    if (cboFileList.Visible)
-                        key = String.Format("{0} {1}", dt[0]["usrFavObjParam2"], dt[0]["usrFavObjParam3"]);
-                    else
-                        key = String.Format("{0}", dt[0]["usrFavObjParam2"]);
-                    txtClientNo.Text = key;
+                    txtClientNo.Text = JoinClientFileNo(dt[0]["usrFavObjParam2"], dt[0]["usrFavObjParam3"], cboFileList.Visible);
                     txtClientNo_Leave(sender, e);
                 }
             }
 		}
+
+        private string JoinClientFileNo(object clientNum, object matterNum, bool fileListVisible)
+        {
+            var delimiter = clientNum.ToString().Contains(" ") ? FixedDelimiter.ToString() : " ";
+
+            var key = fileListVisible ?
+                        string.Format("{0}{2}{1}", clientNum, matterNum, delimiter) :
+                        string.Format("{0}{1}", clientNum, delimiter);
+
+            return key;
+        }
 
         private void ucNavCommands2_LinkClicked(FWBS.OMS.UI.Windows.ucNavCmdButtons LinkButton)
         {
@@ -2228,7 +2230,7 @@ namespace FWBS.OMS.UI.Windows
 				{
                     _client = file.Client;
                     // 26/02/2010 - Remove the Show All Files Checked True
-					txtClientNo.Text = _client.ClientNo + FixedDelimiter + _file.FileNo;
+                    txtClientNo.Text = JoinClientFileNo(_client.ClientNo, _file.FileNo, true);
                     return GetClient();
 				}
 			}
