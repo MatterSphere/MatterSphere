@@ -116,6 +116,9 @@
     </ComponentGroup>
 
     <ComponentGroup Id="CG_TelerikWinforms" Directory="INSTALLDIR">
+      <Component Id="cmp2602a1a2fc4b481fa19954cf0632ded7" Guid="{4DA5552A-0380-47B2-A4DC-FF3F6C89B3C5}">
+        <File Id="Telerik.Licensing.Runtime.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.Licensing.Runtime.dll" />
+      </Component>
       <Component Id="cmp3617A5266CD392EECDA872932BC9EF37" Guid="{A00288DD-ACAC-41DE-ADEF-C34C24A56224}">
         <File Id="Telerik.WinControls.dll" KeyPath="yes" Source="$(var.SourceDir)\Telerik.WinControls.dll" />
       </Component>

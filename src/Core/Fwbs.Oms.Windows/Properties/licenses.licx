@@ -5,6 +5,6 @@ Infragistics.Win.Misc.UltraGroupBox, Infragistics.Win.Misc, Version=19.2.20192.3
 Infragistics.Win.Misc.UltraLabel, Infragistics.Win.Misc, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
 Infragistics.Win.UltraWinDock.UltraDockManager, Infragistics.Win.UltraWinDock, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
 Infragistics.Win.UltraWinTabControl.UltraTabControl, Infragistics.Win.UltraWinTabControl, Version=19.2.20192.302, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
-Telerik.WinControls.UI.RadTextBoxControl, Telerik.WinControls.UI, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
-Telerik.WinControls.UI.RadTreeView, Telerik.WinControls.UI, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
-Telerik.WinControls.Themes.Windows8Theme, Telerik.WinControls.Themes.Windows8, Version=2024.3.924.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadTextBoxControl, Telerik.WinControls.UI, Version=2025.1.211.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadTreeView, Telerik.WinControls.UI, Version=2025.1.211.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.Themes.Windows8Theme, Telerik.WinControls.Themes.Windows8, Version=2025.1.211.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e

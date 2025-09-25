@@ -35,7 +35,7 @@ namespace FWBS.OMS.UI.UserControls.Dashboard
         {
             if (SearchList != null)
             {
-                SearchList.SetSearchList(Code, true, parent, new FWBS.Common.KeyValueCollection());
+                SearchList.SetSearchList(Code, true, Session.CurrentSession.CurrentFile, new FWBS.Common.KeyValueCollection());
                 return;
             }
 

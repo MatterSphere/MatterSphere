@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using FWBS.Common;
 using FWBS.Common.UI;
+using FWBS.Common.UI.Windows;
 using FWBS.OMS.EnquiryEngine;
 
 namespace FWBS.OMS.UI.Windows
@@ -1119,6 +1120,15 @@ namespace FWBS.OMS.UI.Windows
                 SetWizardSize(!clearExisting);
 			newY = (int)GetExtraInfo("enqPaddingY");  
 			base.RenderControls(clearExisting,false);
+			if (Code.Equals("SCRASSEDIT", StringComparison.InvariantCultureIgnoreCase))
+			{
+				var assocSalut = Controls.Find("assocSalut", true).FirstOrDefault<eTextBox2>();
+
+				if (assocSalut != null)
+				{
+					assocSalut.DisableOnChangedHandler = true;
+				}
+			}
 			this.Dock = dock;
 
 			if (clearExisting) ExecuteFilters();
@@ -2696,12 +2706,48 @@ namespace FWBS.OMS.UI.Windows
             {
                 Cursor = Cursors.WaitCursor;
                 this.BindingContext[_enq.Source.Tables["DATA"]].EndCurrentEdit();
+
 				if (_enq.Code.Equals("SCRADDSPDATA"))
 				{
                     var row = _enq.Source.Tables["DATA"].Rows[0];
 					row["spLookup"] = row["spLookup"].ToString().Trim();
 					row["spData"] = row["spData"].ToString().Trim();
                 }
+
+                if (_enq.Code.Equals("SCRCONINDINFO"))
+                {
+                    var row = _enq.Source.Tables["DATA"].Rows[0];
+                    if (row["contDOB"] != DBNull.Value)
+                    {
+                        DateTime dob = (DateTime)row["contDOB"];
+
+                        if (row["contDOD"] != DBNull.Value)
+                        {
+                            DateTime dod = (DateTime)row["contDOD"];
+                            if (dob > dod)
+                            {
+                                System.Windows.Forms.MessageBox.Show(
+                                    "Date of Birth cannot be after Date of Death",
+                                    FWBS.OMS.Branding.APPLICATION_NAME, MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                );
+                                return;
+                            }
+
+                            int age = (int)System.Math.Round(dod.Subtract(dob).TotalDays / 365.25f);
+                            if (age > 150)
+                            {
+                                System.Windows.Forms.MessageBox.Show(
+                                    "Age cannot be unrealistic",
+                                    FWBS.OMS.Branding.APPLICATION_NAME,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                                );
+                                return;
+                            }
+                        }
+                    }
+                }
+
                 _enq.Update();
                 allowFinish = true;
                 if (this.ParentForm != null && _style == EnquiryStyle.Wizard)
@@ -2757,7 +2803,6 @@ namespace FWBS.OMS.UI.Windows
                     }
                 }
             }
-
             catch (UpdateCancelledException)
             {
                 allowFinish = false;

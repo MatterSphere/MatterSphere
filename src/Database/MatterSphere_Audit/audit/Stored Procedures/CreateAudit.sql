@@ -155,7 +155,7 @@ SELECT @AppName=APP_NAME()
 select @UserID = isnull( isnull((select [usrID] from [dbo].[dbuser] where [usrADID] = cast(CONTEXT_INFO() as  nvarchar(200))), (select [usrID] from [dbo].[dbuser] where [usrADID] = ORIGINAL_LOGIN())), -999)
 select @UserName = isnull((select replace(name,'''''''','''''''''''') from [item].[user] where [NTLOGIN] = cast(CONTEXT_INFO() as  nvarchar(200))),ORIGINAL_LOGIN())
 
-select @UpdateDate = convert(varchar(8), getdate(), 112) + '' '' + convert(varchar(12), getdate(), 114)
+select @UpdateDate = convert(varchar(8), getUtcDate(), 112) + '' '' + convert(varchar(12), getUtcDate(), 114)
 
 -- Action
 if exists (select * from inserted)

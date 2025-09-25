@@ -12,8 +12,6 @@ namespace FWBS.OMS.UI.UserControls.Browsers
     {
         private uint _invalidAuthCredentialsCount;
 
-        // Workaround to the bug in WebView2 SDK v1.0.1150.38. In Office 2013 the following error occurs:
-        // Unable to load DLL 'WebView2Loader.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)
         static ucRichBrowser()
         {
             string runtimePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "runtimes", Environment.Is64BitProcess ? "win-x64" : "win-x86", "native");
@@ -23,10 +21,24 @@ namespace FWBS.OMS.UI.UserControls.Browsers
         public ucRichBrowser()
         {
             InitializeComponent();
-            browser.CreationProperties = new CoreWebView2CreationProperties()
+            InitializeWebView2();
+        }
+
+        private async void InitializeWebView2()
+        {
+            var ssoUsingOsPrimAcc = Session.CurrentSession.GetSpecificData("SSOUsingOSPrimAcc").ToString();
+            CoreWebView2EnvironmentOptions options = null;
+
+            if (bool.TryParse(ssoUsingOsPrimAcc, out var isSsoUsingOsPrimAcc) && isSsoUsingOsPrimAcc)
             {
-                UserDataFolder = Global.GetDBAppDataPath()
-            };
+                options = new CoreWebView2EnvironmentOptions
+                {
+                    AllowSingleSignOnUsingOSPrimaryAccount = true
+                };
+            }
+
+            var environment = await CoreWebView2Environment.CreateAsync(null, Global.GetDBAppDataPath(), options);
+            await browser.EnsureCoreWebView2Async(environment);
         }
 
         public event EventHandler Initialized;
@@ -84,16 +96,16 @@ namespace FWBS.OMS.UI.UserControls.Browsers
             if (e.IsSuccess)
             {
                 CoreWebView2Settings settings = browser.CoreWebView2.Settings;
-                
+
                 bool isInDebug = Session.CurrentSession.IsInDebug;
                 settings.AreDefaultContextMenusEnabled = isInDebug;
                 settings.AreDevToolsEnabled = isInDebug;
-                
+
                 settings.IsStatusBarEnabled = false;
                 settings.IsZoomControlEnabled = false;
                 settings.AreBrowserAcceleratorKeysEnabled = false;
                 settings.IsPasswordAutosaveEnabled = true;
-                
+
                 browser.CoreWebView2.BasicAuthenticationRequested += CoreWebView2_BasicAuthenticationRequested;
                 browser.CoreWebView2.NavigationCompleted += CoreWebView2_NavigationCompleted;
                 browser.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
@@ -126,8 +138,6 @@ namespace FWBS.OMS.UI.UserControls.Browsers
             return credentials;
         }
 
-        // In order to avoid re-entrancy issue, open credentials prompt dialog asynchronously and wait for the result.
-        // https://docs.microsoft.com/en-us/microsoft-edge/webview2/concepts/threading-model#re-entrancy
         private void CoreWebView2_BasicAuthenticationRequested(object sender, CoreWebView2BasicAuthenticationRequestedEventArgs e)
         {
             using (CoreWebView2Deferral deferral = e.GetDeferral())
@@ -145,7 +155,7 @@ namespace FWBS.OMS.UI.UserControls.Browsers
                     e.Cancel = true;
                 }
             }
-         }
+        }
 
         private void CoreWebView2_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
@@ -155,7 +165,6 @@ namespace FWBS.OMS.UI.UserControls.Browsers
             }
             else if (e.WebErrorStatus == CoreWebView2WebErrorStatus.ValidAuthenticationCredentialsRequired && _invalidAuthCredentialsCount++ > 1)
             {
-                // Ensure that we don't stuck forever with invalid saved credentials
                 string host = new Uri(((CoreWebView2)sender).Source).Host;
                 string credentialsKey = string.Format("{0} : {1}", Branding.APPLICATION_NAME, host);
                 CredentialManagerApi.DeleteCredentials(credentialsKey);
@@ -165,7 +174,7 @@ namespace FWBS.OMS.UI.UserControls.Browsers
 
         private void CoreWebView2_NewWindowRequested(object sender, CoreWebView2NewWindowRequestedEventArgs e)
         {
-            e.Handled = true; // Disable new windows (bug, doesn't always work)
+            e.Handled = true;
         }
 
         private void CoreWebView2_WindowCloseRequested(object sender, object e)
@@ -174,7 +183,7 @@ namespace FWBS.OMS.UI.UserControls.Browsers
 
         private void browser_KeyEvent(object sender, KeyEventArgs e)
         {
-            e.Handled = true; // Disable accelerators
+            e.Handled = true;
         }
 
         private void browser_NavigationStarting(object sender, CoreWebView2NavigationStartingEventArgs e)
