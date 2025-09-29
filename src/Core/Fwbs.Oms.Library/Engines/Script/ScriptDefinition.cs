@@ -35,55 +35,40 @@ namespace FWBS.OMS.Script
 
         protected ScriptGen Gen
         {
-            get
-            {
-                return gen;
-            }
+            get { return gen; }
         }
-
         public string Name
         {
-            get {return gen.Code; }
+            get { return gen.Code; }
         }
-
         public string Namespace
         {
-            get
-            {
-                return gen.ScriptType.Namespace;
-            }
+            get { return gen.ScriptType.Namespace; }
         }
-
         public long Version
         {
             get { return gen.Version; }
         }
-
         public string Author
         {
             get { return gen.Author; }
         }
-
         public string Description
         {
             get { return gen.ScriptDescription; }
         }
-
         public string TypeCode
         {
             get { return gen.Usage; }
         }
-
         public string TypeDescription
         {
-            get {return gen.ScriptTypeDescription; }
+            get { return gen.ScriptTypeDescription; }
         }
-
         public Type BaseType
         {
             get { return gen.ScriptType.GetType(); }
         }
-
         public ScriptLanguage Language
         {
             get { return gen.Language; }
@@ -91,13 +76,11 @@ namespace FWBS.OMS.Script
 
         public XElement Xml
         {
-            get 
+            get
             {
                 Download();
-
                 return xml; 
             }
-            
         }
 
         public IEnumerable<IReference> References
@@ -105,7 +88,6 @@ namespace FWBS.OMS.Script
             get 
             {
                 Download();
-
                 return references; 
             }
         }
@@ -115,7 +97,6 @@ namespace FWBS.OMS.Script
             get
             {
                 Download();
-
                 return workflowmethods;
             }
         }
@@ -132,9 +113,7 @@ namespace FWBS.OMS.Script
             return Session.CurrentSession.Container.Resolve<IScriptBuilder>(null);
         }
 
-
         public abstract IScriptBuilder CreateDefaultBuilder();
-
 
         public IEnumerable<Tuple<string, string>> ProviderOptions
         {
@@ -151,11 +130,9 @@ namespace FWBS.OMS.Script
             }
         }
 
-       
-
         public IEnumerable<string> CompilerOptions
         {
-            get 
+            get
             {
                 if (Session.CurrentSession.IsLoggedIn)
                 {
@@ -183,13 +160,9 @@ namespace FWBS.OMS.Script
             }
         }
 
-
         protected bool IsDownloaded
         {
-            get
-            {
-                return xml != null;
-            }
+            get { return xml != null; }
         }
 
         #endregion
@@ -204,6 +177,7 @@ namespace FWBS.OMS.Script
             references.Clear();
             workflowmethods.Clear();
             this.xml = XElement.Parse(gen.RawXML);
+
             BuildReferences();
             BuildDistributedReferences();
             BuildScriptReferences();
@@ -215,16 +189,19 @@ namespace FWBS.OMS.Script
             return type.AssemblyReferences
                 .Union(new string[] { 
                     "System.dll",
-					"System.Xml.dll",
-					"System.Data.dll",
-					"System.Windows.Forms.dll",
+                    "System.Xml.dll",
+                    "System.Core.dll",
+                    "System.Data.dll",
+                    "System.Runtime.dll",
+                    "System.Windows.Forms.dll",
+                    "Microsoft.CSharp.dll",
 
-                    "OMS.Infrastructure.dll", 
-					"OMS.Library.dll",
-					"OMS.UI.dll",
-					"OMS.Data.dll",
-					"FWBS.Common.dll",
-                   })
+                    "OMS.Infrastructure.dll",
+                    "OMS.Library.dll",
+                    "OMS.UI.dll",
+                    "OMS.Data.dll",
+                    "FWBS.Common.dll"
+                })
                 .Distinct();
         }
 
@@ -241,9 +218,7 @@ namespace FWBS.OMS.Script
                 if (String.IsNullOrWhiteSpace(r))
                     continue;
 
-
                 var ass = new AssemblyReference(r);
-
                 ass.IsRequired = true;
 
                 if (refs.ContainsKey(ass.Name))
@@ -255,7 +230,6 @@ namespace FWBS.OMS.Script
             var el_refs = el_script.Element("references");
             if (el_refs != null)
             {
-
                 foreach (var el in el_refs.Elements())
                 {
                     var r = el.Value;
@@ -270,11 +244,9 @@ namespace FWBS.OMS.Script
 
                     refs.Add(ass.Name, ass);
                 }
-
             }
 
             references.AddRange(refs.Values);
-
         }
 
         private void BuildDistributedReferences()
@@ -319,22 +291,16 @@ namespace FWBS.OMS.Script
 
                 ScriptUtils.Extract(embedded, output);
 
-      
                 var emdup = references.FirstOrDefault(n => n.AssemblyName.ToUpperInvariant() == Path.GetFileNameWithoutExtension(file.Name).ToUpperInvariant());
                 if (emdup != null)
                     references.Remove(emdup);
 
                 references.Add(embedded);
             }
-
         }
-
-
-
 
         private void BuildScriptReferences()
         {
-
             var el_script = Xml.Element("script");
             if (el_script == null)
                 return;
@@ -345,14 +311,11 @@ namespace FWBS.OMS.Script
 
             foreach (var el in el_refs.Elements("reference"))
             {
-
                if (String.IsNullOrWhiteSpace(el.Value))
                    continue;
 
-
                 references.Add(new ScriptReference(el.Value));
             }
-
         }
 
         private void BuildWorkflowMethods()
@@ -379,7 +342,6 @@ namespace FWBS.OMS.Script
                 if (meth == null)
                     continue;
 
-
                 var invoke = CodeDomScriptDefinition.CreateWorkflowInvokeMethod(el_method.Value);
                 tcf.TryStatements.Clear();
                 tcf.TryStatements.Add(invoke);
@@ -402,8 +364,5 @@ namespace FWBS.OMS.Script
         }
 
         #endregion
-
-
- 
     }
 }

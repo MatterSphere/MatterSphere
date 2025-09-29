@@ -49,14 +49,19 @@ namespace FWBS.OMS.UI.Windows
         {
             CheckObjectIsDoc(ref obj);
 
-            IStorageItem si = version;
-            if (si == null)
-                si = doc;
+            IStorageItem si = (IStorageItem)version ?? doc;
 
-            ShellFile sf = (ShellFile)obj;
+            FileInfo fi = null;
+            if (obj is PDF pdf)
+            {
+                if (pdf._activeDoc is ShellFile sf)
+                    fi = sf.File;
+            }
+            else if (obj is ShellFile sf)
+                fi = sf.File;
 
             StorageProvider provider = doc.GetStorageProvider();
-            provider.Store(si, sf.File, obj, true, this);
+            provider.Store(si, fi, obj, true, this);
         }
 
         protected override void InternalPrecedentSave(object obj, PrecSaveMode saveMode, PrecPrintMode printMode, Precedent prec)
@@ -77,8 +82,16 @@ namespace FWBS.OMS.UI.Windows
         {
             for (int ctr = 1; ctr <= copies; ctr++)
             {
-                ShellFile sf = (ShellFile)obj;
-                Services.ProcessStart("OMS.UTILS.EXE", string.Format("PRINT \"{0}\"", sf.File.FullName), InputValidation.ValidatePrintFileInput);
+                string fileFullName = string.Empty;
+                if (obj is PDF pdf)
+                {
+                    if (pdf._activeDoc is ShellFile sf)
+                        fileFullName = sf.File.FullName;
+                }
+                else if (obj is ShellFile sf)
+                    fileFullName = sf.File.FullName;
+
+                Services.ProcessStart("OMS.UTILS.EXE", string.Format("PRINT \"{0}\"", fileFullName), InputValidation.ValidatePrintFileInput);
             }
         }
                 
@@ -229,10 +242,17 @@ namespace FWBS.OMS.UI.Windows
         public override string GetDocExtension(object obj)
         {
             CheckObjectIsDoc(ref obj);
-            ShellFile sf = (ShellFile)obj;
-            string ext = sf.File.Extension;
-            ext = ext.Replace(".", "");
-            return ext;
+            if (obj is PDF pdf)
+            {
+                if (pdf._activeDoc is ShellFile sf)
+                    return sf.File.Extension.Replace(".", "");
+                else
+                    return "";
+            }
+            else if (obj is ShellFile sf)
+                return sf.File.Extension.Replace(".", "");
+            else
+                return "";
         }
 
         public override string ExtractPreview(object obj)
@@ -243,13 +263,11 @@ namespace FWBS.OMS.UI.Windows
         protected override string GenerateDocDesc(object obj)
         {
             CheckObjectIsDoc(ref obj);
-
-            ShellFile sf = (ShellFile)obj;
-
             switch (GetActiveDocType(obj))
             {
                 case "SHELL":
                 case "PDF":
+                    ShellFile sf = (ShellFile)obj;
                     return Path.GetFileNameWithoutExtension(sf.File.Name);
                 default:
                     return base.GenerateDocDesc(obj);

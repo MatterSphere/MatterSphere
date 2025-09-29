@@ -25,6 +25,7 @@ namespace FWBS.OMS.OMSEXPORT
         private const int ClientSecretIndex = 2;
         private const int TenantIdIndex = 3;
         private const int InstanceIdIndex = 4;
+        private const int SubscriptionKeyIndex = 5;
 
         public ApiRequester(string apiUrl, KeyValuePair<string, string> parameters, ITokenStorageProvider tokenStorageProvider = null, ICredentials credentials = null, bool debug = false)
         {
@@ -35,13 +36,19 @@ namespace FWBS.OMS.OMSEXPORT
 
             if (!string.IsNullOrWhiteSpace(parameters.Key))
             {
-                string[] value = System.Text.Encoding.UTF8.GetString(
+                string[] aadParameters = System.Text.Encoding.UTF8.GetString(
                     EncryptionV2.Decrypt(
                         Convert.FromBase64String(parameters.Value), string.Concat(Environment.MachineName, ":", "AAD")))
                     .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var audience = GetValueFromArray(aadParameters, AudienceIndex);
+                var clientId = GetValueFromArray(aadParameters, ClientIdIndex);
+                var clientSecret = GetValueFromArray(aadParameters, ClientSecretIndex);
+                var tenantId = GetValueFromArray(aadParameters, TenantIdIndex);
+                var instanceId = GetValueFromArray(aadParameters, InstanceIdIndex);
+                var subscriptionKey = GetValueFromArray(aadParameters, SubscriptionKeyIndex);
+                var domainParameter = string.Concat(audience, " ", tenantId, " ", instanceId, " ", subscriptionKey);
                 
-                _credentials = new NetworkCredential(value[ClientIdIndex], value[ClientSecretIndex], value[AudienceIndex] + " " + value[TenantIdIndex] + " " + value[InstanceIdIndex]);
-                var instanceId = value[InstanceIdIndex];
+                _credentials = new NetworkCredential(clientId, clientSecret, domainParameter);
                 
                 // Authority - customer AAD specific URL
                 _authority = "https://login.microsoftonline.com/" + instanceId + "/";
@@ -61,6 +68,11 @@ namespace FWBS.OMS.OMSEXPORT
                 _client = new RestClient(apiUrl) { Timeout = System.Threading.Timeout.Infinite };
                 _client.Authenticator = new RestSharp.Authenticators.NtlmAuthenticator(_credentials);
             }
+        }
+
+        private string GetValueFromArray(string[] parameters, int index)
+        {
+            return parameters.Length > index ? parameters[index] : "";
         }
 
         private void InitAAD()
@@ -290,7 +302,8 @@ namespace FWBS.OMS.OMSEXPORT
             request.AddHeader("accept", "application/json");
             request.AddHeader("X-3E-SessionId", _session);
             request.AddHeader("X-3E-InstanceId", GetTenantId((NetworkCredential)_credentials));
-            
+            request.AddHeader("X-subscription-key", GetSubscriptionKey((NetworkCredential)_credentials));
+
             if (jsonBody != null)
                 request.AddJsonBody(jsonBody);
 
@@ -318,6 +331,7 @@ namespace FWBS.OMS.OMSEXPORT
         private const int CredentialsAudienceIdIndex = 0;
         private const int CredentialsTenantIdIndex = 1;
         private const int CredentialsInstanceIdIndex = 2;
+        private const int CredentialsSubscriptionKeyIndex = 3;
 
         private string GetAudience(NetworkCredential credentials)
         {
@@ -332,6 +346,11 @@ namespace FWBS.OMS.OMSEXPORT
         private string GetInstanceId(NetworkCredential credentials)
         {
             return GetFromCredentials(credentials, CredentialsInstanceIdIndex);
+        }
+
+        private string GetSubscriptionKey(NetworkCredential credentials)
+        {
+            return GetFromCredentials(credentials, CredentialsSubscriptionKeyIndex);
         }
 
         private string GetFromCredentials(NetworkCredential credentials, int index)

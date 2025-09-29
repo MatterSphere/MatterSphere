@@ -34,7 +34,7 @@ Make sure the following commercial software is purchased and installed:
 |-|-|
 |Actipro SyntaxEditor v18.1.342.0 for Windows Forms + SyntaxEditor .NET Languages Add-on| Core, Workflow |
 | Aspose.Total for .NET 22.9 | Core, PDFBundler, ESIndex, MCEP |
-| Telerik UI for WinForms 2024.3.924 | Core, HighQ Add-in, Workflow Add-in |
+| Telerik UI for WinForms 2025.1.211 | Core, HighQ Add-in, Workflow Add-in |
 | Infragistics UI for WinForms 19.2 | Core, Security |
 | Outlook Redemption 6.3 | Core, Office Add-in, MCEP, OMSExport
 | Dynamic .NET TWAIN 8.3.3 | Document Scanner Add-in |
@@ -54,6 +54,9 @@ Make sure the following commercial software is purchased and installed:
 
 4. **Download and set up the iManage Work SDK:**
    - Download the iManage Work SDK and unzip it to the `.\References\iManageWork10` folder.
+
+5. **Download and set up the Telerik Licesing:**
+   - Download the Telerik Licensing and unzip it to the `.\References\Telerik` folder.
 
 ## Building the Solution
 

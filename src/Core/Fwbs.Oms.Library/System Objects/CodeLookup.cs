@@ -599,7 +599,7 @@ namespace FWBS.OMS
                 //check for any empty codes in the changes datatable
                 foreach (DataRow r in changes.Rows)
                 {
-                    if (string.IsNullOrEmpty(Convert.ToString(r["cdcode"])))
+                    if (r.RowState != DataRowState.Deleted && string.IsNullOrEmpty(Convert.ToString(r["cdcode"])))
                     {
                         throw new Exception(Session.CurrentSession.Resources.GetResource("CLNOCODE", "The code for a Code Lookup has been found to be empty.\n\nPlease check that all Code Lookups have the necessary values before attempting to add them to the system.", "").Text);
                     }

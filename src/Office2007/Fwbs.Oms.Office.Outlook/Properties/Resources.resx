@@ -117,6 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  
+  <data name="SuperTip_TabMail_Connect_Create_AssocEmail" xml:space="preserve">
+    <value>Sends an email to the %ASSOCIATE% and saves to %APPNAME%.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_Create_ClientEmail" xml:space="preserve">
+    <value>Sends an email to the %CLIENT% and saves to %APPNAME%.</value>
+  </data>
+
+  <data name="SuperTip_TabMail_Connect_Create_AssocLetter" xml:space="preserve">
+    <value>Writes a letter to the %ASSOCIATE%.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_Create_ClientLetter" xml:space="preserve">
+    <value>Writes a letter to the current %CLIENT%.</value>
+  </data>
+
+  <data name="SuperTip_TabMail_Connect_Create_Matter" xml:space="preserve">
+    <value>Creates a new %FILE% under a selected %CLIENT%</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_Create_Time" xml:space="preserve">
+    <value>Creates a new time entry under a chosen %FILE%.</value>
+  </data>
+
+  <data name="SuperTip_TabMail_Connect_Create_AddTask" xml:space="preserve">
+    <value>Creates a new task.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_Create_AddAppointment" xml:space="preserve">
+    <value>Creates a new appointment.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_ViewMenu" xml:space="preserve">
+    <value>Shows a number of different items within the system.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_View_Client" xml:space="preserve">
+    <value>Views %CLIENT% information based on the selected %CLIENT%.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_View_Matter" xml:space="preserve">
+    <value>Views %FILE% information based on the selected %FILE%.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_View_PrecedentLibrary" xml:space="preserve">
+    <value>Displays the global list of %PRECEDENTS% within %APPNAME%.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_View_ContactManager" xml:space="preserve">
+    <value>Views the global contact manager from %APPNAME%.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_View_OpenDocument" xml:space="preserve">
+    <value>Opens a selected document.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_SaveButtonsMenu_SaveAll" xml:space="preserve">
+    <value>Saves an email in a folder.</value>
+  </data>
+  <data name="SuperTip_TabMail_Connect_SaveButtonsMenu_FileIt" xml:space="preserve">
+    <value>Files the email that has already been saved to %APPNAME%.</value>
+  </data>
+
   <data name="SuperTip_TabOMSDocument_Insert_AttachBCC" xml:space="preserve">
     <value>Attaches a chosen recipient to the blind carbon copy list of recipients.</value>
   </data>

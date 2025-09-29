@@ -1210,6 +1210,8 @@
     <Build Include="dbo\Stored Procedures\schDocuSignEnvelopes.sql" />
     <Build Include="dbo\Stored Procedures\schDocuSignRecipients.sql" />
     <Build Include="dbo\Tables\dbDocusignEnvelopes.sql" />
+    <Build Include="dbo\Stored Procedures\fdCheckFileSecurity.sql" />
+    <Build Include="dbo\Stored Procedures\fdCheckDocumentSecurity.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.DirectoryServices">
